@@ -1,7 +1,4 @@
----
-title:orientation
----
- 
+
 # Rights Automation for Market Data Rights W3C Community Group
 
 Welcome to the orientation page for the community group. The page is intended as a quick-start and cheat-sheat.
