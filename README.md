@@ -1,6 +1,5 @@
-# cg-charter
-[Charter template for W3C Community and Business Groups](http://w3c.github.io/cg-charter/CGCharter.html) 
+# Rights Automation for Market Data Rights W3C Community Group
 
-To create a markdown version, please use a markdown-translator (available on the Web).
-
-Questions? Please contact team-community-process@w3.org.
+* [Home page](https://www.w3.org/community/md-odrl-profile) at W3C.
+* [Orientation and Cheat Sheet](./orientation)
+* [Charter](.CGCharter.html)
