@@ -4,4 +4,4 @@
 * [Orientation and Cheat Sheet](./orientation.md)
 * [Charter](./CGCharter.html)
 * [Specification](./md-odrl-profile.html)
-* [Agendas](./agendas/md-odrl-profile-agenda-2020-04-29.md)
+* [Next Meeting Agenda](./agendas/md-odrl-profile-agenda-2020-04-29.md)

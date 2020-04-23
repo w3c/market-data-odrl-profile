@@ -21,7 +21,6 @@ The purposes of these locations are described below.
 
 * [Group Email Archive](https://lists.w3.org/Archives/Public/public-md-odrl-profile/) 
 
-
 ## Carrying out Community Group Business
 
 The Community Group will conduct its business using periodic teleconferences and on its [public mailing list](mailto:public-md-odrl-profile), which is open to members and non-members alike to [subscribe to](mailto:public-md-odrl-profile?subject=subscribe) and to [review the archive](https://lists.w3.org/Archives/Public/public-md-odrl-profile/). 
@@ -30,7 +29,7 @@ The Community Group will conduct its business using periodic teleconferences and
 
 Substantive decisions are confirmed on teleconferences held every two weeks, starting on Wednesday 29 April 2020. The call will take place at 1100 US Eastern Time (at present 1600 UK and Ireland, 1700 Central Europe). Since the W3C operates its teleconference system on US Eastern time, from time to time the call will change in other time zones.
 
-The call is open to Members only, and members will receive notification of dial in details, via Webex for each call.
+The call is open to Members only [member accessible calendar invite](http://www.w3.org/2020/04/md-odrl-profile.ics).
 
 Teleconferences are minuted, as described below.
 
@@ -38,7 +37,7 @@ Teleconferences are minuted, as described below.
 
 Please familiarise yourself with [policy for the use of and help with W3C mailing lists](https://www.w3.org/Mail).
 
-### IRC 
+### [IRC](#IRC) 
 
 Along with the voice element of the call there is also a "chat" element, which takes place on IRC (the predecessor of many modern day chat systems). Details of connecting to and using IRC for Community Grooup business, below. The IRC chat is used by the meeting chair to coordinate who is to speak, and a special person in nominated for each call to "Scribe", meaning that a record is kept in the chat of participants comments, as well as decisions (resolutions) and actions and issues gathered for consideration outside the discussion. The record thus maintained becomes the enduring minutes of the meeting, published in the public email list.
 
@@ -64,6 +63,4 @@ Strictly speaking this is not interaction with a bot, but when the chair wishes 
 
 GitHub is used to manage working group materials. We use the Issue tracking feature of GitHub to allow conversations between participants about particular points of discussion that require resolution. The list of issues is maintained at [https://github.com/w3c/market-data-odrl-profile/issues](https://github.com/w3c/market-data-odrl-profile/issues).
 
-Some organisations block access to `github.com` but do not block access to `github.io`. Group marterials may be read using the [`github.io` interface](https://w3c.github.io/market-data-odrl-profile). If necessary, key documents will be mirrored to the [Group Home](https://www.w3.org/community/md-odrl-profile) at W3C. Issues cannot be accessed other than via `githum.com`.
-
-The `github.com` interface allows access to issues (points of discussion requiring resolution).
+Some organisations block access to `github.com` but do not block access to `github.io`. Group marterials may be read using the [`github.io` interface](https://w3c.github.io/market-data-odrl-profile). If necessary, key documents will be mirrored to the [Group Home](https://www.w3.org/community/md-odrl-profile) at W3C. Issues cannot be accessed other than via `github.com`.
