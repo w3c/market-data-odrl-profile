@@ -3,3 +3,5 @@
 * [Home page](https://www.w3.org/community/md-odrl-profile) at W3C.
 * [Orientation and Cheat Sheet](./orientation.md)
 * [Charter](./CGCharter.html)
+* [Specification](.md-odrl-profile.html)
+* [Agendas](./agendas)
