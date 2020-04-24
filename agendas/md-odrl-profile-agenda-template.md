@@ -17,7 +17,7 @@ Date: {{date}}T1500Z
 *  1600-1700 UK/Ireland
 *  1700-1800 CET
 
-Please join by both voice and by IRC ([details](./orientation#irc))
+Please join by both voice and by IRC ([details](/orientation#irc))
 
 Dial-in Details are on the [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
 
