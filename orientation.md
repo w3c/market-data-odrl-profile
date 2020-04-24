@@ -37,7 +37,7 @@ Teleconferences are minuted, as described below.
 
 Please familiarise yourself with [policy for the use of and help with W3C mailing lists](https://www.w3.org/Mail).
 
-### [IRC](#IRC) 
+### IRC
 
 Along with the voice element of the call there is also a "chat" element, which takes place on IRC (the predecessor of many modern day chat systems). Details of connecting to and using IRC for Community Grooup business, below. The IRC chat is used by the meeting chair to coordinate who is to speak, and a special person in nominated for each call to "Scribe", meaning that a record is kept in the chat of participants comments, as well as decisions (resolutions) and actions and issues gathered for consideration outside the discussion. The record thus maintained becomes the enduring minutes of the meeting, published in the public email list.
 

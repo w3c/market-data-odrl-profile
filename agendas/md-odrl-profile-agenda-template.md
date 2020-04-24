@@ -13,13 +13,15 @@ Chair: {{chair}}
 Known Regrets: {{regrets}}
 
 Date: {{date}}T1500Z
-*  1100 US Eastern
-*  1600 UK/Ireland
-*  1700 CET
+*  1100-1200 US Eastern
+*  1600-1700 UK/Ireland
+*  1700-1800 CET
+
+Please join by both voice and by IRC ([details](/orientation#irc))
 
 Dial-in Details (members only link): http://www.w3.org/2020/04/md-odrl-profile.ics
 
-IRC Channel: md-odrl-profile, irc.w3.org ([details](/orientation#IRC))
+IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 
 ### Agenda
 
