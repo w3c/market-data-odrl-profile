@@ -7,7 +7,7 @@ Welcome to the orientation page for the community group. The page is intended as
 
 The purposes of these locations are described below.
 
-* [This page](https://w3c.github.io/md-odrl-profile/orientation) - you might want to boookmark.
+* [This page](https://w3c.github.io/md-odrl-profile/orientation.html) - you might want to boookmark.
 
 * [Home page](https://www.w3.org/community/md-odrl-profile) at W3C.
 
