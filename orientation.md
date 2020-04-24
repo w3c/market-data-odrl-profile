@@ -41,7 +41,7 @@ Please familiarise yourself with [policy for the use of and help with W3C mailin
 
 Along with the voice element of the call there is also a "chat" element, which takes place on IRC (the predecessor of many modern day chat systems). Details of connecting to and using IRC for Community Grooup business, below. The IRC chat is used by the meeting chair to coordinate who is to speak, and a special person in nominated for each call to "Scribe", meaning that a record is kept in the chat of participants comments, as well as decisions (resolutions) and actions and issues gathered for consideration outside the discussion. The record thus maintained becomes the enduring minutes of the meeting, published in the public email list.
 
-See [How to use IRC for W3C calls](https://www.w3.org/wiki/IRC) and [more details of W3 IRC](https://www.w3.org/Project/IRC). Please choose a nickname that makes it clear who you are.
+See [How to use IRC for W3C calls](https://www.w3.org/wiki/IRC) and [more details of W3 IRC](https://www.w3.org/Project/IRC). Please choose a nickname that makes it clear who you are. There is a [Web interface](http://irc.w3.org) to W3C IRC, which you may find more convenient than installing an IRC app.
 
 Participants may request (verbally) that a particular comment is not scribed for the public record. If a participants comments are not scribed accurately they are expected to make that known, with a clarification, on the IRC channel.
 
