@@ -35,3 +35,6 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 4. Deliverables: status and toolsets
 5. AOB
 
+### Materials
+
+Documents and links on the [group GitHub pages](https://w3c.github.io/market-data-odrl-profile)
