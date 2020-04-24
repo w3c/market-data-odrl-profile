@@ -11,9 +11,9 @@ The purposes of these locations are described below.
 
 * [Home page](https://www.w3.org/community/md-odrl-profile) at W3C.
 
-* [Content for Review](https://w3c.github.io/market-data-odrl-profile) at GitHub.
+* [GitHub Pages](https://w3c.github.io/market-data-odrl-profile) read-only interface to group materials.
 
-* [Issues and Contribution](https://github.com/w3c/market-data-odrl-profile) via GitHub standard interface.
+* [GitHub Repository](https://github.com/w3c/market-data-odrl-profile) via GitHub standard interface.
 
 * [IRC (irc:irc.w3.org:6667)](irc:irc.w3.org:6667) for IRC Clients - channel name is `md-odrl-profile`
 
@@ -21,15 +21,15 @@ The purposes of these locations are described below.
 
 * [Group Email Archive](https://lists.w3.org/Archives/Public/public-md-odrl-profile/) 
 
+* [Open Issues](https://github.com/w3c/market-data-odrl-profile/issues?q=is%3Aopen)
+
 ## Carrying out Community Group Business
 
-The Community Group will conduct its business using periodic teleconferences and on its [public mailing list](mailto:public-md-odrl-profile), which is open to members and non-members alike to [subscribe to](mailto:public-md-odrl-profile?subject=subscribe) and to [review the archive](https://lists.w3.org/Archives/Public/public-md-odrl-profile/). 
+The Community Group conducts its business using periodic teleconferences and on its [public mailing list](mailto:public-md-odrl-profile), which members and non-members alike may [subscribe to](mailto:public-md-odrl-profile?subject=subscribe) and to [review the archive](https://lists.w3.org/Archives/Public/public-md-odrl-profile/). 
 
 ### Member-Only Calls
 
-Substantive decisions are confirmed on teleconferences held every two weeks, starting on Wednesday 29 April 2020. The call will take place at 1100 US Eastern Time (at present 1600 UK and Ireland, 1700 Central Europe). Since the W3C operates its teleconference system on US Eastern time, from time to time the call will change in other time zones.
-
-The call is open to Members only [member accessible calendar invite](http://www.w3.org/2020/04/md-odrl-profile.ics).
+Substantive decisions are confirmed on teleconferences held every two weeks, starting on Wednesday 29 April 2020. The call takes place at 1100 US Eastern Time (at present 1600 UK and Ireland, 1700 Central Europe). Since the W3C operates its teleconference system on US Eastern time, from time to time the call will change in other time zones. The call duration is 60 minutes and is open to Members only [member accessible calendar invite](http://www.w3.org/2020/04/md-odrl-profile.ics).
 
 Teleconferences are minuted, as described below.
 
@@ -57,10 +57,10 @@ Once you have joined the channel, and after the bots have started the meeting, e
 
 #### Resolutions
 
-Strictly speaking this is not interaction with a bot, but when the chair wishes to establish conensus on a topic, they may propose a resolution, in IRC, e.g. `PROPOSED RESOLUTION: Frogs are to be considered mammals for the purposes of thise specification`, allowing participants to express support, or dissent, using the convention`+1` for support and `-1` contrariwise. If the resolution is taken this will be recorded `RESOLUTION: Frogs are to be considered mammals for the purposes of thise specification`.
+Strictly speaking this is not interaction with a bot, but when the chair wishes to establish consensus on a topic, they may propose a resolution, in IRC, e.g. `PROPOSED RESOLUTION: Frogs are to be considered mammals for the purposes of this specification`, allowing participants to express support, or dissent, using the convention`+1` for support and `-1` contrariwise. If the resolution is taken this will be recorded `RESOLUTION: Frogs are to be considered mammals for the purposes of this specification`.
 
 ### GitHub
 
-GitHub is used to manage working group materials. We use the Issue tracking feature of GitHub to allow conversations between participants about particular points of discussion that require resolution. The list of issues is maintained at [https://github.com/w3c/market-data-odrl-profile/issues](https://github.com/w3c/market-data-odrl-profile/issues).
+GitHub is used to manage working group materials. The [issue tracking](https://github.com/w3c/market-data-odrl-profile/issues) feature of GitHub is used to allow conversations between participants about particular points of discussion that require resolution.
 
 Some organisations block access to `github.com` but do not block access to `github.io`. Group marterials may be read using the [`github.io` interface](https://w3c.github.io/market-data-odrl-profile). If necessary, key documents will be mirrored to the [Group Home](https://www.w3.org/community/md-odrl-profile) at W3C. Issues cannot be accessed other than via `github.com`.
