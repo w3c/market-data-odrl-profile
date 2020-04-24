@@ -19,7 +19,7 @@ Date: 2009-04-29T1500Z
 
 Please join by both voice and by IRC ([details](./orientation#irc))
 
-Dial-in Details (members only link): http://www.w3.org/2020/04/md-odrl-profile.ics
+Dial-in Details are on the [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
 
 IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 
