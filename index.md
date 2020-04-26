@@ -1,4 +1,4 @@
-# Rights Automation for Market Data Rights Community Group
+# Rights Automation for Market Data Community Group
 
 ## Goal
 The goal of this group is develop and publish a profile of ODRL that allows the suppliers, vendors, and consumers of market data to translate their licenses into a machine-understood format that can support automated compliance testing and enforcement.
