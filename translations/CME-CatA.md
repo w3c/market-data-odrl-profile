@@ -393,10 +393,10 @@ The payment duty has a similar structure, though now the deadline delta is defin
 # Permissions Update
 As a final step we can update the permissions that control access to the CME data with these duties, noting that only the real-time permissions need to be paid for:
 >```
->:P1    odrl:duty       :D3, :D4, :D5 .
->:P2    odrl:duty       :D3, :D4, :D5 .
->:P3    odrl:duty       :D3, :D4 .
->:P4    odrl:duty       :D3, :D4 .
+>:P1    odrl:duty       :D3, :D4, :D6 .
+>:P2    odrl:duty       :D3, :D4, :D6 .
+>:P3    odrl:duty       :D7, :D8 .
+>:P4    odrl:duty       :D7, :D8 .
 >```
 
 
