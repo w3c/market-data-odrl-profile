@@ -29,8 +29,8 @@ Equally we could roll up (aka superclass) trading as a principle and trading for
 
 >So let's create a permission with the identifier :P1 that allows this:
 >```
->:P1    a               odrl:Permission .
->:P1    odrl:action     [ rdf:type      md:AutomatedTrading ] .
+>:P1    rdf:type        odrl:Permission .
+>:P1    odrl:action     md:AutomatedTrading .
 >```
 >What does this mean? Just that :P1 is a permission that allows actions that are of the type md:AutomatedTrading.
 
@@ -39,13 +39,13 @@ The base license (aka the [Information License Agreement](https://www.cmegroup.c
 >Let's create another permission that allows us to make derivations
 >```
 >:P2    rdf:type        odrl:Permission .
->:P2    odrl:action     [  rdf:type     odrl:Derive ] .
+>:P2    odrl:action     odrl:Derive .
 >```
 >But what can we do with the output of the derivation? We can use it, but only if the recipient of the output is internal to the licencee. So let's create another permission that expresses this:
 >```
 >:P3    rdf:type        odrl:Permission .
->:P3    odrl:action     [  rdf:type     odrl:Use ;
->                           odrl:recipient   [ rdf:type  md:Internal ]
+>:P3    odrl:action     [  rdf:type         odrl:Use ;
+>                           odrl:recipient   md:Internal 
 >                        ] .
 >```
 >What does this mean? It's a permission to use the output of the derivation so long as the recipient of the data is internal. 
@@ -56,14 +56,14 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >We can model this with a prohibition. Let's give it the identifier :PR1.
 >```
 >:PR1   rdf:type    odrl:Prohibition .
->:PR1   odrl:action [  rdf:type odrl:Display ] , [  rdf:type    odrl:Distribute ] , [ rdf:type    odrl:GrantUse ] .
+>:PR1   odrl:action odrl:Display , odrl:Distribute , odrl:GrantUse .
 >```
 >So actions of type display, distribute, or grant use are prohibited.
 
 The burden of prohibitions on the derived data are a little lighter. You can't distribute it. So let's create a new prohibition :PR2
 >```
->:PR2   rdf:type    odrl:Prohibition ;
->:PR2   odrl:action [  rdf:type odrl:Distribute ] .
+>:PR2   rdf:type    odrl:Prohibition .
+>:PR2   odrl:action odrl:Distribute  .
 >```
 
 # Assets
@@ -125,7 +125,6 @@ So we have three assets here:
 2. The Delayed Eurodollar Futures Contract
 3. The End-of-Day Eurodollar Futures Contract
 
-
 Unfortunately, it's surprising difficult to get computers to handle time and time periods. Anyone remember the millenium bug?  So bear with me on this one.
 
 >Let's call our three assets :A1, :A2, and :A3. 
@@ -135,7 +134,7 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >:A1     md:resource                :R1 .
 >:AI     md:timelinessOfDelivery    [   rdf:type            time:ProperInterval , md:Realtime ;
 >                                       time:intervalEquals [   rdf:type    time:ProperInterval ;
->                                                             md:timeReference  [ rdf:type   time:Instant , md:TimeOfIssue ] ;
+>                                                             md:timeReference  time:Instant , md:TimeOfIssue ;
 >                                                             time:hasXSDDuration "PT10M"^^xsd:duration
 >                                                           ]
 >                                     ] .
@@ -146,12 +145,12 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >:A2    md:resource             :R1 .
 >:A2    md:timelinessOfDelivery [  rdf:type         time:ProperInterval , md:Delayed ;
 >                   time:intervalAfter  [   rdf:type           time:ProperInterval ;
->                               md:timeReference  [ rdf:type   time:Instant , md:TimeOfIssue ] ;
->                               time:hasXSDDuration "PT10M"^^xsd:duration
+>                                           md:timeReference  time:Instant , md:TimeOfIssue  ;
+>                                           time:hasXSDDuration "PT10M"^^xsd:duration
 >                                
 >                             ] ;
 >                   time:intervalBefore [   rdf:type           time:ProperInterval ;
->                               md:timeReference  [ rdf:type   time:Instant , md:TimeOfIssue ] ;
+>                               md:timeReference  time:Instant , md:TimeOfIssue ;
 >                               time:hasXSDDuration "PT8H"^^xsd:duration
 >                             ]
 >                   ] .
@@ -182,25 +181,25 @@ Each offer provides the two permissions we discussed above - the one that allows
 >The permissions in the first offer cover realtime, delayed, and end-of-day data. So:
 >```
 >:P1     rdf:type       odrl:Permission .
->:P1     odrl:action    [ rdf:type md:AutomatedTrading ] .
+>:P1     odrl:action    md:AutomatedTrading .
 >:P1     odrl:target    :A1 , :A2 , :A3 .
 >```
 >... and ...
 >```
 >:P2     rdf:type       odrl:Permission .
->:P2     odrl:action    [ rdf:type  odrl:Derive ] .
+>:P2     odrl:action    odrl:Derive .
 >:P2     odrl:target    :A1 , :A2 , :A3 .
 >```
 >The permissions in the second offer cover only delayed and end-of-day data. So they need new identifiers, :P3 and :P4:
 >```
 >:P3     rdf:type       odrl:Permission .
->:P3     odrl:action    [ rdf:type md:AutomatedTrading ] .
+>:P3     odrl:action    md:AutomatedTrading .
 >:P3     odrl:target    :A2 , :A3 .
 >```
 >... and ...
 >```
 >:P4     rdf:type       odrl:Permission .
->:P4     odrl:action    [ rdf:type  odrl:Derive ] .
+>:P4     odrl:action    odrl:Derive .
 >:P4     odrl:target    :A2 , :A3 .
 >```
 
@@ -230,14 +229,14 @@ We're not done yet. CME's license also controls the use of the output of the der
 >The permission :P5 allows the **use** action, but limits it to **internal** recipients:
 >```
 >:P5    rdf:type		    odrl:Permission .
->:P5	odrl:action         [	a 		        md:use ; 
->								odrl:recipient 	[	a 	md:Internal ]
+>:P5	odrl:action         [	rdf:type 	    md:use ; 
+>								odrl:recipient 	md:Internal
 >							 ] .
 >```
 >The prohibition :Pr3 explicilty forbids **distribution** of the derivation:
 >```
 >:Pr3 	rdf:type 			odrl:Prohibition .
->:Pr3	odrl:action 		[  a    ordrl:Distribute ] .
+>:Pr3	odrl:action 		ordrl:Distribute .
 >```
 Latter we'll show how this policy controlling the use of the derived data is linked to the permission allowing derivation from the CME's data.
 
@@ -266,24 +265,24 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:O1    rdf:type            odrl:Duty .
 >:O1    nl:creditor         <https://permid.org/1-4295899615> . # CME
 >:O1    nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
->                               md:timeReference    [ rdf:type   time:Instant , md:TimeOfNotification ] ;
+>                               md:timeReference    time:Instant , md:TimeOfNotification ;
 >                               time:hasXSDDuration "P30D"^^xsd:duration
 >                            ] .
 >:O1    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
 >                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
 >:O1    odrl:action         [  rdf:type             md:Accept ;
->                               md:scope            [ 	rdf:type 	md:Audit ] ;
+>                               md:scope            md:Audit ;
 >                               odrl:count          "1"^^xsd:int
 >                            ] .
 >:O1    odrl:duty           :D1 .
 >```
 > Then specifying the duty on the CME to provide notice:
 >```
->:D1	a 				odrl:Duty .
+>:D1	rdf:type 		odrl:Duty .
 >:D1	nl:debtor       <https://permid.org/1-4295899615> . # CME
 >:D1	odrl:action     [  rdf:type     md:Notify ;
->                           md:scope    [	rdf:type 	md:Audit ] ;
+>                           md:scope    md:Audit ;
 >                           odrl:count 	"1"^^xsd:int
 >                        ] .	
 >```
@@ -295,7 +294,7 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
 >:O2    odrl:action         [   rdf:type            md:Accept ;
->                               md:scope            [ 	rdf:type 	md:Audit ] ;
+>                               md:scope            md:Audit ;
 >                               odrl:count      "1"^^xsd:int
 >                            ] .
 >:O2    odrl:duty           :D2 .
@@ -305,7 +304,7 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:D2	rdf:type 		odrl:Duty .
 >:D2	nl:debtor    	<https://permid.org/1-4295899615> . # CME
 >:D2    odrl:action     [  rdf:type     md:Report ; 
->                           md:scope    [   rdf:type   md:ReasonableSuspicion ] ;
+>                           md:scope    md:ReasonableSuspicion ;
 >                           odrl:count  "1"^^xsd:int
 >                        ] .	
 >```
@@ -318,7 +317,7 @@ CME expects its licensee's to maintain auditable **evidence** of the operation o
 >:O3	rdf:type 		odrl:Duty .
 >:O3	nl:creditor    	<https://permid.org/1-4295899615> . # CME
 >:O3    odrl:action     [  rdf:type     md:Evidence ; 
->                           md:scope    [   rdf:type   md:Controls ] ;
+>                           md:scope    md:Controls ;
 >                        ] .	
 >```
 >Notice that we don't use a count property. The licensee must keep continuous evidence of the controls used to protect CME's data.
@@ -331,13 +330,73 @@ We can now add these obligations to the two policies :T1 and :T2:
 >```
 
 # Specific Duties
-We're not done yet - licensees still have further duties to **fulfill**. These duties are tied to specific permissions. We have to **attribute** ownership of the data to the CME; we have to report usage of the daya; and we have to **pay** for it (at least, for the permissions that cover realtime data).
+We're not done yet - licensees still have further duties to **fulfill**. These duties are tied to specific permissions. We have to **attribute** ownership of the data to the CME; we have to report usage of the data; and we have to **pay** for it (at least, for the permissions that cover realtime data).
 
 ### Attribute
+Here the action is to attribute (ownership) using the attribution provided:
+>```
+>:D3    rdf:type           odrl:Duty .
+>:D3    nl:creditor <https://permid.org/1-4295899615> . # CME
+>:D3    odrl:action [  rdf:type        odrl:Attribute ;
+>                       md:scope       md:Ownership ;
+>                       md:attribution  "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
+>                    ]  .
+>```
 
 ### Report
+The reporting duty is a tiny bit more complicated. We need to provide a count of applications using the data once per month, 30 days in arrears.
+>```
+>:D4    rdf:type            odrl:Duty .
+>:D4    nl:creditor         <https://permid.org/1-4295899615> . # CME
+>:D4    nl:hasDeadlineDelta [  rdf:type            time:ProperInterval ;
+>                               time:hasXSDDuration "P1M"^^xsd:duration
+>                            ] .
+>:D4    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
+>                               time:hasXSDDuration "P1M"^^xsd:duration 
+>							 ] .
+>:D4    odrl:action 		[  rdf:type            md:Report ; 
+>                               md:scope            [  rdf:type     md:Usage ] ;
+>								odrl:unitOfCount 	[  rdf:type     md:Application ] ;
+>								odrl:count 			"1"^^xsd:int
+>                            ] .
+>```
 
 ### Pay
+The payment duty has a similar structure, though now the deadline delta is defined as a month following invoicing, with the CME having a duty to invoice. Let's specify that first:
+>```
+>:D5	rdf:type 			odrl:Duty ;
+>:D5	nl:debtor 			<https://permid.org/1-4295899615> ; # CME
+>:D5	odrl:action 		[ 	a   	    md:Invoice ; 
+								odrl:count 	"1"^^xsd:int
+							] .
+>```
+>Now we can write the full payment duty:
+>```
+>:D6 	rdf:type 			odrl:Duty ;
+>:D6	nl:creditor 		<https://permid.org/1-4295899615> ; # CME
+>:D6	nl:hasDeadlineDelta [ 	rdf:type 			time:ProperInterval ;
+>								md:timeReference  	time:Instant , md:TimeOfInvoicing  ;
+>								time:hasXSDDuration "P1M"^^xsd:duration
+>							] ;
+>:D6	odrl:timeInterval	[	rdf:type 			time:ProperInterval ;
+>								time:hasXSDDuration	"P1M"^^xsd:duration 
+>							] ;
+>:D6    odrl:action 		[ 	rdf:type 	        odrl:Compensate ;
+								odrl:unitOfCount 	md:Application ;
+											odrl:payAmount 		"1150.00"^^xsd:float ;
+											odrl:unit 			<https://www.wikidata.org/wiki/Q4917> ; # US dollar
+											odrl:count 			"1"^^xsd:int
+										] ;
+>:D6	odrl:duty 			:D5 .
+>```
 
 # Permissions Update
-Finally we can update the permissions with these duties.
+As a final step we can update the permissions that control access to the CME data with these duties, noting that only the real-time permissions need to be paid for:
+>```
+>:P1    odrl:duty       :D3, :D4, :D5 .
+>:P2    odrl:duty       :D3, :D4, :D5 .
+>:P3    odrl:duty       :D3, :D4 .
+>:P4    odrl:duty       :D3, :D4 .
+>```
+
+
