@@ -134,8 +134,8 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >:A1     md:resource                :R1 .
 >:AI     md:timelinessOfDelivery    [  rdf:type             time:ProperInterval , md:Realtime ;
 >                                       time:intervalEquals [  rdf:type    time:ProperInterval ;
->                                                             md:timeReference  time:Instant , md:TimeOfIssue ;
->                                                             time:hasXSDDuration "PT10M"^^xsd:duration
+>                                                              md:timeReference  time:Instant , md:TimeOfIssue ;
+>                                                              time:hasXSDDuration "PT10M"^^xsd:duration
 >                                                           ]
 >                                     ] .
 >```
@@ -145,12 +145,12 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >:A2    md:resource                 :R1 .
 >:A2    md:timelinessOfDelivery     [ rdf:type            time:ProperInterval , md:Delayed ;
 >                                     time:intervalAfter  [  rdf:type           time:ProperInterval ;
->                                                           md:timeReference    time:Instant , md:TimeOfIssue  ;
->                                                           time:hasXSDDuration "PT10M"^^xsd:duration
+>                                                            md:timeReference    time:Instant , md:TimeOfIssue  ;
+>                                                            time:hasXSDDuration "PT10M"^^xsd:duration
 >                                                         ] ;
 >                                     time:intervalBefore [  rdf:type           time:ProperInterval ;
->                                                           md:timeReference  time:Instant , md:TimeOfIssue ;
->                                                           time:hasXSDDuration "PT8H"^^xsd:duration
+>                                                            md:timeReference  time:Instant , md:TimeOfIssue ;
+>                                                            time:hasXSDDuration "PT8H"^^xsd:duration
 >                                                         ]
 >                                   ] .
 >```
@@ -161,11 +161,11 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >:A3    md:timelinessOfDelivery [  rdf:type       time:ProperInterval , md:Embargoed ;
 >                                 time:after      [  rdf:type         time:Instant, md:MarketClose ;
 >                                                    time:inDateTime  [  rdf:type         time::DateTimeDescription ; # Monday to Friday?
->                                                                         time:hour     "16"^^xsd:int ;
->                                                                         time::timeZone  <https://www.timeanddate.com/time/zones/ct>
+>                                                                        time:hour     "16"^^xsd:int ;
+>                                                                        time::timeZone  <https://www.timeanddate.com/time/zones/ct>
 >                                                                       ]
->                                                           ]
->                                     ] .
+>                                                 ]
+>                                ] .
 >```
 
 Now we know the assets that our license controls, we can take a quick look at how the CME sells them to get a sharper idea of the policies and permissions we need.
@@ -221,16 +221,16 @@ We can do the same trick with the prohibitions, and then specify the two offers:
 
 We're not done yet. CME's license also controls the use of the output of the derive action. It's use is constrained to internal use. The data cannot be distributed to third-parties under this license. (That requires a derived data license.) So we have another policy, :U1, that contains one permission, :P5, and one prohibition, :Pr3.
 >```
->:U1    rdf:type 	        odrl:Offer .
+>:U1  rdf:type  	      odrl:Offer .
 >:U1	odrl:permission		:P5 .
 >:U1	odrl:prohibition 	:Pr3 .
 >```
 >The permission :P5 allows the **use** action, but limits it to **internal** recipients:
 >```
->:P5    rdf:type		    odrl:Permission .
->:P5	odrl:action         [	rdf:type 	    md:use ; 
->								odrl:recipient 	md:Internal
->							 ] .
+>:P5  rdf:type		      odrl:Permission .
+>:P5	odrl:action       [	rdf:type 	    md:use ; 
+>								          odrl:recipient 	md:Internal
+>							          ] .
 >```
 >The prohibition :Pr3 explicilty forbids **distribution** of the derivation:
 >```
@@ -266,46 +266,46 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:O1    nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
 >                               md:timeReference    time:Instant , md:TimeOfNotification ;
 >                               time:hasXSDDuration "P30D"^^xsd:duration
->                            ] .
+>                           ] .
 >:O1    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
->                               time:hasXSDDuration "P1Y"^^xsd:duration 
->                            ] .
+>                              time:hasXSDDuration "P1Y"^^xsd:duration 
+>                           ] .
 >:O1    odrl:action         [  rdf:type             md:Accept ;
->                               md:scope            md:Audit ;
->                               odrl:count          "1"^^xsd:int
->                            ] .
+>                              md:scope            md:Audit ;
+>                              odrl:count          "1"^^xsd:int
+>                           ] .
 >:O1    odrl:duty           :D1 .
 >```
 > Then specifying the duty on the CME to provide notice:
 >```
 >:D1	rdf:type 		odrl:Duty .
->:D1	nl:debtor       <https://permid.org/1-4295899615> . # CME
->:D1	odrl:action     [  rdf:type     md:Notify ;
->                           md:scope    md:Audit ;
->                           odrl:count 	"1"^^xsd:int
->                        ] .	
+>:D1	nl:debtor   <https://permid.org/1-4295899615> . # CME
+>:D1	odrl:action [  rdf:type     md:Notify ;
+>                    md:scope    md:Audit ;
+>                    odrl:count 	"1"^^xsd:int
+>                 ] .	
 >```
 > The second mechanism is similar, but there is no notice period, and the CME has a duty to **report** reasonable suspicion. Let's call the duties :O2 and :D2 respectively.
 >```
 >:O2    rdf:type            odrl:Duty .
 >:O2    nl:creditor         <https://permid.org/1-4295899615> . # CME
 >:O2    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
->                               time:hasXSDDuration "P1Y"^^xsd:duration 
->                            ] .
+>                              time:hasXSDDuration "P1Y"^^xsd:duration 
+>                           ] .
 >:O2    odrl:action         [  rdf:type            md:Accept ;
->                               md:scope            md:Audit ;
->                               odrl:count      "1"^^xsd:int
->                            ] .
+>                              md:scope            md:Audit ;
+>                              odrl:count      "1"^^xsd:int
+>                           ] .
 >:O2    odrl:duty           :D2 .
 >```
 > Then specifying the duty on the CME to report reasonable suspicion:
 >```
->:D2	rdf:type 		odrl:Duty .
+>:D2	rdf:type 		  odrl:Duty .
 >:D2	nl:debtor    	<https://permid.org/1-4295899615> . # CME
->:D2    odrl:action     [  rdf:type     md:Report ; 
->                           md:scope    md:ReasonableSuspicion ;
->                           odrl:count  "1"^^xsd:int
->                        ] .	
+>:D2  odrl:action   [  rdf:type    md:Report ; 
+>                      md:scope    md:ReasonableSuspicion ;
+>                      odrl:count  "1"^^xsd:int
+>                   ] .	
 >```
 
 ### Controls
@@ -313,11 +313,11 @@ CME expects its licensee's to maintain auditable **evidence** of the operation o
 
 >We can capture this so:
 >```
->:O3	rdf:type 		odrl:Duty .
->:O3	nl:creditor    	<https://permid.org/1-4295899615> . # CME
->:O3    odrl:action     [  rdf:type     md:Evidence ; 
->                           md:scope    md:Controls ;
->                        ] .	
+>:O3	rdf:type 		  odrl:Duty .
+>:O3	nl:creditor   <https://permid.org/1-4295899615> . # CME
+>:O3  odrl:action   [  rdf:type     md:Evidence ; 
+>                      md:scope    md:Controls ;
+>                   ] .	
 >```
 >Notice that we don't use a count property. The licensee must keep continuous evidence of the controls used to protect CME's data.
 
@@ -348,45 +348,45 @@ The reporting duty is a tiny bit more complicated. We need to provide a count of
 >:D4    rdf:type            odrl:Duty .
 >:D4    nl:creditor         <https://permid.org/1-4295899615> . # CME
 >:D4    nl:hasDeadlineDelta [  rdf:type            time:ProperInterval ;
->                               time:hasXSDDuration "P1M"^^xsd:duration
+>                              time:hasXSDDuration "P1M"^^xsd:duration
 >                            ] .
 >:D4    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
->                               time:hasXSDDuration "P1M"^^xsd:duration 
+>                              time:hasXSDDuration "P1M"^^xsd:duration 
 >							 ] .
->:D4    odrl:action 		[  rdf:type            md:Report ; 
->                               md:scope            [  rdf:type     md:Usage ] ;
->								odrl:unitOfCount 	[  rdf:type     md:Application ] ;
->								odrl:count 			"1"^^xsd:int
->                            ] .
+>:D4    odrl:action 		    [  rdf:type            md:Report ; 
+>                              md:scope            [  rdf:type     md:Usage ] ;
+>								               odrl:unitOfCount    [  rdf:type     md:Application ] ;
+>								               odrl:count 			   "1"^^xsd:int
+>                           ] .
 >```
 
 ### Pay
 The payment duty has a similar structure, though now the deadline delta is defined as a month following invoicing, with the CME having a duty to invoice. Let's specify that first:
 >```
->:D5	rdf:type 			odrl:Duty ;
+>:D5	rdf:type 			  odrl:Duty ;
 >:D5	nl:debtor 			<https://permid.org/1-4295899615> ; # CME
 >:D5	odrl:action 		[ 	a   	    md:Invoice ; 
->								odrl:count 	"1"^^xsd:int
->							] .
+>								          odrl:count 	"1"^^xsd:int
+>							        ] .
 >```
 >Now we can write the full payment duty:
 >```
->:D6 	rdf:type 			odrl:Duty ;
->:D6	nl:creditor 		<https://permid.org/1-4295899615> ; # CME
+>:D6 	rdf:type 			      odrl:Duty ;
+>:D6	nl:creditor 		    <https://permid.org/1-4295899615> ; # CME
 >:D6	nl:hasDeadlineDelta [  rdf:type 			time:ProperInterval ;
->								md:timeReference  	time:Instant , md:TimeOfInvoicing  ;
->								time:hasXSDDuration "P1M"^^xsd:duration
->							] ;
->:D6	odrl:timeInterval	[  rdf:type 			time:ProperInterval ;
->								time:hasXSDDuration	"P1M"^^xsd:duration 
->							] ;
->:D6    odrl:action         [  rdf:type 	        odrl:Compensate ;
->								odrl:unitOfCount 	md:Application ;
->								odrl:payAmount 		"1150.00"^^xsd:float ;
->								odrl:unit 			<https://www.wikidata.org/wiki/Q4917> ; # US dollar
->								odrl:count 			"1"^^xsd:int
->                           ] ;
->:D6	odrl:duty 			:D5 .
+>								             md:timeReference  	time:Instant , md:TimeOfInvoicing  ;
+>								             time:hasXSDDuration "P1M"^^xsd:duration
+>							            ] ;
+>:D6	odrl:timeInterval	  [  rdf:type 			time:ProperInterval ;
+>								             time:hasXSDDuration	"P1M"^^xsd:duration 
+>							            ] ;
+>:D6    odrl:action       [  rdf:type 	        odrl:Compensate ;
+>								             odrl:unitOfCount 	md:Application ;
+>								             odrl:payAmount 		"1150.00"^^xsd:float ;
+>								             odrl:unit 			<https://www.wikidata.org/wiki/Q4917> ; # US dollar
+>								             odrl:count 			"1"^^xsd:int
+>                         ] ;
+>:D6	odrl:duty 			    :D5 .
 >```
 
 # Permissions Update
