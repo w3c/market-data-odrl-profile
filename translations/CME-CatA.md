@@ -8,7 +8,7 @@ The interpretation presented below is a work in progess. It's presented solely a
 >```
 
 1. [License](#license)
-   * [License Documentation](#license-documetation)
+   * [License Documentation](#license-documentation)
 2. [Actions](#actions)
    * [Allowed Actions](#allowed-actions)
    * [Disallowed Actions](#disallowed-actions)
