@@ -29,7 +29,7 @@ The interpretation presented below is a work in progess. It's presented solely a
 ## License
 The CME Category A License: Automated Trading Usage Category.
 
-### 1.1 License Documentation
+### License Documentation
 We need five documents from the CME to understand this license:
 * The overarching guide to the documentation: <https://www.cmegroup.com/market-data/files/information-license-agreement-ila-guide.pdf>
 * The majority of the terms of the license are available in the Information License Agreement: <https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-sample.pdf>
