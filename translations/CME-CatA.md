@@ -442,4 +442,4 @@ Now we add this duty to the two derive permissions defined earlier:
 >:P2    odrl:duty       :D3, :D4, :D6, :D9 .
 >:P4    odrl:duty       :D7, :D8, :D9 .
 >```
-This effectively says that any output from the derive options must be controlled by the policy :U1. Using this technique, we can control the flow of rights and obligations down the supply chain using only peer-to-peer communication. 
+This effectively says that any output from the derive permissions must be controlled by the policy :U1. Using this technique, we can control the flow of rights and obligations down the supply chain using only peer-to-peer communication. 
