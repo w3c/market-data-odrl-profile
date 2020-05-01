@@ -84,7 +84,7 @@ The Eurodollar Futures Contract is our underlying **resource**. There are a few 
 >                                           md:mic          "GLBX"
 >                                       ] ;
 >                           md:code   "GE"
->                      ] .
+>                        ] .
 >:R1    md:contentNature  md:Dynamic .
 >```
 >NOTE: this would look a lot nicer, and be a lot safer, if we had globally unique identifiers for services and venues like we do for providers.
@@ -107,7 +107,7 @@ There's another version of this resource that differs in its **content nature** 
 >                                           md:mic          "GLBX"
 >                                      ] ;
 >                           md:code   "GE"
->                       ] .
+>                        ] .
 >:R2    md:contentNature  md:StaticEOD .
 >```
 
@@ -132,8 +132,8 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >```
 >:A1     rdf:type                   odrl:Asset .
 >:A1     md:resource                :R1 .
->:AI     md:timelinessOfDelivery    [   rdf:type            time:ProperInterval , md:Realtime ;
->                                       time:intervalEquals [   rdf:type    time:ProperInterval ;
+>:AI     md:timelinessOfDelivery    [  rdf:type             time:ProperInterval , md:Realtime ;
+>                                       time:intervalEquals [  rdf:type    time:ProperInterval ;
 >                                                             md:timeReference  time:Instant , md:TimeOfIssue ;
 >                                                             time:hasXSDDuration "PT10M"^^xsd:duration
 >                                                           ]
@@ -141,27 +141,26 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >```
 >Then delayed:
 >```
->:A2    rdf:type                       odrl:Asset .
->:A2    md:resource             :R1 .
->:A2    md:timelinessOfDelivery [  rdf:type         time:ProperInterval , md:Delayed ;
->                   time:intervalAfter  [   rdf:type           time:ProperInterval ;
->                                           md:timeReference  time:Instant , md:TimeOfIssue  ;
->                                           time:hasXSDDuration "PT10M"^^xsd:duration
->                                
->                             ] ;
->                   time:intervalBefore [   rdf:type           time:ProperInterval ;
->                               md:timeReference  time:Instant , md:TimeOfIssue ;
->                               time:hasXSDDuration "PT8H"^^xsd:duration
->                             ]
->                   ] .
+>:A2    rdf:type                    odrl:Asset .
+>:A2    md:resource                 :R1 .
+>:A2    md:timelinessOfDelivery     [ rdf:type            time:ProperInterval , md:Delayed ;
+>                                     time:intervalAfter  [  rdf:type           time:ProperInterval ;
+>                                                           md:timeReference    time:Instant , md:TimeOfIssue  ;
+>                                                           time:hasXSDDuration "PT10M"^^xsd:duration
+>                                                         ] ;
+>                                     time:intervalBefore [  rdf:type           time:ProperInterval ;
+>                                                           md:timeReference  time:Instant , md:TimeOfIssue ;
+>                                                           time:hasXSDDuration "PT8H"^^xsd:duration
+>                                                         ]
+>                                   ] .
 >```
 >Finally, end-of-day:
 >```
 >:A3    a                       odrl:Asset .
 >:A3    md:resource             :R2 .
->:A3    md:timelinessOfDelivery [  rdf:type                   time:ProperInterval , md:Embargoed ;
->                                   time:after      [  rdf:type                   time:Instant, md:MarketClose ;
->                                                             time:inDateTime   [ rdf:type         time::DateTimeDescription ; # Monday to Friday?
+>:A3    md:timelinessOfDelivery [  rdf:type       time:ProperInterval , md:Embargoed ;
+>                                 time:after      [  rdf:type         time:Instant, md:MarketClose ;
+>                                                    time:inDateTime  [  rdf:type         time::DateTimeDescription ; # Monday to Friday?
 >                                                                         time:hour     "16"^^xsd:int ;
 >                                                                         time::timeZone  <https://www.timeanddate.com/time/zones/ct>
 >                                                                       ]
