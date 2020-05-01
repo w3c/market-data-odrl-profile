@@ -84,7 +84,7 @@ The Eurodollar Futures Contract is our underlying **resource**. There are a few 
 >                                           md:mic          "GLBX"
 >                                       ] ;
 >                           md:code   "GE"
->                       ] .
+>                      ] .
 >:R1    md:contentNature  md:Dynamic .
 >```
 >NOTE: this would look a lot nicer, and be a lot safer, if we had globally unique identifiers for services and venues like we do for providers.
