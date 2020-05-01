@@ -263,7 +263,7 @@ We're not done yet. CME's license also controls the use of the output of the der
 >:Pr3  rdf:type       odrl:Prohibition .
 >:Pr3  odrl:action    ordrl:Distribute .
 >```
-Latter we'll show how this policy controlling the use of the derived data is linked to the permission allowing derivation from the CME's data.
+Later we'll show how this policy controlling the use of the derived data is linked to the permission allowing derivation from the CME's data.
 
 ## General Obligations
 Of course, none of this comes for free. To exercise these permissions we have some **duties** to fulfill. 
