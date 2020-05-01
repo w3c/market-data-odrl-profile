@@ -3,7 +3,10 @@
 The interpretation presented below is a work in progess. It's presented solely as an exploration of automated rights management, and intended to provoke debate.
 
 1. [License](#license)
+   * [License Documentation](#license-documetation)
 2. [Actions](#actions)
+   * [Allowed Actions](#allowed-actions)
+   * [Disallowed Actions](#disallowed-actions)
    
 
 ## License
@@ -111,7 +114,7 @@ There's another version of this resource that differs in its **content nature** 
 >                                            rdfs:label      "Globex" ;
 >                                            md:operatingMic "XCME" ;
 >                                            md:mic          "GLBX"
->                                       ] ;
+>                                        ] ;
 >                           md:code   "GE"
 >                        ] .
 >:R2    md:contentNature  md:StaticEOD .
@@ -142,7 +145,7 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >                                       time:intervalEquals [  rdf:type    time:ProperInterval ;
 >                                                              md:timeReference  time:Instant , md:TimeOfIssue ;
 >                                                              time:hasXSDDuration "PT10M"^^xsd:duration
->                                                            ]
+>                                                           ]
 >                                    ] .
 >```
 >Then delayed:
@@ -158,7 +161,7 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >                                                             md:timeReference  time:Instant , md:TimeOfIssue ;
 >                                                             time:hasXSDDuration "PT8H"^^xsd:duration
 >                                                          ]
->                                   ] .
+>                                    ] .
 >```
 >Finally, end-of-day:
 >```
@@ -171,7 +174,7 @@ Unfortunately, it's surprising difficult to get computers to handle time and tim
 >                                                                             time::timeZone  <https://www.timeanddate.com/time/zones/ct>
 >                                                                          ]
 >                                                      ]
->                                   ] .
+>                                    ] .
 >```
 
 Now we know the assets that our license controls, we can take a quick look at how the CME sells them to get a sharper idea of the policies and permissions we need.
@@ -274,11 +277,11 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >                               time:hasXSDDuration "P30D"^^xsd:duration
 >                            ] .
 >:O1    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
->                              time:hasXSDDuration "P1Y"^^xsd:duration 
+>                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
 >:O1    odrl:action         [  rdf:type             md:Accept ;
->                              md:scope            md:Audit ;
->                              odrl:count          "1"^^xsd:int
+>                               md:scope            md:Audit ;
+>                               odrl:count          "1"^^xsd:int
 >                            ] .
 >:O1    odrl:duty           :D1 .
 >```
@@ -287,8 +290,8 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:D1  rdf:type    odrl:Duty .
 >:D1  nl:debtor   <https://permid.org/1-4295899615> . # CME
 >:D1  odrl:action [  rdf:type     md:Notify ;
->                    md:scope     md:Audit ;
->                    odrl:count   "1"^^xsd:int
+>                     md:scope     md:Audit ;
+>                     odrl:count   "1"^^xsd:int
 >                  ] .
 >```
 > The second mechanism is similar, but there is no notice period, and the CME has a duty to **report** reasonable suspicion. Let's call the duties :O2 and :D2 respectively.
@@ -296,11 +299,11 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:O2    rdf:type            odrl:Duty .
 >:O2    nl:creditor         <https://permid.org/1-4295899615> . # CME
 >:O2    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
->                              time:hasXSDDuration "P1Y"^^xsd:duration 
+>                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
 >:O2    odrl:action         [  rdf:type            md:Accept ;
->                              md:scope            md:Audit ;
->                              odrl:count      "1"^^xsd:int
+>                               md:scope            md:Audit ;
+>                               odrl:count      "1"^^xsd:int
 >                            ] .
 >:O2    odrl:duty           :D2 .
 >```
@@ -309,8 +312,8 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:D2  rdf:type      odrl:Duty .
 >:D2  nl:debtor     <https://permid.org/1-4295899615> . # CME
 >:D2  odrl:action   [  rdf:type    md:Report ; 
->                      md:scope    md:ReasonableSuspicion ;
->                      odrl:count  "1"^^xsd:int
+>                       md:scope    md:ReasonableSuspicion ;
+>                       odrl:count  "1"^^xsd:int
 >                    ] .
 >```
 
@@ -322,7 +325,7 @@ CME expects its licensee's to maintain auditable **evidence** of the operation o
 >:O3  rdf:type      odrl:Duty .
 >:O3  nl:creditor   <https://permid.org/1-4295899615> . # CME
 >:O3  odrl:action   [  rdf:type     md:Evidence ; 
->                      md:scope    md:Controls ;
+>                       md:scope    md:Controls ;
 >                    ] .
 >```
 >Notice that we don't use a count property. The licensee must keep continuous evidence of the controls used to protect CME's data.
@@ -343,8 +346,8 @@ Here the action is to attribute (ownership) using the attribution provided:
 >:D3    rdf:type        odrl:Duty .
 >:D3    nl:creditor     <https://permid.org/1-4295899615> . # CME
 >:D3    odrl:action     [  rdf:type        odrl:Attribute ;
->                          md:scope        md:Ownership ;
->                          md:attribution  "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
+>                           md:scope        md:Ownership ;
+>                           md:attribution  "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
 >                        ]  .
 >```
 
@@ -354,15 +357,15 @@ The reporting duty is a tiny bit more complicated. We need to provide a count of
 >:D4    rdf:type            odrl:Duty .
 >:D4    nl:creditor         <https://permid.org/1-4295899615> . # CME
 >:D4    nl:hasDeadlineDelta [  rdf:type            time:ProperInterval ;
->                              time:hasXSDDuration "P1M"^^xsd:duration
+>                               time:hasXSDDuration "P1M"^^xsd:duration
 >                            ] .
 >:D4    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
->                              time:hasXSDDuration "P1M"^^xsd:duration 
+>                               time:hasXSDDuration "P1M"^^xsd:duration 
 >                            ] .
 >:D4    odrl:action         [  rdf:type            md:Report ; 
->                              md:scope            [  rdf:type     md:Usage ] ;
->                              odrl:unitOfCount    [  rdf:type     md:Application ] ;
->                              odrl:count          "1"^^xsd:int
+>                               md:scope            [  rdf:type     md:Usage ] ;
+>                               odrl:unitOfCount    [  rdf:type     md:Application ] ;
+>                               odrl:count          "1"^^xsd:int
 >                            ] .
 >```
 
@@ -372,7 +375,7 @@ The payment duty has a similar structure, though now the deadline delta is defin
 >:D5  rdf:type        odrl:Duty ;
 >:D5  nl:debtor       <https://permid.org/1-4295899615> ; # CME
 >:D5  odrl:action     [  rdf:type     md:Invoice ; 
->                        odrl:count   "1"^^xsd:int
+>                         odrl:count   "1"^^xsd:int
 >                      ] .
 >```
 >Now we can write the full payment duty:
@@ -380,17 +383,17 @@ The payment duty has a similar structure, though now the deadline delta is defin
 >:D6  rdf:type            odrl:Duty ;
 >:D6  nl:creditor         <https://permid.org/1-4295899615> ; # CME
 >:D6  nl:hasDeadlineDelta [  rdf:type           time:ProperInterval ;
->                            md:timeReference   time:Instant , md:TimeOfInvoicing  ;
->                            time:hasXSDDuration "P1M"^^xsd:duration
+>                             md:timeReference   time:Instant , md:TimeOfInvoicing  ;
+>                             time:hasXSDDuration "P1M"^^xsd:duration
 >                          ] ;
 >:D6  odrl:timeInterval   [  rdf:type             time:ProperInterval ;
->                            time:hasXSDDuration  "P1M"^^xsd:duration 
+>                             time:hasXSDDuration  "P1M"^^xsd:duration 
 >                          ] ;
 >:D6    odrl:action       [  rdf:type           odrl:Compensate ;
->                            odrl:unitOfCount   md:Application ;
->                            odrl:payAmount     "1150.00"^^xsd:float ;
->                            odrl:unit          <https://www.wikidata.org/wiki/Q4917> ; # US dollar
->                            odrl:count         "1"^^xsd:int
+>                             odrl:unitOfCount   md:Application ;
+>                             odrl:payAmount     "1150.00"^^xsd:float ;
+>                             odrl:unit          <https://www.wikidata.org/wiki/Q4917> ; # US dollar
+>                             odrl:count         "1"^^xsd:int
 >                          ] ;
 >:D6  odrl:duty           :D5 .
 >```
