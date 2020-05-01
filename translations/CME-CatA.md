@@ -2,12 +2,29 @@
 
 The interpretation presented below is a work in progess. It's presented solely as an exploration of automated rights management, and intended to provoke debate.
 
+>```
+>"Code" uses the turtle syntax defined here: <https://www.w3.org/TR/turtle/>
+>The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-model/>, and here: <https://www.w3.org/TR/odrl-vocab/>
+>```
+
 1. [License](#license)
    * [License Documentation](#license-documetation)
 2. [Actions](#actions)
    * [Allowed Actions](#allowed-actions)
    * [Disallowed Actions](#disallowed-actions)
-   
+3. [Assets](#assets)
+   * [Resources](#resources)
+   * [Timeliness of Delivery](#timeliness-of-delivery)
+4. [Policies and Permissions I](#policies-and-permissions-i)
+5. [General Obligations](#general-obligations)
+6. [Policy Update](#policy-update)
+   * [Controls](#controls)
+6. [Policy Update](#policy-update)
+7. [Specific Duties](#specific-duties)
+   * [Attribute](#attribute)
+   * [Report](#report)
+   * [Pay](#pay)
+7. [Permissions Update](#permissions-update)
 
 ## License
 The CME Category A License: Automated Trading Usage Category.
