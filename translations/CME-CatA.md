@@ -5,11 +5,11 @@ The interpretation presented below is a work in progess. It's presented solely a
 
 ### License Documentation
 We need five documents from the CME to understand this license:
-* The overarching guide to the documentation: https://www.cmegroup.com/market-data/files/information-license-agreement-ila-guide.pdf
-* The majority of the terms of the license are available in the Information License Agreement: https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-sample.pdf
-* The specific terms relating to non-display usage: https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-schedule-4-sample.pdf
-* The fee schedule: https://www.cmegroup.com/content/dam/cmegroup/files/download/cme-market-data-fee-list-apr-2020.pdf
-* Reporting requirements: https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-schedule-3-sample.pdf
+* The overarching guide to the documentation: <https://www.cmegroup.com/market-data/files/information-license-agreement-ila-guide.pdf>
+* The majority of the terms of the license are available in the Information License Agreement: <https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-sample.pdf>
+* The specific terms relating to non-display usage: <https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-schedule-4-sample.pdf>
+* The fee schedule: <https://www.cmegroup.com/content/dam/cmegroup/files/download/cme-market-data-fee-list-apr-2020.pdf>
+* Reporting requirements: <https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-schedule-3-sample.pdf>
 
 # Actions
 ### Allowed Actions
@@ -25,7 +25,7 @@ But we can then model these as just two actions: **trading as a principle** and 
 
 But the venue doesn’t actually seem to matter; we’re allowed to trade anywhere. So, we can drop the constraint.
 
-Equally we could roll up (aka superclass) trading as a principle and trading for a client under the umbrella term of **automated trading**. 
+Equally we could roll up (aka superclass) trading as a principle and trading for a client under the umbrella term of **automated trading**. (We can also imagine automated trading rolling up to the broader term **non-display use**, which in turn rolls up to **use**)
 
 >So let's create a permission with the identifier :P1 that allows this:
 >```
@@ -178,13 +178,13 @@ So we have one charged-for **offer** that allows automated trading over realtime
 
 Each offer provides the two permissions we discussed above - the one that allows for actions of the type automated trading, and the other for actions of the type derive. But the permissions in the two offers **target** a slightly different set of assets. Only the first offer allows use of realtime data. So we actually have four different permissions.
 
->The permissions in the first offer cover realtime, delayed, and end-of-day data. So:
+>The permissions in the first offer cover realtime, delayed, and end-of-day data. So, for automated trading:
 >```
 >:P1     rdf:type       odrl:Permission .
 >:P1     odrl:action    md:AutomatedTrading .
 >:P1     odrl:target    :A1 , :A2 , :A3 .
 >```
->... and ...
+>... and for the derivations ...
 >```
 >:P2     rdf:type       odrl:Permission .
 >:P2     odrl:action    odrl:Derive .
@@ -243,11 +243,11 @@ Latter we'll show how this policy controlling the use of the derived data is lin
 # General Obligations
 Of course, none of this comes for free. To exercise these permissions we have some **duties** to fulfill. 
 
-Some obligations relate to any data provided by CME: keep a record of access **controls**; **accept** an audit if the CME requests one.
+Some obligations relate to any data provided by CME: keep a record of access **controls**; **accept** an **audit** if the CME **requests** one.
 
-Other duties are more closely tied to the specific permissions agreed: **report** on usage; **attribute** ownership; and, of course, **pay**.
+Other duties are more closely tied to the specific permissions agreed: **report** on **usage**; **attribute** **ownership**; and, of course, **pay**.
 
-But they all share a similar structure. They require an action to be taken. The actor can be called the **debtor**; the beneficiery, the **creditor**.
+But they all share a similar structure. They require an action to be taken. The actor can be called the **debtor**; the beneficiary, the **creditor**.
 
 Duties become **active** at different times. As we're working in a subscription model, many of the duties we're talking about become active based on a periodicity - usually monthly - which we can augment with a **count**: the number of times within the **time interval** that the action must be taken. Sometimes, duties provide a grace period in which the action can be taken (like a credit policy does for payment). We can call that the **deadline delta**.
 
@@ -290,10 +290,10 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >```
 >:O2    rdf:type            odrl:Duty .
 >:O2    nl:creditor         <https://permid.org/1-4295899615> . # CME
->:O2    odrl:timeInterval   [   rdf:type            time:ProperInterval ;
+>:O2    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
 >                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
->:O2    odrl:action         [   rdf:type            md:Accept ;
+>:O2    odrl:action         [  rdf:type            md:Accept ;
 >                               md:scope            md:Audit ;
 >                               odrl:count      "1"^^xsd:int
 >                            ] .
@@ -335,16 +335,16 @@ We're not done yet - licensees still have further duties to **fulfill**. These d
 ### Attribute
 Here the action is to attribute (ownership) using the attribution provided:
 >```
->:D3    rdf:type           odrl:Duty .
->:D3    nl:creditor <https://permid.org/1-4295899615> . # CME
->:D3    odrl:action [  rdf:type        odrl:Attribute ;
->                       md:scope       md:Ownership ;
->                       md:attribution  "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
+>:D3    rdf:type        odrl:Duty .
+>:D3    nl:creditor     <https://permid.org/1-4295899615> . # CME
+>:D3    odrl:action     [  rdf:type        odrl:Attribute ;
+>                           md:scope        md:Ownership ;
+>                           md:attribution  "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
 >                    ]  .
 >```
 
 ### Report
-The reporting duty is a tiny bit more complicated. We need to provide a count of applications using the data once per month, 30 days in arrears.
+The reporting duty is a tiny bit more complicated. We need to provide a count of the applications using the data once per month, 30 days in arrears.
 >```
 >:D4    rdf:type            odrl:Duty .
 >:D4    nl:creditor         <https://permid.org/1-4295899615> . # CME
@@ -367,31 +367,36 @@ The payment duty has a similar structure, though now the deadline delta is defin
 >:D5	rdf:type 			odrl:Duty ;
 >:D5	nl:debtor 			<https://permid.org/1-4295899615> ; # CME
 >:D5	odrl:action 		[ 	a   	    md:Invoice ; 
-								odrl:count 	"1"^^xsd:int
-							] .
+>								odrl:count 	"1"^^xsd:int
+>							] .
 >```
 >Now we can write the full payment duty:
 >```
 >:D6 	rdf:type 			odrl:Duty ;
 >:D6	nl:creditor 		<https://permid.org/1-4295899615> ; # CME
->:D6	nl:hasDeadlineDelta [ 	rdf:type 			time:ProperInterval ;
+>:D6	nl:hasDeadlineDelta [  rdf:type 			time:ProperInterval ;
 >								md:timeReference  	time:Instant , md:TimeOfInvoicing  ;
 >								time:hasXSDDuration "P1M"^^xsd:duration
 >							] ;
->:D6	odrl:timeInterval	[	rdf:type 			time:ProperInterval ;
+>:D6	odrl:timeInterval	[  rdf:type 			time:ProperInterval ;
 >								time:hasXSDDuration	"P1M"^^xsd:duration 
 >							] ;
->:D6    odrl:action 		[ 	rdf:type 	        odrl:Compensate ;
-								odrl:unitOfCount 	md:Application ;
-											odrl:payAmount 		"1150.00"^^xsd:float ;
-											odrl:unit 			<https://www.wikidata.org/wiki/Q4917> ; # US dollar
-											odrl:count 			"1"^^xsd:int
-										] ;
+>:D6    odrl:action         [  rdf:type 	        odrl:Compensate ;
+>								odrl:unitOfCount 	md:Application ;
+>								odrl:payAmount 		"1150.00"^^xsd:float ;
+>								odrl:unit 			<https://www.wikidata.org/wiki/Q4917> ; # US dollar
+>								odrl:count 			"1"^^xsd:int
+>                           ] ;
 >:D6	odrl:duty 			:D5 .
 >```
 
 # Permissions Update
-As a final step we can update the permissions that control access to the CME data with these duties, noting that only the real-time permissions need to be paid for:
+As a penultimate step we can update the permissions that control access to the CME data with these duties, noting two things:
+
+1. That only the real-time permissions need to be paid for;
+2. We need to give new identifers (say, :D7 and :D8) to the attribution and reporting duties for the permissions in the second offer.
+
+So:
 >```
 >:P1    odrl:duty       :D3, :D4, :D6 .
 >:P2    odrl:duty       :D3, :D4, :D6 .
@@ -399,4 +404,17 @@ As a final step we can update the permissions that control access to the CME dat
 >:P4    odrl:duty       :D7, :D8 .
 >```
 
+Finally, we can link the policy controlling the use of the derived data (:U1 above) to the permissions allowing derivation from the CME’s data. We use a "**next policy**" duty to do so.
 
+>```
+>:D9 	rdf:type 	    odrl:Duty ;
+>:D9	nl:creditor 	<https://permid.org/1-4295899615> ; # CME
+>:D9	odrl:action 	odrl:nextPolicy ;
+>:D9	odrl:target 	:U1 .
+>```
+Now we add this duty to the two derive permissions defined earlier:
+>```
+>:P2    odrl:duty       :D3, :D4, :D6, :D9 .
+>:P4    odrl:duty       :D7, :D8, :D9 .
+>```
+This effectively says that any output from the derive options must be controlled by the policy :U1. Using this technique, we can control the flow of rights and obligations down the supply chain using only peer-to-peer communication. 
