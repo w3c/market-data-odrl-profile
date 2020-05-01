@@ -4,6 +4,7 @@ The interpretation presented below is a work in progess. It's presented solely a
 
 
 `Code` uses the turtle syntax defined here: <https://www.w3.org/TR/turtle/>
+
 The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-model/> and here: <https://www.w3.org/TR/odrl-vocab/>
 
 1. [License](#license)
