@@ -8,10 +8,10 @@ The interpretation presented below is a work in progess. It's presented solely a
 >```
 
 1. [License](#1-license)
-   1.1 [License Documentation](#1.1-license-documentation)
+   * [License Documentation](#1.1-license-documentation)
 2. [Actions](#2-actions)
-   2.1 [Allowed Actions](#2.1-allowed-actions)
-   2.2 [Disallowed Actions](#2.2-disallowed-actions)
+   * [2.1 Allowed Actions](#2.1)
+   * [2.2 Disallowed Actions](#2.2-disallowed-actions)
 3. [Assets](#assets)
    * [Resources](#resources)
    * [Timeliness of Delivery](#timeliness-of-delivery)
