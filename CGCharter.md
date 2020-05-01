@@ -22,7 +22,7 @@ The group will not analyse the licenses for "Alt Data".
 ## Deliverables
 
 ### Specifications
-The group aims to deliver a market-data profile for ODRL as an ontology. We hope to do this within six months.
+The group aims to deliver a market-data profile for ODRL as an ontology. It aims to do this within six months.
 
 ### Non-Normative Reports
 The group will also report on the licenses, use cases, and test cases it has used to guide the development of the profile.
@@ -53,7 +53,7 @@ Specifications created in the Community Group must use the [W3C Software and Doc
 Community Group participants agree to make all contributions either in the [GitHub repo](https://github.com/w3c/market-data-odrl-profile) or on the group's [public mailing list](public-md-odrl-profile@w3.org) or [public contrib list](public-md-odrl-profile-contrib@w3.org).
 
 ## Transparency
-The group will conduct all of its technical work in public. All technical work will be reflected in our GitHub repository. This is to ensure contributions can be tracked through a software tool.
+The group will conduct all of its technical work in public. All technical work will be reflected in its GitHub repository. This is to ensure contributions can be tracked through a software tool.
 
 Meetings may be restricted to Community Group participants, but a public summary or minutes must be posted to the group's public mailing list, or to a GitHub issue if the group uses GitHub.
 
