@@ -7,6 +7,7 @@ The interpretation presented below is a work in progess. It's presented solely a
 
 The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-model/> and here: <https://www.w3.org/TR/odrl-vocab/>
 
+## Contents
 1. [License](#license)
    * [License Documentation](#license-documentation)
 2. [Actions](#actions)
