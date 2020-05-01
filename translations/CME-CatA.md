@@ -2,8 +2,8 @@
 
 The interpretation presented below is a work in progess. It's presented solely as an exploration of automated rights management, and intended to provoke debate.
 
-1. [License](##license)
-2. [Actions](##actions)
+1. [License](#license)
+2. [Actions](#actions)
    
 
 ## License
@@ -51,7 +51,7 @@ The base license (aka the [Information License Agreement](https://www.cmegroup.c
 >```
 >:P3    rdf:type        odrl:Permission .
 >:P3    odrl:action     [  rdf:type         odrl:Use ;
->                          odrl:recipient   md:Internal 
+>                           odrl:recipient   md:Internal 
 >                        ] .
 >```
 >What does this mean? It's a permission to use the output of the derivation so long as the recipient of the data is internal. 
@@ -84,11 +84,11 @@ The Eurodollar Futures Contract is our underlying **resource**. There are a few 
 >:R1    rdfs:label      "Eurodollar Futures Contract" .
 >:R1    md:provider     <https://permid.org/1-4295899615> . # Identifier for CME
 >:R1    md:service      [  rdf:type     md:Service ;
->                          md:venue     [   rdf:type        md:Venue ;
->                                           rdfs:label      "Globex" ;
->                                           md:operatingMic "XCME" ;
->                                           md:mic          "GLBX"
->                                       ] ;
+>                           md:venue     [   rdf:type        md:Venue ;
+>                                            rdfs:label      "Globex" ;
+>                                            md:operatingMic "XCME" ;
+>                                            md:mic          "GLBX"
+>                                        ] ;
 >                           md:code    "GE"
 >                        ] .
 >:R1    md:contentNature  md:Dynamic .
@@ -107,10 +107,10 @@ There's another version of this resource that differs in its **content nature** 
 >:R2    rdfs:label      "Eurodollar Futures Contract" .
 >:R2    md:provider     <https://permid.org/1-4295899615> . # Identifier for CME
 >:R2    md:service      [  rdf:type     md:Service .
->                           md:venue    [   rdf:type        md:Venue ;
->                                           rdfs:label      "Globex" ;
->                                           md:operatingMic "XCME" ;
->                                           md:mic          "GLBX"
+>                           md:venue     [   rdf:type        md:Venue ;
+>                                            rdfs:label      "Globex" ;
+>                                            md:operatingMic "XCME" ;
+>                                            md:mic          "GLBX"
 >                                       ] ;
 >                           md:code   "GE"
 >                        ] .
