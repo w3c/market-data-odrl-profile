@@ -7,29 +7,29 @@ The interpretation presented below is a work in progess. It's presented solely a
 >The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-model/>, and here: <https://www.w3.org/TR/odrl-vocab/>
 >```
 
-1. [License](#license)
-   * [License Documentation](#license-documentation)
-2. [Actions](#actions)
-   * [Allowed Actions](#allowed-actions)
-   * [Disallowed Actions](#disallowed-actions)
+1. [License](#1-license)
+   1.1 [License Documentation](#1.1-license-documentation)
+2. [Actions](#2-actions)
+   2.1 [Allowed Actions](#2.1-allowed-actions)
+   2.2 [Disallowed Actions](#2.2-disallowed-actions)
 3. [Assets](#assets)
    * [Resources](#resources)
    * [Timeliness of Delivery](#timeliness-of-delivery)
 4. [Policies and Permissions I](#policies-and-permissions-i)
 5. [General Obligations](#general-obligations)
-6. [Policy Update](#policy-update)
+   * [Audits](#audits)
    * [Controls](#controls)
 6. [Policy Update](#policy-update)
 7. [Specific Duties](#specific-duties)
    * [Attribute](#attribute)
    * [Report](#report)
    * [Pay](#pay)
-7. [Permissions Update](#permissions-update)
+8. [Permissions Update](#permissions-update)
 
-## License
+## 1. License
 The CME Category A License: Automated Trading Usage Category.
 
-### License Documentation
+### 1.1 License Documentation
 We need five documents from the CME to understand this license:
 * The overarching guide to the documentation: <https://www.cmegroup.com/market-data/files/information-license-agreement-ila-guide.pdf>
 * The majority of the terms of the license are available in the Information License Agreement: <https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-sample.pdf>
@@ -37,8 +37,8 @@ We need five documents from the CME to understand this license:
 * The fee schedule: <https://www.cmegroup.com/content/dam/cmegroup/files/download/cme-market-data-fee-list-apr-2020.pdf>
 * Reporting requirements: <https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-schedule-3-sample.pdf>
 
-## Actions
-### Allowed Actions
+## 2. Actions
+### 2.1 Allowed Actions
 The key actions the consumer can take are  specified in [Schedule 4](https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-schedule-4-sample.pdf). We’re after Category A: Automated Trading Usage. 
 
 Three usage rights are defined: trading as a principle on a CME Group exchange; trading for clients on a CME Group exchange; or doing either of these on another exchange. If we were being literal, we would define four actions here:
@@ -76,7 +76,7 @@ The base license (aka the [Information License Agreement](https://www.cmegroup.c
 >```
 >What does this mean? It's a permission to use the output of the derivation so long as the recipient of the data is internal. 
 
-### Disallowed Actions
+### 2.2 Disallowed Actions
 The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-sample.pdf) is clear that the licensee cannot **distribute** or **grant use** of CME's data. In addition, [Schedule 4](https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-schedule-4-sample.pdf) makes it clear that this license offers only **non-display use**, which precludes **displaying** the data.
 
 >We can model this with a prohibition. Let's give it the identifier :PR1.
