@@ -3,7 +3,7 @@
 The interpretation presented below is a work in progess. It's presented solely as an exploration of automated rights management, and intended to provoke debate.
 
 
-`Code` uses the turtle syntax defined here: <https://www.w3.org/TR/turtle/>
+`Code` uses the turtle syntax defined here: <https://www.w3.org/TR/turtle/>. Hopefully though you can usefully read the document without reading the code.
 
 The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-model/> and here: <https://www.w3.org/TR/odrl-vocab/>
 
@@ -59,7 +59,7 @@ Equally we could roll up (aka superclass) trading as a principle and trading for
 >:P1    rdf:type        odrl:Permission .
 >:P1    odrl:action     md:AutomatedTrading .
 >```
->What does this mean? Just that :P1 is a permission that allows actions that are of the type md:AutomatedTrading.
+>What does this mean? Just that :P1 is a permission that allows actions that are of the type automated trading.
 
 The base license (aka the [Information License Agreement](https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-sample.pdf)) allows an additional usage right: to create limited derivative works solely for internal business purposes. This is clearly a **derive** action where the **use** of the output of the derivation is contrained to **recipients** who are **internal** to the licencee .
 
@@ -115,7 +115,7 @@ The Eurodollar Futures Contract is our underlying **resource**. There are a few 
 >:R1    md:contentNature  md:Dynamic .
 >```
 >NOTE: this would look a lot nicer, and be a lot safer, if we had globally unique identifiers for services and venues like we do for providers.
-> To support interoperability, we can also say that this resource is a dcat:DataSet and a  prov:Collection so:
+>To support interoperability, we can also say that this resource is a dcat:DataSet and a prov:Collection so:
 >```
 >:R1    rdf:type    dcat:DataSet ,  prov:Collection .
 >```
