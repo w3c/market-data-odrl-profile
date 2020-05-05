@@ -229,7 +229,7 @@ Each offer provides the two permissions we discussed above - the one that allows
 >:P4     odrl:target    :A2 , :A3 .
 >```
 
-We can do the same trick with the prohibitions, and then specify the two offers:
+We can do the same trick with the prohibitions, and then specify the two offers. In both cases, the entity making the rights assignment (the **assigner**) is the CME.
 
 >Let's call them :T1 and :T2
 >```
@@ -247,8 +247,10 @@ We can do the same trick with the prohibitions, and then specify the two offers:
 >```
 
 We're not done yet. CME's license also controls the use of the output of the derive action. It's use is constrained to internal use. The data cannot be distributed to third-parties under this license. (That requires a derived data license.) So we have another policy, :U1, that contains one permission, :P5, and one prohibition, :Pr3.
+
+We have a new type of policy here because we don't yet know who the rights holder in the derived data will be. We'll know that when the offers above are accepted and the assignee specified.
 >```
->:U1  rdf:type          odrl:Offer .
+>:U1  rdf:type          odrl:Set .
 >:U1  odrl:permission   :P5 .
 >:U1  odrl:prohibition  :Pr3 .
 >```
