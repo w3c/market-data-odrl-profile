@@ -309,7 +309,7 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >```
 >:D1  rdf:type    odrl:Duty .
 >:D1  nl:debtor   <https://permid.org/1-4295899615> . # CME
->:D1  odrl:action [  rdf:type     md:Notify ;
+>:D1  odrl:action [  rdf:type      md:Notify ;
 >                     md:scope     md:Audit ;
 >                     odrl:count   "1"^^xsd:int
 >                  ] .
@@ -318,12 +318,12 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >```
 >:O2    rdf:type            odrl:Duty .
 >:O2    nl:creditor         <https://permid.org/1-4295899615> . # CME
->:O2    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
+>:O2    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
 >                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
->:O2    odrl:action         [  rdf:type            md:Accept ;
+>:O2    odrl:action         [  rdf:type             md:Accept ;
 >                               md:scope            md:Audit ;
->                               odrl:count      "1"^^xsd:int
+>                               odrl:count          "1"^^xsd:int
 >                            ] .
 >:O2    odrl:duty           :D2 .
 >```
@@ -383,8 +383,8 @@ The reporting duty is a tiny bit more complicated. We need to provide a count of
 >                               time:hasXSDDuration "P1M"^^xsd:duration 
 >                            ] .
 >:D4    odrl:action         [  rdf:type            md:Report ; 
->                               md:scope            [  rdf:type     md:Usage ] ;
->                               odrl:unitOfCount    [  rdf:type     md:Application ] ;
+>                               md:scope            md:Usage ;
+>                               odrl:unitOfCount    md:Application ;
 >                               odrl:count          "1"^^xsd:int
 >                            ] .
 >```
