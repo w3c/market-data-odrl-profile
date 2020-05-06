@@ -257,7 +257,7 @@ We have a new type of policy here because we don't yet know who the rights holde
 >The permission :P5 allows the **use** action, but limits it to **internal** recipients:
 >```
 >:P5  rdf:type          odrl:Permission .
->:P5  odrl:action       [  rdf:type         md:use ; 
+>:P5  odrl:action       [  rdf:type        md:use ; 
 >                           odrl:recipient  md:Internal
 >                        ] .
 >```
@@ -292,14 +292,14 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >```
 >:O1    rdf:type            odrl:Duty .
 >:O1    nl:creditor         <https://permid.org/1-4295899615> . # CME
->:O1    nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
+>:O1    nl:hasDeadlineDelta [  rdf:type            time:ProperInterval ;
 >                               md:timeReference    time:Instant , md:TimeOfNotification ;
 >                               time:hasXSDDuration "P30D"^^xsd:duration
 >                            ] .
->:O1    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
+>:O1    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
 >                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
->:O1    odrl:action         [  rdf:type             md:Accept ;
+>:O1    odrl:action         [  rdf:type            md:Accept ;
 >                               md:scope            md:Audit ;
 >                               odrl:count          "1"^^xsd:int
 >                            ] .
@@ -309,7 +309,7 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >```
 >:D1  rdf:type    odrl:Duty .
 >:D1  nl:debtor   <https://permid.org/1-4295899615> . # CME
->:D1  odrl:action [  rdf:type      md:Notify ;
+>:D1  odrl:action [  rdf:type     md:Notify ;
 >                      md:scope    md:Audit ;
 >                      odrl:count  "1"^^xsd:int
 >                  ] .
@@ -319,11 +319,11 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:O2    rdf:type            odrl:Duty .
 >:O2    nl:creditor         <https://permid.org/1-4295899615> . # CME
 >:O2    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
->                               time:hasXSDDuration "P1Y"^^xsd:duration 
+>                               time:hasXSDDuration  "P1Y"^^xsd:duration 
 >                            ] .
 >:O2    odrl:action         [  rdf:type             md:Accept ;
->                               md:scope            md:Audit ;
->                               odrl:count          "1"^^xsd:int
+>                               md:scope             md:Audit ;
+>                               odrl:count           "1"^^xsd:int
 >                            ] .
 >:O2    odrl:duty           :D2 .
 >```
@@ -332,8 +332,8 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:D2  rdf:type      odrl:Duty .
 >:D2  nl:debtor     <https://permid.org/1-4295899615> . # CME
 >:D2  odrl:action   [  rdf:type     md:Report ; 
->                       md:scope    md:ReasonableSuspicion ;
->                       odrl:count  "1"^^xsd:int
+>                       md:scope     md:ReasonableSuspicion ;
+>                       odrl:count   "1"^^xsd:int
 >                    ] .
 >```
 
@@ -345,7 +345,7 @@ CME expects its licensee's to maintain auditable **evidence** of the operation o
 >:O3  rdf:type      odrl:Duty .
 >:O3  nl:creditor   <https://permid.org/1-4295899615> . # CME
 >:O3  odrl:action   [  rdf:type     md:Evidence ; 
->                       md:scope    md:Controls ;
+>                       md:scope     md:Controls ;
 >                    ] .
 >```
 >Notice that we don't use a count property. The licensee must keep continuous evidence of the controls used to protect CME's data.
@@ -365,7 +365,7 @@ Here the action is to attribute (ownership) using the attribution provided:
 >```
 >:D3    rdf:type        odrl:Duty .
 >:D3    nl:creditor     <https://permid.org/1-4295899615> . # CME
->:D3    odrl:action     [  rdf:type         odrl:Attribute ;
+>:D3    odrl:action     [  rdf:type        odrl:Attribute ;
 >                            md:scope       md:Ownership ;
 >                            md:attribution "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
 >                        ]  .
@@ -376,13 +376,13 @@ The reporting duty is a tiny bit more complicated. We need to provide a count of
 >```
 >:D4    rdf:type            odrl:Duty .
 >:D4    nl:creditor         <https://permid.org/1-4295899615> . # CME
->:D4    nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
+>:D4    nl:hasDeadlineDelta [  rdf:type            time:ProperInterval ;
 >                               time:hasXSDDuration "P1M"^^xsd:duration
 >                            ] .
->:D4    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
+>:D4    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
 >                               time:hasXSDDuration "P1M"^^xsd:duration 
 >                            ] .
->:D4    odrl:action         [  rdf:type            md:Report ; 
+>:D4    odrl:action         [  rdf:type           md:Report ; 
 >                               md:scope           md:Usage ;
 >                               odrl:unitOfCount   md:Application ;
 >                               odrl:count         "1"^^xsd:int
@@ -395,7 +395,7 @@ The payment duty has a similar structure, though now the deadline delta is defin
 >:D5  rdf:type        odrl:Duty ;
 >:D5  nl:debtor       <https://permid.org/1-4295899615> ; # CME
 >:D5  odrl:action     [  rdf:type     md:Invoice ; 
->                         odrl:count  "1"^^xsd:int
+>                         odrl:count   "1"^^xsd:int
 >                      ] .
 >```
 >Now we can write the full payment duty:
@@ -403,17 +403,17 @@ The payment duty has a similar structure, though now the deadline delta is defin
 >:D6  rdf:type            odrl:Duty ;
 >:D6  nl:creditor         <https://permid.org/1-4295899615> ; # CME
 >:D6  nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
->                             md:timeReference    time:Instant , md:TimeOfInvoicing  ;
->                             time:hasXSDDuration "P1M"^^xsd:duration
+>                             md:timeReference     time:Instant , md:TimeOfInvoicing  ;
+>                             time:hasXSDDuration  "P1M"^^xsd:duration
 >                          ] ;
 >:D6  odrl:timeInterval   [  rdf:type              time:ProperInterval ;
->                             time:hasXSDDuration  "P1M"^^xsd:duration 
+>                             time:hasXSDDuration   "P1M"^^xsd:duration 
 >                          ] ;
 >:D6    odrl:action       [  rdf:type              odrl:Compensate ;
->                             odrl:unitOfCount     md:Application ;
->                             odrl:payAmount       "1150.00"^^xsd:float ;
->                             odrl:unit            <https://www.wikidata.org/wiki/Q4917> ; # US dollar
->                             odrl:count           "1"^^xsd:int
+>                             odrl:unitOfCount      md:Application ;
+>                             odrl:payAmount        "1150.00"^^xsd:float ;
+>                             odrl:unit             <https://www.wikidata.org/wiki/Q4917> ; # US dollar
+>                             odrl:count            "1"^^xsd:int
 >                          ] ;
 >:D6  odrl:duty           :D5 .
 >```
