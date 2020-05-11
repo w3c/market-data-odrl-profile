@@ -26,8 +26,8 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 ### Agenda
 
 1. Admin
-    1. Minutes of last meeting
-    1. Confirmation of Charter
+    1. Minutes of [last meeting](https://www.w3.org/2020/04/29-md-odrl-profile-minutes.html)
+    1. Confirmation of [Charter](https://w3c.github.io/market-data-odrl-profile/CGCharter.html)
     1. Addition of co-Editor - Mark Bird, DataDB
 2. Work to Date
 3. AOB
