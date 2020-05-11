@@ -3,7 +3,7 @@
 The interpretation presented below is a work in progess. It's presented solely as an exploration of automated rights management, and intended to provoke debate.
 
 
-`Code` uses the turtle syntax defined here: <https://www.w3.org/TR/turtle/>
+`Code` uses the turtle syntax defined here: <https://www.w3.org/TR/turtle/>. Hopefully though you can usefully read the document without reading the code.
 
 The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-model/> and here: <https://www.w3.org/TR/odrl-vocab/>
 
@@ -59,7 +59,7 @@ Equally we could roll up (aka superclass) trading as a principle and trading for
 >:P1    rdf:type        odrl:Permission .
 >:P1    odrl:action     md:AutomatedTrading .
 >```
->What does this mean? Just that :P1 is a permission that allows actions that are of the type md:AutomatedTrading.
+>What does this mean? Just that :P1 is a permission that allows actions that are of the type automated trading.
 
 The base license (aka the [Information License Agreement](https://www.cmegroup.com/content/dam/cmegroup/files/download/information-license-agreement-sample.pdf)) allows an additional usage right: to create limited derivative works solely for internal business purposes. This is clearly a **derive** action where the **use** of the output of the derivation is contrained to **recipients** who are **internal** to the licencee .
 
@@ -115,7 +115,7 @@ The Eurodollar Futures Contract is our underlying **resource**. There are a few 
 >:R1    md:contentNature  md:Dynamic .
 >```
 >NOTE: this would look a lot nicer, and be a lot safer, if we had globally unique identifiers for services and venues like we do for providers.
-> To support interoperability, we can also say that this resource is a dcat:DataSet and a  prov:Collection so:
+>To support interoperability, we can also say that this resource is a dcat:DataSet and a prov:Collection so:
 >```
 >:R1    rdf:type    dcat:DataSet ,  prov:Collection .
 >```
@@ -229,7 +229,7 @@ Each offer provides the two permissions we discussed above - the one that allows
 >:P4     odrl:target    :A2 , :A3 .
 >```
 
-We can do the same trick with the prohibitions, and then specify the two offers:
+We can do the same trick with the prohibitions, and then specify the two offers. In both cases, the entity making the rights assignment (the **assigner**) is the CME.
 
 >Let's call them :T1 and :T2
 >```
@@ -247,16 +247,18 @@ We can do the same trick with the prohibitions, and then specify the two offers:
 >```
 
 We're not done yet. CME's license also controls the use of the output of the derive action. It's use is constrained to internal use. The data cannot be distributed to third-parties under this license. (That requires a derived data license.) So we have another policy, :U1, that contains one permission, :P5, and one prohibition, :Pr3.
+
+We have a new type of policy here because we don't yet know who the rights holder in the derived data will be. We'll know that when the offers above are accepted and the assignee specified.
 >```
->:U1  rdf:type          odrl:Offer .
+>:U1  rdf:type          odrl:Set .
 >:U1  odrl:permission   :P5 .
 >:U1  odrl:prohibition  :Pr3 .
 >```
 >The permission :P5 allows the **use** action, but limits it to **internal** recipients:
 >```
 >:P5  rdf:type          odrl:Permission .
->:P5  odrl:action       [  rdf:type         md:use ; 
->                          odrl:recipient   md:Internal
+>:P5  odrl:action       [  rdf:type        md:use ; 
+>                           odrl:recipient  md:Internal
 >                        ] .
 >```
 >The prohibition :Pr3 explicilty forbids **distribution** of the derivation:
@@ -290,14 +292,14 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >```
 >:O1    rdf:type            odrl:Duty .
 >:O1    nl:creditor         <https://permid.org/1-4295899615> . # CME
->:O1    nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
+>:O1    nl:hasDeadlineDelta [  rdf:type            time:ProperInterval ;
 >                               md:timeReference    time:Instant , md:TimeOfNotification ;
 >                               time:hasXSDDuration "P30D"^^xsd:duration
 >                            ] .
->:O1    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
+>:O1    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
 >                               time:hasXSDDuration "P1Y"^^xsd:duration 
 >                            ] .
->:O1    odrl:action         [  rdf:type             md:Accept ;
+>:O1    odrl:action         [  rdf:type            md:Accept ;
 >                               md:scope            md:Audit ;
 >                               odrl:count          "1"^^xsd:int
 >                            ] .
@@ -308,20 +310,20 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >:D1  rdf:type    odrl:Duty .
 >:D1  nl:debtor   <https://permid.org/1-4295899615> . # CME
 >:D1  odrl:action [  rdf:type     md:Notify ;
->                     md:scope     md:Audit ;
->                     odrl:count   "1"^^xsd:int
+>                      md:scope    md:Audit ;
+>                      odrl:count  "1"^^xsd:int
 >                  ] .
 >```
 > The second mechanism is similar, but there is no notice period, and the CME has a duty to **report** reasonable suspicion. Let's call the duties :O2 and :D2 respectively.
 >```
 >:O2    rdf:type            odrl:Duty .
 >:O2    nl:creditor         <https://permid.org/1-4295899615> . # CME
->:O2    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
->                               time:hasXSDDuration "P1Y"^^xsd:duration 
+>:O2    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
+>                               time:hasXSDDuration  "P1Y"^^xsd:duration 
 >                            ] .
->:O2    odrl:action         [  rdf:type            md:Accept ;
->                               md:scope            md:Audit ;
->                               odrl:count      "1"^^xsd:int
+>:O2    odrl:action         [  rdf:type             md:Accept ;
+>                               md:scope             md:Audit ;
+>                               odrl:count           "1"^^xsd:int
 >                            ] .
 >:O2    odrl:duty           :D2 .
 >```
@@ -329,9 +331,9 @@ The [Information License Agreement](https://www.cmegroup.com/content/dam/cmegrou
 >```
 >:D2  rdf:type      odrl:Duty .
 >:D2  nl:debtor     <https://permid.org/1-4295899615> . # CME
->:D2  odrl:action   [  rdf:type    md:Report ; 
->                       md:scope    md:ReasonableSuspicion ;
->                       odrl:count  "1"^^xsd:int
+>:D2  odrl:action   [  rdf:type     md:Report ; 
+>                       md:scope     md:ReasonableSuspicion ;
+>                       odrl:count   "1"^^xsd:int
 >                    ] .
 >```
 
@@ -343,7 +345,7 @@ CME expects its licensee's to maintain auditable **evidence** of the operation o
 >:O3  rdf:type      odrl:Duty .
 >:O3  nl:creditor   <https://permid.org/1-4295899615> . # CME
 >:O3  odrl:action   [  rdf:type     md:Evidence ; 
->                       md:scope    md:Controls ;
+>                       md:scope     md:Controls ;
 >                    ] .
 >```
 >Notice that we don't use a count property. The licensee must keep continuous evidence of the controls used to protect CME's data.
@@ -364,8 +366,8 @@ Here the action is to attribute (ownership) using the attribution provided:
 >:D3    rdf:type        odrl:Duty .
 >:D3    nl:creditor     <https://permid.org/1-4295899615> . # CME
 >:D3    odrl:action     [  rdf:type        odrl:Attribute ;
->                           md:scope        md:Ownership ;
->                           md:attribution  "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
+>                            md:scope       md:Ownership ;
+>                            md:attribution "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
 >                        ]  .
 >```
 
@@ -380,10 +382,10 @@ The reporting duty is a tiny bit more complicated. We need to provide a count of
 >:D4    odrl:timeInterval   [  rdf:type            time:ProperInterval ;
 >                               time:hasXSDDuration "P1M"^^xsd:duration 
 >                            ] .
->:D4    odrl:action         [  rdf:type            md:Report ; 
->                               md:scope            [  rdf:type     md:Usage ] ;
->                               odrl:unitOfCount    [  rdf:type     md:Application ] ;
->                               odrl:count          "1"^^xsd:int
+>:D4    odrl:action         [  rdf:type           md:Report ; 
+>                               md:scope           md:Usage ;
+>                               odrl:unitOfCount   md:Application ;
+>                               odrl:count         "1"^^xsd:int
 >                            ] .
 >```
 
@@ -400,18 +402,18 @@ The payment duty has a similar structure, though now the deadline delta is defin
 >```
 >:D6  rdf:type            odrl:Duty ;
 >:D6  nl:creditor         <https://permid.org/1-4295899615> ; # CME
->:D6  nl:hasDeadlineDelta [  rdf:type           time:ProperInterval ;
->                             md:timeReference   time:Instant , md:TimeOfInvoicing  ;
->                             time:hasXSDDuration "P1M"^^xsd:duration
+>:D6  nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
+>                             md:timeReference     time:Instant , md:TimeOfInvoicing  ;
+>                             time:hasXSDDuration  "P1M"^^xsd:duration
 >                          ] ;
->:D6  odrl:timeInterval   [  rdf:type             time:ProperInterval ;
->                             time:hasXSDDuration  "P1M"^^xsd:duration 
+>:D6  odrl:timeInterval   [  rdf:type              time:ProperInterval ;
+>                             time:hasXSDDuration   "P1M"^^xsd:duration 
 >                          ] ;
->:D6    odrl:action       [  rdf:type           odrl:Compensate ;
->                             odrl:unitOfCount   md:Application ;
->                             odrl:payAmount     "1150.00"^^xsd:float ;
->                             odrl:unit          <https://www.wikidata.org/wiki/Q4917> ; # US dollar
->                             odrl:count         "1"^^xsd:int
+>:D6    odrl:action       [  rdf:type              odrl:Compensate ;
+>                             odrl:unitOfCount      md:Application ;
+>                             odrl:payAmount        "1150.00"^^xsd:float ;
+>                             odrl:unit             <https://www.wikidata.org/wiki/Q4917> ; # US dollar
+>                             odrl:count            "1"^^xsd:int
 >                          ] ;
 >:D6  odrl:duty           :D5 .
 >```
