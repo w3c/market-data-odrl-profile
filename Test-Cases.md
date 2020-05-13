@@ -7,7 +7,7 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
 
 #### RoD-1
-Can I send a small amount of data to a client, in support of a transaction, on a one-off basis? 
+Can I send a small amount of data to a client, in support of a transaction, on a one-off basis?<br>
 *(Submitted by Michelle Roberts)*
 
 #### RoD-2
