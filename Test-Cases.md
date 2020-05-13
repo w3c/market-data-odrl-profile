@@ -8,7 +8,6 @@ Sending data externally (attributes vary across all vendors and/or may require a
 
 #### RoD-1
 Can I send a small amount of data to a client, in support of a transaction, on a one-off basis? 
-
 *(Submitted by Michelle Roberts)*
 
 #### RoD-2
