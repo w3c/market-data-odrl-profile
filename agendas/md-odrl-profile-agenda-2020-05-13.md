@@ -30,6 +30,10 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
     1. Confirmation of [Charter](https://w3c.github.io/market-data-odrl-profile/CGCharter.html)
     1. Addition of co-Editor - Mark Bird, DataDB
 2. Work to Date
+    1. Test cases
+    1. Non-Display use
+    1. Identifying resources
+    1. Definitions (todo)
 3. AOB
 
 ### Materials
