@@ -59,9 +59,34 @@ But this permission comes in several versions (and price points) depending on wh
 >:P1    rdf:type        odrl:Permission .
 >:P1    dc:desciption   "Platform trading"^^xsd:string ;
 >:P1    odrl:action     [  rdf:type       md:TradeAutomatically ;
->                          md:actionScope	md:Platform 
->                       ]  .
->```
+>                           md:actionScope md:Platform 
+>                        ]  .
+>
+>:P2    rdf:type        odrl:Permission .
+>:P2    dc:desciption   "Automated trading as both a principle and a broker"^^xsd:string ;
+>:P2    odrl:action     [  rdf:type       md:TradeAutomatically ;
+>                           md:actionScope md:Principle , md:Brokerage 
+>                        ]  .
+>
+>:P3    rdf:type        odrl:Permission .
+>:P3    dc:desciption   "Automated trading as a principle"^^xsd:string ;
+>:P3    odrl:action     [  rdf:type       md:TradeAutomatically ;
+>                           md:actionScope md:Principle 
+>                        ]  .
+>
+>:P4    rdf:type        odrl:Permission .
+>:P4    dc:desciption   "Automated trading as a broker"^^xsd:string ;
+>:P4    odrl:action     [  rdf:type       md:TradeAutomatically ;
+>                           md:actionScope md:Brokerage 
+>                        ]  .
+>
+>:P5    rdf:type        odrl:Permission .
+>:P5    dc:desciption   "Automated trading as a principle"^^xsd:string ;
+>:P5    odrl:action     [  rdf:type       md:TradeAutomatically ;
+>                           md:actionScope md:Principle 
+>                        ]  .
+>:P5    md:controls     md:Closed , md:Deployed .
+>```  
 ### Allowed Actions
 
 ### Disallowed Actions
