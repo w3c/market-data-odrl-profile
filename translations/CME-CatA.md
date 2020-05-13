@@ -1,4 +1,4 @@
-# Translation One
+# Translation One: CME Category A License
 
 The interpretation presented below is a work in progess. It's presented solely as an exploration of automated rights management, and intended to provoke debate.
 
