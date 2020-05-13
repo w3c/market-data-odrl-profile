@@ -1,7 +1,7 @@
 # Test Cases
 One of the key objectives of the Rights Automation for Market Data Community Group is to provide a standard, machine readable description of market data licenses so that applications can decide, on the basis of those descriptions, whether a usage is allowed or not.
 
-The test cases listed here are the kinds of questions asked day-in, day-out of market data professionals. They are also our way of measuring progress towards that objective. Can we automate the answers?
+The test cases listed here are the kinds of questions asked day-in, day-out of market data professionals. They are also our way of measuring progress towards that objective. Can we turn these questions into queries? Do we get the right answers?
 
 ## Redistribution of Data
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
