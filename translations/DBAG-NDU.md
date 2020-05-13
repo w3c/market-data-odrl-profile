@@ -38,6 +38,30 @@ We need several documents from DBAG to understand this license:
 
 ## Actions
 
+The DBAG Non-dispay use license is wide-ranging. It covers automated trading; index calcualtions; and other non-display uses.
+
+What is non-display use? Historically, it was introduced when data started being routed to machines to act on, rather than people. There's a limit to how much data a human can process. This is not so for a machine. So non-display use was split out and priced accordingly.
+
+Now machine use has proliferated, with some uses being more high-value than others. Non-display use try to make sense of this.
+
+So we have lots of different actions available at different prices.
+
+The first one is automated trading. So, at it's simplest, we have a permission that offers automated trading:
+
+>```
+>:P1    rdf:type        odrl:Permission .
+>:P1    odrl:action     md:AutomatedTrading .
+>```
+
+But this permission comes in several versions (and price points) depending on whether it is exercised by a trading platform, a principle (trading on their own account), a broker, or a principle using a managed environment. So we need to scope the action and generate several more permissions.
+
+>```
+>:P1    rdf:type        odrl:Permission .
+>:P1    dc:desciption   "Platform trading"^^xsd:string ;
+>:P1    odrl:action     [  rdf:type       md:TradeAutomatically ;
+>                          md:actionScope	md:Platform 
+>                       ]  .
+>```
 ### Allowed Actions
 
 ### Disallowed Actions
