@@ -96,8 +96,7 @@ But this permission comes in several versions (and price points) depending on wh
 >                        ]  .
 >:P5    md:controls     md:Closed , md:Deployed .
 >```
-
-Note that this final permission has an additional constraint because it only covers automated trading in managed evironments: the **controls** over data access must be **closed** (allowing acess to only named users) and **deployed** by the vendor of the data.
+> Note that this final permission has an additional constraint because it only covers automated trading in managed evironments: the **controls** over data access must be **closed** (allowing acess to only named users) and **deployed** by the vendor of the data.
 
 Now the automated trading permissions also come bundled with a permission to calculate indices, so long as these index calculations are used only to support the automated trading and are not distributed externally.
 
