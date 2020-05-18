@@ -128,8 +128,8 @@ Finally, there is a permission that covers many of the traditional aspects of no
 >:P9    a               odrl:Permission .
 >:P9    dc:desciption   "Non-display use excluding automated trading and index calculations"^^xsd:string .
 >:P9    odrl:action     [  rdf:type       md:NonDisplayUse ;
->                          md:derivation  md:Irreversable , md:Non-Substitutive 
->                       ] .
+>                           md:derivation  md:Irreversable , md:Non-Substitutive 
+>                        ] .
 >```
 
 ### Disallowed Actions
@@ -137,10 +137,10 @@ Much of the power of this license is in what you *can't do*. Here we'll just spe
 
 You can't display the data, distribute it externally, or use it to price **contracts-for-difference**.
 >```
->:Pr1   a               odrl:Prohibition ;
->       dc:desciption   "No dispay, distribution, or pricing of contracts-for-difference"^^xsd:string ;
->       odrl:action     odrl:Display , odrl:Distribute ,    [  rdf:type       md:Price ;
->                                                               md:assetClass    md:ContractForDifference
+>:Pr1   a               odrl:Prohibition .
+>:Pr1   dc:desciption   "No dispay, distribution, or pricing of contracts-for-difference"^^xsd:string .
+>:Pr1   odrl:action     odrl:Display , odrl:Distribute ,    [  rdf:type       md:Price ;
+>                                                               md:assetClass  md:ContractForDifference
 >                                                            ] .
 >```
 
