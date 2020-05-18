@@ -38,13 +38,15 @@ We need several documents from DBAG to understand this license:
 
 ## Actions
 
+### Allowed Actions
+
 The DBAG Non-dispay use license is wide-ranging. It covers automated trading; index calcualtions; and other non-display uses.
 
 What is non-display use? Historically, it was introduced when data started being routed to machines to act on, rather than people. There's a limit to how much data a human can process. This is not so for a machine. So non-display use was split out and priced accordingly.
 
 Now machine use has proliferated, with some uses being more high-value than others. Non-display use try to make sense of this.
 
-So we have lots of different actions available at different prices.
+So we have lots of different actions available at different prices. We best read the [guidance note](https://www.mds.deutsche-boerse.com/resource/blob/1334848/d0f90031dcf62a50d8d31812304c9392/data/Guidance-Note-for-customers.pdf), so:
 
 The first one is automated trading. So, at it's simplest, we have a permission that offers automated trading:
 
@@ -98,12 +100,22 @@ But this permission comes in several versions (and price points) depending on wh
 >```
 > Note that this final permission has an additional constraint because it only covers automated trading in managed evironments: the **controls** over data access must be **closed** (allowing acess to only named users) and **deployed** by the vendor of the data.
 
-Now the automated trading permissions also come bundled with a permission to calculate indices, so long as these index calculations are used only to support the automated trading and are not distributed externally.
+Now the automated trading permissions also come bundled with a permission to calculate indices, so long as these index calculations are used only to support the automated trading and are not distributed externally. We'll deal with these restrictions on the use of the index calculation later, but the permission to do the calculations is so:
+>```
+>:P6    a               odrl:Permission .
+>:P6    dc:desciption   "Index calculations for automated trading"^^xsd:string .
+>:P6    odrl:action     [  rdf:type       md:CalculateIndex ] .
+>```
 
+There is a separate permission to calcluate indices that comes without the restictions above. Again, we'll deal with what can be done with the output of these calculations later, but as it includes external distribution, there is a constraint on the calculation itself: it's results must be irreversable and non-substitutive - there's no way back to the original data.
+>```
+>:P7    a               odrl:Permission .
+>:P7    dc:desciption   "Index calculations for automated trading"^^xsd:string .
+>:P7    odrl:action     [  rdf:type       md:CalculateIndex ;
+>                           md:derivation  md:Irreversable , md:Non-Substitutive
+>                        ] .
+>```
 
-
-
-### Allowed Actions
 
 ### Disallowed Actions
 
