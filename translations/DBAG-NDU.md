@@ -133,6 +133,16 @@ Finally, there is a permission that covers many of the traditional aspects of no
 >```
 
 ### Disallowed Actions
+Much of the power of this license is in what you *can't do*. Here we'll just specify what you can't do with the data received from DBAG. We'll cover what can, and can't, be done with the *output* of any derivation (or index calculation) later.
+
+You can't display the data, distribute it externally, or use it to price **contracts-for-difference**.
+>```
+:Pr1    a               odrl:Prohibition ;
+        dc:desciption   "No dispay, distribution, or pricing of contracts-for-difference"^^xsd:string ;
+        odrl:action     odrl:Display , odrl:Distribute ,    [  rdf:type       md:Price ;
+                                                                md:assetClass    md:ContractForDifference
+                                                             ] .
+>```
 
 ## Assets
 
