@@ -55,33 +55,42 @@ The first one is automated trading. So, at it's simplest, we have a permission t
 
 But this permission comes in several versions (and price points) depending on whether it is exercised by a trading platform, a principle (trading on their own account), a broker, or a principle using a managed environment. So we need to scope the action and generate several more permissions.
 
+> For trading platforms:
 >```
 >:P1    rdf:type        odrl:Permission .
 >:P1    dc:desciption   "Platform trading"^^xsd:string ;
 >:P1    odrl:action     [  rdf:type       md:TradeAutomatically ;
 >                           md:actionScope md:Platform 
 >                        ]  .
->
+>```
+> For trading as both a principal and a broker
+>```
 >:P2    rdf:type        odrl:Permission .
 >:P2    dc:desciption   "Automated trading as both a principle and a broker"^^xsd:string ;
 >:P2    odrl:action     [  rdf:type       md:TradeAutomatically ;
 >                           md:actionScope md:Principle , md:Brokerage 
 >                        ]  .
->
+>```
+> For trading as only a principle
+>```
 >:P3    rdf:type        odrl:Permission .
 >:P3    dc:desciption   "Automated trading as a principle"^^xsd:string ;
 >:P3    odrl:action     [  rdf:type       md:TradeAutomatically ;
 >                           md:actionScope md:Principle 
 >                        ]  .
->
+>```
+> For trading as only a broker
+>```
 >:P4    rdf:type        odrl:Permission .
 >:P4    dc:desciption   "Automated trading as a broker"^^xsd:string ;
 >:P4    odrl:action     [  rdf:type       md:TradeAutomatically ;
 >                           md:actionScope md:Brokerage 
 >                        ]  .
->
+>```
+> For trading as a principle in a managed environment
+>```
 >:P5    rdf:type        odrl:Permission .
->:P5    dc:desciption   "Automated trading as a principle"^^xsd:string ;
+>:P5    dc:desciption   "Automated trading as a principle in a managed environment"^^xsd:string ;
 >:P5    odrl:action     [  rdf:type       md:TradeAutomatically ;
 >                           md:actionScope md:Principle 
 >                        ]  .
