@@ -65,7 +65,7 @@ But this permission comes in several versions (and price points) depending on wh
 >                           md:actionScope md:Platform 
 >                        ]  .
 >```
-> For trading as both a principal and a broker
+> For trading as both a principal and a broker:
 >```
 >:P2    rdf:type        odrl:Permission .
 >:P2    dc:desciption   "Automated trading as both a principle and a broker"^^xsd:string ;
@@ -73,7 +73,7 @@ But this permission comes in several versions (and price points) depending on wh
 >                           md:actionScope md:Principle , md:Brokerage 
 >                        ]  .
 >```
-> For trading as only a principle
+> For trading as only a principle:
 >```
 >:P3    rdf:type        odrl:Permission .
 >:P3    dc:desciption   "Automated trading as a principle"^^xsd:string ;
@@ -81,7 +81,7 @@ But this permission comes in several versions (and price points) depending on wh
 >                           md:actionScope md:Principle 
 >                        ]  .
 >```
-> For trading as only a broker
+> For trading as only a broker:
 >```
 >:P4    rdf:type        odrl:Permission .
 >:P4    dc:desciption   "Automated trading as a broker"^^xsd:string ;
@@ -89,7 +89,7 @@ But this permission comes in several versions (and price points) depending on wh
 >                           md:actionScope md:Brokerage 
 >                        ]  .
 >```
-> For trading as a principle in a managed environment
+> For trading as a principle in a managed environment:
 >```
 >:P5    rdf:type        odrl:Permission .
 >:P5    dc:desciption   "Automated trading as a principle in a managed environment"^^xsd:string ;
