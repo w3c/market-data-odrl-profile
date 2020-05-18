@@ -137,11 +137,11 @@ Much of the power of this license is in what you *can't do*. Here we'll just spe
 
 You can't display the data, distribute it externally, or use it to price **contracts-for-difference**.
 >```
-:Pr1    a               odrl:Prohibition ;
-        dc:desciption   "No dispay, distribution, or pricing of contracts-for-difference"^^xsd:string ;
-        odrl:action     odrl:Display , odrl:Distribute ,    [  rdf:type       md:Price ;
-                                                                md:assetClass    md:ContractForDifference
-                                                             ] .
+>:Pr1   a               odrl:Prohibition ;
+>       dc:desciption   "No dispay, distribution, or pricing of contracts-for-difference"^^xsd:string ;
+>       odrl:action     odrl:Display , odrl:Distribute ,    [  rdf:type       md:Price ;
+>                                                               md:assetClass    md:ContractForDifference
+>                                                            ] .
 >```
 
 ## Assets
