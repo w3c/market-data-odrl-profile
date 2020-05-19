@@ -145,8 +145,23 @@ You can't display the data, distribute it externally, or use it to price **contr
 >```
 
 ## Assets
+We need the [fee schedule](https://www.mds.deutsche-boerse.com/resource/blob/1334780/60ddf0a87283cdc57ec8ab9ae88ca4cc/data/NonDisplay_Price_List_5_11.pdf) to see what assets this non-display license can control.
+
+I'm going to select one: Xetra Ultra - market data for German and international instruments traded on the Xetra and Frankfurt Stock Exchange.
+
+From the fee schedule, we can see that Xetra Ultra is just one of three views on the underlying resource: trading data from the Xetra exchange. Xetra Order by Order is lower latency and offers the full book, while Xetra Core is slower and offers less depth. When we describe the resource we want to ignore these distinctions and point to the 
 
 ### Resources
+We know a few things about this resource from the [product description](https://www.mds.deutsche-boerse.com/mds-en/data-services/real-time-market-data/spot-markets/Xetra-Ultra-1341016). It's provider is the Deutsche Boerse. It covers the following asset classes:
+* Stocks
+* Funds
+* Certificates and warrants
+* Bonds
+* Exchange traded funds, notes, and commodities (ETFs, ETNs, and ETCs) 
+
+We have an operating MIC for the Xetra exchange: "XETR". The market MIC is the same (though there may be others that are applicable).
+
+But we don't seem to have an identifier provided by the exchange itself.
 
 ### Timeliness of Delivery
 
