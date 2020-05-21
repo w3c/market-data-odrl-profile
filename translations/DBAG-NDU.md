@@ -158,8 +158,8 @@ But there are more: prohibitions that are specific to individual permissions. :P
 >                               odrl:action   md:CalculateIndex        
 >                            ] , 
 >                            [  rdf:type      odrl:Prohibition ;
->                                odrl:action   md:TradeAutomatically        
->                             ] ) .
+>                               odrl:action   md:TradeAutomatically        
+>                            ] ) .
 >```
 
 Now :P8 also excludes automated trading, but as the action it allows (index calculations) does explicitly exclude automated trading, our expression of this prohibition is, in some senses, a judgement call: does it perhaps aid expressivity (for humans) and/or does it allow us to test that the target rights management system can distinguish between calculating an index and trading automatically.
