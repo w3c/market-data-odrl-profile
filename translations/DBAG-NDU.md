@@ -209,11 +209,29 @@ But we don't seem to have an identifier provided by the exchange itself.
 I've left out any description of the asset classes covered until we have a standard way of describing them.
 
 ### Timeliness of Delivery
+At a product level, the Deutsche Borse distinguishes between the latency at which Xetra Order by Order, Xetra Ultra, and Xetra Core are delivered. But this is not explicitly defined. Perhaps it's captured in an SLA. The license only cares that the data is real-time, and that real-time data is delivered within 15 minutes from time of issue. So we'll just capture that in our definition of the Asset, which we'll call :A1:
 
+>```
+>:A1     rdf:type                   odrl:Asset .
+>:A1     md:resource                :R1 .
+>:AI     md:timelinessOfDelivery    [  rdf:type             time:ProperInterval , md:Realtime ;
+>                                       time:intervalEquals [  rdf:type    time:ProperInterval ;
+>                                                              md:timeReference  time:Instant , md:TimeOfIssue ;
+>                                                              time:hasXSDDuration "PT15M"^^xsd:duration
+>                                                           ]
+>                                    ] .
+>```
 
+### Order Book Depth
+The differences in book depth between the three products are explicity defined. For Xetra Ultra, it's up to ten. Let's use some common language to descibe the asset as Level 2, with a book depth that runs from 1 to ten.
 
+>```
+>:A1      md:depthOfMarket            [  rdf:type             md:Level2 ;
+>                                         md:positionFrom      1 ;
+>                                         md:positionTo        10 ;
+>                                      ]
+>```
 
-### Book Depth
 
 ## Policies and Permissions I
 
