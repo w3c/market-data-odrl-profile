@@ -308,6 +308,47 @@ Finally, a policy that covers the other non-display uses:
 >:O7    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 
+We're not finished yet. The non-display license also controls the use of outputs of any derivations allowed under these policies. 
+
+First, let's create a policy :O8 that controls the indices generated under the automated trading policies (:O1 to :O5). This offers a permission (say :P10) to trade automatically using these indices, and a prohibition (:Pr4) from distributing them. So:
+>```
+>:O8    rdf:type                      odrl:Set
+>:O8    dc:desciption                 "Indices for internal use in automated trading"^^xsd:string ;
+>:O8    odrl:permission               :P10 ;
+>:O8    odrl:prohibition              :Pr4 .
+>```
+> Where :P10 allows automated trading (so long as the recipients are internal):
+>```
+>:P10    rdf:type                     odrl:Permission .
+>:P10    dc:desciption                "Automated trading for internal recipients" ;
+>:P10    odrl:action                  [  rdf:type       md:TradeAutomatically ;
+>                                         odrl:recipient md:Internal 
+>                                      ]  .
+>```
+>```
+>And :Pr4 prohibits distribution of the indices:
+>:Pr4    a                            odrl:Prohibition .
+>:Pr4    dc:desciption                "No distribution allowed"^^xsd:string .
+>:Pr4    odrl:action                  odrl:Distribute .
+>```
+
+The indices generated under policy :O6 (index calculations for benchmarking and distribution) can be distributed. So let's create a new policy for these, :O9. We can drop the prohibtion, and create a new permission that allows benchmarking and distribution.
+>```
+>:O9    rdf:type                      odrl:Set
+>:O9    dc:desciption                 "Indices for benchmarking and distribution" ;
+>:O9    odrl:permission               :P11 .
+>```
+> Where :P11 allows benchmarking and distribution:
+>```
+>:P11    rdf:type                     odrl:Permission .
+>:P11    dc:desciption                "Indices for benchmarking and distribution" ;
+>:P11    odrl:action                  ( md:Benchmark , ordrl:Distribute )  .
+>```
+
+Finally policy :07 (other application usage) offers two permissions that involve derivations. Each needs to be handled separately, so we need to create two new policies.
+
+
+
 
 ## General Obligations
 
