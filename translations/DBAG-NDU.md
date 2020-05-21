@@ -325,8 +325,8 @@ First, let's create a policy :O8 that controls the indices generated under the a
 >                                         odrl:recipient md:Internal 
 >                                      ]  .
 >```
->```
 >And :Pr4 prohibits distribution of the indices:
+>```
 >:Pr4    a                            odrl:Prohibition .
 >:Pr4    dc:desciption                "No distribution allowed"^^xsd:string .
 >:Pr4    odrl:action                  odrl:Distribute .
