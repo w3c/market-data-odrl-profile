@@ -162,7 +162,9 @@ But there are more: prohibitions that are specific to individual permissions. :P
 >                            ] ) .
 >```
 
-Now :P8 also excludes automated trading, but as the action it allows (index calculations) does explicitly exclude automated trading, our expression of this prohibition is, in some senses, a judgement call: does it perhaps aid expressivity (for humans) and/or does it allow us to test that the target rights management system can distinguish between calculating an index and trading automatically.
+So, for the permission :P9, and only :P9, there are prohibitions on index calculations and trading automatically.
+
+Now :P8 also excludes automated trading. But as the action it allows (index calculations) does explicitly exclude automated trading, our expression of this prohibition is, in some senses, a judgement call: does it perhaps aid expressivity (for humans) and/or does it allow us to test that the target rights management system can distinguish between calculating an index and trading automatically? Either way, we don't lose any information by not expressing it explicitly.
 
 For brevity's sake, I'm going to leave it out.
 
@@ -213,6 +215,7 @@ At a product level, the Deutsche Borse distinguishes between the latency at whic
 
 >```
 >:A1     rdf:type                   odrl:Asset .
+>:A1     rdf:label                  "Xetra Ultra" .
 >:A1     md:resource                :R1 .
 >:AI     md:timelinessOfDelivery    [  rdf:type             time:ProperInterval , md:Realtime ;
 >                                       time:intervalEquals [  rdf:type    time:ProperInterval ;
@@ -229,11 +232,82 @@ The differences in book depth between the three products are explicity defined. 
 >:A1      md:depthOfMarket            [  rdf:type             md:Level2 ;
 >                                         md:positionFrom      1 ;
 >                                         md:positionTo        10 ;
->                                      ]
+>                                      ] .
 >```
 
-
 ## Policies and Permissions I
+All the permissions and prohibitions described above target the asset Xetra Ultra. We can update them so:
+>```
+>:P1    odrl:target                   :A1 .
+>:P2    odrl:target                   :A1 .
+>:P3    odrl:target                   :A1 .
+>:P4    odrl:target                   :A1 .
+>:P5    odrl:target                   :A1 .
+>:P6    odrl:target                   :A1 .
+>:P7    odrl:target                   :A1 .
+>:P8    odrl:target                   :A1 .
+>:P9    odrl:target                   :A1 .
+>:Pr1   odrl:target                   :A1 .
+>:Pr2   odrl:target                   :A1 .
+>:Pr3   odrl:target                   :A1 .
+>```
+
+By triangulating between the [guidance note](https://www.mds.deutsche-boerse.com/resource/blob/1334848/d0f90031dcf62a50d8d31812304c9392/data/Guidance-Note-for-customers.pdf) and the [fee schedule](https://www.mds.deutsche-boerse.com/resource/blob/1334780/60ddf0a87283cdc57ec8ab9ae88ca4cc/data/NonDisplay_Price_List_5_11.pdf), we can see how the permissions are packaged up into policies.
+
+Those offering automated trading are as follows.
+
+>The first of these allows trading at any scale, and index calculations to support it. Let's call it :O1
+>```
+>:O1    rdf:type                      odrl:Offer
+>:O1    dc:desciption                 "Automated trading for platforms"^^xsd:string ;
+>:O1    odrl:permission               :P1 , :P2 , :P3 , :P4 , :P5 , :P6 ;
+>:O1    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>```
+>The second is the same as the first, except that it does not offer platform trading:
+>```
+>:O2    rdf:type                      odrl:Offer
+>:O2    dc:desciption                 "Automated trading as both a principle and a broker"^^xsd:string ;
+>:O2    odrl:permission               :P2 , :P3 , :P4 , :P5 , :P6 ;
+>:O2    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>```
+>The third offers only trading as a principle:
+>```
+>:O3    rdf:type                      odrl:Offer
+>:O3    dc:desciption                 "Automated trading as a principle"^^xsd:string ;
+>:O3    odrl:permission               :P3 , :P5 , :P6 ;
+>:O3    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>```
+>The fourth offers trading as a broker (and as a principle if it occurs in a vendor-managed environment):
+>```
+>:O4    rdf:type                      odrl:Offer
+>:O4    dc:desciption                 "Automated trading as a broker"^^xsd:string ;
+>:O4    odrl:permission               :P4 , :P5 , :P6 ;
+>:O4    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>```
+>The fifth offers trading as principle in a vendor-managed environment:
+>```
+>:O5    rdf:type                      odrl:Offer
+>:O5    dc:desciption                 "Automated trading as principle in a managed environment"^^xsd:string ;
+>:O5    odrl:permission               :P5 , :P6 ;
+>:O5    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>```
+
+Then there is a policy that allows index calculation for benchmarking and distribution:
+>```
+>:O6    rdf:type                      odrl:Offer
+>:O6    dc:desciption                 "Index calculations for benchmarking and distribution"^^xsd:string ;
+>:O6    odrl:permission               :P7 ;
+>:O6    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>```
+
+Finally, a policy that covers the other non-display uses:
+>```
+>:O7    rdf:type                      odrl:Offer
+>:O7    dc:desciption                 "Other application usage"^^xsd:string ;
+>:O7    odrl:permission               :P8 , :P9 ;
+>:O7    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>```
+
 
 ## General Obligations
 
