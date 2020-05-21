@@ -70,7 +70,7 @@ But this permission comes in several versions (and price points) depending on wh
 >:P2    rdf:type        odrl:Permission .
 >:P2    dc:desciption   "Automated trading as both a principle and a broker"^^xsd:string ;
 >:P2    odrl:action     [  rdf:type       md:TradeAutomatically ;
->                           md:actionScope md:Principle , md:Brokerage 
+>                           md:actionScope ( md:Principle , md:Brokerage )
 >                        ]  .
 >```
 > For trading as only a principle:
@@ -104,7 +104,7 @@ Now the automated trading permissions also come bundled with a permission to cal
 >```
 >:P6    a               odrl:Permission .
 >:P6    dc:desciption   "Index calculations for automated trading"^^xsd:string .
->:P6    odrl:action     [  rdf:type       md:CalculateIndex ] .
+>:P6    odrl:action     md:CalculateIndex .
 >```
 
 There is a separate permission to calcluate indices that comes without the restictions above. Again, we'll deal with what can be done with the output of these calculations later, but as it includes external distribution, there is a constraint on the calculation itself: it's results must be **irreversable** and **non-substitutive** - i.e. there's no way back to the original data.
@@ -136,20 +136,45 @@ Finally, there is a permission that covers many of the traditional aspects of no
 Much of the power of this license is in what you *can't do*. Here we'll just specify what you can't do with the data received from DBAG. We'll cover what can, and can't, be done with the *output* of any derivation (or index calculation) later.
 
 You can't display the data, distribute it externally, or use it to price **contracts-for-difference**.
+> So we have three prohibitions
 >```
 >:Pr1   a               odrl:Prohibition .
->:Pr1   dc:desciption   "No dispay, distribution, or pricing of contracts-for-difference"^^xsd:string .
->:Pr1   odrl:action     odrl:Display , odrl:Distribute ,    [  rdf:type       md:Price ;
->                                                               md:assetClass  md:ContractForDifference
->                                                            ] .
+>:Pr1   dc:desciption   "No dispay allowed"^^xsd:string .
+>:Pr1   odrl:action     odrl:Display .
+>
+>:Pr2   a               odrl:Prohibition .
+>:Pr2   dc:desciption   "No distribution allowed"^^xsd:string .
+>:Pr2   odrl:action     odrl:Distribute .
+
+>:Pr3   a               odrl:Prohibition .
+>:Pr3   dc:desciption   "No pricing of contracts-for-difference allowed"^^xsd:string .
+>:Pr3   odrl:action     [  rdf:type       md:Price ;
+>                           md:assetClass  md:ContractForDifference
+>                        ] .
 >```
+But there are more: prohibitions that are specific to individual permissions. :P9 offers non-display use but excludes automated trading and index calculations. As this exclusion is not implicit in the meaning of non-display use, we must make the prohibitions explicit:
+>```
+>:P9    odrl:prohibition [  rdf:type      odrl:Prohibition ;
+                             odrl:action   md:CalculateIndex        
+                          ] , 
+                         [  rdf:type      odrl:Prohibition ;
+                             odrl:action   md:TradeAutomatically        
+                          ] .
+>```
+
+Now :P8 also excludes automated trading, but as the action it allows (index calculations) does explicitly exclude automated trading, our expression of this prohibition is, in some senses, a judgement call: does it perhaps aid expressivity (for humans) and/or does it allow us to test that the target rights management system can distinguish between calculating an index and trading automatically.
+
+For brevity's sake, I'm going to leave it out.
+
 
 ## Assets
 We need the [fee schedule](https://www.mds.deutsche-boerse.com/resource/blob/1334780/60ddf0a87283cdc57ec8ab9ae88ca4cc/data/NonDisplay_Price_List_5_11.pdf) to see what assets this non-display license can control.
 
 I'm going to select one: Xetra Ultra - market data for German and international instruments traded on the Xetra and Frankfurt Stock Exchange.
 
-From the fee schedule, we can see that Xetra Ultra is just one of three views on the underlying resource: trading data from the Xetra exchange. Xetra Order by Order is lower latency and offers the full book, while Xetra Core is slower and offers less depth. When we describe the resource we want to ignore these distinctions and point to the 
+From the fee schedule, we can see that Xetra Ultra is just one of three views on the underlying resource: pricing and trading data from the Xetra exchange. Xetra Order by Order is lower latency and offers the full book, while Xetra Core is slower and offers less depth. These "views" are key to defining which assets the permissions control. 
+
+But first, when we describe the resource, we want to ignore these distinctions to point to the underlying, unfiltered, data.
 
 ### Resources
 We know a few things about this resource from the [product description](https://www.mds.deutsche-boerse.com/mds-en/data-services/real-time-market-data/spot-markets/Xetra-Ultra-1341016). It's provider is the Deutsche Boerse. It covers the following asset classes:
@@ -159,11 +184,37 @@ We know a few things about this resource from the [product description](https://
 * Bonds
 * Exchange traded funds, notes, and commodities (ETFs, ETNs, and ETCs) 
 
-We have an operating MIC for the Xetra exchange: "XETR". The market MIC is the same (though there may be others that are applicable).
+We know that the data is dynamic and endlessly changing. It's not an end-of-day summary or an historical snap shot.
+
+We have an operating MIC for the Xetra exchange: "XETR". The market MIC is the same (and there are several other market MICs that might be applicable).
 
 But we don't seem to have an identifier provided by the exchange itself.
 
+> We can pull this together so, calling the resource :R1:
+>Let's call the resource :R1
+>```
+>:R1    rdf:type        md:Resource .
+>:R1    rdfs:label      "Xetra" .
+>:R1    dc:description  "Market data for German and international instruments traded on the Xetra and Frankfurt Stock Exchange" .
+>:R1    md:provider     <https://permid.org/1-4298007872> . # Identifier for DBAG
+>:R1    md:service      [  rdf:type     md:Service ;
+>                           md:venue     [   rdf:type        md:Venue ;
+>                                            rdfs:label      "Xetra" ;
+>                                            md:operatingMic "XETR" ;
+>                                            md:mic          "XETR"
+>                                        ] ;
+>                        ] .
+>:R1    md:contentNature  md:Dynamic .
+>```
+
+I've left out any description of the asset classes covered until we have a standard way of describing them.
+
 ### Timeliness of Delivery
+
+
+
+
+### Book Depth
 
 ## Policies and Permissions I
 
