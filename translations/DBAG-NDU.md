@@ -149,17 +149,17 @@ You can't display the data, distribute it externally, or use it to price **contr
 >:Pr3   a               odrl:Prohibition .
 >:Pr3   dc:desciption   "No pricing of contracts-for-difference allowed"^^xsd:string .
 >:Pr3   odrl:action     [  rdf:type       md:Price ;
-                            md:assetClass  md:ContractForDifference
-                         ] .
+>                           md:assetClass  md:ContractForDifference
+>                        ] .
 >```
 But there are more: prohibitions that are specific to individual permissions. :P9 offers non-display use but excludes automated trading and index calculations. As this exclusion is not implicit in the meaning of non-display use, we must make the prohibitions explicit:
 >```
 >:P9    odrl:prohibition  ( [  rdf:type      odrl:Prohibition ;
-                                odrl:action   md:CalculateIndex        
-                             ] , 
-                            [  rdf:type      odrl:Prohibition ;
-                                odrl:action   md:TradeAutomatically        
-                             ] ) .
+>                               odrl:action   md:CalculateIndex        
+>                            ] , 
+>                           [  rdf:type      odrl:Prohibition ;
+>                               odrl:action   md:TradeAutomatically        
+>                            ] ) .
 >```
 
 Now :P8 also excludes automated trading, but as the action it allows (index calculations) does explicitly exclude automated trading, our expression of this prohibition is, in some senses, a judgement call: does it perhaps aid expressivity (for humans) and/or does it allow us to test that the target rights management system can distinguish between calculating an index and trading automatically.
