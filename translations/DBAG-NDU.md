@@ -345,7 +345,7 @@ The indices generated under policy :O6 (index calculations for benchmarking and 
 >:P11    odrl:action                  ( md:Benchmark , ordrl:Distribute )  .
 >```
 
-Finally policy :07 (other application usage) offers two permissions that involve derivations. Each needs to be handled separately, so we need to create two new policies.
+Finally policy :07 (other application usage) offers two permissions that involve derivations. Each output needs to be handled separately, so we need to create two new policies: :O10 and :O11.
 
 
 
