@@ -345,10 +345,25 @@ The indices generated under policy :O6 (index calculations for benchmarking and 
 >:P11    odrl:action                  ( md:Benchmark , ordrl:Distribute )  .
 >```
 
-Finally policy :07 (other application usage) offers two permissions that involve derivations. Each output needs to be handled separately, so we need to create two new policies: :O10 and :O11.
+Finally policy :07 (other application usage) offers two permissions that involve derivations. Their outputs needs to be handled separately, so we need to create two new policies: :O10 and :O11.
 
-
-
+The first covers indices for internal use but not automated trading. 
+>```
+>:O10    a                   odrl:Set ;
+>:O10    dc:desciption       "Index calculations for internal use excluding automated trading"^^xsd:string ;
+>:O10    odrl:permission     :P12 . 
+>```
+> The permission :P12 does the work:
+>```
+>:P12    a                   odrl:Permission ;
+>:P12    dc:desciption       "Indices for internal use not including automated trading"^^xsd:string ;
+>:P12    odrl:action         [    a                 md:Use ;
+>                                  odrl:recipient    md:Internal
+>                             ] ;
+>:P12    odrl:prohibition    [    a                 odrl:Prohibition ;
+>                                  odrl:action       ( md:TradeAutomatically , md:Distribute )
+>                             ] .
+>```
 
 ## General Obligations
 
