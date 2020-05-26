@@ -19,6 +19,8 @@ The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-mo
 5. [General Obligations](#general-obligations)
    * [Audits](#audits)
    * [Controls](#controls)
+   * [Notification](#notification)
+   * [Service Facilitators](#service-facilitators)
 6. [Policy Update](#policy-update)
 7. [Specific Duties](#specific-duties)
    * [Attribute](#attribute)
@@ -31,10 +33,10 @@ The DBAG Non-Display Agreement.
 
 ### License Documentation
 We need several documents from DBAG to understand this license:
-* Probably the best place to start is the guidance note to clients: <https://www.mds.deutsche-boerse.com/resource/blob/1334848/d0f90031dcf62a50d8d31812304c9392/data/Guidance-Note-for-customers.pdf>
+* Probably the best place to start is the guidance note to clients on non-display usage: <https://www.mds.deutsche-boerse.com/resource/blob/1334848/d0f90031dcf62a50d8d31812304c9392/data/Guidance-Note-for-customers.pdf>
 * The general terms for non-display usage: <https://www.mds.deutsche-boerse.com/resource/blob/1637380/d77459a7f1492c6f06808a8949b19a3f/data/NonDisplay_GTC_3_5.pdf>
 * The fee schedule: <https://www.mds.deutsche-boerse.com/resource/blob/1334780/60ddf0a87283cdc57ec8ab9ae88ca4cc/data/NonDisplay_Price_List_5_11.pdf>
-* The Market Data Dissemination Agreement and its various annexes is available from here (as are the two documents above): <https://www.mds.deutsche-boerse.com/mds-en/data-services/real-time-market-data/agreements>
+* The Market Data Dissemination Agreement and its various annexes (including the Audit guidelines) are available from here (as are the two documents above): <https://www.mds.deutsche-boerse.com/mds-en/data-services/real-time-market-data/agreements>
 
 ## Actions
 
@@ -256,66 +258,66 @@ By triangulating between the [guidance note](https://www.mds.deutsche-boerse.com
 
 Those offering automated trading are as follows.
 
->The first of these allows trading at any scale, and index calculations to support it. Let's call it :O1
+>The first of these allows trading at any scale, and index calculations to support it. Let's call it :T1
 >```
->:O1    rdf:type                      odrl:Offer
->:O1    dc:desciption                 "Automated trading for platforms"^^xsd:string ;
->:O1    odrl:permission               :P1 , :P2 , :P3 , :P4 , :P5 , :P6 ;
->:O1    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>:T1    rdf:type                      odrl:Offer
+>:T1    dc:desciption                 "Automated trading for platforms"^^xsd:string ;
+>:T1    odrl:permission               :P1 , :P2 , :P3 , :P4 , :P5 , :P6 ;
+>:T1    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 >The second is the same as the first, except that it does not offer platform trading:
 >```
->:O2    rdf:type                      odrl:Offer
->:O2    dc:desciption                 "Automated trading as both a principle and a broker"^^xsd:string ;
->:O2    odrl:permission               :P2 , :P3 , :P4 , :P5 , :P6 ;
->:O2    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>:T2    rdf:type                      odrl:Offer
+>:T2    dc:desciption                 "Automated trading as both a principle and a broker"^^xsd:string ;
+>:T2    odrl:permission               :P2 , :P3 , :P4 , :P5 , :P6 ;
+>:T2    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 >The third offers only trading as a principle:
 >```
->:O3    rdf:type                      odrl:Offer
->:O3    dc:desciption                 "Automated trading as a principle"^^xsd:string ;
->:O3    odrl:permission               :P3 , :P5 , :P6 ;
->:O3    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>:T3    rdf:type                      odrl:Offer
+>:T3    dc:desciption                 "Automated trading as a principle"^^xsd:string ;
+>:T3    odrl:permission               :P3 , :P5 , :P6 ;
+>:T3    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 >The fourth offers trading as a broker (and as a principle if it occurs in a vendor-managed environment):
 >```
->:O4    rdf:type                      odrl:Offer
->:O4    dc:desciption                 "Automated trading as a broker"^^xsd:string ;
->:O4    odrl:permission               :P4 , :P5 , :P6 ;
->:O4    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>:T4    rdf:type                      odrl:Offer
+>:T4    dc:desciption                 "Automated trading as a broker"^^xsd:string ;
+>:T4    odrl:permission               :P4 , :P5 , :P6 ;
+>:T4    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 >The fifth offers trading as principle in a vendor-managed environment:
 >```
->:O5    rdf:type                      odrl:Offer
->:O5    dc:desciption                 "Automated trading as principle in a managed environment"^^xsd:string ;
->:O5    odrl:permission               :P5 , :P6 ;
->:O5    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>:T5    rdf:type                      odrl:Offer
+>:T5    dc:desciption                 "Automated trading as principle in a managed environment"^^xsd:string ;
+>:T5    odrl:permission               :P5 , :P6 ;
+>:T5    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 
 Then there is a policy that allows index calculation for benchmarking and distribution:
 >```
->:O6    rdf:type                      odrl:Offer
->:O6    dc:desciption                 "Index calculations for benchmarking and distribution"^^xsd:string ;
->:O6    odrl:permission               :P7 ;
->:O6    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>:T6    rdf:type                      odrl:Offer
+>:T6    dc:desciption                 "Index calculations for benchmarking and distribution"^^xsd:string ;
+>:T6    odrl:permission               :P7 ;
+>:T6    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 
 Finally, a policy that covers the other non-display uses:
 >```
->:O7    rdf:type                      odrl:Offer
->:O7    dc:desciption                 "Other application usage"^^xsd:string ;
->:O7    odrl:permission               :P8 , :P9 ;
->:O7    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
+>:T7    rdf:type                      odrl:Offer
+>:T7    dc:desciption                 "Other application usage"^^xsd:string ;
+>:T7    odrl:permission               :P8 , :P9 ;
+>:T7    odrl:prohibition              :Pr1 , :Pr2 , :Pr3 .
 >```
 
 We're not finished yet. The non-display license also controls the use of outputs of any derivations allowed under these policies. 
 
-First, let's create a policy :O8 that controls the indices generated under the automated trading policies (:O1 to :O5). This offers a permission (say :P10) to trade automatically using these indices, and a prohibition (:Pr4) from distributing them. So:
+First, let's create a policy :U1 that controls the indices generated under the automated trading policies (:O1 to :O5). This offers a permission (say :P10) to trade automatically using these indices, and a prohibition (:Pr4) from distributing them. So:
 >```
->:O8    rdf:type                      odrl:Set
->:O8    dc:desciption                 "Indices for internal use in automated trading"^^xsd:string ;
->:O8    odrl:permission               :P10 ;
->:O8    odrl:prohibition              :Pr4 .
+>:U1    rdf:type                      odrl:Set
+>:U1    dc:desciption                 "Indices for internal use in automated trading"^^xsd:string ;
+>:U1    odrl:permission               :P10 ;
+>:U1    odrl:prohibition              :Pr4 .
 >```
 > Where :P10 allows automated trading (so long as the recipients are internal):
 >```
@@ -334,9 +336,9 @@ First, let's create a policy :O8 that controls the indices generated under the a
 
 The indices generated under policy :O6 (index calculations for benchmarking and distribution) can be distributed. So let's create a new policy for these, :O9. We can drop the prohibtion, and create a new permission that allows benchmarking and distribution.
 >```
->:O9    rdf:type                      odrl:Set
->:O9    dc:desciption                 "Indices for benchmarking and distribution" ;
->:O9    odrl:permission               :P11 .
+>:V1    rdf:type                      odrl:Set
+>:V1    dc:desciption                 "Indices for benchmarking and distribution" ;
+>:V1    odrl:permission               :P11 .
 >```
 > Where :P11 allows benchmarking and distribution:
 >```
@@ -345,13 +347,13 @@ The indices generated under policy :O6 (index calculations for benchmarking and 
 >:P11    odrl:action                  ( md:Benchmark , ordrl:Distribute )  .
 >```
 
-Finally policy :07 (other application usage) offers two permissions that involve derivations. Their outputs needs to be handled separately, so we need to create two new policies: :O10 and :O11.
+Finally policy :T7 (other application usage) offers two permissions that involve derivations. Their outputs needs to be handled separately, so we need to create two new policies: :O10 and :O11.
 
 The first covers indices for internal use but not automated trading. 
 >```
->:O10    a                   odrl:Set ;
->:O10    dc:desciption       "Index calculations for internal use excluding automated trading"^^xsd:string ;
->:O10    odrl:permission     :P12 . 
+>:W1     a                   odrl:Set ;
+>:W1     dc:desciption       "Index calculations for internal use excluding automated trading"^^xsd:string ;
+>:W1     odrl:permission     :P12 . 
 >```
 > The permission :P12 does the work:
 >```
@@ -365,13 +367,122 @@ The first covers indices for internal use but not automated trading.
 >                             ] .
 >```
 
+The second covers outputs from other non-display activities excluding index creation. These can be both distributed and used internally - though not for automated trading.
+>```
+>:X1     a                   odrl:Set ;
+>:X1     dc:desciption       "Derivations other than indices for use and distribution not including automated trading" ;
+>:X1     odrl:permission     :P13 . 
+>```
+> Again, the permission does the work:
+>```
+>:P13    a                   odrl:Permission ;
+>:P13    dc:desciption       "Derivations for use and distribution not including automated trading" ;
+>:P13    odrl:action         md:Use , odrl:Distribute ;
+>:P13    odrl:prohibition    [    a                 odrl:Prohibition ;
+>                                  odrl:action       md:TradeAutomatically
+>                             ] .
+>```
+
 ## General Obligations
+So that's what we can do. What do we have to do in return?
 
 ### Audits
+Structurally, DBAG's audit requirements differ in only one respect from those of the [CME](https://w3c.github.io/market-data-odrl-profile//translations/CME-CatA.html#audits): CME limits itself to at most one ordinary audit in a year; DBAG does not. This means we can remove the time interval constraint that the CME offers. Then DBAG's obligation looks so:
+
+>```
+>:O1    rdf:type            odrl:Duty .
+>:O1    nl:creditor         <https://permid.org/1-4298007872> . # DBAG
+>:O1    nl:hasDeadlineDelta [  rdf:type            time:ProperInterval ;
+>                               md:timeReference    time:Instant , md:TimeOfNotification ;
+>                               time:hasXSDDuration "P30D"^^xsd:duration
+>                            ] .
+>:O1    odrl:action         [  rdf:type            md:Accept ;
+>                               md:scope            md:Audit ;
+>                               odrl:count          "1"^^xsd:int
+>                            ] .
+>:O1    odrl:duty           :D1 .
+>```
+> Then specifying the duty on the DBAG to provide notice:
+>```
+>:D1  rdf:type    odrl:Duty .
+>:D1  nl:debtor   <https://permid.org/1-4298007872> . # DBAG
+>:D1  odrl:action [  rdf:type     md:Notify ;
+>                      md:scope    md:Audit ;
+>                      odrl:count  "1"^^xsd:int
+>                  ] .
+>```
+> DBAG's "Extraordinary Audits" are exactly the same of those of the CME: there is no notice period, and DBAG has a duty to **report** reasonable suspicion. Actually the wording is slightly politer ("reasonable discretion"), but the meaning seems to be the same: "inaccurate information on the Information Usage, discrepancies in Reporting, delayed or incomplete reports, or the material deterioration of the Contracting Party’s asset situation". So we'll keep the original term.
+
+Let's call the duties :O2 and :D2 respectively.
+>```
+>:O2    rdf:type            odrl:Duty .
+>:O2    nl:creditor         <https://permid.org/1-4298007872> . # DBAG
+>:O2    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
+>                               time:hasXSDDuration  "P1Y"^^xsd:duration 
+>                            ] .
+>:O2    odrl:action         [  rdf:type             md:Accept ;
+>                               md:scope             md:Audit ;
+>                               odrl:count           "1"^^xsd:int
+>                            ] .
+>:O2    odrl:duty           :D2 .
+>```
+> Then specifying the duty on DBAG to report reasonable suspicion:
+>```
+>:D2  rdf:type      odrl:Duty .
+>:D2  nl:debtor     <https://permid.org/1-4298007872> . # DBAG
+>:D2  odrl:action   [  rdf:type     md:Report ; 
+>                       md:scope     md:ReasonableSuspicion ;
+>                       odrl:count   "1"^^xsd:int
+>                    ] .
+>```
 
 ### Controls
+DBAG's take on controls is buried deep in its Market Data Dissemination Agreement. I'll unpick them at a later date.
+
+### Notification
+DBAG is explicit in its insistence on once-off notification before any non-display activities are initiated. This is easily modelled:
+>```
+>:O3  a             odrl:Duty .
+>:O3  nl:creditor   <https://permid.org/1-4298007872> . # DBAG
+>:O3  odrl:action   [  rdf:type        md:Notify ;
+>                       md:actionScope  md:Usage ;
+>                       odrl:count      "1"^^xsd:int
+>                    ] .
+>```
+
+### Service Facilitators
+DBAG must be notified, and then consent to, any use of service facilitators by the licensee. The Notification duty will be similar to the one above, expect the action's scope is a **Service Facilitator**:
+>```
+>:D4  a             odrl:Duty .
+>:D4  nl:creditor   <https://permid.org/1-4298007872> . # DBAG
+>:D4  odrl:action   [  rdf:type        md:Notify ;
+>                       md:actionScope  md:ServiceFacilitator ;
+>                       odrl:count      "1"^^xsd:int
+>                    ] .
+>```
+
+Fulfilling this duty then activates the duty on DBAG to give consent: 
+>```
+>:O4  a             odrl:Duty .
+>:O4  nl:debtor     <https://permid.org/1-4298007872> . # DBAG
+>:O4  odrl:action   [  rdf:type        md:Consent ;
+>                       md:actionScope  md:ServiceFacilitator ;
+>                       odrl:count      "1"^^xsd:int
+>                    ] .
+>:O4  odrl:duty     :D4 . 
+>```
 
 ## Policy Update
+We have seven **Offer** policies described above that allow non-display use of DBAG's data. We can add the four obligations to them so:
+>```
+>:T1  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>:T2  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>:T3  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>:T4  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>:T5  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>:T6  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>:T7  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>```
 
 ## Specific Duties
 
