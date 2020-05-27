@@ -1,3 +1,5 @@
+"What do we all [exchanges] really care about? It's simple: distribution, non-display uses such as automated trading, and the creation of new financial products" - CBOT
+
 ## AGENTS
 
 ### Originator
