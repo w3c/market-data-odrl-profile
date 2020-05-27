@@ -68,7 +68,7 @@
 **Example:** Profit and loss calculations
 
 ###  Benchmark
-**Description:** The act of benchmarking as defined by the *EU Benchmark Regulation* is where an Index is used to determine the amount payable under a financial instrument or financial contract, or the value of a financial instrument, or is used to measure the performance of an investment fund for the purpose of tracking the return, defining the asset allocation or a portfolio, or computing the performance fees.
+**Editorial Note:** The act of benchmarking as defined by the *EU Benchmark Regulation* is where an Index is used to determine the amount payable under a financial instrument or financial contract, or the value of a financial instrument, or is used to measure the performance of an investment fund for the purpose of tracking the return, defining the asset allocation or a portfolio, or computing the performance fees.
 
 ###  TradeAutomatically
 **Editorial Note:** CME - Non-Display Use of Information by a Licensee Group entity in Automated Trading Systems."@en ,
