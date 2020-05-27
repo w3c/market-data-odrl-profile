@@ -28,13 +28,13 @@
 
 **Scope Note:** Broker crossing networks and dark pools are examples of alternative trading systems (ATS), and are thus trading platforms.
 
-**Scope Note:** Includes alternative trading systems (ATS) as defined by 300a of the SEC regulation on ATS: any organization, association, person, group of persons, or system that constitutes, maintains, or provides a market place or facilities for bringing together purchasers and sellers of securities or for otherwise performing with respect to securities the functions commonly performed by a stock exchange.
+**Scope Note:** Includes alternative trading systems (ATS) as defined by *300a of the SEC regulation on ATS*: any organization, association, person, group of persons, or system that constitutes, maintains, or provides a market place or facilities for bringing together purchasers and sellers of securities or for otherwise performing with respect to securities the functions commonly performed by a stock exchange.
 
-**Scope Note:** Includes multilateral trading facilities (MTF) as defined in MIFD II: multilateral systems, operated by an investment firm or a market operator, which bring together multiple third-party buying and selling interests in financial instruments (in the system and in accordance with non- discretionary rules) in a way that results in a contract.
+**Scope Note:** Includes multilateral trading facilities (MTF) as defined in *MIFD II*: multilateral systems, operated by an investment firm or a market operator, which bring together multiple third-party buying and selling interests in financial instruments (in the system and in accordance with non- discretionary rules) in a way that results in a contract.
 
-**Scope Note:** Includes organised trading facilities (OTF) as defined in MIFD II: multilateral systems which are not a regulated market or an MTF and in which multiple third-party buying and selling interests in bonds, structured finance products, emission allowances, or derivatives are able to interact in the system in a way that results in a contract.
+**Scope Note:** Includes organised trading facilities (OTF) as defined in *MIFD II*: multilateral systems which are not a regulated market or an MTF and in which multiple third-party buying and selling interests in bonds, structured finance products, emission allowances, or derivatives are able to interact in the system in a way that results in a contract.
 
-**Scope Note:** Includes systematic internalization as defined in MIFD II: dealing on an organised, frequent, systematic, and substantial basis on one's own account when executing client orders outside a regulated market, an MTF, or an OTF, without operating a multilateral system.
+**Scope Note:** Includes systematic internalization as defined in *MIFD II*: dealing on an organised, frequent, systematic, and substantial basis on one's own account when executing client orders outside a regulated market, an MTF, or an OTF, without operating a multilateral system.
 
 ## Assets & Resources
 
@@ -52,7 +52,6 @@
 ### Distribute
 **Description:** The onward dissemination of a Resource or any of its parts to a third-party.
 
-
 ### Display
 **Description:** The display of data to a person or persons
 
@@ -68,51 +67,51 @@
 **Example:** Portfolio valuation
 **Example:** Profit and loss calculations
 
-
 ###  Benchmark
-**Description:** The act of benchmarking as defined by the EU Benchmark Regulation is where an Index is used to determine the amount payable under a financial instrument or financial contract, or the value of a financial instrument, or is used to measure the performance of an investment fund for the purpose of tracking the return, defining the asset allocation or a portfolio, or computing the performance fees.
+**Description:** The act of benchmarking as defined by the *EU Benchmark Regulation* is where an Index is used to determine the amount payable under a financial instrument or financial contract, or the value of a financial instrument, or is used to measure the performance of an investment fund for the purpose of tracking the return, defining the asset allocation or a portfolio, or computing the performance fees.
 
 ###  TradeAutomatically
-<http://example.org/refinitiv/rbim/TradeAutomatically> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://example.org/refinitiv/rbim/NonDisplayUse> ;
-                                                       rdfs:label "Trade Automatically"@en ;
-                                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "CME: Non-Display Use of Information by a Licensee Group entity in Automated Trading Systems."@en ,
-                                                                                                           "DBAG: ‘Trading based activities’ include, but are not limited to, semi-automated or automated order/quote generation, order pegging, price referencing for trading purposes, smart order routing to facilitate trading, order management, execution management, market making, ‘black box’ trading, algorithmic trading, program trading and operation of multilateral trading facilities as well as quoting and trading of financial derivatives (including but not limited to futures, options, warrants and certificates linked to the respective underlying market data)."@en ;
-                                                       <http://www.w3.org/2004/02/skos/core#scopeNote> """DBAG:
-* Semi-automated or automated order/quote generation
-* Algorithmic or program trading 
-* Black-box trading
-* Order Pegging
-* Price referencing for trading purposes
-* Systematic internalization [Article 4(1)(20) of MiFID II]
-* Mid-point trading
-* Smart order routing to facilitate trading
-* Market making
-* Execution Management
-* Quoting and trading of financial derivatives"""@en .
+**Editorial Note:** CME - Non-Display Use of Information by a Licensee Group entity in Automated Trading Systems."@en ,
+**Editorial Note:** DBAG - Trading based activities’ include, but are not limited to, semi-automated or automated order/quote generation, order pegging, price referencing for trading purposes, smart order routing to facilitate trading, order management, execution management, market making, ‘black box’ trading, algorithmic trading, program trading and operation of multilateral trading facilities as well as quoting and trading of financial derivatives (including but not limited to futures, options, warrants and certificates linked to the respective underlying market data).
+**Example:** Semi-automated or automated order/quote generation
+**Example:** Algorithmic or program trading 
+**Example:** Black-box trading
+**Example:** Order Pegging
+**Example:** Price referencing for trading purposes
+**Example:** Systematic internalization *[Article 4(1)(20) of MiFID II]*
+**Example:** Mid-point trading
+**Example:** Smart order routing to facilitate trading
+**Example:** Market making
+**Example:** Execution Management
+**Example:** Quoting and trading of financial derivatives
+
+###  Derive
+**Description:** To create a new derivative Resource from an Asset
+**Editorial Note:** Derivations are frequently generated for the purposes of risk management, profit and loss calculation, portfolio valuation, quantitative analysis, fund administration, fund accounting, portfolio management or instrument pricing.
+**Note:** The output of the derivation can be controlled by using a duty to impose a "next policy" action that points to a new policy that controls the use of the derived resource .
 
 
-###  http://example.org/refinitiv/rbim/Derive
-<http://example.org/refinitiv/rbim/Derive> rdf:type owl:Class ;
-                                           rdfs:subClassOf <http://example.org/refinitiv/rbim/NonDisplayUse> ;
-                                           <http://purl.org/dc/elements/1.1/description> "To create a new derivative Asset from this Asset and to edit or modify the derivative" ;
-                                           rdfs:label "Derive"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#editorialNote> "Derivations are frequently generated for the purposes of risk management, profit and loss calculation, portfolio valuation, quantitative analysis, fund administration, fund accounting, portfolio management or instrument pricing." ;
-                                           <http://www.w3.org/2004/02/skos/core#note> "The output of the derivation can be controlled by using a duty to impose a \"next policy\"" .
+###  CalculateIndex
+**Editorial Note:** An index as defined by the EU Benchmark Regulation means any figure that is regularly determined either by applying a formula or other calculation or making an assessment on the basis of the value of one or more underlying assets/prices (including estimated prices, actual or estimated interest rates, quotes and committed quotes, or other values or surveys).
 
+###  Price
+                                                 
+** Hierarchy
 
-###  http://example.org/refinitiv/rbim/CalculateIndex
-<http://example.org/refinitiv/rbim/CalculateIndex> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://example.org/refinitiv/rbim/Derive> ;
-                                                   <http://purl.org/dc/elements/1.1/description> "An index as defined by the EU Benchmark Regulation means any figure that is regularly determined either by applying a formula or other calculation or making an assessment on the basis of the value of one or more underlying assets/prices (including estimated prices, actual or estimated interest rates, quotes and committed quotes, or other values or surveys)." ;
-                                                   rdfs:label "Calculate Index"@en .
+## Distribute
 
+## Use
 
-###  http://example.org/refinitiv/rbim/Price
-<http://example.org/refinitiv/rbim/Price> rdf:type owl:Class ;
-                                          rdfs:subClassOf <http://example.org/refinitiv/rbim/Derive> ;
-                                          rdfs:label "Price"@en .
+###	Display
 
+###	Non-Display Use
 
-CFD Information Usage
-Usage of Real-time Information for the purpose of calculation and provision of prices for trading in (i) contracts for difference (CFDs), (ii) spread betting and/or (iii) binary options, even where the calculation of the prices is performed by a Service Facilitator. If the prices provided for the trading in (i) contracts for difference, (ii) spread betting and/or (iii) binary options are unchanged Information, this does not represent CFD Information Usage, but onward dissemination of Information to third parties.                                                   
+####		Trade Automatically
+
+####		Benchmark
+
+####		Derive
+
+#####			Calculate Index
+
+#####			Price
