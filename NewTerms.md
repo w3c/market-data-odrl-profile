@@ -98,20 +98,20 @@
                                                  
 # Hierarchy
 
-  ## Distribute
+  Distribute
 
-  ## Use
+  Use
 
-    ###	Display
+    Display
 
-    ###	Non-Display Use
+    Non-Display Use
 
-      ####		Trade Automatically
+      Trade Automatically
 
-      ####		Benchmark
+      Benchmark
 
-      ####		Derive
+      Derive
 
-        #####			Calculate Index
+        Calculate Index
 
-        #####			Price
+        Price
