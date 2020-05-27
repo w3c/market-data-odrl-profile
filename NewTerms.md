@@ -65,8 +65,11 @@
 **Editorial Note:** DBAG - Non-Display Information Usage is accessing, processing or consumption of Real-Time Information for purposes other than the support of its display, onward dissemination to third parties or CFD Information-Usage.
 
 **Example:** Automated valuations
+
 **Example:** Calculating risk figures
+
 **Example:** Portfolio valuation
+
 **Example:** Profit and loss calculations
 
 ###  Benchmark
@@ -74,22 +77,36 @@
 
 ###  TradeAutomatically
 **Editorial Note:** CME - Non-Display Use of Information by a Licensee Group entity in Automated Trading Systems."@en ,
+
 **Editorial Note:** DBAG - Trading based activities’ include, but are not limited to, semi-automated or automated order/quote generation, order pegging, price referencing for trading purposes, smart order routing to facilitate trading, order management, execution management, market making, ‘black box’ trading, algorithmic trading, program trading and operation of multilateral trading facilities as well as quoting and trading of financial derivatives (including but not limited to futures, options, warrants and certificates linked to the respective underlying market data).
+
 **Example:** Semi-automated or automated order/quote generation
+
 **Example:** Algorithmic or program trading 
+
 **Example:** Black-box trading
+
 **Example:** Order Pegging
+
 **Example:** Price referencing for trading purposes
+
 **Example:** Systematic internalization *[Article 4(1)(20) of MiFID II]*
+
 **Example:** Mid-point trading
+
 **Example:** Smart order routing to facilitate trading
+
 **Example:** Market making
+
 **Example:** Execution Management
+
 **Example:** Quoting and trading of financial derivatives
 
 ###  Derive
 **Description:** To create a new derivative Resource from an Asset
+
 **Editorial Note:** Derivations are frequently generated for the purposes of risk management, profit and loss calculation, portfolio valuation, quantitative analysis, fund administration, fund accounting, portfolio management or instrument pricing.
+
 **Note:** The output of the derivation can be controlled by using a duty to impose a "next policy" action that points to a new policy that controls the use of the derived resource .
 
 
