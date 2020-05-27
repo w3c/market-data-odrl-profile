@@ -60,7 +60,7 @@
 ###  Non-Display Use
 **Description:** Usage when the scope and scale of usage is beyond that which could be reasonably expected of a person
 
-**Editorial Note:** CME - Non-viewable use of Information in any system, process, program, machine or calculation other than in order to display or distribute Information for display. Such use may include, but is not limited to, calculation of P&L, portfolio valuation, order processing, use within Automated Trading Systems and automated order routing."@en ,
+**Editorial Note:** CME - Non-viewable use of Information in any system, process, program, machine or calculation other than in order to display or distribute Information for display. Such use may include, but is not limited to, calculation of P&L, portfolio valuation, order processing, use within Automated Trading Systems and automated order routing.
 
 **Editorial Note:** DBAG - Non-Display Information Usage is accessing, processing or consumption of Real-Time Information for purposes other than the support of its display, onward dissemination to third parties or CFD Information-Usage.
 
@@ -117,20 +117,20 @@
                                                  
 # Hierarchy
 
-  Distribute
+    Distribute
 
-  Use
+    Use
 
-    Display
+      Display
 
-    Non-Display Use
+      Non-Display Use
 
-      Trade Automatically
+        Trade Automatically
 
-      Benchmark
+        Benchmark
 
-      Derive
+        Derive
 
-        Calculate Index
+          Calculate Index
 
-        Price
+          Price
