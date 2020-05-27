@@ -111,7 +111,7 @@
 
 
 ###  CalculateIndex
-**Editorial Note:** An index as defined by the EU Benchmark Regulation means any figure that is regularly determined either by applying a formula or other calculation or making an assessment on the basis of the value of one or more underlying assets/prices (including estimated prices, actual or estimated interest rates, quotes and committed quotes, or other values or surveys).
+**Editorial Note:** An index as defined by the *EU Benchmark Regulation* means any figure that is regularly determined either by applying a formula or other calculation or making an assessment on the basis of the value of one or more underlying assets/prices (including estimated prices, actual or estimated interest rates, quotes and committed quotes, or other values or surveys).
 
 ###  Price
                                                  
