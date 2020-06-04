@@ -54,7 +54,7 @@ The first one is automated trading. So, at it's simplest, we have a permission t
 
 >```
 >:P1    rdf:type        odrl:Permission .
->:P1    odrl:action     md:AutomatedTrading .
+>:P1    odrl:action     md:TradeAutomatically .
 >```
 
 But this permission comes in several versions (and price points) depending on whether it is exercised by a trading **platform**, a **principle** (trading on their own account), a **broker**, or a principle using a **managed environment**. So we need to scope the action and generate several more permissions.
@@ -122,7 +122,7 @@ There is one more permission that allows index calculations. Its output is resti
 >```
 >:P8    a               odrl:Permission .
 >:P8    dc:desciption   "Index calculations for internal use excluding automated trading"^^xsd:string .
->:P8    odrl:action     [  rdf:type       md:CalculateIndex ] .
+>:P8    odrl:action     md:CalculateIndex .
 >```
 
 Finally, there is a permission that covers many of the traditional aspects of non-display use "including, but not limited to, risk management, profit and loss calculation, portfolio valuation, quantitative analysis, fund administration, fund accounting, portfolio management or instrument pricing." As the output can be distributed, any derivation must again be irreversable and non-substitutive:
