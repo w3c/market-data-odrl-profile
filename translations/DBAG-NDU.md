@@ -453,12 +453,13 @@ DBAG is explicit in its insistence on once-off notification before any non-displ
 ### Service Facilitators
 DBAG must be notified, and then consent to, any use of service facilitators by the licensee. The Notification duty will be similar to the one above, expect the action's scope is a **Service Facilitator**:
 >```
->:D4  a             odrl:Duty .
->:D4  nl:creditor   <https://permid.org/1-4298007872> . # DBAG
->:D4  odrl:action   [  rdf:type        md:Notify ;
->                       md:actionScope  md:ServiceFacilitator ;
->                       odrl:count      "1"^^xsd:int
->                    ] .
+>:D4  a                   odrl:Duty .
+>:D4  nl:creditor         <https://permid.org/1-4298007872> . # DBAG
+>:D4  odrl:action         [  rdf:type        md:Notify ;
+>                             md:actionScope  md:ServiceFacilitator ;
+>                             odrl:count      "1"^^xsd:int
+>                          ] ;
+>:D4  md:otherParties     md:ServiceFacilitator .
 >```
 
 Fulfilling this duty then activates the duty on DBAG to give consent: 
