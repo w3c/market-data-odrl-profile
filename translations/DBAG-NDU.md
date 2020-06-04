@@ -46,7 +46,7 @@ The DBAG Non-dispay use license is wide-ranging. It covers **automated trading**
 
 What is non-display use? Historically, it was introduced when data started being routed to machines to act on, rather than people. There's a limit to how much data a human can process. This is not so for a machine. So non-display use was split out and priced accordingly.
 
-Now machine use has proliferated, with some uses being more high-value than others. Non-display use try to make sense of this.
+Now machine use has proliferated, with some uses being more high-value than others. Non-display use tries to make sense of this.
 
 So we have lots of different actions available at different prices. We best read the [guidance note](https://www.mds.deutsche-boerse.com/resource/blob/1334848/d0f90031dcf62a50d8d31812304c9392/data/Guidance-Note-for-customers.pdf), so:
 
