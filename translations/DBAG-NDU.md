@@ -585,3 +585,5 @@ The policy :X1 controls the indices generated under :P9 - non-display use exclud
 >:D9     odrl:action         odrl:nextPolicy .
 >:D9     odrl:target         :X1 .
 >```
+
+You can access the full translation [here](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/translations/DBAGNon-Display.ttl)
