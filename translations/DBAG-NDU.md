@@ -439,17 +439,6 @@ Let's call the duties :O2 and :D2 respectively.
 ### Controls
 DBAG's take on controls is buried deep in its Market Data Dissemination Agreement. I'll unpick them at a later date.
 
-### Notification
-DBAG is explicit in its insistence on once-off notification before any non-display activities are initiated. This is easily modelled:
->```
->:O3  a             odrl:Duty .
->:O3  nl:creditor   <https://permid.org/1-4298007872> . # DBAG
->:O3  odrl:action   [  rdf:type        md:Notify ;
->                       md:actionScope  md:Usage ;
->                       odrl:count      "1"^^xsd:int
->                    ] .
->```
-
 ### Service Facilitators
 DBAG must be notified, and then consent to, any use of service facilitators by the licensee. The Notification duty will be similar to the one above, expect the action's scope is a **Service Facilitator**:
 >```
@@ -464,25 +453,25 @@ DBAG must be notified, and then consent to, any use of service facilitators by t
 
 Fulfilling this duty then activates the obligation on DBAG to give consent: 
 >```
->:O4  a             odrl:Duty .
->:O4  nl:debtor     <https://permid.org/1-4298007872> . # DBAG
->:O4  odrl:action   [  rdf:type        md:Consent ;
+>:O3  a             odrl:Duty .
+>:O3  nl:debtor     <https://permid.org/1-4298007872> . # DBAG
+>:O3  odrl:action   [  rdf:type        md:Consent ;
 >                       md:actionScope  md:ServiceFacilitator ;
 >                       odrl:count      "1"^^xsd:int
 >                    ] .
->:O4  odrl:duty     :D3 . 
+>:O3  odrl:duty     :D3 . 
 >```
 
 ## Policy Update
 We have seven **Offer** policies described above that allow non-display use of DBAG's data. We can add the four obligations to them so:
 >```
->:T1  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
->:T2  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
->:T3  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
->:T4  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
->:T5  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
->:T6  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
->:T7  odrl:obligation  :O1 , :O2 , :O3 , :O4 .
+>:T1  odrl:obligation  :O1 , :O2 , :O3 .
+>:T2  odrl:obligation  :O1 , :O2 , :O3 .
+>:T3  odrl:obligation  :O1 , :O2 , :O3 .
+>:T4  odrl:obligation  :O1 , :O2 , :O3 .
+>:T5  odrl:obligation  :O1 , :O2 , :O3 .
+>:T6  odrl:obligation  :O1 , :O2 , :O3 .
+>:T7  odrl:obligation  :O1 , :O2 , :O3 .
 >```
 
 ## Specific Duties
@@ -490,13 +479,55 @@ We have seven **Offer** policies described above that allow non-display use of D
 ### Attribute
 When signing the non-display license, a licensee must acknowledge the Deutsche Boerse's ownership of its data. But there does not appear to be an ongoing duty to attribute ownership during data operations. So it's probably out of scope for this policy.
 
+### Notification
+DBAG is explicit in its insistence on once-off notification before any non-display activities are initiated. This is easily modelled:
+>```
+>:D4  a             odrl:Duty .
+>:D4  nl:creditor   <https://permid.org/1-4298007872> . # DBAG
+>:D4  odrl:action   [  rdf:type        md:Notify ;
+>                       md:actionScope  md:Usage ;
+>                       odrl:count      "1"^^xsd:int
+>                    ] .
+>```
+
+Each time we use a new policy, we probably need to provide a new notification. So let's create seven of these duties, one each for the seven policies on offer: :D4-1, :D4-2, :D4-3, :D4-4, :D4-5, :D4-6, :D4-7. 
+
 ### Report
-There doesn't appear to be an explicit reporting duty for non-display use. I wonder if it's covered by the notification obligation described above?
+There doesn't appear to be an explicit reporting duty for non-display use. I wonder if it's covered by the notification duties described above?
 
 ### Pay
-The payment duties follow exactly the same pattern as those described in the [CME Category A license]<https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/translations/CME-CatA.md#pay>: pay monthly, on reciept of invoice, on 30 days notice. Just the amounts are different.
+The payment duties follow exactly the same pattern as those described in the [CME Category A license](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/translations/CME-CatA.md#pay): pay monthly, on reciept of invoice, on 30 days notice. Just the creditor and the amounts are different.
 
+>Let's specify the duty on DBAG to invoice first:
+>```
+>:D5-1  rdf:type        odrl:Duty ;
+>:D5-1  nl:debtor       <https://permid.org/1-4298007872> . # DBAG
+>:D5-1  odrl:action     [  rdf:type     md:Invoice ; 
+>                           odrl:count   "1"^^xsd:int
+>                        ] .
+>```
+>Now we can write the full payment duty. The monthly price for platform trading is €5350.00:
+>```
+>:D6-1  rdf:type            odrl:Duty ;
+>:D6-1  nl:creditor         <https://permid.org/1-4298007872> . # DBAG
+>:D6-1  nl:hasDeadlineDelta [  rdf:type             time:ProperInterval ;
+>                               md:timeReference     time:Instant , md:TimeOfInvoicing  ;
+>                               time:hasXSDDuration  "P1M"^^xsd:duration
+>                            ] ;
+>:D6-1  odrl:timeInterval   [  rdf:type              time:ProperInterval ;
+>                               time:hasXSDDuration   "P1M"^^xsd:duration 
+>                            ] ;
+>:D6-1  odrl:action         [  rdf:type              odrl:Compensate ;
+>                               odrl:unitOfCount      md:Application ;
+>                               odrl:payAmount        "5350.00"^^xsd:float ;
+>                               odrl:unit             <https://www.wikidata.org/wiki/Q4916> ; # Euro
+>                               odrl:count            "1"^^xsd:int
+>                            ] ;
+>:D6-1  odrl:duty           :D5-1 .
+>```
 
+Simply by generating new identifiers for the duties, and amending the amount, we can generate the payment duties for all the other policies here. :D5-2 (invoice) and :D6-2 (pay, €2,942.50) for trading as both principle and broker; :D5-3 and :D6-3 (€2,140.00) for trading as a principle; :D5-4 and :D6-4 (€2,140.00) for broker trading; :D5-5 and :D6-5 for index calculations (€5,350.00); and :D5-6 and :D6-6 for other application usage (€1,284.00). The pricing of automated trading in a managed environment is, I imagine, set by the **vendor**.
 
 
 ## Permissions Update
+We can now add these duties to the permissions we defined above.
