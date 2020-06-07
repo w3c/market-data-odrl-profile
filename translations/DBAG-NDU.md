@@ -453,16 +453,16 @@ DBAG is explicit in its insistence on once-off notification before any non-displ
 ### Service Facilitators
 DBAG must be notified, and then consent to, any use of service facilitators by the licensee. The Notification duty will be similar to the one above, expect the action's scope is a **Service Facilitator**:
 >```
->:D4  a                   odrl:Duty .
->:D4  nl:creditor         <https://permid.org/1-4298007872> . # DBAG
->:D4  odrl:action         [  rdf:type        md:Notify ;
+>:D3  a                   odrl:Duty .
+>:D3  nl:creditor         <https://permid.org/1-4298007872> . # DBAG
+>:D3  odrl:action         [  rdf:type        md:Notify ;
 >                             md:actionScope  md:ServiceFacilitator ;
 >                             odrl:count      "1"^^xsd:int
 >                          ] ;
->:D4  md:otherParties     md:ServiceFacilitator .
+>:D3  md:otherParties     md:ServiceFacilitator .
 >```
 
-Fulfilling this duty then activates the duty on DBAG to give consent: 
+Fulfilling this duty then activates the obligation on DBAG to give consent: 
 >```
 >:O4  a             odrl:Duty .
 >:O4  nl:debtor     <https://permid.org/1-4298007872> . # DBAG
@@ -470,7 +470,7 @@ Fulfilling this duty then activates the duty on DBAG to give consent:
 >                       md:actionScope  md:ServiceFacilitator ;
 >                       odrl:count      "1"^^xsd:int
 >                    ] .
->:O4  odrl:duty     :D4 . 
+>:O4  odrl:duty     :D3 . 
 >```
 
 ## Policy Update
@@ -488,9 +488,15 @@ We have seven **Offer** policies described above that allow non-display use of D
 ## Specific Duties
 
 ### Attribute
+When signing the non-display license, a licensee must acknowledge the Deutsche Boerse's ownership of its data. But there does not appear to be an ongoing duty to attribute ownership during data operations. So it's probably out of scope for this policy.
 
 ### Report
+There doesn't appear to be an explicit reporting duty for non-display use. I wonder if it's covered by the notification obligation described above?
 
 ### Pay
+The payment duties follow exactly the same pattern as those described in the [CME Category A license]<https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/translations/CME-CatA.md#pay>: pay monthly, on reciept of invoice, on 30 days notice. Just the amounts are different.
+
+
+
 
 ## Permissions Update
