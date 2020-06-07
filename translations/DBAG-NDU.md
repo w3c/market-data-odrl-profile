@@ -417,9 +417,6 @@ Let's call the duties :O2 and :D2 respectively.
 >```
 >:O2    rdf:type            odrl:Duty .
 >:O2    nl:creditor         <https://permid.org/1-4298007872> . # DBAG
->:O2    odrl:timeInterval   [  rdf:type             time:ProperInterval ;
->                               time:hasXSDDuration  "P1Y"^^xsd:duration 
->                            ] .
 >:O2    odrl:action         [  rdf:type             md:Accept ;
 >                               md:scope             md:Audit ;
 >                               odrl:count           "1"^^xsd:int
