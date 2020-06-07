@@ -21,12 +21,13 @@ The semantics of the ODRL terms are defined here: <https://www.w3.org/TR/odrl-mo
    * [Controls](#controls)
    * [Notification](#notification)
    * [Service Facilitators](#service-facilitators)
-6. [Policy Update](#policy-update)
+6. [Policy Update I](#policy-update-i)
 7. [Specific Duties](#specific-duties)
    * [Attribute](#attribute)
    * [Report](#report)
    * [Pay](#pay)
-8. [Permissions Update](#permissions-update)
+8. [Policy Update II](#policy-update-ii)
+9. [Permissions Update](#permissions-update)
 
 ## License
 The DBAG Non-Display Agreement.
@@ -525,6 +526,62 @@ The payment duties follow exactly the same pattern as those described in the [CM
 
 Simply by generating new identifiers for the duties, and amending the amount, we can generate the payment duties for all the other policies here. :D5-2 (invoice) and :D6-2 (pay, €2,942.50) for trading as both principle and broker; :D5-3 and :D6-3 (€2,140.00) for trading as a principle; :D5-4 and :D6-4 (€2,140.00) for broker trading; :D5-5 and :D6-5 for index calculations (€5,350.00); and :D5-6 and :D6-6 for other application usage (€1,284.00). The pricing of automated trading in a managed environment is, I imagine, set by the **vendor**.
 
+## Policies Update II
+We can now update the policies with the notification and payment duties:
+>```
+>:T1  odrl:obligation  :O1 , :O2 , :O3 , :D4-1 , :D6-1 .
+>:T2  odrl:obligation  :O1 , :O2 , :O3 , :D4-2 , :D6-2 .
+>:T3  odrl:obligation  :O1 , :O2 , :O3 , :D4-3 , :D6-3 .
+>:T4  odrl:obligation  :O1 , :O2 , :O3 , :D4-4 , :D6-4 .
+>:T5  odrl:obligation  :O1 , :O2 , :O3 , :D4-5 , :D6-5 .
+>:T6  odrl:obligation  :O1 , :O2 , :O3 , :D4-6 , :D6-6 .
+>:T7  odrl:obligation  :O1 , :O2 , :O3 , :D4-7 , :D6-7 .
+>```
+
 
 ## Permissions Update
-We can now add these duties to the permissions we defined above.
+Finally, we can tie the outputs of any derivations allowed under the permissions offered by DGAG, with the policies controlling thier use.
+
+The policy :U1 controls the indices generated under the permission :P6 - index calculations for automated trading. We can link them so:
+>```
+>:P6    odrl:duty           :D7 .
+>```
+> With the duty being:
+>```
+:D7     a                   odrl:Duty .
+:D7     odrl:action         odrl:nextPolicy .
+:D7     odrl:target         :U1 .
+>```
+
+The policy :V1 controls the indices generated under :P7 - index calculations for benchmarking and distribution. So:
+>```
+>:P7    odrl:duty           :D8 .
+>```
+> With the duty being:
+>```
+:D8     a                   odrl:Duty .
+:D8     odrl:action         odrl:nextPolicy .
+:D8     odrl:target         :V1 .
+>```
+
+The policy :W1 controls the indices generated under :P8 - index calculations for internal use excluding automated trading. So:
+>```
+>:P8    odrl:duty           :D9 .
+>```
+> With the duty being:
+>```
+:D9     a                   odrl:Duty .
+:D9     odrl:action         odrl:nextPolicy .
+:D9     odrl:target         :W1 .
+>```
+
+The policy :X1 controls the indices generated under :P9 - non-display use excluding automated trading and index calculations. So:
+>```
+>:P9    odrl:duty           :D10 .
+>```
+> With the duty being:
+>```
+:D9     a                   odrl:Duty .
+:D9     odrl:action         odrl:nextPolicy .
+:D9     odrl:target         :X1 .
+>```
