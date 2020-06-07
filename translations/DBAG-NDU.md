@@ -548,9 +548,9 @@ The policy :U1 controls the indices generated under the permission :P6 - index c
 >```
 > With the duty being:
 >```
-:D7     a                   odrl:Duty .
-:D7     odrl:action         odrl:nextPolicy .
-:D7     odrl:target         :U1 .
+>:D7     a                   odrl:Duty .
+>:D7     odrl:action         odrl:nextPolicy .
+>:D7     odrl:target         :U1 .
 >```
 
 The policy :V1 controls the indices generated under :P7 - index calculations for benchmarking and distribution. So:
@@ -559,9 +559,9 @@ The policy :V1 controls the indices generated under :P7 - index calculations for
 >```
 > With the duty being:
 >```
-:D8     a                   odrl:Duty .
-:D8     odrl:action         odrl:nextPolicy .
-:D8     odrl:target         :V1 .
+>:D8     a                   odrl:Duty .
+>:D8     odrl:action         odrl:nextPolicy .
+>:D8     odrl:target         :V1 .
 >```
 
 The policy :W1 controls the indices generated under :P8 - index calculations for internal use excluding automated trading. So:
@@ -570,9 +570,9 @@ The policy :W1 controls the indices generated under :P8 - index calculations for
 >```
 > With the duty being:
 >```
-:D9     a                   odrl:Duty .
-:D9     odrl:action         odrl:nextPolicy .
-:D9     odrl:target         :W1 .
+>:D9     a                   odrl:Duty .
+>:D9     odrl:action         odrl:nextPolicy .
+>:D9     odrl:target         :W1 .
 >```
 
 The policy :X1 controls the indices generated under :P9 - non-display use excluding automated trading and index calculations. So:
@@ -581,7 +581,7 @@ The policy :X1 controls the indices generated under :P9 - non-display use exclud
 >```
 > With the duty being:
 >```
-:D9     a                   odrl:Duty .
-:D9     odrl:action         odrl:nextPolicy .
-:D9     odrl:target         :X1 .
+>:D9     a                   odrl:Duty .
+>:D9     odrl:action         odrl:nextPolicy .
+>:D9     odrl:target         :X1 .
 >```
