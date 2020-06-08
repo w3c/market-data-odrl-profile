@@ -446,3 +446,5 @@ Now we add this duty to the two derive permissions defined earlier:
 >:P4    odrl:duty       :D7, :D8, :D9 .
 >```
 This effectively says that any output from the derive permissions must be controlled by the policy :U1. Using this technique, we can control the flow of rights and obligations down the supply chain using only peer-to-peer communication. 
+
+The full translation can be found [here](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/translations/CMECatA.ttl)
