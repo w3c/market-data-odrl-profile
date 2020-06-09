@@ -28,7 +28,7 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 1. Admin
     1. Minutes of [last meeting](https://www.w3.org/2020/05/27-md-odrl-profile-minutes.html)
 2. Webinar Update (Paul)
-3. Editors Upate (Ben)
+3. Editors Update (Ben, Mark Bird)
 4. AOB
 
 ### Materials
