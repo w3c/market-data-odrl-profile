@@ -28,7 +28,10 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 1. Admin
     1. Minutes of [last meeting](https://www.w3.org/2020/05/27-md-odrl-profile-minutes.html)
 2. Webinar Update (Paul)
-3. Editors Update (Ben, Mark Bird)
+3. Editors' Update (Ben, Mark Bird)
+    1. [Roles in the Market Data Supply Chain](https://github.com/w3c/market-data-odrl-profile/issues/4)
+    2. [Distinguishing between Assets, Resources, & Sources](https://github.com/w3c/market-data-odrl-profile/issues/3)
+    3. Open issues
 4. AOB
 
 ### Materials
