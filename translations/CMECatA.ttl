@@ -13,121 +13,125 @@
 # POLICIES ########################################################################################################
 
 ## Offers
-:T1                 a                   odrl:Offer ;
-                    odrl:assigner       <https://permid.org/1-4295899615> ; # CME
-                    odrl:permission     :P1 , :P2 ;
-                    odrl:prohibition    :Pr1  ;
-                    odrl:obligation     :O1 , :O2 , :O3 .
+:T1     a                       odrl:Offer ;
+		rdfs:label                  "Automated trading for real-time data" ;
+        odrl:assigner           <https://permid.org/1-4295899615> ; # CME
+        odrl:permission         :P1 , :P2 ;
+        odrl:prohibition        :Pr1  ;
+        odrl:target             :A1, :A2, :A3 ;
+        odrl:obligation         :O1 , :O2 , :O3 .
 
-:T2                 a                   odrl:Offer ;
-                    odrl:assigner       <https://permid.org/1-4295899615> ; # CME
-                    odrl:permission     :P3 , :P4  ;
-                    odrl:prohibition    :Pr2 ;
-                    odrl:obligation     :O1 , :O2 , :O3 .
+:T2     a                       odrl:Offer ;
+        rdfs:label              "Automated trading for non-real-time data" ;
+        odrl:assigner           <https://permid.org/1-4295899615> ; # CME
+        odrl:permission         :P3 , :P4  ;
+        odrl:prohibition        :Pr2 ;
+        odrl:target             :A2, :A3 ;
+        odrl:obligation         :O1 , :O2 , :O3 .
+
 
 ## Sets
-:U1                 a                   odrl:Offer ;
-                    odrl:permission     :P5 ;
-                    odrl:prohibition    :Pr3 .
+:U1     a                       odrl:Set ;
+        rdfs:label              "Internal use of derivations to support automated trading" ;
+        odrl:permission         :P5 ;
+        odrl:prohibition        :Pr3 .
 
 
-# RESOURCES & ASSETS ##############################################################################################
+# SOURCES, RESOURCES, & ASSETS #######################################################################################
+
+## Sources
+:S1     a                       md:Resource , dcat:Dataset ;
+        rdfs:label              "Eurodollar Futures Contract" ;
+        md:originator           <https://permid.org/1-4295899615> ;
+        md:complexID            [   a               md:ComplexID ; 
+                                    md:context      [   a                       md:Venue ;
+                                                        rdfs:label              "Globex" ;
+                                                        md:operatingMic         "XCME"^^xsd:string ;        
+                                                        md:mic                  "GLBX"^^xsd:string ; 
+                                                    ] ;
+                                    dc:identifier   "GE"^^xsd:string
+                                ] ;
+        md:assetClass           md:Derivatives ;
+        md:contentNature        md:Dynamic .
+
 
 ## Resources
-:R1     a                           md:Resource , dcat:Dataset , prov:Collection ;
-        rdfs:label                  "Eurodollar Futures Contract" ;
-        md:originator               <https://permid.org/1-4295899615> ;
-        md:service                  [   a           md:Service ;
-                                        md:venue    [   a                       md:Venue ;
-                                                        rdfs:label              "Globex" ;
-                                                        md:operatingMic         "XCME"^^xsd:string ;        
-                                                        md:mic                  "GLBX"^^xsd:string 
-                                                    ] ;
-                                        md:code     "GE"^^xsd:string 
-                                    ] ;
-        md:assetClass               md:Derivatives ;
-        md:contentNature            md:Dynamic .
-
-
-:R2     a                           md:Resource , dcat:Dataset ;
-        rdfs:label                  "Eurodollar Futures Contract EoD" ;
-        md:originator               <https://permid.org/1-4295899615> ; 
-        md:service                  [   a           md:Service ;
-                                        md:venue    [    a                      md:Venue ;
-                                                        rdfs:label              "Globex" ;
-                                                        md:operatingMic         "XCME"^^xsd:string ;        
-                                                        md:mic                  "GLBX"^^xsd:string 
-                                                    ] ;
-                                        md:code     "GE"^^xsd:string 
-                                    ] ;
-        md:assetClass               md:Derivatives ;
-        md:contentNature            md:StaticEOD .
+:R1     a                       md:Resource , dcat:Dataset ;
+        rdfs:label              "End-of-day Eurodollar Futures Contract" ;
+        md:provider             <https://permid.org/1-4295899615> ; 
+        md:resource             :S1 ;  
+        md:assetClass           md:Derivatives ;
+        md:contentNature        md:StaticEOD ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargoed ;
+                                    time:after          [   a                   time:Instant, md:MarketClose ;
+                                                            time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
+                                                                                    time:hour       "16"^^xsd:int ;
+                                                                                    time::timeZone   <https://www.wikidata.org/wiki/Q2086913>
+                                                                                ]
+                                                        ]
+                                ] .
 
 
 ## Assets                    
-:A1     a                           odrl:AssetCollection , dcat:Distribution ;
-        md:resource                 :R1 ;
-        md:timelinessOfDelivery     [   a                   time:ProperInterval , md:Realtime ;
-                                        time:intervalEquals [   a                    time:ProperInterval ;
-                                                                md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
-                                                                time:hasXSDDuration  "PT10M"^^xsd:duration
-                                                            ]
-                                    ] .
+:A1     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+	    rdfs:label              "Realtime Eurodollar Futures Contract" ;
+        md:resource             :S1 ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Realtime ;
+                                    time:intervalBefore [   a                    time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT10M"^^xsd:duration
+                                                        ]
+                                ] .
 
 
-:A2     a                           odrl:AssetCollection , dcat:Distribution ;
-        md:resource                 :R1 ;
-        md:timelinessOfDelivery     [   a                   time:ProperInterval , md:Delayed ;
-                                        time:intervalAfter  [    a                   time:ProperInterval ;
-                                                                 md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
-                                                                 time:hasXSDDuration "PT10M"^^xsd:duration
-                                                                 
-                                                            ] ;
-                                        time:intervalBefore [     a                  time:ProperInterval ;
-                                                                md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
-                                                                time:hasXSDDuration  "PT8H"^^xsd:duration
-                                                            ]
-                                    ] .
+:A2     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+	    rdfs:label              "Delayed Eurodollar Futures Contract" ;
+        md:resource             :S1 ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Delayed ;
+                                    time:intervalAfter  [    a                   time:ProperInterval ;
+                                                             md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
+                                                             time:hasXSDDuration "PT10M"^^xsd:duration
+                                                             
+                                                        ] ;
+                                    time:intervalBefore [     a                  time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT8H"^^xsd:duration
+                                                        ]
+                                ] .
 
 
-:A3     a                           odrl:AssetCollection , dcat:Distribution ;
-        md:resource                 :R2 ;
-        md:timelinessOfDelivery     [   a           time:ProperInterval , md:Embargoed ;
-                                        time:after  [   a                   time:Instant, md:MarketClose ;
-                                                        time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
-                                                                                time:hour       "16"^^xsd:int ;
-                                                                                time::timeZone   <https://www.timeanddate.com/time/zones/ct>
-                                                                            ]
-                                                    ]
-                                    ] .
+:A3     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+        rdfs:label              "End-of-day Eurodollar Futures Contract" ;
+        md:resource             :R1 .
 
 
 # PERMISSIONS #####################################################################################################
 
-:P1                 a                   odrl:Permission ;
-                    odrl:target         :A1, :A2, :A3 ;
-                    odrl:action         md:TradeAutomatically ;
-                    odrl:duties         :D3 , :D4 , :D6 .
+:P1     a                       odrl:Permission ;
+        rdfs:label              "Automated trading for real-time data" ;
+        odrl:action             md:TradeAutomatically ;
+        odrl:duties             :D3 , :D4 , :D6 .
 
-:P2                 a                   odrl:Permission ;
-                    odrl:target         :A1, :A2, :A3 ;
-                    odrl:action         odrl:Derive ;
-                    odrl:duties         :D3 , :D4 , :D6 , :D9 .
+:P2     a                       odrl:Permission ;
+        rdfs:label              "Derive real-time data to support automated trading" ;
+        odrl:action             odrl:Derive ;
+        odrl:duties             :D3 , :D4 , :D6 , :D9 .
 
-:P3                 a                   odrl:Permission ;
-                    odrl:target         :A2, :A3 ;
-                    odrl:action         md:TradeAutomatically  ;
-                    odrl:duties         :D7 , :D8 .
+:P3     a                       odrl:Permission ;
+        rdfs:label              "Automated trading for non-real-time data" ;
+        odrl:action             md:TradeAutomatically  ;
+        odrl:duties             :D7 , :D8 .
 
-:P4                 a                   odrl:Permission ;
-                    odrl:target         :A2, :A3 ;
-                    odrl:action         odrl:Derive ;
-                    odrl:duties         :D7 , :D8 , :D9 .
+:P4     a                       odrl:Permission ;
+        rdfs:label              "Derive non-real-time data to support automated trading" ;
+        odrl:action             odrl:Derive ;
+        odrl:duties             :D7 , :D8 , :D9 .
 
-:P5                 a                   odrl:Permission ;
-                    odrl:action         [   a               md:use ; 
-                                            odrl:recipient  md:Internal
-                                        ] .
+:P5     a                       odrl:Permission ;
+        rdfs:label              "Internal use of derivations to support automated trading" ;
+        odrl:action             [   a               md:use ; 
+                                    odrl:recipient  md:Internal
+                                ] .
 
 
 # PROHIBITIONS ####################################################################################################
@@ -142,10 +146,7 @@
 
 
 :Pr3                a                   odrl:Prohibition ;
-                    odrl:action         ordrl:Distribute .
-
-
-
+                    odrl:action         odrl:Distribute .
 
 
 # OBLIGATIONS & DUTIES ############################################################################################
@@ -208,6 +209,7 @@
 ## Attribution
 :D3                 a                   odrl:Duty ;
                     nl:creditor         <https://permid.org/1-4295899615> ; # CME
+                    odrl:target         :A1, :A2, :A3 ;
                     odrl:action         [   a                   odrl:Attribute ;    
                                             md:actionScope      md:Ownership ;
                                             md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
@@ -215,6 +217,7 @@
 
 :D7                 a                   odrl:Duty ;
                     nl:creditor         <https://permid.org/1-4295899615> ; # CME
+                    odrl:target         :A2, :A3 ;
                     odrl:action         [   a                   odrl:Attribute ;    
                                             md:actionScope      md:Ownership ;
                                             md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
