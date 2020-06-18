@@ -1,0 +1,371 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema> .
+@prefix odrl:   <http://www.w3.org/ns/odrl/2/> .
+@prefix md:     <http://example.org/refinitiv/rbim/> .
+@prefix :       <http://example.org/> .
+@prefix time:   <http://www.w3.org/2006/time#> .
+@prefix nl:     <http://example.org/> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+
+
+# Don't understand 2.11 - "Calculation Agent"
+
+# POLICIES ########################################################################################################
+
+## Offers
+:T1     a                       odrl:Offer ;
+        rdfs:label              "Category 1 warrant trading" ;
+        odrl:assigner           <https://permid.org/1-4295899615> ; # CME
+        odrl:permission         :P1 ;
+        odrl:prohibition        :Pr1 ;
+        odrl:target             :A1 , :A2 , :A3 , :A4 , :A5 ;
+        odrl:obligation         :O1 , :O2 , :O3 , :O4-1 .
+
+:T2     a                       odrl:Offer ;
+        rdfs:label              "Category 2 warrant trading" ;
+        odrl:assigner           <https://permid.org/1-4295899615> ; # CME
+        odrl:permission         :P2 ;
+        odrl:prohibition        :Pr2 ;
+        odrl:target             :A3 , :A4 , :A5 ;
+        odrl:obligation         :O1 , :O2 , :O3 , :O4-2 .
+
+
+## Sets
+:U1     a                       odrl:Set ;
+        rdfs:label              "Warrant trading and distribution for providers" ;
+        odrl:assigner           <https://permid.org/1-4295899615> ; # CME
+        odrl:permission         :P3 , :P4 .
+
+:V1     a                       odrl:Set ;
+        rdfs:label              "Warrant trading for end-consumers" ;
+        odrl:permission         :W1-P1 .
+
+
+# SOURCES, RESOURCES, & ASSETS #######################################################################################
+
+## Sources
+:S1     a                       md:Source , dcat:Dataset ;
+	    rdfs:label              "Gold Futures" ;
+	    md:originator           <https://permid.org/1-4295899615> ;
+	    md:complexID            [   a               md:ComplexID ; 
+	                                md:context      [   a                       md:Venue ;
+						                                rdfs:label              "Comex" ;
+						                                md:operatingMic         "XCME" ;        
+						                                md:mic                  "CECS" 
+						                            ] ;
+	                                dc:identifier   "GC" 
+	                            ] ;      
+	    md:assetClass           md:Derivatives ;
+	    md:contentNature        md:Dynamic .
+
+
+##  Resources
+:R1     a                       md:Resource , dcat:Dataset ;
+        rdfs:label              "End-of-day Gold Futures" ;
+        md:provider             <https://permid.org/1-4295899615> ;
+        md:resource             :S1 ;  
+        md:assetClass           md:Derivatives ;
+        md:contentNature        md:StaticEOD ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargoed ;
+                                    time:after          [   a                   time:Instant, md:MarketClose ;
+                                                            time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
+                                                                                    time:hour       "16"^^xsd:int ;
+                                                                                    time::timeZone   <https://www.wikidata.org/wiki/Q2086913>
+                                                                                ]
+                                                        ]
+                                ] .
+
+
+## Assets    
+:A1     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+	    rdfs:label              "Realtime Gold Futures" ;
+        md:resource             :S1 ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Realtime ;
+                                    time:intervalBefore [   a                    time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT10M"^^xsd:duration
+                                                        ]
+                                ] .
+
+
+:A2     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+	    rdfs:label              "Delayed Gold Futures" ;
+        md:resource             :S1 ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Delayed ;
+                                    time:intervalAfter  [    a                   time:ProperInterval ;
+                                                             md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
+                                                             time:hasXSDDuration "PT10M"^^xsd:duration
+                                                             
+                                                        ] ;
+                                    time:intervalBefore [     a                  time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT8H"^^xsd:duration
+                                                        ]
+                                ] .
+
+
+:A3     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+	    rdfs:label              "Historical Gold Futures" ;
+        md:resource             :S1 ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Historical ;
+                                    time:intervalAfter  [    a                   time:ProperInterval ;
+                                                             md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
+                                                             time:hasXSDDuration "PT8H"^^xsd:duration
+                                                             
+                                                        ] 
+                                ] .
+       
+:A4     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+	    rdfs:label              "Snap-shotted Gold Futures" ;
+        md:resource             :S1 ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Realtime ;
+                                    time:intervalBefore [   a                    time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT10M"^^xsd:duration
+                                                        ]
+                                ] ;
+        md:methodOfUpdate       [   a                   md:SnapShot ;
+                                    odrl:count          3 
+                                ] .
+
+:A5     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
+        rdfs:label              "End-of-day Gold Futures" ;
+        md:resource             :R1 .
+
+                   
+
+# PERMISSIONS #####################################################################################################
+
+:P1     a                       odrl:Permission ;
+		rdfs:lable              "Derivations for Category 1 warrant trading" ; 
+        odrl:action             [   a                odrl:Derive ;
+                                    md:derivation    md:Irreversable , md:Non-Substitutive ; 
+                                    md:actionScope   md:WarrantTrading 
+                                ] ;
+        odrl:duties             :D7 , :D10 .
+
+:P2     a                       odrl:Permission ;
+        rdfs:lable              "Derivations for Category 2 warrant trading" ;
+        odrl:action             [   a                odrl:Derive ;
+                                    md:derivation    md:Irreversable  , md:Non-Substitutive ; 
+                                    md:actionScope   md:WarrantTrading  
+                                ] ;
+        odrl:duties             :D8 , :D11 .
+
+:P3     a                       odrl:Permission ;
+        rdfs:lable              "Warrant trading for Providers" ;
+	    odrl:action             [   a                odrl:Use ;
+	                                md:actionScope   md:WarrantTrading 
+	                            ] ;
+        odrl:duties             :D9 .
+
+:P4     a                       odrl:Permission ;
+        rdfs:lable              "Warrant distribution by Providers" ;
+        odrl:action             [   a                odrl:Distribute ;
+                                    md:actionScope   md:WarrantTrading 
+                                ] ;
+        odrl:duties             :D5 , :D10 , :D12 .
+
+:P5     a                       odrl:Permission ;
+        rdfs:lable              "Warrant trading for end-Consumers" ;
+	    odrl:action             [   a                odrl:Use ;
+	                                md:actionScope   md:WarrantTrading 
+	                            ] .
+
+
+# PROHIBITIONS ####################################################################################################
+
+:Pr1    a                       odrl:Prohibition ;
+        odrl:target             :A1 , :A2 , :A3 , :A4 , :A5 ;
+        odrl:action             odrl:Display , odrl:Distribute , odrl:GrantUse .
+
+:Pr2    a                       odrl:Prohibition ;
+        odrl:target             :A3 , :A4 , :A5 ;
+        odrl:action             odrl:Display , odrl:Distribute , odrl:GrantUse .
+
+
+
+# OBLIGATIONS & DUTIES ############################################################################################
+
+## Audits
+:O1     a                   odrl:Duty ;
+	    nl:creditor         <https://permid.org/1-4295899615> ; # CME
+	    nl:hasDeadlineDelta [   a                   time:ProperInterval ;
+	                            md:timeReference    time:Instant , md:TimeOfNotification ;
+	                            time:hasXSDDuration "P30D"^^xsd:duration
+	                        ] ;
+	    odrl:timeInterval   [   a                   time:ProperInterval ;
+	                            time:hasXSDDuration "P1Y"^^xsd:duration 
+	                        ] ;
+	    odrl:action         [   a                   md:Accept ;
+	                            md:actionScope      md:Audit  ;
+	                            odrl:count          "1"^^xsd:int
+	                        ] ;
+	    odrl:duty           :D1 .
+
+:D1     a                   odrl:Duty ;
+	    nl:debtor           <https://permid.org/1-4295899615> ; # CME
+	    odrl:timeInterval   [   a                   time:ProperInterval ;
+	                            time:hasXSDDuration "P1Y"^^xsd:duration 
+	                        ] ;
+	    odrl:action         [   a                   md:Notify ; 
+	                            md:actionScope      md:Audit  ;
+	                            odrl:count          "1"^^xsd:int
+	                        ] .                
+
+
+:O2     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        odrl:timeInterval   [   a                   time:ProperInterval ;
+                                time:hasXSDDuration "P1Y"^^xsd:duration 
+                            ] ;
+        odrl:action         [   a                   md:Accept ;
+                                md:actionScope      md:Audit  ;
+                                odrl:count          "1"^^xsd:int
+                            ] ;
+        odrl:duty           :D2 .
+
+:D2     a                     odrl:Duty ;
+        nl:debtor             <https://permid.org/1-4295899615> ; # CME
+        odrl:timeInterval    [    a                     time:ProperInterval ;
+                                time:hasXSDDuration    "P1Y"^^xsd:duration 
+                            ] ;
+        odrl:action         [     a                     md:Report ; 
+                                md:actionScope         md:ReasonableSuspicion ;
+                                odrl:count             "1"^^xsd:int
+                            ] . 
+
+
+## Controls
+:O3     a                   odrl:Duty ;
+	    nl:creditor         <https://permid.org/1-4295899615> ; # CME
+	    odrl:action         [   a                   md:Evidence ;
+	                            md:actionScope      md:Controls ;
+	                        ] .
+
+
+## Payment
+:O4-1   a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        nl:hasDeadlineDelta [   a                   time:ProperInterval ;
+                                md:timeReference    time:Instant , md:TimeOfInvoicing ;
+                                time:hasXSDDuration "P1M"^^xsd:duration
+                            ] ;
+        odrl:timeInterval   [   a                   time:ProperInterval ;
+                                time:hasXSDDuration "P1Y"^^xsd:duration 
+                            ] ;
+        odrl:action         [   a                   odrl:Compensate ;
+                                odrl:payAmount      "2500.00"^^xsd:float ;
+                                odrl:unit           <https://www.wikidata.org/wiki/Q4917> ; # US dollar
+                                odrl:count          "1"^^xsd:int
+                            ] ;
+        odrl:duty           :D3 .
+
+:D3     a                   odrl:Duty ;
+        nl:debtor           <https://permid.org/1-4295899615> ; # CME
+        odrl:timeInterval   [   a                   time:ProperInterval ;
+                                time:hasXSDDuration "P1Y"^^xsd:duration 
+                            ] ;
+        odrl:action         [   a                   md:Invoice ; 
+                                odrl:count          "1"^^xsd:int
+                            ] .
+
+
+:O4-2   a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        nl:hasDeadlineDelta [   a                   time:ProperInterval ;
+                                md:timeReference    time:Instant , md:TimeOfInvoicing ;
+                                time:hasXSDDuration "P1M"^^xsd:duration
+                            ] ;
+        odrl:timeInterval   [   a                   time:ProperInterval ;
+                                time:hasXSDDuration "P1Y"^^xsd:duration 
+                            ] ;
+        odrl:action         [   a                   odrl:Compensate ;
+                                odrl:payAmount      "1000.00"^^xsd:float ;
+                                odrl:unit           <https://www.wikidata.org/wiki/Q4917> ; # US dollar
+                                odrl:count          "1"^^xsd:int
+                            ] ;
+        odrl:duty           :D4 .
+
+:D4     a                   odrl:Duty ;
+        nl:debtor           <https://permid.org/1-4295899615> ; # CME
+        odrl:timeInterval   [   a                   time:ProperInterval ;
+                                time:hasXSDDuration "P1Y"^^xsd:duration 
+                            ] ;
+        odrl:action         [   a                   md:Invoice ; 
+                                odrl:count          "1"^^xsd:int
+                            ] .
+
+
+## Consent
+:D5     a                   odrl:Duty ;
+        nl:debtor           <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                       md:Consent ;
+                                md:actionScope          md:Distribution ;
+                                odrl:count              "1"^^xsd:int
+                            ] ;
+        odrl:duty           :D6 . 
+
+:D6     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                       md:Notify ;
+                                md:actionScope          md:Distribution ;
+                                odrl:count              "1"^^xsd:int
+                            ] ;
+        md:otherParties     [   a                       md:Consumer ;
+                                md:recipient            md:External
+                            ] .
+
+
+## Attribution
+:D7     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                   odrl:Attribute ;    
+                                md:actionScope      md:Ownership ;
+                                md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
+                            ]  .
+
+:D8     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                   odrl:Attribute ;    
+                                md:actionScope      md:Ownership ;
+                                md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
+                            ]  .
+
+
+:D9     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                   odrl:Attribute ;    
+                                md:actionScope      md:Disclaimer ;
+                                md:attribution      "CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]." 
+                            ]  .
+
+:D10     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                   odrl:Attribute ;    
+                                md:actionScope      md:Disclaimer ;
+                                md:attribution      "CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]." 
+                            ]  .
+
+
+# Next policy duties
+:D10    a                   odrl:Duty ;
+        odrl:action         odrl:nextPolicy ;
+        odrl:target         :V1 .
+
+:D11    a                   odrl:Duty ;
+        odrl:action         odrl:nextPolicy ;
+        odrl:target         :V1 .
+
+:D12    a                   odrl:Duty ;
+	    odrl:action         odrl:nextPolicy ;
+	    odrl:target         :W1 .
+
+
+
+
+
+
+
