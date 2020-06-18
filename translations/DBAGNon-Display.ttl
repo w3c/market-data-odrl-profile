@@ -2,8 +2,8 @@
 @prefix rdfs: 	<http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:	<http://www.w3.org/2001/XMLSchema> .
 @prefix odrl: 	<http://www.w3.org/ns/odrl/2/> .
-@prefix md:	    <http://example.org/refinitiv/rbim/> .
-@prefix : 		<http://example.org/> .
+@prefix md:	<http://example.org/refinitiv/rbim/> .
+@prefix :       <http://example.org/> .
 @prefix time: 	<http://www.w3.org/2006/time#> .
 @prefix nl: 	<http://example.org/> .
 @prefix dcat: 	<http://www.w3.org/ns/dcat#> .
@@ -11,51 +11,51 @@
 
 # POLICIES ########################################################################################################
 
-# Offers
+## Offers
 :T1     a                   odrl:Offer ;
         dc:desciption       "Automated trading for platforms"^^xsd:string ;
         odrl:permission     :P1 , :P2 , :P3 , :P4 , :P5 , :P6 ;
         odrl:prohibition    :Pr1 , :Pr2 , :Pr3 ;
-        odrl:obligation     :O1 , :O2 , :O3 .
+        odrl:obligation     :O1 , :O2 , :O3 , :O4-1 , :O6-1 .
 
 :T2     a                   odrl:Offer ;
         dc:desciption       "Automated trading as both a principle and a broker"^^xsd:string ;
         odrl:permission     :P2 , :P3 , :P4 , :P5 , :P6 ;
         odrl:prohibition    :Pr1 , :Pr2 , :Pr3 ;
-        odrl:obligation     :O1 , :O2 , :O3 .
+        odrl:obligation     :O1 , :O2 , :O3 , :O4-2 , :O6-2 .
 
 :T3     a                   odrl:Offer ;
         dc:desciption       "Automated trading as a principle"^^xsd:string ;
         odrl:permission     :P3 , :P5 , :P6 ;
         odrl:prohibition    :Pr1 , :Pr2 , :Pr3 ;
-        odrl:obligation     :O1 , :O2 , :O3 .
+        odrl:obligation     :O1 , :O2 , :O3 , :O4-3 , :O6-3 .
 
 :T4     a                   odrl:Offer ;
         dc:desciption       "Automated trading as a broker"^^xsd:string ;
         odrl:permission     :P4 , :P5 , :P6 ;
         odrl:prohibition    :Pr1 , :Pr2 , :Pr3 ;
-        odrl:obligation     :O1 , :O2 , :O3 .
+        odrl:obligation     :O1 , :O2 , :O3 , :O4-4 , :O6-4 .
 
 :T5     a                   odrl:Offer ;
         dc:desciption       "Automated trading as principle in a managed environment"^^xsd:string ;
         odrl:permission     :P5 , :P6 ;
         odrl:prohibition    :Pr1 , :Pr2 , :Pr3 ;
-        odrl:obligation     :O1 , :O2 , :O3 .
+        odrl:obligation     :O1 , :O2 , :O3 , :O4-5 . # Priced by Vendor?
 
 :T6     a                   odrl:Offer ;
         dc:desciption       "Index calculations for benchmarking and distribution"^^xsd:string ;
         odrl:permission     :P7 ;
         odrl:prohibition    :Pr1 , :Pr2 , :Pr3 ;
-        odrl:obligation     :O1 , :O2 , :O3 .
+        odrl:obligation     :O1 , :O2 , :O3 , :O4-6 , :O6-5 .
 
 :T7     a                   odrl:Offer ;
         dc:desciption       "Other application usage"^^xsd:string ;
         odrl:permission     :P8 , :P9 ;
         odrl:prohibition    :Pr1 , :Pr2 , :Pr3 ;
-        odrl:obligation     :O1 , :O2 , :O3 .
+        odrl:obligation     :O1 , :O2 , :O3 , :O4-7 , :O6-6 .
 
 
-# Sets
+## Sets
 :U1     a                   odrl:Set ;
         dc:desciption       "Indices for internal use in automated trading"^^xsd:string ;
         odrl:permission     :P10 ;
@@ -75,7 +75,8 @@
 
 
 
-# RESOURCES & ASSETS ####################################################################################
+# RESOURCES & ASSETS ##############################################################################################
+
 :R1     rdf:type        md:Resource ;
         rdfs:label      "Xetra" ;
         dc:description  "Market data for German and international instruments traded on the Xetra and Frankfurt Stock Exchange" ;
@@ -85,8 +86,8 @@
                                            rdfs:label      "Xetra" ;
                                            md:operatingMic "XETR" ;
                                            md:mic          "XETR"
-                                       ] ;
-                       ] ;
+                                        ] ;
+                        ] ;
         md:contentNature  md:Dynamic .
 
 
@@ -102,11 +103,12 @@
         md:depthOfMarket           [  rdf:type             md:Level2 ;
                                       md:positionFrom      1 ;
                                       md:positionTo        10 ;
-                                    ] .
+                                   ] .
 
 
 
-# PERMISSIONS ###########################################################################################
+# PERMISSIONS #####################################################################################################
+
 :P1     a                   odrl:Permission ;
         dc:desciption       "Platform trading"^^xsd:string ;
         odrl:target         :A1 ;
@@ -211,7 +213,8 @@
                             ] .
 
 
-# PROHIBITIONS ########################################################################################################
+# PROHIBITIONS ####################################################################################################
+
 :Pr1    a                   odrl:Prohibition ;
         dc:desciption       "No dispay allowed"^^xsd:string ;
         odrl:target         :A1 ;
@@ -234,112 +237,112 @@
         odrl:action         odrl:Distribute .
 
 
-# OBLIGATIONS ###################################################################################################################
+# OBLIGATIONS & DUTIES ############################################################################################
 
-# Audit
-:O1                 a                   odrl:Duty ;
-                    nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
-                    nl:hasDeadlineDelta [   a                     time:ProperInterval ;
-                                            md:timeReference      time:Instant , md:TimeOfNotification ;
-                                            time:hasXSDDuration "P30D"^^xsd:duration
-                                        ] ;
-                    odrl:action         [   a                      md:Accept ;
-                                            md:actionScope         md:Audit  ;
-                                            odrl:count             "1"^^xsd:int
-                                        ] ;
-                    odrl:duty           :D1 .
+## Audit
+:O1     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
+        nl:hasDeadlineDelta [   a                     time:ProperInterval ;
+                                md:timeReference      time:Instant , md:TimeOfNotification ;
+                                time:hasXSDDuration "P30D"^^xsd:duration
+                            ] ;
+        odrl:action         [   a                      md:Accept ;
+                                md:actionScope         md:Audit  ;
+                                odrl:count             "1"^^xsd:int
+                            ] ;
+        odrl:duty           :D1 .
 
-:D1                 a                   odrl:Duty ;
-                    nl:debtor           <https://permid.org/1-4295899615> ; # CME
-                    odrl:action         [   a                      md:Notify ; 
-                                            md:actionScope         md:Audit  ;
-                                            odrl:count             "1"^^xsd:int
-                                        ] .    
-
-
-:O2                 a                   odrl:Duty ;
-                    nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
-                    odrl:action         [   a                      md:Accept ;
-                                            md:actionScope         md:Audit  ;
-                                            odrl:count             "1"^^xsd:int
-                                        ] ;
-                    odrl:duty           :D2 .
-
-:D2                 a                   odrl:Duty ;
-                    nl:debtor           <https://permid.org/1-4295899615> ; # CME
-                    odrl:action         [   a                      md:Report ; 
-                                            md:scope               md:ReasonableSuspicion ;
-                                            odrl:count             "1"^^xsd:int
-                                        ] .   
-
-# Service Facilitators
-:O3                 a                   odrl:Duty ;
-                    nl:debtor           <https://permid.org/1-4298007872> ; # DBAG
-                    odrl:action         [   a                       md:Consent ;
-                                            md:actionScope          md:ServiceFacilitator ;
-                                            odrl:count              "1"^^xsd:int
-                                        ] ;
-                    odrl:duty           :D3 . 
-
-:D3                 a                   odrl:Duty ;
-                    nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
-                    odrl:action         [   a                       md:Notify ;
-                                            md:actionScope          md:ServiceFacilitator ;
-                                            odrl:count              "1"^^xsd:int
-                                        ] ;
-                    md:otherParties     md:ServiceFacilitator .
+:D1     a                   odrl:Duty ;
+        nl:debtor           <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                      md:Notify ; 
+                                md:actionScope         md:Audit  ;
+                                odrl:count             "1"^^xsd:int
+                            ] .    
 
 
-:D4-1   a                   odrl:Duty ;
+:O2     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
+        odrl:action         [   a                      md:Accept ;
+                                md:actionScope         md:Audit  ;
+                                odrl:count             "1"^^xsd:int
+                            ] ;
+        odrl:duty           :D2 .
+
+:D2     a                   odrl:Duty ;
+        nl:debtor           <https://permid.org/1-4295899615> ; # CME
+        odrl:action         [   a                      md:Report ; 
+                                md:scope               md:ReasonableSuspicion ;
+                                odrl:count             "1"^^xsd:int
+                            ] .   
+
+## Service Facilitators
+:O3     a                   odrl:Duty ;
+        nl:debtor           <https://permid.org/1-4298007872> ; # DBAG
+        odrl:action         [   a                       md:Consent ;
+                                md:actionScope          md:ServiceFacilitator ;
+                                odrl:count              "1"^^xsd:int
+                            ] ;
+        odrl:duty           :D3 . 
+
+:D3     a                   odrl:Duty ;
+        nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
+        odrl:action         [   a                       md:Notify ;
+                                md:actionScope          md:ServiceFacilitator ;
+                                odrl:count              "1"^^xsd:int
+                            ] ;
+        md:otherParties     md:ServiceFacilitator .
+
+## Notifications
+:O4-1   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         odrl:action         [   a                  md:Notify ;
                                 md:actionScope     md:Usage ;
                                 odrl:count         "1"^^xsd:int
                             ] .
  
-:D4-2   a                   odrl:Duty ;
+:O4-2   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         odrl:action         [   a                  md:Notify ;
                                 md:actionScope     md:Usage ;
                                 odrl:count         "1"^^xsd:int
                             ] .
  
-:D4-3   a                   odrl:Duty ;
+:O4-3   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         odrl:action         [   a                  md:Notify ;
                                 md:actionScope     md:Usage ;
                                 odrl:count         "1"^^xsd:int
                             ] .
  
-:D4-4   a                   odrl:Duty ;
+:O4-4   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         odrl:action         [   a                  md:Notify ;
                                 md:actionScope     md:Usage ;
                                 odrl:count         "1"^^xsd:int
                             ] .
  
-:D4-5   a                   odrl:Duty ;
+:O4-5   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         odrl:action         [   a                  md:Notify ;
                                 md:actionScope     md:Usage ;
                                 odrl:count         "1"^^xsd:int
                             ] .
 
-:D4-6   a                   odrl:Duty ;
+:O4-6   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         odrl:action         [   a                  md:Notify ;
                                 md:actionScope     md:Usage ;
                                 odrl:count         "1"^^xsd:int
                             ] .
 
-:D4-7   a                   odrl:Duty ;
+:O4-7   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         odrl:action         [   a                  md:Notify ;
                                 md:actionScope     md:Usage ;
                                 odrl:count         "1"^^xsd:int
                             ] .
 
-
+## Payments
 :D5-1   a                   odrl:Duty ;
         nl:debtor           <https://permid.org/1-4298007872> ; # DBAG
         odrl:timeInterval   [   a                     time:ProperInterval ;
@@ -349,7 +352,7 @@
                                 odrl:count            "1"^^xsd:int
                             ] .
 
-:D6-1   a                   odrl:Duty ;
+:O6-1   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         nl:hasDeadlineDelta [   a                     time:ProperInterval ;
                                 md:timeReference      time:Instant , md:TimeOfInvoicing ;
@@ -376,7 +379,7 @@
                                 odrl:count            "1"^^xsd:int
                             ] .
 
-:D6-2   a                   odrl:Duty ;
+:O6-2   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         nl:hasDeadlineDelta [   a                     time:ProperInterval ;
                                 md:timeReference      time:Instant , md:TimeOfInvoicing ;
@@ -403,7 +406,7 @@
                                 odrl:count             "1"^^xsd:int
                             ] .
 
-:D6-3   a                   odrl:Duty ;
+:O6-3   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         nl:hasDeadlineDelta [   a                     time:ProperInterval ;
                                 md:timeReference      time:Instant , md:TimeOfInvoicing ;
@@ -430,7 +433,7 @@
                                 odrl:count            "1"^^xsd:int
                             ] .
 
-:D6-4   a                   odrl:Duty ;
+:O6-4   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         nl:hasDeadlineDelta [   a                     time:ProperInterval ;
                                 md:timeReference      time:Instant , md:TimeOfInvoicing ;
@@ -458,7 +461,7 @@
                                 odrl:count            "1"^^xsd:int
                             ] .
 
-:D6-5   a                   odrl:Duty ;
+:O6-5   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         nl:hasDeadlineDelta [   a                     time:ProperInterval ;
                                 md:timeReference      time:Instant , md:TimeOfInvoicing ;
@@ -475,7 +478,6 @@
         odrl:duty           :D5-5 .
 
 
-
 :D5-6   a                   odrl:Duty ;
         nl:debtor           <https://permid.org/1-4298007872> ; # DBAG
         odrl:timeInterval   [   a                     time:ProperInterval ;
@@ -485,7 +487,7 @@
                                 odrl:count            "1"^^xsd:int
                             ] .
 
-:D6-6   a                   odrl:Duty ;
+:O6-6   a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4298007872> ; # DBAG
         nl:hasDeadlineDelta [   a                     time:ProperInterval ;
                                 md:timeReference      time:Instant , md:TimeOfInvoicing ;
@@ -503,6 +505,7 @@
 
 
 
+# Next Policies
 :D7     a                   odrl:Duty ;
         odrl:action         odrl:nextPolicy ;
         odrl:target         :U1 .
