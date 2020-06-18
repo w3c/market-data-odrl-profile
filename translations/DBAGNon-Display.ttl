@@ -77,28 +77,29 @@
 
 # RESOURCES & ASSETS ##############################################################################################
 
-:R1     rdf:type        md:Resource ;
+:S1     rdf:type        md:Source ;
         rdfs:label      "Xetra" ;
         dc:description  "Market data for German and international instruments traded on the Xetra and Frankfurt Stock Exchange" ;
         md:provider     <https://permid.org/1-4298007872> ; # Identifier for DBAG
-        md:service      [  rdf:type     md:Service ;
+        md:complexID    [  rdf:type     md:complexID ;
                            md:venue     [   rdf:type        md:Venue ;
-                                           rdfs:label      "Xetra" ;
-                                           md:operatingMic "XETR" ;
-                                           md:mic          "XETR"
+                                            rdfs:label      "Xetra" ;
+                                            md:operatingMic "XETR" ;
+                                            md:mic          "XETR"
                                         ] ;
+                           rdfs:label   "Xetra"
                         ] ;
-        md:contentNature  md:Dynamic .
+        md:contentNature md:Dynamic .
 
 
-:A1     rdf:type                   odrl:Asset ;
+:A1     rdf:type                   odrl:AssetCollection, md:Resource ;
         rdf:label                  "Xetra Ultra" ;
-        md:resource                :R1 ;
+        md:resource                :S1 ;
         md:timelinessOfDelivery    [  rdf:type             time:ProperInterval , md:Realtime ;
-                                      time:intervalEquals [  rdf:type    time:ProperInterval ;
-                                                             md:timeReference  time:Instant , md:TimeOfIssue ;
-                                                             time:hasXSDDuration "PT15M"^^xsd:duration
-                                                          ]
+                                      time:intervalBefore  [   rdf:type    time:ProperInterval ;
+                                                               md:timeReference  time:Instant , md:TimeOfIssue ;
+                                                               time:hasXSDDuration "PT15M"^^xsd:duration
+                                                           ]
                                    ] ;
         md:depthOfMarket           [  rdf:type             md:Level2 ;
                                       md:positionFrom      1 ;
