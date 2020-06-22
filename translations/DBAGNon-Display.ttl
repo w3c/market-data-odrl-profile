@@ -81,13 +81,13 @@
         rdfs:label      "Xetra" ;
         dc:description  "Market data for German and international instruments traded on the Xetra and Frankfurt Stock Exchange" ;
         md:provider     <https://permid.org/1-4298007872> ; # Identifier for DBAG
-        md:complexID    [  rdf:type     md:complexID ;
-                           md:venue     [   rdf:type        md:Venue ;
-                                            rdfs:label      "Xetra" ;
-                                            md:operatingMic "XETR" ;
-                                            md:mic          "XETR"
-                                        ] ;
-                           rdfs:label   "Xetra"
+        md:complexID    [  rdf:type         md:complexID ;
+                           md:venue         [   rdf:type        md:Venue ;
+                                                rdfs:label      "Xetra" ;
+                                                md:operatingMic "XETR" ;
+                                                md:mic          "XETR"
+                                            ] ;
+                           dc:identifier    "Xetra"
                         ] ;
         md:contentNature md:Dynamic .
 
