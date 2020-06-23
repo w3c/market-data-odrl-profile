@@ -19,11 +19,11 @@ Can I send some data, in a chart format, in a research report to 400 clients, on
 *(Submitted by Michelle Roberts)*
 
 #### RoD-4
-I’m creating a spreadsheet containing a terminal vendor’s data – am I allowed to share this with clients
+I’m creating a spreadsheet containing a terminal vendor’s data – am I allowed to share this with clients<br>
 *(Submitted by Richard Mundell)*
 
 #### RoD-5
-I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?
+I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?<br>
 *(Submitted by Richard Mundell)*
 
 ## Non-display Use
@@ -57,9 +57,9 @@ Can I create derived data, in the form of an index, using EOD data, from 5 diffe
 *(Submitted by Michelle Roberts)*
 
 #### DD-4
-Can I create a spreadsheet combining two vendors data to create derived data
+Can I create a spreadsheet combining two vendors data to create derived data<br>
 *(Submitted by Richard Mundell)*
 
 #### DD-5
-I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?
+I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?<br>
 *(Submitted by Richard Mundell)*
