@@ -30,10 +30,8 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 2. Webinar Report (Mark B)
 3. Editors' Update (Ben, Mark B)
     1. VOTES on terms:
-        1. [[Roles in the Data Supply Chain, Issue #4](https://github.com/w3c/market-data-odrl-profile/issues/4)
-        Specifically the [definitions](https://github.com/w3c/market-data-odrl-profile/issues/4#issuecomment-641943758)
-        2. [Distinguishing between Assets, Resources, & Sources, Issue #3](https://github.com/w3c/market-data-odrl-profile/issues/3)
-        Specifically the [definitions](https://github.com/w3c/market-data-odrl-profile/issues/3#issuecomment-647462250)
+        1. [Roles in the Data Supply Chain, Issue #4](https://github.com/w3c/market-data-odrl-profile/issues/4) - Specifically the [definitions](https://github.com/w3c/market-data-odrl-profile/issues/4#issuecomment-641943758)
+        2. [Distinguishing between Assets, Resources, & Sources, Issue #3](https://github.com/w3c/market-data-odrl-profile/issues/3) - Specifically the [definitions](https://github.com/w3c/market-data-odrl-profile/issues/3#issuecomment-647462250)
     2. Discussion of open issues:
         1. [Controlling the Use of Derived Data, Issue #5](https://github.com/w3c/market-data-odrl-profile/issues/5)
         2. [Notification Duties, Issue #6](https://github.com/w3c/market-data-odrl-profile/issues/6)
