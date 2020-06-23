@@ -18,6 +18,14 @@ Can I send appx 10 years data for a couple of data points, in an Excel spreadshe
 Can I send some data, in a chart format, in a research report to 400 clients, on a monthly basis?<br>
 *(Submitted by Michelle Roberts)*
 
+#### RoD-4
+I’m creating a spreadsheet containing a terminal vendor’s data – am I allowed to share this with clients
+*(Submitted by Richard Mundell)*
+
+#### RoD-5
+I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?
+*(Submitted by Richard Mundell)*
+
 ## Non-display Use
 For example, use of real-time data in a new application
 
@@ -47,3 +55,11 @@ Can I create derived data, using delayed data, from 5 different vendors/exchange
 #### DD-3
 Can I create derived data, in the form of an index, using EOD data, from 5 different vendors/exchanges, and send the result to a client?<br>
 *(Submitted by Michelle Roberts)*
+
+#### DD-4
+Can I create a spreadsheet combining two vendors data to create derived data
+*(Submitted by Richard Mundell)*
+
+#### DD-5
+I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?
+*(Submitted by Richard Mundell)*
