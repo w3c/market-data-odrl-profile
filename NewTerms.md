@@ -7,7 +7,7 @@ _Sub-class of odrl:Action_
 
 The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope).
 
-Where the action scope is md:Usage, the debtor makes the creditor aware that they are using the asset.
+Where the action scope is **md:Usage**, the debtor makes the creditor aware that they are using the asset.
 
 <br>**md:Request**
 
@@ -15,9 +15,9 @@ _Sub-class of odrl:Action_
 
 The debtor makes the creditor aware of a desired state of the world (defined by the action scope).
 
-Where the action scope is md:Audit, the debtor requests the creditor to accede to an audit.
+Where the action scope is **md:Audit**, the debtor requests the creditor to accede to an audit.
 
-Where the action scope is md:ServiceFacilitator, the debtor requests the creditor allow a service facilitator to access the asset.
+Where the action scope is **md:ServiceFacilitator**, the debtor requests the creditor allow a service facilitator to access the asset.
 
 <br>**md:Report**
 
@@ -25,11 +25,11 @@ _Sub-class of odrl:Action_
 
 The debtor provides a report to the creditor on a relevant state of the world (defined by the action scope).
 
-Where the action scope is md:ResonableSuspicion, the debtor reports a reasonable suspicion that the asset is being misused.
+Where the action scope is **md:ResonableSuspicion**, the debtor reports a reasonable suspicion that the asset is being misused.
 
-Where the action scope is md:Controls, the debtor reports on their implementation of access controls.
+Where the action scope is **md:Controls**, the debtor reports on their implementation of access controls.
 
-Where the action scope is md:Usage, the debtor reports on their usage of the asset as specified in the duty.
+Where the action scope is **md:Usage**, the debtor reports on their usage of the asset as specified in the duty.
 
 <br>**md:Consent**
 
@@ -37,9 +37,9 @@ _Sub-class of odrl:Action_
 
 The debtor accedes to a desired state of the world (defined by the action scope).
 
-Where the action scope is md:Audit, the debtor consents to be audited by the creditor.
+Where the action scope is **md:Audit**, the debtor consents to be audited by the creditor.
 
-Where the action scope is md:ServiceFacilitator, the debtor consents to the creditor's use of a service facilitator.
+Where the action scope is **md:ServiceFacilitator**, the debtor consents to the creditor's use of a service facilitator.
 
 <br>**md:Compensate**
 
@@ -59,9 +59,9 @@ _Sub-class of odrl:Action_
 
 The debtor publishes a description of the creditor's relation to the asset.
 
-Where the action scope is md:Ownership, the attribution describes the creditor's ownership of the asset identified by the odrl:target relation.
+Where the action scope is **md:Ownership**, the attribution describes the creditor's ownership of the asset identified by the odrl:target relation.
 
-Where the action scope is md:Disclaimer, the attribution clarifies the creditor's relation to the asset identified by the odrl:target relation.
+Where the action scope is **md:Disclaimer**, the attribution clarifies the creditor's relation to the asset identified by the odrl:target relation.
 
 
 ## Action Scope for Duty Actions
@@ -105,9 +105,9 @@ Qualifies actions taken in the context of a reasonable suspicion that the assign
 # Constraints: predicates that test the state of the world
 **md:recipient**
 
-_Domain: odrl:Rule  
+_Domain: odrl:Rule_  
 
-Range: odrl:Party_
+_Range: odrl:Party_
 
 A party with access to the asset
 
@@ -117,9 +117,9 @@ Can be qualified by the role constraint.
 
 <br>**md:role**
 
-_Domain: odrl:Party
+_Domain: odrl:Party_
 
-Range: md:Role_
+_Range: md:Role_
 
 The role a party plays in respect of the asset.
 
@@ -129,8 +129,11 @@ Parties can play multiple roles.
 ## Simple Properties that specify an entity
 
 **md:unitOfCount**
-_Domain: odrl:Action
-Range: md:UnitOfCount_
+
+_Domain: odrl:Action_
+
+_Range: md:UnitOfCount_
+
 The thing to be counted.
 
 Often used to specify the things to be counted (e.g. devices or access IDs) in a usage report or in calculating a payment.
