@@ -220,7 +220,7 @@ A Source is a root Resource: unconstrained and informationally complete, indepen
 <br>
 
 # To Do
-"*What do we all* [the exchanges] *really care about? It's simple: distribution, non-display uses such as automated trading, and the creation of new financial products*" - CBOT
+"*What do we all* [the exchanges] *really care about? It's simple: distribution, non-display uses such as automated trading, and the creation of new financial products*"
 
 ## AGENTS
 
