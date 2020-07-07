@@ -1,6 +1,6 @@
 # Rights Automation Community Group
 
-## Teleconference 2020-07-7
+## Teleconference 2020-07-08
 
 Please send your regrets in advance.
 
