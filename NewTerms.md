@@ -2,7 +2,9 @@
 
 ## Actions for Duties
 **md:Notify**
+
 _Sub-class of odrl:Action_
+
 The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope).
 
 Where the action scope is md:Usage, the debtor makes the creditor aware that they are using the asset.
@@ -113,7 +115,7 @@ Examples of Unit of Count:
 
 # Agreed
 
-# TO DO
+# To Do
 "*What do we all* [the exchanges] *really care about? It's simple: distribution, non-display uses such as automated trading, and the creation of new financial products*" - CBOT
 
 ## AGENTS
