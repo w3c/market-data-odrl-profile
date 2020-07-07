@@ -213,6 +213,7 @@ _Sub-class of md:Resource_
 An Asset is a Resource, a collection of Resources, or the part of a Resource controlled by a Rule. (A Rule being a Permission, a Prohibition, or a Duty).
 
 <br>**md:Source**
+
 A Source is a root Resource: unconstrained and informationally complete, independent of the aspects of commercialisation and/or delivery including timeliness, method of delivery, or book depth.
 
 <br>
