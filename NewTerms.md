@@ -63,6 +63,7 @@ Where the action scope is **md:Ownership**, the attribution describes the credit
 
 Where the action scope is **md:Disclaimer**, the attribution clarifies the creditor's relation to the asset identified by the odrl:target relation.
 
+<br>
 
 ## Action Scope for Duty Actions
 **md:Usage**
@@ -101,6 +102,7 @@ _Sub-class of md:ActionScope_
 
 Qualifies actions taken in the context of a reasonable suspicion that the assignee is misusing the asset.
 
+<br>
 
 ## Constraints: predicates that test the state of the world
 **md:recipient**
@@ -125,6 +127,7 @@ The role a party plays in respect of the asset.
 
 Parties can play multiple roles.
 
+<br>
 
 ## Simple Properties that specify an entity
 
@@ -148,6 +151,7 @@ Examples of Unit of Count:
 
 <br>
 <br>
+
 # Agreed
 
 ## Roles in the Data Supply Chain
@@ -181,6 +185,8 @@ _Sub-class of md:Role_
 
 An external organisation contracted by a Party (or its affiliated companies) to assist in the assignment of rights.
 
+<br>
+
 ## Sources, Resources, & Assets
 **md:Resource**
 
@@ -211,6 +217,7 @@ A Source is a root Resource: unconstrained and informationally complete, indepen
 
 <br>
 <br>
+
 # To Do
 "*What do we all* [the exchanges] *really care about? It's simple: distribution, non-display uses such as automated trading, and the creation of new financial products*" - CBOT
 
