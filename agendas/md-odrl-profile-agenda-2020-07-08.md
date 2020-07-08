@@ -8,11 +8,11 @@ If you are unfamiliar with the W3C you may want to review the [orientation guide
 
 ### Logistics
 
-Chair: Ben
+Chair: Jo
 
 Known Regrets: Renato, Ilya, Laura, Phil, Josh
 
-Date: 2020-07-07T1500Z
+Date: 2020-07-08T1500Z
 *  1100-1200 US Eastern
 *  1600-1700 UK/Ireland
 *  1700-1800 CET
