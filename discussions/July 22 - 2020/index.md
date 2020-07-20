@@ -1,11 +1,10 @@
 # Terms for Discussion: July 22, 2020
 
+* [Request](request.md)
 * [Notify](notify.md)
-* <a href="/notify.md" target="_blank">Notify 2</a>
-* Request
-* Report
-* Consent
-* Compensate
-* Invoice
-* Attribute
+* [Report](report.md)
+* [Consent](consent.md)
+* [Compensate](compensate.md)
+* [Invoice](invoice.md)
+* [Attribute](attribute.md)
 

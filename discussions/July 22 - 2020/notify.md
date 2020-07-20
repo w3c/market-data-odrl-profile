@@ -1,5 +1,7 @@
 # Duty: Notify
 
-** Definition: The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope).
+**Definition: The Debtor makes the Creditor aware of a relevant change in the state of the world (defined by the action scope).
 
-Read more about it on the <a href="https://github.com/w3c/market-data-odrl-profile/issues/6" target="_blank">Notification, Request, and Consent Duties</a> issues page.
+Example: A user of DBAG data has requested that they be allowed to use a Service Facilitator in a certain scenario. Before they can do so, DBAG must *notify* them that their request has been granted.
+
+Read more about it on the [Notification, Request, and Consent Duties](/w3c/market-data-odrl-profile/issues/6) issues page.
