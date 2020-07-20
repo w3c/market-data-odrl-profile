@@ -1,6 +1,6 @@
 # Terms for Discussion: July 22, 2020
 
-* Notify
+* [Notify] (notify.md)
 * Request
 * Report
 * Consent
