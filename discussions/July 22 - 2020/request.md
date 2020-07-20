@@ -9,8 +9,13 @@ Example: A user of DBAG data would like a Service Facilitator to assist them in 
 Read more about it on the [Notification, Request, and Consent Duties](/w3c/market-data-odrl-profile/issues/6) issues page.
 
 Next Topic: --
+
 Previous Topic: [Notify](notify.md)
+
 Return to the Index: [Index](index.md)
+
+
+
 
 Previous Topic |                          | Next Topic
 --------------------- | ----------------- | ----------
