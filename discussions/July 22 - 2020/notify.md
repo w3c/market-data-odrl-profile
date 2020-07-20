@@ -8,5 +8,6 @@ Example: A user of DBAG data has requested that they be allowed to use a Service
 
 Read more about it on the [Notification, Request, and Consent Duties](/w3c/market-data-odrl-profile/issues/6) issues page.
 
-Previous Topic | | Next Topic
+Previous Topic |                          | Next Topic
+--------------------- | ----------------- | ----------
 [Request](request.md) | [Index](index.md) | [Report](report.md)
