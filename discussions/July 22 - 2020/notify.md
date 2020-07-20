@@ -1,3 +1,9 @@
+<style>
+table {
+    width:100%;
+}
+</style>
+
 # Duty: Notify
 
 **Definition: The Debtor makes the Creditor aware of a relevant change in the state of the world (defined by the action scope).**

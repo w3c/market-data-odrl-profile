@@ -1,3 +1,9 @@
+<style>
+table {
+    width:100%;
+}
+</style>
+
 # Duty: Request
 
 **Definition: The Debtor makes the Creditor aware of a desired state of the world (defined by the action scope).**
@@ -8,5 +14,6 @@ Example: A user of DBAG data would like a Service Facilitator to assist them in 
 
 Read more about it on the [Notification, Request, and Consent Duties](/w3c/market-data-odrl-profile/issues/6) issues page.
 
-Previous Topic | | Next Topic
---| [Index](index.md) | [Notify](notify.md)
+Previous Topic |                          | Next Topic
+--------------------- | ----------------- | ----------
+  | [Index](index.md) | [Notify](notify.md)
