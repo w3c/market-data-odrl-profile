@@ -29,7 +29,7 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
     1. Minutes of [last meeting](https://www.w3.org/2020/07/08-md-odrl-profile-minutes.html)
 2. Editors' Update (Ben, Mark B)
     1. [Discussion of Duties](https://w3c.github.io/market-data-odrl-profile/discussions/2020-07-22/terms.html)
-    2. [VOTES on terms](https://w3c.github.io/market-data-odrl-profile/Vote.html)
+    2. [VOTES on Duty terms](https://w3c.github.io/market-data-odrl-profile/Vote.html)
     3. [Discussion of the temporal aspects of policies](https://github.com/w3c/market-data-odrl-profile/issues/12)
     4. [Discussion of the policy lifecyle](https://github.com/w3c/market-data-odrl-profile/issues/13)
 3. AOB
