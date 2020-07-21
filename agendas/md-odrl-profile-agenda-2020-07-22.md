@@ -8,9 +8,9 @@ If you are unfamiliar with the W3C you may want to review the [orientation guide
 
 ### Logistics
 
-Chair: Jo
+Chair: Ben
 
-Known Regrets: Renato
+Known Regrets: Renato, Jo
 
 Date: 2020-07-22T1500Z
 *  1100-1200 US Eastern
