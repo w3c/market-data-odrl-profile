@@ -1,5 +1,7 @@
 # July 22, 2020: Terms for Discussion
 
+Agenda: Review and agree on the universe  and definitions of duties required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the duties that are used market data contracts.
+
 ## Duty: Request
 
 **Definition: The Debtor makes the Creditor aware of a desired state of the world (defined by the action scope).**
