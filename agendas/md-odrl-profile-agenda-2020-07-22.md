@@ -10,7 +10,7 @@ If you are unfamiliar with the W3C you may want to review the [orientation guide
 
 Chair: Ben
 
-Known Regrets: Renato, Jo
+Known Regrets: Renato, Jo , Michael
 
 Date: 2020-07-22T1500Z
 *  1100-1200 US Eastern
