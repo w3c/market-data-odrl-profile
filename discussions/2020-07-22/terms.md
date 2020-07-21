@@ -60,3 +60,9 @@ Example: DBAG has an online webstore where data consumers can browse and purchas
 
 Read more: [Payment Duties](https://github.com/w3c/market-data-odrl-profile/issues/8)
 
+## Time to Vote!
+
+Are the definitions for these terms correct?
+Are their other terms needed to fully define duties related to market data contracts?
+
+[Vote](https://w3c.github.io/market-data-odrl-profile/Vote)
