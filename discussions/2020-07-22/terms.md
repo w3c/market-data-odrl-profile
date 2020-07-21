@@ -1,6 +1,6 @@
 # July 22, 2020: Terms for Discussion
 
-Agenda: Review and agree on the universe  and definitions of duties required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the duties that are used market data contracts.
+Agenda: Review and agree on the universe and definitions of duties required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the duties that are used market data contracts.
 
 ## Duty: Request
 
@@ -68,9 +68,9 @@ Read more: [Payment Duties](https://github.com/w3c/market-data-odrl-profile/issu
 
 The Debtor is the party required to compensate the Creditor. Most often, this would be a Redistributor or Consumer of data paying the Originator. This duty may or may not have been triggered by the issuing of an invoice.
 
-Example: Exchange X has an online webstore where data consumers can browse and purchase historical data. If the data is less than a certain amount, the purchaser is required to enter their credit card at the point of sale to make a payment and *compensate* Exchange X for access to the data.
+Example: 
 
-Read more: [Payment Duties](https://github.com/w3c/market-data-odrl-profile/issues/8)
+Read more: [Attribution Duties](https://github.com/w3c/market-data-odrl-profile/issues/9)
 
 ## Time to Vote!
 
