@@ -59,3 +59,4 @@ The Debtor is the party required to compensate the Creditor. Most often, this wo
 Example: DBAG has an online webstore where data consumers can browse and purchase historical data. If the data is less than a certain amount, the purchaser is required to enter their credit card at the point of sale to make a payment and *compensate* DBAG for access to the data.
 
 Read more: [Payment Duties](/w3c/market-data-odrl-profile/issues/8)
+
