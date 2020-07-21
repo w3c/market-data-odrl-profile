@@ -20,6 +20,17 @@ Example: A user of DBAG data has previously requested that they be allowed to us
 
 Other times, the Debtor is a Redistributor or Consumer of data, *notifying* the Originator that they've begun using a particular data product or that they've begun distributing data to a new third party.
 
-Example: Refinitiv is required to tell DBAG before distributing uncontrolled data to a new end user. There are no additional obligations (e.g. no need to wait or approval) but the must inform the exchange before entitling their new client.
+Example: Refinitiv is required to tell DBAG before distributing uncontrolled data to a new end user. There are no additional obligations (e.g. no need to wait or approval) but they must inform the exchange before entitling their new client.
 
 Read more: [Notification, Request, and Consent Duties](/w3c/market-data-odrl-profile/issues/6)
+
+## Duty: Report
+
+**Definition: The Debtor provides a report to the Creditor on a relevant state of the world (defined by the action scope).**
+
+In most, if not all, cases, the Debtor is a Redistributor or Consumer of data, peridically updating the Originator on something happening in their jurisdiction with regards to a data set. The big difference between the notification duty modeled above and standard reporting duties is their periodicity: while notification only need happen once, reporting must be repeated monthly.
+
+Example: Bloomberg must send DBAG a *report* each month listing products delivered to devices under Bloomberg's entitlement control, used by professional subscribers, summarized at the location level. The action for this example has an action scope of Usage, with a unitOfCount of Device. Since the report is required monthly, the duty has a timeInterval of monthly, and the action specifies that it must be done once per month.
+
+
+Read more: [Reporting Duties](/w3c/market-data-odrl-profile/issues/7)
