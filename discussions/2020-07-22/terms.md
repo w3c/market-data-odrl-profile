@@ -1,4 +1,6 @@
-# Duty: Request
+# July 22, 2020: Terms for Discussion
+
+## Duty: Request
 
 **Definition: The Debtor makes the Creditor aware of a desired state of the world (defined by the action scope).**
 
@@ -8,7 +10,7 @@ Example: A user of DBAG data would like a Service Facilitator to assist them in 
 
 Read more: [Notification, Request, and Consent Duties](/w3c/market-data-odrl-profile/issues/6)
 
-# Duty: Notify
+## Duty: Notify
 
 **Definition: The Debtor makes the Creditor aware of a relevant change in the state of the world (defined by the action scope).**
 
