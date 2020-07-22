@@ -2,13 +2,22 @@
 
 Agenda: Review and agree on the universe and definitions of **duties** required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the duties that are used in market data contracts.
 
+At the same time, we'll review some of the **action scopes** that modify duties for specific use cases.
+
 ## Duty: Request
 
 **Definition: The Debtor makes the Creditor aware of a desired state of the world (defined by the action scope).**
 
-In this case, the Debtor is a Consumer of data; the Creditor is the Originator.
+The Debtor is the party that wants something from the Creditor. They are the Debtor in this instace because the obligation is on them to make the request.
 
-Example: A user of Exchange X data would like a Service Facilitator to assist them in processing the data internally. Before they are allowed to do so, they must *request* permission. In some cases, simply making the request is enough to satisfy the terms of the agreement. But, as we'll see in the next duty, sometimes it's only the beginning of the process.
+### Action Scopes
+
+**Service Facilitator:** Qualifies actions taken in the context of the assignee employing a service facilitator.
+**Audit:** Qualifies actions taken in the context of a proposed audit of the assignee by the assigner.
+
+Service Facilitator Example: A user of Exchange X data would like a Service Facilitator to assist them in processing the data internally. Before they are allowed to do so, they must *request* permission. In some cases, simply making the request is enough to satisfy the terms of the agreement. But, as we'll see in the next duty, sometimes it's only the beginning of the process.
+
+Audit Example: Exchange X would like to perform an audit of an investement bank's internal data use and distribution. They are contractually entitled to so periodically, but they must first inform that bank of the impending audit by making a *request*.
 
 Read more: [Notification, Request, and Consent Duties](https://github.com/w3c/market-data-odrl-profile/issues/6)
 
