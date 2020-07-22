@@ -8,11 +8,12 @@ At the same time, we'll review some of the **action scopes** that modify duties 
 
 **Definition: The Debtor makes the Creditor aware of a desired state of the world (defined by the action scope).**
 
-The Debtor is the party that wants something from the Creditor. They are the Debtor in this instace because the obligation is on them to make the request.
+The Debtor is the party that wants something from the Creditor. They are the Debtor in this instance because the obligation is on them to make the request.
 
 ### Action Scopes
 
 **Service Facilitator:** Qualifies actions taken in the context of the assignee employing a service facilitator.
+
 **Audit:** Qualifies actions taken in the context of a proposed audit of the assignee by the assigner.
 
 Service Facilitator Example: A user of Exchange X data would like a Service Facilitator to assist them in processing the data internally. Before they are allowed to do so, they must *request* permission. In some cases, simply making the request is enough to satisfy the terms of the agreement. But, as we'll see in the next duty, sometimes it's only the beginning of the process.
@@ -25,9 +26,17 @@ Read more: [Notification, Request, and Consent Duties](https://github.com/w3c/ma
 
 **Definition: The debtor accedes to a desired state of the world (defined by the action scope).**
 
-Often, the Debtor is the Originator who is informing the Consumer (the Creditor) of something, often that a request has been granted.
+Now, the Debtor is the party responding to the request made previously. They are the Debtor because the action is on them to accede to the request. They may or may not be contractually obligated to fulfil the request, but they are the Debtor in the sense that they have the next action.
 
-Example: A user of Exchange X data has previously requested that they be allowed to use a Service Facilitator in a certain scenario. Before they can do so, Exchange X must give their *consent*  that the request has been granted.
+### Action Scopes
+
+**Service Facilitator:** Qualifies actions taken in the context of the assignee employing a service facilitator.
+
+**Audit:** Qualifies actions taken in the context of a proposed audit of the assignee by the assigner.
+
+Service Facilitator Example: A user of Exchange X data has previously requested that they be allowed to use a Service Facilitator in a certain scenario. Before they can do so, Exchange X must give their *consent*  that the request has been granted.
+
+Audit Example: The investment bank contacted by Exchange X accedes to be audited.
 
 Read more: [Notification, Request, and Consent Duties](https://github.com/w3c/market-data-odrl-profile/issues/6)
 
