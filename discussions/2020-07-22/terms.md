@@ -1,6 +1,6 @@
 # July 22, 2020: Terms for Discussion
 
-Agenda: Review and agree on the universe and definitions of duties required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the duties that are used market data contracts.
+Agenda: Review and agree on the universe and definitions of **duties** required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the duties that are used in market data contracts.
 
 ## Duty: Request
 
@@ -66,9 +66,9 @@ Read more: [Payment Duties](https://github.com/w3c/market-data-odrl-profile/issu
 
 **Definition: The Debtor publishes a description of the Creditor's relation to the asset.**
 
-The Debtor is the party required to compensate the Creditor. Most often, this would be a Redistributor or Consumer of data paying the Originator. This duty may or may not have been triggered by the issuing of an invoice.
+Attributions usually attribute ownership, but we'll use the duty to also cover the disclaimers required on derived data. The action scope makes the distinction between Ownership and Disclaimer.
 
-Example: 
+Example: An online news site has a widget on their website that displays a selection of ticker prices after a certain delay period. Exchange X requires that the website *attribute* ownership of the information to them.
 
 Read more: [Attribution Duties](https://github.com/w3c/market-data-odrl-profile/issues/9)
 
@@ -79,3 +79,8 @@ Are the definitions for these terms correct?
 Are there other terms needed to fully define duties related to market data contracts?
 
 [Vote](https://w3c.github.io/market-data-odrl-profile/Vote)
+
+## New Topics
+
+[Temporal Aspects of Policy Management](https://github.com/w3c/market-data-odrl-profile/issues/12)
+[Policy Types & Lifecycle](https://github.com/w3c/market-data-odrl-profile/issues/13)
