@@ -1,6 +1,6 @@
 # July 22, 2020: Terms for Discussion
 
-Agenda: Review and agree on the universe and definitions of **duties** required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the duties that are used in market data contracts.
+Agenda: Review and agree on the universe and definitions of **actions for duties** required to describe obligations in market data contracts. A duty is "the obligation to perform an Action." The goal of this session is to agree on all the kinds of duties that are used in market data contracts.
 
 At the same time, we'll review some of the **action scopes** that modify duties for specific use cases.
 
@@ -12,9 +12,9 @@ The Debtor is the party that wants something from the Creditor. They are the Deb
 
 ### Action Scopes
 
-**Service Facilitator:** Qualifies actions taken in the context of the assignee employing a service facilitator.
+**Service Facilitator:** The debtor requests the creditor allow a service facilitator to access the asset.
 
-**Audit:** Qualifies actions taken in the context of a proposed audit of the assignee by the assigner.
+**Audit:** The debtor requests the creditor to accede to an audit
 
 Service Facilitator Example: A user of Exchange X data would like a Service Facilitator to assist them in processing the data internally. Before they are allowed to do so, they must *request* permission. In some cases, simply making the request is enough to satisfy the terms of the agreement. But, as we'll see in the next duty, sometimes it's only the beginning of the process.
 
@@ -30,9 +30,9 @@ Now, the Debtor is the party responding to the request made previously. They are
 
 ### Action Scopes
 
-**Service Facilitator:** Qualifies actions taken in the context of the assignee employing a service facilitator.
+**Service Facilitator:** The debtor consents to the creditor's use of a service facilitator.
 
-**Audit:** Qualifies actions taken in the context of a proposed audit of the assignee by the assigner.
+**Audit:** The debtor consents to be audited by the creditor.
 
 Service Facilitator Example: A user of Exchange X data has previously requested that they be allowed to use a Service Facilitator in a certain scenario. Before they can do so, Exchange X must give their *consent*  that the request has been granted.
 
@@ -46,6 +46,10 @@ Read more: [Notification, Request, and Consent Duties](https://github.com/w3c/ma
 
 Often, the Debtor is a Redistributor or Consumer of data, *notifying* the Originator that they've begun using a particular data product or that they've begun distributing data to a new third party.
 
+### Action Scopes
+
+**Usage:** The debtor makes the creditor aware that they are using the asset.
+
 Example: Vendor Y is required to tell Exchange X before distributing uncontrolled data to a new end user. There are no additional obligations (e.g. no need to wait or approval) but they must inform the exchange before entitling their new client.
 
 Read more: [Notification, Request, and Consent Duties](https://github.com/w3c/market-data-odrl-profile/issues/6)
@@ -56,7 +60,13 @@ Read more: [Notification, Request, and Consent Duties](https://github.com/w3c/ma
 
 In most, if not all, cases, the Debtor is a Redistributor or Consumer of data, peridically updating the Originator on something happening in their jurisdiction with regards to a data set. The big difference between the notification duty modeled above and standard reporting duties is their periodicity: while notification only need happen once, reporting must be repeated.
 
-Example: Vendor Y must send Exchange X a *report* each month listing products delivered to devices under Vendor Y's entitlement control, used by professional subscribers, summarized at the location level. The action for this example has an action scope of Usage, with a unitOfCount of Device. Since the report is required monthly, the duty has a timeInterval of monthly, and the action specifies that it must be done once per month.
+### Action Scopes
+
+**Controls:** The debtor reports on their implementation of access controls.
+
+**Usage:** The debtor reports on their usage of the asset as specified in the duty.
+
+Usage Example: Vendor Y must send Exchange X a *report* each month listing products delivered to devices under Vendor Y's entitlement control, used by professional subscribers, summarized at the location level. The action for this example has an action scope of Usage, with a unitOfCount of Device. Since the report is required monthly, the duty has a timeInterval of monthly, and the action specifies that it must be done once per month.
 
 Read more: [Reporting Duties](https://github.com/w3c/market-data-odrl-profile/issues/7)
 
