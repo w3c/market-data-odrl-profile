@@ -35,17 +35,30 @@
 <section id='conformance'></section>
 <section id='Supply Chain Metamodel'>
     <h2>Supply Chain Metamodel</h2>
-    <section data-dfn-for="Foo">
-        <h2>Start your spec!</h2>
-        <pre class="idl">
-          interface Foo {
-            attribute Bar bar;
-            void doTheFoo();
-          };
-          </pre>
-        <p>The <dfn>Foo</dfn> interface represents a {{Foo}}.</p>
-        <p>The <dfn>doTheFoo()</dfn> method does the foo.
-            Call it by running {{Foo/doTheFoo()}}.</p>
+    <p>
+        The Market Data Profile for ODRL operates within the context of the market data supply chain. The benefits of its application accrue to its actors while its definitions of compliance classify their interactions. 
+    </p>
+    <p>
+        To unlock its potential we must situate the profile within a metamodel that describes these actors and the data resources they trade. 
+    </p>
+    <section id='Roles in the Market Data Supply Chain'>
+        <h3>Roles in the Market Data Supply Chain</h2>
+        <p>
+            ODRL already defines the function a Party plays in a rule. Our roles describe the part a Party plays in the market data supply chain. Most parties will play multiple roles. A large financial institution will play them all at different times.
+        </p>
+        
+        <section data-dfn-for="Originator">
+            <h4>Originator</h4>
+            <pre class="idl">
+              interface Foo {
+                attribute Bar bar;
+                void doTheFoo();
+              };
+              </pre>
+            <p>The <dfn>Foo</dfn> interface represents a {{Foo}}.</p>
+            <p>The <dfn>doTheFoo()</dfn> method does the foo.
+                Call it by running {{Foo/doTheFoo()}}.</p>
+        </section>
     </section>
 </section>
 </body>
