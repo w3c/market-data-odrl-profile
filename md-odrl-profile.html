@@ -327,7 +327,7 @@
             <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification_ttl">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">  </span><span class="p">[</span><span class="w"></span>
-                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
                 <span class="w">                      </span><span class="nn">md:</span><span class="nt">actionScope</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
                 <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">     </span><span class="s">1</span><span class="w"></span>
                 <span class="w">     </span><span class="p">]</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
@@ -337,13 +337,13 @@
                 <span class="w">     </span><span class="p">]</span><span class="w">  </span><span class="p">.</span><span class="w"></span>
             </pre>
             <p class="note">
-                How to read this Duty?
+                How to read this example?
                 <br/><br/>
-                To fulfill this Duty, the Obligatee (not specified in this example) must take the action of notifying the Obligator (again, not specified) of their use of a Service Facilitator.
+                To fulfill the Duty, the Obligatee (not specified in this example) must take the action of notifying the Obligator (again, not specified) of their use of a Service Facilitator. They need only do this once for the duty to be fulfilled.
                 <br/><br/>
                 When does this Duty become active?
                 <br/><br/>
-                When a Service Facilitator external to the assignee becomes a recipient of the data. The recipient property of the Duty is a Constraint...
+                When the recipient condition is met - i.e. when a Service Facilitator <a>external</a> to the assignee becomes a recipient of the data.
             </p>
         </section>
         <section data-dfn-for="Administrator">
