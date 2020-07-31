@@ -148,6 +148,45 @@
     </p>
     <section id='Party Types'>
         <h2>Party Types</h2>
+        <p>
+            Market data licenses are very sensitive to who accesses the data they control. The key distinction is between Parties that belong to the Assignee (and its affiliated or enumerated companies) and those that don't (aka third-parties).
+        </p><p>
+            We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
+        </p>
+        <section data-dfn-for="Internal">
+            <h2><dfn>Internal</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>A Party that belongs to the Assignee and its affiliated or enumerated organisations as specified by the governing license.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Internal</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Internal">http://www.w3.org/md-odrl-profile/Internal</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="External">
+            <h2><dfn>External</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>A Party that does <em>not</em> belong to the Assignee and its affiliated or enumerated organisations as specified by the governing license.</td>
+                    </tr><tr>
+                        <th>Scope Note:</th><td>Captures the concept of third parties.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>External</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/External">http://www.w3.org/md-odrl-profile/External</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
     <section id='Party Roles'>
         <h2>Party Roles</h2>
