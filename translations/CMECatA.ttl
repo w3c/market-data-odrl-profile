@@ -8,13 +8,14 @@
 @prefix nl:     <http://example.org/> .
 @prefix dcat:   <http://www.w3.org/ns/dcat#> .
 @prefix dc:     <http://purl.org/dc/terms/> .
+@prefix cfi:    <http://example.org/> .
 
 
 # POLICIES ########################################################################################################
 
 ## Offers
 :T1     a                       odrl:Offer ;
-		rdfs:label                  "Automated trading for real-time data" ;
+		rdfs:label              "Automated trading for real-time data" ;
         odrl:assigner           <https://permid.org/1-4295899615> ; # CME
         odrl:permission         :P1 , :P2 ;
         odrl:prohibition        :Pr1  ;
@@ -40,7 +41,7 @@
 # SOURCES, RESOURCES, & ASSETS #######################################################################################
 
 ## Sources
-:S1     a                       md:Resource , dcat:Dataset ;
+:S1     a                       md:Source , dcat:Dataset ;
         rdfs:label              "Eurodollar Futures Contract" ;
         md:originator           <https://permid.org/1-4295899615> ;
         md:complexID            [   a               md:ComplexID ; 
@@ -51,7 +52,7 @@
                                                     ] ;
                                     dc:identifier   "GE"^^xsd:string
                                 ] ;
-        md:assetClass           md:Derivatives ;
+        md:assetClass           md:Derivatives , cfi:FFCCSX ;
         md:contentNature        md:Dynamic .
 
 
@@ -60,9 +61,9 @@
         rdfs:label              "End-of-day Eurodollar Futures Contract" ;
         md:provider             <https://permid.org/1-4295899615> ; 
         md:resource             :S1 ;  
-        md:assetClass           md:Derivatives ;
+        md:assetClass           md:Derivatives , cfi:FFCCSX ;
         md:contentNature        md:StaticEOD ;
-        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargoed ;
+        md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargo ;
                                     time:after          [   a                   time:Instant, md:MarketClose ;
                                                             time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
                                                                                     time:hour       "16"^^xsd:int ;
@@ -129,7 +130,7 @@
 
 :P5     a                       odrl:Permission ;
         rdfs:label              "Internal use of derivations to support automated trading" ;
-        odrl:action             [   a               md:use ; 
+        odrl:action             [   a               md:Use ; 
                                     odrl:recipient  md:Internal
                                 ] .
 
@@ -159,9 +160,10 @@
                                             time:hasXSDDuration "P30D"^^xsd:duration
                                         ] ;
                     odrl:timeInterval   [   a                   time:ProperInterval ;
-                                            time:hasXSDDuration "P1Y"^^xsd:duration 
+                                            time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                                        odrl:count          "1"^^xsd:int
                                         ] ;
-                    odrl:action         [   a                   md:Accept ;
+                    odrl:action         [   a                   md:Consent ;
                                             md:actionScope      md:Audit  ;
                                             odrl:count          "1"^^xsd:int
                                         ] ;
@@ -170,7 +172,8 @@
 :D1                 a                   odrl:Duty ;
                     nl:debtor           <https://permid.org/1-4295899615> ; # CME
                     odrl:timeInterval   [   a                   time:ProperInterval ;
-                                            time:hasXSDDuration "P1Y"^^xsd:duration 
+                                            time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                                        odrl:count          "1"^^xsd:int
                                         ] ;
                     odrl:action         [   a                   md:Notify ; 
                                             md:actionScope      md:Audit  ;
@@ -180,9 +183,10 @@
 :O2                 a                   odrl:Duty ;
                     nl:creditor         <https://permid.org/1-4295899615> ; # CME
                     odrl:timeInterval   [   a                   time:ProperInterval ;
-                                            time:hasXSDDuration "P1Y"^^xsd:duration 
+                                            time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                                        odrl:count          "1"^^xsd:int
                                         ] ;
-                    odrl:action         [   a                   md:Accept ;
+                    odrl:action         [   a                   md:Consent ;
                                             md:actionScope      md:Audit  ;
                                             odrl:count          "1"^^xsd:int
                                         ] ;
@@ -190,12 +194,13 @@
 
 :D2                 a                     odrl:Duty ;
                     nl:debtor             <https://permid.org/1-4295899615> ; # CME
-                    odrl:timeInterval    [    a                     time:ProperInterval ;
-                                            time:hasXSDDuration    "P1Y"^^xsd:duration 
+                    odrl:timeInterval   [   a                   time:ProperInterval ;
+                                            time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                                        odrl:count          "1"^^xsd:int
                                         ] ;
-                    odrl:action         [     a                     md:Report ; 
-                                            md:actionScope         md:ReasonableSuspicion ;
-                                            odrl:count             "1"^^xsd:int
+                    odrl:action         [   a                    md:Notify ; 
+                                            md:actionScope       md:ReasonableSuspicion ;
+                                            odrl:count           "1"^^xsd:int
                                         ] . 
 
 ## Controls
@@ -203,6 +208,15 @@
                     nl:creditor         <https://permid.org/1-4295899615> ; # CME
                     odrl:action         [   a                   md:Evidence ;
                                             md:actionScope      md:Controls ;
+                                            odrl:count          "1"^^xsd:int
+                                        ] ;
+                    odrl:duty           :D10 .
+
+:D10                a                   odrl:Duty ;
+                    nl:debtor           <https://permid.org/1-4295899615> ; # CME
+                    odrl:action         [   a                   md:Notify ;
+                                            md:actionScope      md:Controls ;
+                                            odrl:count          "1"^^xsd:int
                                         ] .
 
 
@@ -212,16 +226,20 @@
                     odrl:target         :A1, :A2, :A3 ;
                     odrl:action         [   a                   odrl:Attribute ;    
                                             md:actionScope      md:Ownership ;
-                                            md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
-                                        ]  .
+                                            md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." ;
+                    odrl:count              "1"^^xsd:int
+                                        ] ;
+                    md:recipient        ( md:Internal md:External ) .
 
 :D7                 a                   odrl:Duty ;
                     nl:creditor         <https://permid.org/1-4295899615> ; # CME
                     odrl:target         :A2, :A3 ;
                     odrl:action         [   a                   odrl:Attribute ;    
                                             md:actionScope      md:Ownership ;
-                                            md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
-                                        ]  .
+                                            md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." ;
+                    odrl:count              "1"^^xsd:int
+                                        ]  ;
+                    md:recipient        ( md:Internal md:External ) .
 
 ## Reporting
 :D4                 a                   odrl:Duty ;
@@ -232,7 +250,7 @@
                     odrl:timeInterval   [   a                   time:ProperInterval ;
                                             time:hasXSDDuration "P1M"^^xsd:duration 
                                         ] ;
-                    odrl:action         [   a                   md:Report ; # Report to CME on the applications using this permission
+                    odrl:action         [   a                   md:Report ; 
                                             md:actionScope      md:Usage ;
                                             odrl:unitOfCount    md:Application ;
                                             odrl:count          "1"^^xsd:int

@@ -8,6 +8,7 @@
 @prefix nl:     <http://example.org/> .
 @prefix dcat:   <http://www.w3.org/ns/dcat#> .
 @prefix dc:     <http://purl.org/dc/terms/> .
+@prefix cfi:    <http://example.org/> .
 
 
 # Don't understand 2.11 - "Calculation Agent"
@@ -57,7 +58,7 @@
 						                            ] ;
 	                                dc:identifier   "GC" 
 	                            ] ;      
-	    md:assetClass           md:Derivatives ;
+	    md:assetClass           md:Derivatives , cf:FCEPSX ;
 	    md:contentNature        md:Dynamic .
 
 
@@ -66,7 +67,7 @@
         rdfs:label              "End-of-day Gold Futures" ;
         md:provider             <https://permid.org/1-4295899615> ;
         md:resource             :S1 ;  
-        md:assetClass           md:Derivatives ;
+        md:assetClass           md:Derivatives , cfi:FCEPSX ;
         md:contentNature        md:StaticEOD ;
         md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargoed ;
                                     time:after          [   a                   time:Instant, md:MarketClose ;
@@ -127,7 +128,10 @@
                                                         ]
                                 ] ;
         md:methodOfUpdate       [   a                   md:SnapShot ;
-                                    odrl:count          3 
+                                    odrl:count          3 ;
+                                    odrl:timeInterval   [   a                   time:ProperInterval ;
+	                                                        time:hasXSDDuration "P1D"^^xsd:duration 
+	                                                    ]
                                 ] .
 
 :A5     a                       odrl:AssetCollection , md:Resource , dcat:Dataset ;
@@ -139,7 +143,7 @@
 # PERMISSIONS #####################################################################################################
 
 :P1     a                       odrl:Permission ;
-		rdfs:lable              "Derivations for Category 1 warrant trading" ; 
+		rdfs:label              "Derivations for Category 1 warrant trading" ; 
         odrl:action             [   a                odrl:Derive ;
                                     md:derivation    md:Irreversable , md:Non-Substitutive ; 
                                     md:actionScope   md:WarrantTrading 
@@ -147,7 +151,7 @@
         odrl:duties             :D7 , :D10 .
 
 :P2     a                       odrl:Permission ;
-        rdfs:lable              "Derivations for Category 2 warrant trading" ;
+        rdfs:label              "Derivations for Category 2 warrant trading" ;
         odrl:action             [   a                odrl:Derive ;
                                     md:derivation    md:Irreversable  , md:Non-Substitutive ; 
                                     md:actionScope   md:WarrantTrading  
@@ -155,21 +159,21 @@
         odrl:duties             :D8 , :D11 .
 
 :P3     a                       odrl:Permission ;
-        rdfs:lable              "Warrant trading for Providers" ;
+        rdfs:label              "Warrant trading for Providers" ;
 	    odrl:action             [   a                odrl:Use ;
 	                                md:actionScope   md:WarrantTrading 
 	                            ] ;
         odrl:duties             :D9 .
 
 :P4     a                       odrl:Permission ;
-        rdfs:lable              "Warrant distribution by Providers" ;
+        rdfs:label              "Warrant distribution by Providers" ;
         odrl:action             [   a                odrl:Distribute ;
                                     md:actionScope   md:WarrantTrading 
                                 ] ;
         odrl:duties             :D5 , :D10 , :D12 .
 
 :P5     a                       odrl:Permission ;
-        rdfs:lable              "Warrant trading for end-Consumers" ;
+        rdfs:label              "Warrant trading for end-Consumers" ;
 	    odrl:action             [   a                odrl:Use ;
 	                                md:actionScope   md:WarrantTrading 
 	                            ] .
@@ -197,9 +201,10 @@
 	                            time:hasXSDDuration "P30D"^^xsd:duration
 	                        ] ;
 	    odrl:timeInterval   [   a                   time:ProperInterval ;
-	                            time:hasXSDDuration "P1Y"^^xsd:duration 
+	                            time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                            odrl:count          "1"^^xsd:int
 	                        ] ;
-	    odrl:action         [   a                   md:Accept ;
+	    odrl:action         [   a                   md:Consent ;
 	                            md:actionScope      md:Audit  ;
 	                            odrl:count          "1"^^xsd:int
 	                        ] ;
@@ -208,7 +213,8 @@
 :D1     a                   odrl:Duty ;
 	    nl:debtor           <https://permid.org/1-4295899615> ; # CME
 	    odrl:timeInterval   [   a                   time:ProperInterval ;
-	                            time:hasXSDDuration "P1Y"^^xsd:duration 
+	                            time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                            odrl:count          "1"^^xsd:int
 	                        ] ;
 	    odrl:action         [   a                   md:Notify ; 
 	                            md:actionScope      md:Audit  ;
@@ -219,9 +225,10 @@
 :O2     a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4295899615> ; # CME
         odrl:timeInterval   [   a                   time:ProperInterval ;
-                                time:hasXSDDuration "P1Y"^^xsd:duration 
+                                time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                            odrl:count          "1"^^xsd:int
                             ] ;
-        odrl:action         [   a                   md:Accept ;
+        odrl:action         [   a                   md:Consent ;
                                 md:actionScope      md:Audit  ;
                                 odrl:count          "1"^^xsd:int
                             ] ;
@@ -229,12 +236,13 @@
 
 :D2     a                     odrl:Duty ;
         nl:debtor             <https://permid.org/1-4295899615> ; # CME
-        odrl:timeInterval    [    a                     time:ProperInterval ;
-                                time:hasXSDDuration    "P1Y"^^xsd:duration 
+        odrl:timeInterval    [  a                   time:ProperInterval ;
+                                time:hasXSDDuration "P1Y"^^xsd:duration ;
+	                            odrl:count          "1"^^xsd:int
                             ] ;
-        odrl:action         [     a                     md:Report ; 
-                                md:actionScope         md:ReasonableSuspicion ;
-                                odrl:count             "1"^^xsd:int
+        odrl:action         [   a                   md:Notify ; 
+                                md:actionScope      md:ReasonableSuspicion ;
+                                odrl:count          "1"^^xsd:int
                             ] . 
 
 
@@ -314,40 +322,48 @@
                                 md:actionScope          md:Distribution ;
                                 odrl:count              "1"^^xsd:int
                             ] ;
-        md:otherParties     [   a                       md:Consumer ;
-                                md:recipient            md:External
+        md:recipient        [   a                       md:External ;
+        						md:role                 md:Consumer
                             ] .
 
 
 ## Attribution
 :D7     a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4295899615> ; # CME
-        odrl:action         [   a                   odrl:Attribute ;    
-                                md:actionScope      md:Ownership ;
-                                md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
-                            ]  .
+        odrl:action         [   a                       odrl:Attribute ;    
+                                md:actionScope          md:Ownership ;
+                                md:attribution          "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." ;
+                                odrl:count              "1"^^xsd:int
+                            ]  ;
+        md:recipient        ( md:Internal md:External ) .
 
 :D8     a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4295899615> ; # CME
-        odrl:action         [   a                   odrl:Attribute ;    
-                                md:actionScope      md:Ownership ;
-                                md:attribution      "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." 
-                            ]  .
+        odrl:action         [   a                       odrl:Attribute ;    
+                                md:actionScope          md:Ownership ;
+                                md:attribution          "The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc." ;
+                                odrl:count              "1"^^xsd:int
+                            ]  ;
+        md:recipient        ( md:Internal md:External ) .
 
 
 :D9     a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4295899615> ; # CME
-        odrl:action         [   a                   odrl:Attribute ;    
-                                md:actionScope      md:Disclaimer ;
-                                md:attribution      "CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]." 
-                            ]  .
+        odrl:action         [   a                       odrl:Attribute ;    
+                                md:actionScope          md:Disclaimer ;
+                                md:attribution          "CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]." ;
+                                odrl:count              "1"^^xsd:int
+                            ]  ;
+        md:recipient        ( md:Internal md:External ) .
 
 :D10     a                   odrl:Duty ;
         nl:creditor         <https://permid.org/1-4295899615> ; # CME
-        odrl:action         [   a                   odrl:Attribute ;    
-                                md:actionScope      md:Disclaimer ;
-                                md:attribution      "CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]." 
-                            ]  .
+        odrl:action         [   a                       odrl:Attribute ;    
+                                md:actionScope          md:Disclaimer ;
+                                md:attribution          "CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]." ;
+                                odrl:count              "1"^^xsd:int
+                            ]  ;
+        md:recipient        ( md:Internal md:External ) .
 
 
 # Next policy duties
