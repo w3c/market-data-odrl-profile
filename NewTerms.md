@@ -4,43 +4,24 @@
 To manage policies through their life-cycle, we need to track their status:
 
 <br>**md:Draft**
+
 Work in progress or for review or approval.
 
 <br>**md:Cancelled**
+
 Abandoned, never published.
 
 <br>**md:Published**
+
 Live, operative (subject to effective dates), available for new users.
 
 <br>**md:Obsolete**
+
 Operative (subject to effective dates) for existing use/users, not available for new use/users.
 
 <br>**md:EOL**
+
 End Of Life, removed, no longer valid, unusable.
-
-
-## Constraints: predicates that test the state of the world
-**md:recipient**
-
-_Domain: odrl:Rule_  
-
-_Range: odrl:Party_
-
-A party with access to the asset
-
-Frequently used to indicate whether the party is internal or external (i.e. a third party) to the assignee
-
-Can be qualified by the role constraint.
-
-<br>**md:role**
-
-_Domain: odrl:Party_
-
-_Range: md:Role_
-
-The role a party plays in respect of the asset.
-
-Parties can play multiple roles.
 
 <br>
 
@@ -68,8 +49,31 @@ Where the action scope is **md:Controls**, the debtor reports on their implement
 
 Where the action scope is **md:Usage**, the debtor reports on their usage of the asset as specified in the duty.
 
-<br/>
+## Constraints: predicates that test the state of the world
+**md:recipient**
 
+_Domain: odrl:Rule_  
+
+_Range: odrl:Party_
+
+A party with access to the asset
+
+Frequently used to indicate whether the party is internal or external (i.e. a third party) to the assignee
+
+Can be qualified by the role constraint.
+
+<br>**md:role**
+
+_Domain: odrl:Party_
+
+_Range: md:Role_
+
+The role a party plays in respect of the asset.
+
+Parties can play multiple roles.
+
+<br>
+<br>
 
 # Agreed
 
