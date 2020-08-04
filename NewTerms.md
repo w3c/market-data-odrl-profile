@@ -1,27 +1,23 @@
-# To Discus
+# To Vote
 
-## Actions for Duties
-**md:Notify**
+## Policy Status: policy lifecycle descriptors
+To manage policies through their life-cycle, we need to track their status:
 
-_Sub-class of odrl:Action_
+**md:Draft**
+Work in progress or for review or approval.
 
-The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope) usually on a one-off basis.
+<br>**md:Cancelled**
+Abandoned, never published.
 
-Where the action scope is **md:Usage**, the debtor makes the creditor aware that they are using the asset.
+<br>**md:Published**
+Live, operative (subject to effective dates), available for new users.
 
-<br>**md:Report**
+<br>**md:Obsolete**
+Operative (subject to effective dates) for existing use/users, not available for new use/users.
 
-_Sub-class of odrl:Action_
+<br>**md:EOL**
+End Of Life, removed, no longer valid, unusable.
 
-The debtor provides a report to the creditor on a relevant state of the world (defined by the action scope) usually on a regular basis.
-
-The periodicity of reporting is defined by the `time interval` property.
-
-Where the action scope is **md:ResonableSuspicion**, the debtor reports a reasonable suspicion that the asset is being misused.
-
-Where the action scope is **md:Controls**, the debtor reports on their implementation of access controls.
-
-Where the action scope is **md:Usage**, the debtor reports on their usage of the asset as specified in the duty.
 
 ## Constraints: predicates that test the state of the world
 **md:recipient**
@@ -48,6 +44,33 @@ Parties can play multiple roles.
 
 <br>
 <br>
+
+# To Discus
+## Actions for Duties
+**md:Notify**
+
+_Sub-class of odrl:Action_
+
+The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope) usually on a one-off basis.
+
+Where the action scope is **md:Usage**, the debtor makes the creditor aware that they are using the asset.
+
+<br>**md:Report**
+
+_Sub-class of odrl:Action_
+
+The debtor provides a report to the creditor on a relevant state of the world (defined by the action scope) usually on a regular basis.
+
+The periodicity of reporting is defined by the `time interval` property.
+
+Where the action scope is **md:ResonableSuspicion**, the debtor reports a reasonable suspicion that the asset is being misused.
+
+Where the action scope is **md:Controls**, the debtor reports on their implementation of access controls.
+
+Where the action scope is **md:Usage**, the debtor reports on their usage of the asset as specified in the duty.
+
+<br/>
+
 
 # Agreed
 
