@@ -1,9 +1,9 @@
-# To Vote
+# To Discus
 
 ## Policy Status: policy lifecycle descriptors
 To manage policies through their life-cycle, we need to track their status:
 
-**md:Draft**
+<br>**md:Draft**
 Work in progress or for review or approval.
 
 <br>**md:Cancelled**
@@ -43,9 +43,8 @@ The role a party plays in respect of the asset.
 Parties can play multiple roles.
 
 <br>
-<br>
 
-# To Discus
+# To Vote
 ## Actions for Duties
 **md:Notify**
 
