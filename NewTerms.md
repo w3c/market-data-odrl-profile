@@ -5,9 +5,53 @@
 
 _Sub-class of odrl:Action_
 
-The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope).
+The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope) usually on a one-off basis.
 
 Where the action scope is **md:Usage**, the debtor makes the creditor aware that they are using the asset.
+
+<br>**md:Report**
+
+_Sub-class of odrl:Action_
+
+The debtor provides a report to the creditor on a relevant state of the world (defined by the action scope) usually on a regular basis.
+
+The periodicity of reporting is defined by the `time interval` property.
+
+Where the action scope is **md:ResonableSuspicion**, the debtor reports a reasonable suspicion that the asset is being misused.
+
+Where the action scope is **md:Controls**, the debtor reports on their implementation of access controls.
+
+Where the action scope is **md:Usage**, the debtor reports on their usage of the asset as specified in the duty.
+
+## Constraints: predicates that test the state of the world
+**md:recipient**
+
+_Domain: odrl:Rule_  
+
+_Range: odrl:Party_
+
+A party with access to the asset
+
+Frequently used to indicate whether the party is internal or external (i.e. a third party) to the assignee
+
+Can be qualified by the role constraint.
+
+<br>**md:role**
+
+_Domain: odrl:Party_
+
+_Range: md:Role_
+
+The role a party plays in respect of the asset.
+
+Parties can play multiple roles.
+
+<br>
+<br>
+
+# Agreed
+
+## Actions for Duties
 
 <br>**md:Request**
 
@@ -18,18 +62,6 @@ The debtor makes the creditor aware of a desired state of the world (defined by 
 Where the action scope is **md:Audit**, the debtor requests the creditor to accede to an audit.
 
 Where the action scope is **md:ServiceFacilitator**, the debtor requests the creditor allow a service facilitator to access the asset.
-
-<br>**md:Report**
-
-_Sub-class of odrl:Action_
-
-The debtor provides a report to the creditor on a relevant state of the world (defined by the action scope).
-
-Where the action scope is **md:ResonableSuspicion**, the debtor reports a reasonable suspicion that the asset is being misused.
-
-Where the action scope is **md:Controls**, the debtor reports on their implementation of access controls.
-
-Where the action scope is **md:Usage**, the debtor reports on their usage of the asset as specified in the duty.
 
 <br>**md:Consent**
 
@@ -103,56 +135,6 @@ _Sub-class of md:ActionScope_
 Qualifies actions taken in the context of a reasonable suspicion that the assignee is misusing the asset.
 
 <br>
-
-## Constraints: predicates that test the state of the world
-**md:recipient**
-
-_Domain: odrl:Rule_  
-
-_Range: odrl:Party_
-
-A party with access to the asset
-
-Frequently used to indicate whether the party is internal or external (i.e. a third party) to the assignee
-
-Can be qualified by the role constraint.
-
-<br>**md:role**
-
-_Domain: odrl:Party_
-
-_Range: md:Role_
-
-The role a party plays in respect of the asset.
-
-Parties can play multiple roles.
-
-<br>
-
-## Simple Properties that specify an entity
-
-**md:unitOfCount**
-
-_Domain: odrl:Action_
-
-_Range: md:UnitOfCount_
-
-The thing to be counted.
-
-Often used to specify the things to be counted (e.g. devices or access IDs) in a usage report or in calculating a payment.
-
-Examples of Unit of Count:
-* User ID
-* Device
-* Person
-* Location
-* Site
-* Client Organisation
-
-<br>
-<br>
-
-# Agreed
 
 ## Roles in the Data Supply Chain
 **md:Originator**
