@@ -1,4 +1,4 @@
-# To Discus
+# To Discuss
 
 ## Policy Status: policy lifecycle descriptors
 To manage policies through their life-cycle, we need to track their status:
