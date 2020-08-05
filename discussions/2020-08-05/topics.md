@@ -66,3 +66,8 @@ How are these represented in our digital contracts? One possibility: [Effective 
 
 This example requires a "price change notification." What form might this notification take?
 
+### Other things to consider
+
+1. Historical data products themselves often have their own temporal aspect. How does this relate to the temporal aspect as definited in a contract?
+1. How do historical products then differ from streaming products in this regard?
+
