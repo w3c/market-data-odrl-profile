@@ -11,6 +11,8 @@ Agenda:
 
 **Report:** The debtor provides a report to the creditor on a relevant state of the world (defined by the action scope) usually on a regular basis.
 
+See the full definitions: [New Terms to Vote On](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewTerms.md#to-vote)
+
 *"Usually on a one-off basis:" Is frequency the right differentiator between these Notify and Report?*
 
 Possibilitites:
@@ -20,13 +22,11 @@ Possibilitites:
 * Has Unit of Count (Report) vs. No Unit of Count (Notify)
 * "Multi-line" (Report) vs. "Single-Line" (Notify)
 * Others?
+* Some combination of the above?
 
 ## Time to Vote?
 
 Did we agree on how to define Notify and Report? If so, let's make it official.
-
-[Vote](https://w3c.github.io/market-data-odrl-profile/Vote)
-
 
 ## Temporal Aspects of Policy Lifecycle
 
@@ -55,3 +55,14 @@ Questions for discussion:
 1. A change in the definition of an Action - broadening the action scope to allow derivations for pricing options as well as warrants
 1. A change in the definition of a Permission - removing the condition that the consumer's access control system be deployed by a vendor
 1. A change in the definition of a Permission - adding a new asset
+
+### How do contracts govern changes over time?
+
+1. The original contract specifies a time period for a particular set of terms.
+1. The original contract is replaced by a new contract (versioning).
+1. The original contract refers to an outside document that is itself versioned.
+
+How are these represented in our digital contracts? One possibility: [Effective Dates](https://github.com/w3c/market-data-odrl-profile/issues/14#issuecomment-668152057)
+
+This example requires a "price change notification." What form might this notification take?
+
