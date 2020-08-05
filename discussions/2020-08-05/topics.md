@@ -24,9 +24,9 @@ Possibilitites:
 * Others?
 * Some combination of the above?
 
-## Time to Vote?
+### Time to Vote?
 
-Did we agree on how to define Notify and Report? If so, let's make it official.
+Did we agree on how to define Notify and Report? If so, let's make it official: [New Terms to Vote On](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewTerms.md#to-vote)
 
 ## Temporal Aspects of Policy Lifecycle
 
@@ -65,6 +65,8 @@ Questions for discussion:
 How are these represented in our digital contracts? One possibility: [Effective Dates](https://github.com/w3c/market-data-odrl-profile/issues/14#issuecomment-668152057)
 
 This example requires a "price change notification." What form might this notification take?
+
+Are there other ways to represent changes?
 
 ### Other things to consider
 
