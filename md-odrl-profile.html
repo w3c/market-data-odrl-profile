@@ -389,6 +389,46 @@
             </table>
         </section>
     </section>
+    <section id='Resources'>
+        <h2>Resources</h2>
+        <p>
+            The data supply chain deals in resources - usually data resources. We need to make three distinctions: the original data resource, created by the <a>Originator</a>, the resource "at rest" in an organisation, before Rules are applied to control it's use, and the contolled resource that is received by a <a>Consumer</a>. The former is a <a>Source</a> and the latter is an <a>Asset</a>. All are <a>Resources</a>.
+        </p>
+        <section data-dfn-for="Resource">
+            <h2><dfn>Resource</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>A Party that belongs to the Assignee and its affiliated or enumerated organisations as specified by the governing license.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Internal</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Internal">http://www.w3.org/md-odrl-profile/Internal</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="Source">
+            <h2><dfn>Source</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>A Party that does <em>not</em> belong to the Assignee and its affiliated or enumerated organisations as specified by the governing license.</td>
+                    </tr><tr>
+                        <th>Scope Note:</th><td>Captures the concept of third parties.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>External</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/External">http://www.w3.org/md-odrl-profile/External</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
 </section>
 </body>
 </html>
