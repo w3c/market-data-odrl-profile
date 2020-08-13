@@ -4,9 +4,13 @@
 The list of properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model.
 
 **md:provider**
+
 Definition: Points to the Party playing the role of Provider in relation to the Resource.
+
 Label: is provided by
+
 Domain: Resource
+
 Range: Party
 
 **md:resource**
