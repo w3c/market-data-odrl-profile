@@ -104,7 +104,7 @@ Definition: The geographic subject matter and focus of the content.
 Scope Note: A characteristic of the content rather than its source/origin or any limitations on its distribution.  
 Label: has geographic coverage  
 Domain: Resource  
-Range: ISO  ....  
+Range: ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopolitical entities like the EU, MERCOSUR, or APEC?
 
 **md:amount**  
 Definition: The amount, or fraction, of a Resource.  
