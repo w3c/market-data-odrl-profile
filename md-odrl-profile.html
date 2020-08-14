@@ -193,18 +193,19 @@
                     </tr>
                 </tbody>
             </table>
-            <p class="note">
+            <div class="note">
                 We can imagine a Service Facilitator so:
-            <br><br>
+                <br><br>
                 <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram"> 
-            </p><p>
-                Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) duty.
-            </p><p>
-                When is this duty activated? When the assigner intends to make an <a>External</a> Party with the role of Service Facilitator a recipient of the data Asset. This is captured in the example:
-            </p>
-            <div class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification_ttl">
-                <p>Some test text 4</p>
-                <pre>
+                <p>
+                    Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) duty.
+                </p><p>
+                    When is this duty activated? When the assigner intends to make an <a>External</a> Party with the role of Service Facilitator a recipient of the data Asset. This is captured in the example:
+                </p>
+            </div>
+            <div class="example" title="Service Facilitator Notification" id="ServiceFacilitatorNotification_ttl">
+                <p>Some test text 5</p>
+                <pre class="nohighlight turtle">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
                     <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">  </span><span class="p">[</span><span class="w"></span>
                     <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
