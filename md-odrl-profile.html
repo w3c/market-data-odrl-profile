@@ -358,6 +358,138 @@
     </p>
     <section id='Actions'>
     <h2>Actions</h2>
+        <section data-dfn-for="Notify">
+    <h2><dfn>Notify</dfn></h2>
+    <table class="def propdef">
+        <tbody>
+            <tr>
+                <th>Definition:</th><td>The debtor makes the creditor aware of a relevant event (defined by the action scope).</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Usage</code>, the debtor makes the creditor aware that they are using the asset.</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Resonable Suspicion</code>, the debtor makes the creditor aware that they have a reasonable suspicion that the asset is being misused.</td>
+            </tr><tr>
+                <th>Label:</th><td>Notify</td>
+            </tr><tr>
+                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Notify">http://www.w3.org/md-odrl-profile/Notify</a></td>
+            </tr><tr>
+                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section data-dfn-for="Report">
+    <h2><dfn>Report</dfn></h2>
+    <table class="def propdef">
+        <tbody>
+            <tr>
+                <th>Definition:</th><td>The debtor provides a report to the creditor on a relevant and on-going state of affairs (defined by the action scope).</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Controls</code>, the debtor reports on their implementation of access controls.</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Usage</code>, the debtor reports on their usage of the asset as specified in the duty.</td>
+            </tr><tr>
+                <th>Label:</th><td>Report</td>
+            </tr><tr>
+                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Report">http://www.w3.org/md-odrl-profile/Report</a></td>
+            </tr><tr>
+                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section data-dfn-for="Request">
+    <h2><dfn>Request</dfn></h2>
+    <table class="def propdef">
+        <tbody>
+            <tr>
+                <th>Definition:</th><td>The debtor makes the creditor aware of a desired state of the world (defined by the action scope).</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Audit</code>, the debtor requests the creditor to accede to an audit.</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the debtor requests the creditor to consent to a service facilitator to access the asset.</td>
+            </tr><tr>
+                <th>Label:</th><td>Request</td>
+            </tr><tr>
+                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Request">http://www.w3.org/md-odrl-profile/Request</a></td>
+            </tr><tr>
+                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section data-dfn-for="Consent">
+    <h2><dfn>Consent</dfn></h2>
+    <table class="def propdef">
+        <tbody>
+            <tr>
+                <th>Definition:</th><td>The debtor accedes to a desired state of the world (defined by the action scope).</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Audit</code>, the debtor consents to be audited by the creditor.</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the debtor consents to the creditor's use of a service facilitator.</td>
+            </tr><tr>
+                <th>Label:</th><td>Consent</td>
+            </tr><tr>
+                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consent">http://www.w3.org/md-odrl-profile/Consent</a></td>
+            </tr><tr>
+                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section data-dfn-for="Compensate">
+    <h2><dfn>Compensate</dfn></h2>
+    <table class="def propdef">
+        <tbody>
+            <tr>
+                <th>Definition:</th><td>The debtor pays the creditor.</td>
+            </tr><tr>
+                <th>Label:</th><td>Compensate</td>
+            </tr><tr>
+                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Compensate">http://www.w3.org/md-odrl-profile/Compensate</a></td>
+            </tr><tr>
+                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section data-dfn-for="Invoice">
+    <h2><dfn>Invoice</dfn></h2>
+    <table class="def propdef">
+        <tbody>
+            <tr>
+                <th>Definition:</th><td>The debtor bills the creditor.</td>
+            </tr><tr>
+                <th>Label:</th><td>Invoice</td>
+            </tr><tr>
+                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Invoice">http://www.w3.org/md-odrl-profile/Invoice</a></td>
+            </tr><tr>
+                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<section data-dfn-for="Attribute">
+    <h2><dfn>Attribute</dfn></h2>
+    <table class="def propdef">
+        <tbody>
+            <tr>
+                <th>Definition:</th><td>The debtor publishes a description of the creditor's relation to the asset.</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Ownership</code>, the attribution describes the creditor's ownership of the asset identified by the odrl:target relation.</td>
+            </tr><tr>
+                <th>Example:</th><td>Where the action scope is <code>Disclaimer</code>, the attribution clarifies the creditor's relation to the asset identified by the <code>target<code> relation.</td>
+            </tr><tr>
+                <th>Label:</th><td>Attribute</td>
+            </tr><tr>
+                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribute">http://www.w3.org/md-odrl-profile/Attribute</a></td>
+            </tr><tr>
+                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 </section>
 </body>
 </html>
