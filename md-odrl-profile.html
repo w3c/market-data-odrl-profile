@@ -208,16 +208,16 @@
                 When is this duty activated? When the assigner intends to make an <a>External</a> Party with the role of Service Facilitator a recipient of the data Asset. This is captured in the example:
             </p>
             <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
-                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">  </span><span class="p">[</span><span class="w"></span>
-                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-                <span class="w">                      </span><span class="nn">md:</span><span class="nt">actionScope</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-                <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">     </span><span class="s">1</span><span class="w"></span>
-                <span class="w">                      </span><span class="p">]</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipient</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">External</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-                <span class="w">                      </span><span class="nn">md:</span><span class="nt">role</span><span class="w">        </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-                <span class="w">                      </span><span class="p">]</span><span class="w">  </span><span class="p">.</span><span class="w"></span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="nn">md:</span><span class="nt">actionScope</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">     </span><span class="s">1</span>
+                <span class="w">                      </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipient</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">External</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="nn">md:</span><span class="nt">role</span><span class="w">        </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
             </pre>
             <div class="note">
                 <p>
@@ -415,13 +415,13 @@
                 Reporting usage requires a <code>unit-of-count</code> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
             </p>
             <pre class="example nohighlight turtle" title="Reporting Usage by Device" id="DeviceUsageReport">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
-                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span><span class="w"></span>
-                <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-                <span class="w">                       </span><span class="nn">md:</span><span class="nt">actionScope</span><span class="w">    </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="nn">md:</span><span class="nt">Device</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
-                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span><span class="w"></span>
-                <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">.</span><span class="w"></span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                       </span><span class="nn">md:</span><span class="nt">actionScope</span><span class="w">    </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="nn">md:</span><span class="nt">Device</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
+                <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
             </pre>
         </section>
         <section data-dfn-for="Request">
@@ -491,8 +491,8 @@
             </p>
             <pre class="example nohighlight turtle" title="Payment by Location" id="LocationPayment">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span><
-                <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span><
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="nn">md:</span><span class="nt">Location</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">    </span><span class="s">1150</span><span class="w"></span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nv">&lt;https://www.wikidata.org/wiki/Q4917&gt;</span><span class="c">  // USD</span>
