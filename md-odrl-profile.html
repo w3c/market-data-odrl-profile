@@ -402,6 +402,26 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="note">
+                <p>
+                    Reporting usage frequently specifies a unit-of-count such as <code>application</code>, <code>user account</code>, <code>location</code>, or <code>device</code> to specify <em>what</em> against which the report must be made.
+                </p>
+                <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">  </span><span class="p">[</span><span class="w"></span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">actionScope</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+                    <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">     </span><span class="s">1</span><span class="w"></span>
+                    <span class="w">     </span><span class="p">]</span><span class="w">  </span><span class="p">;</span><span class="w"></span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">recipient</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">External</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">role</span><span class="w">        </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+                    <span class="w">     </span><span class="p">]</span><span class="w">  </span><span class="p">.</span><span class="w"></span>
+                </pre>
+                <p>
+                    Test
+                </p>
+            </div>
         </section>
         <section data-dfn-for="Request">
             <h2><dfn>Request</dfn></h2>
