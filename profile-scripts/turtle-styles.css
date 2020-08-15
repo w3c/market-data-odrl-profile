@@ -65,7 +65,8 @@
 .turtle .vg { color: #19177C } /* Name.Variable.Global */
 .turtle .vi { color: #19177C } /* Name.Variable.Instance */
 .turtle .vm { color: #19177C } /* Name.Variable.Magic */
-.turtle .il { color: #666666 } /* Literal.Number.Integer.Long */</style><style>
+.turtle .il { color: #666666 } /* Literal.Number.Integer.Long */
+
 .model {
     empty-cells: show;
     border-collapse: collapse;
