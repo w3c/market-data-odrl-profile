@@ -404,7 +404,11 @@
             </table>
             <div class="note">
                 <p>
-                    Reporting usage frequently specifies a unit-of-count such as <code>device</code>, <code>user account</code>, <code>location</code>, or <code>device</code> to specify what must be reported.
+                    Reporting usage frequently specifies a <code>unit-of-count</code> such as <code>device</code>, <code>user-account</code>, <code>location</code>, or <code>device</code> to specify what must be reported.
+                </p><p>
+                    Unless it's a one-off report, the duty can also specify the periodicity of reporting using the <code>time interval</code> property. The <code>deadline delta</code> property allows the duty to be fulfilled "in arrears".
+                </p><p>
+                    The example below calls for monthly reporting, 30 days in arrears.
                 </p>
                 <pre class="example nohighlight turtle" title="Reporting Usage by Device" id="DeviceUsageReport">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
