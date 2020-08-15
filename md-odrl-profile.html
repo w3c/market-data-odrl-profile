@@ -194,8 +194,9 @@
                 </tbody>
             </table>
             <div class="note">
-                We can imagine a Service Facilitator so:
-                <br><br>
+                <p>
+                    We can imagine a Service Facilitator so:
+                </p>
                 <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
             </div>
             <p>
@@ -456,6 +457,13 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="note">
+                <p>
+                    <code>Duties</code> can be chained so that one duty can activate another duty. <code>Request</code> and <code>Consent</code> duties can follow this pattern. A <code>Permision<code> might point to a consent duty which might itself point to a request duty.
+                </p><p>
+                    While the request duty remains unfulfilled, the consent duty remains inactive. The permission remains valid. But if the request is made, then either the consent duty must be given (a.k.a. fulfilled), or the request retracted, else the permission be invalidated.
+                </p>
+            </div>
         </section>
         <section data-dfn-for="Compensate">
             <h2><dfn>Compensate</dfn></h2>
