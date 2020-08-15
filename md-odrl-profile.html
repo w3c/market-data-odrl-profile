@@ -403,11 +403,11 @@
                 </tbody>
             </table>
             <p>
-                Reporting usage requires a <code>unit-of-count</code> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for monthly reporting by device, 30 days in arrears:
+                Reporting usage requires a <code>unit-of-count</code> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device:
             </p>
             <pre class="example nohighlight turtle" title="Reporting Usage by Device" id="DeviceUsageReport">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
-                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w"></span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span><span class="w"></span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span><span class="w"></span>
                 <span class="w">                      </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
                 <span class="w">                      </span><span class="nn">md:</span><span class="nt">actionScope</span><span class="w">    </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
                 <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="nn">md:</span><span class="nt">Device</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
