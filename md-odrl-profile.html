@@ -495,7 +495,7 @@
                 <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="nn">md:</span><span class="nt">Location</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">    </span><span class="s">1150</span><span class="w"></span>
-                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nv">&lt;https://www.wikidata.org/wiki/Q4917&gt;</span><span class="c">  // USD</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nv">&lt;https://www.wikidata.org/wiki/Q4917&gt;</span><span class="c">  # USD</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
             </pre>
@@ -519,25 +519,28 @@
                 When an Invoice duty is specified, it will likely act as the activation condition for a Compensation duty.
             </div>
         </section>
-        <section data-dfn-for="Attribute">
+        <section data-dfn-for="Attach">
             <h2><dfn>Attribute</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The debtor publishes a description of the creditor's relation to the asset.</td>
+                        <th>Definition:</th><td>The debtor attaches a description of the creditor's relation to the asset.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Ownership</code>, the attribution describes the creditor's ownership of the asset identified by the <code>target<code> relation.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Attribution</code>, the description describes the creditor's ownership of the asset identified by the <code>target<code> relation.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Disclaimer</code>, the attribution clarifies the creditor's relation to the asset identified by the <code>target<code> relation.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Disclaimer</code>, the description clarifies the creditor's relation to the asset identified by the <code>target<code> relation.</td>
                     </tr><tr>
                         <th>Label:</th><td>Attribute</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribute">http://www.w3.org/md-odrl-profile/Attribute</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attach">http://www.w3.org/md-odrl-profile/Attach</a></td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
                     </tr>
                 </tbody>
             </table>
+            <p>
+                The <code>wording</code> property of the action provides the required description.
+            </p>
         </section>
     </section>
 </section>
