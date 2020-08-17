@@ -171,7 +171,7 @@ The possible values are:
 
 ***Example:** A Resource permits only three requests per day*
 ```turtle
-:R1md    :methodOfUpdate    [   a                  md:SnapShot ;
+:R1    md:methodOfUpdate    [   a                  md:SnapShot ;
                                 odrl:count         3 ;
                                 odrl:timeInterval  [   a                   time:ProperInterval ;
 	                                               time:hasXSDDuration "P1D"^^xsd:duration 
