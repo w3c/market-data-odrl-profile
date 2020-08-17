@@ -93,6 +93,52 @@ Label | is delivered as
 Domain | Resource  
 Range | Proper Interval  
 
+*The Resource :R1 is realtime*
+```turtle
+:R3    md:timelinessOfDelivery    md:Realtime .
+```
+
+We can also specify the precise meaning of realtime defined in the license.
+
+*Example: Realtime is data delivered within 10 minutes of Time-of-Issue*
+```turtle
+:R3    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Realtime ;
+                                    time:intervalBefore [   a                    time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT10M"^^xsd:duration
+                                                        ]
+                                ] .
+```
+
+We can do the same for delayed:
+
+*Example: Delayed is defined as being between ten minutes and eight hours of Time-of-Issue*
+```turtle
+:R2    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Delayed ;
+                                    time:intervalAfter  [    a                   time:ProperInterval ;
+                                                             md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
+                                                             time:hasXSDDuration "PT10M"^^xsd:duration
+                                                             
+                                                        ] ;
+                                    time:intervalBefore [     a                  time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT8H"^^xsd:duration
+                                                        ]
+                                ] .
+```                                
+
+And for historic:
+
+*Example: Delayed is defined as being between ten minutes and eight hours of Time-of-Issue*
+```turtle
+:R2    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Historical ;
+                                    time:intervalAfter  [     a                  time:ProperInterval ;
+                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration  "PT8H"^^xsd:duration
+                                                        ]
+                                ] .
+```   
+
 Realtime; Delayed, Historical, and End-Of-Day can be defined as time intervals.  
 Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
