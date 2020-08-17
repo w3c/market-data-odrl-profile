@@ -3,10 +3,8 @@
 ## Properties of Resources
 The list of properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model.
 
-**md:provider**
-
-            |            
-------------|------------
+**md:provider** | Value           
+----------------|------------
 Definition: | Points to the Party playing the role of Provider in relation to the Resource.  
 Label: | is provided by  
 Domain: | Resource  
