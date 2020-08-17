@@ -1,7 +1,7 @@
 # To Discuss
 
 ## Properties of Resources
-The list of properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model.
+The list of properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model. 
 
 **md:provider** | -    
 ----------------|------------
@@ -15,7 +15,8 @@ Range | Party
 :R1    a              md:Resource .
 :R1    md:provider    <https://permid.org/1-4295899615> . # CME
 ```
-<br>
+
+<br><br>
 
 **md:resource** | -    
 ----------------|------------  
@@ -31,7 +32,8 @@ Range | Resource
 :R2    md:resource              :R1 .
 :R2    md:timelinessOfDelivery  md:Delayed .
 ```
-<br>
+
+<br><br>
 
 **md:assetClass** | -    
 ----------------|------------
@@ -46,7 +48,7 @@ But what should we use as our controlled list of asset classes? ISO 10962 (aka C
 ```turtle
 :R1    md:assetClass    <https://sec.report/CFI/FCEPSX> . # Commodity Futures for Extraction Resources with Physical Delivery
 ```
-<br>
+<br><br>
 
 **md:contentType** | -    
 ----------------|------------  
@@ -65,7 +67,8 @@ Again, what should we use as our controlled list of content types?
                             md:contentType   (md:Value md:Constituents)
                         ] .
 ```
-<br>
+
+<br><br>
 
 **md:intraday** | -    
 ----------------|------------  
@@ -78,7 +81,8 @@ Range | Boolean
 ```turtle
 :R3    md:intraday    false .
 ```
-<br>
+
+<br><br>
 
 **md:timelinessOfDelivery** | -    
 ----------------|------------  
@@ -92,6 +96,8 @@ Range | Proper Interval
 Realtime; Delayed, Historical, and End-Of-Day can be defined as time intervals.  
 Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
+<br><br>
+
 **md:methodOfUpdate** | -    
 ----------------|------------  
 Definition | Specifies the method by which updates to the Resource are delivered  
@@ -104,6 +110,8 @@ The possible values are:
 * Streaming
 * Time Series
 
+<br><br>
+
 **md:updatePeriod** | -    
 ----------------|------------  
 Definition | The period during which the Resource continues to be updated  
@@ -112,6 +120,8 @@ Domain | Resource
 Range | Interval  
 
 Service Period can be defined as a time interval  
+
+<br><br>
 
 **md:frequencyOfUpdate** | -    
 ----------------|------------  
@@ -124,6 +134,8 @@ The possible values are:
 * Tick-by-tick
 * Sampled
 
+<br><br>
+
 **md:complexID** | -    
 ----------------|------------  
 Definition | Provides a universal identifier by specifying a local identifier and it's context.  
@@ -131,6 +143,8 @@ Editorial Note | For identifying market data Sources, the context is usually pro
 Label | has complex ID  
 Domain | Resource  
 Range | Complex ID  
+
+<br><br>
 
 **md:depthOfMarket** | -    
 ----------------|------------  
@@ -146,6 +160,8 @@ The possible values are:
 
 Each of which can be qualified by md:positionFrom and md:positionTo
 
+<br><br>
+
 **md:geography** | -    
 ----------------|------------   
 Definition | The geographic subject matter and focus of the content.  
@@ -155,6 +171,8 @@ Domain | Resource
 Range | ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopolitical entities like the EU, MERCOSUR, or APEC?
 
 (inc. exclusions)
+
+<br><br>
 
 **md:amount** | -    
 ----------------|------------     
@@ -166,6 +184,7 @@ Range | Amount
 Possible value:
 * Insubstantial
 
+<br><br>
 
 ## Policy Status: policy lifecycle descriptors
 To manage policies through their life-cycle, we need to track their status:
