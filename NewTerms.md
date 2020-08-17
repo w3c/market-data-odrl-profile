@@ -17,12 +17,13 @@ Range | Party
 ```
 <br>
 
-**md:resource**  
-Definition:     Points to the original Resource(s) that the subject Resource or Asset qualifies.  
-Editorial Note: New resources can be created by constraining and/or aggregating other resources.  
-Label:          has resource  
-Domain:         Resource  
-Range:          Resource  
+**md:resource** | -    
+----------------|------------  
+Definition | Points to the original Resource(s) that the subject Resource or Asset qualifies.  
+Editorial Note | New resources can be created by constraining and/or aggregating other resources.  
+Label | has resource  
+Domain | Resource  
+Range | Resource  
 
 *The Resource :R2 is Delayed version of the Resource :R1*
 ```turtle
@@ -33,10 +34,10 @@ Range:          Resource
 <br>
 
 **md:assetClass**
-Definition: Categorises resources by the financial asset class they describe  
-Label: describes the asset class  
-Domain: Resource  
-Range: Asset Class  
+Definition | Categorises resources by the financial asset class they describe  
+Label | describes the asset class  
+Domain | Resource  
+Range | Asset Class  
 
 But what should we use as our controlled list of asset classes? ISO 10962 (aka CFI codes): https://en.wikipedia.org/wiki/ISO_10962?
 
@@ -47,11 +48,11 @@ But what should we use as our controlled list of asset classes? ISO 10962 (aka C
 <br>
 
 **md:contentType**  
-Definition: Given the asset class, further specifies the type of content provided by the resource  
-Example: Data describing indices can be segmented by index value, constituent data, weightings data, and divisors.  
-Label: has content type  
-Domain: Asset Class  
-Range: Content Type  
+Definition | Given the asset class, further specifies the type of content provided by the resource  
+Example | Data describing indices can be segmented by index value, constituent data, weightings data, and divisors.  
+Label | has content type  
+Domain | Asset Class  
+Range | Content Type  
 
 Again, what should we use as our controlled list of content types?
 
@@ -65,10 +66,10 @@ Again, what should we use as our controlled list of content types?
 <br>
 
 **md:intraday**  
-Definition: Indicates whether the resource changes intraday or not.  
-Label: is intraday  
-Domain: Resource  
-Range: Boolean  
+Definition | Indicates whether the resource changes intraday or not.  
+Label | is intraday  
+Domain | Resource  
+Range | Boolean  
 
 *The Resource :R3 does not change intraday*
 ```turtle
@@ -77,21 +78,21 @@ Range: Boolean
 <br>
 
 **md:timelinessOfDelivery**  
-Definition: Specifies the timing of the permitted receipt, use, or onwards delivery of a resource.  
-Editorial Note: Usually specified as an interval (or intervals) relative to the data's origination, publication, issue, or release (or some other specified event).  
-Editorial Note: Unless explicitly prohibited, permissions over shorter intervals carry across to longer intervals (e.g. real-time data also covers delayed, embargoed, and historic data)  
-Label: is delivered as  
-Domain: Resource  
-Range: Proper Interval  
+Definition | Specifies the timing of the permitted receipt, use, or onwards delivery of a resource.  
+Editorial Note | Usually specified as an interval (or intervals) relative to the data's origination, publication, issue, or release (or some other specified event).  
+Editorial Note | Unless explicitly prohibited, permissions over shorter intervals carry across to longer intervals (e.g. real-time data also covers delayed, embargoed, and historic data)  
+Label | is delivered as  
+Domain | Resource  
+Range | Proper Interval  
 
 Realtime; Delayed, Historical, and End-Of-Day can be defined as time intervals.  
 Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
 **md:methodOfUpdate**  
-Definition: Specifies the method by which updates to the Resource are delivered  
-Label: is updated by  
-Domain: Resource  
-Range: Update Method  
+Definition | Specifies the method by which updates to the Resource are delivered  
+Label | is updated by  
+Domain | Resource  
+Range | Update Method  
 
 The possible values are:
 * Snapshot
@@ -99,35 +100,35 @@ The possible values are:
 * Time Series
 
 **md:updatePeriod**  
-Definition: The period during which the Resource continues to be updated  
-Label: is updated during  
-Domain: Resource  
-Range: Interval  
+Definition | The period during which the Resource continues to be updated  
+Label | is updated during  
+Domain | Resource  
+Range | Interval  
 
 Service Period can be defined as a time interval  
 
 **md:frequencyOfUpdate**  
-Definition: Specifies how frequently updates to the Resource are delivered  
-Label: has frequency of update  
-Domain: Resource  
-Range: Update Frequency  
+Definition | Specifies how frequently updates to the Resource are delivered  
+Label | has frequency of update  
+Domain | Resource  
+Range | Update Frequency  
 
 The possible values are:
 * Tick-by-tick
 * Sampled
 
 **md:complexID**  
-Definition: Provides a universal identifier by specifying a local identifier and it's context.  
-Editorial Note: For identifying market data Sources, the context is usually provided by the venue  
-Label: has complex ID  
-Domain: Resource  
-Range: Complex ID  
+Definition | Provides a universal identifier by specifying a local identifier and it's context.  
+Editorial Note | For identifying market data Sources, the context is usually provided by the venue  
+Label | has complex ID  
+Domain | Resource  
+Range | Complex ID  
 
 **md:depthOfMarket**  
-Definition:   
-Label: provided by  
-Domain: Resource  
-Range: Party  
+Definition |    
+Label | provided by  
+Domain | Resource  
+Range | Party  
 
 The possible values are:
 * Level 1
@@ -137,17 +138,17 @@ The possible values are:
 Each of which can be qualified by md:positionFrom and md:positionTo
 
 **md:geography** (inc. exclusions)  
-Definition: The geographic subject matter and focus of the content.  
-Scope Note: A characteristic of the content rather than its source/origin or any limitations on its distribution.  
-Label: has geographic coverage  
-Domain: Resource  
-Range: ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopolitical entities like the EU, MERCOSUR, or APEC?
+Definition | The geographic subject matter and focus of the content.  
+Scope Note | A characteristic of the content rather than its source/origin or any limitations on its distribution.  
+Label | has geographic coverage  
+Domain | Resource  
+Range | ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopolitical entities like the EU, MERCOSUR, or APEC?
 
 **md:amount**  
-Definition: The amount, or fraction, of a Resource.  
-Label: has amount  
-Domain: Resource  
-Range: Amount  
+Definition | The amount, or fraction, of a Resource.  
+Label | has amount  
+Domain | Resource  
+Range | Amount  
 
 Possible value:
 * Insubstantial
