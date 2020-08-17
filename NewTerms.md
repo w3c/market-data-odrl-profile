@@ -141,13 +141,13 @@ And for historic:
 
 End-of-day data can be specified in a similar manner:
 
-*Example: End-of-Day data is defined as data embargoed until market close at 4pm CET*
+*Example: End-of-Day data is defined as data embargoed until market close at 4pm CST*
 ```turtle
 :R3    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargo ;
                                    time:after          [   a                   time:Instant, md:MarketClose ;
                                                             time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
                                                                                     time:hour       "16"^^xsd:int ;
-                                                                                    time::timeZone   <https://www.wikidata.org/wiki/Q2086913>
+                                                                                    time:timeZone   <https://www.wikidata.org/wiki/Q2086913>
                                                                                 ]
                                                         ]
                                 ] .
