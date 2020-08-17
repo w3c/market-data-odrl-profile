@@ -14,6 +14,7 @@ Range:      Party
 :R1    a              md:Resource .
 :R1    md:provider    <https://permid.org/1-4295899615> . # CME
 ```
+<br>
 
 **md:resource**  
 Definition:     Points to the original Resource(s) that the subject Resource or Asset qualifies.  
@@ -24,10 +25,11 @@ Range:          Resource
 
 *The Resource :R2 is Delayed version of the Resource :R1*
 ```turtle
-:R2    a                        md:Resourve .
+:R2    a                        md:Resource .
 :R2    md:resource              :R1 .
 :R2    md:timelinessOfDelivery  md:Delayed .
 ```
+<br>
 
 **md:assetClass**
 Definition: Categorises resources by the financial asset class they describe  
@@ -41,6 +43,7 @@ But what should we use as our controlled list of asset classes? ISO 10962 (aka C
 ```turtle
 :R1    md:assetClass    <https://sec.report/CFI/FCEPSX> . # Commodity Futures for Extraction Resources with Physical Delivery
 ```
+<br>
 
 **md:contentType**  
 Definition: Given the asset class, further specifies the type of content provided by the resource  
@@ -58,12 +61,19 @@ Again, what should we use as our controlled list of content types?
                             md:contentType   (md:Value md:Constituents)
                         ] .
 ```
+<br>
 
 **md:intraday**  
 Definition: Indicates whether the resource changes intraday or not.  
 Label: is intraday  
 Domain: Resource  
 Range: Boolean  
+
+*The Resource :R3 does not change intraday*
+```turtle
+:R3    md:intraday    false .
+```
+<br>
 
 **md:timelinessOfDelivery**  
 Definition: Specifies the timing of the permitted receipt, use, or onwards delivery of a resource.  
