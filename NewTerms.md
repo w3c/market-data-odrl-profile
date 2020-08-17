@@ -297,19 +297,18 @@ End Of Life, removed, no longer valid, unusable.
 
 _Sub-class of odrl:Action_
 
-The debtor makes the creditor aware of a relevant change in the state of the world (defined by the action scope) usually on a one-off basis.
+The debtor makes the creditor aware of a relevant event (defined by the action scope).
 
-Where the action scope is **md:Usage**, the debtor makes the creditor aware that they are using the asset.
+Where the action scope is **md:Usage**, tthe debtor makes the creditor aware that they have started using the asset.
+
+Where the action scope is **md:ResonableSuspicion**, the debtor makes the creditor aware that they have a reasonable suspicion that the asset is being misused.
+
 
 <br>**md:Report**
 
 _Sub-class of odrl:Action_
 
-The debtor provides a report to the creditor on a relevant state of the world (defined by the action scope) usually on a regular basis.
-
-The periodicity of reporting is defined by the `time interval` property.
-
-Where the action scope is **md:ResonableSuspicion**, the debtor reports a reasonable suspicion that the asset is being misused.
+The debtor provides a report to the creditor on a relevant and on-going state of affairs (defined by the action scope).
 
 Where the action scope is **md:Controls**, the debtor reports on their implementation of access controls.
 
