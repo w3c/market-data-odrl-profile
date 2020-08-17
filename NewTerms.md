@@ -95,14 +95,14 @@ Range | Proper Interval
 
 *The Resource :R1 is realtime*
 ```turtle
-:R3    md:timelinessOfDelivery    md:Realtime .
+:R1    md:timelinessOfDelivery    md:Realtime .
 ```
 
-We can also specify the precise meaning of realtime defined in the license.
+We can also specify the precise meaning of realtime defined in a license.
 
 *Example: Realtime is data delivered within 10 minutes of Time-of-Issue*
 ```turtle
-:R3    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Realtime ;
+:R1    md:timelinessOfDelivery [    a                   time:ProperInterval , md:Realtime ;
                                     time:intervalBefore [   a                    time:ProperInterval ;
                                                             md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
                                                             time:hasXSDDuration  "PT10M"^^xsd:duration
@@ -112,9 +112,9 @@ We can also specify the precise meaning of realtime defined in the license.
 
 We can do the same for delayed:
 
-*Example: Delayed is defined as being between ten minutes and eight hours of Time-of-Issue*
+*Example: Delayed data is defined as being between ten minutes and eight hours of Time-of-Issue*
 ```turtle
-:R2    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Delayed ;
+:R2    md:timelinessOfDelivery [    a                   time:ProperInterval , md:Delayed ;
                                     time:intervalAfter  [    a                   time:ProperInterval ;
                                                              md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
                                                              time:hasXSDDuration "PT10M"^^xsd:duration
@@ -129,17 +129,30 @@ We can do the same for delayed:
 
 And for historic:
 
-*Example: Delayed is defined as being between ten minutes and eight hours of Time-of-Issue*
+*Example: Historic data is defined as being after eight hours of Time-of-Issue*
 ```turtle
-:R2    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Historical ;
+:R4    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Historical ;
                                     time:intervalAfter  [     a                  time:ProperInterval ;
                                                             md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
                                                             time:hasXSDDuration  "PT8H"^^xsd:duration
                                                         ]
                                 ] .
-```   
+```turtle   
 
-Realtime; Delayed, Historical, and End-Of-Day can be defined as time intervals.  
+End-of-day data can be specified in a similar manner:
+
+*Example: End-of-Day data is defined as data embargoed until market close at 4pm CET*
+```turtle
+:R3    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargo ;
+                                   time:after          [   a                   time:Instant, md:MarketClose ;
+                                                            time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
+                                                                                    time:hour       "16"^^xsd:int ;
+                                                                                    time::timeZone   <https://www.wikidata.org/wiki/Q2086913>
+                                                                                ]
+                                                        ]
+                                ] .
+```
+ 
 Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
 <br><br>
