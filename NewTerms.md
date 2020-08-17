@@ -1,7 +1,7 @@
 # To Discuss
 
 ## Properties of Resources
-The list of properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model. 
+The definition of many of the properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model. 
 
 **md:provider** | -    
 ----------------|------------
@@ -132,9 +132,9 @@ And for historic:
 ***Example:** Historic data is defined as being after eight hours of Time-of-Issue*
 ```turtle
 :R4    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Historical ;
-                                    time:intervalAfter  [     a                  time:ProperInterval ;
-                                                            md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
-                                                            time:hasXSDDuration  "PT8H"^^xsd:duration
+                                   time:intervalAfter  [     a                    time:ProperInterval ;
+                                                             md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                                                             time:hasXSDDuration  "PT8H"^^xsd:duration
                                                         ]
                                 ] .
 ```   
@@ -145,9 +145,9 @@ End-of-day data can be specified in a similar manner:
 ```turtle
 :R3    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargo ;
                                    time:after          [   a                   time:Instant, md:MarketClose ;
-                                                            time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
-                                                                                    time:hour       "16"^^xsd:int ;
-                                                                                    time:timeZone   <https://www.wikidata.org/wiki/Q2086913>
+                                                           time:inDateTime     [   a               time::DateTimeDescription ; # Monday to Friday?
+                                                                                   time:hour       "16"^^xsd:int ;
+                                                                                   time:timeZone   <https://www.wikidata.org/wiki/Q2086913>
                                                                                 ]
                                                         ]
                                 ] .
@@ -169,6 +169,15 @@ The possible values are:
 * Streaming: All changes are captured and continuously transmitted either individually or in batches.
 * Time Series: Multiple updates are delivered together in bulk 
 
+***Example:** A Resource permits only three requests per day*
+```turtle
+:R1md    :methodOfUpdate    [   a                   md:SnapShot ;
+                                 odrl:count         3 ;
+                                 odrl:timeInterval  [   a                  time:ProperInterval ;
+	                                                     time:hasXSDDuration "P1D"^^xsd:duration 
+	                                                  ]
+                            ] .
+```
 <br><br>
 
 **md:updatePeriod** | -    
