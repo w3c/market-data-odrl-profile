@@ -200,7 +200,7 @@ Range | Update Frequency
 
 The possible values are:
 * **Tick-by-tick:** Any and every change in value is provided in an update
-* **Sampled:** Updates are sampled and/or conflated. Only selected updates are delivered from the whole tick-by-tick data set at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).
+* **Sampled:** Updates are sampled and/or conflated. Only selected updates are delivered from the whole tick-by-tick dataset at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).
 
 <br><br>
 
@@ -212,6 +212,18 @@ Label | has complex ID
 Domain | Resource  
 Range | Complex ID  
 
+***Example:** Providing a globally unique identifier for the Eurodollar Futures Contract traded on Globex*
+```turtle
+:S1    md:complexID    [   a               md:ComplexID ; 
+                           md:context      [   a                       md:Venue ;
+                                               rdfs:label              "Globex" ;
+                                               md:operatingMic         "XCME"^^xsd:string ;        
+                                               md:mic                  "GLBX"^^xsd:string ; 
+                                           ] ;
+                           dc:identifier   "GE"^^xsd:string
+                        ] .
+```
+
 <br><br>
 
 **md:depthOfMarket** | -    
@@ -222,9 +234,9 @@ Domain | Resource
 Range | Party  
 
 The possible values are:
-* Level 1
-* Level 2
-* Level 3
+* **Level 1**, known as market price
+* **Level 2**, known as market by price
+* **Level 3**, known as market by order or the full order book
 
 Each of which can be qualified by md:positionFrom and md:positionTo
 
@@ -250,7 +262,7 @@ Domain | Resource
 Range | Amount  
 
 Possible value:
-* Insubstantial
+* **Insubstantial**
 
 <br><br>
 
