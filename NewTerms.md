@@ -33,7 +33,8 @@ Range | Resource
 ```
 <br>
 
-**md:assetClass**
+**md:assetClass** | -    
+----------------|------------
 Definition | Categorises resources by the financial asset class they describe  
 Label | describes the asset class  
 Domain | Resource  
@@ -47,7 +48,8 @@ But what should we use as our controlled list of asset classes? ISO 10962 (aka C
 ```
 <br>
 
-**md:contentType**  
+**md:contentType** | -    
+----------------|------------  
 Definition | Given the asset class, further specifies the type of content provided by the resource  
 Example | Data describing indices can be segmented by index value, constituent data, weightings data, and divisors.  
 Label | has content type  
@@ -65,7 +67,8 @@ Again, what should we use as our controlled list of content types?
 ```
 <br>
 
-**md:intraday**  
+**md:intraday** | -    
+----------------|------------  
 Definition | Indicates whether the resource changes intraday or not.  
 Label | is intraday  
 Domain | Resource  
@@ -77,7 +80,8 @@ Range | Boolean
 ```
 <br>
 
-**md:timelinessOfDelivery**  
+**md:timelinessOfDelivery** | -    
+----------------|------------  
 Definition | Specifies the timing of the permitted receipt, use, or onwards delivery of a resource.  
 Editorial Note | Usually specified as an interval (or intervals) relative to the data's origination, publication, issue, or release (or some other specified event).  
 Editorial Note | Unless explicitly prohibited, permissions over shorter intervals carry across to longer intervals (e.g. real-time data also covers delayed, embargoed, and historic data)  
@@ -88,7 +92,8 @@ Range | Proper Interval
 Realtime; Delayed, Historical, and End-Of-Day can be defined as time intervals.  
 Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
-**md:methodOfUpdate**  
+**md:methodOfUpdate** | -    
+----------------|------------  
 Definition | Specifies the method by which updates to the Resource are delivered  
 Label | is updated by  
 Domain | Resource  
@@ -99,7 +104,8 @@ The possible values are:
 * Streaming
 * Time Series
 
-**md:updatePeriod**  
+**md:updatePeriod** | -    
+----------------|------------  
 Definition | The period during which the Resource continues to be updated  
 Label | is updated during  
 Domain | Resource  
@@ -107,7 +113,8 @@ Range | Interval
 
 Service Period can be defined as a time interval  
 
-**md:frequencyOfUpdate**  
+**md:frequencyOfUpdate** | -    
+----------------|------------  
 Definition | Specifies how frequently updates to the Resource are delivered  
 Label | has frequency of update  
 Domain | Resource  
@@ -117,14 +124,16 @@ The possible values are:
 * Tick-by-tick
 * Sampled
 
-**md:complexID**  
+**md:complexID** | -    
+----------------|------------  
 Definition | Provides a universal identifier by specifying a local identifier and it's context.  
 Editorial Note | For identifying market data Sources, the context is usually provided by the venue  
 Label | has complex ID  
 Domain | Resource  
 Range | Complex ID  
 
-**md:depthOfMarket**  
+**md:depthOfMarket** | -    
+----------------|------------  
 Definition |    
 Label | provided by  
 Domain | Resource  
@@ -137,14 +146,18 @@ The possible values are:
 
 Each of which can be qualified by md:positionFrom and md:positionTo
 
-**md:geography** (inc. exclusions)  
+**md:geography** | -    
+----------------|------------   
 Definition | The geographic subject matter and focus of the content.  
 Scope Note | A characteristic of the content rather than its source/origin or any limitations on its distribution.  
 Label | has geographic coverage  
 Domain | Resource  
 Range | ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopolitical entities like the EU, MERCOSUR, or APEC?
 
-**md:amount**  
+(inc. exclusions)
+
+**md:amount** | -    
+----------------|------------     
 Definition | The amount, or fraction, of a Resource.  
 Label | has amount  
 Domain | Resource  
