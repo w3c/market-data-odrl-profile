@@ -137,7 +137,7 @@ And for historic:
                                                             time:hasXSDDuration  "PT8H"^^xsd:duration
                                                         ]
                                 ] .
-```turtle   
+```   
 
 End-of-day data can be specified in a similar manner:
 
