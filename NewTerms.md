@@ -4,11 +4,12 @@
 The list of properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model.
 
 **md:provider**
+test        | test 2
 ------------|------------
 Definition: | Points to the Party playing the role of Provider in relation to the Resource.  
-Label:      | is provided by  
-Domain:     | Resource  
-Range:      | Party  
+Label: | is provided by  
+Domain: | Resource  
+Range: | Party  
 
 *The Resource :R1 ia provided by the CME*
 ```turtle
