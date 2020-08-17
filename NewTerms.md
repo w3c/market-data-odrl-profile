@@ -5,22 +5,29 @@ The list of properties below leans heavily on the work done by Phil Rimell on th
 
 **md:provider**  
 Definition: Points to the Party playing the role of Provider in relation to the Resource.  
-Label: is provided by  
-Domain: Resource  
-Range: Party  
+Label:      is provided by  
+Domain:     Resource  
+Range:      Party  
 
-The Resource :R1 ia provided by the CME:
+*The Resource :R1 ia provided by the CME*
 ```turtle
 :R1    a              md:Resource .
 :R1    md:provider    <https://permid.org/1-4295899615> . # CME
 ```
 
 **md:resource**  
-Definition: Points to the original Resource(s) that the subject Resource or Asset qualifies.  
+Definition:     Points to the original Resource(s) that the subject Resource or Asset qualifies.  
 Editorial Note: New resources can be created by constraining and/or aggregating other resources.  
-Label: has resource  
-Domain: Resource  
-Range: Resource  
+Label:          has resource  
+Domain:         Resource  
+Range:          Resource  
+
+*The Resource :R2 is Delayed version of the Resource :R1*
+```turtle
+:R2    a                        md:Resourve .
+:R2    md:resource              :R1 .
+:R2    md:timelinessOfDelivery  md:Delayed .
+```
 
 **md:assetClass**
 Definition: Categorises resources by the financial asset class they describe  
@@ -30,6 +37,11 @@ Range: Asset Class
 
 But what should we use as our controlled list of asset classes? ISO 10962 (aka CFI codes): https://en.wikipedia.org/wiki/ISO_10962?
 
+*The Resource :R1 describes Commodity Futures*
+```turtle
+:R1    md:assetClass    <https://sec.report/CFI/FCEPSX> . # Commodity Futures for Extraction Resources with Physical Delivery
+```
+
 **md:contentType**  
 Definition: Given the asset class, further specifies the type of content provided by the resource  
 Example: Data describing indices can be segmented by index value, constituent data, weightings data, and divisors.  
@@ -38,6 +50,14 @@ Domain: Asset Class
 Range: Content Type  
 
 Again, what should we use as our controlled list of content types?
+
+*The Resource :R3 descibes Values and Constituents of an Index of Equities*
+```turtle
+:R3    a                md:Resource .
+:R3    md:assetClass    [   a                <https://sec.report/CFI/TIEXX> . # Index of equities
+                            md:contentType   (md:Value md:Constituents)
+                        ] .
+```
 
 **md:intraday**  
 Definition: Indicates whether the resource changes intraday or not.  
