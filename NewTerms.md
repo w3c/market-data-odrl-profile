@@ -60,7 +60,7 @@ Range | Content Type
 
 Again, what should we use as our controlled list of content types?
 
-***Example:** The Resource :R3 descibes Values and Constituents of an Index of Equities*
+***Example:** The Resource :R3 descibes the Values and Constituents of an Index of Equities*
 ```turtle
 :R3    a                md:Resource .
 :R3    md:assetClass    [   a                <https://sec.report/CFI/TIEXX> . # Index of equities
