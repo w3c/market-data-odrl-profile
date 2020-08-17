@@ -235,7 +235,7 @@ Range | ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopol
 
 **md:amount** | -    
 ----------------|------------     
-Definition | The amount, or fraction, of a Resource.  
+Definition | The amount of a Resource.  
 Label | has amount  
 Domain | Resource  
 Range | Amount  
