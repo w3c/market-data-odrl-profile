@@ -115,12 +115,12 @@ We can do the same for delayed:
 ***Example:** Delayed data is defined as being between ten minutes and eight hours of Time-of-Issue*
 ```turtle
 :R2    md:timelinessOfDelivery [    a                   time:ProperInterval , md:Delayed ;
-                                    time:intervalAfter  [    a                   time:ProperInterval ;
-                                                             md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
-                                                             time:hasXSDDuration "PT10M"^^xsd:duration
+                                    time:intervalAfter  [   a                   time:ProperInterval ;
+                                                            md:timeReference    [   a   time:Instant , md:TimeOfIssue ] ;
+                                                            time:hasXSDDuration "PT10M"^^xsd:duration
                                                              
                                                         ] ;
-                                    time:intervalBefore [     a                  time:ProperInterval ;
+                                    time:intervalBefore [   a                    time:ProperInterval ;
                                                             md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
                                                             time:hasXSDDuration  "PT8H"^^xsd:duration
                                                         ]
@@ -171,11 +171,11 @@ The possible values are:
 
 ***Example:** A Resource permits only three requests per day*
 ```turtle
-:R1md    :methodOfUpdate    [   a                   md:SnapShot ;
-                                 odrl:count         3 ;
-                                 odrl:timeInterval  [   a                  time:ProperInterval ;
-	                                                     time:hasXSDDuration "P1D"^^xsd:duration 
-	                                                  ]
+:R1md    :methodOfUpdate    [   a                  md:SnapShot ;
+                                odrl:count         3 ;
+                                odrl:timeInterval  [   a                   time:ProperInterval ;
+	                                               time:hasXSDDuration "P1D"^^xsd:duration 
+	                                           ]
                             ] .
 ```
 <br><br>
