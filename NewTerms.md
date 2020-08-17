@@ -9,10 +9,16 @@ Label: is provided by
 Domain: Resource  
 Range: Party  
 
+The Resource :R1 ia provided by the CME:
+```turtle
+:R1    a              md:Resource .
+:R1    md:provider    <https://permid.org/1-4295899615> . # CME
+```
+
 **md:resource**  
-Definition: Points to the resource or resources that act as precursors to the subject resource.  
+Definition: Points to the original Resource(s) that the subject Resource or Asset qualifies.  
 Editorial Note: New resources can be created by constraining and/or aggregating other resources.  
-Label: resource  
+Label: has resource  
 Domain: Resource  
 Range: Resource  
 
