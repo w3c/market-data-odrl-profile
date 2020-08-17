@@ -165,9 +165,9 @@ Domain | Resource
 Range | Update Method  
 
 The possible values are:
-* Snapshot: A single response to a request. An update is provided only in response to a request (like an API call) and not further updated. Also known as “one-shot”.
-* Streaming: All changes are captured and continuously transmitted either individually or in batches.
-* Time Series: Multiple updates are delivered together in bulk 
+* **Snapshot:** A single response to a request. An update is provided only in response to a request (like an API call) and not further updated. Also known as “one-shot”.
+* **Streaming:** All changes are captured and continuously transmitted either individually or in batches.
+* **Time Series:** Multiple updates are delivered together in bulk 
 
 ***Example:** A Resource permits only three requests per day*
 ```turtle
@@ -199,8 +199,8 @@ Domain | Resource
 Range | Update Frequency  
 
 The possible values are:
-* Tick-by-tick
-* Sampled
+* **Tick-by-tick:** Any and every change in value is provided in an update
+* **Sampled:** Updates are sampled and/or conflated. Only selected updates are delivered from the whole tick-by-tick data set at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).
 
 <br><br>
 
