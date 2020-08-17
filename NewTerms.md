@@ -10,7 +10,7 @@ Label | is provided by
 Domain | Resource  
 Range | Party  
 
-***Example:** The Resource :R1 ia provided by the CME*
+***Example:** The Resource :R1 is provided by the CME*
 ```turtle
 :R1    a              md:Resource .
 :R1    md:provider    <https://permid.org/1-4295899615> . # CME
@@ -26,7 +26,7 @@ Label | has resource
 Domain | Resource  
 Range | Resource  
 
-*The Resource :R2 is Delayed version of the Resource :R1*
+***Example:** The Resource :R2 is Delayed version of the Resource :R1*
 ```turtle
 :R2    a                        md:Resource .
 :R2    md:resource              :R1 .
@@ -44,7 +44,7 @@ Range | Asset Class
 
 But what should we use as our controlled list of asset classes? ISO 10962 (aka CFI codes): https://en.wikipedia.org/wiki/ISO_10962?
 
-*The Resource :R1 describes Commodity Futures*
+***Example:** The Resource :R1 describes Commodity Futures*
 ```turtle
 :R1    md:assetClass    <https://sec.report/CFI/FCEPSX> . # Commodity Futures for Extraction Resources with Physical Delivery
 ```
@@ -60,7 +60,7 @@ Range | Content Type
 
 Again, what should we use as our controlled list of content types?
 
-*The Resource :R3 descibes Values and Constituents of an Index of Equities*
+***Example:** The Resource :R3 descibes Values and Constituents of an Index of Equities*
 ```turtle
 :R3    a                md:Resource .
 :R3    md:assetClass    [   a                <https://sec.report/CFI/TIEXX> . # Index of equities
@@ -77,7 +77,7 @@ Label | is intraday
 Domain | Resource  
 Range | Boolean  
 
-*The Resource :R3 does not change intraday*
+***Example:** The Resource :R3 does not change intraday*
 ```turtle
 :R3    md:intraday    false .
 ```
@@ -93,14 +93,14 @@ Label | is delivered as
 Domain | Resource  
 Range | Proper Interval  
 
-*The Resource :R1 is realtime*
+***Example:** The Resource :R1 is realtime*
 ```turtle
 :R1    md:timelinessOfDelivery    md:Realtime .
 ```
 
 We can also specify the precise meaning of realtime defined in a license.
 
-*Example: Realtime is data delivered within 10 minutes of Time-of-Issue*
+***Example:** Realtime is data delivered within 10 minutes of Time-of-Issue*
 ```turtle
 :R1    md:timelinessOfDelivery [    a                   time:ProperInterval , md:Realtime ;
                                     time:intervalBefore [   a                    time:ProperInterval ;
@@ -112,7 +112,7 @@ We can also specify the precise meaning of realtime defined in a license.
 
 We can do the same for delayed:
 
-*Example: Delayed data is defined as being between ten minutes and eight hours of Time-of-Issue*
+***Example:** Delayed data is defined as being between ten minutes and eight hours of Time-of-Issue*
 ```turtle
 :R2    md:timelinessOfDelivery [    a                   time:ProperInterval , md:Delayed ;
                                     time:intervalAfter  [    a                   time:ProperInterval ;
@@ -129,7 +129,7 @@ We can do the same for delayed:
 
 And for historic:
 
-*Example: Historic data is defined as being after eight hours of Time-of-Issue*
+***Example:** Historic data is defined as being after eight hours of Time-of-Issue*
 ```turtle
 :R4    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Historical ;
                                     time:intervalAfter  [     a                  time:ProperInterval ;
@@ -141,7 +141,7 @@ And for historic:
 
 End-of-day data can be specified in a similar manner:
 
-*Example: End-of-Day data is defined as data embargoed until market close at 4pm CST*
+***Example:** End-of-Day data is defined as data embargoed until market close at 4pm CST*
 ```turtle
 :R3    md:timelinessOfDelivery [   a                   time:ProperInterval , md:Embargo ;
                                    time:after          [   a                   time:Instant, md:MarketClose ;
