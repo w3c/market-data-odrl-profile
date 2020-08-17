@@ -10,7 +10,7 @@ Label | is provided by
 Domain | Resource  
 Range | Party  
 
-*The Resource :R1 ia provided by the CME*
+***Example:** The Resource :R1 ia provided by the CME*
 ```turtle
 :R1    a              md:Resource .
 :R1    md:provider    <https://permid.org/1-4295899615> . # CME
