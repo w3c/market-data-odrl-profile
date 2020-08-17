@@ -165,9 +165,9 @@ Domain | Resource
 Range | Update Method  
 
 The possible values are:
-* Snapshot
-* Streaming
-* Time Series
+* Snapshot: A single response to a request. An update is provided only in response to a request (like an API call) and not further updated. Also known as “one-shot”.
+* Streaming: All changes are captured and continuously transmitted either individually or in batches.
+* Time Series: Multiple updates are delivered together in bulk 
 
 <br><br>
 
