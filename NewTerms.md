@@ -3,7 +3,7 @@
 ## Properties of Resources
 The definition of many of the properties below leans heavily on the work done by Phil Rimell on the Revelation Business Information Model. 
 
-**md:provider** | -    
+**provider** | -    
 ----------------|------------
 Definition | Points to the Party playing the role of Provider in relation to the Resource.  
 Label | is provided by  
@@ -19,7 +19,7 @@ Range | Party
 ***
 <br>
 
-**md:resource** | -    
+**resource** | -    
 ----------------|------------  
 Definition | Points to the original Resource(s) that the subject Resource or Asset qualifies.  
 Editorial Note | New resources can be created by constraining and/or aggregating other resources.  
@@ -37,7 +37,7 @@ Range | Resource
 ***
 <br>
 
-**md:assetClass** | -    
+**asset class** | -    
 ----------------|------------
 Definition | Categorises resources by the financial asset class they describe  
 Label | describes the asset class  
@@ -54,7 +54,7 @@ But what should we use as our controlled list of asset classes? ISO 10962 (aka C
 ***
 <br>
 
-**md:contentType** | -    
+**content type** | -    
 ----------------|------------  
 Definition | Given the asset class, further specifies the type of content provided by the resource  
 Example | Data describing indices can be segmented by index value, constituent data, weightings data, and divisors.  
@@ -75,7 +75,7 @@ Again, what should we use as our controlled list of content types?
 ***
 <br>
 
-**md:intraday** | -    
+**intraday** | -    
 ----------------|------------  
 Definition | Indicates whether the resource changes intraday or not.  
 Label | is intraday  
@@ -90,7 +90,7 @@ Range | Boolean
 ***
 <br>
 
-**md:timelinessOfDelivery** | -    
+**timeliness of delivery** | -    
 ----------------|------------  
 Definition | Specifies the timing of the permitted receipt, use, or onwards delivery of a resource.  
 Editorial Note | Usually specified as an interval (or intervals) relative to the data's origination, publication, issue, or release (or some other specified event).  
@@ -100,16 +100,16 @@ Domain | Resource
 Range | Proper Interval  
 
 Possible values are:
-* **md:Realtime:** Data received, used, or delivered with minimum latency after its time of origination, publication, or issue.
-* **md:Delayed:** Data received, used, or delivered at or after a specified time interval following its time of origination, publication, or issue.
-* **md:Historical:** Data received, used, or delivered at least a calendar day (or 24 hours in 24-hour markets) after its time of origination, publication, or issue.
-* **md:Embargoed:** Data received, used, or delivered on or after a specified instant or future event.
+* **Realtime:** Data received, used, or delivered with minimum latency after its time of origination, publication, or issue.
+* **Delayed:** Data received, used, or delivered at or after a specified time interval following its time of origination, publication, or issue.
+* **Historical:** Data received, used, or delivered at least a calendar day (or 24 hours in 24-hour markets) after its time of origination, publication, or issue.
+* **Embargoed:** Data received, used, or delivered on or after a specified instant or future event.
 
 Relevant instances are:
-* **md:OriginationTime:** The moment information condensces into data; the instant a price is struck and recorded
-* **md:PublicationTime:** The instant data is released by the Originator for distribution
-* **md:IssueTime:** The instant data is accessed from the Originator and distributed
-* **md:MarketClose:** The time published by the venue specifying when a market closes
+* **Origination Time:** The moment information condensces into data; the instant a price is struck and recorded
+* **Publication Time:** The instant data is released by the Originator for distribution
+* **Issue Time:** The instant data is accessed from the Originator and distributed
+* **Market Close:** The time published by the venue specifying when a market closes
 
 ***Example:** The Resource :R1 is realtime*
 ```turtle
@@ -174,7 +174,7 @@ End-of-day data can be specified in a similar manner:
 ***
 <br>
 
-**md:methodOfUpdate** | -    
+**method of update** | -    
 ----------------|------------  
 Definition | Specifies the method by which updates to the Resource are delivered  
 Label | is updated by  
@@ -199,7 +199,7 @@ The possible values are:
 ***
 <br>
 
-**md:updatePeriod** | -    
+**update period** | -    
 ----------------|------------  
 Definition | The period during which the Resource has been, or continues to be, updated  
 Label | is updated during  
@@ -211,7 +211,7 @@ Service Period can be defined as a time interval
 ***
 <br>
 
-**md:frequencyOfUpdate** | -    
+**frequency of update** | -    
 ----------------|------------  
 Definition | Specifies how frequently updates to the Resource are delivered  
 Label | has frequency of update  
@@ -225,7 +225,7 @@ The possible values are:
 ***
 <br>
 
-**md:complexID** | -    
+**complex ID** | -    
 ----------------|------------  
 Definition | Provides a universal identifier by specifying a local identifier and it's context.  
 Editorial Note | For identifying market data Sources, the context is usually provided by the venue  
@@ -248,7 +248,7 @@ Range | Complex ID
 ***
 <br>
 
-**md:depthOfMarket** | -    
+**depth of market** | -    
 ----------------|------------  
 Definition |    
 Label | provided by  
@@ -265,7 +265,7 @@ Each of which can be qualified by md:positionFrom and md:positionTo
 ***
 <br>
 
-**md:geography** | -    
+**geography** | -    
 ----------------|------------   
 Definition | The geographic subject matter and focus of the content.  
 Scope Note | A characteristic of the content rather than its source/origin or any limitations on its distribution.  
@@ -278,7 +278,7 @@ Range | ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopol
 ***
 <br>
 
-**md:amount** | -    
+**amount** | -    
 ----------------|------------     
 Definition | The amount of a Resource.  
 Label | has amount  
