@@ -15,9 +15,8 @@ Range | Party
 :R1    a              md:Resource .
 :R1    md:provider    <https://permid.org/1-4295899615> . # CME
 ```
-<br>
+
 ***
-<br>
 
 **md:resource** | -    
 ----------------|------------  
