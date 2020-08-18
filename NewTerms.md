@@ -17,7 +17,7 @@ Range | Party
 ```
 
 ***
-
+<br>
 **md:resource** | -    
 ----------------|------------  
 Definition | Points to the original Resource(s) that the subject Resource or Asset qualifies.  
