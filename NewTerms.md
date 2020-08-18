@@ -99,6 +99,18 @@ Label | is delivered as
 Domain | Resource  
 Range | Proper Interval  
 
+Possible values are:
+* **md:Realtime:** Data received, used, or delivered with minimum latency after its time of origination, publication, or issue.
+* **md:Delayed:** Data received, used, or delivered at or after a specified time interval following its time of origination, publication, or issue.
+* **md:Historical:** Data received, used, or delivered at least a calendar day (or 24 hours in 24-hour markets) after its time of origination, publication, or issue.
+* **md:Embargoed:** Data received, used, or delivered on or after a specified instant or future event.
+
+Relevant instances are:
+* **md:OriginationTime:** The moment information condensces into data; the instant a price is struck and recorded
+* **md:PublicationTime:** The instant data is released by the Originator for distribution
+* **md:IssueTime:** The instant data is accessed from the Originator and distributed
+* **md:MarketClose:** The time published by the venue specifying when a market closes
+
 ***Example:** The Resource :R1 is realtime*
 ```turtle
 :R1    md:timelinessOfDelivery    md:Realtime .
@@ -158,8 +170,6 @@ End-of-day data can be specified in a similar manner:
                                                         ]
                                 ] .
 ```
- 
-Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
 ***
 <br>
