@@ -33,7 +33,7 @@ Range | Resource
 :R2    md:timelinessOfDelivery  md:Delayed .
 ```
 
-<br><br>
+***
 
 **md:assetClass** | -    
 ----------------|------------
@@ -48,7 +48,8 @@ But what should we use as our controlled list of asset classes? ISO 10962 (aka C
 ```turtle
 :R1    md:assetClass    <https://sec.report/CFI/FCEPSX> . # Commodity Futures for Extraction Resources with Physical Delivery
 ```
-<br><br>
+
+***
 
 **md:contentType** | -    
 ----------------|------------  
@@ -68,7 +69,7 @@ Again, what should we use as our controlled list of content types?
                         ] .
 ```
 
-<br><br>
+***
 
 **md:intraday** | -    
 ----------------|------------  
@@ -82,7 +83,7 @@ Range | Boolean
 :R3    md:intraday    false .
 ```
 
-<br><br>
+***
 
 **md:timelinessOfDelivery** | -    
 ----------------|------------  
@@ -155,7 +156,7 @@ End-of-day data can be specified in a similar manner:
  
 Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
-<br><br>
+***
 
 **md:methodOfUpdate** | -    
 ----------------|------------  
@@ -178,7 +179,8 @@ The possible values are:
 	                                           ]
                             ] .
 ```
-<br><br>
+
+***
 
 **md:updatePeriod** | -    
 ----------------|------------  
@@ -189,7 +191,7 @@ Range | Interval
 
 Service Period can be defined as a time interval  
 
-<br><br>
+***
 
 **md:frequencyOfUpdate** | -    
 ----------------|------------  
@@ -202,7 +204,7 @@ The possible values are:
 * **Tick-by-tick:** Any and every change in value is provided in an update
 * **Sampled:** Updates are sampled and/or conflated. Only selected updates are delivered from the whole tick-by-tick dataset at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).
 
-<br><br>
+***
 
 **md:complexID** | -    
 ----------------|------------  
@@ -224,7 +226,7 @@ Range | Complex ID
                         ] .
 ```
 
-<br><br>
+***
 
 **md:depthOfMarket** | -    
 ----------------|------------  
@@ -240,7 +242,7 @@ The possible values are:
 
 Each of which can be qualified by md:positionFrom and md:positionTo
 
-<br><br>
+***
 
 **md:geography** | -    
 ----------------|------------   
@@ -252,7 +254,7 @@ Range | ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopol
 
 (inc. exclusions)
 
-<br><br>
+***
 
 **md:amount** | -    
 ----------------|------------     
@@ -264,7 +266,7 @@ Range | Amount
 Possible value:
 * **Insubstantial**
 
-<br><br>
+***
 
 ## Policy Status: policy lifecycle descriptors
 To manage policies through their life-cycle, we need to track their status:
