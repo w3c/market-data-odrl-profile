@@ -35,6 +35,7 @@ Range | Resource
 ```
 
 ***
+<br>
 
 **md:assetClass** | -    
 ----------------|------------
@@ -51,6 +52,7 @@ But what should we use as our controlled list of asset classes? ISO 10962 (aka C
 ```
 
 ***
+<br>
 
 **md:contentType** | -    
 ----------------|------------  
@@ -71,6 +73,7 @@ Again, what should we use as our controlled list of content types?
 ```
 
 ***
+<br>
 
 **md:intraday** | -    
 ----------------|------------  
@@ -85,6 +88,7 @@ Range | Boolean
 ```
 
 ***
+<br>
 
 **md:timelinessOfDelivery** | -    
 ----------------|------------  
@@ -158,6 +162,7 @@ End-of-day data can be specified in a similar manner:
 Time of Origination, Publication, Issue, and Release can be defined as time instants  
 
 ***
+<br>
 
 **md:methodOfUpdate** | -    
 ----------------|------------  
@@ -182,6 +187,7 @@ The possible values are:
 ```
 
 ***
+<br>
 
 **md:updatePeriod** | -    
 ----------------|------------  
@@ -193,6 +199,7 @@ Range | Interval
 Service Period can be defined as a time interval  
 
 ***
+<br>
 
 **md:frequencyOfUpdate** | -    
 ----------------|------------  
@@ -206,6 +213,7 @@ The possible values are:
 * **Sampled:** Updates are sampled and/or conflated. Only selected updates are delivered from the whole tick-by-tick dataset at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).
 
 ***
+<br>
 
 **md:complexID** | -    
 ----------------|------------  
@@ -228,6 +236,7 @@ Range | Complex ID
 ```
 
 ***
+<br>
 
 **md:depthOfMarket** | -    
 ----------------|------------  
@@ -244,6 +253,7 @@ The possible values are:
 Each of which can be qualified by md:positionFrom and md:positionTo
 
 ***
+<br>
 
 **md:geography** | -    
 ----------------|------------   
@@ -256,6 +266,7 @@ Range | ISO 3166 country codes and UN Regions and Sub-Regions? Do we need geopol
 (inc. exclusions)
 
 ***
+<br>
 
 **md:amount** | -    
 ----------------|------------     
@@ -268,6 +279,7 @@ Possible value:
 * **Insubstantial**
 
 ***
+<br>
 
 ## Policy Status: policy lifecycle descriptors
 To manage policies through their life-cycle, we need to track their status:
