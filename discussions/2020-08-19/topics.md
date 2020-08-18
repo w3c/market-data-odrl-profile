@@ -3,19 +3,19 @@
 Agenda: 
 
 * Finalize definitions of Notify and Report
-* Replacement Terms for "Creditor" and "Debtor"
+* New Terms for "Creditor" and "Debtor"
 * Changes Over Time: Static or Dynamic Identifiers? 
 * Properties of Resources
 
 ## Duties: Notify and Report
 
-###Editor's Recomendation###: These definitions of Notify and Report draw their distinction between the notification of an *event* and the reporting of a *state of affairs*:
+### Editor's Recomendation: These definitions of Notify and Report draw their distinction between the notification of an *event* and the reporting of a *state of affairs*:
 
 **Notify:** The debtor makes the creditor aware of a relevant event (defined by the action scope).
 
 **Report:** The debtor provides a report to the creditor on a relevant and on-going state of affairs (defined by the action scope).
 
-###Other attempts###
+### Other attempts
 
 *Previous suggestion*:
 
@@ -47,7 +47,7 @@ Agenda:
 
 **Report**: The debtor (most often the consumer) provides a report to the creditor on a relevant state of the world. (defined by the action scope).
 
-##New Terms for "Creditor and "Debtor"
+## New Terms for "Creditor and "Debtor"
 
 A Duty has two related parties: The party requiring the Duty and the party responsible for permforming the Duty. We've been calling these parties the Creditor and the Debtor, but would like to find a clearer pair of terms. Some suggestions:
 
