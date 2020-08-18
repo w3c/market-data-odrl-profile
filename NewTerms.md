@@ -64,7 +64,7 @@ Again, what should we use as our controlled list of content types?
 ```turtle
 :R3    a                md:Resource .
 :R3    md:assetClass    [   a                <https://sec.report/CFI/TIEXX> . # Index of equities
-                            md:contentType   (md:Value md:Constituents)
+                            md:contentType   (md:IndexValue md:Constituents)
                         ] .
 ```
 
