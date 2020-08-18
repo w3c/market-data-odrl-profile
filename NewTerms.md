@@ -182,7 +182,7 @@ The possible values are:
 
 **md:updatePeriod** | -    
 ----------------|------------  
-Definition | The period during which the Resource continues to be updated  
+Definition | The period during which the Resource has been, or continues to be, updated  
 Label | is updated during  
 Domain | Resource  
 Range | Interval  
