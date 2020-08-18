@@ -9,7 +9,9 @@ Agenda:
 
 ## Duties: Notify and Report
 
-### Editor's Recomendation: These definitions of Notify and Report draw their distinction between the notification of an *event* and the reporting of a *state of affairs*:
+### Editor's Recomendation 
+
+These definitions of Notify and Report draw their distinction between the notification of an *event* and the reporting of a *state of affairs*:
 
 **Notify:** The debtor makes the creditor aware of a relevant event (defined by the action scope).
 
