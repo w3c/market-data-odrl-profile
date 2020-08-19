@@ -70,11 +70,12 @@ Last session, we agreed that contracts and agreements for the data industry do n
 
 ODRL is largely a language of objects. So, should we support time-based changes by requiring a second object be defined with the properties of a new time period, or should we create a "wrapper" layer that will allow systems to refer to the same object and then "drill down" to find out what its properties were at a particular time?
 
-New object approach:
+### New object approach:
 
     :A1     rdf:type                    odrl:Asset ;
             md:effectiveDate            [   a             time:ProperInterval ;
-                                            time:before   "2021-01-01T00:00:00Z"^^xsd:dateTime
+                                            **time:after    "2019-01-01T00:00:00Z"^^xsd:dateTime**
+                                            **time:before   "2021-01-01T00:00:00Z"^^xsd:dateTime**
                                         ] ;
             md:resource                 :S1 ;
             md:timelinessOfDelivery     ...
@@ -87,7 +88,7 @@ New object approach:
 
     :A2     rdf:type                    odrl:Asset ;
             md:effectiveDate            [   a             time:ProperInterval ;
-                                            time:after    "2021-01-01T00:00:00Z"^^xsd:dateTime 
+                                            **time:after    "2021-01-01T00:00:00Z"^^xsd:dateTime** 
                                         ] ;
             md:resource                 :S1 ;
             md:timelinessOfDelivery     ...
@@ -96,6 +97,51 @@ New object approach:
                                         md:positionTo        12 ;
                                         ] ;
             md:contentNature            ...
+
+
+### Wrapper approach:
+
+    :A1     rdf:type                    odrl:Asset ;
+            md:effectiveDate            [   a             time:ProperInterval ;
+                                            **time:after    "2019-01-01T00:00:00Z"^^xsd:dateTime**
+                                            **time:before   "2021-01-01T00:00:00Z"^^xsd:dateTime**
+                                        ] ;
+            md:resource                 :S1 ;
+            md:timelinessOfDelivery     ...
+            md:depthOfMarket            [  a                    md:Level2 ;
+                                        md:positionFrom      1 ;
+                                        md:positionTo        10 ;
+                                        ] ;
+            md:contentNature            ...
+
+
+    :A2     rdf:type                    odrl:Asset ;
+            md:effectiveDate            [   a             time:ProperInterval ;
+                                            **time:after    "2021-01-01T00:00:00Z"^^xsd:dateTime** 
+                                        ] ;
+            md:resource                 :S1 ;
+            md:timelinessOfDelivery     ...
+            md:depthOfMarket            [  a                    md:Level2 ;
+                                        md:positionFrom      1 ;
+                                        md:positionTo        12 ;
+                                        ] ;
+            md:contentNature            ...
+
+    :Pt1    rdf:type                    md:TemporalPermission ;
+            md:version                  :P1 , :P2 .
+
+The "wrapper approach" simply adds a layer on top of the definitions whose sole purpose is to give systems a single, unchanging, identifier. 
+
+Are there any arguments against using a wrapper layer?
+
+1. It addes some complexity
+2. It's not part of the original ODRL spec
+
+It seems like a wrapper layer has value, are the above arguments enough to recommend against it?
+
+[Read more on the Issue thread.](https://github.com/w3c/market-data-odrl-profile/issues/14)
+
+
 
 
 ### Time to Vote
