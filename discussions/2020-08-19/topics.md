@@ -148,7 +148,7 @@ An Asset is a Resource, a collection of Resources, or the part of a Resource con
 What attributes are needed to fully describe Assets produced and licensed in our industry?
 
 | Property | Definition | Possible Values |
-|---|---|
+|---|---|---|
 | Provider  | Points to the Party playing the role of Provider in relation to the Resource. |  |
 | Resource  | Points to the original Resource(s) that the subject Resource or Asset qualifies. |  |
 | Asset Class  | Categorises resources by the financial asset class they describe |  |
@@ -166,7 +166,7 @@ What attributes are needed to fully describe Assets produced and licensed in our
 Are there other terms useful in describing Resources in our industry?
 
 See [the New Terms page](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewTerms.md) for more detail.
- 
+
 ### Time to Vote
 
 [New Terms to Vote On](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewTerms.md#to-vote)
