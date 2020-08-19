@@ -108,7 +108,7 @@ Possible values are:
 Relevant instances are:
 * **Origination Time:** The moment information condensces into data; the instant a price is struck and recorded
 * **Publication Time:** The instant data is released by the Originator for distribution
-* **Issue Time:** The instant data is accessed from the Originator and distributed
+* **Issue Time:** The instant data is distributed from the Originator 
 * **Market Close:** The time published by the venue specifying when a market closes
 
 ***Example:** The Resource :R1 is realtime*
@@ -206,7 +206,7 @@ Label | is updated during
 Domain | Resource  
 Range | Interval  
 
-Service Period can be defined as a time interval  
+If the resouce continues to be updated while a subsciption holds, then use **Service Period**. Else define a time interval.
 
 ***
 <br>
@@ -256,11 +256,23 @@ Domain | Resource
 Range | Party  
 
 The possible values are:
-* **Level 1**, known as market price
-* **Level 2**, known as market by price
-* **Level 3**, known as market by order or the full order book
+* **Level 1**, known as market price, typically includes the content relating to the calculated single best bid and best ask/offer in the market.
+* **Level 2**, known as market by price, typically includes content relating to the best bids and asks/offers at a number of price points.
+* **Level 3**, known as market by order or the full order book, typically includes content relating to the bids and asks/offers at all price points and from all participants in the market.
 
-Each of which can be qualified by md:positionFrom and md:positionTo
+Each of these values can be qualified to specify the exact depth of market offered by usind the **position from** and **position to** properties.
+
+Question: If I get L3, does that include L2 and L1?
+
+***Example:** Xetra Ultra provides a book depth of ten*
+```turtle
+:A1     rdf:type                   odrl:Asset ;
+:A1     rdf:label                  "Xetra Ultra" ;
+:A1     md:depthOfMarket           [  a                    md:Level2 ;
+                                      md:positionFrom      1 ;
+                                      md:positionTo        10 ;
+                                   ] .
+```
 
 ***
 <br>
