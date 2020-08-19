@@ -127,10 +127,10 @@ ODRL is largely a language of objects. So, should we support time-based changes 
                                         ] ;
             md:contentNature            ...
 
-    :Pt1    rdf:type                    md:TemporalPermission ;
-            md:version                  :P1 , :P2 .
+    :AT1    rdf:type                    md:TemporalPermission ;
+            md:version                  :A1 , :A2 .
 
-The "wrapper approach" simply adds a layer on top of the definitions whose sole purpose is to give systems a single, unchanging, identifier. 
+The "wrapper approach" simply adds a layer on top of the definitions ("AT1" in this example) whose sole purpose is to give systems a single, unchanging, identifier. 
 
 Are there any arguments against using a wrapper layer?
 
