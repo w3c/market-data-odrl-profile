@@ -60,6 +60,43 @@ A Duty has two related parties: The party requiring the Duty and the party respo
 | Subject  | Object  | 
 | Obligatee | Obligator  |
 | Licensor | Licensee  |
+| Requiring Party  | Responsible Party  |
+
+[Read more on the Issue thread.](https://github.com/w3c/market-data-odrl-profile/issues/17)
+
+## Changes Over Time: Static or Dynamic Identifiers?  
+
+Last session, we agreed that contracts and agreements for the data industry do need some form of temporal support. Polices and prices change, and one contract or document needs to be able to reference both the time before and the time after a change.
+
+ODRL is largely a language of objects. So, should we support time-based changes by requiring a second object be defined with the properties of a new time period, or should we create a "wrapper" layer that will allow systems to refer to the same object and then "drill down" to find out what its properties were at a particular time?
+
+New object approach:
+
+    :A1     rdf:type                    odrl:Asset ;
+            md:effectiveDate            [   a             time:ProperInterval ;
+                                            time:before   "2021-01-01T00:00:00Z"^^xsd:dateTime
+                                        ] ;
+            md:resource                 :S1 ;
+            md:timelinessOfDelivery     ...
+            md:depthOfMarket            [  a                    md:Level2 ;
+                                        md:positionFrom      1 ;
+                                        md:positionTo        10 ;
+                                        ] ;
+            md:contentNature            ...
+
+
+    :A2     rdf:type                    odrl:Asset ;
+            md:effectiveDate            [   a             time:ProperInterval ;
+                                            time:after    "2021-01-01T00:00:00Z"^^xsd:dateTime 
+                                        ] ;
+            md:resource                 :S1 ;
+            md:timelinessOfDelivery     ...
+            md:depthOfMarket            [  a                    md:Level2 ;
+                                        md:positionFrom      1 ;
+                                        md:positionTo        12 ;
+                                        ] ;
+            md:contentNature            ...
+
 
 ### Time to Vote
 
