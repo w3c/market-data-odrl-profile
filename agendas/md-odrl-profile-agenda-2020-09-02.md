@@ -29,7 +29,7 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
     1. Minutes of [last meeting](https://www.w3.org/2020/08/19-md-odrl-profile-minutes.html)
 2. Editors' Update (Ben, Mark)
     1. [VOTE on replacement terms for Creditor and Debtor](https://github.com/w3c/market-data-odrl-profile/issues/17#issuecomment-682561225)
-    2. [VOTE on Temporal Aspects - ISSUE-14: do we need temporal objects?](https://github.com/w3c/market-data-odrl-profile/issues/14)
+    2. [VOTE on Temporal Aspects: do we need temporal objects?](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/discussions/2020-08-19/topics.md#changes-over-time-static-or-dynamic-identifiers)
     3. [VOTE - Properties of Resources](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewTerms.md#properties-of-resources)
     4. [To Discus - Policy Lifecycle Descriptors](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewTerms.md#policy-status-policy-lifecycle-descriptors)
     
