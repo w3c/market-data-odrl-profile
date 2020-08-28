@@ -26,6 +26,10 @@ I’m creating a spreadsheet containing a terminal vendor’s data – am I allo
 I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?<br>
 *(Submitted by Richard Mundell)*
 
+#### RoD-6
+I’m setting up a new user location - can I send this data to a new, internal geographic location?<br>
+*(Submitted by Jeremy Green)*
+
 ## Non-display Use
 For example, use of real-time data in a new application
 
@@ -38,6 +42,10 @@ Can I distribute the results from the new application to other users internally?
 <br>*(Submitted by Michelle Roberts)*
 
 #### NDU-3
+Can I distribute the results from the new application to other users at a different internal geographic location?
+<br>*(Submitted by Jeremy Green)*
+
+#### NDU-4
 Can I distribute the results from the new application to external users at the end of each day?<br>
 *(Submitted by Michelle Roberts)*
 
@@ -63,3 +71,7 @@ Can I create a spreadsheet combining two vendors data to create derived data<br>
 #### DD-5
 I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?<br>
 *(Submitted by Richard Mundell)*
+
+#### DD-6
+Am I the intellectual property owner of the derived data that I have created?<br>
+*(Submitted by Jeremy Green)*
