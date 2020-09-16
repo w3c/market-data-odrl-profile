@@ -704,6 +704,31 @@
 
             </pre>
         </section>
+        <section data-dfn-for="asset class">
+            <h2><dfn>asset class</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Categorises Resources by the financial asset class they describe</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has asset class</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/asset-class">http://www.w3.org/md-odrl-profile/asset-class</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Asset-Class">Asset Class</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                In the following example the Resource <code>:R1</code> describes Commodity Futures:
+            </p>
+            <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
+                <span class="p">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">asset-class</span><span class="w">   </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
+            </pre>
+        </section>
     </section>
 </section>
 </body>
