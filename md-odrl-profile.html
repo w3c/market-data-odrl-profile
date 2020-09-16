@@ -751,13 +751,89 @@
             <p>
                 The Resource <code>:R3</code> describes the Values and Constituents (content type) of an Index of Equities (asset class):
             </p>
-            <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
-                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">assetClass</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
+            <pre class="example nohighlight turtle" title="Specifying Content Type" id="ContentTypeSpecification">
+                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClass</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">                     </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
                 <span class="w">                      </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">        </span><span class="p">(</span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                  </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
             </pre>
+        </section>
+    </section>
+</section>
+</section>
+    <section id='Time'>
+    <h2>Time</h2>
+    <section id='TimeInstants'>
+        <h2>Time Instants</h2>
+        <p>
+            There are some moments in time which are of particulat interest and demand definition. The following are especially useful in calculating the timeliness of data.
+        </p>
+        <section data-dfn-for="OriginationTime">
+            <h2><dfn>Origination Time</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The moment information condensces into data.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>The instant a price is struck <em>and</em> recorded.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Origination Time</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/OriginationTime">http://www.w3.org/md-odrl-profile/OriginationTime</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:Instant">Time Instant</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="PublicationTime">
+            <h2><dfn>Publication Time</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Points to the original Resource(s) that the subject Resource or Asset qualifies.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Publication Time</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PublicationTime">http://www.w3.org/md-odrl-profile/PublicationTime</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:Instant">Time Instant</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="IssueTime">
+            <h2><dfn>Issue Time</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The instant data is distributed from the Originator</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Issue Time</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/IssueTime">http://www.w3.org/md-odrl-profile/IssueTime</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:Instant">Time Instant</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="MarketClose">
+            <h2><dfn>Market Close</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Given the asset class, further specifies the type of content provided by the resource</td>
+                    </tr><<tr>
+                        <th>Label:</th><td>Market Close</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketClose">http://www.w3.org/md-odrl-profile/MarketClose</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:Instant">Time Instant</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </section>
 </section>
