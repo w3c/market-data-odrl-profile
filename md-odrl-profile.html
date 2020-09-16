@@ -672,7 +672,7 @@
             </p>
             <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
                 <span class="p">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">provider</span><span class="w">   </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">provider</span><span class="w">   </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
             </pre>
         </section>
         <section data-dfn-for="resource">
@@ -695,12 +695,12 @@
                 </tbody>
             </table>
             <p>
-                In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R2</code>:
+                In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R1</code>:
             </p>
             <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
                 <span class="p">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">resource</span><span class="w">   </span><span class="nv">:R1</span> <span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w">   </span><span class="nn">md:</span><span class="nt">:Delayed</span> <span class="p">.</span>
+                <span class="w">              </span><span class="nn">md:</span><span class="nt">resource</span><span class="w">   </span><span class="nv">:R1</span> <span class="p">;</span>
+                <span class="w">              </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w">   </span><span class="nn">md:</span><span class="nt">:Delayed</span> <span class="p">.</span>
 
             </pre>
         </section>
