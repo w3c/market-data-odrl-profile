@@ -834,7 +834,78 @@
                     </tr>
                 </tbody>
             </table>
-        </section>        
+        </section>
+         <section id='ProperIntervals'>
+        <h2>Proper Intervals</h2>
+        <p>
+            Equally there are some time intervals which are of particulat interest and demand definition. Again, these are especially useful in describing the timeliness of data.
+        </p>
+        <section data-dfn-for="Realtime">
+            <h2><dfn>Realtime</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Data received, used, or delivered with minimum latency after its time of origination, publication, or issue.</td>
+                    </tr><<tr>
+                        <th>Label:</th><td>Realtime</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Realtime">http://www.w3.org/md-odrl-profile/Realtime</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="Delayed">
+            <h2><dfn>Delayed</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Data received, used, or delivered at or after a specified time interval following its time of origination, publication, or issue.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Delayed</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Delayed">http://www.w3.org/md-odrl-profile/Delayed</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="Historical">
+            <h2><dfn>Historical</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Data received, used, or delivered after a specified interval greater than that for delayed data.</td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>Often the interval is at least a calendar day (or 24 hours in 24-hour markets).</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Historical</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Historical">http://www.w3.org/md-odrl-profile/Historical</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="Embargoed">
+            <h2><dfn>Embargoed</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>TData received, used, or delivered on or after a specified instant or future event.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Embargoed</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Embargoed">http://www.w3.org/md-odrl-profile/Embargoed</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>       
     </section>
 </section>
 </body>
