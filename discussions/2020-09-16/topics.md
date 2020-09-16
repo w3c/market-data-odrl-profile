@@ -14,7 +14,8 @@ In October 2019, the precursor to the community group presented proof of concept
 Now that we're farther along in building out our implementation of ODRL, what form should the next deliverable take, and when can we target its delivery? Some possibilities:
 
 * Codified specification of a more fully-defined language
-* Codified set of test cases that can be applied to the language
+* Codified set of use cases; business challenges we're trying to solve
+* Codified set of test cases; usage queries we want the language to support
 * Application code producing and consuming ODRL for these test cases
 
 Are there others? Can we make this list more specific in its short-term goals?
@@ -34,7 +35,7 @@ What, specifically, should we seek to accomplish for the next deliverable?
 
 ## Meeting Cadence
 
-Would it improve our throughput to set a standing breakout session in off-weeks? This breakout session could be voluntary and more technical focused, leaving the larger group to tackle building out use cases in the main session.
+Would it improve our throughput to set a standing breakout session in off-weeks? This breakout session could be voluntary and more technical focused, leaving the larger group to tackle building out use cases, and the ways we'll prove our ability to test those cases, in the main session.
 
 For example, we could move the dreaded "Creditor/Debtor" controversy to a breakout session. 
 
