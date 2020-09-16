@@ -1,4 +1,4 @@
-# August 16th, 2020: Topics for Discussion
+# September 16th, 2020: Topics for Discussion
 
 Agenda: 
 
