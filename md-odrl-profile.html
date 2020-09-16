@@ -671,7 +671,7 @@
                 In the example below the Resource <code>:R1</code> is provided by the CME:
             </p>
             <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
-                <span class="p">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">provider</span><span class="w">   </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
             </pre>
         </section>
@@ -682,7 +682,7 @@
                     <tr>
                         <th>Definition:</th><td>Points to the original Resource(s) that the subject Resource or Asset qualifies.</td>
                     </tr><tr>
-                        <th>Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
                     </tr><tr>
                         <th>Label:</th><td>qualifies resource</td>
                     </tr><tr>
@@ -698,13 +698,13 @@
                 In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R1</code>:
             </p>
             <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
-                <span class="p">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">resource</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w">  </span><span class="nn">md:</span><span class="nt">:Delayed</span> <span class="p">.</span>
 
             </pre>
         </section>
-        <section data-dfn-for="asset class">
+        <section data-dfn-for="assetClass">
             <h2><dfn>asset class</dfn></h2>
             <table class="def propdef">
                 <tbody>
@@ -713,11 +713,11 @@
                     </tr><tr>
                         <th>Label:</th><td>has asset class</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/asset-class">http://www.w3.org/md-odrl-profile/asset-class</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/assetClass">http://www.w3.org/md-odrl-profile/assetClass</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Asset-Class">Asset Class</a></td>
+                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#AssetClass">Asset Class</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -725,8 +725,38 @@
                 In the following example the Resource <code>:R1</code> describes Commodity Futures:
             </p>
             <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
-                <span class="p">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">asset-class</span><span class="w">   </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
+                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClass</span><span class="w">   </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
+            </pre>
+        </section>
+        <section data-dfn-for="contentType">
+            <h2><dfn>content type</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Given the asset class, further specifies the type of content provided by the resource</td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>The valid values for <code>Content Type</code> depend on the <code>Asset Class</code> of the Resource</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has content type</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/contentType">http://www.w3.org/md-odrl-profile/contentType</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#ContentType">Content Type</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                The Resource <code>:R3</code> describes the Values and Constituents (content type) of an Index of Equities (asset class):
+            </p>
+            <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
+                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">assetClass</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
+                <span class="w">                      </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">        </span><span class="p">(</span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                  </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
             </pre>
         </section>
     </section>
