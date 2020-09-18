@@ -2,7 +2,7 @@
 
 ```diff
 - The interpretation presented below is a work in progress. 
-- It's presented solely as an exploration of automated rights management and is intended to provoke debate.
+- It is presented solely as an exploration of automated rights management and is intended to provoke debate.
 ```
 
 `Code` uses the turtle syntax defined here: <https://www.w3.org/TR/turtle/>. Hopefully though you can usefully read the document without reading the code.
