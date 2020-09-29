@@ -368,6 +368,76 @@
     </p><p>
         Duties are fulfilled when the duty's Debtor takes the Action the duty specifies. Actions are qualified by an Action Scope and often by other relevant properties that provide further context and semantics required to determine whether the action is successfully completed.
     </p>
+     <section id='Duty Functions'>
+        <h2>Duty Functions</h2>
+        <p>
+            Duty functions specify the role a Party plays in fulfilling a Duty.
+        </p>
+        <section data-dfn-for="subject">
+            <h2><dfn>subject</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The <code>Party</code> that must execute the <code>Action</code> specified by the <code>Duty</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Notify</code>, the <code>Subject</code> is the notifying <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Report</code>, the <code>Subject</code> is the reporting <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Request</code>, the <code>Subject</code> is the requesting <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Consent</code>, the <code>Subject</code> is the consenting <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Compensate</code>, the <code>Subject</code> is the compensating <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Invoice</code>, the <code>Subject</code> is the invoicing <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Attach</code>, the <code>Subject</code> is the attaching <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has subject</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/subject">http://www.w3.org/md-odrl-profile/subject</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties>Duty</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="object">
+            <h2><dfn>object</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The <code>Party</code> that must execute the <code>Action</code> specified by the <code>Duty</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Notify</code>, the <code>Subject</code> is the notified <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Report</code>, the <code>Subject</code> is the <code>Party</code> that receives the report.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Request</code>, the <code>Subject</code> is the requested <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Consent</code>, the <code>Subject</code> is the <code>Party</code> that receives the consent.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Compensate</code>, the <code>Subject</code> is the compensated <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Invoice</code>, the <code>Subject</code> is the invoiced <code>Party</code>.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the action is <code>Attach</code>, the <code>Subject</code> is the <code>Party</code> that specifies the attachment.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has subject</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/subject">http://www.w3.org/md-odrl-profile/subject</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties>Duty</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
     <section id='Actions'>
         <h2>Actions</h2>
         <section data-dfn-for="Notify">
@@ -679,18 +749,18 @@
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">provider</span><span class="w">   </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
             </pre>
         </section>
-        <section data-dfn-for="resource">
-            <h2><dfn>resource</dfn></h2>
+        <section data-dfn-for="refines">
+            <h2><dfn>refines</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Points to the original Resource(s) that the subject Resource or Asset qualifies.</td>
+                        <th>Definition:</th><td>Points to the original Resource(s) that the subject Resource or Asset refines.</td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
                     </tr><tr>
-                        <th>Label:</th><td>qualifies resource</td>
+                        <th>Label:</th><td>refines resource</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resource">http://www.w3.org/md-odrl-profile/resource</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resource">http://www.w3.org/md-odrl-profile/refines</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
@@ -703,7 +773,7 @@
             </p>
             <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
                 <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">resource</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w">  </span><span class="nn">md:</span><span class="nt">:Delayed</span> <span class="p">.</span>
 
             </pre>
