@@ -26,7 +26,8 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 ### Agenda
 
 1. Admin
-    1. Minutes of [last meeting](https://www.w3.org/2020/09/30-md-odrl-profile-minutes.html)
+    1. Noting Ben's change of affiliation
+    2. Minutes of [last meeting](https://www.w3.org/2020/09/30-md-odrl-profile-minutes.html)
     
 2. Editors' Update (Ben, Mark):
     1. Update on CG Deliverables: standard, test cases, and licenses
