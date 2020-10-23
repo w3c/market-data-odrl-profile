@@ -5,131 +5,93 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 ## Internal Access to Data
 
-#### IAtD-1
-Am I entitled to access a particular date range of historical content?
+**IAtD-1** - Am I entitled to access a particular date range of historical content?
 
-#### IAtD-2
-Can I entitle my internal developers for free?
+**IAtD-2** - Can I entitle my internal developers for free?
 
-#### IAtD-3
-I’m setting up a new user location - can I send this data to a new, internal geographic location?
+**IAtD-3** - I’m setting up a new user location - can I send this data to a new, internal geographic location?
 
-#### IAtD-4
-Can I entitle my IT Support / Market Data staff for free?
+**IAtD-4** - Can I entitle my IT Support / Market Data staff for free?
 
-#### IAtD-5
-Can I get a free trial access for any user?
+**IAtD-5** - Can I get a free trial access for any user?
 
-#### IAtD-6
-Can I get a free trial access for applications within development?
+**IAtD-6** - Can I get a free trial access for applications within development?
 
-#### IAtD-7
-Do I need to declare and/or pay for data utilisation within my development or UAT environement?
+**IAtD-7** - Do I need to declare and/or pay for data utilisation within my development or UAT environement?
 
-#### IAtD-8
-Do I need to declare and/or pay for data utilisation within my business continuity / disaster recovery environements?
+**IAtD-8** - Do I need to declare and/or pay for data utilisation within my business continuity / disaster recovery environements?
 
-#### IAtD-9
-Can I publish a particular raw real-time/delayed/intraday/end of day data set to an application which does not provide the ability to control and report those downstream users and/or applications?
+**IAtD-9** - Can I publish a particular raw real-time/delayed/intraday/end of day data set to an application which does not provide the ability to control and report those downstream users and/or applications?
 
 
 ## Redistribution of Data
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
 
-#### RoD-1
-Can I send a small amount of data to a client, in support of a transaction, on a one-off basis?
+**RoD-1** - Can I send a small amount of data to a client, in support of a transaction, on a one-off basis?
 
-#### RoD-2
-Can I send appx 10 years data for a couple of data points, in an Excel spreadsheet, to a potential client?
+**RoD-2** - Can I send appx 10 years data for a couple of data points, in an Excel spreadsheet, to a potential client?
 
-#### RoD-3
-Can I send some data, in a chart format, in a research report to 400 clients, on a monthly basis?
+**RoD-3** - Can I send some data, in a chart format, in a research report to 400 clients, on a monthly basis?
 
-#### RoD-4
-I’m creating a spreadsheet containing a terminal vendor’s data – am I allowed to share this with clients
+**RoD-4** - I’m creating a spreadsheet containing a terminal vendor’s data – am I allowed to share this with clients
 
-#### RoD-5
-I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?
+**RoD-5** - I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?
 
-#### RoD-6
-Can I publish a particular real-time data set to a public (unauthenticated) website or widget?
+**RoD-6** - Can I publish a particular real-time data set to a public (unauthenticated) website or widget?
 
-#### RoD-7
-Can I publish a particular real-time data set to an authenticated website or widget?
+**RoD-7** - Can I publish a particular real-time data set to an authenticated website or widget?
 
-#### RoD-8
-Can I publish a particular delayed data set to a public (unauthenticated) website or widget?
+**RoD-8** - Can I publish a particular delayed data set to a public (unauthenticated) website or widget?
 
-#### RoD-9
-Can I publish a particular delayed data set to an authenticated website or widget?
+**RoD-9** - Can I publish a particular delayed data set to an authenticated website or widget?
 
-#### RoD-10
-Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in a client portfolio performance or valuation report to 2000 clients, on a monthly basis?
+**RoD-10** - Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in a client portfolio performance or valuation report to 2000 clients, on a monthly basis?
 
-#### RoD-11
-Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in marketing materials to 5000 prospective clients, on an ad-hoc basis?
+**RoD-11** - Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in marketing materials to 5000 prospective clients, on an ad-hoc basis?
 
-#### RoD-12
-Can I send some data, in charts and/or tables, in an email or tweet/other social media post, as marketing to an unlimited number of current and prospective clients, on a weekly basis?
+**RoD-12** - Can I send some data, in charts and/or tables, in an email or tweet/other social media post, as marketing to an unlimited number of current and prospective clients, on a weekly basis?
 
 
 ## Non-display Use
 For example, use of real-time data in a new application
 
-#### NDU-1
-Can I use real-time data in a new internal application, which will not display the data to any end users?
+**NDU-1** - Can I use real-time data in a new internal application, which will not display the data to any end users?
 
-#### NDU-2
-Can I distribute the results from the new application to other users internally?
+**NDU-2** - Can I distribute the results from the new application to other users internally?
 
-#### NDU-3
-Can I distribute the results from the new application to other users at a different internal geographic location?
+**NDU-3** - Can I distribute the results from the new application to other users at a different internal geographic location?
 
-#### NDU-4
-Can I distribute the results from the new application to external users at the end of each day?
+**NDU-4** - Can I distribute the results from the new application to external users at the end of each day?
 
 
 ## Derived Data
 Data being derived from varying sources, including for creation of Indices
 
-#### DD-1
-Can I create derived data from one vendor/exchange, using end of day data, for internal use?
+**DD-1** - Can I create derived data from one vendor/exchange, using end of day data, for internal use?
 
-#### DD-2
-Can I create derived data, using delayed data, from 5 different vendors/exchanges, for internal use?
+**DD-2** - Can I create derived data, using delayed data, from 5 different vendors/exchanges, for internal use?
 
-#### DD-3
-Can I create derived data, in the form of an index, using EOD data, from 5 different vendors/exchanges, and send the result to a client?
+**DD-3** - Can I create derived data, in the form of an index, using EOD data, from 5 different vendors/exchanges, and send the result to a client?
 
-#### DD-4
-Can I create a spreadsheet combining two vendors data to create derived data
+**DD-4** - Can I create a spreadsheet combining two vendors data to create derived data
 
-#### DD-5
-I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?
+**DD-5** - I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?
 
-#### DD-6
-Am I the intellectual property owner of the derived data that I have created?
+**DD-6** - Am I the intellectual property owner of the derived data that I have created?
 
-#### DD-7
-Can I create a tradeable CFD instrument using one or more particular data sets?
+**DD-7** - Can I create a tradeable CFD instrument using one or more particular data sets?
 
-#### DD-8
-Can I create a non-tradable product containing one or more particular data sets for use as input to pricing evaluation of physical products?
+**DD-8** - Can I create a non-tradable product containing one or more particular data sets for use as input to pricing evaluation of physical products?
 
-#### DD-9
-Can I distribute my tradable derived instrument as a white-labeled product?
+**DD-9** - Can I distribute my tradable derived instrument as a white-labeled product?
 
-#### DD-10
-Can I create a structured product using data as underlying?
+**DD-10** - Can I create a structured product using data as underlying?
 
-#### DD-11
-Can I create manipulated / reverse-calculable data and redistribute that internally?
+**DD-11** - Can I create manipulated / reverse-calculable data and redistribute that internally?
 
 
 ## Reporting
 
-#### R-1
-What is the unit of count I need to report?
+**R-1** - What is the unit of count I need to report?
 
-#### R-2
-How often do I need to report?
+**R-2** - How often do I need to report?
