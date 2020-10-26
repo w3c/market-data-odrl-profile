@@ -23,6 +23,22 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 **IAtD-9** - Can I publish a particular raw real-time/delayed/intraday/end of day data set to an application which does not provide the ability to control and report those downstream users and/or applications?
 
+**IAtD-10** - Am I allowed to distribute to majority owned affiliates?
+
+**IAtD-11** - Am I allowed to distribute to minority owned affiliates?
+
+**IAtD-12** - If I cancel a service, am I required to purge the data I am storing in my systems from that service?
+
+**IAtD-13** - Can I subscribe to real-time/delayed/snapshot data and persist my own historical repository of data from this service?
+
+**IAtD-14** - Can I download data from a terminal and store on a network drive for personal access?
+
+**IAtD-15** - Can I download data from a terminal and store on a network drive for my team to access?
+
+**IAtD-16** - Can I share my access to the service with colleagues?
+
+**IAtD-17** - Can I use the service for price validation?
+
 
 ## Redistribution of Data
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
@@ -50,6 +66,10 @@ Sending data externally (attributes vary across all vendors and/or may require a
 **RoD-11** - Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in marketing materials to 5000 prospective clients, on an ad-hoc basis?
 
 **RoD-12** - Can I send some data, in charts and/or tables, in an email or tweet/other social media post, as marketing to an unlimited number of current and prospective clients, on a weekly basis?
+
+**RoD-13** - How many slides containing your data can I put into a client presentation?
+
+**RoD-14** - When sending raw/source data externally, what accreditation and disclaimers am I required to use (if any)?
 
 
 ## Non-display Use
@@ -89,9 +109,32 @@ Data being derived from varying sources, including for creation of Indices
 
 **DD-11** - Can I create manipulated / reverse-calculable data and redistribute that internally?
 
+**DD-12** - Can I create manipulated / reverse-calculable data and redistribute that externally?
 
-## Reporting
+**DD-13** - Can I create derived data and then display it on a public website?
+
+**DD-14** - Is data commingled from a single source classed as derived data by that source provider?
+
+
+## Reporting & Audits
 
 **R-1** - What is the unit of count I need to report?
 
 **R-2** - How often do I need to report?
+
+**R-3** - How long do I have to maintain records of usage/entitlement for including after termination?
+
+**R-4** - Does the vendor have the right to audit me?
+
+**R-5** - How far back can the vendor audit me?
+
+**R-6** - What interest and fees can an audit attract?
+
+
+## Termination
+
+**T-1** - How much notice do I need to give to cancel the service?
+
+**T-2** - In what situations would I be allowed to cancel the service early?
+
+**T-3** - In what situations would you be allowed to terminate our access to your service?
