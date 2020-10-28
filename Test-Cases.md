@@ -43,9 +43,7 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 **IAtD-19** - What duration of time is required for data to be considered delayed?
 
-**IAtD-20** - How many times am I allowed to snap real-time data for a display application, before I must declare those with access for real-time?
-
-**IAtD-21** - Do DACS compliant applications need to be considered for the unit of count?  
+**IAtD-20** - How many times am I allowed to snap real-time data for a display application, before I must declare those with access for real-time? 
 
 
 ## Redistribution of Data
@@ -143,6 +141,8 @@ Data being derived from varying sources, including for creation of Indices
 **R-5** - How far back can the vendor audit me?
 
 **R-6** - What interest and fees can an audit attract?
+
+**R-7** - Do DACS compliant applications need to be considered for the unit of count? 
 
 
 ## Termination
