@@ -39,6 +39,14 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 **IAtD-17** - Can I use the service for price validation?
 
+**IAtD-18** - Is there a cost to view delayed data?
+
+**IAtD-19** - What duration of time is required for data to be considered delayed?
+
+**IAtD-20** - How many times am I allowed to snap real-time data for a display application, before I must declare those with access for real-time?
+
+**IAtD-21** - Do DACS compliant applications need to be considered for the unit of count?  
+
 
 ## Redistribution of Data
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
