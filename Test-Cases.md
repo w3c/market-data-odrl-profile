@@ -83,6 +83,12 @@ For example, use of real-time data in a new application
 
 **NDU-4** - Can I distribute the results from the new application to external users at the end of each day?
 
+**NDU-5** - If I want to use real-time data in an internal application that performs a simple calculation but also displays the data to end users, is that considered a non-display use?
+
+**NDU-6** - If I want to use real-time data for portfolio valuation for internal use only, is that a non-display use?
+
+**NDU-7** - Are separate non-display fees imposed for each internal application?
+
 
 ## Derived Data
 Data being derived from varying sources, including for creation of Indices
