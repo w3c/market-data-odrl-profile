@@ -489,9 +489,7 @@
                 Reporting usage requires a <code>unit-of-count</code> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
             </p>
             <pre class="example nohighlight turtle" title="Reporting Usage by Device" id="DeviceUsageReport">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="nv">&lt;https://permid.org/1-123456789&gt;</span><span class="c">  # Some data Originator</span>   
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="nv">&lt;https://permid.org/1-987654321&gt;</span><span class="c">  # Some data Consumer</span>   
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Device</span><span class="w"> </span><span class="p">] ;</span>
