@@ -368,14 +368,14 @@
 <section id='Duties'>
     <h2>Duties</h2>
     <p>
-        Active Duties must be fulfilled for their associated Permissions to be valid. If a duty is left unfulfilled, then the permission becomes invalid and can no longer be exercised.
+        Active <a href="https://www.w3.org/TR/odrl-model/#duty">Duties</a> must be fulfilled for their associated Permissions to be valid. If a duty is left unfulfilled, then the permission becomes invalid and can no longer be exercised.
     </p><p>
-    Duties are fulfilled when the <code>subject</code> takes the <coe>Action</code> over the <code>target</code> Resource, Party, or Activity for the <code>Object</code> as specified by the duty.
+        Duties are fulfilled when the <code>subject</code> takes the <coe>Action</code> over the <code>target</code> <code>Resource</code>, <code>Party</code>, or <code>Activity</code> to effect the <code>object</code> as specified by the duty.
     </p>
      <section id='Duty Functions'>
         <h2>Duty Functions</h2>
         <p>
-            Duty functions specify the role a Party plays in fulfilling a Duty. There are two: the <code>Subject</code> who must exercise the duty's action and the <Object> who recieved the effect of the action.
+            Duty functions specify the role a Party plays in fulfilling a Duty. There are two: the <code>subject</code> who must exercise the duty's action and the <object> who recieved the effect of the action.
         </p>
         <section data-dfn-for="subject">
             <h2><dfn>subject</dfn></h2>
@@ -384,19 +384,19 @@
                     <tr>
                         <th>Definition:</th><td>Specifies the <code>Party</code> that must execute the <code>Action</code> specified by a <code>Duty</code>.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Notify</code>, the Subject is the notifying Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Notify</code>, the <code>subject</code> is the notifying Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Report</code>, the Subject is the reporting Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Report</code>, the <code>subject</code> is the reporting Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Request</code>, the Subject is the requesting Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Request</code>, the <code>subject</code> is the requesting Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Consent</code>, the Subject is the consenting Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Consent</code>, the <code>subject</code> is the consenting Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Compensate</code>, the Subject is the compensating Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Compensate</code>, the <code>subject</code> is the compensating Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Invoice</code>, the Subject is the invoicing Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Invoice</code>, the <code>subject</code> is the invoicing Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Attach</code>, the Subject is the attaching Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Attach</code>, the <code>subject</code> is the attaching Party.</td>
                     </tr><tr>
                         <th>Label:</th><td>has subject</td>
                     </tr><tr>
@@ -416,19 +416,19 @@
                     <tr>
                         <th>Definition:</th><td>Specifies the <code>Party</code> that is affected by the <code>Action</code> specified by a <code>Duty</code>.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Notify</code>, the Object is the notified Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Notify</code>, the <code>object</code> is the notified Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Report</code>, the Object is the Party that receives the report.</td>
+                        <th>Example:</th><td>Where the action is <code>Report</code>, the <code>object</code> is the Party that receives the report.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Request</code>, the Object is the requested Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Request</code>, the <code>object</code> is the requested Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Consent</code>, the Object is the Party that receives the consent.</td>
+                        <th>Example:</th><td>Where the action is <code>Consent</code>, the <code>object</code> is the Party that receives the consent.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Compensate</code>, the Object is the compensated Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Compensate</code>, the <code>object</code> is the compensated Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Invoice</code>, the Object is the invoiced Party.</td>
+                        <th>Example:</th><td>Where the action is <code>Invoice</code>, the <code>object</code> is the invoiced Party.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action is <code>Attach</code>, the Object is the Party that specifies the attachment.</td>
+                        <th>Example:</th><td>Where the action is <code>Attach</code>, the <code>object</code> is the Party that specifies the attachment.</td>
                     </tr><tr>
                         <th>Label:</th><td>has object</td>
                     </tr><tr>
@@ -449,13 +449,13 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The debtor makes the creditor aware of a relevant event (defined by the <code>action scope</code>).</td>
+                        <th>Definition:</th><td>The <code>subject</code> makes the creditor aware of a relevant event (defined by the <code>action scope</code>).</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Usage</code>, the debtor makes the creditor aware that they have now started using the asset.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Usage</code>, the <code>subject</code> makes the <code>object</code> aware that they have now started using the asset.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Resonable Suspicion</code>, the debtor makes the creditor aware that they now have a reasonable suspicion that the asset is being misused.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Resonable Suspicion</code>, the <code>subject</code> makes the <code>object</code> aware that they now have a reasonable suspicion that the asset is being misused.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the debtor makes the creditor aware that a service facilitator now has access the asset. (See <a href="#ServiceFacilitatorNotification">Example 1</a>)</td>
+                        <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the <code>subject</code> makes the <code>object</code> aware that a service facilitator now has access the asset. (See <a href="#ServiceFacilitatorNotification">Example 1</a>)</td>
                     </tr><tr>
                         <th>Label:</th><td>Notify</td>
                     </tr><tr>
@@ -471,13 +471,13 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The <code>Subject</code> of the Duty provides a report to the <code>Object</code> of the Duty on a relevant and on-going state of affairs (defined by the <code>action scope</code>).</td>
+                        <th>Definition:</th><td>The <code>subject</code> of the Duty provides a report to the <code>object</code> of the Duty on a relevant and on-going state of affairs (defined by the <code>action scope</code>).</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Controls</code>, the <code>Subject</code> reports on their implementation of access controls.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Controls</code>, the <code>subject</code> reports to the <code>object</code> on their implementation of access controls.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Usage</code>, the <code>Subject</code> reports on their usage of the asset as specified in the duty.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Usage</code>, the <code>subject</code> reports to the <code>object</code> on their usage of the asset as specified in the duty.</td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Editorial Note:</th><td>The <code>Party</code> making the report (i.e. the <code>Subject</code> of the Duty) is called the Reporting Party; the <code>Party</code> receiving the report (i.e. the <code>Object</code>) is known as the Reportee Party.</td>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>The <code>Party</code> making the report (i.e. the <code>subject</code> of the Duty) is called the Reporting Party; the <code>Party</code> receiving the report (i.e. the <code>object</code>) is known as the Reportee Party.</td>
                     </tr><tr>
                         <th>Label:</th><td>Report</td>
                     </tr><tr>
@@ -507,11 +507,11 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The debtor makes the creditor aware of a desired state of the world (defined by the <code>action scope</code>).</td>
+                        <th>Definition:</th><td>The <code>subject</code> makes the creditor aware of a desired state of the world (defined by the <code>action scope</code>).</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Audit</code>, the debtor requests the creditor to accede to an audit.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Audit</code>, the <code>subject</code> requests the <code>object</code> to accede to an audit.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the debtor requests the creditor to consent to a service facilitator to access the asset.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the <code>subject</code> requests the <code>object</code> to consent to a service facilitator to access the asset.</td>
                     </tr><tr>
                         <th>Label:</th><td>Request</td>
                     </tr><tr>
@@ -527,11 +527,11 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The debtor accedes to a desired state of the world (defined by the <code>action scope</code>).</td>
+                        <th>Definition:</th><td>The <code>subject</code> accedes to a desired state of the world (defined by the <code>action scope</code>).</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Audit</code>, the debtor consents to be audited by the creditor.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Audit</code>, the <code>subject</code> consents to be audited by the <code>object</code>.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the debtor consents to the creditor's use of a service facilitator.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Service Facilitator</code>, the <code>subject</code> consents to the <code>object</code>'s use of a service facilitator.</td>
                     </tr><tr>
                         <th>Label:</th><td>Consent</td>
                     </tr><tr>
@@ -554,7 +554,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The debtor pays the creditor.</td>
+                        <th>Definition:</th><td>The <code>subject</code> pays the <code>object</code>.</td>
                     </tr><tr>
                         <th>Label:</th><td>Compensate</td>
                     </tr><tr>
@@ -583,7 +583,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The debtor bills the creditor.</td>
+                        <th>Definition:</th><td>The <code>subject</code> bills the <code>object</code>.</td>
                     </tr><tr>
                         <th>Label:</th><td>Invoice</td>
                     </tr><tr>
@@ -602,11 +602,11 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The debtor attaches a description of the creditor's relation to the asset.</td>
+                        <th>Definition:</th><td>The <code>subject</code> attaches a description of the <code>object</code>'s relation to the asset.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Attribution</code>, the description describes the creditor's ownership of the asset identified by the <code>target<code> relation.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Attribution</code>, the description describes the <code>object</code>'s ownership of the asset identified by the <code>target<code> relation.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Disclaimer</code>, the description clarifies the creditor's relation to the asset identified by the <code>target<code> relation.</td>
+                        <th>Example:</th><td>Where the action scope is <code>Disclaimer</code>, the description clarifies the <code>object</code>'s relation to the asset identified by the <code>target<code> relation.</td>
                     </tr><tr>
                         <th>Label:</th><td>Attach</td>
                     </tr><tr>
