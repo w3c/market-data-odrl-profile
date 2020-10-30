@@ -92,7 +92,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by Parties in the market data supply chain in relation to an <a>Asset</a></td>
+                        <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
                     </tr><tr>
                         <th>Label:</th><td>Party Role</td>
                     </tr><tr>
@@ -106,9 +106,9 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in generating/owning a Resource, acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling the use of that resource (or parts of it), and delivering it for use.</td>
+                        <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in generating/owning a <a>Resource</a>, acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling the use of that resource (or parts of it), and delivering it for use.</td>
                     </tr><tr>
-                        <th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of this work.</td>
+                        <th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the Assigner of this work.</td>
                     </tr><tr>
                         <th>Label:</th><td>Originator</td>
                     </tr><tr>
@@ -188,7 +188,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The role an external organisation contracted by a Party (or its affiliated companies) plays in assisting in the delivery of data services.</td>
+                        <th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the delivery of data services.</td>
                     </tr><tr>
                         <th>Label:</th><td>Service Facilitator</td>
                     </tr><tr>
@@ -207,7 +207,7 @@
                 <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
             </div>
             <p>
-                Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) duty:
+                Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
             </p>
             <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
@@ -227,9 +227,9 @@
             </pre>
             <div class="note">
                 <p>
-                    When is this duty activated? When the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> intends to make an <a>External Party</a> with the role of Service Facilitator a recipient of the data <a>Asset</a> - i.e. when the recipient constraint is satisfied.
+                    When is this duty activated? When the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
                 </p><p>
-                    To fulfill the Duty, the <code>subject</code> of the Duty (not specified in this example) must take the action of <code>notifying</code> the <code>object</code> of the Duty (again, not specified) of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
+                To fulfill the <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>, the <code>subject</code> of the Duty (not specified in this example) must take the <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">action</a> of <code>notifying</code> the <code>object</code> of the Duty (again, not specified) of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
                 <p/>
             </div>
         </section>
