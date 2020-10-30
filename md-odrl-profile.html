@@ -371,18 +371,34 @@
         </p><p>
             We can usefully connect rights and provenance by indentifying the activities that are of significance in market data licenses. The actual use and processing of data (<code>Usage</code>) is one example. The implementation of access control policies (<code>Controls</code>) is another. <code>Reasonable Suspicion</code>, a trigger for <code>Audit</code> activities, also shares the above properties, and so can usefully be modelled as an activity.
         </p>
+        <section data-dfn-for="Usage">
+            <h2><dfn>Usage</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s access to and processing of the <a>Asset</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Usage</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Usage">http://www.w3.org/md-odrl-profile/Usage</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><<a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
         <section data-dfn-for="Audit">
             <h2><dfn>Audit</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>An inspection of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s use of the Asset and/or the systems involved in its receipt, use, and distribution for the purpose of determining the Assingee's compliance to the controlling license.</td>
+                        <th>Definition:</th><td>An inspection of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s use of the <a>Asset</a> and/or the systems involved in its receipt, use, and distribution for the purpose of determining the Assingee's compliance to the controlling license.</td>
                     </tr><tr>
                         <th>Label:</th><td>Audit</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Audit">http://www.w3.org/md-odrl-profile/Audit</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ActionScope">Action Scope</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><<a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -392,13 +408,13 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>A reasonable suspicion that the assignee is misusing the asset.</td>
+                        <th>Definition:</th><td>A reasonable suspicion that the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> is misusing the <a>Asset</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>Reasonable Suspicion</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ReasonableSuspicion">http://www.w3.org/md-odrl-profile/ReasonableSuspicion</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ActionScope">Action Scope</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -408,13 +424,13 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The access control measures that manage the availability of the Asset to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s users and processes.</td>
+                        <th>Definition:</th><td>The access control measures that manage the availability of the <a>Asset</a> to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s users and processes.</td>
                     </tr><tr>
                         <th>Label:</th><td>Controls</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Controls">http://www.w3.org/md-odrl-profile/Controls</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ActionScope">Action Scope</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a>Action Scope</a></td>
                     </tr>
                 </tbody>
             </table>
