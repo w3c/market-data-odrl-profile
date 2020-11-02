@@ -674,7 +674,7 @@
                     The request duty is itself activated by the <a>recipient</a> constaint just like the notification duty in <a href="ServiceFacilitatorNotification">Example 1</a>.
                 </p>
             </div>
-            <pre class="example nohighlight turtle" title="Request and Consent Duties for a Service Provider" id="RequestConsent">
+            <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider" id="RequestConsent">
                 <span class="nt">:D1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
                 <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
@@ -705,6 +705,8 @@
                     <tr>
                         <th>Definition:</th><td>The <code>subject</code> pays the <code>object</code>.</td>
                     </tr><tr>
+                        <th>Note:</th><td>The compensation action must be decorated with the <a href="https://www.w3.org/TR/odrl-vocab/#term-payAmount">payment amount</a> and the <a href="https://www.w3.org/TR/odrl-vocab/#term-unit">unit</a> (or currency) of payment. It may also specify the <a>unit-of-count</a> which acts as a multiplier of the payment amount.</td>
+                    </tr><tr>
                         <th>Label:</th><td>Compensate</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Compensate">http://www.w3.org/md-odrl-profile/Compensate</a></td>
@@ -714,12 +716,9 @@
                 </tbody>
             </table>
             <p>
-                The compensation action must be decorated with the <code>payment amount</code> and the <code>unit</code> (or currency) of payment. It may also specify the <code>unit-of-count</code> which acts as a multiplier of the payment amount. The following example requires $1,150 to be paid per location once:
+                The following example requires $1,150 to be paid per <a>location</a> once:
             </p>
             <pre class="example nohighlight turtle" title="Payment by Location" id="LocationPayment">
-                <p>
-                    The following example requires $1,150 to be paid per location once.
-                </p>
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
