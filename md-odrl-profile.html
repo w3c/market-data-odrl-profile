@@ -258,16 +258,16 @@
     </section>
     <section id='Party Properties'>
         <h2>Party Properties</h2>
-        <section data-dfn-for="role">
+        <section data-dfn-for="roles">
             <h2><dfn>role</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a> played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Resource</a>.</td>
+                        <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Resource</a>.</td>
                     </tr><tr>
-                        <th>Label:</th><td>role</td>
+                        <th>Label:</th><td>roles</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/role">http://www.w3.org/md-odrl-profile/role</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
                     </tr><tr>
@@ -506,8 +506,8 @@
         <p>
             Duty functions specify the role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in fulfilling a Duty. There are two: the <code>subject</code> who must exercise the duty's action and the <code>object</code> who recieves the effect of the action.
         </p>
-        <section data-dfn-for="subject">
-            <h2><dfn>subject</dfn></h2>
+        <section data-dfn-for="subjects">
+            <h2><dfn>subjects</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
@@ -527,9 +527,9 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the action is <a>Attach</a>, the subject is the attaching Party.</td>
                     </tr><tr>
-                        <th>Label:</th><td>has subject</td>
+                        <th>Label:</th><td>has subjects</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/subject">http://www.w3.org/md-odrl-profile/subject</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/subjects">http://www.w3.org/md-odrl-profile/subjects</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">Duty</a></td>
                     </tr><tr>
@@ -538,8 +538,8 @@
                 </tbody>
             </table>
         </section>
-        <section data-dfn-for="object">
-            <h2><dfn>object</dfn></h2>
+        <section data-dfn-for="objects">
+            <h2><dfn>objects</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
@@ -559,9 +559,9 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the action is <a>Attach</a>, the object is the Party that specifies the attachment.</td>
                     </tr><tr>
-                        <th>Label:</th><td>has object</td>
+                        <th>Label:</th><td>has objects</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/object">http://www.w3.org/md-odrl-profile/object</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/objects">http://www.w3.org/md-odrl-profile/objects</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">Duty</a></td>
                     </tr><tr>
@@ -573,8 +573,8 @@
     </section>
     <section id='Duty Relations'>
         <h2>Duty Relations</h2>
-        <section data-dfn-for="target">
-            <h2><dfn>target</dfn></h2>
+        <section data-dfn-for="targets">
+            <h2><dfn>targets</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
@@ -584,7 +584,7 @@
                     </tr><tr>
                         <th>Label:</th><td>target</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/target">http://www.w3.org/md-odrl-profile/target</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/targets">http://www.w3.org/md-odrl-profile/targets</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">Duty</a></td>
                     </tr><tr>
@@ -827,7 +827,7 @@
                     </tr><tr>
                         <th>Label:</th><td>is provided by</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/provider">http://www.w3.org/md-odrl-profile/providers</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
@@ -852,9 +852,9 @@
                     </tr><tr>
                         <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
                     </tr><tr>
-                        <th>Label:</th><td>refines resource</td>
+                        <th>Label:</th><td>refines resources</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resource">http://www.w3.org/md-odrl-profile/refines</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
@@ -878,9 +878,9 @@
                     <tr>
                         <th>Definition:</th><td>Categorises a <a>Resource</a> by the financial asset class(es) it describes.</td>
                     </tr><tr>
-                        <th>Label:</th><td>has asset class</td>
+                        <th>Label:</th><td>has asset classes</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/assetClass">http://www.w3.org/md-odrl-profile/assetClasses</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/assetClasses">http://www.w3.org/md-odrl-profile/assetClasses</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
@@ -896,8 +896,8 @@
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClass</span><span class="w">    </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
             </pre>
         </section>
-        <section data-dfn-for="contentType">
-            <h2><dfn>content type</dfn></h2>
+        <section data-dfn-for="contentTypes">
+            <h2><dfn>content types</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
