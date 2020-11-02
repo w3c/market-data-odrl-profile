@@ -603,7 +603,7 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the <a>target</a> is a <a>Controls</a> activity, the <a>subject</a> reports to the <a>object</a> on their implementation of access controls.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the Unit-of-Count to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the <a>Unit-of-Count</a> to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
                     </tr><tr>
                         <th>Label:</th><td>Report</td>
                     </tr><tr>
@@ -717,6 +717,9 @@
                 The compensation action must be decorated with the <code>payment amount</code> and the <code>unit</code> (or currency) of payment. It may also specify the <code>unit-of-count</code> which acts as a multiplier of the payment amount. The following example requires $1,150 to be paid per location once:
             </p>
             <pre class="example nohighlight turtle" title="Payment by Location" id="LocationPayment">
+                <p>
+                    The following example requires $1,150 to be paid per location once.
+                </p>
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
