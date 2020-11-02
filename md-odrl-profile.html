@@ -794,16 +794,16 @@
     </p>
     <section id='Properties of Resources'>
         <h2>Properties of Resources</h2>
-        <section data-dfn-for="provider">
-            <h2><dfn>provider</dfn></h2>
+        <section data-dfn-for="providers">
+            <h2><dfn>providers</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Points to the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of Provider in relation to the Resource.</td>
+                        <th>Definition:</th><td>Points to the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Provider</a> in relation to the <a>Resource</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>is provided by</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/provider">http://www.w3.org/md-odrl-profile/provider</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/provider">http://www.w3.org/md-odrl-profile/providers</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
@@ -816,7 +816,7 @@
             </p>
             <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
                 <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">provider</span><span class="w">   </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
             </pre>
         </section>
         <section data-dfn-for="refines">
@@ -824,7 +824,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Points to the original Resource(s) that the subject Resource or Asset refines.</td>
+                        <th>Definition:</th><td>Points to the original <a>Resource</a>(s) that the subject resource or <a>Asset</a> refines.</td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
                     </tr><tr>
@@ -845,7 +845,6 @@
                 <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w">  </span><span class="nn">md:</span><span class="nt">:Delayed</span> <span class="p">.</span>
-
             </pre>
         </section>
         <section data-dfn-for="assetClass">
@@ -853,7 +852,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Categorises Resources by the financial asset class they describe</td>
+                        <th>Definition:</th><td>Categorises a <a>Resource</a> by the financial asset class they describe</td>
                     </tr><tr>
                         <th>Label:</th><td>has asset class</td>
                     </tr><tr>
