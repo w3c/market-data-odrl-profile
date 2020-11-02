@@ -633,9 +633,9 @@
                     <tr>
                         <th>Definition:</th><td>The <a>subject</a> makes the <a>object</a> aware of a desired state of the world specified by the <a>target</a> relation.</td>
                     </tr><tr>
-                    <th>Example:</th><td>Where the <a>target</a> is an <a>Audit</a> activity, the <a>subject</a> requests the <a>object</a> to <a>Consent<a> to an audit.</td>
+                    <th>Example:</th><td>Where the <a>target</a> is an <a>Audit</a> activity, the <a>subject</a> requests the <a>object</a> to <a>Consent</a> to an audit.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Service Facilitator</a>, the <a>subject</a> requests the <a>object</a> to <a>Consent</a> to a service facilitator accessing the asset.</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Service Facilitator</a>, the <a>subject</a> requests the <a>object</a> to <a>Consent</a> to a service facilitator accessing the asset. (See <a href="RequestConsent"> Example 3</a>.)</td>
                     </tr><tr>
                         <th>Label:</th><td>Request</td>
                     </tr><tr>
@@ -655,7 +655,7 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the <a>target</a> is an <a>Audit</a> activity, the <a>subject</a> consents to be audited by the <a>object</a>.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Service Facilitator</a>, the <a>subject</a> consents to the <a>object</a>'s use of a service facilitator.</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Service Facilitator</a>, the <a>subject</a> consents to the <a>object</a>'s use of a service facilitator. (See <a href="RequestConsent"> Example 3</a>.)</td>
                     </tr><tr>
                         <th>Label:</th><td>Consent</td>
                     </tr><tr>
@@ -670,6 +670,8 @@
                     <code>Duties</code> can be chained so that one duty can activate another duty. <code>Request</code> and <code>Consent</code> duties can follow this pattern. A <code>Permision</code> may point to a consent duty which might itself point to a request duty.
                 </p><p>
                     While the request duty remains unfulfilled, the consent duty remains inactive. The permission remains valid. But if the request is made, then either the consent must be given (and so the consent duty fulfilled), or the request retracted, else the permission be invalidated.
+                </p><p>
+                    The request duty is itself activated by the <a>recipient</a> constaint just like the notification duty in <a href="ServiceFacilitatorNotification">Example 1</a>.
                 </p>
             </div>
             <pre class="example nohighlight turtle" title="Request and Consent Duties for a Service Provider" id="RequestConsent">
