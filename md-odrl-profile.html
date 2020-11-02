@@ -675,15 +675,15 @@
                 </p>
             </div>
             <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider" id="RequestConsent">
-                <span class="nt">:D1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
                 <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                        </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">target</span><span class="w">     </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceProvider</span><span class="w"> </span><span class="p">] ;</span>
-                <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:D2</span><span class="p"> .</span>
+                <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:Req-1</span><span class="p"> .</span>
                 <p></p>
-                <span class="nt">:D2</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                <span class="nt">:Req-1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">recipient</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
@@ -703,7 +703,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The <code>subject</code> pays the <code>object</code>.</td>
+                        <th>Definition:</th><td>The <ca>subject</a> pays the <a>object</a>.</td>
                     </tr><tr>
                         <th>Note:</th><td>The compensation action must be decorated with the <a href="https://www.w3.org/TR/odrl-vocab/#term-payAmount">payment amount</a> and the <a href="https://www.w3.org/TR/odrl-vocab/#term-unit">unit</a> (or currency) of payment. It may also specify the <a>unit-of-count</a> which acts as a multiplier of the payment amount.</td>
                     </tr><tr>
@@ -745,8 +745,32 @@
                 </tbody>
             </table>
             <div class="note">
-                When an Invoice duty is specified, it will likely act as the activation condition for a Compensation duty.
+                When an Invoice duty is specified, it will likely act as the activation condition for a Compensation duty, i.e. payment need only be made on recipet of an ivoice.
             </div>
+            <pre class="example nohighlight turtle" title="Paired Invoice and Payment Duties" id="InvoicePayment">
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="nn">md:</span><span class="nt">Location</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">    </span><span class="s">1150.00</span><span class="w"></span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nv">&lt;https://www.wikidata.org/wiki/Q4917&gt;</span><span class="c">  # USD</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
+                <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:Inv-1</span><span class="p"> .</span>
+                <p></p>
+                <span class="nt">:Inv-1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">recipient</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                        </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
+                <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">target</span><span class="w">     </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>       
+            </pre>
         </section>
         <section data-dfn-for="Attach">
             <h2><dfn>Attach</dfn></h2>
