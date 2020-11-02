@@ -745,7 +745,7 @@
                 </tbody>
             </table>
             <div class="note">
-                When an Invoice duty is specified, it will likely act as the activation condition for a Compensation duty, i.e. payment need only be made on receipt of an invoice.
+                When an <code>Invoice</code> <code>Action</code> is specified, it will likely act as the activation condition for a compensation duty, i.e. payment need only be made on receipt of an invoice.
             </div>
             <pre class="example nohighlight turtle" title="Paired Invoice and Payment Duties" id="InvoicePayment">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
@@ -770,11 +770,11 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The <code>subject</code> attaches a description of the <code>object</code>'s relation to the asset.</td>
+                        <th>Definition:</th><td>The <a>subject</a> attaches the rubric specified by the <a>target</a> relation to the <a>Asset</a>.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Attribution</code>, the description describes the <code>object</code>'s ownership of the asset identified by the <code>target<code> relation.</td>
+                        <th>Example:</th><td>Where the <a>target</a> is an <a>Attribution</a>, the rubric describes the <a>object</a>'s ownership of the asset. The precise phrasing may be specified by a <a>wording</a> property on the <a>Attribution</a>.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the action scope is <code>Disclaimer</code>, the description clarifies the <code>object</code>'s relation to the asset identified by the <code>target<code> relation.</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <code>Disclaimer</code>, the rubric clarifies the <a>object</a>'s relation to the asset. The precise phrasing may be specified by a <a>wording</a> property on the <a>Disclaimer</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>Attach</td>
                     </tr><tr>
@@ -784,9 +784,6 @@
                     </tr>
                 </tbody>
             </table>
-            <p>
-                The <code>wording</code> property of the action provides the required description.
-            </p>
         </section>
     </section>
     </section>
