@@ -1009,11 +1009,11 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>A single response to a request. An update is provided only in response to a request (like an API call).</td>
+                            <th>Definition:</th><td>An update is provided only in response to a request (like an API call).</td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “one-shot”.</td>
                         </tr><tr>
-                            <th>Note:</th><td>The number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
+                            <th>Note:</th><td>The number of requests (or snaps) permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>Snapshot</td>
                         </tr><tr>
@@ -1029,13 +1029,13 @@
                 <pre class="example nohighlight turtle" title="Specifying Snapshot Counts" id="SnapshotCount">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
                     <span class="w">     </span><span class="nn">md:</span><span class="nt">methodOfUpdate</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                              </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                              </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">3</span>
-                    <span class="w">                              </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">      </span><span class="p">[</span>
-                    <span class="w">                                                       </span><span class="kt">a</span><span class="w">                            </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                              </span><span class="kt">a</span><span class="w">                  </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                              </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">         </span><span class="s">3</span>
+                    <span class="w">                              </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">   </span><span class="p">[</span>
+                    <span class="w">                                                       </span><span class="kt">a</span><span class="w">                      </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                                                       </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
                     <span class="w">                                                       </span><span class="p">]</span><span class="p"> ;</span>
-                    <span class="w">                              </span><span class="p">]</span><span class="p"> .</span>     
+                    <span class="w">                          </span><span class="p">]</span><span class="p"> .</span>     
                 </pre>
             </section>
         </section>
