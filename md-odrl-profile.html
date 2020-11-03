@@ -311,6 +311,55 @@
                     </tr>
                 </tbody>
             </table>
+            <section data-dfn-for="Source">
+                <h2><dfn>Source</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A Source is a root <a>Resource</a>: unconstrained and informationally complete. The information as it is created.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Independent of all aspects of commercialisation and/or delivery such as timeliness, method of delivery, or book depth.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Source</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Source">http://www.w3.org/md-odrl-profile/Source</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+             <section data-dfn-for="Asset">
+                <h2><dfn>Asset</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>An Asset is a <a>Resource</a>, a collection of Resources, or the part of a Resource controlled by a <a href="https://www.w3.org/TR/odrl-vocab/#ruleConcepts">Rule</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Asset</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Asset">https://www.w3.org/TR/odrl-vocab/#term-Asset</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Is Defined By:</th><td><a href="https://www.w3.org/TR/odrl-model">ODRL Vocabulary</a></td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="note">
+                <p>
+                    We can imagine the process by which an Exchange (acting as an <a>Originator</a>) generates pricing data (the <a>Source</a>, <code>S1</code>) which it then packages (through the transform <code>T<sub>1</sub></code>, which might include timeliness and book depth) into the <a>Resource</a> <code>R1</code> and then licenses (with the Rules <code>Rl<sub>1</sub></code>) as the <a>Asset</a> <code>A1</code> to a <a>Consumer</a> so:
+                </p><p>
+                <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/S2A.png?raw=true" alt="Source to Asset diagram"> 
+                </p><p>
+                    If the consumer above were a vendor, or even the market data function inside a bank, they might then act as a <a>Provider</a> and re-package the data (through the transform <code>T<sub>2</sub></code>) into the resource <code>R2</code>, re-license it (through the rules <code>Rl<sub>2</sub></code>) as the asset <code>A2</code> to a new consumer.
+                </p><p>
+                <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/A2A.png?raw=true" alt="Source to Asset diagram"> 
+                </p><p>
+                    For the vendor above to remain compliant with the rights assignment <code>Rl<sub>1</sub></code> under which it received the data, it must ensure that the new rules <code>Rl<sub>2</sub></code> it applies to A2 are compliant with the original rules controlling <code>A1</code>.
+                </p>
+            </div>
             <p>
             There many ways to describe <code>Resources</code> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below, but there are two types of Resource that it's worth explicitly identifying here: Attributions and Disclaimers.
             </p>
@@ -347,55 +396,6 @@
                 </table>
             </section>
         </section>
-        <section data-dfn-for="Source">
-            <h2><dfn>Source</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>A Source is a root <a>Resource</a>: unconstrained and informationally complete. The information as it is created.</td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Editorial Note:</th><td>Independent of all aspects of commercialisation and/or delivery such as timeliness, method of delivery, or book depth.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Source</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Source">http://www.w3.org/md-odrl-profile/Source</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-         <section data-dfn-for="Asset">
-            <h2><dfn>Asset</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>An Asset is a <a>Resource</a>, a collection of Resources, or the part of a Resource controlled by a <a href="https://www.w3.org/TR/odrl-vocab/#ruleConcepts">Rule</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Asset</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Asset">https://www.w3.org/TR/odrl-vocab/#term-Asset</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Is Defined By:</th><td><a href="https://www.w3.org/TR/odrl-model">ODRL Vocabulary</a></td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <div class="note">
-            <p>
-                We can imagine the process by which an Exchange (acting as an <a>Originator</a>) generates pricing data (the <a>Source</a>, <code>S1</code>) which it then packages (through the transform <code>T<sub>1</sub></code>, which might include timeliness and book depth) into the <a>Resource</a> <code>R1</code> and then licenses (with the Rules <code>Rl<sub>1</sub></code>) as the <a>Asset</a> <code>A1</code> to a <a>Consumer</a> so:
-            </p><p>
-            <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/S2A.png?raw=true" alt="Source to Asset diagram"> 
-            </p><p>
-                If the consumer above were a vendor, or even the market data function inside a bank, they might then act as a <a>Provider</a> and re-package the data (through the transform <code>T<sub>2</sub></code>) into the resource <code>R2</code>, re-license it (through the rules <code>Rl<sub>2</sub></code>) as the asset <code>A2</code> to a new consumer.
-            </p><p>
-            <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/A2A.png?raw=true" alt="Source to Asset diagram"> 
-            </p><p>
-                For the vendor above to remain compliant with the rights assignment <code>Rl<sub>1</sub></code> under which it received the data, it must ensure that the new rules <code>Rl<sub>2</sub></code> it applies to A2 are compliant with the original rules controlling <code>A1</code>.
-            </p>
-        </div>
     </section>
     <section id='Resource Properties'>
         <h2>Resource Properties</h2>
