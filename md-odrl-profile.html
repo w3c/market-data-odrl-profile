@@ -1027,14 +1027,14 @@
                     In the following example a <code>Resource</code> permits only three requests per day:
                 </p>
                 <pre class="example nohighlight turtle" title="Specifying Snapshot Counts" id="SnapshotCount">
-                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
                     <span class="w">     </span><span class="nn">md:</span><span class="nt">methodOfUpdate</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                              </span><span class="kt">a</span><span class="w">                  </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                              </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">         </span><span class="s">3</span>
-                    <span class="w">                              </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                                                       </span><span class="kt">a</span><span class="w">                      </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                                       </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
-                    <span class="w">                                                       </span><span class="p">]</span><span class="p"> ;</span>
+                    <span class="w">                             </span><span class="kt">a</span><span class="w">                  </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">         </span><span class="s">3</span>
+                    <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">  </span><span class="p">[</span>
+                    <span class="w">                                                      </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                                      </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
+                    <span class="w">                                                   </span><span class="p">]</span><span class="p"> ;</span>
                     <span class="w">                          </span><span class="p">]</span><span class="p"> .</span>     
                 </pre>
             </section>
