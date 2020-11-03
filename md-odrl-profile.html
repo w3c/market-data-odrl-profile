@@ -397,6 +397,80 @@
             </p>
         </div>
     </section>
+    <section id='Resource Properties'>
+        <h2>Resource Properties</h2>
+        <section data-dfn-for="providers">
+            <h2><dfn>providers</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Points to the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Provider</a> in relation to the <a>Resource</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>is provided by</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                In the example below the Resource <code>:R1</code> is provided by the CME:
+            </p>
+            <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
+                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+            </pre>
+        </section>
+        <section data-dfn-for="refines">
+            <h2><dfn>refines</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Points to the original <a>Resource</a>(s) that the subject resource or <a>Asset</a> refines.</td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>refines resources</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R1</code>:
+            </p>
+            <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
+                <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w">  </span><span class="nn">md:</span><span class="nt">:Delayed</span> <span class="p">.</span>
+            </pre>
+        </section>
+        <section data-dfn-for="wording">
+            <h2><dfn>wording</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the wording required by an <a>Attribution</a> or <a>Disclaimer</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>wording</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/wording">http://www.w3.org/md-odrl-profile/wording</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a>Attribution</a>, <a>Disclaimer</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3schools.com/xml/schema_dtypes_string.asp">xs:string</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
     <section id='Activities'>
         <h2>Activities</h2>
         <p>
@@ -812,84 +886,7 @@
     </section>
     </section>
     <section id='Resources'>
-    <h2>Resources</h2>
-    <p>
-        All the data generated in the world can be considered as Resources. The properties we ascribe to Resources are the means by which we describe them.
-    </p>
-    <section id='Properties of Resources'>
-        <h2>Properties of Resources</h2>
-        <section data-dfn-for="providers">
-            <h2><dfn>providers</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Points to the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Provider</a> in relation to the <a>Resource</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>is provided by</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
-                    </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-                    </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                In the example below the Resource <code>:R1</code> is provided by the CME:
-            </p>
-            <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
-                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
-            </pre>
-        </section>
-        <section data-dfn-for="refines">
-            <h2><dfn>refines</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Points to the original <a>Resource</a>(s) that the subject resource or <a>Asset</a> refines.</td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>refines resources</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
-                    </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-                    </tr><tr>
-                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R1</code>:
-            </p>
-            <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
-                <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w">  </span><span class="nn">md:</span><span class="nt">:Delayed</span> <span class="p">.</span>
-            </pre>
-        </section>
-        <section data-dfn-for="wording">
-            <h2><dfn>wording</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Specifies the wording required by an <a>Attribution</a> or <a>Disclaimer</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>wording</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/wording">http://www.w3.org/md-odrl-profile/wording</a></td>
-                    </tr><tr>
-                        <th>Domain:</th><td><a>Attribution</a>, <a>Disclaimer</a></td>
-                    </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3schools.com/xml/schema_dtypes_string.asp">xs:string</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </section>
+    <h2>Constraints</h2>
     <section id='Constraints on Resources'>
         <h2>Constraints on Resources</h2>
         <section data-dfn-for="assetClasses">
