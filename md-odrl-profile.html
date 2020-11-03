@@ -311,6 +311,41 @@
                     </tr>
                 </tbody>
             </table>
+            <p>
+            There many ways to describe <code>Assets</code> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below, but there are two types of Asset that it's worth explicitly identifying here: Attributions and Disclaimers.
+            </p>
+            <section data-dfn-for="Attribution">
+                <h2><dfn>Attribution</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A declaration of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s ownership of the <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Attribution</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribution">http://www.w3.org/md-odrl-profile/Attribution</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Disclaimer">
+                <h2><dfn>Disclaimer</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A clarification of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s relation to the <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Disclaimer</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Disclaimer">http://www.w3.org/md-odrl-profile/Disclaimer</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
         <section data-dfn-for="Source">
             <h2><dfn>Source</dfn></h2>
@@ -361,41 +396,6 @@
                 For the vendor above to remain compliant with the rights assignment <code>Rl<sub>1</sub></code> under which it received the data, it must ensure that the new rules <code>Rl<sub>2</sub></code> it applies to A2 are compliant with the original rules controlling <code>A1</code>.
             </p>
         </div>
-        <p>
-            There many ways to describe <code>Assets</code> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below, but there are two types of Asset that it's worth explicitly identifying here: Attributions and Disclaimers.
-        </p>
-        <section data-dfn-for="Attribution">
-            <h2><dfn>Attribution</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>A declaration of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s ownership of the <a>Asset</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Attribution</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribution">http://www.w3.org/md-odrl-profile/Attribution</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section data-dfn-for="Disclaimer">
-            <h2><dfn>Disclaimer</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>A clarification of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s relation to the <a>Asset</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Disclaimer</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Disclaimer">http://www.w3.org/md-odrl-profile/Disclaimer</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
     </section>
     <section id='Activities'>
         <h2>Activities</h2>
