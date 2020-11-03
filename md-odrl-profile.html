@@ -208,19 +208,19 @@
                 Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
             </p>
             <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipient</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                      </span><span class="nn">md:</span><span class="nt">role</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                <span class="w">                  </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">  </span><span class="p">[</span>
-                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">     </span><span class="s">1</span>
-                <span class="w">                  </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">   </span><span class="p">[</span>
-                <span class="w">                      </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                      </span><span class="nn">md:</span><span class="nt">role</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                <span class="w">                  </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                  </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
+                <span class="w">                  </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
+                <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                  </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
           
             </pre>
             <div class="note">
@@ -708,9 +708,9 @@
                 <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
                 <p></p>
                 <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">recipient</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
@@ -718,7 +718,7 @@
                 <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>       
             </pre>
         </section>
@@ -914,7 +914,7 @@
             </p>
             <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
                 <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClass</span><span class="w">    </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
             </pre>
         </section>
         <section data-dfn-for="contentTypes">
@@ -940,11 +940,11 @@
                 The Resource <code>:R3</code> describes the Values and Constituents (content type) of an Index of Equities (asset class):
             </p>
             <pre class="example nohighlight turtle" title="Specifying Content Type" id="ContentTypeSpecification">
-                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClass</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                       </span><span class="kt">a</span><span class="w">                     </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
-                <span class="w">                       </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">        </span><span class="p">(</span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                     </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
+                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                       </span><span class="kt">a</span><span class="w">                       </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
+                <span class="w">                       </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">          </span><span class="p">(</span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                     </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
             </pre>
         </section>
     </section>
