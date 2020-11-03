@@ -681,7 +681,7 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the <a>target</a> is a <a>Reasonable Suspicion</a>, the <a>subject</a> makes the <a>object</a> aware that they now have a reasonable suspicion that the <a>asset</a> is being misused.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the <a>role</a> of <a>Service Facilitator</a>, the <a>subject</a> makes the <a>object</a> aware that a service facilitator now has access to the <a>asset</a>. (See <a href="#ServiceFacilitatorNotification">Example 1</a>)</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the <a>role</a> of <a>Service Facilitator</a>, the <a>subject</a> makes the <a>object</a> aware that a service facilitator now has access to the <a>asset</a>. (See <a href="#ServiceFacilitatorNotification">Example 1</a>.)</td>
                     </tr><tr>
                         <th>Label:</th><td>Notify</td>
                     </tr><tr>
@@ -973,7 +973,7 @@
                     <tr>
                         <th>Definition:</th><td>Specifies the method by which updates to the <a>Resource</a> are delivered.</td>
                     </tr><tr>
-                        <th>Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
+                        <th>Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>. (See <a href="#SnapshotCount">Example 10</a>.)</td>
                     </tr><tr>
                         <th>Label:</th><td>method of update</td>
                     </tr><tr>
@@ -1024,7 +1024,7 @@
                     </tbody>
                 </table>
                 <p>
-                    In the following example a <code>Resource</code> permits only three requests per day:
+                    In the following example, a <code>Resource</code> permits only three requests per day:
                 </p>
                 <pre class="example nohighlight turtle" title="Specifying Snapshot Counts" id="SnapshotCount">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
@@ -1037,6 +1037,38 @@
                     <span class="w">                                                 </span><span class="p">]</span><span class="p"> ;</span>
                     <span class="w">                          </span><span class="p">]</span><span class="p"> .</span>     
                 </pre>
+            </section>
+            <section data-dfn-for="Streaming">
+                <h2><dfn>Streaming</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>All changes are captured and continuously transmitted either individually or in batches.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Streaming</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Streaming">http://www.w3.org/md-odrl-profile/Streaming</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="TimeSeries">
+                <h2><dfn>Time Series</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Multiple updates are delivered together in bulk.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Time Series</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TimeSeries">http://www.w3.org/md-odrl-profile/TimeSeries</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </section>
     </section>
