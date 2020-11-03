@@ -1172,15 +1172,15 @@
                 We can specify the precise meaning of <code>Realtime</code> defined in a license. Here <code>Realtime</code> is data delivered within 10 minutes of <code>Issue Time</code>:
             </p>
             <pre class="example nohighlight turtle" title="Specifying Realtime" id="RealtimeSpecification">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                                  </span><span class="kt">a</span><span class="w">               </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Realtime</span><span class="p"> ;</span>
-                <span class="w">                                  </span><span class="nn">time:</span><span class="nt">intervalBefore</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
-                <span class="w">                                      </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
-                <span class="w">                                      </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span><span class="w">     </span><span class="s">"PT10M"^^xsd:duration</span>
+                <span class="w">                                </span><span class="kt">a</span><span class="w">                     </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Realtime</span><span class="p"> ;</span>
+                <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalBefore</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                                              </span><span class="kt">a</span><span class="w">               </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
+                <span class="w">                                              </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                <span class="w">                                              </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span><span class="w">     </span><span class="s">"PT10M"^^xsd:duration</span>
                 <span class="w">                                                 </span><span class="p">]</span><span class="p"> ;</span>
-                <span class="w">                          </span><span class="p">]</span><span class="p"> .</span>      
+                <span class="w">                             </span><span class="p">]</span><span class="p"> .</span>     
             </pre>
         </section>
         <section data-dfn-for="Delayed">
