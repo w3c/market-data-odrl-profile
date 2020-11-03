@@ -973,7 +973,7 @@
                     <tr>
                         <th>Definition:</th><td>Specifies the method by which updates to the <a>Resource</a> are delivered.</td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Editorial Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property.</td>
+                        <th>Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>method of update</td>
                     </tr><tr>
@@ -994,7 +994,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Categorises a <a>Resource</a> by the financial asset class(es) it describes.</td>
+                        <th>Definition:</th><td>The methods by which a <a>Resource</a> is updated over time.</td>
                     </tr><tr>
                         <th>Label:</th><td>Update Method</td>
                     </tr><tr>
@@ -1004,13 +1004,39 @@
                     </tr>
                 </tbody>
             </table>
-            <p>
-                In the following example the Resource <code>:R1</code> describes Commodity Futures:
-            </p>
-            <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
-                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
-            </pre>
+            <section data-dfn-for="Snapshot">
+                <h2><dfn>Snapshot</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A single response to a request. An update is provided only in response to a request (like an API call).</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “one-shot”.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>The number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Snapshot</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Snapshot">http://www.w3.org/md-odrl-profile/Snapshot</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    In the following example a <code>Resource</code> permits only three requests per day:
+                </p>
+                <pre class="example nohighlight turtle" title="Specifying Snapshot Counts" id="SnapshotCount">
+                    <span class="nt">:I1</span><span class="w">   </span><span class="nn">md:</span><span class="nt">methodOfUpdate</span><span class="w">   </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">3</span>
+                    <span class="w">                        </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">      </span><span class="p">[</span>
+                    <span class="w">                                                                                                                          </span><span class="kt">a</span><span class="w">                            </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                                                                                                          </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
+                    <span class="w">                                                                                                                          </span><span class="p">]</span><span class="p"> ;</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="p"> .</span>     
+                </pre>
+            </section>
         </section>
     </section>
 </section>
