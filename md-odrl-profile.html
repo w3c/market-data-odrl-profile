@@ -953,6 +953,8 @@
                     </tr><tr>
                         <th style="white-space:nowrap;">Editorial Note:</th><td>Usually specified as an interval (or intervals) relative to the data's <a>Origination Time</a>, <a>Publication Time</a>, <a>Issue Time</a>, or <a>Market Close</a> (or some other specified moment).</td>
                     </tr><tr>
+                        <th>Editorial Note:</th><td>These intervals are frequently identified as <a>Realtime</a>, <a>Delayed</a>, <a>Embargoed</a>, or <a>Historical</a>.</td>
+                    </tr><tr>
                         <th>Editorial Note:</th><td>Unless explicitly prohibited, <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permissions</a> over shorter intervals carry across to longer intervals (e.g. <a>Realtime</a> data also covers <a>Delayed</a>, <a>Embargoed</a>, and <a>Historical</a> data)</td>
                     </tr><tr>
                         <th>Label:</th><td>timeliness of delivery</td>
@@ -966,7 +968,7 @@
                 </tbody>
             </table>
         </section>
-        <section data-dfn-for="methodOdUpdate">
+        <section data-dfn-for="methodOfUpdate">
             <h2><dfn>method of update</dfn></h2>
             <table class="def propdef">
                 <tbody>
@@ -982,6 +984,26 @@
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Update Method</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="periodOfUpdate">
+            <h2><dfn>period of update</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The period during which the <a>Resource</a> has been, or continues to be, updated.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>If the resouce continues to be updated while a subsciption holds, then use <a>Service Period<a/> interval.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>period of update</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/periodOfUpdate">http://www.w3.org/md-odrl-profile/periodOfUpdate</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1284,7 +1306,23 @@
                 <span class="w">                                             </span><span class="p">]</span><span class="p"> ;</span>
                 <span class="w">                             </span><span class="p">]</span><span class="p"> .</span>    
             </pre>
-        </section>       
+        </section>
+        <section data-dfn-for="ServicePeriod">
+            <h2><dfn>Service Period</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The period across which a subsciption holds.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Service Period</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/servicePeriod">http://www.w3.org/md-odrl-profile/ServicePeriod</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
 </section>
 </body>
