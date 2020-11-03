@@ -656,7 +656,7 @@
                     </tr><tr>
                         <th>Scope Note:</th><td>This property is a direct generalisation of the ODRL target relation to add Activities and Parties to its domain.</td>
                     </tr><tr>
-                        <th>Label:</th><td>target</td>
+                        <th>Label:</th><td>targets</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/targets">http://www.w3.org/md-odrl-profile/targets</a></td>
                     </tr><tr>
@@ -985,6 +985,32 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+    </section>
+    <section id='Constraint Values'>
+        <h2>Constraint Values</h2>
+        <section data-dfn-for="UpdateMethod">
+            <h2><dfn>Update Method</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Categorises a <a>Resource</a> by the financial asset class(es) it describes.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Update Method</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UpdateMethod">http://www.w3.org/md-odrl-profile/UpdateMethod</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Entity">Entity</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                In the following example the Resource <code>:R1</code> describes Commodity Futures:
+            </p>
+            <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
+                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
+            </pre>
         </section>
     </section>
 </section>
