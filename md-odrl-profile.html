@@ -701,7 +701,7 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the <a>target</a> is a <a>Controls</a> activity, the <a>subject</a> reports to the <a>object</a> on their implementation of access controls.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the <a>Unit-of-Count</a> to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">Unit-of-Count</a> to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
                     </tr><tr>
                         <th>Label:</th><td>Report</td>
                     </tr><tr>
@@ -712,7 +712,7 @@
                 </tbody>
             </table>
             <p>
-                Reporting usage requires a <code>unit-of-count</code> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
+                Reporting usage requires a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit-of-count</a> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
             </p>
             <pre class="example nohighlight turtle" title="Reporting Usage by Device" id="DeviceUsageReport">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
@@ -803,7 +803,7 @@
                     <tr>
                         <th>Definition:</th><td>The <a>subject</a> pays the <a>object</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>The compensation action must be decorated with the <a href="https://www.w3.org/TR/odrl-vocab/#term-payAmount">payment amount</a> and the <a href="https://www.w3.org/TR/odrl-vocab/#term-unit">unit</a> (or currency) of payment. It may also specify the <a>unit-of-count</a> which acts as a multiplier of the payment amount.</td>
+                        <th>Note:</th><td>The compensation action must be decorated with the <a href="https://www.w3.org/TR/odrl-vocab/#term-payAmount">payment amount</a> and the <a href="https://www.w3.org/TR/odrl-vocab/#term-unit">unit</a> (or currency) of payment. It may also specify the <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit-of-count</a> which acts as a multiplier of the payment amount.</td>
                     </tr><tr>
                         <th>Label:</th><td>Compensate</td>
                     </tr><tr>
