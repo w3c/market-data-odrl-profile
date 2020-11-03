@@ -1171,7 +1171,7 @@
             <p>
                 We can specify the precise meaning of <code>Realtime</code> defined in a license. Here <code>Realtime</code> is data delivered within 10 minutes of <code>Issue Time</code>:
             </p>
-            <pre class="example nohighlight turtle" title="Specifying Realtime" id="RealtimeSpecification">
+            <pre class="example nohighlight turtle" title="Specifying Realtime Data" id="RealtimeSpecification">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Realtime</span><span class="p"> ;</span>
@@ -1201,10 +1201,10 @@
             <p>
                 In this example, <code>Delayed</code> data is specified as running from ten minutes through to eight hours following <code>Issue Time</code>.
             </p>
-            <pre class="example nohighlight turtle" title="Specifying Delayed" id="DelayedSpecification">
+            <pre class="example nohighlight turtle" title="Specifying Delayed Data" id="DelayedSpecification">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Realtime</span><span class="p"> ;</span>
+                <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Delayed</span><span class="p"> ;</span>
                 <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalAfter</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                                         </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
                 <span class="w">                                                         </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
@@ -1235,6 +1235,20 @@
                     </tr>
                 </tbody>
             </table>
+            <p>
+                In this example, <code>Historic</code> data is specified as being eight hours from <code>Issue Time</code>.
+            </p>
+            <pre class="example nohighlight turtle" title="Specifying Historical Data" id="DelayedSpecification">
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Historic</span><span class="p"> ;</span>
+                <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalAfter</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                                                         </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
+                <span class="w">                                                         </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                <span class="w">                                                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span><span class="w"> </span><span class="s">"PT8h"^^xsd:duration</span>
+                <span class="w">                                                    </span><span class="p">]</span><span class="p"> ;</span>
+                <span class="w">                             </span><span class="p">]</span><span class="p"> .</span>    
+            </pre>
         </section>
         <section data-dfn-for="Embargoed">
             <h2><dfn>Embargoed</dfn></h2>
@@ -1243,6 +1257,8 @@
                     <tr>
                         <th>Definition:</th><td>Data received, used, or delivered on or after a specified instant or future event.</td>
                     </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Used to describe end-of-day data.</td>
+                        </tr><tr>
                         <th>Label:</th><td>Embargoed</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Embargoed">http://www.w3.org/md-odrl-profile/Embargoed</a></td>
@@ -1252,16 +1268,18 @@
                 </tbody>
             </table>
             <p>
-                In this example, <code>Historic</code> data is specified as being eight hours from <code>Issue Time</code>.
+                In this example, end-of-day data is defined as data <code>embargoed</code> until <code>market close</code> at 4pm CST.
             </p>
-            <pre class="example nohighlight turtle" title="Specifying Delayed" id="DelayedSpecification">
+            <pre class="example nohighlight turtle" title="Specifying Historical Data" id="DelayedSpecification">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Realtime</span><span class="p"> ;</span>
-                <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalAfter</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                                                         </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
-                <span class="w">                                                         </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
-                <span class="w">                                                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span><span class="w"> </span><span class="s">"PT8h"^^xsd:duration</span>
+                <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Embargoed</span><span class="p"> ;</span>
+                <span class="w">                                </span><span class="nn">time:</span><span class="nt">after</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                                                         </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">Instant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">MarketClose</span><span class="p"> ;</span>
+                <span class="w">                                                         </span><span class="nn">time:</span><span class="nt">inDateTime</span><span class="w">    </span><span class="p">[</span>
+                <span class="w">                                                                                 </span><span class="kt">a</span><span class="w">          </span><span class="nn">time:</span><span class="nt">DateTimeDescription</span><span class="p"> ;</span>
+                <span class="w">                                                                                 </span><span class="nn">time:</span><span class="nt">hour</span><span class="w">      </span><span class="s">"16"^^xsd:int</span><span class="p"> ;</span>                                                              
+                <span class="w">                                                                                 </span><span class="nn">time:</span><span class="nt">timeZone</span><span class="w">  </span><span class="nv">&lt;https://www.wikidata.org/wiki/Q2086913&gt;</span><span class="c">  # CET</span>
                 <span class="w">                                                    </span><span class="p">]</span><span class="p"> ;</span>
                 <span class="w">                             </span><span class="p">]</span><span class="p"> .</span>    
             </pre>
