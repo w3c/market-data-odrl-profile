@@ -949,7 +949,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the timing of the permitted receipt, use, or onwards delivery of a resource.</td>
+                        <th>Definition:</th><td>Specifies the timing of the permitted receipt, use, or onwards delivery of a <a>Resource</a>.</td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Editorial Note:</th><td>Usually specified as an interval (or intervals) relative to the data's <a>Origination Time</a>, <a>Publication Time</a>, <a>Issue Time</a>, or <a>Market Close</a> (or some other specified moment).</td>
                     </tr><tr>
@@ -962,6 +962,26 @@
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="methodOdUpdate">
+            <h2><dfn>method of update</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the method by which updates to the <a>Resource</a> are delivered.</td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>method of update</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/methodOfUpdate">http://www.w3.org/md-odrl-profile/methodOfUpdate</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a>Update Method</a></td>
                     </tr>
                 </tbody>
             </table>
