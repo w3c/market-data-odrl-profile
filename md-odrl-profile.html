@@ -1283,6 +1283,17 @@
 		                    </tr>
 	                    </tbody>
 	                </table>
+			<p>
+				The <code>Level 2</code> <code>Resource</code> provides a book depth of ten:
+		        </p>
+			<pre class="example nohighlight turtle" title="Specifying Market Depth" id="MarketDepthSpecification">
+			    <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+			    <span class="w">      </span><span class="nn">md:</span><span class="nt">depthOfMarket</span><span class="w"> </span><span class="p">[</span>
+			    <span class="w">                           </span><span class="kt">a</span><span class="w">                       </span><<span class="nt">MarketDepth</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
+			    <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionFrom</span><span class="w">          </span><span class="s">1</span><span class="w"> </span><span class="p">;</span>
+			    <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionTo</span><span class="w">          </span><span class="s">10</span><span class="w"> </span><span class="p">;</span>
+			    <span class="w">                      </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
+			</pre>
 	            </section>
 	        </section>
         </section>
