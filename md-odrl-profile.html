@@ -1013,7 +1013,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies how frequently updates to the Resource are delivered</td>
+                        <th>Definition:</th><td>Specifies how frequently updates to the Resource are delivered.</td>
                     </tr><tr>
                         <th>Label:</th><td>frequency of update</td>
                     </tr><tr>
@@ -1022,6 +1022,24 @@
                         <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Update Frequency</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="depthOfMarket">
+            <h2><dfn>depth of markete</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Measures the book depth offered by a Resource</td>
+                    </tr><tr>
+                        <th>Label:</th><td>depth of market</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/depthOfMarket">http://www.w3.org/md-odrl-profile/depthOfMarket</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a>Market Depth</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1154,6 +1172,76 @@
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Sampled">http://www.w3.org/md-odrl-profile/Sampled</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Frequency</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section data-dfn-for="MarketDepth">
+            <h2><dfn>Market Depth</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Represents the depth of the order book offered by a <a>Resource</a></td>
+                    </tr><tr>
+                        <th>Note:</th><td>Market depth can be qualified to specify the exact depth of market offered by using the <a>position from</a> and <a>position to</a> properties.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Market Depth</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketDepth">http://www.w3.org/md-odrl-profile/MarketDepth</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <section data-dfn-for="Level1">
+                <h2><dfn>Level 1</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Level 1 includes the content relating to the calculated single best bid and best ask/offer in the market.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market price”.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Level 1</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level1">http://www.w3.org/md-odrl-profile/Level1</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Level2">
+                <h2><dfn>Level 2</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Level 2 includes content relating to the best bids and asks/offers at a number of price points.</td>
+                        </tr>tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market by price”.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Level 2</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level2">http://www.w3.org/md-odrl-profile/Level2</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Level3">
+                <h2><dfn>Level 3</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Level 3 includes content relating to the bids and asks/offers at all price points and from all participants in the market.</td>
+                        </tr>tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as "market by order" or the "full order book".</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Level 3</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level3">http://www.w3.org/md-odrl-profile/Level3</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
                         </tr>
                     </tbody>
                 </table>
