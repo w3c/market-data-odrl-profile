@@ -1008,6 +1008,24 @@
                 </tbody>
             </table>
         </section>
+        <section data-dfn-for="frequencyOfUpdate">
+            <h2><dfn>frequency of update</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies how frequently updates to the Resource are delivered</td>
+                    </tr><tr>
+                        <th>Label:</th><td>frequency of update</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/frequencyOfUpdate">http://www.w3.org/md-odrl-profile/frequencyOfUpdate</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a>Update Frequency</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
     <section id='Constraint Values'>
         <h2>Constraint Values</h2>
@@ -1088,6 +1106,54 @@
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TimeSeries">http://www.w3.org/md-odrl-profile/TimeSeries</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section data-dfn-for="UpdateFrequency">
+            <h2><dfn>Update Frequency</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The frequency by which a <a>Resource</a> is updated over time.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Update Frequency</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UpdateFrequency">http://www.w3.org/md-odrl-profile/UpdateFrequency</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <section data-dfn-for="Tick-by-Tick">
+                <h2><dfn>Tick-by-Tick</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Any and every change in value is provided in an update.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Tick-by-Tick</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Tick-by-Tick">http://www.w3.org/md-odrl-profile/Tick-by-Tick</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Frequency</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Sampled">
+                <h2><dfn>Sampled</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Updates are sampled and/or conflated.</td>
+                        </tr>tr>
+                            <th>Note:</th><td>Only selected updates are delivered from the whole tick-by-tick dataset at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Sampled</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Sampled">http://www.w3.org/md-odrl-profile/Sampled</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Frequency</a></td>
                         </tr>
                     </tbody>
                 </table>
