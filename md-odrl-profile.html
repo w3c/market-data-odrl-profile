@@ -544,16 +544,16 @@
                 </tbody>
             </table>
         </section>
-        <section data-dfn-for="Controls">
+        <section data-dfn-for="Control">
             <h2><dfn>Controls</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
                         <th>Definition:</th><td>The access control measures that manage the availability of the <a>Asset</a> to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s users and processes.</td>
                     </tr><tr>
-                        <th>Label:</th><td>Controls</td>
+                        <th>Label:</th><td>Control</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Controls">http://www.w3.org/md-odrl-profile/Controls</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Control">http://www.w3.org/md-odrl-profile/Control</a></td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
@@ -1318,6 +1318,27 @@
                 <span class="w">                           </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">          </span><span class="p">(</span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                      </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
             </pre>
+        </section>
+	</section>
+	<section id='ConstraintsOnPermissions'>
+        <h2>Constraints on Permissions</h2>
+        <section data-dfn-for="controls">
+            <h2><dfn>controls</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+						<th>Definition:</th><td>Points to the <a>Control</a> activities that protect the <a>Asset</a> from unauthorised access.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has controls</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/controls">http://www.w3.org/md-odrl-profile/controls</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a>Asset Class</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#ContentType">Control</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 	</section>
     <section id='ConstraintValues'>
