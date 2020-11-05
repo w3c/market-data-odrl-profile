@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <title>Market Data Profile for ODRL</title>
@@ -15,14 +15,14 @@
 </section>
 <section id='sotd'></section>
 <section id='conformance'></section>
-<section id='Supply Chain Metamodel'>
+<section id='SupplyChainMetamodel'>
     <h2>Supply Chain Metamodel</h2>
     <p>
         The Market Data Profile for ODRL operates within the context of the market data supply chain. The benefits of its application accrue to its actors while its definitions of compliance classify their interactions. 
     </p><p>
         To unlock its potential we must situate the profile within a metamodel that describes the roles these actors play and the data resources they generate and trade. These descriptions are of direct relevance to the validity of market data Rules.
     </p>
-    <section id='Party Types'>
+    <section id='PartyTypes'>
         <h2>Party Types</h2>
         <p>
             Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> that belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> (and its affiliated or enumerated companies) and those that don't (aka third-parties).
@@ -68,7 +68,7 @@
             </table>
         </section>
     </section>
-    <section id='Party Roles'>
+    <section id='PartyRoles'>
         <h2>Party Roles</h2>
         <p>
             Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data resource moves along the market data supply chain. 
@@ -210,7 +210,7 @@
 					<span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
 					<span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
 					<span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-					<span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+					<span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
 					<span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
 					<span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
 					<span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
@@ -218,7 +218,7 @@
 					<span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
 					<span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
 					<span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-					<span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+					<span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
 					<span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
 
 				</pre>
@@ -226,8 +226,8 @@
 					<p>
 						When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
 					</p><p>
-					To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
-					<p/>
+					    To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
+					</p>
 				</div>
 			</section>
 			<section data-dfn-for="Administrator">
@@ -256,7 +256,7 @@
 			</section>
 	    </section>
     </section>
-    <section id='Party Properties'>
+    <section id='PartyProperties'>
         <h2>Party Properties</h2>
         <section data-dfn-for="roles">
             <h2><dfn>roles</dfn></h2>
@@ -342,7 +342,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Is Defined By:</th><td><a href="https://www.w3.org/TR/odrl-model">ODRL Vocabulary</a></td></td>
+                            <th style="white-space:nowrap;">Is Defined By:</th><td><a href="https://www.w3.org/TR/odrl-model">ODRL Vocabulary</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -397,7 +397,7 @@
             </section>
         </section>
     </section>
-    <section id='Resource Properties'>
+    <section id='ResourceProperties'>
         <h2>Resource Properties</h2>
         <section data-dfn-for="providers">
             <h2><dfn>providers</dfn></h2>
@@ -564,7 +564,7 @@
 				<table class="def propdef">
 					<tbody>
 						<tr>
-							<th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset<a/a>.</td>
+							<th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset</a>.</td>
 						</tr><tr>
 							<th>Label:</th><td>Closed User Group</td>
 						</tr><tr>
@@ -633,7 +633,7 @@
                 This example identifies the Eurodollar Futures Contract traded on Globex:
 			</p>
 			<pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
-				<span class="p">[]</span><span class="w">   <span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
+				<span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
 				<span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
 				<span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
 				<span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
@@ -808,7 +808,7 @@
     </p><p>
         Duties are fulfilled when the <code>subject</code> takes the <code>Action</code> for the <code>object</code> of the duty. The Duty may also have a <code>target</code> that specifies the <code>Resource</code>, <code>Party</code>, or <code>Activity</code> over which the <code>Action</code> is taken.
     </p>
-     <section id='Duty Functions'>
+     <section id='DutyFunctions'>
         <h2>Duty Functions</h2>
         <p>
             Duty functions specify the role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in fulfilling a Duty. There are two: the <code>subject</code> who must exercise the duty's action and the <code>object</code> who recieves the effect of the action.
@@ -878,7 +878,7 @@
             </table>
         </section>
     </section>
-    <section id='Duty Relations'>
+    <section id='DutyRelations'>
         <h2>Duty Relations</h2>
         <section data-dfn-for="targets">
             <h2><dfn>targets</dfn></h2>
@@ -951,10 +951,10 @@
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Device</span><span class="w"> </span><span class="p">] ;</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Device</span><span class="w"> </span><span class="p">] ;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
                 <span class="w">                   </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">] .</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">] .</span>
             </pre>
         </section>
         <section data-dfn-for="Request">
@@ -1011,13 +1011,13 @@
                 <span class="w">                        </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                        </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceProvider</span><span class="w"> </span><span class="p">] ;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceProvider</span><span class="w"> </span><span class="p">] ;</span>
                 <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
-                <p></p>
+                <br/>
                 <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
@@ -1025,7 +1025,7 @@
                 <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span></span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>       
             </pre>
         </section>
@@ -1088,7 +1088,7 @@
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
                 <span class="w">                    </span><span class="p">]</span><span class="p"> ;</span>                 
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:I1</span><span class="p"> .</span>
-                <p></p>
+                <br/>
                 <span class="nt">:I1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Invoice</span><span class="w"> </span><span class="p">;</span>
