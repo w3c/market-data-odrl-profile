@@ -976,7 +976,7 @@
     </section>
     <section id='Resources'>
     <h2>Constraints</h2>
-    <section id='Constraints on Resources'>
+    <section id='ConstraintsOnResources'>
         <h2>Constraints on Resources</h2>
         <section data-dfn-for="assetClasses">
             <h2><dfn>asset classes</dfn></h2>
@@ -1001,36 +1001,6 @@
             <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
                 <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
-            </pre>
-        </section>
-        <section data-dfn-for="contentTypes">
-            <h2><dfn>content types</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Given the <a>Asset Class</a>, further specifies the type of content provided by the <a>Resource</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Editorial Note:</th><td>The valid values for content type depend on the Asset Class of the Resource</td>
-                    </tr><tr>
-                        <th>Label:</th><td>has content types</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/contentTypes">http://www.w3.org/md-odrl-profile/contentTypes</a></td>
-                    </tr><tr>
-                        <th>Domain:</th><td><a>Asset Class</a></td>
-                    </tr><tr>
-                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#ContentType">Content Type</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                The Resource <code>:R3</code> describes the Values and Constituents (content type) of an Index of Equities (asset class):
-            </p>
-            <pre class="example nohighlight turtle" title="Specifying Content Type" id="ContentTypeSpecification">
-                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                           </span><span class="kt">a</span><span class="w">                       </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
-                <span class="w">                           </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">          </span><span class="p">(</span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                      </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
             </pre>
         </section>
         <section data-dfn-for="timelinessOfDelivery">
@@ -1133,7 +1103,7 @@
                 </tbody>
             </table>
         </section>
-    <section data-dfn-for="geography">
+        <section data-dfn-for="geography">
             <h2><dfn>geography</dfn></h2>
             <table class="def propdef">
                 <tbody>
@@ -1153,7 +1123,7 @@
                 </tbody>
             </table>
         </section>
-    <section data-dfn-for="amount">
+        <section data-dfn-for="amount">
             <h2><dfn>amount</dfn></h2>
             <table class="def propdef">
                 <tbody>
@@ -1174,7 +1144,40 @@
             </table>
         </section>
     </section>
-    <section id='Constraint Values'>
+    <section id='ConstraintsOnAssetClasses'>
+        <h2>Constraints on Asset Classes</h2>
+        <section data-dfn-for="contentTypes">
+            <h2><dfn>content types</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Given the <a>Asset Class</a>, further specifies the type of content provided by the <a>Resource</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>The valid values for content type depend on the Asset Class of the Resource</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has content types</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/contentTypes">http://www.w3.org/md-odrl-profile/contentTypes</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a>Asset Class</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#ContentType">Content Type</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                The Resource <code>:R3</code> describes the Values and Constituents (content type) of an Index of Equities (asset class):
+            </p>
+            <pre class="example nohighlight turtle" title="Specifying Content Type" id="ContentTypeSpecification">
+                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                           </span><span class="kt">a</span><span class="w">                       </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">          </span><span class="p">(</span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                      </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
+            </pre>
+        </section>
+	</section>
+    <section id='ConstraintValues'>
         <h2>Constraint Values</h2>
         <section data-dfn-for="UpdateMethod">
             <h2><dfn>Update Method</dfn></h2>
@@ -1443,7 +1446,6 @@
             </table>            
         </section>        
     </section>
-</section>
 </section>
 <section id='Time'>
     <h2>Time</h2>
