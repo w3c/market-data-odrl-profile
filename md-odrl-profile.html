@@ -470,6 +470,95 @@
                 </tbody>
             </table>
         </section>
+	<section data-dfn-for="compoundIDs">
+            <h2><dfn>complex ID</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Points to a <a>Compound ID<a> that identifies the Resource in a manner that can be understood along the supply chain.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has compound IDs</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/compoundIDs">http://www.w3.org/md-odrl-profile/compoundIDs</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a>Resource</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#string">xCompound ID</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section id='AssetTypes'>
+        <h2>Asset Types</h2>
+        <p>
+            Most of the <code>Resources</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments belong to asset classes (e.g. equities, bonds).
+        </p><p>
+           Knowing which asset class a resource describes can help in tracing which <code>Rules</code> control the use of a data element.
+        </p>
+        <section data-dfn-for="Asset Class">
+            <h2><dfn>Asset Class</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The type of financial instrument(s) described by a <a>Resource</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>It is recommended that the values are selected from <a href="https://www.iso.org/standard/73564.html">ISO 10962:2019</a>: Classification of Financial Instruments (CFI) codes. See also the Wikipedia <a href="https://en.wikipedia.org/wiki/ISO_10962">entry</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Asset Class</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AssetClass">http://www.w3.org/md-odrl-profile/AssetClass</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section id='Identifiers'>
+        <h2>Identifiers</h2>
+        <p>
+            <code>Resources</code> in market data are rarely identified by universally unique identifiers (aka URIs) that can be understood along the supply chain. In the case of exchange data, however, they do have a product code that is unique to the specific <code>venue</code> that generates the resource.
+        </p><p>
+           Combining these in a compound ID creates a unique identifier that can be understood by the supply chain.
+        </p>
+        <section data-dfn-for="CompoundID">
+            <h2><dfn>Compound ID</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+			<th>Definition:</th><td>The combination of a unique <a>context</a> and an <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier/">identifier</a> that is unique within that context to deliver a globally unique identifier.</td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>For market data, the context will usually be the <a>Venue<a> that generates the <a>Resource</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>Use the identifier property provided by <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a> vocabulary.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Compound ID</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/CompoundID">http://www.w3.org/md-odrl-profile/CompoundID</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+	<section id='CompoundIDProperties'>
+        <h2>Compound ID Properties</h2>
+        <section data-dfn-for="context">
+            <h2><dfn>context</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Identifies the unique context in which the specified identifier is unique.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has context</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/context">http://www.w3.org/md-odrl-profile/context</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a>Compound ID</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a>Venue</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
     </section>
     <section id='ActivityTypes'>
         <h2>Activity Types</h2>
@@ -538,30 +627,6 @@
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Controls">http://www.w3.org/md-odrl-profile/Controls</a></td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </section>
-    <section id='AssetTypes'>
-        <h2>Asset Types</h2>
-        <p>
-            Most of the <code>Resources</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments belong to asset classes (e.g. equities, bonds).
-        </p><p>
-           Knowing which asset class a resource describes can help in tracing which <code>Rules</code> control the use of a data element.
-        </p>
-        <section data-dfn-for="Asset Class">
-            <h2><dfn>Asset Class</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>The type of financial instrument(s) described by a <a>Resource</a>.</td>
-                    </tr><tr>
-                        <th>Note:</th><td>It is recommended that the values are selected from <a href="https://www.iso.org/standard/73564.html">ISO 10962:2019</a>: Classification of Financial Instruments (CFI) codes. See also the Wikipedia <a href="https://en.wikipedia.org/wiki/ISO_10962">entry</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Asset Class</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UAssetClass">http://www.w3.org/md-odrl-profile/AssetClass</a></td>
                     </tr>
                 </tbody>
             </table>
