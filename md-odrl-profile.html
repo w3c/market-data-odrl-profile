@@ -636,10 +636,49 @@
                 </tbody>
             </table>
         </section>
+		<section id='VenueProperties'>
+				<h2>Venue Properties</h2>
+				<section data-dfn-for="operatingMic">
+					<h2><dfnoperatingMic</dfn></h2>
+					<table class="def propdef">
+						<tbody>
+							<tr>
+								<th>Definition:</th><td>Identifies the Exchange using ISO 10383 market identifier codes, specifically the operating MIC code.</td>
+							</tr><tr>
+								<th>Label:</th><td>has operating MIC code</td>
+							</tr><tr>
+								<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/operatingMic">http://www.w3.org/md-odrl-profile/operatingMic</a></td>
+							</tr><tr>
+								<th>Domain:</th><td><a>Venue</a></td>
+							</tr><tr>
+								<th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">Operating MIC Code</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			    <section data-dfn-for="mic">
+					<h2><dfn>mic</dfn></h2>
+					<table class="def propdef">
+						<tbody>
+							<tr>
+								<th>Definition:</th><td>Identifies the Market using ISO 10383 market identifier codes, specifically the market MIC code.</td>
+							</tr><tr>
+								<th>Label:</th><td>has MIC code</td>
+							</tr><tr>
+								<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/mic">http://www.w3.org/md-odrl-profile/mic</a></td>
+							</tr><tr>
+								<th>Domain:</th><td><a>Venue</a></td>
+							</tr><tr>
+								<th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC Code</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</section>
 		<section data-dfn-for="AssetClass">
             <h2><dfn>Asset Class</dfn></h2>
 			<p>
-			    Knowing which <code>Asset Class</code> (e.g. equities, bonds) a <code>Resource</code> describes can also help in tracing which <code>Rules</code> control the use of data.
+				The financial instruments that a <code>Resource</code> may describe belong to <code>Asset Classes</code> (e.g. equities, bonds).
 			</p>
 			<table class="def propdef">
 				<tbody>
