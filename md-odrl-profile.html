@@ -23,854 +23,858 @@
         To unlock its potential we must situate the profile within a metamodel that describes the roles these actors play and the data resources they generate and trade. These descriptions are of direct relevance to the validity of market data Rules.
     </p>
     <section id='Parties'>
-	    <section id='PartyTypes'>
-	        <h2>Party Types</h2>
-	        <p>
-	            Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> that belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> (and its affiliated or enumerated companies) and those that don't (aka third-parties).
-	        </p><p>
-	            We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
-	        </p>
-	        <section data-dfn-for="Internal Party">
-	            <h2><dfn>Internal Party</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that belongs to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> and its affiliated or enumerated organisations as specified by the governing license.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Internal Party</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Disjoint with:</th><td><a>External Party</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="External Party">
-	            <h2><dfn>External Party</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that does <em>not</em> belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> and its affiliated or enumerated organisations as specified by the governing license.</td>
-	                    </tr><tr>
-	                        <th>Scope Note:</th><td>Captures the concept of third parties.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>External Party</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Disjoint with:</th><td><a>Internal Party</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	    </section>
-	    <section id='PartyRoles'>
-	        <h2>Party Roles</h2>
-	        <p>
-	            Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data resource moves along the market data supply chain. 
-	        </p><p>
-	            Many Parties play different roles at different times. A large financial institution regularly acts as an <a>Originator</a>, <a>Provider</a>, and <a>Consumer</a> of data assets.
-	        </p><p>
-	            In the example of an exchange delivering a data <a>Asset</a> to a vendor for onward distribution to a bank, the sequence of parties and their roles would look as follows:
-	        </p><ol><li>
-	            The exchange acting as an <a>Originator</a> assigns rights and delivers data to the vendor, acting as a <a>Consumer</a>. 
-	        </li><li>
-	            The vendor, then acting as a <a>Provider</a>, assigns rights and delivers data to the bank, acting as a Consumer.
-	        </li><li>
-	            The banks market data function, now acting as a Provider, then assigns rights and delivers data to its end users, who are the final Consumers.
-	        </li><li>
-	            And if those end-users in the bank were then to derive a new creative work from the data, they would be acting as Originators ... and so the supply chain spins on.
-	        </li></ol>
-	        <section data-dfn-for="Party Role">
-	            <h2><dfn>Party Role</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Party Role</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PartyRole">http://www.w3.org/md-odrl-profile/PartyRole</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <section data-dfn-for="Originator">
-	                <h2><dfn>Originator</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in generating/owning a <a>Resource</a>, acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling the use of that resource (or parts of it), and delivering it for use.</td>
-	                        </tr><tr>
-	                            <th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the Assigner of this work.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Originator</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Originator">http://www.w3.org/md-odrl-profile/Originator</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-	                        </tr><tr>
-	                            <th>In Range Of:</th><td><a>role</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	                <div class="note">
-	                    <p>
-	                        We can imagine an Originator so:
-	                    </p>
-	                     <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Originator.png?raw=true" alt="Originator diagram"> 
-	                </div>
-	            </section>
-	            <section data-dfn-for="Provider">
-	                <h2><dfn>Provider</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays by distributing an <a>Asset</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its use.</td>
-	                        </tr><tr>
-	                            <th>Scope Note:</th><td>Designates the role a vendor plays in providing data to its customers.</td>
-	                        </tr><tr>
-	                            <th>Scope Note:</th><td>Describes the role the market data function within a financial institution plays in providing data to its internal customers.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Provider</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Provider">http://www.w3.org/md-odrl-profile/Provider</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-	                        </tr><tr>
-	                            <th>In Range Of:</th><td><a>role</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	                <div class="note">
-	                    <p>
-	                        We can imagine a Provider so:
-	                    </p>
-	                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Provider.png?raw=true" alt="Provider diagram"> 
-	                </div>
-	            </section>
-	            <section data-dfn-for="Consumer">
-	                <h2><dfn>Consumer</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
-	                        </tr><tr>
-	                            <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its suppliers.</td>
-	                        </tr><tr>
-	                            <th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Consumer</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consumer">http://www.w3.org/md-odrl-profile/Consumer</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-	                        </tr><tr>
-	                            <th>In Range Of:</th><td><a>role</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	                <div class="note">
-	                    <p>
-	                        We can imagine a Consumer so:
-	                    </p>
-	                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Consumer.png?raw=true" alt="Consumer diagram"> 
-	                </div>
-	            </section>
-	            <section data-dfn-for="Service Facilitator">
-	                <h2><dfn>Service Facilitator</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the delivery of data services.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Service Facilitator</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ServiceFacilitator">http://www.w3.org/md-odrl-profile/ServiceFacilitator</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-	                        </tr><tr>
-	                            <th>In Range Of:</th><td><a>role</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	                <div class="note">
-	                    <p>
-	                        We can imagine a Service Facilitator so:
-	                    </p>
-	                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
-	                </div>
-	                <p>
-	                    Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
-	                </p>
-	                <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
-	                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-	                    <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
-	                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-	                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-	                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-	                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-	                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
-	                    <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
-	                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-	                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
-	                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-	                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-	                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
+        <h2>Parties</h2>
+        <section id='PartyTypes'>
+            <h2>Party Types</h2>
+            <p>
+                Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> that belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> (and its affiliated or enumerated companies) and those that don't (aka third-parties).
+            </p><p>
+                We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
+            </p>
+            <section data-dfn-for="Internal Party">
+                <h2><dfn>Internal Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that belongs to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> and its affiliated or enumerated organisations as specified by the governing license.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Internal Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>External Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="External Party">
+                <h2><dfn>External Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that does <em>not</em> belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> and its affiliated or enumerated organisations as specified by the governing license.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Captures the concept of third parties.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>External Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Internal Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section id='PartyRoles'>
+            <h2>Party Roles</h2>
+            <p>
+                Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data resource moves along the market data supply chain. 
+            </p><p>
+                Many Parties play different roles at different times. A large financial institution regularly acts as an <a>Originator</a>, <a>Provider</a>, and <a>Consumer</a> of data assets.
+            </p><p>
+                In the example of an exchange delivering a data <a>Asset</a> to a vendor for onward distribution to a bank, the sequence of parties and their roles would look as follows:
+            </p><ol><li>
+                The exchange acting as an <a>Originator</a> assigns rights and delivers data to the vendor, acting as a <a>Consumer</a>. 
+            </li><li>
+                The vendor, then acting as a <a>Provider</a>, assigns rights and delivers data to the bank, acting as a Consumer.
+            </li><li>
+                The banks market data function, now acting as a Provider, then assigns rights and delivers data to its end users, who are the final Consumers.
+            </li><li>
+                And if those end-users in the bank were then to derive a new creative work from the data, they would be acting as Originators ... and so the supply chain spins on.
+            </li></ol>
+            <section data-dfn-for="Party Role">
+                <h2><dfn>Party Role</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
+                        </tr><tr>
+                            <th>Label:</th><td>Party Role</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PartyRole">http://www.w3.org/md-odrl-profile/PartyRole</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Originator">
+                    <h2><dfn>Originator</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in generating/owning a <a>Resource</a>, acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling the use of that resource (or parts of it), and delivering it for use.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the Assigner of this work.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Originator</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Originator">http://www.w3.org/md-odrl-profile/Originator</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                            </tr><tr>
+                                <th>In Range Of:</th><td><a>role</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="note">
+                        <p>
+                            We can imagine an Originator so:
+                        </p>
+                         <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Originator.png?raw=true" alt="Originator diagram"> 
+                    </div>
+                </section>
+                <section data-dfn-for="Provider">
+                    <h2><dfn>Provider</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays by distributing an <a>Asset</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its use.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>Designates the role a vendor plays in providing data to its customers.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>Describes the role the market data function within a financial institution plays in providing data to its internal customers.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Provider</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Provider">http://www.w3.org/md-odrl-profile/Provider</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                            </tr><tr>
+                                <th>In Range Of:</th><td><a>role</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="note">
+                        <p>
+                            We can imagine a Provider so:
+                        </p>
+                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Provider.png?raw=true" alt="Provider diagram"> 
+                    </div>
+                </section>
+                <section data-dfn-for="Consumer">
+                    <h2><dfn>Consumer</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its suppliers.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Consumer</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consumer">http://www.w3.org/md-odrl-profile/Consumer</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                            </tr><tr>
+                                <th>In Range Of:</th><td><a>role</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="note">
+                        <p>
+                            We can imagine a Consumer so:
+                        </p>
+                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Consumer.png?raw=true" alt="Consumer diagram"> 
+                    </div>
+                </section>
+                <section data-dfn-for="Service Facilitator">
+                    <h2><dfn>Service Facilitator</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the delivery of data services.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Service Facilitator</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ServiceFacilitator">http://www.w3.org/md-odrl-profile/ServiceFacilitator</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                            </tr><tr>
+                                <th>In Range Of:</th><td><a>role</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="note">
+                        <p>
+                            We can imagine a Service Facilitator so:
+                        </p>
+                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
+                    </div>
+                    <p>
+                        Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
+                    </p>
+                    <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
+                        <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
 
-	                </pre>
-	                <div class="note">
-	                    <p>
-	                        When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
-	                    </p><p>
-	                        To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
-	                    </p>
-	                </div>
-	            </section>
-	            <section data-dfn-for="Administrator">
-	                <h2><dfn>Administrator</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the the assignment of rights.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Administrator</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Administrator">http://www.w3.org/md-odrl-profile/Administrator</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-	                        </tr><tr>
-	                            <th>In Range Of:</th><td><a>role</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	                <div class="note">
-	                    <p>
-	                        We can imagine a Administrator so:
-	                    </p>
-	                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Administrator.png?raw=true" alt="Administrator diagram"> 
-	                </div>
-	            </section>
-	        </section>
-	    </section>
-	    <section id='PartyProperties'>
-	        <h2>Party Properties</h2>
-	        <section data-dfn-for="roles">
-	            <h2><dfn>roles</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Resource</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>roles</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
-	                    </tr><tr>
-	                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
-	                    </tr><tr>
-	                        <th>Range:</th><td><a>Party Role</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	    </section>
-	</section>
-	<section id='Resources'>
-	    <section id='ResourceTypes'>
-	        <h2>Resource Types</h2>
-	        <p>
-	            The data supply chain provides resources (usually data resources). To track their progress and ensure compliance, we need to make three distinctions: the original data resource created by the <a>Originator</a>; the resource "at rest" in an organisation before <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rules</a> are applied to control its use; and the contolled resource that is received by a <a>Consumer</a>. The former is a <a>Source</a> and the latter is an <a>Asset</a>. All are <a>Resources</a>.
-	        </p>
-	        <section data-dfn-for="Resource">
-	            <h2><dfn>Resource</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>A Resource is some commodity (e.g. API calls, bandwidth, data) access to which (or to some part of which) may be controlled by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
-	                    </tr><tr>
-	                        <th>Example:</th><td>In the context of market data, a Resource could be the all the pricing and trading data generated by the trade in one or more financial instruments on an exchange, or indices derived from that data.</td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Editorial Note:</th><td>Resources are sensitive to their means of delivery and informational completeness. A real-time version of that data may be a different Resource than the delayed. Book depth too can distinguish between Resources.</td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Editorial Note:</th><td>A Resource can be transformed through some calculation but still remain the same Resource. It only becomes a new Resource if the transformation is irreversible (i.e. the original data cannot be recovered) and non-substitutive (i.e. the altered data cannot be used in place of the original).</td>
-	                    </tr><tr>
-	                        <th>Example:</th><td>The operation of currency conversion does not change the identity of a Resource.</td>
-	                    </tr><tr>
-	                        <th>Example:</th><td>Augmenting a Resource with additional symbology does not change the identity of that Resource.</td>
-	                    </tr><tr>
-	                        <th>Example:</th><td>Co-mingling Resources does not change the identities of the combined Resources.</td>
-	                    </tr><tr>
-	                        <th>Example:</th><td>Normalising a Resource does not change the identity of that Resource.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Resource</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Resource">http://www.w3.org/md-odrl-profile/Resource</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">Entity</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <section data-dfn-for="Source">
-	                <h2><dfn>Source</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>A Source is a root <a>Resource</a>: unconstrained and informationally complete. The information as it is created.</td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Editorial Note:</th><td>Independent of all aspects of commercialisation and/or delivery such as timeliness, method of delivery, or book depth.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Source</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Source">http://www.w3.org/md-odrl-profile/Source</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	             <section data-dfn-for="Asset">
-	                <h2><dfn>Asset</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>An Asset is a <a>Resource</a>, a collection of Resources, or the part of a Resource controlled by a <a href="https://www.w3.org/TR/odrl-vocab/#ruleConcepts">Rule</a>.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Asset</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Asset">https://www.w3.org/TR/odrl-vocab/#term-Asset</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Is Defined By:</th><td><a href="https://www.w3.org/TR/odrl-model">ODRL Vocabulary</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	            <div class="note">
-	                <p>
-	                    We can imagine the process by which an Exchange (acting as an <a>Originator</a>) generates pricing data (the <a>Source</a>, <code>S1</code>) which it then packages (through the transform <code>T<sub>1</sub></code>, which might include timeliness and book depth) into the <a>Resource</a> <code>R1</code> and then licenses (with the Rules <code>Rl<sub>1</sub></code>) as the <a>Asset</a> <code>A1</code> to a <a>Consumer</a> so:
-	                </p><p>
-	                <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/S2A.png?raw=true" alt="Source to Asset diagram"> 
-	                </p><p>
-	                    If the consumer above were a vendor, or even the market data function inside a bank, they might then act as a <a>Provider</a> and re-package the data (through the transform <code>T<sub>2</sub></code>) into the resource <code>R2</code>, re-license it (through the rules <code>Rl<sub>2</sub></code>) as the asset <code>A2</code> to a new consumer.
-	                </p><p>
-	                <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/A2A.png?raw=true" alt="Source to Asset diagram"> 
-	                </p><p>
-	                    For the vendor above to remain compliant with the rights assignment <code>Rl<sub>1</sub></code> under which it received the data, it must ensure that the new rules <code>Rl<sub>2</sub></code> it applies to A2 are compliant with the original rules controlling <code>A1</code>.
-	                </p>
-	            </div>
-	            <p>
-	            There many ways to describe <code>Resources</code> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below, but there are two types of Resource that it's worth explicitly identifying here: Attributions and Disclaimers.
-	            </p>
-	            <section data-dfn-for="Attribution">
-	                <h2><dfn>Attribution</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>A declaration of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s ownership of the <a>Asset</a>.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Attribution</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribution">http://www.w3.org/md-odrl-profile/Attribution</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	            <section data-dfn-for="Disclaimer">
-	                <h2><dfn>Disclaimer</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>A clarification of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s relation to the <a>Asset</a>.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Disclaimer</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Disclaimer">http://www.w3.org/md-odrl-profile/Disclaimer</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	        </section>
-	    </section>
-	    <section id='ResourceProperties'>
-	        <h2>Resource Properties</h2>
-	        <section data-dfn-for="providers">
-	            <h2><dfn>providers</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Points to the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Provider</a> in relation to the <a>Resource</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>is provided by</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
-	                    </tr><tr>
-	                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-	                    </tr><tr>
-	                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <p>
-	                In the example below the Resource <code>:R1</code> is provided by the CME:
-	            </p>
-	            <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
-	                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-	                <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
-	            </pre>
-	        </section>
-	        <section data-dfn-for="refines">
-	            <h2><dfn>refines</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Points to the original <a>Resource</a>(s) that the subject resource or <a>Asset</a> refines.</td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>refines resources</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
-	                    </tr><tr>
-	                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-	                    </tr><tr>
-	                        <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <p>
-	                In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R1</code>:
-	            </p>
-	            <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
-	                <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
-	                <span class="w">      </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
-	                <span class="w">      </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:Delayed</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
-	            </pre>
-	        </section>
-	        <section data-dfn-for="wording">
-	            <h2><dfn>wording</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Specifies the wording required by an <a>Attribution</a> or <a>Disclaimer</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>wording</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/wording">http://www.w3.org/md-odrl-profile/wording</a></td>
-	                    </tr><tr>
-	                        <th>Domain:</th><td><a>Attribution</a>, <a>Disclaimer</a></td>
-	                    </tr><tr>
-	                        <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	    <section data-dfn-for="compoundIDs">
-	            <h2><dfn>compound IDs</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Points to a <a>Compound ID</a> that identifies the Resource in a manner that can be understood along the supply chain.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>has compound IDs</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/compoundIDs">http://www.w3.org/md-odrl-profile/compoundIDs</a></td>
-	                    </tr><tr>
-	                        <th>Domain:</th><td><a>Resource</a></td>
-	                    </tr><tr>
-	                        <th>Range:</th><td><a>Compound ID</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	    </section>
-	</section>
-	<section id='Activities'>
-	    <section id='ActivityTypes'>
-	        <h2>Activity Types</h2>
-	        <p>
-	            An <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a> is something that occurs over a period of time and acts upon or with <a href="https://www.w3.org/TR/prov-o/#Entity">entities</a>. An activity has a start time and an end time; can be influenced or informed by other activities; and can be generated by something. It's a concept central to tracking <a href="w3.org/TR/prov-o/#description-starting-point-terms">provenance</a>.
-	        </p><p>
-	            We can usefully connect rights and provenance by indentifying the activities that are of significance in market data licenses. The actual use and processing of data (<code>Usage</code>) is one example. The implementation of access control policies (<code>Controls</code>) is another. <code>Reasonable Suspicion</code>, a trigger for <code>Audit</code> activities, also shares the above properties, and so can usefully be modelled as an activity.
-	        </p>
-	        <section data-dfn-for="Usage">
-	            <h2><dfn>Usage</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s access to and processing of the <a>Asset</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Usage</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Usage">http://www.w3.org/md-odrl-profile/Usage</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="Audit">
-	            <h2><dfn>Audit</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>An inspection of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s use of the <a>Asset</a> and/or the systems involved in its receipt, use, and distribution for the purpose of determining the Assingee's compliance to the controlling license.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Audit</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Audit">http://www.w3.org/md-odrl-profile/Audit</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="ReasonableSuspicion">
-	            <h2><dfn>Reasonable Suspicion</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>A reasonable suspicion that the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> is misusing the <a>Asset</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Reasonable Suspicion</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ReasonableSuspicion">http://www.w3.org/md-odrl-profile/ReasonableSuspicion</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="Control">
-	            <h2><dfn>Control</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>The access control measures that manage the availability of the <a>Asset</a> to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s users and processes.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Control</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Control">http://www.w3.org/md-odrl-profile/Control</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <section data-dfn-for="ClosedUserGroup">
-	                <h2><dfn>Closed User Group</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset</a>.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Closed User Group</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ClosedUserGroup">http://www.w3.org/md-odrl-profile/ClosedUserGroup</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	                <p>
-	                    For usage, see <a href="#ClosedUserGroupControl">Example 11</a>.
-	                </p>
-	            </section>
-	            <section data-dfn-for="ProviderManaged">
-	                <h2><dfn>Provider Managed</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The physical administration of user access is managed by the Provider.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Provider Managed</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProviderManaged">http://www.w3.org/md-odrl-profile/ProviderManaged</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	            <section data-dfn-for="ConsumerManaged">
-	                <h2><dfn>Consumer Managed</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The physical administration of user access is managed by the Consumer.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Consumer Managed</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ConsumerManaged">http://www.w3.org/md-odrl-profile/ConsumerManaged</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	        </section>
-	        <section data-dfn-for="Training">
-	            <h2><dfn>Training</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Training the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s users or subscribers in the use of a <a>Service</a></td>
-	                    </tr><tr>
-	                        <th>Note:</th><td>Those trained can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Training</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Training">http://www.w3.org/md-odrl-profile/Training</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="TechnicalSupport">
-	            <h2><dfn>Technical Support</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>The provision of technical assistance relating only to data quality or performance issues performed by technical support staff.</td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Scope Note:</th><td>Exludes assistance in placing or adjusting an order.</td>
-	                    </tr><tr>
-	                        <th>Note:</th><td>Those receiving technical support can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Technical Support</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TechnicalSupport">http://www.w3.org/md-odrl-profile/TechnicalSupport</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="QualityAssurance">
-	            <h2><dfn>Quality Assurance</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Oversight of internal data quality control and assurance – i.e. monitoring systems to ensure correct software or hardware processing to ensure an accurate flow of data </td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Scope Note:</th><td>Exludes assistance in placing or adjusting an order.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Quality Assurance</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/QualityAssurance">http://www.w3.org/md-odrl-profile/QualityAssurance</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="ProductDevelopment">
-	            <h2><dfn>Product Development</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Developing new <a>Services</a> or further developing existing services</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Product Development</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProductDevelopment">http://www.w3.org/md-odrl-profile/ProductDevelopment</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>
-	        <section data-dfn-for="Marketing">
-	            <h2><dfn>Marketing</dfn></h2>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Marketing the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users of subscribers.</td>
-	                    </tr><tr>
-	                        <th>Note:</th><td>The audience can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Marketing</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Marketing">http://www.w3.org/md-odrl-profile/Marketing</a></td>
-	                    </tr><tr>
-	                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <section data-dfn-for="Demonstrations">
-	                <h2><dfn>Demonstrations</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>Demonstrating the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users of subscribers.</td>
-	                        </tr><tr>
-	                            <th>Note:</th><td>The audience for demonstrations can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Editorial Note:</th><td>Demonstrations are time limited activities. Demonstrations in a public forum must be at time-limited events like conferences or trade shows. </td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Demonstrations</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Demonstrations">http://www.w3.org/md-odrl-profile/Demonstrations</a></td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Marketing</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	        </section>
-	    </section>
-	</section>
-	<section id='Entities'>    
-	    <section id='EntityTypes'>
-	        <h2>Entity Types</h2>
-	        <p>
-	            There are some additional entities used or understood in the supply chain beyond <code>Parties</code>, <code>Resources</code>, and <code>Activities</code> that we need to automate compliance.
-	        </p>
-	        <section id='Identifiers'>
-	            <h2>Identifiers</h2>
-	            <p>
-	                <code>Resources</code> in market data are rarely identified by universally unique identifiers (aka URIs) that can be understood along the supply chain. In the case of exchange data, however, they do have a product code that is unique to the specific <code>venue</code> that generates the resource.
-	            </p><p>
-	                Combining these in a compound ID creates a unique identifier that can be understood by the supply chain.
-	            </p>
-	            <section data-dfn-for="CompoundID">
-	                <h2><dfn>Compound ID</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The combination of a <a>context</a> and an <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier/">identifier</a> that is unique within that context to deliver a globally unique identifier.</td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Editorial Note:</th><td>For market data, the context will usually be the <a>Venue</a> that generates the <a>Resource</a>.</td>
-	                        </tr><tr>
-	                            <th>Note:</th><td>Use the identifier property provided by <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a> vocabulary.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Compound ID</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/CompoundID">http://www.w3.org/md-odrl-profile/CompoundID</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	            <section id='CompoundIDProperties'>
-	                <h2>Compound ID Properties</h2>
-	                <section data-dfn-for="context">
-	                    <h2><dfn>context</dfn></h2>
-	                    <table class="def propdef">
-	                        <tbody>
-	                            <tr>
-	                                <th>Definition:</th><td>Identifies the context in which the specified identifier is unique.</td>
-	                            </tr><tr>
-	                                <th>Label:</th><td>has context</td>
-	                            </tr><tr>
-	                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/context">http://www.w3.org/md-odrl-profile/context</a></td>
-	                            </tr><tr>
-	                                <th>Domain:</th><td><a>Compound ID</a></td>
-	                            </tr><tr>
-	                                <th>Range:</th><td><a>Venue</a></td>
-	                            </tr>
-	                        </tbody>
-	                    </table>
-	                </section>
-	            </section>
-	            <p>
-	                This example identifies the Eurodollar Futures Contract traded on Globex:
-	            </p>
-	            <pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
-	                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
-	                <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
-	                <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
-	                <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
-	                <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
-	                <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
-	                <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-	                <span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
-	            </pre>
-	        </section>
-	        <section data-dfn-for="UnitsOfCount">
-	            <h2><dfn>Units of Count</dfn></h2>
-	            <p>
-	                Market data licenses are interested in counting things, expecially to support <code>reporting</code> (see <a href="#DeviceUsageReport">Example 5</a>) or <code>payment</code> activities.
-	            </p>
-	            <table class="def propdef">
-	                <tbody>
-	                    <tr>
-	                        <th>Definition:</th><td>Things to be counted.</td>
-	                    </tr><tr>
-	                        <th>Label:</th><td>Units of Count</td>
-	                    </tr><tr>
-	                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UnitsOfCount">http://www.w3.org/md-odrl-profile/UnitsOfCount</a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <section data-dfn-for="UserID">
-	                <h2><dfn>User ID</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>An idenitifier for a user (human or machine) used for authenticated access to the <a>Asset</a>.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>User ID</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UserID">http://www.w3.org/md-odrl-profile/UserID</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	            <section data-dfn-for="Device">
-	                <h2><dfn>Device</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>Any mechanism (fixed or portable) that <a>displays</a> the <a>Asset</a> to an individual person.</td>
-	                        </tr><tr>
-	                            <th style="white-space:nowrap;">Scope Note:</th><td>Does not include wallboards or any other mechanisms that display to groups of people.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Device</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Device">http://www.w3.org/md-odrl-profile/Device</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	            <section data-dfn-for="Person">
-	                <h2><dfn>Person</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>Any person with access to the <a>Asset</a>.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Person</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Person">http://www.w3.org/md-odrl-profile/Person</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	            <section data-dfn-for="Location">
-	                <h2><dfn>Location</dfn></h2>
-	                <table class="def propdef">
-	                    <tbody>
-	                        <tr>
-	                            <th>Definition:</th><td>The place (or site) at which the <a>Asset</a> is accessed.</td>
-	                        </tr><tr>
-	                            <th>Label:</th><td>Location</td>
-	                        </tr><tr>
-	                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Location">http://www.w3.org/md-odrl-profile/Location</a></td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </section>
-	        </section>
-	    </section>
-	</section>
+                    </pre>
+                    <div class="note">
+                        <p>
+                            When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
+                        </p><p>
+                            To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
+                        </p>
+                    </div>
+                </section>
+                <section data-dfn-for="Administrator">
+                    <h2><dfn>Administrator</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the the assignment of rights.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Administrator</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Administrator">http://www.w3.org/md-odrl-profile/Administrator</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                            </tr><tr>
+                                <th>In Range Of:</th><td><a>role</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="note">
+                        <p>
+                            We can imagine a Administrator so:
+                        </p>
+                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Administrator.png?raw=true" alt="Administrator diagram"> 
+                    </div>
+                </section>
+            </section>
+        </section>
+        <section id='PartyProperties'>
+            <h2>Party Properties</h2>
+            <section data-dfn-for="roles">
+                <h2><dfn>roles</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Resource</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>roles</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
+                        </tr><tr>
+                            <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                        </tr><tr>
+                            <th>Range:</th><td><a>Party Role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+    <section id='Resources'>
+        <h2>Resources</h2>
+        <section id='ResourceTypes'>
+            <h2>Resource Types</h2>
+            <p>
+                The data supply chain provides resources (usually data resources). To track their progress and ensure compliance, we need to make three distinctions: the original data resource created by the <a>Originator</a>; the resource "at rest" in an organisation before <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rules</a> are applied to control its use; and the contolled resource that is received by a <a>Consumer</a>. The former is a <a>Source</a> and the latter is an <a>Asset</a>. All are <a>Resources</a>.
+            </p>
+            <section data-dfn-for="Resource">
+                <h2><dfn>Resource</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A Resource is some commodity (e.g. API calls, bandwidth, data) access to which (or to some part of which) may be controlled by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>In the context of market data, a Resource could be the all the pricing and trading data generated by the trade in one or more financial instruments on an exchange, or indices derived from that data.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Resources are sensitive to their means of delivery and informational completeness. A real-time version of that data may be a different Resource than the delayed. Book depth too can distinguish between Resources.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>A Resource can be transformed through some calculation but still remain the same Resource. It only becomes a new Resource if the transformation is irreversible (i.e. the original data cannot be recovered) and non-substitutive (i.e. the altered data cannot be used in place of the original).</td>
+                        </tr><tr>
+                            <th>Example:</th><td>The operation of currency conversion does not change the identity of a Resource.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Augmenting a Resource with additional symbology does not change the identity of that Resource.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Co-mingling Resources does not change the identities of the combined Resources.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Normalising a Resource does not change the identity of that Resource.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Resource</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Resource">http://www.w3.org/md-odrl-profile/Resource</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">Entity</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Source">
+                    <h2><dfn>Source</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A Source is a root <a>Resource</a>: unconstrained and informationally complete. The information as it is created.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>Independent of all aspects of commercialisation and/or delivery such as timeliness, method of delivery, or book depth.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Source</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Source">http://www.w3.org/md-odrl-profile/Source</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                 <section data-dfn-for="Asset">
+                    <h2><dfn>Asset</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>An Asset is a <a>Resource</a>, a collection of Resources, or the part of a Resource controlled by a <a href="https://www.w3.org/TR/odrl-vocab/#ruleConcepts">Rule</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Asset</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Asset">https://www.w3.org/TR/odrl-vocab/#term-Asset</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Is Defined By:</th><td><a href="https://www.w3.org/TR/odrl-model">ODRL Vocabulary</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <div class="note">
+                    <p>
+                        We can imagine the process by which an Exchange (acting as an <a>Originator</a>) generates pricing data (the <a>Source</a>, <code>S1</code>) which it then packages (through the transform <code>T<sub>1</sub></code>, which might include timeliness and book depth) into the <a>Resource</a> <code>R1</code> and then licenses (with the Rules <code>Rl<sub>1</sub></code>) as the <a>Asset</a> <code>A1</code> to a <a>Consumer</a> so:
+                    </p><p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/S2A.png?raw=true" alt="Source to Asset diagram"> 
+                    </p><p>
+                        If the consumer above were a vendor, or even the market data function inside a bank, they might then act as a <a>Provider</a> and re-package the data (through the transform <code>T<sub>2</sub></code>) into the resource <code>R2</code>, re-license it (through the rules <code>Rl<sub>2</sub></code>) as the asset <code>A2</code> to a new consumer.
+                    </p><p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/A2A.png?raw=true" alt="Source to Asset diagram"> 
+                    </p><p>
+                        For the vendor above to remain compliant with the rights assignment <code>Rl<sub>1</sub></code> under which it received the data, it must ensure that the new rules <code>Rl<sub>2</sub></code> it applies to A2 are compliant with the original rules controlling <code>A1</code>.
+                    </p>
+                </div>
+                <p>
+                There many ways to describe <code>Resources</code> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below, but there are two types of Resource that it's worth explicitly identifying here: Attributions and Disclaimers.
+                </p>
+                <section data-dfn-for="Attribution">
+                    <h2><dfn>Attribution</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A declaration of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s ownership of the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Attribution</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribution">http://www.w3.org/md-odrl-profile/Attribution</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Disclaimer">
+                    <h2><dfn>Disclaimer</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A clarification of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>'s relation to the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Disclaimer</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Disclaimer">http://www.w3.org/md-odrl-profile/Disclaimer</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </section>
+        <section id='ResourceProperties'>
+            <h2>Resource Properties</h2>
+            <section data-dfn-for="providers">
+                <h2><dfn>providers</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Points to the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Provider</a> in relation to the <a>Resource</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>is provided by</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
+                        </tr><tr>
+                            <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        </tr><tr>
+                            <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    In the example below the Resource <code>:R1</code> is provided by the CME:
+                </p>
+                <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
+                    <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                    <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                </pre>
+            </section>
+            <section data-dfn-for="refines">
+                <h2><dfn>refines</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Points to the original <a>Resource</a>(s) that the subject resource or <a>Asset</a> refines.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>refines resources</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
+                        </tr><tr>
+                            <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        </tr><tr>
+                            <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R1</code>:
+                </p>
+                <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
+                    <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
+                    <span class="w">      </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
+                    <span class="w">      </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:Delayed</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                </pre>
+            </section>
+            <section data-dfn-for="wording">
+                <h2><dfn>wording</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Specifies the wording required by an <a>Attribution</a> or <a>Disclaimer</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>wording</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/wording">http://www.w3.org/md-odrl-profile/wording</a></td>
+                        </tr><tr>
+                            <th>Domain:</th><td><a>Attribution</a>, <a>Disclaimer</a></td>
+                        </tr><tr>
+                            <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        <section data-dfn-for="compoundIDs">
+                <h2><dfn>compound IDs</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Points to a <a>Compound ID</a> that identifies the Resource in a manner that can be understood along the supply chain.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>has compound IDs</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/compoundIDs">http://www.w3.org/md-odrl-profile/compoundIDs</a></td>
+                        </tr><tr>
+                            <th>Domain:</th><td><a>Resource</a></td>
+                        </tr><tr>
+                            <th>Range:</th><td><a>Compound ID</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section>
+    <section id='Activities'>
+        <h2>Activities</h2>
+        <section id='ActivityTypes'>
+            <h2>Activity Types</h2>
+            <p>
+                An <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a> is something that occurs over a period of time and acts upon or with <a href="https://www.w3.org/TR/prov-o/#Entity">entities</a>. An activity has a start time and an end time; can be influenced or informed by other activities; and can be generated by something. It's a concept central to tracking <a href="w3.org/TR/prov-o/#description-starting-point-terms">provenance</a>.
+            </p><p>
+                We can usefully connect rights and provenance by indentifying the activities that are of significance in market data licenses. The actual use and processing of data (<code>Usage</code>) is one example. The implementation of access control policies (<code>Controls</code>) is another. <code>Reasonable Suspicion</code>, a trigger for <code>Audit</code> activities, also shares the above properties, and so can usefully be modelled as an activity.
+            </p>
+            <section data-dfn-for="Usage">
+                <h2><dfn>Usage</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s access to and processing of the <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Usage</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Usage">http://www.w3.org/md-odrl-profile/Usage</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Audit">
+                <h2><dfn>Audit</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>An inspection of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s use of the <a>Asset</a> and/or the systems involved in its receipt, use, and distribution for the purpose of determining the Assingee's compliance to the controlling license.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Audit</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Audit">http://www.w3.org/md-odrl-profile/Audit</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="ReasonableSuspicion">
+                <h2><dfn>Reasonable Suspicion</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A reasonable suspicion that the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> is misusing the <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Reasonable Suspicion</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ReasonableSuspicion">http://www.w3.org/md-odrl-profile/ReasonableSuspicion</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Control">
+                <h2><dfn>Control</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The access control measures that manage the availability of the <a>Asset</a> to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>'s users and processes.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Control</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Control">http://www.w3.org/md-odrl-profile/Control</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="ClosedUserGroup">
+                    <h2><dfn>Closed User Group</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Closed User Group</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ClosedUserGroup">http://www.w3.org/md-odrl-profile/ClosedUserGroup</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        For usage, see <a href="#ClosedUserGroupControl">Example 11</a>.
+                    </p>
+                </section>
+                <section data-dfn-for="ProviderManaged">
+                    <h2><dfn>Provider Managed</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The physical administration of user access is managed by the Provider.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Provider Managed</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProviderManaged">http://www.w3.org/md-odrl-profile/ProviderManaged</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="ConsumerManaged">
+                    <h2><dfn>Consumer Managed</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The physical administration of user access is managed by the Consumer.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Consumer Managed</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ConsumerManaged">http://www.w3.org/md-odrl-profile/ConsumerManaged</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            <section data-dfn-for="Training">
+                <h2><dfn>Training</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Training the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s users or subscribers in the use of a <a>Service</a></td>
+                        </tr><tr>
+                            <th>Note:</th><td>Those trained can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Training</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Training">http://www.w3.org/md-odrl-profile/Training</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="TechnicalSupport">
+                <h2><dfn>Technical Support</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The provision of technical assistance relating only to data quality or performance issues performed by technical support staff.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>Exludes assistance in placing or adjusting an order.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>Those receiving technical support can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Technical Support</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TechnicalSupport">http://www.w3.org/md-odrl-profile/TechnicalSupport</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="QualityAssurance">
+                <h2><dfn>Quality Assurance</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Oversight of internal data quality control and assurance – i.e. monitoring systems to ensure correct software or hardware processing to ensure an accurate flow of data </td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>Exludes assistance in placing or adjusting an order.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Quality Assurance</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/QualityAssurance">http://www.w3.org/md-odrl-profile/QualityAssurance</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="ProductDevelopment">
+                <h2><dfn>Product Development</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Developing new <a>Services</a> or further developing existing services</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Product Development</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProductDevelopment">http://www.w3.org/md-odrl-profile/ProductDevelopment</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Marketing">
+                <h2><dfn>Marketing</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Marketing the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users of subscribers.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>The audience can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Marketing</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Marketing">http://www.w3.org/md-odrl-profile/Marketing</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Demonstrations">
+                    <h2><dfn>Demonstrations</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Demonstrating the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users of subscribers.</td>
+                            </tr><tr>
+                                <th>Note:</th><td>The audience for demonstrations can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>Demonstrations are time limited activities. Demonstrations in a public forum must be at time-limited events like conferences or trade shows. </td>
+                            </tr><tr>
+                                <th>Label:</th><td>Demonstrations</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Demonstrations">http://www.w3.org/md-odrl-profile/Demonstrations</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Marketing</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section id='Entities'>
+    <h2>Entities</h2>    
+        <section id='EntityTypes'>
+            <h2>Entity Types</h2>
+            <p>
+                There are some additional entities used or understood in the supply chain beyond <code>Parties</code>, <code>Resources</code>, and <code>Activities</code> that we need to automate compliance.
+            </p>
+            <section id='Identifiers'>
+                <h2>Identifiers</h2>
+                <p>
+                    <code>Resources</code> in market data are rarely identified by universally unique identifiers (aka URIs) that can be understood along the supply chain. In the case of exchange data, however, they do have a product code that is unique to the specific <code>venue</code> that generates the resource.
+                </p><p>
+                    Combining these in a compound ID creates a unique identifier that can be understood by the supply chain.
+                </p>
+                <section data-dfn-for="CompoundID">
+                    <h2><dfn>Compound ID</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The combination of a <a>context</a> and an <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier/">identifier</a> that is unique within that context to deliver a globally unique identifier.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>For market data, the context will usually be the <a>Venue</a> that generates the <a>Resource</a>.</td>
+                            </tr><tr>
+                                <th>Note:</th><td>Use the identifier property provided by <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a> vocabulary.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Compound ID</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/CompoundID">http://www.w3.org/md-odrl-profile/CompoundID</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id='CompoundIDProperties'>
+                    <h2>Compound ID Properties</h2>
+                    <section data-dfn-for="context">
+                        <h2><dfn>context</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th><td>Identifies the context in which the specified identifier is unique.</td>
+                                </tr><tr>
+                                    <th>Label:</th><td>has context</td>
+                                </tr><tr>
+                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/context">http://www.w3.org/md-odrl-profile/context</a></td>
+                                </tr><tr>
+                                    <th>Domain:</th><td><a>Compound ID</a></td>
+                                </tr><tr>
+                                    <th>Range:</th><td><a>Venue</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+                <p>
+                    This example identifies the Eurodollar Futures Contract traded on Globex:
+                </p>
+                <pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
+                    <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
+                    <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
+                </pre>
+            </section>
+            <section data-dfn-for="UnitsOfCount">
+                <h2><dfn>Units of Count</dfn></h2>
+                <p>
+                    Market data licenses are interested in counting things, expecially to support <code>reporting</code> (see <a href="#DeviceUsageReport">Example 5</a>) or <code>payment</code> activities.
+                </p>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Things to be counted.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Units of Count</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UnitsOfCount">http://www.w3.org/md-odrl-profile/UnitsOfCount</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="UserID">
+                    <h2><dfn>User ID</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>An idenitifier for a user (human or machine) used for authenticated access to the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>User ID</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UserID">http://www.w3.org/md-odrl-profile/UserID</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Device">
+                    <h2><dfn>Device</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Any mechanism (fixed or portable) that <a>displays</a> the <a>Asset</a> to an individual person.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>Does not include wallboards or any other mechanisms that display to groups of people.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Device</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Device">http://www.w3.org/md-odrl-profile/Device</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Person">
+                    <h2><dfn>Person</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Any person with access to the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Person</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Person">http://www.w3.org/md-odrl-profile/Person</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Location">
+                    <h2><dfn>Location</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The place (or site) at which the <a>Asset</a> is accessed.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Location</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Location">http://www.w3.org/md-odrl-profile/Location</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </section>
+    </section>
     <section data-dfn-for="Venue">
         <h2><dfn>Venue</dfn></h2>
         <p>
