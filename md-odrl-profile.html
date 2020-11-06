@@ -759,6 +759,8 @@
                                 <th>Label:</th><td>Compound ID</td>
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/CompoundID">http://www.w3.org/md-odrl-profile/CompoundID</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">Entity</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -811,6 +813,8 @@
                             <th>Label:</th><td>Units of Count</td>
                         </tr><tr>
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UnitsOfCount">http://www.w3.org/md-odrl-profile/UnitsOfCount</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">Entity</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -824,6 +828,8 @@
                                 <th>Label:</th><td>User ID</td>
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UserID">http://www.w3.org/md-odrl-profile/UserID</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -840,6 +846,8 @@
                                 <th>Label:</th><td>Device</td>
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Device">http://www.w3.org/md-odrl-profile/Device</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -854,6 +862,8 @@
                                 <th>Label:</th><td>Person</td>
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Person">http://www.w3.org/md-odrl-profile/Person</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -868,6 +878,8 @@
                                 <th>Label:</th><td>Location</td>
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Location">http://www.w3.org/md-odrl-profile/Location</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -876,8 +888,8 @@
 
         </section>
     </section>
-    <section id='ThingsOfInterest'>
-    <h2>Things of Interest</h2> 
+    <section id='OtherThingsOfInterest'>
+    <h2>Other Things of Interest</h2> 
         <section data-dfn-for="Venue">
             <h2><dfn>Venue</dfn></h2>
             <p>
@@ -957,7 +969,7 @@
         <section id='ServiceProperties'>
             <h2>Service Properties</h2>
             <section data-dfn-for="provides">
-                <h2><dfn>context</dfn></h2>
+                <h2><dfn>provides</dfn></h2>
                 <table class="def propdef">
                     <tbody>
                         <tr>
@@ -1542,6 +1554,24 @@
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:ClosedUserGroup</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
             </pre>
+        </section>
+        <section data-dfn-for="recipients">
+            <h2><dfn>recipients</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the recipients who can receive the <a>Asset</a> which is the target of the <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has recipients</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/recipients">http://www.w3.org/md-odrl-profile/recipients</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a>Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </section>
     <section id='ConstraintsOnActions'>
