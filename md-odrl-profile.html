@@ -98,163 +98,163 @@
                     </tr>
                 </tbody>
             </table>
-			<section data-dfn-for="Originator">
-				<h2><dfn>Originator</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in generating/owning a <a>Resource</a>, acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling the use of that resource (or parts of it), and delivering it for use.</td>
-						</tr><tr>
-							<th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the Assigner of this work.</td>
-						</tr><tr>
-							<th>Label:</th><td>Originator</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Originator">http://www.w3.org/md-odrl-profile/Originator</a></td>
-						</tr><tr>
-							<th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-						</tr><tr>
-							<th>In Range Of:</th><td><a>role</a></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="note">
-					<p>
-						We can imagine an Originator so:
-					</p>
-					 <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Originator.png?raw=true" alt="Originator diagram"> 
-				</div>
-			</section>
-			<section data-dfn-for="Provider">
-				<h2><dfn>Provider</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays by distributing an <a>Asset</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its use.</td>
-						</tr><tr>
-							<th>Scope Note:</th><td>Designates the role a vendor plays in providing data to its customers.</td>
-						</tr><tr>
-							<th>Scope Note:</th><td>Describes the role the market data function within a financial institution plays in providing data to its internal customers.</td>
-						</tr><tr>
-							<th>Label:</th><td>Provider</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Provider">http://www.w3.org/md-odrl-profile/Provider</a></td>
-						</tr><tr>
-							<th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-						</tr><tr>
-							<th>In Range Of:</th><td><a>role</a></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="note">
-					<p>
-						We can imagine a Provider so:
-					</p>
-					<img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Provider.png?raw=true" alt="Provider diagram"> 
-				</div>
-			</section>
-			<section data-dfn-for="Consumer">
-				<h2><dfn>Consumer</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
-						</tr><tr>
-							<th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its suppliers.</td>
-						</tr><tr>
-							<th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
-						</tr><tr>
-							<th>Label:</th><td>Consumer</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consumer">http://www.w3.org/md-odrl-profile/Consumer</a></td>
-						</tr><tr>
-							<th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-						</tr><tr>
-							<th>In Range Of:</th><td><a>role</a></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="note">
-					<p>
-						We can imagine a Consumer so:
-					</p>
-					<img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Consumer.png?raw=true" alt="Consumer diagram"> 
-				</div>
-			</section>
-			<section data-dfn-for="Service Facilitator">
-				<h2><dfn>Service Facilitator</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the delivery of data services.</td>
-						</tr><tr>
-							<th>Label:</th><td>Service Facilitator</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ServiceFacilitator">http://www.w3.org/md-odrl-profile/ServiceFacilitator</a></td>
-						</tr><tr>
-							<th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-						</tr><tr>
-							<th>In Range Of:</th><td><a>role</a></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="note">
-					<p>
-						We can imagine a Service Facilitator so:
-					</p>
-					<img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
-				</div>
-				<p>
-					Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
-				</p>
-				<pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
-					<span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-					<span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
-					<span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-					<span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-					<span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-					<span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-					<span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
-					<span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
-					<span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-					<span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
-					<span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-					<span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-					<span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
+            <section data-dfn-for="Originator">
+                <h2><dfn>Originator</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in generating/owning a <a>Resource</a>, acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling the use of that resource (or parts of it), and delivering it for use.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the Assigner of this work.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Originator</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Originator">http://www.w3.org/md-odrl-profile/Originator</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine an Originator so:
+                    </p>
+                     <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Originator.png?raw=true" alt="Originator diagram"> 
+                </div>
+            </section>
+            <section data-dfn-for="Provider">
+                <h2><dfn>Provider</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays by distributing an <a>Asset</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its use.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Designates the role a vendor plays in providing data to its customers.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Describes the role the market data function within a financial institution plays in providing data to its internal customers.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Provider</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Provider">http://www.w3.org/md-odrl-profile/Provider</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine a Provider so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Provider.png?raw=true" alt="Provider diagram"> 
+                </div>
+            </section>
+            <section data-dfn-for="Consumer">
+                <h2><dfn>Consumer</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its suppliers.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Consumer</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consumer">http://www.w3.org/md-odrl-profile/Consumer</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine a Consumer so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Consumer.png?raw=true" alt="Consumer diagram"> 
+                </div>
+            </section>
+            <section data-dfn-for="Service Facilitator">
+                <h2><dfn>Service Facilitator</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the delivery of data services.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Service Facilitator</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ServiceFacilitator">http://www.w3.org/md-odrl-profile/ServiceFacilitator</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine a Service Facilitator so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
+                </div>
+                <p>
+                    Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
+                </p>
+                <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
 
-				</pre>
-				<div class="note">
-					<p>
-						When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
-					</p><p>
-					    To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
-					</p>
-				</div>
-			</section>
-			<section data-dfn-for="Administrator">
-				<h2><dfn>Administrator</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the the assignment of rights.</td>
-						</tr><tr>
-							<th>Label:</th><td>Administrator</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Administrator">http://www.w3.org/md-odrl-profile/Administrator</a></td>
-						</tr><tr>
-							<th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-						</tr><tr>
-							<th>In Range Of:</th><td><a>role</a></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="note">
-					<p>
-						We can imagine a Administrator so:
-					</p>
-					<img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Administrator.png?raw=true" alt="Administrator diagram"> 
-				</div>
-			</section>
-	    </section>
+                </pre>
+                <div class="note">
+                    <p>
+                        When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
+                    </p><p>
+                        To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
+                    </p>
+                </div>
+            </section>
+            <section data-dfn-for="Administrator">
+                <h2><dfn>Administrator</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role an external organisation contracted by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or its affiliated companies) plays in assisting in the the assignment of rights.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Administrator</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Administrator">http://www.w3.org/md-odrl-profile/Administrator</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine a Administrator so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Administrator.png?raw=true" alt="Administrator diagram"> 
+                </div>
+            </section>
+        </section>
     </section>
     <section id='PartyProperties'>
         <h2>Party Properties</h2>
@@ -559,30 +559,30 @@
                     </tr>
                 </tbody>
             </table>
-			<section data-dfn-for="ClosedUserGroup">
-				<h2><dfn>Closed User Group</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset</a>.</td>
-						</tr><tr>
-							<th>Label:</th><td>Closed User Group</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ClosedUserGroup">http://www.w3.org/md-odrl-profile/ClosedUserGroup</a></td>
-						</tr><tr>
-							<th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
-						</tr>
-					</tbody>
-				</table>
-				For usage, see <a href="#ClosedUserGroupControl">Example 11</a>.
-			</section>
+            <section data-dfn-for="ClosedUserGroup">
+                <h2><dfn>Closed User Group</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Closed User Group</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ClosedUserGroup">http://www.w3.org/md-odrl-profile/ClosedUserGroup</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                For usage, see <a href="#ClosedUserGroupControl">Example 11</a>.
+            </section>
         </section>
     </section>
     <section id='EntityTypes'>
         <h2>Entity Types</h2>
-	    <p>
-		    There are some additional entities used or understood in the supply chain beyond <code>Parties</code>, <code>Resources</code>, and <code>Activities</code> that we need to automate compliance.
-	    </p>
+        <p>
+            There are some additional entities used or understood in the supply chain beyond <code>Parties</code>, <code>Resources</code>, and <code>Activities</code> that we need to automate compliance.
+        </p>
         <section id='Identifiers'>
             <h2>Identifiers</h2>
             <p>
@@ -591,58 +591,58 @@
                 Combining these in a compound ID creates a unique identifier that can be understood by the supply chain.
             </p>
             <section data-dfn-for="CompoundID">
-				<h2><dfn>Compound ID</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>The combination of a <a>context</a> and an <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier/">identifier</a> that is unique within that context to deliver a globally unique identifier.</td>
-						</tr><tr>
-							<th style="white-space:nowrap;">Editorial Note:</th><td>For market data, the context will usually be the <a>Venue</a> that generates the <a>Resource</a>.</td>
-						</tr><tr>
-							<th>Note:</th><td>Use the identifier property provided by <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a> vocabulary.</td>
-						</tr><tr>
-							<th>Label:</th><td>Compound ID</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/CompoundID">http://www.w3.org/md-odrl-profile/CompoundID</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
-			<section id='CompoundIDProperties'>
-				<h2>Compound ID Properties</h2>
-				<section data-dfn-for="context">
-					<h2><dfn>context</dfn></h2>
-					<table class="def propdef">
-						<tbody>
-							<tr>
-								<th>Definition:</th><td>Identifies the context in which the specified identifier is unique.</td>
-							</tr><tr>
-								<th>Label:</th><td>has context</td>
-							</tr><tr>
-								<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/context">http://www.w3.org/md-odrl-profile/context</a></td>
-							</tr><tr>
-								<th>Domain:</th><td><a>Compound ID</a></td>
-							</tr><tr>
-								<th>Range:</th><td><a>Venue</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-			</section>
-			<p>
+                <h2><dfn>Compound ID</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The combination of a <a>context</a> and an <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier/">identifier</a> that is unique within that context to deliver a globally unique identifier.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>For market data, the context will usually be the <a>Venue</a> that generates the <a>Resource</a>.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>Use the identifier property provided by <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a> vocabulary.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Compound ID</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/CompoundID">http://www.w3.org/md-odrl-profile/CompoundID</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id='CompoundIDProperties'>
+                <h2>Compound ID Properties</h2>
+                <section data-dfn-for="context">
+                    <h2><dfn>context</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the context in which the specified identifier is unique.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>has context</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/context">http://www.w3.org/md-odrl-profile/context</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Compound ID</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a>Venue</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            <p>
                 This example identifies the Eurodollar Futures Contract traded on Globex:
-			</p>
-			<pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
-				<span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
-				<span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
-				<span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
-				<span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
-				<span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
-				<span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
-				<span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-				<span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
-			</pre>
-		</section>
+            </p>
+            <pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
+                <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
+                <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
+            </pre>
+        </section>
         <section data-dfn-for="Venue">
             <h2><dfn>Venue</dfn></h2>
             <p>
@@ -666,139 +666,139 @@
                 </tbody>
             </table>
         </section>
-		<section id='VenueProperties'>
-				<h2>Venue Properties</h2>
-				<section data-dfn-for="operatingMic">
-					<h2><dfn>operatingMic</dfn></h2>
-					<table class="def propdef">
-						<tbody>
-							<tr>
-								<th>Definition:</th><td>Identifies the Exchange using ISO 10383 market identifier codes, specifically the operating MIC code.</td>
-							</tr><tr>
-								<th>Label:</th><td>has operating MIC code</td>
-							</tr><tr>
-								<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/operatingMic">http://www.w3.org/md-odrl-profile/operatingMic</a></td>
-							</tr><tr>
-								<th>Domain:</th><td><a>Venue</a></td>
-							</tr><tr>
-								<th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">Operating MIC Code</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-			    <section data-dfn-for="mic">
-					<h2><dfn>mic</dfn></h2>
-					<table class="def propdef">
-						<tbody>
-							<tr>
-								<th>Definition:</th><td>Identifies the Market using ISO 10383 market identifier codes, specifically the market MIC code.</td>
-							</tr><tr>
-								<th>Label:</th><td>has MIC code</td>
-							</tr><tr>
-								<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/mic">http://www.w3.org/md-odrl-profile/mic</a></td>
-							</tr><tr>
-								<th>Domain:</th><td><a>Venue</a></td>
-							</tr><tr>
-								<th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC Code</a></td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-			</section>
-		<section data-dfn-for="AssetClass">
+        <section id='VenueProperties'>
+                <h2>Venue Properties</h2>
+                <section data-dfn-for="operatingMic">
+                    <h2><dfn>operatingMic</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the Exchange using ISO 10383 market identifier codes, specifically the operating MIC code.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>has operating MIC code</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/operatingMic">http://www.w3.org/md-odrl-profile/operatingMic</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Venue</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">Operating MIC Code</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="mic">
+                    <h2><dfn>mic</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the Market using ISO 10383 market identifier codes, specifically the market MIC code.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>has MIC code</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/mic">http://www.w3.org/md-odrl-profile/mic</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Venue</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC Code</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        <section data-dfn-for="AssetClass">
             <h2><dfn>Asset Class</dfn></h2>
-			<p>
-				The financial instruments that a <code>Resource</code> may describe belong to <code>Asset Classes</code> (e.g. equities, bonds).
-			</p>
-			<table class="def propdef">
-				<tbody>
-					<tr>
-						<th>Definition:</th><td>The type of financial instrument(s) described by a <a>Resource</a>.</td>
-					</tr><tr>
-						<th>Note:</th><td>It is recommended that the values are selected from <a href="https://www.iso.org/standard/73564.html">ISO 10962:2019</a>: Classification of Financial Instruments (CFI) codes. See also the Wikipedia <a href="https://en.wikipedia.org/wiki/ISO_10962">entry</a>.</td>
-					</tr><tr>
-						<th>Label:</th><td>Asset Class</td>
-					</tr><tr>
-						<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AssetClass">http://www.w3.org/md-odrl-profile/AssetClass</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-	    <section data-dfn-for="UnitsOfCount">
+            <p>
+                The financial instruments that a <code>Resource</code> may describe belong to <code>Asset Classes</code> (e.g. equities, bonds).
+            </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The type of financial instrument(s) described by a <a>Resource</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>It is recommended that the values are selected from <a href="https://www.iso.org/standard/73564.html">ISO 10962:2019</a>: Classification of Financial Instruments (CFI) codes. See also the Wikipedia <a href="https://en.wikipedia.org/wiki/ISO_10962">entry</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Asset Class</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AssetClass">http://www.w3.org/md-odrl-profile/AssetClass</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="UnitsOfCount">
             <h2><dfn>Units of Count</dfn></h2>
-			<p>
-				Market data licenses are interested in counting things, expecially to support <code>reporting</code> (see <a href="#DeviceUsageReport">Example 5</a>) or <code>payment</code> activities.
-			</p>
-			<table class="def propdef">
-				<tbody>
-					<tr>
-						<th>Definition:</th><td>Things to be counted.</td>
-					</tr><tr>
-						<th>Label:</th><td>Units of Count</td>
-					</tr><tr>
-						<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UnitsOfCount">http://www.w3.org/md-odrl-profile/UnitsOfCount</a></td>
-					</tr>
-				</tbody>
-			</table>
-			<section data-dfn-for="UserID">
-				<h2><dfn>User ID</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>An idenitifier for a user (human or machine) used for authenticated access to the <a>Asset</a>.</td>
-						</tr><tr>
-							<th>Label:</th><td>User ID</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UserID">http://www.w3.org/md-odrl-profile/UserID</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
-			<section data-dfn-for="Device">
-				<h2><dfn>Device</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>Any mechanism (fixed or portable) that <a>displays</a> the <a>Asset</a> to an individual person.</td>
-						</tr><tr>
+            <p>
+                Market data licenses are interested in counting things, expecially to support <code>reporting</code> (see <a href="#DeviceUsageReport">Example 5</a>) or <code>payment</code> activities.
+            </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Things to be counted.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Units of Count</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UnitsOfCount">http://www.w3.org/md-odrl-profile/UnitsOfCount</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <section data-dfn-for="UserID">
+                <h2><dfn>User ID</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>An idenitifier for a user (human or machine) used for authenticated access to the <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>User ID</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UserID">http://www.w3.org/md-odrl-profile/UserID</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Device">
+                <h2><dfn>Device</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Any mechanism (fixed or portable) that <a>displays</a> the <a>Asset</a> to an individual person.</td>
+                        </tr><tr>
                             <th style="white-space:nowrap;">Scope Note:</th><td>Does not include wallboards or any other mechanisms that display to groups of people.</td>
                         </tr><tr>
-							<th>Label:</th><td>Device</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Device">http://www.w3.org/md-odrl-profile/Device</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
-			<section data-dfn-for="Person">
-				<h2><dfn>Person</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>Any person with access to the <a>Asset</a>.</td>
-						</tr><tr>
-							<th>Label:</th><td>Person</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Person">http://www.w3.org/md-odrl-profile/Person</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
-			<section data-dfn-for="Location">
-				<h2><dfn>Location</dfn></h2>
-				<table class="def propdef">
-					<tbody>
-						<tr>
-							<th>Definition:</th><td>The place (or site) at which the <a>Asset</a> is accessed.</td>
-						</tr><tr>
-							<th>Label:</th><td>Location</td>
-						</tr><tr>
-							<th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Location">http://www.w3.org/md-odrl-profile/Location</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
-		</section>
+                            <th>Label:</th><td>Device</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Device">http://www.w3.org/md-odrl-profile/Device</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Person">
+                <h2><dfn>Person</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Any person with access to the <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Person</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Person">http://www.w3.org/md-odrl-profile/Person</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Location">
+                <h2><dfn>Location</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The place (or site) at which the <a>Asset</a> is accessed.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Location</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Location">http://www.w3.org/md-odrl-profile/Location</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
     </section>
 </section>
 <section id='Duties'>
@@ -1320,15 +1320,15 @@
                 <span class="w">                      </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
             </pre>
         </section>
-	</section>
-	<section id='ConstraintsOnPermissions'>
+    </section>
+    <section id='ConstraintsOnPermissions'>
         <h2>Constraints on Permissions</h2>
         <section data-dfn-for="controls">
             <h2><dfn>controls</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-						<th>Definition:</th><td>Points to the <a>Control</a> activities that protect the <a>Asset</a> from unauthorised access.</td>
+                        <th>Definition:</th><td>Points to the <a>Control</a> activities that protect the <a>Asset</a> from unauthorised access.</td>
                     </tr><tr>
                         <th>Label:</th><td>has controls</td>
                     </tr><tr>
@@ -1340,23 +1340,23 @@
                     </tr>
                 </tbody>
             </table>
-			<p>
-				In the example below the <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permission</a> is only valid if the <code>controls</code> <a href="https://www.w3.org/TR/odrl-vocab/#term-Constraint">Constraint</a> is satisfied by use of a <code>closed user group</code> to manage access to the <code>Asset</code>.
-			</p>
-			<pre class="example nohighlight turtle" title="Requiring a Closed User Group" id="ClosedUserGroupControl">
-				<span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-				<span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:ClosedUserGroup</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
-			</pre>
+            <p>
+                In the example below the <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permission</a> is only valid if the <code>controls</code> <a href="https://www.w3.org/TR/odrl-vocab/#term-Constraint">Constraint</a> is satisfied by use of a <code>closed user group</code> to manage access to the <code>Asset</code>.
+            </p>
+            <pre class="example nohighlight turtle" title="Requiring a Closed User Group" id="ClosedUserGroupControl">
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:ClosedUserGroup</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+            </pre>
         </section>
-	</section>
-	<section id='ConstraintsOnActions'>
+    </section>
+    <section id='ConstraintsOnActions'>
         <h2>Constraints on Actions</h2>
         <section data-dfn-for="purposes">
             <h2><dfn>purposes</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-						<th>Definition:</th><td>The <a>Activity</a> in persuit of which the <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Action</a> is taken.</td>
+                        <th>Definition:</th><td>The <a href="#ActivityTypes">Activities</a> in persuit of which the <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Action</a> is taken.</td>
                     </tr><tr>
                         <th>Label:</th><td>has purposes</td>
                     </tr><tr>
@@ -1364,12 +1364,12 @@
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Action</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a>Activity</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
                     </tr>
                 </tbody>
             </table>
         </section>
-	</section>
+    </section>
     <section id='ConstraintValues'>
         <h2>Constraint Values</h2>
         <section data-dfn-for="UpdateMethod">
