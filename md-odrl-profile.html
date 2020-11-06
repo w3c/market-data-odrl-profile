@@ -619,6 +619,54 @@
                     </table>
                 </section>
             </section>
+            <section data-dfn-for="Derivation">
+                <h2><dfn>Derivation</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The processes by which an <a>Asset</a> (or assets) is transformed into a new asset through calculation.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Derivation</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Derivation">http://www.w3.org/md-odrl-profile/Derivation</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Irreversable">
+                    <h2><dfn>Irreversable</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A <a>derivation</a> activity that uses calculations that cannot be perfomred in reverse  - i.e. the source <a>Asset</a> cannot be reverse engineered from the derived asset.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Irreversable Derivation</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Irreversable">http://www.w3.org/md-odrl-profile/Irreversable</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Derivation</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Non-Substitutive">
+                    <h2><dfn>Non-Substitutive</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>The derived <a>Asset<a> cannot be used in the place of the source asset - i.e. cannot substitute for it in any calculations.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Non-Substitutive Derivation</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Non-Substitutive">http://www.w3.org/md-odrl-profile/Non-Substitutive</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Derivation</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
             <section data-dfn-for="Training">
                 <h2><dfn>Training</dfn></h2>
                 <table class="def propdef">
@@ -1573,6 +1621,24 @@
                 </tbody>
             </table>
         </section>
+        <section data-dfn-for="services">
+            <h2><dfn>services</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Enumerates the <a href="#service">Services</a> in the delivery of which the <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permissions</a> can be exercised.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has services</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/services">http://www.w3.org/md-odrl-profile/services</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Service</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
     <section id='ConstraintsOnActions'>
         <h2>Constraints on Actions</h2>
@@ -1599,12 +1665,30 @@
             <pre class="example nohighlight turtle" title="Controls, Recipients, & Purposes" id="ControlsRecipientsPurposes">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:ClosedUserGroup</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                        </span><span class="kt">a</span><span class="w">           </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                        </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">  </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">TechnicalSupport</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">QualityAssurance</span><span class="w"> </span><span class="p">]</span><span class="p"></span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ProductDevelopment</span><span class="w"> </span><span class="p">]</span><span class="p"> )</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                    </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
+                <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
             </pre>
+        </section>
+        <section data-dfn-for="derivationTypes">
+            <h2><dfn>derivation Types</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Enumerates the <a href="#service">Services</a> in the delivery of which the <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permissions</a> can be exercised.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has derivation types</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/derivationTypes">http://www.w3.org/md-odrl-profile/derivationTypes</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a>Derive</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a>Derivation</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </section>
     <section id='ConstraintValues'>
