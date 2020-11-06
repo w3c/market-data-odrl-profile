@@ -1639,9 +1639,6 @@
                 </tbody>
             </table>
         </section>
-    </section>
-    <section id='ConstraintsOnActions'>
-        <h2>Constraints on Actions</h2>
         <section data-dfn-for="purposes">
             <h2><dfn>purposes</dfn></h2>
             <table class="def propdef">
@@ -1664,14 +1661,17 @@
             </p>
             <pre class="example nohighlight turtle" title="Controls, Recipients, & Purposes" id="ControlsRecipientsPurposes">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:ClosedUserGroup</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                        </span><span class="kt">a</span><span class="w">           </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                        </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">  </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">TechnicalSupport</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">QualityAssurance</span><span class="w"> </span><span class="p">]</span><span class="p"></span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ProductDevelopment</span><span class="w"> </span><span class="p">]</span><span class="p"> )</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:ClosedUserGroup</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">     </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">TechnicalSupport</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">QualityAssurance</span><span class="w"> </span><span class="p">]</span><span class="p"></span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ProductDevelopment</span><span class="w"> </span><span class="p">]</span><span class="p"> )</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">              </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
             </pre>
         </section>
+    </section>
+    <section id='ConstraintsOnActions'>
+        <h2>Constraints on Actions</h2>
         <section data-dfn-for="derivationTypes">
             <h2><dfn>derivation types</dfn></h2>
             <table class="def propdef">
