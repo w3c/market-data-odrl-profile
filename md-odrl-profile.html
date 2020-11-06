@@ -873,32 +873,35 @@
                     </table>
                 </section>
             </section>
+
         </section>
     </section>
-    <section data-dfn-for="Venue">
-        <h2><dfn>Venue</dfn></h2>
-        <p>
-           Most of the <code>Resources</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments are traded at <code>Venues</code>.
-        </p><p>
-           Knowing which venue generated a resource can help in tracing which <code>Rules</code> control the use of the data.
-        </p>
-        <table class="def propdef">
-            <tbody>
-                <tr>
-                    <th>Definition:</th><td>A multilateral system in which multiple buying and selling interests can interact in a way that results in contracts.</td>
-                </tr><tr>
-                    <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets (RMs), organised trading facility (OTF), and multilateral trading facilities (MTFs)</td>
-                </tr><tr>
-                    <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific venue. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
-                </tr><tr>
-                    <th>Label:</th><td>Venue</td>
-                </tr><tr>
-                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Venue">http://www.w3.org/md-odrl-profile/Venue</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section id='VenueProperties'>
+    <section id='ThingsOfInterest'>
+    <h2>Things of Interest</h2> 
+        <section data-dfn-for="Venue">
+            <h2><dfn>Venue</dfn></h2>
+            <p>
+               Most of the <code>Resources</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments are traded at <code>Venues</code>.
+            </p><p>
+               Knowing which venue generated a resource can help in tracing which <code>Rules</code> control the use of the data.
+            </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>A multilateral system in which multiple buying and selling interests can interact in a way that results in contracts.</td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets (RMs), organised trading facility (OTF), and multilateral trading facilities (MTFs)</td>
+                    </tr><tr>
+                        <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific venue. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Venue</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Venue">http://www.w3.org/md-odrl-profile/Venue</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id='VenueProperties'>
             <h2>Venue Properties</h2>
             <section data-dfn-for="operatingMic">
                 <h2><dfn>operatingMic</dfn></h2>
@@ -937,24 +940,60 @@
                 </table>
             </section>
         </section>
-    <section data-dfn-for="AssetClass">
-        <h2><dfn>Asset Class</dfn></h2>
-        <p>
-            The financial instruments that a <code>Resource</code> may describe belong to <code>Asset Classes</code> (e.g. equities, bonds).
-        </p>
-        <table class="def propdef">
-            <tbody>
-                <tr>
-                    <th>Definition:</th><td>The type of financial instrument(s) described by a <a>Resource</a>.</td>
-                </tr><tr>
-                    <th>Note:</th><td>It is recommended that the values are selected from <a href="https://www.iso.org/standard/73564.html">ISO 10962:2019</a>: Classification of Financial Instruments (CFI) codes. See also the Wikipedia <a href="https://en.wikipedia.org/wiki/ISO_10962">entry</a>.</td>
-                </tr><tr>
-                    <th>Label:</th><td>Asset Class</td>
-                </tr><tr>
-                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AssetClass">http://www.w3.org/md-odrl-profile/AssetClass</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <section data-dfn-for="Service">
+            <h2><dfn>Service</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td> A service provided by the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> used to distribute their derived works.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Service</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Service">http://www.w3.org/md-odrl-profile/Service</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id='ServiceProperties'>
+            <h2>Service Properties</h2>
+            <section data-dfn-for="provides">
+                <h2><dfn>context</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Identifies the <a>Assets</a> that belong to a <a>Service</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>provides</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/provides">http://www.w3.org/md-odrl-profile/provides</a></td>
+                        </tr><tr>
+                            <th>Domain:</th><td><a>Service</a></td>
+                        </tr><tr>
+                            <th>Range:</th><td><a>Asset</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section data-dfn-for="AssetClass">
+            <h2><dfn>Asset Class</dfn></h2>
+            <p>
+                The financial instruments that a <code>Resource</code> may describe belong to <code>Asset Classes</code> (e.g. equities, bonds).
+            </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The type of financial instrument(s) described by a <a>Resource</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>It is recommended that the values are selected from <a href="https://www.iso.org/standard/73564.html">ISO 10962:2019</a>: Classification of Financial Instruments (CFI) codes. See also the Wikipedia <a href="https://en.wikipedia.org/wiki/ISO_10962">entry</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Asset Class</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AssetClass">http://www.w3.org/md-odrl-profile/AssetClass</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
 </section>
 <section id='Duties'>
