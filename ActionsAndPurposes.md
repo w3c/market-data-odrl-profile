@@ -18,3 +18,17 @@ New Original Work means any work that is created partly or entirely based on Dat
 
 ### Reference Price Based Systems
 Reference Price Based Systems means any trading facility using the Data for price referencing for trading purposes. The term trading facility includes, but is not limited to multilateral trading facilities (MTF’S), organized trading facilities (OTF’S), alternative trading systems, dark pools and systematic internalization systems (SI’s). NonDisplay Licence Fees shall be remunerated cumulatively if User runs multiple systems (identifiable by but not limited to MIC codes). 
+
+
+## NYSE
+
+### Category 1
+Category 1 applies when a data recipient’s Non-Display Use of real-time NYSE Market Information is on its own behalf as opposed to use on behalf of its clients.
+
+### Category 2
+Category 2 applies when a data recipient’s Non-Display Use of real-time NYSE Market Information is on behalf of its clients as opposed to use on its own behalf.
+
+### Category 3
+Category 3 applies when a data recipient’s Non-Display Use of real-time NYSE Market Information is for the purpose of internally matching buy and sell orders within an organization. Matching buy and sell orders includes matching customer orders for data recipient’s own behalf and/or on behalf of its clients.
+
+This category applies to use in trading platform(s), such as, but not restricted to, alternative trading systems (ATSs), broker crossing networks, broker crossing systems not filed as ATSs, dark pools, multilateral trading facilities, exchanges and systematic internalization systems. 
