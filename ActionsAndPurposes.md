@@ -32,3 +32,16 @@ Category 2 applies when a data recipient’s Non-Display Use of real-time NYSE M
 Category 3 applies when a data recipient’s Non-Display Use of real-time NYSE Market Information is for the purpose of internally matching buy and sell orders within an organization. Matching buy and sell orders includes matching customer orders for data recipient’s own behalf and/or on behalf of its clients.
 
 This category applies to use in trading platform(s), such as, but not restricted to, alternative trading systems (ATSs), broker crossing networks, broker crossing systems not filed as ATSs, dark pools, multilateral trading facilities, exchanges and systematic internalization systems. 
+
+Examples of Non-Display Use are, but are not limited to:
+Any trading in any asset class
+* Automated order or quote generation and/or order pegging
+* Price referencing for algorithmic trading
+* Price referencing for smart order routing
+* Operations control programs
+* Investment analysis
+* Order verification
+* Surveillance programs
+* Risk management
+* Compliance
+* Portfolio Valuation 
