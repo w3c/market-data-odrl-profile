@@ -34,7 +34,7 @@ Category 3 applies when a data recipient’s Non-Display Use of real-time NYSE M
 This category applies to use in trading platform(s), such as, but not restricted to, alternative trading systems (ATSs), broker crossing networks, broker crossing systems not filed as ATSs, dark pools, multilateral trading facilities, exchanges and systematic internalization systems. 
 
 Examples of Non-Display Use are, but are not limited to:
-Any trading in any asset class
+* Any trading in any asset class
 * Automated order or quote generation and/or order pegging
 * Price referencing for algorithmic trading
 * Price referencing for smart order routing
@@ -45,3 +45,33 @@ Any trading in any asset class
 * Risk management
 * Compliance
 * Portfolio Valuation 
+
+
+## CME
+Non-Display Use: non-viewable use of Information in any system, process, program, machine or calculation other than in order to display or distribute Information for display. Such use may include, but is not limited to, calculation of P&L, portfolio valuation, order processing, use within Automated Trading Systems and automated order routing.
+
+Automated Trading System: any system or computer software operated by a Licensee Group entity that generates and/or routes orders electronically with no, or only de minimis, human action involved in generating, sending and/or verifying orders.
+
+### Automated Trading
+CategoryA: Automated Trading Usage Category: Non-Display Use of Information by a Licensee Group entity in Automated Trading Systems for any of the following three uses:
+1) Trading as a principal - Use of CME, CBOT, NYMEX or COMEX Information to trade as a principal on a CME Group exchange and for all other Information, trading as a principal;
+2) Facilitating client business – Use of CME, CBOT, NYMEX or COMEX Information to facilitate client business on a CME Group exchange and for all other Information, facilitating client business; and/or
+3) Smart Order Routing – Trading as a principal and facilitating client business, using Information on an execution venue other than a CME Group exchange.
+
+The use of an execution management system/order management system to facilitate the Category A activities is permitted under the license.
+
+### Internal Order Processing
+Category B: Internal Order Processing: Non-Display Use of Information by a Licensee Group entity within electronic systems or computer software that internalize orders in full or in part, in order to determine the entry or non-entry of orders.
+
+### Other Internal Non-Display Usage
+Category C: Other Internal Non-Display Usage Category: Non-Display Use of Information by Licensee Group within electronic systems or computer software operated by a Licensee Group entity for any of the following uses:
+1. Risk management;
+1. Research and analysis;
+1. Fund administration;
+1. Portfolio management; and
+1. Other use approved by CME in writing.
+
+### Derived Data
+The creation, calculation, issuance, distribution, settlement, maintenance or support of any derivative works, including, but not limited to: indexes, exchange traded products (ETP) (e.g. exchange traded funds (ETF), exchange traded notes (ETN)), quotes, price assessments, spot or amalgamated prices or values, ratios, curves, surfaces, charts, certificates, warrants, contracts for difference (CFDs) and other leveraged products, ETP values (e.g. indicative optimized portfolio values (IOPV), net asset values (NAV or iNAV)), any analytical reference figures or values calculated from Information for purposes of fund administration or portfolio management services, pre- and post-trade risk management services, or valuation services.
+
+Licensee agrees that the Products must be created as a result of a material calculation, modification, manipulation, alteration, or change to the Information or any portion thereof, whereby: (i) the original values of the Information are no longer discernible; (ii) the Products cannot be used as a substitute for the Information; (iii) the Information may not be readily reverse engineered from the Product as CME may determine in its sole discretion; or (iv) the Information is used in whole, or in part, in conjunction, aggregation or combination with other Information or data to process, develop, create, or otherwise calculate a price or value. CME reserves the right to determine in its sole discretion whether a Product meets the requirements of this Section 2.4.
