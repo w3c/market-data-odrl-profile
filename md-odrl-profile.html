@@ -1453,7 +1453,22 @@
                 </tbody>
             </table>
             <p>
-                This <a>Duty</a>, usually associated with <a>Derivations</a>, requires and specifies a <a>Disclaimer</a> to be attached to the data irrespective of whether the <a>recipient</a> is an <a>Internal</a> or <a>External Party</a>.
+                In the following example, a <code>Duty</code> requires and specifies an <code>Attribution</code> to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.
+            </p>
+            <pre class="example nohighlight turtle" title="Attribution" id="Attribution">
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><<span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attach</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                        </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
+                <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attribution</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">wording</span><span class="w">      </span><span class="s">"The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc."</span>
+                <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+            </pre>
+            <p>
+                This <code>Duty</code>, usually associated with <code>Derivations</code>, requires and specifies a <code>Disclaimer</code> to be attached to the data irrespective of whether the <code>recipient</code> is an <code>Internal</code> or <code>External Party</code>.
             </p>
             <pre class="example nohighlight turtle" title="Disclaimer" id="Disclaimer">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
