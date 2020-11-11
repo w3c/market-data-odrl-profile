@@ -1452,10 +1452,25 @@
                     </tr>
                 </tbody>
             </table>
+            <p>
+                This <a>Duty</a>, usually associated with <a>Derivations</a>, requires and specifies a <a>Disclaimer</a> to be attached to the data irrespective of whether the <a>recipient</a> is an <a>Internal</a> or <a>External Party</a>.
+            </p>
+            <pre class="example nohighlight turtle" title="Disclaimer" id="Disclaimer">
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w">     </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attach</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                        </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
+                <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Disclaimer</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                        </span><span class="nn">md:</span><span class="nt">wording</span><span class="w">      </span><span class="s">"CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]."</span>
+                <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+            </pre>
         </section>
     </section>
-    </section>
-    <section id='Constraints'>
+</section>
+<section id='Constraints'>
     <h2>Constraints</h2>
     <section id='ConstraintsOnResources'>
         <h2>Constraints on Resources</h2>
@@ -1745,7 +1760,7 @@
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:ClosedUserGroup</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">     </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">TechnicalSupport</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">QualityAssurance</span><span class="w"> </span><span class="p">]</span><span class="p"></span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ProductDevelopment</span><span class="w"> </span><span class="p">]</span><span class="p"> )</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">    </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">TechnicalSupport</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">QualityAssurance</span><span class="w"> </span><span class="p">]</span><span class="p"></span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ProductDevelopment</span><span class="w"> </span><span class="p">]</span><span class="p"> )</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:Display</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
             </pre>
         </section>
