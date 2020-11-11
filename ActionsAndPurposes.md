@@ -75,3 +75,39 @@ Category C: Other Internal Non-Display Usage Category: Non-Display Use of Inform
 The creation, calculation, issuance, distribution, settlement, maintenance or support of any derivative works, including, but not limited to: indexes, exchange traded products (ETP) (e.g. exchange traded funds (ETF), exchange traded notes (ETN)), quotes, price assessments, spot or amalgamated prices or values, ratios, curves, surfaces, charts, certificates, warrants, contracts for difference (CFDs) and other leveraged products, ETP values (e.g. indicative optimized portfolio values (IOPV), net asset values (NAV or iNAV)), any analytical reference figures or values calculated from Information for purposes of fund administration or portfolio management services, pre- and post-trade risk management services, or valuation services.
 
 Licensee agrees that the Products must be created as a result of a material calculation, modification, manipulation, alteration, or change to the Information or any portion thereof, whereby: (i) the original values of the Information are no longer discernible; (ii) the Products cannot be used as a substitute for the Information; (iii) the Information may not be readily reverse engineered from the Product as CME may determine in its sole discretion; or (iv) the Information is used in whole, or in part, in conjunction, aggregation or combination with other Information or data to process, develop, create, or otherwise calculate a price or value. CME reserves the right to determine in its sole discretion whether a Product meets the requirements of this Section 2.4.
+
+
+## NASDAQ
+Non-Display is any method of access that involves access or use by a machine or automated Device without access or use of a Display by a natural person or persons.
+
+### Includes:
+* Automated Trading
+  * All automated trading programs, applications, and scripts. Nasdaq recognizes that many programs including, but not limited to workbook software and applications and third party software and applications with auto-quoting/pegging (e.g. Microsoft Excel, GoogleDocs, Numbers for Mac or other third party software) may be utilized to implement an automated trade, and such use would be considered Non-Display. Other similar use cases would also require payment of the Non-Display license.
+  * Orders that are created or delivered via an automated order handling logic
+  * Automated conditional orders, or complex order chain building whereby an algorithm responds to certain pre-set conditions
+  * Automated order/quote generation and/or order/quote pegging
+  * Price referencing for use in algorithmic trading
+  * Price referencing for use in smart order routing
+* Program Trading and High Frequency Trading
+  * The use of automated programs to trade instruments
+* Order Verification
+  * An Order Verification program that calculates estimated costs
+  * An Order Verification program that provides warning/informational messages such as an order at a defined percentage threshold away from the quote
+* Automated Surveillance Programs
+* Risk management that encompasses auto stop loss/position exiting functions
+  * Risk management, the process of identification and analysis of investment decision making, occurs whenever a person, bank, or other such interested party analyzes and attempts to determine their potential gain or loss and takes the appropriate action depending on their investment objectives.
+  * Automatic order cancellation, or automatic error discovery
+* Clearing and settlement activities
+* Account maintenance (e.g. controlling margin for a customer account)
+* Hot disaster recovery
+* Trading Platform - in this context- shall mean any execution platform operated as or by a registered National Securities Exchange (as defined in Section 3(a)(1) of the Exchange Act), an Alternative Trading System (as defined in Rule 300(a) of Regulation ATS), or an Electronic Communications Network (as defined by Rule 600(b)(23) of Regulation NMS).
+
+### Excludes:
+* If an application is updating a portfolio and exposes such information on the display, this use is not considered Non-Display.
+* For example, calculating VWAPs or other derived information for use in a Display is not considered Non-Display.
+* If an application is updating a risk management officer on a trader’s position and exposing that information on a display, this is not considered Non-Display (provided there are no automated risk management/position exiting functions).
+* Authorization and entitlement
+* Transportation and cold disaster recovery servers – Distributor needs to identify and show that servers used in this process are only used for transportation of market data or trades, and are not utilized for any other fee-liable purpose identified above. Further, disaster recovery servers utilized in a cold environment are non-fee liable, but hot disaster recovery servers are fee-liable because they are typically optimized for load balancing.
+* Devices [or servers] used in the transportation, dissemination or aggregation of data (distribution) are not considered Non-Display. The Distributor should be able to identify such Devices that exist within the market data infrastructure and identify how many Devices are used for distribution separate and apart from the Devices that are used for the reasons listed above.
+
+
