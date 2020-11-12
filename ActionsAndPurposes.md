@@ -1,3 +1,7 @@
+* Only applicable to Realtime?
+* Internal/External use
+
+
 ## SIXX
 
 Non-display Information Usage means all accessing, processing or consumption of Real-time Data, whether or not connected with any other use of Data, for a purpose other than in support of its display or distribution, i.e. for the following Purposes of Usage: 
@@ -109,5 +113,28 @@ Non-Display is any method of access that involves access or use by a machine or 
 * Authorization and entitlement
 * Transportation and cold disaster recovery servers – Distributor needs to identify and show that servers used in this process are only used for transportation of market data or trades, and are not utilized for any other fee-liable purpose identified above. Further, disaster recovery servers utilized in a cold environment are non-fee liable, but hot disaster recovery servers are fee-liable because they are typically optimized for load balancing.
 * Devices [or servers] used in the transportation, dissemination or aggregation of data (distribution) are not considered Non-Display. The Distributor should be able to identify such Devices that exist within the market data infrastructure and identify how many Devices are used for distribution separate and apart from the Devices that are used for the reasons listed above.
+
+
+## LSE
+
+### Trading Use
+Where appropriate, Customers are required to classify use of data in non-display ‘trading based activities’.
+
+Examples of ‘trading based activities’ include but is not limited to usage of Data as: semiautomated or automated order/quote generation; order pegging including reverse pegging, mid bid / offer pegging, limit order pegging; price referencing for trading purposes (excluding in the operation of an ATP); smart order routing to facilitate trading; arbitrage; order management; execution management, pre trade risk checks; electronic order flow and liquidity management system; market making; ‘black box’ trading; program trading; algorithmic trading; operating multilateral trading facilities/dark pools, systematic internalisers.
+
+Non-Display Usage Licence Charges are applicable also if in conjunction with the display of Data.
+
+All Customers are required to complete, as appropriate, the type and level of London Stock Exchange real time data used for non-display purposes:
+* Principal - Customers whose internal Non-Display Usage is for the purpose of (or includes) trading based activities as ‘principal’.
+* Client Facilitation - Customers whose internal Non-Display Usage is for the purpose of (or includes) trading based activities to facilitate customer business.
+* Trading Platforms - Customers whose Non-Display Usage is for the purpose of (or includes) the operation of trading platforms including but not restricted to systematic internalisers / multilateral trading facilities.
+
+### Other Applications Usage
+Applies to non trading-based customer activities, including but not limited to: risk management, quantitative analysis, fund administration, portfolio management.
+
+Other Application Usage Licence Charges are applicable also if in conjunction with the display of Data.
+
+
+### Indices/Benchmarks
 
 
