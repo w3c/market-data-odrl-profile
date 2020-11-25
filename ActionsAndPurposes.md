@@ -1,5 +1,76 @@
-* Only applicable to Realtime?
-* Internal/External use
+Distribute
+
+Display
+
+Non-Display Use
+
+    Trade Automatically
+
+    Derive
+    
+    
+    
+## Automated Trading    
+odrl:action       [ a md:AutomatedTrading ] 
+
+odrl:action       [ a md:AutomatedTrading 
+                      md:purpose      [ a md:PlatformTrading ] // also [ a md:TradingAsPrincipal ] [ a  md:Brokerage ]
+                  ] 
+
+## Derive
+odrl:action       [ a odrl:Derive ] 
+
+odrl:action       [ a odrl:Derive 
+                      md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
+                  ] 
+
+
+odrl:action       [ a odrl:Derive 
+                      md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
+                      md:purpose       [ a md:CalculateIndex ]
+                  ] 
+
+## Non-Display
+odrl:action       [ a md:NonDisplayUse 
+                      md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
+                  ] 
+odrl:prohibition  [ a                  odrl:Prohibition 
+                    odrl:action        [ a            md:Derive 
+                                         md:purpose   [ a md:CalculateIndex ]
+                                       ] 
+                  ]  
+                  [ a                  odrl:Prohibition ;
+                    odrl:action       [ a md:TradeAutomatically ]     
+                  ] 
+
+## Display
+md:recipients     [ a md:InternalParty ] 
+odrl:action       [ a odrl:Display  
+                      md:purpose    ( [ a md:TechnicalSupport ] [ a md:QualityAssurance ] [ a md:ProductDevelopment ] )
+                  ] 
+
+## Use
+odrl:action       [ a md:Use ]
+
+odrl:recipient    [ a md:InternalParty ]
+odrl:action       [ a md:Use ; 
+                    md:purpose      [ a md:Trading ]
+                  ]
+
+odrl:action       [ a odrl:Use 
+	                  md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
+	              ] 
+
+## Distribute
+odrl:action       [ a odrl:Distribute ] 
+
+md:service        [ a md:Service ;
+                      md:provides   [ a              md:TradedProduct, md:Asset
+                                      md:assetClass  [ a md:Warrants ] , [ a cfi:RWXXXX ]
+                                    ] 
+                  ] 
+odrl:action       [ a odrl:Distribute ] 
+
 
 
 ## SIXX
