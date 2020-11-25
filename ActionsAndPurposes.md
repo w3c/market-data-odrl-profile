@@ -16,12 +16,11 @@ Non-Display Use
 odrl:action       [ a md:AutomatedTrading ] 
 
 odrl:action       [ a md:AutomatedTrading 
-
                       md:purpose      [ a md:PlatformTrading ] // also [ a md:TradingAsPrincipal ] [ a  md:Brokerage ]
-		      
                   ] 
 ```
 ## Derive
+```
 odrl:action       [ a odrl:Derive ] 
 
 odrl:action       [ a odrl:Derive 
@@ -46,14 +45,16 @@ odrl:prohibition  [ a                  odrl:Prohibition
 		  [ a                  odrl:Prohibition ;
                     odrl:action       [ a md:TradeAutomatically ]     
                   ] 
-
+```
 ## Display
+```
 md:recipients     [ a md:InternalParty ] 
 odrl:action       [ a odrl:Display  
                       md:purpose    ( [ a md:TechnicalSupport ] [ a md:QualityAssurance ] [ a md:ProductDevelopment ] )
                   ] 
-
+```
 ## Use
+```
 odrl:action       [ a md:Use ]
 
 odrl:recipient    [ a md:InternalParty ]
@@ -64,8 +65,9 @@ odrl:action       [ a md:Use ;
 odrl:action       [ a odrl:Use 
 	                  md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
 	              ] 
-
+```
 ## Distribute
+```
 odrl:action       [ a odrl:Distribute ] 
 
 md:service        [ a md:Service ;
@@ -74,7 +76,7 @@ md:service        [ a md:Service ;
                                     ] 
                   ] 
 odrl:action       [ a odrl:Distribute ] 
-
+```
 
 
 ## SIXX
