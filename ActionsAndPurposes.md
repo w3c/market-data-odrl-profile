@@ -32,8 +32,9 @@ odrl:action       [ a odrl:Derive
                       md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
                       md:purpose       [ a md:CalculateIndex ]
                   ] 
-
+```
 ## Non-Display
+```
 odrl:action       [ a md:NonDisplayUse 
                       md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
                   ] 
