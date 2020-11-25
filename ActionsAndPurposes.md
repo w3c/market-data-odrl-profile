@@ -10,18 +10,19 @@ Non-Display Use
     
     
     
-## Automated Trading    
+## Automated Trading
+''
 odrl:action       [ a md:AutomatedTrading ] 
 
 odrl:action       [ a md:AutomatedTrading 
                       md:purpose      [ a md:PlatformTrading ] // also [ a md:TradingAsPrincipal ] [ a  md:Brokerage ]
                   ] 
-
+''
 ## Derive
 odrl:action       [ a odrl:Derive ] 
 
 odrl:action       [ a odrl:Derive 
-                      md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
+                      md:derivation	[ a md:Irreversable ] , [ a md:Non-Substitutive ] 
                   ] 
 
 
@@ -38,8 +39,8 @@ odrl:prohibition  [ a                  odrl:Prohibition
                     odrl:action        [ a            md:Derive 
                                          md:purpose   [ a md:CalculateIndex ]
                                        ] 
-                  ]  
-                  [ a                  odrl:Prohibition ;
+                  ]
+		  [ a                  odrl:Prohibition ;
                     odrl:action       [ a md:TradeAutomatically ]     
                   ] 
 
