@@ -13,10 +13,11 @@ Non-Display Use
 ## Automated Trading
 ``
 odrl:action       [ a md:AutomatedTrading ] 
-``
-``
+
 odrl:action       [ a md:AutomatedTrading 
+
                       md:purpose      [ a md:PlatformTrading ] // also [ a md:TradingAsPrincipal ] [ a  md:Brokerage ]
+		      
                   ] 
 ``
 ## Derive
