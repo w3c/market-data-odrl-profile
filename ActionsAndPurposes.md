@@ -81,6 +81,9 @@ odrl:action       [ a odrl:Distribute ]
 
 
 ## SIXX
+Any software using Data for a purpose other than in support of its display or distribution is considered a fee-liable Application (aka non-display).
+
+Real-time data only.
 
 Non-display Information Usage means all accessing, processing or consumption of Real-time Data, whether or not connected with any other use of Data, for a purpose other than in support of its display or distribution, i.e. for the following Purposes of Usage: 
 1. Trading Applications
