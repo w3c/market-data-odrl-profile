@@ -1164,6 +1164,64 @@
         </section>
     </section>
 </section>
+<section id='Permissions'>
+    <h2>Permissions</h2>
+    <p>
+        Valid <a href="https://www.w3.org/TR/odrl-model/#permission">Permissions</a>a> allow the specified <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Actions</a> to be taken over their target <a>Asset</a>.
+    </p><p>
+        Validity requires all active <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duties</a> be fulfilled and all <a href="https://www.w3.org/TR/odrl-vocab/#term-Constraint">Constraints</a>a> satisfied.
+    </p>
+     <section id='PermissionFunctions'>
+        <h2>Permission Functions</h2>
+        <p>
+            Permission functions specify the role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in a <code>Permission</code>.
+        </p>
+        <section data-dfn-for="licensee">
+            <h2><dfn>licensee</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is the signatory to the license (from which the permission is derived) and is directly bound by it.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has licensee</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/licensee">http://www.w3.org/md-odrl-profile/licensee</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">Permission</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="affiliates">
+            <h2><dfn>affiliates</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Provides an enumerated list of the affiliates of the licensee who are associated with the license through their relationship with the licensee.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>The relationship is usally one of ownership with the <a>Provider</a> specifying the threshold shareholding for affiliates to qualify.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>Usually the same rules apply to both the licensee and its affiliates. But a <a>recipients</a>constraint can be used to enforce any differences.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>has affiliates</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/affilates">http://www.w3.org/md-odrl-profile/affiliates</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">Permission</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>
 <section id='Duties'>
     <h2>Duties</h2>
     <p>
@@ -1751,6 +1809,8 @@
                         <th>Label:</th><td>has recipients</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/recipients">http://www.w3.org/md-odrl-profile/recipients</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
                     </tr><tr>
