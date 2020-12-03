@@ -31,7 +31,7 @@
             </p><p>
                 We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
             </p>
-            <section data-dfn-for="Internal Party">
+            <section data-dfn-for="InternalParty">
                 <h2><dfn>Internal Party</dfn></h2>
                 <table class="def propdef">
                     <tbody>
@@ -49,7 +49,43 @@
                     </tbody>
                 </table>
             </section>
-            <section data-dfn-for="External Party">
+            <section data-dfn-for="LicensingParty">
+                <h2><dfn>Licensing Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is the signatory of the governing license and is directly bound by it.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Licensing Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/LicensingParty">http://www.w3.org/md-odrl-profile/LicensingParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Affiliated Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="AffiliatedParty">
+                <h2><dfn>Affiliated Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> designated as <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a> by virtue of their relationship with the <a>Licensing Party</a> as specified and enumerated in the governing license.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Affiliated Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AffiliatedParty">http://www.w3.org/md-odrl-profile/AffiliatedParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Licensing Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="ExternalParty">
                 <h2><dfn>External Party</dfn></h2>
                 <table class="def propdef">
                     <tbody>
@@ -828,7 +864,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Marketing the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users of subscribers.</td>
+                            <th>Definition:</th><td>Marketing the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users or subscribers.</td>
                         </tr><tr>
                             <th>Note:</th><td>The audience can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
                         </tr><tr>
@@ -845,7 +881,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Demonstrating the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users of subscribers.</td>
+                                <th>Definition:</th><td>Demonstrating the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users or subscribers.</td>
                             </tr><tr>
                                 <th>Note:</th><td>The audience for demonstrations can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
                             </tr><tr>
