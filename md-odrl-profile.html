@@ -30,6 +30,10 @@
                 Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> that belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> (and its affiliated or enumerated companies) and those that don't (aka third-parties).
             </p><p>
                 We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
+            </p><p>
+                Furthermore, the rights and obligations applicable to the direct <a>licensee</a> can sometimes differ from those offered to their <a>affiliated</a> parties. So we must express the distinction too.
+            </p><p>
+                In distribution use cases, the type of third-party recipient is often significant. We differentiate between <a>professional</a>, <a>non-professional</a>, and <a>educational</a> parties.
             </p>
             <section data-dfn-for="InternalParty">
                 <h2><dfn>Internal Party</dfn></h2>
@@ -101,6 +105,62 @@
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Disjoint with:</th><td><a>Internal Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="ProfessionalParty">
+                <h2><dfn>Professional Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is neither a <a>Non-Professional</a> nor an <a>Educational</a> party.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Professional Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProfessionalParty">http://www.w3.org/md-odrl-profile/ProfessionalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Educational Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Non-ProfessionalParty">
+                <h2><dfn>Non-Professional Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is both a natural person (rather than a corporation, partnership, or other organisation) and acts only on their personal account.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Non-professional parties may not offer paid-for nor formal advice.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Non-Professional Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Non-ProfessionalParty">http://www.w3.org/md-odrl-profile/Non-ProfessionalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Professional Party</a> , <a>Educational Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="EducationalParty">
+                <h2><dfn>Educational Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A formally accredited educational institution using the <a>Asset</a> solely for the purpose of teaching.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Educational Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/EducationalParty">http://www.w3.org/md-odrl-profile/EducationalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a><a>Non-Professional Party</a> , <a>Professional Party</a></a></td>
                         </tr>
                     </tbody>
                 </table>
