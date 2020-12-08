@@ -863,7 +863,24 @@
                         </tr>
                     </tbody>
                 </table>
-                <section data-dfn-for="ClosedUserGroup">
+                <section data-dfn-for="RestrictedUserGroup">
+                    <h2><dfn>Restricted User Group</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Control that ensures that only uniquely identified users can access the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Note:</th><td>Covers both human and machine access.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Restricted User Group</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/RestrictedUserGroup">http://www.w3.org/md-odrl-profile/RestrictedUserGroup</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Control</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <section data-dfn-for="ClosedUserGroup">
                     <h2><dfn>Closed User Group</dfn></h2>
                     <table class="def propdef">
                         <tbody>
@@ -874,13 +891,14 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ClosedUserGroup">http://www.w3.org/md-odrl-profile/ClosedUserGroup</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Restricted User Group</a></td>
                             </tr>
                         </tbody>
                     </table>
                     <p>
                         For usage, see <a href="#ClosedUserGroupControl">Example 11</a>.
                     </p>
+                </section>
                 </section>
                 <section data-dfn-for="ProviderManaged">
                     <h2><dfn>Provider Managed</dfn></h2>
@@ -893,7 +911,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProviderManaged">http://www.w3.org/md-odrl-profile/ProviderManaged</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Control</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -909,7 +927,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ConsumerManaged">http://www.w3.org/md-odrl-profile/ConsumerManaged</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Control</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Control</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -941,7 +959,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Irreversible">http://www.w3.org/md-odrl-profile/Irreversible</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Derivation</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Derivation</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -957,7 +975,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Non-Substitutive">http://www.w3.org/md-odrl-profile/Non-Substitutive</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Derivation</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Derivation</a></td>
                             </tr>
                         </tbody>
                     </table>
