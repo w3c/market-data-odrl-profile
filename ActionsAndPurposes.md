@@ -12,8 +12,9 @@ Non-Display Use
     
 ## Automated Trading
 ```
-
 odrl:action       [ a md:AutomatedTrading ] 
+
+-
 
 odrl:action       [ a md:AutomatedTrading 
                       md:purpose      [ a md:PlatformTrading ] // also [ a md:TradingAsPrincipal ] [ a  md:Brokerage ]
@@ -21,12 +22,16 @@ odrl:action       [ a md:AutomatedTrading
 ```
 ## Derive
 ```
+
 odrl:action       [ a odrl:Derive ] 
+
+-
 
 odrl:action       [ a odrl:Derive 
                       md:derivation	[ a md:Irreversable ] , [ a md:Non-Substitutive ] 
                   ] 
 
+-
 
 odrl:action       [ a odrl:Derive 
                       md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
@@ -49,7 +54,7 @@ odrl:prohibition  [ a                  odrl:Prohibition
 ```
 ## Display
 ```
-md:recipients     [ a md:InternalParty ] 
+md:users          [ a md:InternalParty ] 
 odrl:action       [ a odrl:Display  
                       md:purpose    ( [ a md:TechnicalSupport ] [ a md:QualityAssurance ] [ a md:ProductDevelopment ] )
                   ] 
@@ -58,18 +63,29 @@ odrl:action       [ a odrl:Display
 ```
 odrl:action       [ a md:Use ]
 
-odrl:recipient    [ a md:InternalParty ]
+-
+
+odrl:users        [ a md:InternalParty ]
 odrl:action       [ a md:Use ; 
                     md:purpose      [ a md:Trading ]
                   ]
 
+-
+
 odrl:action       [ a odrl:Use 
-	                  md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
-	              ] 
+	            md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
+	          ] 
 ```
 ## Distribute
 ```
 odrl:action       [ a odrl:Distribute ] 
+
+-
+
+md:recipients     [ a md:ProfessionalParty ]
+odrl:action       [ a odrl:Distribute ] 
+
+-
 
 md:service        [ a md:Service ;
                       md:provides   [ a              md:TradedProduct, md:Asset
