@@ -14,7 +14,7 @@ Non-Display Use
 ```
 odrl:action       [ a md:AutomatedTrading ] 
 
--
+
 
 odrl:action       [ a md:AutomatedTrading 
                       md:purpose      [ a md:PlatformTrading ] // also [ a md:TradingAsPrincipal ] [ a  md:Brokerage ]
@@ -25,13 +25,13 @@ odrl:action       [ a md:AutomatedTrading
 
 odrl:action       [ a odrl:Derive ] 
 
--
+
 
 odrl:action       [ a odrl:Derive 
                       md:derivation	[ a md:Irreversable ] , [ a md:Non-Substitutive ] 
                   ] 
 
--
+
 
 odrl:action       [ a odrl:Derive 
                       md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
@@ -63,14 +63,14 @@ odrl:action       [ a odrl:Display
 ```
 odrl:action       [ a md:Use ]
 
--
+
 
 odrl:users        [ a md:InternalParty ]
 odrl:action       [ a md:Use ; 
                     md:purpose      [ a md:Trading ]
                   ]
 
--
+
 
 odrl:action       [ a odrl:Use 
 	            md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
@@ -80,12 +80,12 @@ odrl:action       [ a odrl:Use
 ```
 odrl:action       [ a odrl:Distribute ] 
 
--
+
 
 md:recipients     [ a md:ProfessionalParty ]
 odrl:action       [ a odrl:Distribute ] 
 
--
+
 
 md:service        [ a md:Service ;
                       md:provides   [ a              md:TradedProduct, md:Asset
