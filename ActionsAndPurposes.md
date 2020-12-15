@@ -1,4 +1,4 @@
-## Actions
+### Actions
 Distribute
 
 Display
@@ -9,7 +9,7 @@ Non-Display Use
 
     Derive
     
-## Purposes
+### Purposes
 
 Calculate Index
 
