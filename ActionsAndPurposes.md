@@ -18,14 +18,23 @@ Create Traded Product
 Benchmark
 
 Trade
+
  Semi-automated or automated order/quote generation
+ 
  Algorithmic or program trading & "Black-box“ trading
+ 
  Order Pegging
+ 
  Price referencing for trading purposes ß Systematic internalization
+ 
  Mid-point trading
+ 
  Smart order routing to facilitate trading
+ 
  Market making
+ 
  Execution Management
+ 
  Quoting and trading of financial derivatives
     
     
