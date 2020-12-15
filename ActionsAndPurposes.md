@@ -1,3 +1,4 @@
+## Actions
 Distribute
 
 Display
@@ -8,6 +9,13 @@ Non-Display Use
 
     Derive
     
+## Purposes
+
+Calculate Index
+
+Create Traded Product
+
+Benchmark
     
     
 ## Automated Trading
