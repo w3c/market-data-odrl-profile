@@ -19,23 +19,23 @@ Benchmark
 
 Trade
 
-   Semi-automated or automated order/quote generation
+    Semi-automated or automated order/quote generation
  
-   Algorithmic or program trading & "Black-box“ trading
+    Algorithmic or program trading & "Black-box“ trading
  
-   Order Pegging
+    Order Pegging
  
-   Price referencing for trading purposes ß Systematic internalization
+    Price referencing for trading purposes ß Systematic internalization
  
-   Mid-point trading
+    Mid-point trading
  
-   Smart order routing to facilitate trading
+    Smart order routing to facilitate trading
  
-   Market making
+    Market making
  
-   Execution Management
+    Execution Management
  
-   Quoting and trading of financial derivatives
+    Quoting and trading of financial derivatives
     
     
 ## Automated Trading
