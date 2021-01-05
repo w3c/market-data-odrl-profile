@@ -9,7 +9,8 @@ Non-Display Use
     Trade Automatically
     
     Derive
-    
+
+***
 ### Purposes
 
 Calculate Index
@@ -26,8 +27,7 @@ Trade
     
     Brokerage
 
-
-    
+***   
 ### Derivations
 
 Irreversable
