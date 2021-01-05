@@ -37,7 +37,19 @@
     
         Trading as Broker
 	
-Add Benchmarking/Risk management/Quantitative analysis/Fund administration/Portfolio management?
+    Training
+    
+    Technical Support
+    
+    Quality Assurance
+    
+    Product Development
+    
+    Marketing
+    
+        Demonstrations
+	
+*Add Benchmarking/Risk management/Quantitative analysis/Fund administration/Portfolio management?*
   
 ## Derivations
 
