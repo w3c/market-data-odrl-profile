@@ -8,25 +8,6 @@ Non-Display Use
 
     Trade Automatically
     
-        -  Semi-automated or automated order/quote generation
-
-        -  Algorithmic or program trading & "Black-box“ trading
-
-        -  Order Pegging
-        
-    -  Price referencing for trading purposes ß Systematic internalization
-
-    -  Mid-point trading
-
-    -  Smart order routing to facilitate trading
-
-    -  Market making
-
-    -  Execution Management
-
-    -  Quoting and trading of financial derivatives
-
-
     Derive
     
 ### Purposes
@@ -132,6 +113,16 @@ md:service        [ a md:Service ;
 odrl:action       [ a odrl:Distribute ] 
 ```
 
+**Automated Trading**
+* Semi-automated or automated order/quote generation
+* Algorithmic or program trading & "Black-box“ trading
+* Order Pegging
+* Price referencing for trading purposes ß Systematic internalization
+* Mid-point trading
+* Smart order routing to facilitate trading
+* Market making
+* Execution Management
+* Quoting and trading of financial derivatives
 
 ## SIXX
 Any software using Data for a purpose other than in support of its display or distribution is considered a fee-liable Application (aka non-display).
