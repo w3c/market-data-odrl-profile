@@ -1,6 +1,6 @@
 # Vocabulary
 
-### Actions
+## Actions
 
     Distribute
 
@@ -23,39 +23,37 @@
 * Execution Management
 * Quoting and trading of financial derivatives
 
-***
-### Purposes
+## Purposes
 
-Calculate Index
+    Calculate Index
 
-Create Traded Product
+    Create Traded Product
 
-Benchmark
+    Benchmark
 
-Trade
+    Trade
 
-    Trade as Platform
+        Trade as Platform
     
-    Trade as Principle
+        Trade as Principle
     
-    Brokerage
+        Brokerage
+  
+## Derivations
 
-***   
-### Derivations
+    Irreversable
 
-Irreversable
-
-Non-Substitutive
+    Non-Substitutive
 
 # Examples
 
 ## Automated Trading
 ```
-odrl:action       md:AutomatedTrading
+1. odrl:action       md:AutomatedTrading
 
 
 
-odrl:action       [ a               md:AutomatedTrading 
+2. odrl:action       [ a               md:AutomatedTrading 
                     md:purpose      md:PlatformTrading
                   ] 
 ```
