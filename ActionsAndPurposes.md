@@ -28,8 +28,6 @@
     Calculating Index
 
     Creating Traded Product
-    
-    Benchmarking
 
     Trading
 
@@ -38,6 +36,8 @@
         Trading as Principle
     
         Trading as Broker
+	
+Add Benchmarking/Risk management/Quantitative analysis/Fund administration/Portfolio management?
   
 ## Derivations
 
