@@ -8,7 +8,7 @@ Non-Display Use
 
     Trade Automatically
     
-        Semi-automated or automated order/quote generation
+        *Semi-automated or automated order/quote generation
         Algorithmic or program trading & "Black-box“ trading
         Order Pegging
         Price referencing for trading purposes ß Systematic internalization
@@ -16,7 +16,7 @@ Non-Display Use
         Smart order routing to facilitate trading
         Market making
         Execution Management
-        Quoting and trading of financial derivatives
+        Quoting and trading of financial derivatives*
 
     Derive
     
