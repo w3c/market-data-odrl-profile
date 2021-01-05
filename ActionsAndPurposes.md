@@ -8,11 +8,11 @@ Non-Display Use
 
     Trade Automatically
     
-    -  Semi-automated or automated order/quote generation
+        -  Semi-automated or automated order/quote generation
 
-    -  Algorithmic or program trading & "Black-box“ trading
+        -  Algorithmic or program trading & "Black-box“ trading
 
-    -  Order Pegging
+        -  Order Pegging
         
     -  Price referencing for trading purposes ß Systematic internalization
 
@@ -27,7 +27,7 @@ Non-Display Use
     -  Quoting and trading of financial derivatives
 
 
-    **Derive**
+    Derive
     
 ### Purposes
 
