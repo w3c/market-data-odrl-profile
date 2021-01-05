@@ -2,15 +2,26 @@
 
 ### Actions
 
-Distribute
+    Distribute
 
-Display
+    Display
 
-Non-Display Use
+    Non-Display Use
 
-    Trade Automatically
+        Trade Automatically
     
-    Derive
+        Derive
+
+**Automated Trading** covers:
+* Semi-automated or automated order/quote generation
+* Algorithmic or program trading & "Black-box“ trading
+* Order Pegging
+* Price referencing for trading purposes ß Systematic internalization
+* Mid-point trading
+* Smart order routing to facilitate trading
+* Market making
+* Execution Management
+* Quoting and trading of financial derivatives
 
 ***
 ### Purposes
@@ -48,7 +59,7 @@ odrl:action       [ a               md:AutomatedTrading
                     md:purpose      md:PlatformTrading
                   ] 
 ```
-***
+
 ## Derive
 ```
 
@@ -67,7 +78,7 @@ odrl:action       [ a               odrl:Derive
                     md:purpose      md:CalculateIndex
                   ] 
 ```
-***
+
 ## Non-Display
 ```
 odrl:action       md:NonDisplayUse 
@@ -80,7 +91,7 @@ odrl:prohibition  [ a               odrl:Prohibition
                     odrl:action     md:TradeAutomatically    
                   ] 
 ```
-***
+
 ## Display
 ```
 md:users          [ a md:InternalParty ] 
@@ -88,7 +99,7 @@ odrl:action       [ a odrl:Display
                       md:purpose    ( [ a md:TechnicalSupport ] [ a md:QualityAssurance ] [ a md:ProductDevelopment ] )
                   ] 
 ```
-***
+
 ## Use
 ```
 odrl:action       [ a md:Use ]
@@ -106,7 +117,7 @@ odrl:action       [ a odrl:Use
 	            md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
 	          ] 
 ```
-***
+
 ## Distribute
 ```
 odrl:action       [ a odrl:Distribute ] 
@@ -125,19 +136,8 @@ md:service        [ a md:Service ;
                   ] 
 odrl:action       [ a odrl:Distribute ] 
 ```
-***
-**Automated Trading**
-* Semi-automated or automated order/quote generation
-* Algorithmic or program trading & "Black-box“ trading
-* Order Pegging
-* Price referencing for trading purposes ß Systematic internalization
-* Mid-point trading
-* Smart order routing to facilitate trading
-* Market making
-* Execution Management
-* Quoting and trading of financial derivatives
 
-***
+# License Examples
 
 ## SIXX
 Any software using Data for a purpose other than in support of its display or distribution is considered a fee-liable Application (aka non-display).
