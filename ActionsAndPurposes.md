@@ -8,7 +8,7 @@ Non-Display Use
 
     Trade Automatically
     
-*Semi-automated or automated order/quote generation*
+    *Semi-automated or automated order/quote generation*
 
 *Algorithmic or program trading & "Black-box“ trading*
 
