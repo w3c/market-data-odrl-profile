@@ -54,85 +54,78 @@
 
 
 2. odrl:action       [ a               md:AutomatedTrading 
-                    md:purpose      md:PlatformTrading
-                  ] 
+                       md:purpose      md:PlatformTrading
+                     ] 
 ```
 
 ## Derive
 ```
 
-odrl:action       odrl:Derive
+1. odrl:action       odrl:Derive
 
 
 
-odrl:action       [ a               odrl:Derive 
-                    md:derivation   md:Irreversable , md:Non-Substitutive
-                  ] 
+2. odrl:action       [ a               odrl:Derive 
+                       md:derivation   md:Irreversable , md:Non-Substitutive
+                     ] 
 
 
 
-odrl:action       [ a               odrl:Derive 
-                    md:derivation   md:Irreversable , md:Non-Substitutive
-                    md:purpose      md:CalculateIndex
-                  ] 
+3. odrl:action       [ a               odrl:Derive 
+                       md:derivation   md:Irreversable , md:Non-Substitutive
+                       md:purpose      md:CalculateIndex
+                     ] 
 ```
 
 ## Non-Display
 ```
-odrl:action       md:NonDisplayUse 
-odrl:prohibition  [ a               odrl:Prohibition 
-                    odrl:action     [ a            md:Derive 
-                                      md:purpose   md:CalculateIndex
-                                    ] 
-                  ]
-		  [ a               odrl:Prohibition ;
-                    odrl:action     md:TradeAutomatically    
-                  ] 
+1. odrl:action       md:NonDisplayUse 
+   odrl:prohibition  [ a               odrl:Prohibition 
+                       odrl:action     [ a            md:Derive 
+                                         md:purpose   md:CalculateIndex
+                                       ] 
+                     ]
+		     [ a               odrl:Prohibition ;
+                       odrl:action     md:TradeAutomatically    
+                     ] 
 ```
 
 ## Display
 ```
-md:users          [ a md:InternalParty ] 
-odrl:action       [ a odrl:Display  
-                      md:purpose    ( [ a md:TechnicalSupport ] [ a md:QualityAssurance ] [ a md:ProductDevelopment ] )
-                  ] 
+1. odrl:action       [ a               odrl:Display  
+                       md:purpose      ( md:TechnicalSupport  md:QualityAssurance  md:ProductDevelopment )
+                     ] 
+   md:users          md:InternalParty 
 ```
 
 ## Use
 ```
-odrl:action       [ a md:Use ]
+1. odrl:action       md:Use
 
 
 
-odrl:users        [ a md:InternalParty ]
-odrl:action       [ a md:Use ; 
-                    md:purpose      [ a md:Trading ]
-                  ]
-
-
-
-odrl:action       [ a odrl:Use 
-	            md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
-	          ] 
+2. odrl:users        md:InternalParty
+   odrl:action       [ a               md:Use
+                       md:purpose      md:Trade
+                     ]
 ```
 
 ## Distribute
 ```
-odrl:action       [ a odrl:Distribute ] 
+1. odrl:action       odrl:Distribute
 
 
-
-md:recipients     [ a md:ProfessionalParty ]
-odrl:action       [ a odrl:Distribute ] 
-
+2. odrl:action       odrl:Distribute
+   md:recipients     md:ProfessionalParty
 
 
-md:service        [ a md:Service ;
-                      md:provides   [ a              md:TradedProduct, md:Asset
-                                      md:assetClass  [ a md:Warrants ] , [ a cfi:RWXXXX ]
-                                    ] 
-                  ] 
-odrl:action       [ a odrl:Distribute ] 
+3. odrl:action       odrl:Distribute
+   md:service        [ a               md:Service ;
+                       dc:identifier.  "My warrant service"
+                       md:provides    [ a              md:Asset
+                                        md:assetClass  cfi:RWXXXX // Warrants
+                                      ] 
+                     ] 
 ```
 
 # License Examples
