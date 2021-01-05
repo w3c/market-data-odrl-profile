@@ -1,4 +1,5 @@
 ### Actions
+
 Distribute
 
 Display
@@ -6,8 +7,26 @@ Display
 Non-Display Use
 
     Trade Automatically
-
-    Derive
+    
+    > Semi-automated or automated order/quote generation
+    >
+    > Algorithmic or program trading & "Black-box“ trading
+    >
+    > Order Pegging
+    >
+    > Price referencing for trading purposes ß Systematic internalization
+    >
+    > Mid-point trading
+    >
+    > Smart order routing to facilitate trading
+    >
+    > Market making
+    >
+    > Execution Management
+    >
+    > Quoting and trading of financial derivatives
+    >
+    > Derive
     
 ### Purposes
 
@@ -19,65 +38,54 @@ Benchmark
 
 Trade
 
-    Semi-automated or automated order/quote generation
- 
-    Algorithmic or program trading & "Black-box“ trading
- 
-    Order Pegging
- 
-    Price referencing for trading purposes ß Systematic internalization
- 
-    Mid-point trading
- 
-    Smart order routing to facilitate trading
- 
-    Market making
- 
-    Execution Management
- 
-    Quoting and trading of financial derivatives
+
     
+### Derivations
+
+Irreversable
+
+Non-Substitutive
+
+
     
 ## Automated Trading
 ```
-odrl:action       [ a md:AutomatedTrading ] 
+odrl:action       md:AutomatedTrading
 
 
 
-odrl:action       [ a md:AutomatedTrading 
-                      md:purpose      [ a md:PlatformTrading ] // also [ a md:TradingAsPrincipal ] [ a  md:Brokerage ]
+odrl:action       [ a               md:AutomatedTrading 
+                    md:purpose      md:PlatformTrading // also md:TradingAsPrincipal or md:Brokerage
                   ] 
 ```
 ## Derive
 ```
 
-odrl:action       [ a odrl:Derive ] 
+odrl:action       odrl:Derive
 
 
 
-odrl:action       [ a odrl:Derive 
-                      md:derivation	[ a md:Irreversable ] , [ a md:Non-Substitutive ] 
+odrl:action       [ a               odrl:Derive 
+                    md:derivation   md:Irreversable , md:Non-Substitutive
                   ] 
 
 
 
-odrl:action       [ a odrl:Derive 
-                      md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
-                      md:purpose       [ a md:CalculateIndex ]
+odrl:action       [ a               odrl:Derive 
+                    md:derivation   md:Irreversable , md:Non-Substitutive
+                    md:purpose      md:CalculateIndex
                   ] 
 ```
 ## Non-Display
 ```
-odrl:action       [ a md:NonDisplayUse 
-                      md:derivation    [ a md:Irreversable ] , [ a md:Non-Substitutive ] 
-                  ] 
-odrl:prohibition  [ a                  odrl:Prohibition 
-                    odrl:action        [ a            md:Derive 
-                                         md:purpose   [ a md:CalculateIndex ]
-                                       ] 
+odrl:action       md:NonDisplayUse 
+odrl:prohibition  [ a               odrl:Prohibition 
+                    odrl:action     [ a            md:Derive 
+                                      md:purpose   md:CalculateIndex
+                                    ] 
                   ]
-		  [ a                  odrl:Prohibition ;
-                    odrl:action       [ a md:TradeAutomatically ]     
+		  [ a               odrl:Prohibition ;
+                    odrl:action     md:TradeAutomatically    
                   ] 
 ```
 ## Display
