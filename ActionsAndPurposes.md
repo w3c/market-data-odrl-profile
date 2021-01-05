@@ -20,6 +20,12 @@ Benchmark
 
 Trade
 
+    Trade as Platform
+    
+    Trade as Principle
+    
+    Brokerage
+
 
     
 ### Derivations
@@ -28,8 +34,7 @@ Irreversable
 
 Non-Substitutive
 
-
-    
+***
 ## Automated Trading
 ```
 odrl:action       md:AutomatedTrading
@@ -40,6 +45,7 @@ odrl:action       [ a               md:AutomatedTrading
                     md:purpose      md:PlatformTrading // also md:TradingAsPrincipal or md:Brokerage
                   ] 
 ```
+***
 ## Derive
 ```
 
@@ -58,6 +64,7 @@ odrl:action       [ a               odrl:Derive
                     md:purpose      md:CalculateIndex
                   ] 
 ```
+***
 ## Non-Display
 ```
 odrl:action       md:NonDisplayUse 
@@ -70,6 +77,7 @@ odrl:prohibition  [ a               odrl:Prohibition
                     odrl:action     md:TradeAutomatically    
                   ] 
 ```
+***
 ## Display
 ```
 md:users          [ a md:InternalParty ] 
@@ -77,6 +85,7 @@ odrl:action       [ a odrl:Display
                       md:purpose    ( [ a md:TechnicalSupport ] [ a md:QualityAssurance ] [ a md:ProductDevelopment ] )
                   ] 
 ```
+***
 ## Use
 ```
 odrl:action       [ a md:Use ]
@@ -94,6 +103,7 @@ odrl:action       [ a odrl:Use
 	            md:purpose    ( [ a md:Trading] [ a md:Marketing ] )
 	          ] 
 ```
+***
 ## Distribute
 ```
 odrl:action       [ a odrl:Distribute ] 
@@ -112,7 +122,7 @@ md:service        [ a md:Service ;
                   ] 
 odrl:action       [ a odrl:Distribute ] 
 ```
-
+***
 **Automated Trading**
 * Semi-automated or automated order/quote generation
 * Algorithmic or program trading & "Black-box“ trading
@@ -123,6 +133,8 @@ odrl:action       [ a odrl:Distribute ]
 * Market making
 * Execution Management
 * Quoting and trading of financial derivatives
+
+***
 
 ## SIXX
 Any software using Data for a purpose other than in support of its display or distribution is considered a fee-liable Application (aka non-display).
