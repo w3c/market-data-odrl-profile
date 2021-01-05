@@ -104,10 +104,10 @@
 
 
 
-2. odrl:users        md:InternalParty
-   odrl:action       [ a               md:Use
+2. odrl:action       [ a               md:Use
                        md:purpose      md:Trade
                      ]
+   odrl:users        md:InternalParty   
 ```
 
 ## Distribute
@@ -115,13 +115,14 @@
 1. odrl:action       odrl:Distribute
 
 
-2. odrl:action       odrl:Distribute
-   md:recipients     md:ProfessionalParty
+2. odrl:action       [ a               odrl:Distribute
+                       md:recipients   md:ProfessionalParty
+		     ]
 
 
 3. odrl:action       odrl:Distribute
    md:service        [ a               md:Service ;
-                       dc:identifier.  "My warrant service"
+                       dc:identifier   "My warrant service"
                        md:provides    [ a              md:Asset
                                         md:assetClass  cfi:RWXXXX // Warrants
                                       ] 
