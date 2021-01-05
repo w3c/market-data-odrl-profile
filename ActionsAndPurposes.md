@@ -1,3 +1,5 @@
+# Vocabulary
+
 ### Actions
 
 Distribute
@@ -34,7 +36,8 @@ Irreversable
 
 Non-Substitutive
 
-***
+# Examples
+
 ## Automated Trading
 ```
 odrl:action       md:AutomatedTrading
@@ -42,7 +45,7 @@ odrl:action       md:AutomatedTrading
 
 
 odrl:action       [ a               md:AutomatedTrading 
-                    md:purpose      md:PlatformTrading // also md:TradingAsPrincipal or md:Brokerage
+                    md:purpose      md:PlatformTrading
                   ] 
 ```
 ***
