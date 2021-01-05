@@ -298,11 +298,11 @@ odrl:action       [ a               odrl:Derive
                     md:derivation   md:Irreversable , md:Non-Substitutive
 		    md:purpose      md:CreatingTradedProduct
                   ]
-**- output ->**
+- output ->
 odrl:action       [ a               md:Use
                     md:purpose      ( md:Trading. md:Marketing )
 		  ]
-**+**		  
++		  
 odrl:action       odrl:Distribute
 md:service        [ a               md:Service ;
                     dc:identifier   "My warrant service"
