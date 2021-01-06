@@ -90,7 +90,7 @@
 3. odrl:action       [ a               odrl:Derive 
                        md:derivation   md:Irreversable , md:Non-Substitutive
                        md:purpose      [ a               md:CreatingTradedProduct
-		                         md:assetClass.  cfi:JXSXCC // Contract for Difference
+		                         md:assetClass.  cfi:JESXCC // Contract for Difference
 				       ]
                      ] 
 ```
