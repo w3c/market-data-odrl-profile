@@ -250,7 +250,7 @@ odrl:prohibition  [ a               odrl:Prohibition ;
                   ] 
 ```
 
-Derivations?
+*Derivations?*
 
 
 ## CME
