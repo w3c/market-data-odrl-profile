@@ -65,7 +65,7 @@
 
 
 2. odrl:action       [ a               md:TradeAutomatically
-                       md:purpose      md:PlatformTrading
+                       md:purpose      md:TradingAsBroker
                      ] 
 ```
 
