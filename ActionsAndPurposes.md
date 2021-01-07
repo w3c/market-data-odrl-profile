@@ -68,6 +68,11 @@
 
 2. odrl:action       [ a               md:TradeAutomatically
                        md:purpose      md:TradingAsBroker
+		       md:venue        [ a                       md:Venue 
+                                         rdfs:label              "Globex" 
+                                         md:operatingMic         "XCME"      
+                                         md:mic                  "GLBX"
+                                       ]
                      ] 
 ```
 
