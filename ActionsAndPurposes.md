@@ -274,10 +274,15 @@ CategoryA: Automated Trading Usage Category: Non-Display Use of Information by a
 The use of an execution management system/order management system to facilitate the Category A activities is permitted under the license.
 
 ```
-odrl:action       md:TradeAutomatically
+odrl:action       [ a               md:TradeAutomatically
+                    md:purpose      ( md:TradingAsPrinciple  md:TradingAsBroker )
+                  ] 
++
 
 odrl:action       md:Derive
+
 - output ->
+
 odrl:action       [ a               md:Use
                     md:purpose      md:Trading
 		  ]
@@ -286,6 +291,12 @@ md:users          md:InternalPary
 
 ### Internal Order Processing
 Category B: Internal Order Processing: Non-Display Use of Information by a Licensee Group entity within electronic systems or computer software that internalize orders in full or in part, in order to determine the entry or non-entry of orders.
+
+```
+odrl:action       [ a               md:TradeAutomatically
+                    md:purpose      md:PlatformTrading
+                  ] 
+```
 
 ### Other Internal Non-Display Usage
 Category C: Other Internal Non-Display Usage Category: Non-Display Use of Information by Licensee Group within electronic systems or computer software operated by a Licensee Group entity for any of the following uses:
@@ -302,9 +313,7 @@ odrl:action       md:NonDisplayUse
 odrl:prohibition  [ a               odrl:Prohibition ;
                     odrl:action     md:TradeAutomatically    
                   ]
-		  [ a               odrl:Prohibition
-                    odrl:action     md:Derive    
-                  ]
+md:users          md:InternalPary
 ```
 
 ### Derived Data
