@@ -37,6 +37,8 @@
     
         Trading as Broker
 	
+    Research
+	
     Training
     
     Technical Support
