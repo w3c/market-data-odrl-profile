@@ -659,7 +659,7 @@
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PlatformTrading">http://www.w3.org/md-odrl-profile/PlatformTrading</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Trading</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/Trading">Trading</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -681,7 +681,7 @@
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TradingAsPrincipal">http://www.w3.org/md-odrl-profile/TradingAsPrincipal</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Trading</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/Trading">Trading</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -699,7 +699,7 @@
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Brokerage">http://www.w3.org/md-odrl-profile/Brokerage</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Control">Trading</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/Trading">Trading</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1099,7 +1099,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Device">http://www.w3.org/md-odrl-profile/Device</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a>, <a>Display Type</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1117,7 +1117,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Wallboard">http://www.w3.org/md-odrl-profile/Wallboard</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Units of Count</a>, <a>Display Type</a>></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1341,6 +1341,47 @@
             </table>
         </section>
     </section>
+    <section id='Actions'>
+        <h2>Actions</h2>
+        <section data-dfn-for="Distribute">
+            <h2><dfn>Distribute</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>To supply an <a>Asset</a> to an <a>External Party</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>The External Party's use of the Asset can be controlled by using a duty to impose a <a href="http://www.w3.org/TR/odrl-vocab/#term-nextPolicy">Next Policy</a> on them.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Distribute</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Distribute">http://www.w3.org/md-odrl-profile/Distribute</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="Display">
+            <h2><dfn>Display</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>To view an <a>Asset</a> via a graphical user interface, device, or other display medium.</td>
+                    </tr><tr>
+                        <th>Scope Note:</th><td>Applicable to human as opposed to machine use of data.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>Can be constrained to individual display by setting the <a>display type</a> to <a>Device</a>, or to public display by setting the display type to <a>Wallboard</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Display</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Display">http://www.w3.org/md-odrl-profile/Display</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
 </section>
 <section id='Duties'>
     <h2>Duties</h2>
@@ -1461,7 +1502,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Notify">http://www.w3.org/md-odrl-profile/Notify</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1481,7 +1522,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Report">http://www.w3.org/md-odrl-profile/Report</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1513,7 +1554,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Request">http://www.w3.org/md-odrl-profile/Request</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1533,7 +1574,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consent">http://www.w3.org/md-odrl-profile/Consent</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1583,7 +1624,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Compensate">http://www.w3.org/md-odrl-profile/Compensate</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1612,7 +1653,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Invoice">http://www.w3.org/md-odrl-profile/Invoice</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1652,7 +1693,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attach">http://www.w3.org/md-odrl-profile/Attach</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2017,13 +2058,31 @@
                     <tr>
                         <th>Definition:</th><td>Specifies the types of derivation activity undertaken in exercising the <a>Derive</a> action</td>
                     </tr><tr>
-                        <th>Label:</th><td>has derivation types</td>
+                        <th>Label:</th><td>allows derivation types</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/derivationTypes">http://www.w3.org/md-odrl-profile/derivationTypes</a></td>
                     </tr><tr>
                         <th>Domain:</th><td><a>Derive</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Derivation</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="displayTypes">
+            <h2><dfn>display types</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Classifies the display application as being either for individual use or public display</td>
+                    </tr><tr>
+                        <th>Label:</th><td>allows display types</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/displayTypes">http://www.w3.org/md-odrl-profile/displayTypes</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a>Display</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a>Display Type</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2296,6 +2355,22 @@
                     </tr>
                 </tbody>
             </table>            
+        </section>
+        <section data-dfn-for="DisplayType">
+            <h2><dfn>Display Type</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The type of application on which the <a>Asset</a> is displayed</td>
+                    </tr><tr>
+                        <th>Scope Note:</th><td>Used to constrain a <a>Display</a> action to allow either individual or public presentation.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Display Type</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DisplayType">http://www.w3.org/md-odrl-profile/DisplayType</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>        
     </section>
 </section>
