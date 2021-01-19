@@ -653,7 +653,7 @@
                                 </tr><tr>
                                     <th>Scope Note:</th><td>Includes systematic internalization (SI) as defined in MIFD II: dealing on an organised, frequent, systematic, and substantial basis on one's own account when executing client orders outside a regulated market, an MTF, or an OTF, without operating a multilateral system.</td>
                                 </tr><tr>
-                                    <th>Note:</th><td>As trading <a>venues</a>a>, the trading platforms described here may well have mic codes associated with them.</td>
+                                    <th>Note:</th><td>As trading <a>venues</a>, the trading platforms described here may well have mic codes associated with them.</td>
                                 </tr><tr>
                                     <th>Label:</th><td>Platform Trading</td>
                                 </tr><tr>
@@ -1449,41 +1449,59 @@
                 </tbody>
             </table>
             <section data-dfn-for="TradeAutomatically">
-            <h2><dfn>Trade Automatically</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>To use an <a>Asset</a> in an automated trading system.</td>
-                    </tr><tr>
-                        <th>Note:</th><td>The distinction between <a href="#trading-as-principal">trading as a principal</a>, as a <a href="#trading-as-broker">broker</a>, or as a <a href="#platform-trading">platform</a> can be specidied using a <a>purpose</a> constraint.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Semi-automated or automated order/quote generation.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Order pegging.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Systematic internalisation.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Price referencing for trading purposes.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Mid-point trading.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Smart order routing to facilitate trading.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Market making.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Execution management.</td>
-                    </tr><tr>
-                        <th>Example:</th><td>Quoting and trading of financial derivatives.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Trade Automatically</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TradeAutomatically">http://www.w3.org/md-odrl-profile/TradeAutomatically</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Non-Display</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                <h2><dfn>Trade Automatically</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>To use an <a>Asset</a> in an automated trading system.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>The distinction between <a href="#trading-as-principal">trading as a principal</a>, as a <a href="##brokerage">broker</a>, or as a <a href="#platform-trading">platform</a> can be specidied using a <a>purpose</a> constraint.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Semi-automated or automated order/quote generation.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Order pegging.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Systematic internalisation.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Price referencing for trading purposes.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Mid-point trading.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Smart order routing to facilitate trading.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Market making.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Execution management.</td>
+                        </tr><tr>
+                            <th>Example:</th><td>Quoting and trading of financial derivatives.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Trade Automatically</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TradeAutomatically">http://www.w3.org/md-odrl-profile/TradeAutomatically</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Non-Display</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Derive">
+                <h2><dfn>Derive</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>To generate new data from an <a>Asset</a> using a mathematical, logical, or other type of transformation, e.g. arithmetic formula, composition, or aggregation.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>Frequently, it's important to specify whether the transformation is <a>Irreversible</a> and <a>Non-Substitutive</a> using the <a>derivation types</a> constraint.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Derive</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Derive">http://www.w3.org/md-odrl-profile/Derive</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Non-Display</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
     </section>
 </section>
