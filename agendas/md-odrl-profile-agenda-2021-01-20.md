@@ -26,7 +26,7 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 ### Agenda
 
 1. Admin
-    1. Minutes of [last meeting](https://www.w3.org/2020/01/06-md-odrl-profile-minutes.html)
+    1. Minutes of [last meeting](https://www.w3.org/2021/01/06-md-odrl-profile-minutes.html)
     
 2. Current Status (Ben, Mark):
     1. Discussion of remaining things to do
