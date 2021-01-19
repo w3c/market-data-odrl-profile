@@ -1361,6 +1361,30 @@
                 </tbody>
             </table>
         </section>
+        <section data-dfn-for="Use">
+            <h2><dfn>Use</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Use of an <a>Asset</a> in any way by an <a>Internal Party</a>.</td>
+                    </tr><tr>
+                        <th>Scope Note:</th><td>Allows for both human and machine use of an Asset. Use <a>Display</a> if only human use is allowed; <a>Non-Display> for machine use.</td>
+                    </tr><tr>
+                        <th>Scope Note:</th><td>Does not permit the distribution of an Asset to an <a>External Party</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>Often constrained by the <a>purpose</a> (e.g <a>Trading</a>, <a>Marketing</a>) for which the Asset is used.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Use</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Use">http://www.w3.org/md-odrl-profile/Use</a></td>
+                    </tr><tr>
+                        <th>Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Super-class Of:</th><td><a>Display</a>, <a>Non-Display</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
         <section data-dfn-for="Display">
             <h2><dfn>Display</dfn></h2>
             <table class="def propdef">
@@ -1376,7 +1400,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Display">http://www.w3.org/md-odrl-profile/Display</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Use</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1418,7 +1442,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Non-Display">http://www.w3.org/md-odrl-profile/Non-Display</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activitiy</a></td>
+                        <th>Sub-class Of:</th><td><td><a>Use</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Super-class Of:</th><td><a>Trade Automatically</a>, <a>Derive</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1429,7 +1455,7 @@
                     <tr>
                         <th>Definition:</th><td>To use an <a>Asset</a> in an automated trading system.</td>
                     </tr><tr>
-                        <th>Note:</th><td>Can be constrained to individual display by setting <a>display types</a> to <a>Device</a>, or, for public display, to <a>Wallboard</a>.</td>
+                        <th>Note:</th><td>The distinction between <a>trading as a principal</a>, as a <a>broker</a>, or as a <a>platform</a> can be specidied using a <a>purpose</a> constraint.</td>
                     </tr><tr>
                         <th>Example:</th><td>Semi-automated or automated order/quote generation.</td>
                     </tr><tr>
