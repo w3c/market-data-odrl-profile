@@ -2,6 +2,8 @@
 
 ## Teleconference 2020-01-20
 
+**Please note: we are moving to Zoom.** Dial-in Details are on the [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
+
 Please send your regrets in advance.
 
 If you are unfamiliar with the W3C you may want to review the [orientation guide](https://w3c.github.io/market-data-odrl-profile/orientation.html).
@@ -18,8 +20,6 @@ Date: 2020-01-20T1500Z
 *  1700-1800 CET
 
 Please join by both voice and by IRC ([details](https://w3c.github.io/market-data-odrl-profile/orientation.html#irc))
-
-**Please note:** we are moving to Zoom. Dial-in Details are on the [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
 
 IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 
