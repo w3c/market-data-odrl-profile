@@ -388,7 +388,7 @@ But we can also enrich the display permissions to allow some derivations:
 
 odrl:action       md:Display
 +
-odrl:action       md:Derive
+odrl:action       md:Derive (ex. VWAP, portfolio management)
 - output ->
 odrl:action       md:Display
 ```
