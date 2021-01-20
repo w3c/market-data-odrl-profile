@@ -428,13 +428,9 @@ Other Application Usage Licence Charges are applicable also if in conjunction wi
 
 ```
 odrl:action       md:NonDisplayUse 
-odrl:prohibition  [ a               odrl:Prohibition 
-                    odrl:action     [ a            md:Derive
-		                      md:purpose   (Calculating Index, Creating Traded Product)
-                  ]
-		  odrl:TradeAutomatically 
+odrl:prohibition  odrl:TradeAutomatically 
 ```
 
 ### Indices/Benchmarks
 
-Caught under redistribution!
+Caught under redistribution! Along with creating traded products.
