@@ -373,6 +373,17 @@ Non-Display is any method of access that involves access or use by a machine or 
 * Transportation and cold disaster recovery servers – Distributor needs to identify and show that servers used in this process are only used for transportation of market data or trades, and are not utilized for any other fee-liable purpose identified above. Further, disaster recovery servers utilized in a cold environment are non-fee liable, but hot disaster recovery servers are fee-liable because they are typically optimized for load balancing.
 * Devices [or servers] used in the transportation, dissemination or aggregation of data (distribution) are not considered Non-Display. The Distributor should be able to identify such Devices that exist within the market data infrastructure and identify how many Devices are used for distribution separate and apart from the Devices that are used for the reasons listed above.
 
+```
+odrl:action       md:NonDisplayUse 
+
+*But we can also enrich the display permissions to allow some derivations:*
+
+odrl:action       md:Display
++
+odrl:action       md:Derive
+- output ->
+odrl:action       md:Display
+```
 
 ## LSE
 
