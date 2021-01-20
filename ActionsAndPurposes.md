@@ -407,12 +407,34 @@ All Customers are required to complete, as appropriate, the type and level of Lo
 * Client Facilitation - Customers whose internal Non-Display Usage is for the purpose of (or includes) trading based activities to facilitate customer business.
 * Trading Platforms - Customers whose Non-Display Usage is for the purpose of (or includes) the operation of trading platforms including but not restricted to systematic internalisers / multilateral trading facilities.
 
+```
+odrl:action       [ a               md:TradeAutomatically
+                    md:purpose      ( md:TradingAsPrinciple  md:TradingAsBroker )
+                  ] 
+or ...
+odrl:action       [ a               md:TradeAutomatically
+                    md:purpose      md:TradingAsBroker
+                  ] 
+or ...
+odrl:action       [ a               md:TradeAutomatically
+                    md:purpose      md:PlatformTrading
+                  ] 
+```
+
 ### Other Applications Usage
 Applies to non trading-based customer activities, including but not limited to: risk management, quantitative analysis, fund administration, portfolio management.
 
 Other Application Usage Licence Charges are applicable also if in conjunction with the display of Data.
 
+```
+odrl:action       md:NonDisplayUse 
+odrl:prohibition  [ a               odrl:Prohibition 
+                    odrl:action     [ a            md:Derive
+		                      md:purpose   (Calculating Index, Creating Traded Product)
+                  ]
+		  odrl:TradeAutomatically 
+```
 
 ### Indices/Benchmarks
 
-
+Caught under redistribution!
