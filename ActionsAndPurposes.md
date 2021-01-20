@@ -376,7 +376,15 @@ Non-Display is any method of access that involves access or use by a machine or 
 ```
 odrl:action       md:NonDisplayUse 
 
-*But we can also enrich the display permissions to allow some derivations:*
+And if this didn't cover the derivation of traded products or the calculation of indices?
+
+odrl:action       md:NonDisplayUse 
+odrl:prohibition  [ a               odrl:Prohibition 
+                    odrl:action     [ a            md:Derive
+		                      md:purpose   (Calculating Index, Creating Traded Product)
+                  ]
+
+But we can also enrich the display permissions to allow some derivations:
 
 odrl:action       md:Display
 +
