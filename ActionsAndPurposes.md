@@ -433,4 +433,4 @@ odrl:prohibition  odrl:TradeAutomatically
 
 ### Indices/Benchmarks
 
-Caught under redistribution! Along with creating traded products.
+Caught under redistribution! Along with the "Calculation and distribution of Derived Data other than indices/benchmarks" which, I assume, allows the creation of traded products...
