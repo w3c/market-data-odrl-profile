@@ -12,7 +12,9 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 ---
 
 **IAtD-2** - Can I entitle my internal developers for free?
+
 **IAtD-4** - Can I entitle my IT Support / Market Data staff for free?
+
 **IAtD-7** - Do I need to declare and/or pay for data utilisation within my development or UAT environement?
 
 - *Covered under the purposes of Training, Product Development, Technical Support, and Quality Assurance - but do we need additional terms?*
@@ -26,6 +28,7 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 ---
 
 **IAtD-10** - Am I allowed to distribute to majority owned affiliates?
+
 **IAtD-11** - Am I allowed to distribute to minority owned affiliates?
 
 - *Can we simply rely on the enumerated list of affiliates?*
@@ -53,6 +56,7 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 ---
 
 **IAtD-3** - I’m setting up a new user location - can I send this data to a new, internal geographic location?
+
 **IAtD-16** - Can I share my access to the service with colleagues?
 
 - **Need to add a location constraint - and others like line-of-business, department, etc**
@@ -60,6 +64,7 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 ---
 
 **IAtD-5** - Can I get a free trial access for any user?
+
 **IAtD-6** - Can I get a free trial access for applications within development?
 
 - **Need to add support for free trials under payment duties**
@@ -79,6 +84,7 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 ---
 
 **IAtD-13** - Can I subscribe to real-time/delayed/snapshot data and persist my own historical repository of data from this service?
+
 **IAtD-14** - Can I download data from a terminal and store on a network drive for personal access?
 
 - **Do we need a Store action?**
