@@ -95,13 +95,18 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 ---
 
-
-
-
-
-
 ## Redistribution of Data
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
+
+**RoD-14** - When sending raw/source data externally, what accreditation and disclaimers am I required to use (if any)?
+
+- *Covered by Attribution and Disclaimer dutes*
+
+**RoD-5** - I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?
+
+- *Covered by the Distribute action*
+
+---
 
 **RoD-1** - Can I send a small amount of data to a client, in support of a transaction, on a one-off basis?
 
@@ -111,7 +116,17 @@ Sending data externally (attributes vary across all vendors and/or may require a
 
 **RoD-4** - I’m creating a spreadsheet containing a terminal vendor’s data – am I allowed to share this with clients
 
-**RoD-5** - I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?
+**RoD-10** - Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in a client portfolio performance or valuation report to 2000 clients, on a monthly basis?
+
+**RoD-11** - Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in marketing materials to 5000 prospective clients, on an ad-hoc basis?
+
+**RoD-12** - Can I send some data, in charts and/or tables, in an email or tweet/other social media post, as marketing to an unlimited number of current and prospective clients, on a weekly basis?
+
+**RoD-13** - How many slides containing your data can I put into a client presentation?
+
+- **Need an amount property which can be qualified by frequency, format, and purpose**
+
+---
 
 **RoD-6** - Can I publish a particular real-time data set to a public (unauthenticated) website or widget?
 
@@ -121,16 +136,11 @@ Sending data externally (attributes vary across all vendors and/or may require a
 
 **RoD-9** - Can I publish a particular delayed data set to an authenticated website or widget?
 
-**RoD-10** - Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in a client portfolio performance or valuation report to 2000 clients, on a monthly basis?
+- *Authenticated/Unauthenticated handled by Controls; Realtime/Delayed by Timeliness*
 
-**RoD-11** - Can I send some data, in charts and/or tables, in a non-editable electronic or hardcopy format, in marketing materials to 5000 prospective clients, on an ad-hoc basis?
+- **Need to add support for distibution to websites/whitelabel
 
-**RoD-12** - Can I send some data, in charts and/or tables, in an email or tweet/other social media post, as marketing to an unlimited number of current and prospective clients, on a weekly basis?
-
-**RoD-13** - How many slides containing your data can I put into a client presentation?
-
-**RoD-14** - When sending raw/source data externally, what accreditation and disclaimers am I required to use (if any)?
-
+---
 
 ## Non-display Use
 For example, use of real-time data in a new application
