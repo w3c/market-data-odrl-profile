@@ -7,83 +7,83 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 **IAtD-1** - Am I entitled to access a particular date range of historical content?
 
-  *Covered by timeliness of delivery*
+- *Covered by timeliness of delivery*
 
 **IAtD-2** - Can I entitle my internal developers for free?
 
-  *Covered under the purposes of Training, Product Development, Technical Support, and Quality Assurance*
+- *Covered under the purposes of Training, Product Development, Technical Support, and Quality Assurance*
 
 **IAtD-3** - I’m setting up a new user location - can I send this data to a new, internal geographic location?
 
-  **Need to add a location constraint - and others like line-of-business, department ... **
+- **Need to add a location constraint - and others like line-of-business, department ... **
 
 **IAtD-4** - Can I entitle my IT Support / Market Data staff for free?
 
-  *Same solution as* **IAtD-2**
+- *Same solution as* **IAtD-2**
 
 **IAtD-5** - Can I get a free trial access for any user?
 
-  **Need to add support for free trials under payment duties**
+- **Need to add support for free trials under payment duties**
 
 **IAtD-6** - Can I get a free trial access for applications within development?
 
-  *Same solution as* **IAtD-5**
+- *Same solution as* **IAtD-5**
 
 **IAtD-7** - Do I need to declare and/or pay for data utilisation within my development or UAT environement?
 
-  *Same solution as* **IAtD-2**
+- *Same solution as* **IAtD-2**
 
 **IAtD-8** - Do I need to declare and/or pay for data utilisation within my business continuity / disaster recovery environements?
 
-  **Need to add support**
+- **Need to add support**
 
 **IAtD-9** - Can I publish a particular raw real-time/delayed/intraday/end of day data set to an application which does not provide the ability to control and report those downstream users and/or applications?
 
-  *Covered by the Controls constraint*
+- *Covered by the Controls constraint*
 
 **IAtD-10** - Am I allowed to distribute to majority owned affiliates?
 
-  *Can we simply rely on the enumerated list of affiliates?*
+- *Can we simply rely on the enumerated list of affiliates?*
 
 **IAtD-11** - Am I allowed to distribute to minority owned affiliates?
 
-  *Same solution as* **IAtD-11**
+- *Same solution as* **IAtD-11**
 
 **IAtD-12** - If I cancel a service, am I required to purge the data I am storing in my systems from that service?
 
-  **Need to add support**
+- **Need to add support**
 
 **IAtD-13** - Can I subscribe to real-time/delayed/snapshot data and persist my own historical repository of data from this service?
 
-  **Do we need a Store action?**
+- **Do we need a Store action?**
 
 **IAtD-14** - Can I download data from a terminal and store on a network drive for personal access?
 
-  **Need to combine the solutions to IAtD-3 and IAtD-13**
+- **Need to combine the solutions to IAtD-3 and IAtD-13**
 
 **IAtD-15** - Can I download data from a terminal and store on a network drive for my team to access?
 
-  *Same solution as* **IAtD-15**
+- *Same solution as* **IAtD-15**
 
 **IAtD-16** - Can I share my access to the service with colleagues?
 
-  *Same solution as* **IAtD-3**
+- *Same solution as* **IAtD-3**
 
 **IAtD-17** - Can I use the service for price validation?
 
-  *Covered by the Non-Display action*
+- *Covered by the Non-Display action*
 
 **IAtD-18** - Is there a cost to view delayed data?
 
-  *Covered by timeliness constraints - but we need to make explicit what today is implicit*
+- *Covered by timeliness constraints - but we need to make explicit what today is implicit*
 
 **IAtD-19** - What duration of time is required for data to be considered delayed?
 
-  *Covered by timeliness constraints*
+- *Covered by timeliness constraints*
 
 **IAtD-20** - How many times am I allowed to snap real-time data for a display application, before I must declare those with access for real-time? 
 
-  *Covered by the Count constraint on Snapshot*
+- *Covered by the Count constraint on Snapshot*
 
 
 ## Redistribution of Data
