@@ -98,13 +98,14 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 ## Redistribution of Data
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
 
-**RoD-14** - When sending raw/source data externally, what accreditation and disclaimers am I required to use (if any)?
-
-- *Covered by Attribution and Disclaimer dutes*
 
 **RoD-5** - I’m downloading a tearsheet from a rating agency – am I allowed to share this with colleagues and/or with clients?
 
 - *Covered by the Distribute action*
+
+**RoD-14** - When sending raw/source data externally, what accreditation and disclaimers am I required to use (if any)?
+
+- *Covered by Attribution and Disclaimer dutes*
 
 ---
 
@@ -138,7 +139,7 @@ Sending data externally (attributes vary across all vendors and/or may require a
 
 - *Authenticated/Unauthenticated handled by Controls; Realtime/Delayed by Timeliness*
 
-- **Need to add support for distibution to websites/whitelabel
+- **Need to add support for distibution to websites/whitelabel**
 
 ---
 
@@ -147,17 +148,35 @@ For example, use of real-time data in a new application
 
 **NDU-1** - Can I use real-time data in a new internal application, which will not display the data to any end users?
 
+- *Covered by the Non-Display action*
+
+---
+
 **NDU-2** - Can I distribute the results from the new application to other users internally?
+
+- *Covered by the nextPolicy Duty and the Users/Recipients constraints*
 
 **NDU-3** - Can I distribute the results from the new application to other users at a different internal geographic location?
 
+- *Covered by the nextPolicy Duty and the solution to* **IAtD-3**
+
 **NDU-4** - Can I distribute the results from the new application to external users at the end of each day?
+
+- *Covered by the nextPolicy Duty and the Timeliness (Embargo) constraint*
+
+---
 
 **NDU-5** - If I want to use real-time data in an internal application that performs a simple calculation but also displays the data to end users, is that considered a non-display use?
 
 **NDU-6** - If I want to use real-time data for portfolio valuation for internal use only, is that a non-display use?
 
+- *This is the VWAP example. Can be solved by making what is presently implicit explicit* 
+
+---
+
 **NDU-7** - Are separate non-display fees imposed for each internal application?
+
+- *Specified in the Payment Duty*
 
 
 ## Derived Data
