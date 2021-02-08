@@ -137,6 +137,10 @@ Sending data externally (attributes vary across all vendors and/or may require a
 
 **RoD-9** - Can I publish a particular delayed data set to an authenticated website or widget?
 
+**DD-9** - Can I distribute my tradable derived instrument as a white-labeled product?
+
+**DD-13** - Can I create derived data and then display it on a public website?
+
 - *Authenticated/Unauthenticated handled by Controls; Realtime/Delayed by Timeliness*
 
 - **Need to add support for distibution to websites/whitelabel**
@@ -208,9 +212,11 @@ Data being derived from varying sources, including for creation of Indices
 
 **DD-7** - Can I create a tradeable CFD instrument using one or more particular data sets?
 
+- *The 'more' question is solved by* **DD-2**. *Else it's a Derive action with the purpose of Creating a Traded Product of Asset Class CFD. The more interesting questions is how to prevent the creation of CFDs while allowing other derivatives.*
+
 **DD-8** - Can I create a non-tradable product containing one or more particular data sets for use as input to pricing evaluation of physical products?
 
-**DD-9** - Can I distribute my tradable derived instrument as a white-labeled product?
+- **Does this require a new action of Commingle with a new purpose of Price Evaluation?**
 
 **DD-10** - Can I create a structured product using data as underlying?
 
@@ -218,7 +224,7 @@ Data being derived from varying sources, including for creation of Indices
 
 **DD-12** - Can I create manipulated / reverse-calculable data and redistribute that externally?
 
-**DD-13** - Can I create derived data and then display it on a public website?
+
 
 **DD-14** - Is data commingled from a single source classed as derived data by that source provider?
 
