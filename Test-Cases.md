@@ -190,6 +190,20 @@ Data being derived from varying sources, including for creation of Indices
 
 - *Covered by the Derive action and an Internal users constraint on the nextPolicy permission*
 
+**DD-10** - Can I create a structured product using data as underlying?
+
+- *Solved by a Derive action with the purpose of Creating a Traded Product.*
+
+**DD-11** - Can I create manipulated / reverse-calculable data and redistribute that internally?
+
+- *Solved by the policy identified by the nextPolicy duty.*
+
+**DD-12** - Can I create manipulated / reverse-calculable data and redistribute that externally?
+
+- *Solved by the policy identified by the nextPolicy duty.*
+
+---
+
 **DD-2** - Can I create derived data, using delayed data, from 5 different vendors/exchanges, for internal use?
 
 - *Are we sensitive to the fact that the derivation is occuring over data from different vendors? I don't think this is of relevance to commingling.*
@@ -206,28 +220,27 @@ Data being derived from varying sources, including for creation of Indices
 
 - *Two vendor issues solved by* **DD-2**. *Sharing with clients would be a distibution permission linked through a nextPolicy duty.*
 
+**DD-7** - Can I create a tradeable CFD instrument using one or more particular data sets?
+
+- *The 'more' question is solved by* **DD-2**. *Else it's a Derive action with the purpose of Creating a Traded Product of Asset Class CFD. The more interesting questions is how to prevent the creation of CFDs while allowing other derivatives.*
+
+---
+
 **DD-6** - Am I the intellectual property owner of the derived data that I have created?
 
 - *We could specify that the creators of non-substitutive, irreversable derivations own the IP. But do we have a dog in this race?*
 
-**DD-7** - Can I create a tradeable CFD instrument using one or more particular data sets?
-
-- *The 'more' question is solved by* **DD-2**. *Else it's a Derive action with the purpose of Creating a Traded Product of Asset Class CFD. The more interesting questions is how to prevent the creation of CFDs while allowing other derivatives.*
+---
 
 **DD-8** - Can I create a non-tradable product containing one or more particular data sets for use as input to pricing evaluation of physical products?
 
 - **Does this require a new action of Commingle with a new purpose of Price Evaluation?**
 
-**DD-10** - Can I create a structured product using data as underlying?
-
-**DD-11** - Can I create manipulated / reverse-calculable data and redistribute that internally?
-
-**DD-12** - Can I create manipulated / reverse-calculable data and redistribute that externally?
-
-
-
 **DD-14** - Is data commingled from a single source classed as derived data by that source provider?
 
+- *Solved by **DD-8** with an additional constraint on the Comingle action.*
+
+---
 
 ## Reporting & Audits
 
