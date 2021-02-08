@@ -37,7 +37,7 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 **IAtD-17** - Can I use the service for price validation?
 
-- *Covered by the Non-Display action*
+- *Covered by the Non-Display action - though maybe its a commingle action with a price validation purpose?*
 
 ---
 
