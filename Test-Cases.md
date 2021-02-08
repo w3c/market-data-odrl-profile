@@ -250,15 +250,21 @@ Data being derived from varying sources, including for creation of Indices
 
 ---
 
-**R-3** - How long do I have to maintain records of usage/entitlement for including after termination?
-
 **R-4** - Does the vendor have the right to audit me?
 
 - *Specified by an Audit duty.*
 
+---
+
+**R-3** - How long do I have to maintain records of usage/entitlement for including after termination?
+
 **R-5** - How far back can the vendor audit me?
 
 **R-6** - What interest and fees can an audit attract?
+
+- *Need to add support*
+
+---
 
 **R-7** - Do DACS compliant applications need to be considered for the unit of count? 
 
@@ -270,3 +276,5 @@ Data being derived from varying sources, including for creation of Indices
 **T-2** - In what situations would I be allowed to cancel the service early?
 
 **T-3** - In what situations would you be allowed to terminate our access to your service?
+
+- *Need to add support*
