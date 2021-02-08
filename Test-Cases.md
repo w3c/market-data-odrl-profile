@@ -196,8 +196,6 @@ Data being derived from varying sources, including for creation of Indices
 
 **DD-11** - Can I create manipulated / reverse-calculable data and redistribute that internally?
 
-- *Solved by the policy identified by the nextPolicy duty.*
-
 **DD-12** - Can I create manipulated / reverse-calculable data and redistribute that externally?
 
 - *Solved by the policy identified by the nextPolicy duty.*
@@ -248,9 +246,15 @@ Data being derived from varying sources, including for creation of Indices
 
 **R-2** - How often do I need to report?
 
+- *Specified in the Reporting duty.*
+
+---
+
 **R-3** - How long do I have to maintain records of usage/entitlement for including after termination?
 
 **R-4** - Does the vendor have the right to audit me?
+
+- *Specified by an Audit duty.*
 
 **R-5** - How far back can the vendor audit me?
 
