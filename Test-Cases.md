@@ -184,15 +184,27 @@ Data being derived from varying sources, including for creation of Indices
 
 **DD-1** - Can I create derived data from one vendor/exchange, using end of day data, for internal use?
 
+- *Covered by the Derive action and an Internal users constraint on the nextPolicy permission*
+
 **DD-2** - Can I create derived data, using delayed data, from 5 different vendors/exchanges, for internal use?
+
+- *Are we sensitive to the fact that the derivation is occuring over data from different vendors? I don't think this is of relevance to commingling.*
 
 **DD-3** - Can I create derived data, in the form of an index, using EOD data, from 5 different vendors/exchanges, and send the result to a client?
 
+- *Solved by* **DD-2**
+
 **DD-4** - Can I create a spreadsheet combining two vendors data to create derived data
+
+- *Solved by* **DD-2**
 
 **DD-5** - I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?
 
+- *Two vendor issues solved by* **DD-2**. *Sharing with clients would be a distibution permission linked through a nextPolicy duty.*
+
 **DD-6** - Am I the intellectual property owner of the derived data that I have created?
+
+- *We could specify that the creators of non-substitutive, irreversable derivations own the IP. But do we have a dog in this race?*
 
 **DD-7** - Can I create a tradeable CFD instrument using one or more particular data sets?
 
