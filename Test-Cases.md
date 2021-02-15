@@ -5,7 +5,9 @@ The test cases listed here are the kinds of questions asked day-in, day-out of m
 
 ## Internal Access to Data
 
-**IAtD-1** - Am I entitled to access a particular date range of historical content?
+####IAtD-1
+
+Am I entitled to access a particular date range of historical content?
 
 - *Covered by timeliness of delivery*
 
