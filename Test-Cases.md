@@ -242,7 +242,7 @@ Can I distribute the results from the new application to other users internally?
 
 Can I distribute the results from the new application to other users at a different internal geographic location?
 
-- *Covered by the nextPolicy Duty and the solution to* #### IAtD-3**
+- *Covered by the nextPolicy Duty and the solution to* **IAtD-3**
 
 #### NDU-4
 
@@ -308,25 +308,25 @@ Can I create derived data, using delayed data, from 5 different vendors/exchange
 
 Can I create derived data, in the form of an index, using EOD data, from 5 different vendors/exchanges, and send the result to a client?
 
-- *Solved by* #### DD-2**
+- *Solved by* **DD-2**
 
 #### DD-4
 
 Can I create a spreadsheet combining two vendors data to create derived data
 
-- *Solved by* #### DD-2**
+- *Solved by* **DD-2**
 
 #### DD-5
 
 I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?
 
-- *Two vendor issues solved by* #### DD-2**. *Sharing with clients would be a distibution permission linked through a nextPolicy duty.*
+- *Two vendor issues solved by* **DD-2**. *Sharing with clients would be a distibution permission linked through a nextPolicy duty.*
 
 #### DD-7
 
 Can I create a tradeable CFD instrument using one or more particular data sets?
 
-- *The 'more' question is solved by* #### DD-2**. *Else it's a Derive action with the purpose of Creating a Traded Product of Asset Class CFD. The more interesting questions is how to prevent the creation of CFDs while allowing other derivatives.*
+- *The 'more' question is solved by* **DD-2**. *Else it's a Derive action with the purpose of Creating a Traded Product of Asset Class CFD. The more interesting questions is how to prevent the creation of CFDs while allowing other derivatives.*
 
 ---
 
@@ -348,7 +348,7 @@ Can I create a non-tradable product containing one or more particular data sets 
 
 Is data commingled from a single source classed as derived data by that source provider?
 
-- *Solved by #### DD-8** with an additional constraint on the Comingle action.*
+- *Solved by **DD-8** with an additional constraint on the Comingle action.*
 
 ---
 
