@@ -34,7 +34,7 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 	1. Do we need a [Commingle action](https://github.com/w3c/market-data-odrl-profile/issues/28)?
 	2. Do we need a [Store action](https://github.com/w3c/market-data-odrl-profile/issues/27)?
 	3. How do we support [Business Continuity](https://github.com/w3c/market-data-odrl-profile/issues/26)?
-	4. [Location, geography, and line-of-business](https://github.com/w3c/market-data-odrl-profile/issues/25) constraints
+	4. [Location, geography, and line-of-business](https://github.com/w3c/market-data-odrl-profile/issues/25) constraints on users
 
 4. PoC update - Compliance in Redistribution Use Cases (Caspar)
 
