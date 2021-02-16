@@ -2,7 +2,7 @@
 
 ## Teleconference 2020-02-17
 
-**Please note: we are moving to Zoom.** Dial-in Details are on the [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
+**Please note: we are on Zoom now.** Dial-in Details are on the [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
 
 Please send your regrets in advance.
 
