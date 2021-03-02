@@ -16,4 +16,4 @@ The group looks at how these policies progress along the market data supply chai
 * [Charter](./CGCharter.html)
 * [Specification](./md-odrl-profile.html)
 * Meetings [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
-* [Next Meeting Agenda](./agendas/md-odrl-profile-agenda-2021-03-03.md)
+* [Next Meeting Agenda](agendas/md-odrl-profile-agenda-2021-02-17.md)
