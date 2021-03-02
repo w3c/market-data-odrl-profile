@@ -1229,34 +1229,53 @@
         </section>
     </section>
     <section id='OtherThingsOfInterest'>
-    <h2>Other Things of Interest</h2> 
-        <section data-dfn-for="Venue">
-            <h2><dfn>Venue</dfn></h2>
+        <h2>Other Things of Interest</h2>
+        <section id='Markets'>
+            <h2>Markets</h2>
             <p>
-               Most of the <code>Resources</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments are traded at <code>Venues</code>.
+               Most of the <code>Resources</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments are traded at <code>Venues</code> managed by <code>Exchanges<code>.
             </p><p>
                Knowing which venue generated a resource can help in tracing which <code>Rules</code> control the use of the data.
             </p><p>
                Also, reporting the venues on which a resource is made available in <a>platform trading</a> can decide data costs.
             </p>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>A multilateral system in which multiple buying and selling interests can interact in a way that results in contracts.</td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets (RMs), organised trading facility (OTF), and multilateral trading facilities (MTFs)</td>
-                    </tr><tr>
-                        <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific venue. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Venue</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Venue">http://www.w3.org/md-odrl-profile/Venue</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <section data-dfn-for="Exchange">
+                <h2><dfn>Exchange</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>An organisation that manages one or more <a>Venues</a></td>
+                        </tr><<tr>
+                            <th>Note:</th><td>Exchanges can be identifed by their <a href="https://www.iso20022.org/market-identifier-codes">operating MIC codes</a>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Exchange</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Exchange">http://www.w3.org/md-odrl-profile/Exchange</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Venue">
+                <h2><dfn>Venue</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A multilateral system in which multiple buying and selling interests can interact in a way that results in contracts.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets (RMs), organised trading facility (OTF), and multilateral trading facilities (MTFs)</td>
+                        </tr><tr>
+                            <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific venue. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Venue</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Venue">http://www.w3.org/md-odrl-profile/Venue</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </section>
-        <section id='VenueProperties'>
-            <h2>Venue Properties</h2>
+        <section id='MarketProperties'>
+            <h2>Market Properties</h2>
             <section data-dfn-for="operatingMic">
                 <h2><dfn>operatingMic</dfn></h2>
                 <table class="def propdef">
