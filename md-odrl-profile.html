@@ -1371,6 +1371,56 @@
                 </tbody>
             </table>
         </section>
+        <section data-dfn-for="Quantity">
+            <h2><dfn>Quantity</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The amount of an <a>Asset</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Quantity</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Quantity">http://www.w3.org/md-odrl-profile/Quantity</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <section data-dfn-for="Insubstantial">
+                <h2><dfn>Insubstantial</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A small part of a <a>Resource</a> which by virue of its very smallness may have more permitted uses than the whole.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, combine rdf:value with a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Insubstantial</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Insubstantial">http://www.w3.org/md-odrl-profile/Insubstantial</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Quantity</a></td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </section>
+            <section data-dfn-for="Substantial">
+                <h2><dfn>Substantial</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A large part of a <a>Resource</a> which by virue of its very largeness may not have more permitted uses than the whole.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, combine rdf:value with a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Substantial</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Substantial">http://www.w3.org/md-odrl-profile/Substantial</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Quantity</a></td>
+                        </tr>
+                    </tbody>
+                </table>            
+            </section>
+        </section>
     </section>
 </section>
 <section id='Permissions'>
@@ -2111,15 +2161,15 @@
                     <tr>
                         <th>Definition:</th><td>The amount of a Resource.</td>
                     </tr><tr>
-            <th style="white-space:nowrap;">Scope Note:</th><td>Only used to express that the amount of a <a>Resource</a> is <a>Insubstantial</a>.</td>
+                        <th style="white-space:nowrap;">Scope Note:</th><td>If a qualititive measure is needed use the values <a>Insubstantial</a> or <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>has amount</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/amount">http://www.w3.org/md-odrl-profile/amount</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Resource</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a>Insubstantial</a></td>
+                        <th>Range:</th><td><a>Quantity</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2604,22 +2654,6 @@
             </pre>
                 </section>
             </section>
-        </section>
-        <section data-dfn-for="Insubstantial">
-            <h2><dfn>Insubstantial</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>A small part of a <a>Resource</a> which by virue of its very smallness may have more permitted uses than the whole.</td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>Usually only relevant in cases of distribution.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Insubstantial</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Insubstantial">http://www.w3.org/md-odrl-profile/Insubstantial</a></td>
-                    </tr>
-                </tbody>
-            </table>            
         </section>
         <section data-dfn-for="DisplayType">
             <h2><dfn>Display Type</dfn></h2>
