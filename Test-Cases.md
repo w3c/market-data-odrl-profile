@@ -3,9 +3,9 @@ One of the key objectives of the Rights Automation for Market Data Community Gro
 
 The test cases listed here are the kinds of questions asked day-in, day-out of market data professionals. They are also our way of measuring progress towards that objective. Can we turn these questions into queries? Do we get the right answers?
 
-
-
 ## Internal Access to Data
+
+### Solved
 
 #### IAtD-1
 
@@ -47,7 +47,7 @@ Am I allowed to distribute to majority owned affiliates?
 
 Am I allowed to distribute to minority owned affiliates?
 
-- *Can we simply rely on the enumerated list of affiliates?*
+- *We simply rely on the enumerated list of affiliates?*
 
 ---
 
@@ -55,7 +55,7 @@ Am I allowed to distribute to minority owned affiliates?
 
 Can I use the service for price validation?
 
-- *Covered by the Non-Display action - though maybe its a commingle action with a price validation purpose?*
+- *Covered by the Non-Display action*
 
 ---
 
@@ -83,23 +83,14 @@ How many times am I allowed to snap real-time data for a display application, be
 
 I’m setting up a new user location - can I send this data to a new, internal geographic location?
 
+- *Covered by the Location constraint*
+
 #### IAtD-16
 
 Can I share my access to the service with colleagues?
 
-- **Need to add a location constraint - and others like line-of-business, department, etc**
 
----
-
-#### IAtD-5
-
-Can I get a free trial access for any user?
-
-#### IAtD-6
-
-Can I get a free trial access for applications within development?
-
-- **Need to add support for free trials under payment duties**
+- *Covered by the Lines-of-Business constraint*
 
 ---
 
@@ -107,15 +98,7 @@ Can I get a free trial access for applications within development?
 
 Do I need to declare and/or pay for data utilisation within my business continuity / disaster recovery environements?
 
-- **Need to add support**
-
----
-
-#### IAtD-12
-
-If I cancel a service, am I required to purge the data I am storing in my systems from that service?
-
-- **Need to add support**
+- *Covered by the Business Continuity purpose*
 
 ---
 
@@ -127,13 +110,37 @@ Can I subscribe to real-time/delayed/snapshot data and persist my own historical
 
 Can I download data from a terminal and store on a network drive for personal access?
 
-- **Do we need a Store action?**
+- *Covered by the Store action*
+
+---
+
+#### IAtD-12
+
+If I cancel a service, am I required to purge the data I am storing in my systems from that service?
+
+- *Covered by the effective data constraint on a Store permission - need to make explicity what today is frequently implicit*
+
+---
 
 #### IAtD-15
 
 Can I download data from a terminal and store on a network drive for my team to access?
 
-- **Need to combine the solutions to IAtD-3 and IAtD-13**
+- *Covered by the Store action and line-of-business constraint*
+
+---
+
+### To Be Solved
+
+#### IAtD-5
+
+Can I get a free trial access for any user?
+
+#### IAtD-6
+
+Can I get a free trial access for applications within development?
+
+- **Need to add support for free trials under payment duties**
 
 ---
 
