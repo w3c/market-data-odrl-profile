@@ -147,6 +147,7 @@ Can I get a free trial access for applications within development?
 ## Redistribution of Data
 Sending data externally (attributes vary across all vendors and/or may require additional licenses which incur costs)
 
+### Solved
 
 #### RoD-5
 
@@ -194,9 +195,12 @@ Can I send some data, in charts and/or tables, in an email or tweet/other social
 
 How many slides containing your data can I put into a client presentation?
 
-- **Need an amount property which can be qualified by frequency, format, and purpose**
+- *We can apply timeliness, time interval, purpose (e.g. marketing), and amount constraints on a Distibute permission. We don't presently cover format.*
 
 ---
+
+### To Be Solved
+
 
 #### RoD-6
 
@@ -249,7 +253,7 @@ Can I distribute the results from the new application to other users internally?
 
 Can I distribute the results from the new application to other users at a different internal geographic location?
 
-- *Covered by the nextPolicy Duty and the solution to* **IAtD-3**
+- *Covered by the nextPolicy Duty and the location constraint**
 
 #### NDU-4
 
@@ -275,7 +279,7 @@ If I want to use real-time data for portfolio valuation for internal use only, i
 
 Are separate non-display fees imposed for each internal application?
 
-- *Specified in the Payment Duty*
+- *Specified by the unit of count in the Payment Duty*
 
 
 ## Derived Data
@@ -309,33 +313,35 @@ Can I create manipulated / reverse-calculable data and redistribute that externa
 
 Can I create derived data, using delayed data, from 5 different vendors/exchanges, for internal use?
 
-- *Are we sensitive to the fact that the derivation is occuring over data from different vendors? I don't think this is of relevance to commingling.*
-
 #### DD-3
 
 Can I create derived data, in the form of an index, using EOD data, from 5 different vendors/exchanges, and send the result to a client?
-
-- *Solved by* **DD-2**
 
 #### DD-4
 
 Can I create a spreadsheet combining two vendors data to create derived data
 
-- *Solved by* **DD-2**
 
 #### DD-5
 
 I’m creating a spreadsheet combining two vendors data to create derived data – am I allowed to share this with clients?
 
-- *Two vendor issues solved by* **DD-2**. *Sharing with clients would be a distibution permission linked through a nextPolicy duty.*
-
 #### DD-7
 
 Can I create a tradeable CFD instrument using one or more particular data sets?
 
-- *The 'more' question is solved by* **DD-2**. *Else it's a Derive action with the purpose of Creating a Traded Product of Asset Class CFD. The more interesting questions is how to prevent the creation of CFDs while allowing other derivatives.*
+- *Covered by a Derive action linking through a nextPolicy Distriubte action (and a timeliness constraint). The final policy controlling the derived data can be generated automaticaly from the source licenses.*
 
 ---
+
+#### DD-14
+
+Is data commingled from a single source classed as derived data by that source provider?
+
+- *Covered by the commingle constraint*
+
+
+### To Be Solved
 
 #### DD-6
 
@@ -349,17 +355,13 @@ Am I the intellectual property owner of the derived data that I have created?
 
 Can I create a non-tradable product containing one or more particular data sets for use as input to pricing evaluation of physical products?
 
-- **Does this require a new action of Commingle with a new purpose of Price Evaluation?**
-
-#### DD-14
-
-Is data commingled from a single source classed as derived data by that source provider?
-
-- *Solved by **DD-8** with an additional constraint on the Comingle action.*
+- **?**
 
 ---
 
 ## Reporting & Audits
+
+### Solved
 
 #### R-1
 
@@ -380,6 +382,8 @@ Does the vendor have the right to audit me?
 - *Specified by an Audit duty.*
 
 ---
+
+### To Be Solved
 
 #### R-3
 
@@ -403,6 +407,8 @@ Do DACS compliant applications need to be considered for the unit of count?
 
 
 ## Termination
+
+### To Be Solved
 
 #### T-1
 
