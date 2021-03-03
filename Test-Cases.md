@@ -235,6 +235,8 @@ Can I create derived data and then display it on a public website?
 ## Non-display Use
 For example, use of real-time data in a new application
 
+### Solved
+
 #### NDU-1
 
 Can I use real-time data in a new internal application, which will not display the data to any end users?
@@ -284,6 +286,8 @@ Are separate non-display fees imposed for each internal application?
 
 ## Derived Data
 Data being derived from varying sources, including for creation of Indices
+
+### Solved
 
 #### DD-1
 
