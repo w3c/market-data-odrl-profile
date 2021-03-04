@@ -29,6 +29,9 @@ Do I need to declare and/or pay for data utilisation within my development or UA
 
 - *Covered under the purposes of Training, Product Development, Technical Support, and Quality Assurance - but do we need additional terms?*
 
+```diff
+- Technical Development, Market Data Support
+```
 ---
 
 #### IAtD-9
