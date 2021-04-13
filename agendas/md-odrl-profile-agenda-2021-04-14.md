@@ -2,7 +2,7 @@
 
 ## Teleconference 2021-04-14
 
-**Please note:** As previously mentioned we have a special guest W3C Counsel Wendy Selzer who will answer questions on the Final Specification Agreement, please prepare your questions (see blow for link)
+**Please note:** As previously mentioned we have a special guest W3C Counsel Wendy Seltzer who will answer questions on the Final Specification Agreement, please prepare your questions (see below for link)
 
 **Please note: we are on Zoom now.** Dial-in Details are on the [Calendar Invite](http://www.w3.org/2020/04/md-odrl-profile.ics) (group member only link)
 
@@ -31,7 +31,7 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 1. Admin
     1. Minutes of [last meeting](https://www.w3.org/2021/03/31-md-odrl-profile-minutes.html)
     
-2. Questions on [Final Specification Agreement](https://www.w3.org/community/about/agreements/final/) with Wendy Selzer W3C Counsel
+2. Questions on [Final Specification Agreement](https://www.w3.org/community/about/agreements/final/) with Wendy Seltzer W3C Counsel
 
 3. Drafting a playbook for FISD (Ben)
 
