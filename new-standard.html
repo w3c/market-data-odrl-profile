@@ -46,7 +46,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Source">http://www.w3.org/md-odrl-profile/Source</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">Entity</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">prov:Entity</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -76,9 +76,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Asset">http://www.w3.org/md-odrl-profile/Asset</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Asset">https://www.w3.org/TR/odrl-vocab/#term-Asset</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Asset">odrl:Asset</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">Entity</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">prov:Entity</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -97,7 +97,7 @@
             </div>
         </section>
         <p>
-            The many ways to describe <code>Assets</code> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below.
+            The many ways to describe <a>Assets</a> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below.
         </p>
         <section id="Markets">
             <h2>Markets</h2>
@@ -492,8 +492,8 @@
                     </table>
                 </section>
             </section>
-            <section id="PartyRoles">
-                <h2>Party Roles</h2>
+            <section data-dfn-for="Party Role">
+                <h2><dfn>Party Role</dfn></h2>
                 <p>
                     Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data resource moves along the market data supply chain. 
                 </p><p>
@@ -509,20 +509,17 @@
                 </li><li>
                     And if those end-users in the bank were then to derive a new creative work from the data, they would be acting as Originators ... and so the supply chain spins on.
                 </li></ol>
-                <section data-dfn-for="Party Role">
-                    <h2><dfn>Party Role</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
-                            </tr><tr>
-                                <th>Label:</th><td>Party Role</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PartyRole">http://www.w3.org/md-odrl-profile/PartyRole</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
+                        </tr><tr>
+                            <th>Label:</th><td>Party Role</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PartyRole">http://www.w3.org/md-odrl-profile/PartyRole</a></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <section data-dfn-for="Originator">
                     <h2><dfn>Originator</dfn></h2>
                     <table class="def propdef">
