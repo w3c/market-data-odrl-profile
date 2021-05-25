@@ -22,14 +22,14 @@
     <p>
         The Market Data Profile for ODRL operates within the context of the market data supply chain. 
     </p><p>    
-        By market data, we mean the price and trade-related data for financial instruments (e.g. equity prices) and the data derived from it (e.g. indices). The supply chain is the sum of the interactions between the parties creating, providing, and consuming market data.
+        By market data, we mean the price and trade-related data for financial instruments (e.g. equity prices) and the data derived from it (e.g. indices). The supply chain is then the sum of the interactions between the parties creating, providing, and consuming market data.
     </p><p>    
-        To unlock the standard"s potential we must situate the profile within a metamodel that describes the parties, entities, and activities that define these interactions. They are of direct relevance to decisions on compliant use.
+        To unlock the standard"s potential we must situate the profile within a metamodel that describes the entities, parties, and activities that define these interactions. They are of direct relevance to decisions on compliant use.
     </p>
     <section id="Entities">
         <h2>Entities</h2>    
         <p>
-            The data supply chain generates and consumes data. To track its progress, we need to distinguish between the original information as it is created (e.g. on a trading venue) and the data as it is traded and consumed (i.e. commercially packaged by timeliness, geography, or other dimension and subject to rights and obligations). The former is a <a>Source</a> and the latter is an <a>Asset</a>.
+            The data supply chain generates and consumes data. To track its progress, we need to distinguish between the original information as it is created (e.g. on a trading venue) and the data as it is traded and consumed (i.e. commercially packaged by timeliness, geography, or other dimension and subject to rights and obligations). The former is a <code>Source</code> and the latter is an <code>Asset</code>.
         </p>
         <section data-dfn-for="Source">
             <h2><dfn>Source</dfn></h2>
@@ -195,7 +195,7 @@
         <section data-dfn-for="UnitsOfCount">
             <h2><dfn>Units of Count</dfn></h2>
             <p>
-                The rights and obligations controlling the use of data often require counting things, expecially to fulfill <code>reporting</code> (see <a href="#DeviceUsageReport">Example 5</a>) or <code>payment</code> duties.
+                The rights and obligations controlling the use of data often require counting things (q.v. <a>Report</a> or <a>Compensate</a> duties).
             </p>
             <table class="def propdef">
                 <tbody>
@@ -357,16 +357,18 @@
                 </p><p>
                     We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
                 </p><p>
-                    Furthermore, the rights and obligations applicable to the direct <a>licensee</a> can sometimes differ from those offered to their <a>affiliates</a>. So we must express the distinction too.
+                    Furthermore, the rights and obligations applicable to the <a>licensee</a> can sometimes differ from those offered to their <a>affiliates</a>. So we must express the distinction too.
                 </p><p>
-                    In distribution use cases, the type of third-party recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties.
+                    In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties.
                 </p>
                 <section data-dfn-for="InternalParty">
                     <h2><dfn>Internal Party</dfn></h2>
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that belongs to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> and its affiliated or enumerated organisations as specified by the governing license.</td>
+                                <th>Definition:</th><td>The <a>Licensing Party</a> and its affiliated or enumerated organisations as specified in the governing license.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>Also covers the members of a banking group that licenses through an umbrella association.</td>
                             </tr><tr>
                                 <th>Label:</th><td>Internal Party</td>
                             </tr><tr>
@@ -385,6 +387,8 @@
                         <tbody>
                             <tr>
                                 <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is the signatory of the governing license and is directly bound by it.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>A narrower terms than <a>Assignee</a> as <code>Licensing Party</code> identifies only the signatory, not all the parties bound by the rights and obligations assigned under the license (the <a>Assignees</a>).</td>
                             </tr><tr>
                                 <th>Label:</th><td>Licensing Party</td>
                             </tr><tr>
@@ -420,7 +424,9 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that does <em>not</em> belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> and its affiliated or enumerated organisations as specified by the governing license.</td>
+                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is neither the <a>Licensing Party</a> nor one of the affiliated or enumerated organisations as specified by the governing license.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>The opposite (i.e. set complement) of <a>Internal Party</a></td>
                             </tr><tr>
                                 <th>Scope Note:</th><td>Captures the concept of third parties.</td>
                             </tr><tr>
@@ -478,7 +484,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>A formally accredited educational institution using the <a>Asset</a> solely for the purpose of teaching.</td>
+                                <th>Definition:</th><td>A formally accredited educational institution using market data solely for the purpose of education or training.</td>
                             </tr><tr>
                                 <th>Label:</th><td>Educational Party</td>
                             </tr><tr>
@@ -495,17 +501,17 @@
             <section data-dfn-for="Party Role">
                 <h2><dfn>Party Role</dfn></h2>
                 <p>
-                    Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data resource moves along the market data supply chain. 
+                    Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data <a>Asset</a> moves along the market data supply chain. 
                 </p><p>
                     Many Parties play different roles at different times. A large financial institution regularly acts as an <a>Originator</a>, <a>Provider</a>, and <a>Consumer</a> of data assets.
                 </p><p>
-                    In the example of an exchange delivering a data <a>Asset</a> to a vendor for onward distribution to a bank, the sequence of parties and their roles would look as follows:
+                    In the example of an <a>Exchange</a> delivering an <a>Asset</a> to a vendor for onward distribution to a bank, the sequence of parties and their roles would look as follows:
                 </p><ol><li>
-                    The exchange acting as an <a>Originator</a> assigns rights and delivers data to the vendor, acting as a <a>Consumer</a>. 
+                    The exchange acting as an <a>Originator</a> assigns rights and as a <a>Provider</a> delivers data to the vendor, acting as a <a>Consumer</a>. 
                 </li><li>
-                    The vendor, then acting as a <a>Provider</a>, assigns rights and delivers data to the bank, acting as a Consumer.
+                    The vendor, then acting as an <a>Administrator</a>, assigns rights, and as a <a>Provider</a>, delivers data to the bank, acting as a Consumer.
                 </li><li>
-                    The banks market data function, now acting as a Provider, then assigns rights and delivers data to its end users, who are the final Consumers.
+                    The banks market data function, now acting as an <a>Administrator</a>, then assigns rights and, acting as a <a>Provider</a>, delivers data to its end users, who are the final Consumers.
                 </li><li>
                     And if those end-users in the bank were then to derive a new creative work from the data, they would be acting as Originators ... and so the supply chain spins on.
                 </li></ol>
@@ -525,9 +531,9 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in generating/owning a <a>Resource</a>, acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling the use of that resource (or parts of it), and delivering it for use.</td>
+                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in creating a <a>Source</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its commercialisation and use.</td>
                             </tr><tr>
-                                <th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the Assigner of this work.</td>
+                                <th>Scope Note:</th><td>Applies to Parties deriving or curating a new creative work and acting as the Assigner for this work.</td>
                             </tr><tr>
                                 <th>Note:</th><td>Originators may use an <a>Administrator</a> to manage their rights assignments and a <a>Service Facilitator</a> to destribute the data.</td>
                             </tr><tr>
@@ -553,11 +559,13 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays by distributing an <a>Asset</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its use.</td>
+                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in delivering and/or or providing access to an <a>Asset</a> for <code>Consumers</code>.</td>
                             </tr><tr>
                                 <th>Scope Note:</th><td>Designates the role a vendor plays in providing data to its customers.</td>
                             </tr><tr>
                                 <th>Scope Note:</th><td>Describes the role the market data function within a financial institution plays in providing data to its internal customers.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>The rights and obligations controlling the use of the <a>Asset</a> are supplied by the <code>Administrator</code> .</td>
                             </tr><tr>
                                 <th>Label:</th><td>Provider</td>
                             </tr><tr>
@@ -583,7 +591,7 @@
                             <tr>
                                 <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
                             </tr><tr>
-                                <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its <a>Providers</a>.</td>
+                                <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its <a>Providers</a> and the rights and obligations controlling its use from their <code>Adminstrators</code>.</td>
                             </tr><tr>
                                 <th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
                             </tr><tr>
