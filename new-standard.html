@@ -136,7 +136,7 @@
                         </tr><tr>
                             <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific venue. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
                         </tr><tr>
-                            <th>Note:</th><td>In <a>platform trading</a>, reporting the number of venues on which an <code>Asset</code> is made available can decide data costs.</td>
+                            <th>Note:</th><td>When providing <a>Trading Platforms</a>, reporting the number of venues on which an <code>Asset</code> is made available can decide data costs.</td>
                         </tr><tr>
                             <th>Label:</th><td>Venue</td>
                         </tr><tr>
@@ -501,8 +501,8 @@
                     </table>
                 </section>
             </section>
-            <section data-dfn-for="Party Role">
-                <h2><dfn>Party Role</dfn></h2>
+            <section data-dfn-for="PartyRole">
+                <h2><dfn>Party Roles</dfn></h2>
                 <p>
                     Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data <a>Asset</a> moves along the market data supply chain. 
                 </p><p>
@@ -726,7 +726,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Computing an index value based on the performance of an idenfied set of constituents.</td>
+                                <th>Definition:</th><td>Computing an index value based on the performance of an identified set of constituents.</td>
                             </tr><tr>
                                 <th>Label:</th><td>Calculating Index</td>
                             </tr><tr>
@@ -768,8 +768,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <section data-dfn-for="PlatformTrading">
-                        <h2><dfn>Platform Trading</dfn></h2>
+                    <section data-dfn-for="TradingPlatform">
+                        <h2><dfn>Trading Platform</dfn></h2>
                         <table class="def propdef">
                             <tbody>
                                 <tr>
@@ -779,11 +779,11 @@
                                 </tr><tr>
                                     <th>Scope Note:</th><td>Includes alternative trading systems (ATS) as defined by 300a of the SEC regulation on ATS: any organization, association, person, group of persons, or system that constitutes, maintains, or provides a market place or facilities for bringing together purchasers and sellers of securities or for otherwise performing with respect to securities the functions commonly performed by a stock exchange.</td>
                                 </tr><tr>
-                                    <th>Scope Note:</th><td>Includes multilateral trading facilities (MTF) as defined in MIFD II: multilateral systems, operated by an investment firm or a market operator, which bring together multiple third-party buying and selling interests in financial instruments (in the system and in accordance with non- discretionary rules) in a way that results in a contract.</td>
+                                    <th>Scope Note:</th><td>Includes multilateral trading facilities (MTF) as defined in MiFID II: multilateral systems, operated by an investment firm or a market operator, which bring together multiple third-party buying and selling interests in financial instruments (in the system and in accordance with non- discretionary rules) in a way that results in a contract.</td>
                                 </tr><tr>
-                                    <th>Scope Note:</th><td>Includes organised trading facilities (OTF) as defined in MIFD II: multilateral systems which are not a regulated market or an MTF and in which multiple third-party buying and selling interests in bonds, structured finance products, emission allowances, or derivatives are able to interact in the system in a way that results in a contract.</td>
+                                    <th>Scope Note:</th><td>Includes organised trading facilities (OTF) as defined in MiFID II: multilateral systems which are not a regulated market or an MTF and in which multiple third-party buying and selling interests in bonds, structured finance products, emission allowances, or derivatives are able to interact in the system in a way that results in a contract.</td>
                                 </tr><tr>
-                                    <th>Scope Note:</th><td>Includes systematic internalization (SI) as defined in MIFD II: dealing on an organised, frequent, systematic, and substantial basis on one"s own account when executing client orders outside a regulated market, an MTF, or an OTF, without operating a multilateral system.</td>
+                                    <th>Scope Note:</th><td>Includes systematic internalization (SI) as defined in MiFID II: dealing on an organised, frequent, systematic, and substantial basis on one"s own account when executing client orders outside a regulated market, an MTF, or an OTF, without operating a multilateral system.</td>
                                 </tr><tr>
                                     <th>Scope Note:</th><td>Includes any exchange registered as a National Securities Exchange (as defined in Section 3(a)(1) of the Exchange Act)</td>
                                 </tr><tr>
@@ -791,7 +791,7 @@
                                 </tr><tr>
                                     <th>Note:</th><td>As trading <a>venues</a>, the trading platforms described here may well have mic codes associated with them.</td>
                                 </tr><tr>
-                                    <th>Label:</th><td>Platform Trading</td>
+                                    <th>Label:</th><td>Trading Platform</td>
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PlatformTrading">http://www.w3.org/md-odrl-profile/PlatformTrading</a></td>
                                 </tr><tr>
@@ -805,7 +805,7 @@
                         <table class="def propdef">
                             <tbody>
                                 <tr>
-                                    <th>Definition:</th><td>Undertaking activities for their own purposes i.e. acting in one’s own name or for one’s own account - not on someone else"s account (like that of a client).</td>
+                                    <th>Definition:</th><td>Trading on behalf of the firm’s own accounts, not on behalf of a client.</td>
                                 </tr><tr>
                                     <th>Scope Note:</th><td>Market making is considered to be trading as principal.</td>
                                 </tr><tr>
@@ -827,7 +827,7 @@
                         <table class="def propdef">
                             <tbody>
                                 <tr>
-                                    <th>Definition:</th><td>Acting on behalf of another person’s name and for another person’s account or acting in one’s own name and for another person’s account i.e. trading to execute orders on behalf of clients.</td>
+                                    <th>Definition:</th><td>Acting on behalf of another person’s name and for another person’s account or acting in one’s own name and for another person’s account (i.e. trading to execute orders on behalf of clients).</td>
                                 </tr><tr>
                                     <th>Scope Note:</th><td>Offering smart order routing is considered facilitating customer business.</td>
                                 </tr><tr>
@@ -864,9 +864,9 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>The provision of technical assistance relating only to data quality or performance issues performed by technical support staff.</td>
+                                <th>Definition:</th><td>The provision of technical assistance (by support staff) relating only to data quality or performance issues.</td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Scope Note:</th><td>Exludes assistance in placing or adjusting an order.</td>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>Excludes assistance in placing or adjusting an order.</td>
                             </tr><tr>
                                 <th>Note:</th><td>Those receiving technical support can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
                             </tr><tr>
@@ -879,18 +879,20 @@
                         </tbody>
                     </table>
                 </section>
-                <section data-dfn-for="QualityAssurance">
-                    <h2><dfn>Quality Assurance</dfn></h2>
+                <section data-dfn-for="DataManagement">
+                    <h2><dfn>Data Management</dfn></h2>
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Oversight of internal data quality control and assurance – i.e. monitoring systems to ensure correct software or hardware processing to ensure an accurate flow of data </td>
+                                <th>Definition:</th><td>Oversight of internal data quality control and assurance (i.e., monitoring systems to ensure correct software or hardware processing to ensure an accurate flow of data).</td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Scope Note:</th><td>Exludes assistance in placing or adjusting an order.</td>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>Covers quality assurance.</td>
                             </tr><tr>
-                                <th>Label:</th><td>Quality Assurance</td>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>Excludes assistance in placing or adjusting an order.</td>
                             </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/QualityAssurance">http://www.w3.org/md-odrl-profile/QualityAssurance</a></td>
+                                <th>Label:</th><td>Data Management</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DataManagement">http://www.w3.org/md-odrl-profile/DataManagement</a></td>
                             </tr><tr>
                                 <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Usage</a></td>
                             </tr>
@@ -902,7 +904,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Developing new <a>Services</a> or further developing existing services</td>
+                                <th>Definition:</th><td>Developing new <a>services</a> or further developing existing services</td>
                             </tr><tr>
                                 <th>Label:</th><td>Product Development</td>
                             </tr><tr>
@@ -918,9 +920,9 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Marketing the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users or subscribers.</td>
+                                <th>Definition:</th><td>Marketing the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">assignee</a>’s <a>service</a> to potential users or subscribers.</td>
                             </tr><tr>
-                                <th>Note:</th><td>The audience can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                                <th>Note:</th><td>The audience can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">rule</a>.</td>
                             </tr><tr>
                                 <th>Label:</th><td>Marketing</td>
                             </tr><tr>
@@ -935,9 +937,9 @@
                         <table class="def propdef">
                             <tbody>
                                 <tr>
-                                    <th>Definition:</th><td>Demonstrating the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s <a>Service</a> to potential users or subscribers.</td>
+                                    <th>Definition:</th><td>Demonstrating the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">assignee</a>’s <a>service</a> to potential users or subscribers.</td>
                                 </tr><tr>
-                                    <th>Note:</th><td>The audience for demonstrations can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                                    <th>Note:</th><td>The audience for demonstrations can be constrained by setting the <a>recipients</a> constraint on the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">rule</a>.</td>
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Editorial Note:</th><td>Demonstrations are time limited activities. Demonstrations in a public forum must be at time-limited events like conferences or trade shows. </td>
                                 </tr><tr>
@@ -956,9 +958,9 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Maintaining and testing a business continuity envoronment.</td>
+                                <th>Definition:</th><td>Maintaining and testing a business continuity environment.</td>
                             </tr><tr>
-                                <th>Note:</th><td>If disaster strikes, and the business continuity environment becomes the live environment, then the normal permission must be used to execute business, not this one.</td>
+                                <th>Note:</th><td>If the business continuity environment becomes the live environment, then the normal permission must be used to execute business, not this one.</td>
                             </tr><tr>
                                 <th>Label:</th><td>Business Continuity</td>
                             </tr><tr>
@@ -991,7 +993,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>An inspection of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>"s use of the <a>Asset</a> and/or the systems involved in its receipt, use, and distribution for the purpose of determining the Assingee"s compliance to the controlling license.</td>
+                            <th>Definition:</th><td>An examination of the Assignee's use of the Asset and/or the systems involved in its receipt, use, and distribution, for the purpose of determining the Assingee's compliance to the controlling license.</td>
                         </tr><tr>
                             <th>Label:</th><td>Audit</td>
                         </tr><tr>
@@ -1125,7 +1127,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>A <a>derivation</a> activity that uses calculations that cannot be perfomred in reverse  - i.e. the source <a>Asset</a> cannot be reverse engineered from the derived asset.</td>
+                                <th>Definition:</th><td>A derivation activity that uses calculations that cannot be perfomred in reverse (i.e., the source Asset cannot be reverse engineered from the derived asset).</td>
                             </tr><tr>
                                 <th>Label:</th><td>Irreversible Derivation</td>
                             </tr><tr>
@@ -1141,7 +1143,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>The derived <a>Asset</a> cannot be used in the place of the source asset - i.e. cannot substitute for it in any calculations.</td>
+                                <th>Definition:</th><td>The derived asset cannot be used in the place of the source asset (i.e., cannot substitute for it in any calculations).</td>
                             </tr><tr>
                                 <th>Label:</th><td>Non-Substitutive Derivation</td>
                             </tr><tr>
@@ -2336,6 +2338,27 @@
                 </tbody>
             </table>
         </section>
+        <section data-dfn-for="commingle">
+            <h2><dfn>commingle</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the <a>Quantity</a> of the <a>Asset</a> than can be combined with other assets in executing the rule.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>commingle less than</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/commingle">http://www.w3.org/md-odrl-profile/commingle</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Quantity</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section id="ConstraintsOnActions">
+        <h2>Constraints on Actions</h2>
         <section data-dfn-for="purposes">
             <h2><dfn>purposes</dfn></h2>
             <table class="def propdef">
@@ -2364,27 +2387,6 @@
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:Display</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
             </pre>
         </section>
-        <section data-dfn-for="commingle">
-            <h2><dfn>commingle</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Specifies the <a>Quantity</a> of the <a>Asset</a> than can be combined with other assets in executing the rule.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>commingle less than</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/commingle">http://www.w3.org/md-odrl-profile/commingle</a></td>
-                    </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
-                    </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Quantity</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </section>
-    <section id="ConstraintsOnActions">
-        <h2>Constraints on Actions</h2>
         <section data-dfn-for="derivationTypes">
             <h2><dfn>derivation types</dfn></h2>
             <table class="def propdef">
@@ -2408,7 +2410,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Classifies the display application as being either for individual use or public display</td>
+                        <th>Definition:</th><td>Classifies the display application as being either for individual use (i.e., a <a>device</a>) or public display (i.e., a wallboard).</td>
                     </tr><tr>
                         <th>Label:</th><td>for display types</td>
                     </tr><tr>
@@ -2559,7 +2561,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Represents the depth of the order book offered by a <a>Resource</a></td>
+                        <th>Definition:</th><td>Represents the depth of the order book offered by an <a>asset</a>.</td>
                     </tr><tr>
                         <th>Note:</th><td>Market depth can be qualified to specify the exact depth of market offered by using the <a>position from</a> and <a>position to</a> properties. (See <a href="#MarketDepthSpecification">Example 11</a>).</td>
                     </tr><tr>
@@ -2679,9 +2681,9 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The type of application on which the <a>Asset</a> is displayed</td>
+                        <th>Definition:</th><td>The type of application on which the <a>asset</a> is displayed</td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>Used to constrain a <a>Display</a> action to allow either individual or public presentation.</td>
+                        <th style="white-space:nowrap;">Scope Note:</th><td>Used to constrain a <a>display</a> action to allow either individual or public presentation.</td>
                     </tr><tr>
                         <th>Label:</th><td>Display Type</td>
                     </tr><tr>
