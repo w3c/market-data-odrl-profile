@@ -138,7 +138,7 @@
         <section data-dfn-for="AssetClass">
             <h2><dfn>Asset Class</dfn></h2>
             <p>
-                The financial instruments that an <code>Asset</code> describe may belong to an <code>Asset Class</code> (e.g. equities or bonds).
+                The financial instruments that an <a>Asset</a> describe may belong to an <code>Asset Class</code> (e.g. equities or bonds).
             </p>
             <table class="def propdef">
                 <tbody>
@@ -383,7 +383,7 @@
                 </p><p>
                     Furthermore, the rights and obligations applicable to the <a>licensee</a> can sometimes differ from those offered to their <a>affiliates</a>. So we must express the distinction too.
                 </p><p>
-                    In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties, and between existing and prospective clients.
+                    In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties, and between <a>existing</a> and <a>prospective clients</a>.
                 </p>
                 <section data-dfn-for="InternalParty">
                     <h2><dfn>Internal Party</dfn></h2>
@@ -412,7 +412,7 @@
                             <tr>
                                 <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is the signatory of the governing license and is directly bound by it.</td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Scope Note:</th><td>A narrower terms than <a>Assignee</a> as <code>Licensing Party</code> identifies only the signatory, not all the parties bound by the rights and obligations assigned under the license (the <a>Assignees</a>).</td>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>A narrower terms than <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> as <code>Licensing Party</code> identifies only the signatory, not all the parties bound by the rights and obligations assigned under the license (the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a>).</td>
                             </tr><tr>
                                 <th>Label:</th><td>Licensing Party</td>
                             </tr><tr>
@@ -477,7 +477,7 @@
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Educational Party</a></td>
+                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -497,7 +497,7 @@
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Professional Party</a> , <a>Educational Party</a></td>
+                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -515,7 +515,7 @@
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a></td>
+                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -533,7 +533,7 @@
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Prospective Client Party</a>.</td>
+                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Prospective Client Party</a>.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -551,7 +551,7 @@
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Existing Client Party</a>.</td>
+                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a>.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1215,20 +1215,20 @@
                 </section>
             </section>
         </section>   
-        <section data-dfn-for="Service">
-            <h2><dfn>Service</dfn></h2>
+        <section data-dfn-for="DistributionService">
+            <h2><dfn>Distribution Service</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>A service provided by the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> that involves distributing an <a>asset</a>to <a>external parties</a>.</td>
+                        <th>Definition:</th><td>A service provided by the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> that involves distributing an <a>Asset</a>to <a>External Parties</a>.</td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>Applies to the distribution of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assigner"s</a> assets (e.g. vendor redistribution of data).</td>
+                        <th style="white-space:nowrap;">Scope Note:</th><td>Applies to the distribution of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner's</a> assets (e.g. vendor redistribution of data).</td>
                     </tr><tr>
-                        <th>Scope Note:</th><td>Also applies to the distribution of original created works.</td>
+                        <th>Scope Note:</th><td>Also applies to the distribution of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee's</a>original created works.</td>
                     </tr><tr>
-                        <th>Label:</th><td>Service</td>
+                        <th>Label:</th><td>Distribution Service</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Service">http://www.w3.org/md-odrl-profile/Service</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DistributionService">http://www.w3.org/md-odrl-profile/DistributionService</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2076,7 +2076,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Categorises a <a>Resource</a> by the financial asset class(es) it describes.</td>
+                        <th>Definition:</th><td>Categorises a <a>Asset</a> by the financial asset class(es) it describes.</td>
                     </tr><tr>
                         <th>Label:</th><td>asset classes</td>
                     </tr><tr>
