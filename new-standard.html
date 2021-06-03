@@ -24,7 +24,7 @@
     </p><p>    
         By market data, we mean the price and trade-related data for financial instruments (e.g. equity prices) and the data derived from it (e.g. indices). The supply chain is then the sum of the interactions between the parties creating, providing, and consuming market data.
     </p><p>    
-        To unlock the standard"s potential we must situate the profile within a metamodel that describes the entities, parties, and activities that define these interactions. They are of direct relevance to decisions on compliant use.
+        To unlock the standard"s potential we must situate the profile within a metamodel that describes the entities, parties, and activities that define these interactions. They are of direct relevance to decisions on the compliant use of market data.
     </p>
     <section id="Entities">
         <h2>Entities</h2>
@@ -86,7 +86,7 @@
                 </table>
             </section>
             <p>
-                The many ways to describe <a>Assets</a> are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">2.4 Resources</a> below.
+                The many ways to describe <a>Assets</a> that are of relevance to market data licenses are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">Constraints on Assets</a> below.
             </p>
         </section>
         <section id="Markets">
@@ -94,7 +94,7 @@
             <p>
                Most of the <code>Assets</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments are traded at <code>Venues</code> managed by <code>Exchanges</code>.
             </p><p>
-               Knowing which venue generated a resource can help in tracing the rights and obligations that control the use of the data.
+               Knowing which venue generated a <a>Source</a> can help in tracing the rights and obligations that control the use of the data.
             </p>
             <section data-dfn-for="Exchange">
                 <h2><dfn>Exchange</dfn></h2>
@@ -103,7 +103,7 @@
                         <tr>
                             <th>Definition:</th><td>An organisation that manages one or more <a>Venues</a></td>
                         </tr><tr>
-                            <th>Note:</th><td>Exchanges can be identifed by their <a href="https://www.iso20022.org/market-identifier-codes">operating MIC codes</a>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
+                            <th>Note:</th><td><code>Exchanges</code> can be identifed by their <a href="https://www.iso20022.org/market-identifier-codes">operating MIC codes</a>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
                         </tr><tr>
                             <th>Label:</th><td>Exchange</td>
                         </tr><tr>
@@ -123,7 +123,7 @@
                         </tr><tr>
                             <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific venue. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
                         </tr><tr>
-                            <th>Note:</th><td>When providing <a>Trading Platforms</a>, reporting the number of venues on which an <code>Asset</code> is made available can decide data costs.</td>
+                            <th>Note:</th><td>When <a>Providing Venues</a> for trading, reporting the number of venues on which an <a>Asset</a> is made available can decide data costs.</td>
                         </tr><tr>
                             <th>Label:</th><td>Venue</td>
                         </tr><tr>
@@ -157,7 +157,7 @@
         <section id="Identifiers">
             <h2>Identifiers</h2>
             <p>
-                <a>Sources</a> in market data are rarely identified by universally unique identifiers (aka URIs) that can be understood along the supply chain. In the case of exchange data, however, they do have a product code that is unique to the specific <code>venue</code> that generates the resource.
+                <a>Sources</a> in market data are rarely identified by universally unique identifiers (aka URIs) that can be understood along the supply chain. In the case of exchange data, however, they do have a product code that is unique to the specific <a>Venue</a> that generates the Source.
             </p><p>
                 Combining these in a compound ID creates a unique identifier that can be understood by the supply chain.
             </p>
@@ -166,9 +166,9 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The combination of a <a>context</a> and an <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier/">identifier</a> that is unique within that context to deliver a globally unique identifier.</td>
+                            <th>Definition:</th><td>The combination of a <a>context</a> and an <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier/">identifier</a> (that is unique within that context) to deliver a globally unique identifier.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>For market data, the context will usually be the <a>Venue</a> that generates the <a>Resource</a>.</td>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>For market data, the context will usually be the <a>Venue</a> that generates the <a>Source</a>.</td>
                         </tr><tr>
                             <th>Note:</th><td>Use the identifier property provided by <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">DCMI Metadata Terms</a> vocabulary.</td>
                         </tr><tr>
@@ -218,6 +218,40 @@
                         </tr>
                     </tbody>
                 </table>
+                <section data-dfn-for="PersonID">
+                    <h2><dfn>Person ID</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>An idenitifier for a human user with authenticated access to the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Example:</th><td>Also known as Access ID</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Person ID</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PersonID">http://www.w3.org/md-odrl-profile/PersonID</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>User ID</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="MachineID">
+                    <h2><dfn>Machine ID</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>An idenitifier for a machine user with authenticated access to the <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Machine ID</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/MachineID">http://www.w3.org/md-odrl-profile/MachineID</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>User ID</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
             </section>
             <section data-dfn-for="Device">
                 <h2><dfn>Device</dfn></h2>
@@ -650,6 +684,8 @@
                             </tr><tr>
                                 <th>Scope Note:</th><td>Covers third-parties assisting in the delivery of data services for the Assignee such as generating derived data or distributing data.</td>
                             </tr><tr>
+                                <th>Scope Note:</th><td>Includes the activities of a 'calculating agent'.</td>
+                            </tr><tr>
                                 <th>Note:</th><td>When a Service Facilitator is used to create new original works, the Assignee, who owns the IP in the new data product, should be considered the <a>Originator</a> as it is they who can assign rights over it.</td>
                             </tr><tr>
                                 <th>Label:</th><td>Service Facilitator</td>
@@ -791,12 +827,12 @@
                             </tr>
                         </tbody>
                     </table>
-                    <section data-dfn-for="TradingPlatform">
-                        <h2><dfn>Trading Platform</dfn></h2>
+                    <section data-dfn-for="ProvideVenue">
+                        <h2><dfn>Provide Venue</dfn></h2>
                         <table class="def propdef">
                             <tbody>
                                 <tr>
-                                    <th>Definition:</th><td>Providing a <a>Venue</a> on which buy and sell orders from multiple parties are matched</td>
+                                    <th>Definition:</th><td>Providing a <a>Venue</a>/trading platform on which buy and sell orders from multiple parties are matched</td>
                                 </tr><tr>
                                     <th>Scope Note:</th><td>Broker crossing networks and dark pools are examples of alternative trading systems (ATS), and are thus trading platforms.</td>
                                 </tr><tr>
