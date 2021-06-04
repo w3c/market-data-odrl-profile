@@ -160,7 +160,7 @@
                 </section>
             </section>
             <p>
-                The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a>Constraints on Assets</a> below.
+                The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a href="#ConstraintsOnAssets">Constraints on Assets</a> below.
             </p>
         </section>
         <section id="Markets">
@@ -197,7 +197,7 @@
                         </tr><tr>
                             <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific <code>Venue</code>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
                         </tr><tr>
-                            <th>Note:</th><td>When <a>Providing Venues</a> for trading, reporting the number of venues on which an <a>Asset</a> is made available can decide data costs.</td>
+                            <th>Note:</th><td>When <a>Providing Trading Venues</a>, reporting the number of venues on which an <a>Asset</a> is made available can decide data costs.</td>
                         </tr><tr>
                             <th>Label:</th><td>Venue</td>
                         </tr><tr>
@@ -530,7 +530,7 @@
                 </p><p>
                     Furthermore, the rights and obligations applicable to the <a>licensee</a> can sometimes differ from those offered to their <a>affiliates</a>. So we must express the distinction too.
                 </p><p>
-                    In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties, and between <a>existing</a> and <a>prospective clients</a>.
+                    In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties, and between <a href="#existing-client-party">existing</a> and <a href="#prospective-client-party">prospective clients</a>.
                 </p>
                 <section data-dfn-for="InternalParty">
                     <h2><dfn>Internal Party</dfn></h2>
@@ -1765,7 +1765,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribution">http://www.w3.org/md-odrl-profile/Attribution</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Asset</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1781,7 +1781,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Disclaimer">http://www.w3.org/md-odrl-profile/Disclaimer</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Resource</a></td>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Asset</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2089,7 +2089,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the timing of the permitted receipt, use, or onwards delivery of a <a>Resource</a>.</td>
+                        <th>Definition:</th><td>Specifies the timing of the permitted receipt, use, or onwards delivery of an <a>Asset</a>.</td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Editorial Note:</th><td>Usually specified as an interval (or intervals) relative to the data"s <a>Origination Time</a>, <a>Publication Time</a>, <a>Issue Time</a>, or <a>Market Close</a> (or some other specified moment).</td>
                     </tr><tr>
@@ -2133,9 +2133,9 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The period during which the <a>Resource</a> has been, or continues to be, updated.</td>
+                        <th>Definition:</th><td>The period during which the <a>Asset</a> has been, or continues to be, updated.</td>
                     </tr><tr>
-                        <th>Note:</th><td>If the resouce continues to be updated while a subsciption holds, use the <a>Service Period</a> interval.</td>
+                        <th>Note:</th><td>If the Asset continues to be updated while a subsciption holds, use the <a>Service Period</a> interval.</td>
                     </tr><tr>
                         <th>Label:</th><td>period of update</td>
                     </tr><tr>
@@ -2153,7 +2153,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies how frequently updates to the Resource are delivered.</td>
+                        <th>Definition:</th><td>Specifies how frequently updates to the <a>Asset</a> are delivered.</td>
                     </tr><tr>
                         <th>Label:</th><td>frequency of update</td>
                     </tr><tr>
@@ -2171,7 +2171,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                <th>Definition:</th><td>Measures the book depth offered by a <a>Resource</a>.</td>
+                <th>Definition:</th><td>Measures the book depth offered by an <a>Asset</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>depth of market</td>
                     </tr><tr>
@@ -2189,7 +2189,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The geographic subject matter and focus of a <a>Resource</a>.</td>
+                        <th>Definition:</th><td>The geographic subject matter and focus of an <a>Asset</a>.</td>
                     </tr><tr>
                         <th>Scope Note:</th><td>A characteristic of the <a>Resource</a> rather than its source/origin or any limitations on its distribution.</td>
                     </tr><tr>
@@ -2209,7 +2209,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The amount of a Resource.</td>
+                        <th>Definition:</th><td>The amount of an <a>Asset</a>.</td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Scope Note:</th><td>If a qualititive measure is needed use the values <a>Insubstantial</a> or <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
                     </tr><tr>
