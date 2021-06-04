@@ -1164,7 +1164,7 @@
                         <tr>
                             <th>Definition:</th><td>Oversight by support staff of internal data quality control and assurance (i.e., monitoring systems to ensure an accurate flow of data).</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>Covers quality assurance.</td>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>Covers quality assurance and administration.</td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Scope Note:</th><td>Excludes assistance in placing or adjusting an order.</td>
                         </tr><tr>
@@ -1807,6 +1807,22 @@
                 </tbody>
             </table>
         </section>
+        <section data-dfn-for="Proscription">
+            <h2><dfn>Proscription</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>A written instruction forbidding some action .</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Proscription</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Proscription">http://www.w3.org/md-odrl-profile/Proscription</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Asset</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
         <section data-dfn-for="DutyAssetProperties">
             <h2><dfn>Duty Asset Properties</dfn></h2>
             <section data-dfn-for="wording">
@@ -2029,11 +2045,13 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The <a>subject</a> attaches the rubric specified by the <a>target</a> relation to the <a>Asset</a>.</td>
+                        <th>Definition:</th><td>The <a>subject</a> attaches the rubric specified by the <a>target</a> relation.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is an <a>Attribution</a>, the rubric describes the <a>object</a>"s ownership of the asset. The precise phrasing may be specified by a <a>wording</a> property on the attribution.</td>
+                        <th>Example:</th><td>Where the <a>target</a> is an <a>Attribution</a>, the rubric describes the <a>object</a>'s ownership of the asset. The precise phrasing may be specified by a <a>wording</a> property on the attribution.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a>Disclaimer</a>, the rubric clarifies the <a>object</a>"s relation to the asset. The precise phrasing may be specified by a <a>wording</a> property on the disclaimer.</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a>Disclaimer</a>, the rubric clarifies the <a>object</a>'s relation to the asset. The precise phrasing may be specified by a <a>wording</a> property on the disclaimer.</td>
+                    </tr><tr>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a>Proscription</a>, the rubric instructs the <a>object</a> not to do something as specified by a <a>wording</a> property on the proscription.</td>
                     </tr><tr>
                         <th>Label:</th><td>Attach</td>
                     </tr><tr>
@@ -2073,6 +2091,22 @@
                 <span class="w">                        </span><span class="nn">md:</span><span class="nt">wording</span><span class="w">      </span><span class="s">"CME Group Market Data is used under license as a source of information for certain [LICENSEE/LICENSEE GROUP] products. CME Group has no other connection to [LICENSEE/LICENSEE GROUP] products and services and does not sponsor, endorse, recommend or promote any [LICENSEE/LICENSEE GROUP] products or services. CME Group has no obligation or liability in connection with the [LICENSEE/LICENSEE GROUP] products and services. CME Group does not guarantee the accuracy and/or the completeness of any Market Data licensed to [LICENSEE/LICENSEE GROUP] and shall not have any liability for any errors, omissions, or interruptions therein. there are no third-party beneficiaries of any agreements or arrangements between CME Group and [LICENSEE/LICENSEE GROUP]."</span>
                 <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
             </pre>
+        </section>
+        <section data-dfn-for="Agree">
+            <h2><dfn>Agree</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>The <a>subject</a> must come to a legally binding agreement with the <a>object</a> that enforces the rubric specified by the <a>target</a> relation.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Agree</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Agree">http://www.w3.org/md-odrl-profile/Agree</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#action">Action</a>, <a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </section>
 </section>
