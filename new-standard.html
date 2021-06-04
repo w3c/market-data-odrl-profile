@@ -85,8 +85,82 @@
                     </tbody>
                 </table>
             </section>
+            <section id="ResourceProperties">
+                <h2>Resource Properties</h2>
+                <section data-dfn-for="providers">
+                    <h2><dfn>providers</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Provider</a> in relation to an <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>providers</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Asset">Asset</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        In the example below the Asset <code>:A1</code> is provided by the CME:
+                    </p>
+                    <pre class="example nohighlight turtle" title="Specifying the Provider of an Asset" id="ProviderSpecification">
+                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                    </pre>
+                </section>
+                <section data-dfn-for="refines">
+                    <h2><dfn>refines</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the original <a>Asset</a> or <a>Source</a> that the subject <a>Asset</a> refines.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>New <a>Assets</a> can be created by constraining and/or aggregating other Assets or <a>Sources</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>refines</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Asset</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a>Asset</a> , <a>Source</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        In the example below the Asset <code>:A2</code> is a <code>Delayed</code> version of the Asset <code>:A1</code>:
+                    </p>
+                    <pre class="example nohighlight turtle" title="Creating a New Asset from an Existing Asset" id="RefiningAssets">
+                        <span class="nv">:A2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:A1</span> <span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:Delayed</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
+                <section data-dfn-for="compoundIDs">
+                    <h2><dfn>compound IDs</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies a <a>Compound ID</a> that identifies a <a>Source</a> or <a>Asset</a> in a manner that can be understood along the supply chain.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>compound IDs</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/compoundIDs">http://www.w3.org/md-odrl-profile/compoundIDs</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Source</a> , <a>Asset</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a>Compound ID</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
             <p>
-                The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">Constraints on Assets</a> below.
+                The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a>Constraints On Assets</a> below.
             </p>
         </section>
         <section id="Markets">
@@ -134,22 +208,45 @@
                     </tbody>
                 </table>
             </section>
-        </section>
-        <section data-dfn-for="DistributionService">
-            <h2><dfn>Distribution Service</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>A service provided by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that involves distributing an <a>Asset</a> to <a>External Parties</a>.</td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>Applies to both the redistribution of third-party data (e.g. exchange data in the case of a bank) and the distribution of derived data (e.g. benchmarks and indices).</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Distribution Service</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DistributionService">http://www.w3.org/md-odrl-profile/DistributionService</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <section id="MarketProperties">
+                <h2>Market Properties</h2>
+                <section data-dfn-for="operatingMic">
+                    <h2><dfn>operatingMic</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the Exchange using ISO 10383 market identifier codes, specifically the operating MIC code.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>operating MIC code</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/operatingMic">http://www.w3.org/md-odrl-profile/operatingMic</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Venue</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">Operating MIC Code</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="mic">
+                    <h2><dfn>mic</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the Market using ISO 10383 market identifier codes, specifically the market MIC code.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>MIC code</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/mic">http://www.w3.org/md-odrl-profile/mic</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Venue</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC Code</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="AssetClass">
             <h2><dfn>Asset Class</dfn></h2>
@@ -197,6 +294,40 @@
                     </tbody>
                 </table>
             </section>
+            <section id="CompoundIDProperties">
+                <h2>Compound ID Properties</h2>
+                <section data-dfn-for="context">
+                    <h2><dfn>context</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the context in which the specified identifier is unique.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>context</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/context">http://www.w3.org/md-odrl-profile/context</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a>Compound ID</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a>Venue</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            <p>
+                This example identifies the Eurodollar Futures Contract traded on Globex:
+            </p>
+            <pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
+                <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
+                <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                <span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
+            </pre>
         </section>
         <section data-dfn-for="UnitsOfCount">
             <h2><dfn>Units of Count</dfn></h2>
@@ -771,11 +902,68 @@
                         <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Administrator.png?raw=true" alt="Administrator diagram"> 
                     </div>
                 </section>
+                <section id="PartyProperties">
+                    <h2>Party Properties</h2>
+                    <section data-dfn-for="roles">
+                        <h2><dfn>roles</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Resource</a>.</td>
+                                </tr><tr>
+                                    <th>Label:</th><td>roles</td>
+                                </tr><tr>
+                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
+                                </tr><tr>
+                                    <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                                </tr><tr>
+                                    <th>Range:</th><td><a>Party Role</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+            </section>
+            <section data-dfn-for="DistributionService">
+                <h2><dfn>Distribution Service</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A service provided by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that involves distributing an <a>Asset</a> to <a>External Parties</a>.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>Applies to both the redistribution of third-party data (e.g. exchange data in the case of a bank) and the distribution of derived data (e.g. benchmarks and indices).</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Distribution Service</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DistributionService">http://www.w3.org/md-odrl-profile/DistributionService</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section id="ServiceProperties">
+                    <h2>Service Properties</h2>
+                    <section data-dfn-for="provides">
+                        <h2><dfn>provides</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th><td>Identifies the <a>Assets</a> that belong to a <a>Service</a>.</td>
+                                </tr><tr>
+                                    <th>Label:</th><td>provides</td>
+                                </tr><tr>
+                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/provides">http://www.w3.org/md-odrl-profile/provides</a></td>
+                                </tr><tr>
+                                    <th>Domain:</th><td><a>Service</a></td>
+                                </tr><tr>
+                                    <th>Range:</th><td><a>Asset</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
             </section>
         </section>
         <section id="Activities">
             <h2>Activities</h2>
-
             <p>
                 An <a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a> is something that occurs over a period of time and acts upon or with <a href="https://www.w3.org/TR/prov-o/#Entity">entities</a>. An activity has a start time and an end time; can be influenced or informed by other activities; and can be generated by something. It"s a concept central to tracking <a href="w3.org/TR/prov-o/#description-starting-point-terms">provenance</a>.
             </p><p>
@@ -1227,199 +1415,7 @@
                 </section>
             </section>
         </section>   
-    </section>
-    <section id="Properties">
-        <h2>Properties</h2>
-        <section id="ResourceProperties">
-            <h2>Resource Properties</h2>
-            <section data-dfn-for="providers">
-                <h2><dfn>providers</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Identifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> playing the role of <a>Provider</a> in relation to the <a>Resource</a>.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>is provided by</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    In the example below the Resource <code>:R1</code> is provided by the CME:
-                </p>
-                <pre class="example nohighlight turtle" title="Specifying the Provider of a Resource" id="ProviderSpecification">
-                    <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
-                </pre>
-            </section>
-            <section data-dfn-for="refines">
-                <h2><dfn>refines</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Identifies the original <a>Resource</a>(s) that the subject resource or <a>Asset</a> refines.</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>New resources can be created by constraining and/or aggregating other resources.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>refines resources</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    In the example below the Resource <code>:R2</code> is a <code>Delayed</code> version of the Resource <code>:R1</code>:
-                </p>
-                <pre class="example nohighlight turtle" title="Creating a New Resource from an Existing Resource" id="ResourceQualification">
-                    <span class="nv">:R2</span><span class="w">   </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">refines</span><span class="w">              </span><span class="nv">:R1</span> <span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">:Delayed</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
-                </pre>
-            </section>
-            <section data-dfn-for="compoundIDs">
-                <h2><dfn>compound IDs</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Identifies a <a>Compound ID</a> that identifies the Resource in a manner that can be understood along the supply chain.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>compound IDs</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/compoundIDs">http://www.w3.org/md-odrl-profile/compoundIDs</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a>Resource</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a>Compound ID</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-        <section id="MarketProperties">
-            <h2>Market Properties</h2>
-            <section data-dfn-for="operatingMic">
-                <h2><dfn>operatingMic</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Identifies the Exchange using ISO 10383 market identifier codes, specifically the operating MIC code.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>operating MIC code</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/operatingMic">http://www.w3.org/md-odrl-profile/operatingMic</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a>Venue</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">Operating MIC Code</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="mic">
-                <h2><dfn>mic</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Identifies the Market using ISO 10383 market identifier codes, specifically the market MIC code.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>MIC code</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/mic">http://www.w3.org/md-odrl-profile/mic</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a>Venue</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC Code</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-        <section id="CompoundIDProperties">
-            <h2>Compound ID Properties</h2>
-            <section data-dfn-for="context">
-                <h2><dfn>context</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Identifies the context in which the specified identifier is unique.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>context</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/context">http://www.w3.org/md-odrl-profile/context</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a>Compound ID</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a>Venue</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-        <p>
-            This example identifies the Eurodollar Futures Contract traded on Globex:
-        </p>
-        <pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
-            <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
-            <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
-            <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
-            <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
-            <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
-            <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
-            <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-            <span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
-        </pre>
-        <section id="PartyProperties">
-            <h2>Party Properties</h2>
-            <section data-dfn-for="roles">
-                <h2><dfn>roles</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Resource</a>.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>roles</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a>Party Role</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-        <section id="ServiceProperties">
-            <h2>Service Properties</h2>
-            <section data-dfn-for="provides">
-                <h2><dfn>provides</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Identifies the <a>Assets</a> that belong to a <a>Service</a>.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>provides</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/provides">http://www.w3.org/md-odrl-profile/provides</a></td>
-                        </tr><tr>
-                            <th>Domain:</th><td><a>Service</a></td>
-                        </tr><tr>
-                            <th>Range:</th><td><a>Asset</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-    </section>     
+    </section>   
 </section>
     
     
@@ -2063,8 +2059,8 @@
 </section>
 <section id="Constraints">
     <h2>Constraints</h2>
-    <section id="ConstraintsOnResources">
-        <h2>Constraints on Resources</h2>
+    <section id="ConstraintsOnAssets">
+        <h2>Constraints on Assets</h2>
         <section data-dfn-for="assetClasses">
             <h2><dfn>asset classes</dfn></h2>
             <table class="def propdef">
