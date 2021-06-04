@@ -123,7 +123,7 @@
                             </tr><tr>
                                 <th>Label:</th><td>refines</td>
                             </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/resources">http://www.w3.org/md-odrl-profile/refines</a></td>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/refines">http://www.w3.org/md-odrl-profile/refines</a></td>
                             </tr><tr>
                                 <th>Domain:</th><td><a>Asset</a></td>
                             </tr><tr>
@@ -2070,17 +2070,17 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/assetClasses">http://www.w3.org/md-odrl-profile/assetClasses</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-class">Asset Class</a></td>
                     </tr>
                 </tbody>
             </table>
             <p>
-                In the following example the Resource <code>:R1</code> describes Commodity Futures:
+                In the following example the Asset <code>:A1</code> describes Commodity Futures:
             </p>
             <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
-                <span class="nv">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
             </pre>
         </section>
@@ -2101,7 +2101,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/timelinessOfDeliverys">http://www.w3.org/md-odrl-profile/timelinessOfDelivery</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
                     </tr>
@@ -2113,7 +2113,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the method by which updates to the <a>Resource</a> are delivered.</td>
+                        <th>Definition:</th><td>Specifies the method by which updates to the <a>Asset</a> are delivered.</td>
                     </tr><tr>
                         <th>Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>. (See <a href="#SnapshotCount">Example 10</a>.)</td>
                     </tr><tr>
@@ -2121,7 +2121,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/methodOfUpdate">http://www.w3.org/md-odrl-profile/methodOfUpdate</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Update Method</a></td>
                     </tr>
@@ -2141,7 +2141,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/periodOfUpdate">http://www.w3.org/md-odrl-profile/periodOfUpdate</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
                     </tr>
@@ -2159,7 +2159,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/frequencyOfUpdate">http://www.w3.org/md-odrl-profile/frequencyOfUpdate</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Update Frequency</a></td>
                     </tr>
@@ -2177,7 +2177,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/depthOfMarket">http://www.w3.org/md-odrl-profile/depthOfMarket</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Market Depth</a></td>
                     </tr>
@@ -2191,13 +2191,13 @@
                     <tr>
                         <th>Definition:</th><td>The geographic subject matter and focus of an <a>Asset</a>.</td>
                     </tr><tr>
-                        <th>Scope Note:</th><td>A characteristic of the <a>Resource</a> rather than its source/origin or any limitations on its distribution.</td>
+                        <th>Scope Note:</th><td>A characteristic of the <a>Asset</a> rather than its source/origin or any limitations on its distribution.</td>
                     </tr><tr>
                         <th>Label:</th><td>geographic coverage</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/geography">http://www.w3.org/md-odrl-profile/geography</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resource">Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a href="https://unstats.un.org/unsd/methodology/m49/">UN M49 Codes</a></td>
                     </tr>
@@ -2217,7 +2217,7 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/amount">http://www.w3.org/md-odrl-profile/amount</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a>Resource</a></td>
+                        <th>Domain:</th><td><a>Asset</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Quantity</a></td>
                     </tr>
@@ -2232,9 +2232,9 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Given the <a>Asset Class</a>, further specifies the type of content provided by the <a>Resource</a></td>
+                        <th>Definition:</th><td>Given the <a>Asset Class</a>, further specifies the type of content provided by the <a>Asset</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Editorial Note:</th><td>The valid values for content type depend on the Asset Class of the Resource</td>
+                        <th style="white-space:nowrap;">Editorial Note:</th><td>The valid values for content type depend on the Asset Class of the Asset</td>
                     </tr><tr>
                         <th>Label:</th><td>content types</td>
                     </tr><tr>
@@ -2247,10 +2247,10 @@
                 </tbody>
             </table>
             <p>
-                The Resource <code>:R3</code> describes the Values and Constituents (content type) of an Index of Equities (asset class):
+                The Asset <code>:A3</code> describes the Values and Constituents (content type) of an Index of Equities (asset class):
             </p>
             <pre class="example nohighlight turtle" title="Specifying Content Type" id="ContentTypeSpecification">
-                <span class="nv">:R3</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="nv">:A3</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                           </span><span class="kt">a</span><span class="w">                       </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
                 <span class="w">                           </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">          </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="w"> </span><span class="p">]</span><span class="p"> )</span><span class="w"> </span><span class="p">;</span>
@@ -2478,7 +2478,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The methods by which a <a>Resource</a> is updated over time.</td>
+                        <th>Definition:</th><td>The methods by which an <a>Asset</a> is updated over time.</td>
                     </tr><tr>
                         <th>Label:</th><td>Update Method</td>
                     </tr><tr>
@@ -2508,10 +2508,10 @@
                     </tbody>
                 </table>
                 <p>
-                    In the following example, a <code>Resource</code> permits only three requests per day:
+                    In the following example, an <code>Asset</code> permits only three requests per day:
                 </p>
                 <pre class="example nohighlight turtle" title="Specifying Snapshot Counts" id="SnapshotCount">
-                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p"> ;</span>
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
                     <span class="w">     </span><span class="nn">md:</span><span class="nt">methodOfUpdate</span><span class="w">   </span><span class="p">[</span>
                     <span class="w">                             </span><span class="kt">a</span><span class="w">                  </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">         </span><span class="s">3</span>
@@ -2560,7 +2560,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The frequency by which a <a>Resource</a> is updated over time.</td>
+                        <th>Definition:</th><td>The frequency by which an <a>Asset</a> is updated over time.</td>
                     </tr><tr>
                         <th>Label:</th><td>Update Frequency</td>
                     </tr><tr>
@@ -2679,7 +2679,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Denotes the bid depth from which the <a>Resource</a> offers prices.</td>
+                                <th>Definition:</th><td>Denotes the bid depth from which the <a>Asset</a> offers prices.</td>
                             </tr><tr>
                                 <th>Label:</th><td>position from</td>
                             </tr><tr>
@@ -2697,7 +2697,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Denotes the bid depth up to which the <a>Resource</a> offers prices (inclusive).</td>
+                                <th>Definition:</th><td>Denotes the bid depth up to which the <a>Asset</a> offers prices (inclusive).</td>
                             </tr><tr>
                                 <th>Label:</th><td>position to</td>
                             </tr><tr>
@@ -2710,10 +2710,10 @@
                         </tbody>
                     </table>
             <p>
-                In this example, the <code>Level 2</code> <code>Resource</code> provides a book depth of ten:
+                In this example, the <code>Level 2</code> <code>Asset</code> provides a book depth of ten:
                 </p>
             <pre class="example nohighlight turtle" title="Specifying Market Depth" id="MarketDepthSpecification">
-                <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">depthOfMarket</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                           </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Level2</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionFrom</span><span class="w">          </span><span class="s">1</span><span class="w"> </span><span class="p">;</span>
@@ -2871,7 +2871,7 @@
                 We can specify the precise meaning of <code>Realtime</code> defined in a license. Here <code>Realtime</code> is data delivered within 10 minutes of <code>Issue Time</code>:
             </p>
             <pre class="example nohighlight turtle" title="Specifying Realtime Data" id="RealtimeSpecification">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Realtime</span><span class="p"> ;</span>
                 <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalBefore</span><span class="w"> </span><span class="p">[</span>
@@ -2901,7 +2901,7 @@
                 In this example, <code>Delayed</code> data is specified as running from ten minutes through to eight hours following <code>Issue Time</code>.
             </p>
             <pre class="example nohighlight turtle" title="Specifying Delayed Data" id="DelayedSpecification">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Delayed</span><span class="p"> ;</span>
                 <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalAfter</span><span class="w"> </span><span class="p">[</span>
@@ -2938,7 +2938,7 @@
                 In this example, <code>Historic</code> data is specified as being eight hours from <code>Issue Time</code>.
             </p>
             <pre class="example nohighlight turtle" title="Specifying Historical Data" id="HistoricalSpecification">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Historic</span><span class="p"> ;</span>
                 <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalAfter</span><span class="w"> </span><span class="p">[</span>
@@ -2970,7 +2970,7 @@
                 In this example, end-of-day data is defined as data <code>embargoed</code> until <code>market close</code> at 4pm CST.
             </p>
             <pre class="example nohighlight turtle" title="Specifying Embargoed Data" id="EmbargoedSpecification">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Resource</span><span class="p">;</span>
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                </span><span class="kt">a</span><span class="w">          </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Embargoed</span><span class="p"> ;</span>
                 <span class="w">                                </span><span class="nn">time:</span><span class="nt">after</span><span class="w"> </span><span class="p">[</span>
