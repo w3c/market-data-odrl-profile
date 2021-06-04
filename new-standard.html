@@ -86,13 +86,13 @@
                 </table>
             </section>
             <p>
-                The many ways to describe <a>Assets</a> that are of relevance to market data licenses are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">Constraints on Assets</a> below.
+                The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Resources">Constraints on Assets</a> below.
             </p>
         </section>
         <section id="Markets">
             <h2>Markets</h2>
             <p>
-               Most of the <code>Assets</code> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments are traded at <code>Venues</code> managed by <code>Exchanges</code>.
+               Most of the <a>Assets</a> of interest to market data licenses describe the pricing and trading of financial instruments. These instruments are traded at <code>Venues</code> managed by <code>Exchanges</code>.
             </p><p>
                Knowing which venue generated a <a>Source</a> can help in tracing the rights and obligations that control the use of the data.
             </p>
@@ -101,7 +101,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>An organisation that manages one or more <a>Venues</a></td>
+                            <th>Definition:</th><td>An organisation that manages one or more <code>Venues</code></td>
                         </tr><tr>
                             <th>Note:</th><td><code>Exchanges</code> can be identifed by their <a href="https://www.iso20022.org/market-identifier-codes">operating MIC codes</a>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
                         </tr><tr>
@@ -121,7 +121,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets; Organised Trading Facilities (OTF) and Multilateral Trading Facilities (MTFs) as defined in MiFID II; and Alternative Trading Systems (ATS) as defined by the SEC.</td>
                         </tr><tr>
-                            <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific venue. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
+                            <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific <code>Venue</code>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
                         </tr><tr>
                             <th>Note:</th><td>When <a>Providing Venues</a> for trading, reporting the number of venues on which an <a>Asset</a> is made available can decide data costs.</td>
                         </tr><tr>
@@ -134,6 +134,22 @@
                     </tbody>
                 </table>
             </section>
+        </section>
+        <section data-dfn-for="DistributionService">
+            <h2><dfn>Distribution Service</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>A service provided by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that involves distributing an <a>Asset</a> to <a>External Parties</a>.</td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Scope Note:</th><td>Applies to both the redistribution of third-party data (e.g. exchange data in the case of a bank) and the distribution of derived data (e.g. benchmarks and indices).</td>
+                    </tr><tr>
+                        <th>Label:</th><td>Distribution Service</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DistributionService">http://www.w3.org/md-odrl-profile/DistributionService</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
         <section data-dfn-for="AssetClass">
             <h2><dfn>Asset Class</dfn></h2>
@@ -418,7 +434,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/LicensingParty">http://www.w3.org/md-odrl-profile/LicensingParty</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">Internal Party</a></td>
                             </tr><tr>
                                 <th style="white-space:nowrap;">Disjoint with:</th><td><a>Affiliated Party</a></td>
                             </tr>
@@ -436,7 +452,7 @@
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AffiliatedParty">http://www.w3.org/md-odrl-profile/AffiliatedParty</a></td>
                             </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">Internal Party</a></td>
                             </tr><tr>
                                 <th style="white-space:nowrap;">Disjoint with:</th><td><a>Licensing Party</a></td>
                             </tr>
@@ -475,7 +491,7 @@
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProfessionalParty">http://www.w3.org/md-odrl-profile/ProfessionalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
                                 </tr>
@@ -495,7 +511,7 @@
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Non-ProfessionalParty">http://www.w3.org/md-odrl-profile/Non-ProfessionalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Disjoint with:</th><td><a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
                                 </tr>
@@ -513,7 +529,7 @@
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/EducationalParty">http://www.w3.org/md-odrl-profile/EducationalParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
                                 </tr>
@@ -525,13 +541,13 @@
                         <table class="def propdef">
                             <tbody>
                                 <tr>
-                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is a current consumer of services provided by the Assignee.</td>
+                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is a current consumer of <a>Distribution Services</a> provided by the Assignee.</td>
                                 </tr><tr>
                                     <th>Label:</th><td>Existing Client Party</td>
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ExistingClientParty">http://www.w3.org/md-odrl-profile/ExistingClientParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Prospective Client Party</a>.</td>
                                 </tr>
@@ -543,13 +559,13 @@
                         <table class="def propdef">
                             <tbody>
                                 <tr>
-                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that the Assignee is engaging with in order to procure such Party as a consumer of services provided by the Assignee.</td>
+                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that the Assignee is engaging with in order to procure such Party as a consumer of <a>Distribution Services</a> provided by the Assignee.</td>
                                 </tr><tr>
                                     <th>Label:</th><td>Prospective Client Party</td>
                                 </tr><tr>
                                     <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProspectiveClientParty">http://www.w3.org/md-odrl-profile/ProspectiveClientParty</a></td>
                                 </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
                                 </tr><tr>
                                     <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a>.</td>
                                 </tr>
@@ -777,6 +793,8 @@
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Usage">http://www.w3.org/md-odrl-profile/Usage</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Audit</a> , <a>Reasonable  Suspicion</a> , <a>Control</a> , <a>Derivation</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1077,6 +1095,8 @@
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Audit">http://www.w3.org/md-odrl-profile/Audit</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Usage</a> , <a>Reasonable  Suspicion</a> , <a>Control</a> , <a>Derivation</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1093,6 +1113,8 @@
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ReasonableSuspicion">http://www.w3.org/md-odrl-profile/ReasonableSuspicion</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Usage</a> ,<a>Audit</a> , <a>Control</a> , <a>Derivation</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1109,6 +1131,8 @@
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Control">http://www.w3.org/md-odrl-profile/Control</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Usage</a> ,<a>Audit</a> , <a>Reasonable  Suspicion</a> , <a>Derivation</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1130,58 +1154,26 @@
                         </tbody>
                     </table>
                     <section data-dfn-for="ClosedUserGroup">
-                    <h2><dfn>Closed User Group</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset</a>.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Closed User Group</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Usually effected by an entitlements system.</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ClosedUserGroup">http://www.w3.org/md-odrl-profile/ClosedUserGroup</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Restricted User Group</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p>
-                        For usage, see <a href="#ClosedUserGroupControl">Example 11</a>.
-                    </p>
-                </section>
-                </section>
-                <section data-dfn-for="ProviderManaged">
-                    <h2><dfn>Provider Managed</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The technical infrastructure is managed by the Provider.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Provider Managed</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProviderManaged">http://www.w3.org/md-odrl-profile/ProviderManaged</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Control</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section data-dfn-for="ConsumerManaged">
-                    <h2><dfn>Consumer Managed</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The technical infrastructure is managed by the Consumer.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Consumer Managed</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ConsumerManaged">http://www.w3.org/md-odrl-profile/ConsumerManaged</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Control</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <h2><dfn>Closed User Group</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th><td>Control that ensure that only authenticated and authorised users can access the <a>Asset</a>.</td>
+                                </tr><tr>
+                                    <th>Label:</th><td>Closed User Group</td>
+                                </tr><tr>
+                                    <th>Scope Note:</th><td>Usually effected by an entitlements system.</td>
+                                </tr><tr>
+                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ClosedUserGroup">http://www.w3.org/md-odrl-profile/ClosedUserGroup</a></td>
+                                </tr><tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Restricted User Group</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            For usage, see <a href="#ClosedUserGroupControl">Example 11</a>.
+                        </p>
+                    </section>
                 </section>
             </section>
             <section data-dfn-for="Derivation">
@@ -1196,6 +1188,8 @@
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Derivation">http://www.w3.org/md-odrl-profile/Derivation</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Usage</a> ,<a>Audit</a> , <a>Reasonable  Suspicion</a> , <a>Control</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1233,24 +1227,6 @@
                 </section>
             </section>
         </section>   
-        <section data-dfn-for="DistributionService">
-            <h2><dfn>Distribution Service</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>A service provided by the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> that involves distributing an <a>Asset</a> to <a>External Parties</a>.</td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>Applies to the distribution of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner's</a> assets (e.g. vendor redistribution of data).</td>
-                    </tr><tr>
-                        <th>Scope Note:</th><td>Also applies to the distribution of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee's</a> original created works.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Distribution Service</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DistributionService">http://www.w3.org/md-odrl-profile/DistributionService</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
     </section>
     <section id="Properties">
         <h2>Properties</h2>
