@@ -10,9 +10,9 @@
 <body>
 <section id="abstract">
     <p>
-        The Market Data Profile for ODRL provides the additional vocabulary and semantics needed to express the rights and obligations controlling the use of market data in ODRL.        
+        The Market Data Profile for ODRL provides the additional vocabulary and semantics needed to express the rights and obligations controlling the use of market data using ODRL.        
     </p><p>     
-        ODRL is a machine-readable Rights Expression Language. Expressing rules and obligations in ODRL allows for the automated checking of compliance along the data supply chain.
+        <a href="https://www.w3.org/TR/odrl-model/">ODRL</a> is a machine-readable <a href="https://en.wikipedia.org/wiki/Rights_Expression_Language">Rights Expression Language</a>. Expressing rules and obligations in ODRL allows for the automated checking of compliance along the data supply chain.
     </p>
 </section>
 <section id="sotd"></section>
@@ -177,7 +177,7 @@
                         <tr>
                             <th>Definition:</th><td>An organisation that manages one or more <code>Venues</code></td>
                         </tr><tr>
-                            <th>Note:</th><td><code>Exchanges</code> can be identifed by their <a href="https://www.iso20022.org/market-identifier-codes">operating MIC codes</a>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
+                            <th>Note:</th><td><code>Exchanges</code> can be identifed by their <a href="https://www.iso20022.org/market-identifier-codes">operating MIC codes</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>Exchange</td>
                         </tr><tr>
@@ -195,7 +195,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets; Organised Trading Facilities (OTF) and Multilateral Trading Facilities (MTFs) as defined in MiFID II; and Alternative Trading Systems (ATS) as defined by the SEC.</td>
                         </tr><tr>
-                            <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific <code>Venue</code>. (See <a href="#EuroDollarIdentifier">Example 4</a>.)</td>
+                            <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific <code>Venue</code>.</td>
                         </tr><tr>
                             <th>Note:</th><td>When <a>Providing Trading Venues</a>, reporting the number of venues on which an <a>Asset</a> is made available can decide data costs.</td>
                         </tr><tr>
@@ -519,412 +519,6 @@
                 </table>            
             </section>
         </section>
-        <section id="Parties">
-            <h2>Parties</h2>
-            <section id="PartyTypes">
-                <h2>Party Types</h2>
-                <p>
-                    Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> that belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> (and its affiliated or enumerated companies) and those that don"t (aka third-parties).
-                </p><p>
-                    We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
-                </p><p>
-                    Furthermore, the rights and obligations applicable to the <a>licensee</a> can sometimes differ from those offered to their <a>affiliates</a>. So we must express the distinction too.
-                </p><p>
-                    In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties, and between <a href="#existing-client-party">existing</a> and <a href="#prospective-client-party">prospective clients</a>.
-                </p>
-                <section data-dfn-for="InternalParty">
-                    <h2><dfn>Internal Party</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The <a>Licensing Party</a> and its affiliated or enumerated organisations as specified in the governing license.</td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Scope Note:</th><td>Also covers the members of a banking group that licenses through an umbrella association.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Internal Party</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>External Party</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section data-dfn-for="LicensingParty">
-                    <h2><dfn>Licensing Party</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is the signatory of the governing license and is directly bound by it.</td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Scope Note:</th><td>A narrower terms than <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> as <code>Licensing Party</code> identifies only the signatory, not all the parties bound by the rights and obligations assigned under the license (the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a>).</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Licensing Party</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/LicensingParty">http://www.w3.org/md-odrl-profile/LicensingParty</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">Internal Party</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Affiliated Party</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section data-dfn-for="AffiliatedParty">
-                    <h2><dfn>Affiliated Party</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> designated as <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a> by virtue of their relationship with the <a>Licensing Party</a> as specified and enumerated in the governing license.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Affiliated Party</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AffiliatedParty">http://www.w3.org/md-odrl-profile/AffiliatedParty</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">Internal Party</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Licensing Party</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section data-dfn-for="ExternalParty">
-                    <h2><dfn>External Party</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is neither the <a>Licensing Party</a> nor one of the affiliated or enumerated organisations as specified by the governing license.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>The opposite (i.e. set complement) of <a>Internal Party</a></td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Captures the concept of third parties.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>External Party</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Internal Party</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <section data-dfn-for="ProfessionalParty">
-                        <h2><dfn>Professional Party</dfn></h2>
-                        <table class="def propdef">
-                            <tbody>
-                                <tr>
-                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is neither a <a>Non-Professional Party</a> nor an <a>Educational Party</a>.</td>
-                                </tr><tr>
-                                    <th>Label:</th><td>Professional Party</td>
-                                </tr><tr>
-                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProfessionalParty">http://www.w3.org/md-odrl-profile/ProfessionalParty</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section data-dfn-for="Non-ProfessionalParty">
-                        <h2><dfn>Non-Professional Party</dfn></h2>
-                        <table class="def propdef">
-                            <tbody>
-                                <tr>
-                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is both a natural person (rather than a corporation, partnership, or other organisation) and acts only on their personal account.</td>
-                                </tr><tr>
-                                    <th>Scope Note:</th><td>Non-professional parties may not offer paid-for nor formal advice.</td>
-                                </tr><tr>
-                                    <th>Label:</th><td>Non-Professional Party</td>
-                                </tr><tr>
-                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Non-ProfessionalParty">http://www.w3.org/md-odrl-profile/Non-ProfessionalParty</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section data-dfn-for="EducationalParty">
-                        <h2><dfn>Educational Party</dfn></h2>
-                        <table class="def propdef">
-                            <tbody>
-                                <tr>
-                                    <th>Definition:</th><td>A formally accredited educational institution using market data solely for the purpose of education or training.</td>
-                                </tr><tr>
-                                    <th>Label:</th><td>Educational Party</td>
-                                </tr><tr>
-                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/EducationalParty">http://www.w3.org/md-odrl-profile/EducationalParty</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section data-dfn-for="ExistingClientParty">
-                        <h2><dfn>Existing Client Party</dfn></h2>
-                        <table class="def propdef">
-                            <tbody>
-                                <tr>
-                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is a current consumer of <a>Distribution Services</a> provided by the Assignee.</td>
-                                </tr><tr>
-                                    <th>Label:</th><td>Existing Client Party</td>
-                                </tr><tr>
-                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ExistingClientParty">http://www.w3.org/md-odrl-profile/ExistingClientParty</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Prospective Client Party</a>.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section data-dfn-for="ProspectiveClientParty">
-                        <h2><dfn>Prospective Client Party</dfn></h2>
-                        <table class="def propdef">
-                            <tbody>
-                                <tr>
-                                    <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that the Assignee is engaging with in order to procure such Party as a consumer of <a>Distribution Services</a> provided by the Assignee.</td>
-                                </tr><tr>
-                                    <th>Label:</th><td>Prospective Client Party</td>
-                                </tr><tr>
-                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProspectiveClientParty">http://www.w3.org/md-odrl-profile/ProspectiveClientParty</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
-                                </tr><tr>
-                                    <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a>.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                </section>
-            </section>
-            <section data-dfn-for="PartyRole">
-                <h2><dfn>Party Roles</dfn></h2>
-                <p>
-                    Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data <a>Asset</a> moves along the market data supply chain. 
-                </p><p>
-                    Many Parties play different roles at different times. A large financial institution regularly acts as an <a>Originator</a>, <a>Administrator</a>, <a>Provider</a>, and <a>Consumer</a> of data assets.
-                </p><p>
-                    In the example of an <a>Exchange</a> delivering an <a>Asset</a> to a vendor for onward distribution to a bank, the sequence of parties and their roles would look as follows:
-                </p><ol><li>
-                    The exchange acting as an <a>Originator</a> assigns rights and as a <a>Provider</a> delivers data to the vendor, acting as a <a>Consumer</a>. 
-                </li><li>
-                    The vendor, then acting as an <a>Administrator</a>, assigns rights, and as a <a>Provider</a>, delivers data to the bank, acting as a Consumer.
-                </li><li>
-                    The banks market data function, now acting as an <a>Administrator</a>, then assigns rights and, acting as a <a>Provider</a>, delivers data to its end users, who are Consumers of the data.
-                </li><li>
-                    And if those end-users in the bank were then to derive a new creative work from the data, they would be acting as Originators ... and so the supply chain spins on.
-                </li></ol>
-                <p>
-                    <strong>Note:</strong> the rights and obligations controlling the use of the Asset could be changed by the vendor (and those controlling the use of the derived data by the bank) so long as the new rights and obligations are conpliant (i.e. at least as strict) as the original ones specified by the Originator.
-                </p>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
-                        </tr><tr>
-                            <th>Label:</th><td>Party Role</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PartyRole">http://www.w3.org/md-odrl-profile/PartyRole</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <section data-dfn-for="Originator">
-                    <h2><dfn>Originator</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in creating a <a>Source</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its commercialisation and use.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Applies to all Parties (not just exchanges) deriving or curating a new creative work and acting as the Assigner for this work.</td>
-                            </tr><tr>
-                                <th>Note:</th><td>Originators may use an <a>Administrator</a> to manage their rights assignments and a <a>Service Facilitator</a> to destribute the data.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Originator</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Originator">http://www.w3.org/md-odrl-profile/Originator</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-                            </tr><tr>
-                                <th>In Range Of:</th><td><a>role</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="note">
-                        <p>
-                            We can imagine an Originator so:
-                        </p>
-                            <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Originator.png?raw=true" alt="Originator diagram"> 
-                    </div>
-                </section>
-                <section data-dfn-for="Provider">
-                    <h2><dfn>Provider</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in delivering and/or or providing access to an <a>Asset</a> for <code>Consumers</code>.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Designates the role a vendor plays in providing data to its customers.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Describes the role the market data function within a financial institution plays in providing data to its internal customers.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>The rights and obligations controlling the use of the <a>Asset</a> are supplied by the <code>Administrator</code> or <code>Originator</code>.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Provider</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Provider">http://www.w3.org/md-odrl-profile/Provider</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-                            </tr><tr>
-                                <th>In Range Of:</th><td><a>role</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="note">
-                        <p>
-                            We can imagine a Provider so:
-                        </p>
-                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Provider.png?raw=true" alt="Provider diagram"> 
-                    </div>
-                </section>
-                <section data-dfn-for="Consumer">
-                    <h2><dfn>Consumer</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its <a>Providers</a> and the rights and obligations controlling its use from their <code>Adminstrators</code>.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Consumer</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consumer">http://www.w3.org/md-odrl-profile/Consumer</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-                            </tr><tr>
-                                <th>In Range Of:</th><td><a>role</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="note">
-                        <p>
-                            We can imagine a Consumer so:
-                        </p>
-                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Consumer.png?raw=true" alt="Consumer diagram"> 
-                    </div>
-                </section>
-                <section data-dfn-for="Service Facilitator">
-                    <h2><dfn>Service Facilitator</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The role an external organisation plays when contracted by the  <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> to deliver a business function using the assignee's data access rights.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Covers third-parties assisting in the delivery of data services for the Assignee such as generating derived data or distributing data.</td>
-                            </tr><tr>
-                                <th>Scope Note:</th><td>Includes the activities of a 'calculating agent'.</td>
-                            </tr><tr>
-                                <th>Note:</th><td>When a Service Facilitator is used to create new original works, the Assignee, who owns the IP in the new data product, should be considered the <a>Originator</a> as it is they who can assign rights over it.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Service Facilitator</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ServiceFacilitator">http://www.w3.org/md-odrl-profile/ServiceFacilitator</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-                            </tr><tr>
-                                <th>In Range Of:</th><td><a>role</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="note">
-                        <p>
-                            We can imagine a Service Facilitator so:
-                        </p>
-                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
-                    </div>
-                    <p>
-                        Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
-                    </p>
-                    <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
-                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
-                        <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                        <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
-                        <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
-                        <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                        <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
-
-                    </pre>
-                    <div class="note">
-                        <p>
-                            When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
-                        </p><p>
-                            To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
-                        </p>
-                    </div>
-                </section>
-                <section data-dfn-for="Administrator">
-                    <h2><dfn>Administrator</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>The role an organisation plays in assisting in the the assignment or management of rights.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>Administrator</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Administrator">http://www.w3.org/md-odrl-profile/Administrator</a></td>
-                            </tr><tr>
-                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
-                            </tr><tr>
-                                <th>In Range Of:</th><td><a>role</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="note">
-                        <p>
-                            We can imagine an administrator so:
-                        </p>
-                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Administrator.png?raw=true" alt="Administrator diagram"> 
-                    </div>
-                </section>
-            </section>
-            <section id="PartyProperties">
-                <h2>Party Properties</h2>
-                <section data-dfn-for="roles">
-                    <h2><dfn>roles</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Asset</a>.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>roles</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
-                            </tr><tr>
-                                <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
-                            </tr><tr>
-                                <th>Range:</th><td><a>Party Role</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-            </section>
-        </section>
         <section data-dfn-for="DistributionService">
             <h2><dfn>Distribution Service</dfn></h2>
             <table class="def propdef">
@@ -960,6 +554,412 @@
                         </tbody>
                     </table>
                 </section>
+            </section>
+        </section>
+    </section>
+    <section id="Parties">
+        <h2>Parties</h2>
+        <section id="PartyTypes">
+            <h2>Party Types</h2>
+            <p>
+                Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> that belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> (and its affiliated or enumerated companies) and those that don"t (aka third-parties).
+            </p><p>
+                We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
+            </p><p>
+                Furthermore, the rights and obligations applicable to the <a>licensee</a> can sometimes differ from those offered to their <a>affiliates</a>. So we must express the distinction too.
+            </p><p>
+                In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties, and between <a href="#existing-client-party">existing</a> and <a href="#prospective-client-party">prospective clients</a>.
+            </p>
+            <section data-dfn-for="InternalParty">
+                <h2><dfn>Internal Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The <a>Licensing Party</a> and its affiliated or enumerated organisations as specified in the governing license.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>Also covers the members of a banking group that licenses through an umbrella association.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Internal Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">http://www.w3.org/md-odrl-profile/InternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>External Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="LicensingParty">
+                <h2><dfn>Licensing Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is the signatory of the governing license and is directly bound by it.</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>A narrower terms than <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> as <code>Licensing Party</code> identifies only the signatory, not all the parties bound by the rights and obligations assigned under the license (the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a>).</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Licensing Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/LicensingParty">http://www.w3.org/md-odrl-profile/LicensingParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">Internal Party</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Affiliated Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="AffiliatedParty">
+                <h2><dfn>Affiliated Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> designated as <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a> by virtue of their relationship with the <a>Licensing Party</a> as specified and enumerated in the governing license.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Affiliated Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/AffiliatedParty">http://www.w3.org/md-odrl-profile/AffiliatedParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/InternalParty">Internal Party</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Licensing Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="ExternalParty">
+                <h2><dfn>External Party</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is neither the <a>Licensing Party</a> nor one of the affiliated or enumerated organisations as specified by the governing license.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>The opposite (i.e. set complement) of <a>Internal Party</a></td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Captures the concept of third parties.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>External Party</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">http://www.w3.org/md-odrl-profile/ExternalParty</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Disjoint with:</th><td><a>Internal Party</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="ProfessionalParty">
+                    <h2><dfn>Professional Party</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is neither a <a>Non-Professional Party</a> nor an <a>Educational Party</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Professional Party</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProfessionalParty">http://www.w3.org/md-odrl-profile/ProfessionalParty</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Non-ProfessionalParty">
+                    <h2><dfn>Non-Professional Party</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is both a natural person (rather than a corporation, partnership, or other organisation) and acts only on their personal account.</td>
+                            </tr><tr>
+                                <th>Scope Note:</th><td>Non-professional parties may not offer paid-for nor formal advice.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Non-Professional Party</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Non-ProfessionalParty">http://www.w3.org/md-odrl-profile/Non-ProfessionalParty</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="EducationalParty">
+                    <h2><dfn>Educational Party</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A formally accredited educational institution using market data solely for the purpose of education or training.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Educational Party</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/EducationalParty">http://www.w3.org/md-odrl-profile/EducationalParty</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Existing Client Party</a> , <a>Prospective Client Party</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="ExistingClientParty">
+                    <h2><dfn>Existing Client Party</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that is a current consumer of <a>Distribution Services</a> provided by the Assignee.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Existing Client Party</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ExistingClientParty">http://www.w3.org/md-odrl-profile/ExistingClientParty</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Prospective Client Party</a>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="ProspectiveClientParty">
+                    <h2><dfn>Prospective Client Party</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that the Assignee is engaging with in order to procure such Party as a consumer of <a>Distribution Services</a> provided by the Assignee.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Prospective Client Party</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ProspectiveClientParty">http://www.w3.org/md-odrl-profile/ProspectiveClientParty</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/md-odrl-profile/ExternalParty">External Party</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Disjoint with:</th><td><a>Non-Professional Party</a> , <a>Professional Party</a> , <a>Educational Party</a> , <a>Existing Client Party</a>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+        </section>
+        <section data-dfn-for="PartyRole">
+            <h2><dfn>Party Roles</dfn></h2>
+            <p>
+                Party Roles describe the part a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> (or set of Parties) plays as a data <a>Asset</a> moves along the market data supply chain. 
+            </p><p>
+                Many Parties play different roles at different times. A large financial institution regularly acts as an <a>Originator</a>, <a>Administrator</a>, <a>Provider</a>, and <a>Consumer</a> of data assets.
+            </p><p>
+                In the example of an <a>Exchange</a> delivering an <a>Asset</a> to a vendor for onward distribution to a bank, the sequence of parties and their roles would look as follows:
+            </p><ol><li>
+                The exchange acting as an <a>Originator</a> assigns rights and as a <a>Provider</a> delivers data to the vendor, acting as a <a>Consumer</a>. 
+            </li><li>
+                The vendor, then acting as an <a>Administrator</a>, assigns rights, and as a <a>Provider</a>, delivers data to the bank, acting as a Consumer.
+            </li><li>
+                The banks market data function, now acting as an <a>Administrator</a>, then assigns rights and, acting as a <a>Provider</a>, delivers data to its end users, who are Consumers of the data.
+            </li><li>
+                And if those end-users in the bank were then to derive a new creative work from the data, they would be acting as Originators ... and so the supply chain spins on.
+            </li></ol>
+            <p>
+                <strong>Note:</strong> the rights and obligations controlling the use of the Asset could be changed by the vendor (and those controlling the use of the derived data by the bank) so long as the new rights and obligations are conpliant (i.e. at least as strict) as the original ones specified by the Originator.
+            </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
+                    </tr><tr>
+                        <th>Label:</th><td>Party Role</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/PartyRole">http://www.w3.org/md-odrl-profile/PartyRole</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <section data-dfn-for="Originator">
+                <h2><dfn>Originator</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in creating a <a>Source</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its commercialisation and use.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Applies to all Parties (not just exchanges) deriving or curating a new creative work and acting as the Assigner for this work.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>Originators may use an <a>Administrator</a> to manage their rights assignments and a <a>Service Facilitator</a> to destribute the data.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Originator</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Originator">http://www.w3.org/md-odrl-profile/Originator</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine an Originator so:
+                    </p>
+                        <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Originator.png?raw=true" alt="Originator diagram"> 
+                </div>
+            </section>
+            <section data-dfn-for="Provider">
+                <h2><dfn>Provider</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in delivering and/or or providing access to an <a>Asset</a> for <code>Consumers</code>.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Designates the role a vendor plays in providing data to its customers.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Describes the role the market data function within a financial institution plays in providing data to its internal customers.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>The rights and obligations controlling the use of the <a>Asset</a> are supplied by the <code>Administrator</code> or <code>Originator</code>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Provider</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Provider">http://www.w3.org/md-odrl-profile/Provider</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine a Provider so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Provider.png?raw=true" alt="Provider diagram"> 
+                </div>
+            </section>
+            <section data-dfn-for="Consumer">
+                <h2><dfn>Consumer</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its <a>Providers</a> and the rights and obligations controlling its use from their <code>Adminstrators</code>.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Consumer</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Consumer">http://www.w3.org/md-odrl-profile/Consumer</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine a Consumer so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Consumer.png?raw=true" alt="Consumer diagram"> 
+                </div>
+            </section>
+            <section data-dfn-for="Service Facilitator">
+                <h2><dfn>Service Facilitator</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role an external organisation plays when contracted by the  <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> to deliver a business function using the assignee's data access rights.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Covers third-parties assisting in the delivery of data services for the Assignee such as generating derived data or distributing data.</td>
+                        </tr><tr>
+                            <th>Scope Note:</th><td>Includes the activities of a 'calculating agent'.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>When a Service Facilitator is used to create new original works, the Assignee, who owns the IP in the new data product, should be considered the <a>Originator</a> as it is they who can assign rights over it.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Service Facilitator</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ServiceFacilitator">http://www.w3.org/md-odrl-profile/ServiceFacilitator</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine a Service Facilitator so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
+                </div>
+                <p>
+                    Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
+                </p>
+                <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">      </span><span class="s">1</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
+
+                </pre>
+                <div class="note">
+                    <p>
+                        When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
+                    </p><p>
+                        To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
+                    </p>
+                </div>
+            </section>
+            <section data-dfn-for="Administrator">
+                <h2><dfn>Administrator</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The role an organisation plays in assisting in the the assignment or management of rights.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Administrator</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Administrator">http://www.w3.org/md-odrl-profile/Administrator</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Party Role</a></td>
+                        </tr><tr>
+                            <th>In Range Of:</th><td><a>role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="note">
+                    <p>
+                        We can imagine an administrator so:
+                    </p>
+                    <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/Administrator.png?raw=true" alt="Administrator diagram"> 
+                </div>
+            </section>
+        </section>
+        <section id="PartyProperties">
+            <h2>Party Properties</h2>
+            <section data-dfn-for="roles">
+                <h2><dfn>roles</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>roles</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
+                        </tr><tr>
+                            <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                        </tr><tr>
+                            <th>Range:</th><td><a>Party Role</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </section>
     </section>
