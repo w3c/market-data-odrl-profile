@@ -160,7 +160,7 @@
                 </section>
             </section>
             <p>
-                The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a>Constraints On Assets</a> below.
+                The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a>Constraints on Assets</a> below.
             </p>
         </section>
         <section id="Markets">
@@ -215,7 +215,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the Exchange using ISO 10383 market identifier codes, specifically the operating MIC code.</td>
+                                <th>Definition:</th><td>Identifies the Exchange using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the operating MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>operating MIC code</td>
                             </tr><tr>
@@ -233,7 +233,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the Market using ISO 10383 market identifier codes, specifically the market MIC code.</td>
+                                <th>Definition:</th><td>Identifies the Market using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the market MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>MIC code</td>
                             </tr><tr>
@@ -910,7 +910,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Resource</a>.</td>
+                                <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> in relation to a data <a>Asset</a>.</td>
                             </tr><tr>
                                 <th>Label:</th><td>roles</td>
                             </tr><tr>
@@ -940,20 +940,20 @@
                     </tr>
                 </tbody>
             </table>
-            <section id="ServiceProperties">
-                <h2>Service Properties</h2>
+            <section id="DistributionServiceProperties">
+                <h2>Distribution Service Properties</h2>
                 <section data-dfn-for="provides">
                     <h2><dfn>provides</dfn></h2>
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the <a>Assets</a> that belong to a <a>Service</a>.</td>
+                                <th>Definition:</th><td>Identifies the <a>Assets</a> that are delivered in a <a>Distribution Service</a>.</td>
                             </tr><tr>
                                 <th>Label:</th><td>provides</td>
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/provides">http://www.w3.org/md-odrl-profile/provides</a></td>
                             </tr><tr>
-                                <th>Domain:</th><td><a>Service</a></td>
+                                <th>Domain:</th><td><a>Distribution Service</a></td>
                             </tr><tr>
                                 <th>Range:</th><td><a>Asset</a></td>
                             </tr>
@@ -1657,7 +1657,7 @@
     <p>
         Active <a href="https://www.w3.org/TR/odrl-model/#duty">Duties</a> must be fulfilled for their associated Permissions to be valid. If a duty is left unfulfilled, then the permission becomes invalid and can no longer be exercised.
     </p><p>
-        Duties are fulfilled when the <code>subject</code> takes the <code>Action</code> for the <code>object</code> of the duty. The Duty may also have a <code>target</code> that specifies the <code>Resource</code>, <code>Party</code>, or <code>Activity</code> over which the <code>Action</code> is taken.
+        Duties are fulfilled when the <code>subject</code> takes the <code>Action</code> for the <code>object</code> of the duty. The Duty may also have a <code>target</code> that specifies the <code>Asset</code>, <code>Party</code>, or <code>Activity</code> over which the <code>Action</code> is taken.
     </p>
      <section id="DutyFunctions">
         <h2>Duty Functions</h2>
