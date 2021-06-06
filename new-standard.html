@@ -1864,7 +1864,7 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the <a>target</a> is a <a>Controls</a> activity, the <a>subject</a> reports to the <a>object</a> on their implementation of access controls.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the <a>Unit-of-Count</a> to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the <a>unit of count</a> to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
                     </tr><tr>
                         <th>Label:</th><td>Report</td>
                     </tr><tr>
@@ -1875,7 +1875,7 @@
                 </tbody>
             </table>
             <p>
-                Reporting usage requires a <a>unit-of-count</a> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
+                Reporting usage requires a <a>unit of count</a> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
             </p>
             <pre class="example nohighlight turtle" title="Reporting Usage by Device" id="DeviceUsageReport">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
@@ -1966,7 +1966,7 @@
                     <tr>
                         <th>Definition:</th><td>The <a>subject</a> pays the <a>object</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>The compensation action must be decorated with the <a>payment amount</a> and the <a>unit</a> (or currency) of payment. It may also specify the <a>unit-of-count</a> which acts as a multiplier of the payment amount.</td>
+                        <th>Note:</th><td>The compensation action must be decorated with the <a>payment amount</a> and the <a>unit</a> (or currency) of payment. It may also specify the <a>unit of count</a> which acts as a multiplier of the payment amount.</td>
                     </tr><tr>
                         <th>Label:</th><td>Compensate</td>
                     </tr><tr>
@@ -2252,7 +2252,7 @@
                     <tr>
                         <th>Definition:</th><td>The amount of an <a>Asset</a>.</td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>If a qualititive measure is needed use the values <a>Insubstantial</a> or <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a>unit-of-count</a>.</td>
+                        <th style="white-space:nowrap;">Scope Note:</th><td>If a qualititive measure is needed use the values <a>Insubstantial</a> or <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a>unit of count</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>amount</td>
                     </tr><tr>
@@ -2820,7 +2820,7 @@
                         <tr>
                             <th>Definition:</th><td>A small part of an <a>Asset</a> which by virue of its very smallness may have more permitted uses than the whole.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a>unit-of-count</a>.</td>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a>unit of count</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>Insubstantial</td>
                         </tr><tr>
@@ -2838,7 +2838,7 @@
                         <tr>
                             <th>Definition:</th><td>A large part of an <a>Asset</a> which by virue of its very largeness may not have more permitted uses than the whole.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a>unit-of-count</a>.</td>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a>unit of count</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>Substantial</td>
                         </tr><tr>
@@ -3218,7 +3218,7 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td><dfn>unit-of-count</dfn></td>
+                    <td><dfn>unit of count</dfn></td>
                     <td>odrl</td>
                     <td></td>
                 </tr>
