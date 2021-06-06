@@ -469,56 +469,6 @@
                 </table>
             </section>
         </section>
-        <section data-dfn-for="Quantity">
-            <h2><dfn>Quantity</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>The amount of an <a>Asset</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Quantity</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Quantity">http://www.w3.org/md-odrl-profile/Quantity</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <section data-dfn-for="Insubstantial">
-                <h2><dfn>Insubstantial</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>A small part of an <a>Asset</a> which by virue of its very smallness may have more permitted uses than the whole.</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Insubstantial</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Insubstantial">http://www.w3.org/md-odrl-profile/Insubstantial</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Quantity</a></td>
-                        </tr>
-                    </tbody>
-                </table>            
-            </section>
-            <section data-dfn-for="Substantial">
-                <h2><dfn>Substantial</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>A large part of an <a>Asset</a> which by virue of its very largeness may not have more permitted uses than the whole.</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Substantial</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Substantial">http://www.w3.org/md-odrl-profile/Substantial</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Quantity</a></td>
-                        </tr>
-                    </tbody>
-                </table>            
-            </section>
-        </section>
         <section data-dfn-for="DistributionService">
             <h2><dfn>Distribution Service</dfn></h2>
             <table class="def propdef">
@@ -1782,6 +1732,8 @@
                     <tr>
                         <th>Definition:</th><td>A declaration of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>"s ownership of the <a>Asset</a>.</td>
                     </tr><tr>
+                        <th>Note:</th><td>The wording of the declaration will usually be specified by the <a>wording</a>property.</td>
+                    </tr><tr>
                         <th>Label:</th><td>Attribution</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Attribution">http://www.w3.org/md-odrl-profile/Attribution</a></td>
@@ -1797,6 +1749,8 @@
                 <tbody>
                     <tr>
                         <th>Definition:</th><td>A clarification of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>"s relation to the <a>Asset</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>The wording of the clarification will usually be specified by the <a>wording</a>property.</td>
                     </tr><tr>
                         <th>Label:</th><td>Disclaimer</td>
                     </tr><tr>
@@ -1814,6 +1768,8 @@
                     <tr>
                         <th>Definition:</th><td>A written instruction forbidding some action .</td>
                     </tr><tr>
+                        <th>Note:</th><td>The wording of the instruction will usually be specified by the <a>wording</a>property.</td>
+                    </tr><tr>
                         <th>Label:</th><td>Proscription</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Proscription">http://www.w3.org/md-odrl-profile/Proscription</a></td>
@@ -1830,13 +1786,13 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Specifies the wording required by an <a>Attribution</a> or <a>Disclaimer</a>.</td>
+                            <th>Definition:</th><td>Specifies the wording required by an <a>Attribution</a>, <a>Disclaimer</a>, or <a>Proscription</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>wording</td>
                         </tr><tr>
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/wording">http://www.w3.org/md-odrl-profile/wording</a></td>
                         </tr><tr>
-                            <th>Domain:</th><td><a>Attribution</a>, <a>Disclaimer</a></td>
+                            <th>Domain:</th><td><a>Attribution</a> , <a>Disclaimer</a></td> , <a>Proscription</a>
                         </tr><tr>
                             <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></td>
                         </tr>
@@ -2182,6 +2138,88 @@
                     </tr>
                 </tbody>
             </table>
+            <section data-dfn-for="UpdateMethod">
+                <h2><dfn>Update Method Values</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The methods by which an <a>Asset</a> is updated over time.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Update Method</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UpdateMethod">http://www.w3.org/md-odrl-profile/UpdateMethod</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Entity">Entity</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Snapshot">
+                    <h2><dfn>Snapshot</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>An update is provided only in response to a request (like an API call).</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “one-shot”.</td>
+                            </tr><tr>
+                                <th>Note:</th><td>The number of requests (or snaps) permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Snapshot</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Snapshot">http://www.w3.org/md-odrl-profile/Snapshot</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        In the following example, an <code>Asset</code> permits only three requests per day:
+                    </p>
+                    <pre class="example nohighlight turtle" title="Specifying Snapshot Counts" id="SnapshotCount">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">methodOfUpdate</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                  </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">         </span><span class="s">3</span>
+                        <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">  </span><span class="p">[</span>
+                        <span class="w">                                                    </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                                    </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
+                        <span class="w">                                                 </span><span class="p">]</span><span class="p"> ;</span>
+                        <span class="w">                          </span><span class="p">]</span><span class="p"> .</span>     
+                    </pre>
+                </section>
+                <section data-dfn-for="Streaming">
+                    <h2><dfn>Streaming</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>All changes are captured and continuously transmitted either individually or in batches.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Streaming</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Streaming">http://www.w3.org/md-odrl-profile/Streaming</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="TimeSeries">
+                    <h2><dfn>Time Series</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Multiple updates are delivered together in bulk.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Time Series</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TimeSeries">http://www.w3.org/md-odrl-profile/TimeSeries</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="periodOfUpdate">
             <h2><dfn>period of update</dfn></h2>
@@ -2220,6 +2258,54 @@
                     </tr>
                 </tbody>
             </table>
+            <section data-dfn-for="UpdateFrequency">
+                <h2><dfn>Update Frequency Values</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The frequency by which an <a>Asset</a> is updated over time.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Update Frequency</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UpdateFrequency">http://www.w3.org/md-odrl-profile/UpdateFrequency</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Tick-by-Tick">
+                    <h2><dfn>Tick-by-Tick</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Any and every change in value is provided in an update.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Tick-by-Tick</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Tick-by-Tick">http://www.w3.org/md-odrl-profile/Tick-by-Tick</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Frequency</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Sampled">
+                    <h2><dfn>Sampled</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Updates are sampled and/or conflated.</td>
+                            </tr><tr>
+                                <th>Note:</th><td>Only selected updates are delivered from the whole tick-by-tick dataset at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Sampled</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Sampled">http://www.w3.org/md-odrl-profile/Sampled</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Frequency</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="depthOfMarket">
             <h2><dfn>depth of market</dfn></h2>
@@ -2238,6 +2324,126 @@
                     </tr>
                 </tbody>
             </table>
+            <section data-dfn-for="MarketDepth">
+                <h2><dfn>Market Depth Values</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Represents the depth of the order book offered by an <a>asset</a>.</td>
+                        </tr><tr>
+                            <th>Note:</th><td>Market depth can be qualified to specify the exact depth of market offered by using the <a>position from</a> and <a>position to</a> properties. (See <a href="#MarketDepthSpecification">Example 11</a>).</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Market Depth</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketDepth">http://www.w3.org/md-odrl-profile/MarketDepth</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Level1">
+                    <h2><dfn>Level 1</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Level 1 includes the content relating to the calculated single best bid and best ask/offer in the market.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market price”.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Level 1</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level1">http://www.w3.org/md-odrl-profile/Level1</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Level2">
+                    <h2><dfn>Level 2</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Level 2 includes content relating to the best bids and asks/offers at a number of price points.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market by price” or "market depth".</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Level 2</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level2">http://www.w3.org/md-odrl-profile/Level2</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="Level3">
+                    <h2><dfn>Level 3</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Level 3 includes content relating to the bids and asks/offers at all price points and from all participants in the market.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as "market by order", the "detailed order book", or the "full order book".</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Level 3</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level3">http://www.w3.org/md-odrl-profile/Level3</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="MarketDepthConstraints">
+                    <h2>Market Depth Constraints</h2>
+                    <section data-dfn-for="positionFrom">
+                        <h2><dfn>position from</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th><td>Denotes the bid depth from which the <a>Asset</a> offers prices.</td>
+                                </tr><tr>
+                                    <th>Label:</th><td>position from</td>
+                                </tr><tr>
+                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/positionFrom">http://www.w3.org/md-odrl-profile/positionFrom</a></td>
+                                </tr><tr>
+                                    <th>Domain:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketDepth"></a>Market Depth</td>
+                                </tr><tr>
+                                    <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#integer">xsd:integer</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section data-dfn-for="positionTo">
+                        <h2><dfn>position to</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th><td>Denotes the bid depth up to which the <a>Asset</a> offers prices (inclusive).</td>
+                                </tr><tr>
+                                    <th>Label:</th><td>position to</td>
+                                </tr><tr>
+                                    <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/positionTo">http://www.w3.org/md-odrl-profile/positionTo</a></td>
+                                </tr><tr>
+                                    <th>Domain:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketDepth"></a>Market Depth</td>
+                                </tr><tr>
+                                    <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#integer">xsd:integer</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                <p>
+                    In this example, the <code>Level 2</code> <code>Asset</code> provides a book depth of ten:
+                    </p>
+                <pre class="example nohighlight turtle" title="Specifying Market Depth" id="MarketDepthSpecification">
+                    <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
+                    <span class="w">      </span><span class="nn">md:</span><span class="nt">depthOfMarket</span><span class="w"> </span><span class="p">[</span>
+                    <span class="w">                           </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Level2</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionFrom</span><span class="w">          </span><span class="s">1</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionTo</span><span class="w">            </span><span class="s">10</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                       </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
+                </pre>
+                    </section>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="geography">
             <h2><dfn>geography</dfn></h2>
@@ -2278,6 +2484,56 @@
                     </tr>
                 </tbody>
             </table>
+            <section data-dfn-for="Quantity">
+                <h2><dfn>Quantity Values</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The amount of an <a>Asset</a>.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Quantity</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Quantity">http://www.w3.org/md-odrl-profile/Quantity</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="Insubstantial">
+                    <h2><dfn>Insubstantial</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A small part of an <a>Asset</a> which by virue of its very smallness may have more permitted uses than the whole.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Insubstantial</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Insubstantial">http://www.w3.org/md-odrl-profile/Insubstantial</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Quantity</a></td>
+                            </tr>
+                        </tbody>
+                    </table>            
+                </section>
+                <section data-dfn-for="Substantial">
+                    <h2><dfn>Substantial</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>A large part of an <a>Asset</a> which by virue of its very largeness may not have more permitted uses than the whole.</td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>Substantial</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Substantial">http://www.w3.org/md-odrl-profile/Substantial</a></td>
+                            </tr><tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Quantity</a></td>
+                            </tr>
+                        </tbody>
+                    </table>            
+                </section>
+            </section>
         </section>
     </section>
     <section id="ConstraintsOnAssetClasses">
@@ -2524,276 +2780,23 @@
                     </tr>
                 </tbody>
             </table>
+            <section data-dfn-for="DisplayType">
+                <h2><dfn>Display Type</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>The type of application on which the <a>asset</a> is displayed</td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>Used to constrain a <a>display</a> action to allow either individual or public presentation.</td>
+                        </tr><tr>
+                            <th>Label:</th><td>Display Type</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DisplayType">http://www.w3.org/md-odrl-profile/DisplayType</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>  
         </section>
-    </section>
-    <section id="ConstraintValues">
-        <h2>Constraint Values</h2>
-        <section data-dfn-for="UpdateMethod">
-            <h2><dfn>Update Method</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>The methods by which an <a>Asset</a> is updated over time.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Update Method</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UpdateMethod">http://www.w3.org/md-odrl-profile/UpdateMethod</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="https://www.w3.org/TR/prov-o/#Entity">Entity</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <section data-dfn-for="Snapshot">
-                <h2><dfn>Snapshot</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>An update is provided only in response to a request (like an API call).</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “one-shot”.</td>
-                        </tr><tr>
-                            <th>Note:</th><td>The number of requests (or snaps) permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Snapshot</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Snapshot">http://www.w3.org/md-odrl-profile/Snapshot</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    In the following example, an <code>Asset</code> permits only three requests per day:
-                </p>
-                <pre class="example nohighlight turtle" title="Specifying Snapshot Counts" id="SnapshotCount">
-                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
-                    <span class="w">     </span><span class="nn">md:</span><span class="nt">methodOfUpdate</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                             </span><span class="kt">a</span><span class="w">                  </span><span class="nn">md:</span><span class="nt">Snapshot</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">         </span><span class="s">3</span>
-                    <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">  </span><span class="p">[</span>
-                    <span class="w">                                                    </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                                    </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
-                    <span class="w">                                                 </span><span class="p">]</span><span class="p"> ;</span>
-                    <span class="w">                          </span><span class="p">]</span><span class="p"> .</span>     
-                </pre>
-            </section>
-            <section data-dfn-for="Streaming">
-                <h2><dfn>Streaming</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>All changes are captured and continuously transmitted either individually or in batches.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Streaming</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Streaming">http://www.w3.org/md-odrl-profile/Streaming</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="TimeSeries">
-                <h2><dfn>Time Series</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Multiple updates are delivered together in bulk.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Time Series</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/TimeSeries">http://www.w3.org/md-odrl-profile/TimeSeries</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Method</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-        <section data-dfn-for="UpdateFrequency">
-            <h2><dfn>Update Frequency</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>The frequency by which an <a>Asset</a> is updated over time.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Update Frequency</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/UpdateFrequency">http://www.w3.org/md-odrl-profile/UpdateFrequency</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <section data-dfn-for="Tick-by-Tick">
-                <h2><dfn>Tick-by-Tick</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Any and every change in value is provided in an update.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Tick-by-Tick</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Tick-by-Tick">http://www.w3.org/md-odrl-profile/Tick-by-Tick</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Frequency</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="Sampled">
-                <h2><dfn>Sampled</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Updates are sampled and/or conflated.</td>
-                        </tr><tr>
-                            <th>Note:</th><td>Only selected updates are delivered from the whole tick-by-tick dataset at specified intervals (e.g. every one minute throughout every day, at the end of every day, week, month, quarter or year) or on specific events (e.g. on daily market open and/or close, end of session, quarterly results etc).</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Sampled</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Sampled">http://www.w3.org/md-odrl-profile/Sampled</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Update Frequency</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </section>
-        <section data-dfn-for="MarketDepth">
-            <h2><dfn>Market Depth</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Represents the depth of the order book offered by an <a>asset</a>.</td>
-                    </tr><tr>
-                        <th>Note:</th><td>Market depth can be qualified to specify the exact depth of market offered by using the <a>position from</a> and <a>position to</a> properties. (See <a href="#MarketDepthSpecification">Example 11</a>).</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Market Depth</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketDepth">http://www.w3.org/md-odrl-profile/MarketDepth</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <section data-dfn-for="Level1">
-                <h2><dfn>Level 1</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Level 1 includes the content relating to the calculated single best bid and best ask/offer in the market.</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market price”.</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Level 1</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level1">http://www.w3.org/md-odrl-profile/Level1</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="Level2">
-                <h2><dfn>Level 2</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Level 2 includes content relating to the best bids and asks/offers at a number of price points.</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market by price” or "market depth".</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Level 2</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level2">http://www.w3.org/md-odrl-profile/Level2</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="Level3">
-                <h2><dfn>Level 3</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Level 3 includes content relating to the bids and asks/offers at all price points and from all participants in the market.</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as "market by order", the "detailed order book", or the "full order book".</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Level 3</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level3">http://www.w3.org/md-odrl-profile/Level3</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section id="MarketDepthConstraints">
-                <h2>Market Depth Constraints</h2>
-                <section data-dfn-for="positionFrom">
-                    <h2><dfn>position from</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>Denotes the bid depth from which the <a>Asset</a> offers prices.</td>
-                            </tr><tr>
-                                <th>Label:</th><td>position from</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/positionFrom">http://www.w3.org/md-odrl-profile/positionFrom</a></td>
-                            </tr><tr>
-                                <th>Domain:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketDepth"></a>Market Depth</td>
-                            </tr><tr>
-                                <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#integer">xsd:integer</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section data-dfn-for="positionTo">
-                    <h2><dfn>position to</dfn></h2>
-                    <table class="def propdef">
-                        <tbody>
-                            <tr>
-                                <th>Definition:</th><td>Denotes the bid depth up to which the <a>Asset</a> offers prices (inclusive).</td>
-                            </tr><tr>
-                                <th>Label:</th><td>position to</td>
-                            </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/positionTo">http://www.w3.org/md-odrl-profile/positionTo</a></td>
-                            </tr><tr>
-                                <th>Domain:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketDepth"></a>Market Depth</td>
-                            </tr><tr>
-                                <th>Range:</th><td><a href="https://www.w3.org/TR/xmlschema-2/#integer">xsd:integer</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-            <p>
-                In this example, the <code>Level 2</code> <code>Asset</code> provides a book depth of ten:
-                </p>
-            <pre class="example nohighlight turtle" title="Specifying Market Depth" id="MarketDepthSpecification">
-                <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">depthOfMarket</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                           </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Level2</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionFrom</span><span class="w">          </span><span class="s">1</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionTo</span><span class="w">            </span><span class="s">10</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                       </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
-            </pre>
-                </section>
-            </section>
-        </section>
-        <section data-dfn-for="DisplayType">
-            <h2><dfn>Display Type</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>The type of application on which the <a>asset</a> is displayed</td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>Used to constrain a <a>display</a> action to allow either individual or public presentation.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>Display Type</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/DisplayType">http://www.w3.org/md-odrl-profile/DisplayType</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>        
     </section>
 </section>
 <section id="Time">
