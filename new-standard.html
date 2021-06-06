@@ -518,7 +518,7 @@
         <section id="PartyTypes">
             <h2>Party Types</h2>
             <p>
-                Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> that belong to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> (and its affiliated or enumerated companies) and those that don"t (aka third-parties).
+                Market data licenses are very sensitive to who has access to the data they control. The key distinction is between <a>Parties</a> that belong to the <a>Assignee</a> (and its affiliated or enumerated companies) and those that don"t (aka third-parties).
             </p><p>
                 We can capture this by "typing" Parties into Internal-type and External-type parties. This distinction is, of course, relative to the Assignee.
             </p><p>
@@ -553,7 +553,7 @@
                         <tr>
                             <th>Definition:</th><td>The <a>Party</a> that is the signatory of the governing license and is directly bound by it.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>A narrower terms than <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> as <code>Licensing Party</code> identifies only the signatory, not all the parties bound by the rights and obligations assigned under the license (the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a>).</td>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>A narrower terms than <a>Assignee</a> as <code>Licensing Party</code> identifies only the signatory, not all the parties bound by the rights and obligations assigned under the license (the <a>Assignees</a>).</td>
                         </tr><tr>
                             <th>Label:</th><td>Licensing Party</td>
                         </tr><tr>
@@ -571,7 +571,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> designated as <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignees</a> by virtue of their relationship with the <a>Licensing Party</a> as specified and enumerated in the governing license.</td>
+                            <th>Definition:</th><td>The <a>Parties</a> designated as <a>Assignees</a> by virtue of their relationship with the <a>Licensing Party</a> as specified and enumerated in the governing license.</td>
                         </tr><tr>
                             <th>Label:</th><td>Affiliated Party</td>
                         </tr><tr>
@@ -722,7 +722,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
+                        <th>Definition:</th><td>Abstract class that acts as the super-class for the concrete Roles played by <a>Parties</a> in the market data supply chain in relation to an <a>Asset</a></td>
                     </tr><tr>
                         <th>Label:</th><td>Party Role</td>
                     </tr><tr>
@@ -735,7 +735,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The role a <a>Party</a> plays in creating a <a>Source</a> and acting as an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a> of the rights and obligations controlling its commercialisation and use.</td>
+                            <th>Definition:</th><td>The role a <a>Party</a> plays in creating a <a>Source</a> and acting as an <a>Assigner</a> of the rights and obligations controlling its commercialisation and use.</td>
                         </tr><tr>
                             <th>Scope Note:</th><td>Applies to all Parties (not just exchanges) deriving or curating a new creative work and acting as the Assigner for this work.</td>
                         </tr><tr>
@@ -793,7 +793,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The role a <a>Party</a> plays in receiving an <a>Asset</a> and acting as the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
+                            <th>Definition:</th><td>The role a <a>Party</a> plays in receiving an <a>Asset</a> and acting as the <a>Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
                         </tr><tr>
                             <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its <a>Providers</a> and the rights and obligations controlling its use from their <code>Adminstrators</code>.</td>
                         </tr><tr>
@@ -821,7 +821,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The role an external organisation plays when contracted by the  <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> to deliver a business function using the assignee's data access rights.</td>
+                            <th>Definition:</th><td>The role an external organisation plays when contracted by the  <a>Assignee</a> to deliver a business function using the assignee's data access rights.</td>
                         </tr><tr>
                             <th>Scope Note:</th><td>Covers third-parties assisting in the delivery of data services for the Assignee such as generating derived data or distributing data.</td>
                         </tr><tr>
@@ -846,7 +846,7 @@
                     <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
                 </div>
                 <p>
-                    Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>:
+                    Assignees frequently require notification of (or consent for) the use of a Service Facilitator. We can model this as a notification (or request consent) <a>Duty</a>:
                 </p>
                 <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
@@ -910,7 +910,7 @@
                         </tr><tr>
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/roles">http://www.w3.org/md-odrl-profile/roles</a></td>
                         </tr><tr>
-                            <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                            <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
                         </tr><tr>
                             <th>Range:</th><td><a>Party Role</a></td>
                         </tr>
@@ -922,7 +922,7 @@
     <section id="Activities">
         <h2>Activities</h2>
         <p>
-            An <a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a> is something that occurs over a period of time and acts upon or with <a href="https://www.w3.org/TR/prov-o/#Entity">entities</a>. An activity has a start time and an end time; can be influenced or informed by other activities; and can be generated by something. It"s a concept central to tracking <a href="w3.org/TR/prov-o/#description-starting-point-terms">provenance</a>.
+            An <a>Activity</a> is something that occurs over a period of time and acts upon or with <a>Entities</a>. An activity has a start time and an end time; can be influenced or informed by other activities; and can be generated by something. It"s a concept central to tracking <a href="w3.org/TR/prov-o/#description-starting-point-terms">provenance</a>.
         </p><p>
             We can usefully connect rights and provenance by identifying the activities that are of significance in market data licenses. The actual use and processing of data (<code>Usage</code>) is one example. The implementation of access control policies (<code>Controls</code>) is another. <code>Reasonable Suspicion</code>, a trigger for <code>Audit</code> activities, also shares the above properties, and so can usefully be modelled as an activity.
         </p>
@@ -931,7 +931,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>"s access to and processing of the <a>Asset</a>.</td>
+                        <th>Definition:</th><td>The <a>Assignee</a>"s access to and processing of the <a>Asset</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>Usage</td>
                     </tr><tr>
@@ -1080,7 +1080,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Training the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>’s users or subscribers in the use of a <a>Distribution Service</a></td>
+                            <th>Definition:</th><td>Training the <a>Assignee</a>’s users or subscribers in the use of a <a>Distribution Service</a></td>
                         </tr><tr>
                             <th>Label:</th><td>Training</td>
                         </tr><tr>
@@ -1251,7 +1251,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>A reasonable suspicion that the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> is misusing the <a>Asset</a>.</td>
+                        <th>Definition:</th><td>A reasonable suspicion that the <a>Assignee</a> is misusing the <a>Asset</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>Reasonable Suspicion</td>
                     </tr><tr>
@@ -1269,7 +1269,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The access control measures that manage the availability of the <a>Asset</a> to the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a>"s users and processes.</td>
+                        <th>Definition:</th><td>The access control measures that manage the availability of the <a>Asset</a> to the <a>Assignee</a>"s users and processes.</td>
                     </tr><tr>
                         <th>Label:</th><td>Control</td>
                     </tr><tr>
@@ -1378,15 +1378,15 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The <a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a> that provides and controls the technical infrastucture that implements an <a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a>.</td>
+                            <th>Definition:</th><td>The <a>Party</a> that provides and controls the technical infrastucture that implements an <a>Activity</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>System Provider</td>
                         </tr><tr>
                             <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/systemProvider">http://www.w3.org/md-odrl-profile/systemProvider</a></td>
                         </tr><tr>
-                            <th>Domain:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                            <th>Domain:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></td>
                         </tr><tr>
-                            <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                            <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1397,9 +1397,9 @@
 <section id="Permissions">
     <h2>Permissions</h2>
     <p>
-        Valid <a href="https://www.w3.org/TR/odrl-model/#permission">Permissions</a> allow the specified <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Actions</a> to be taken over their target <a>Asset</a>.
+        Valid <a href="https://www.w3.org/TR/odrl-model/#permission">Permissions</a> allow the specified <a>Actions</a> to be taken over their target <a>Asset</a>.
     </p><p>
-        Validity requires all active <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duties</a> be fulfilled and all <a href="https://www.w3.org/TR/odrl-vocab/#term-Constraint">Constraints</a> satisfied.
+        Validity requires all active <a>Duties</a> be fulfilled and all <a>Constraints</a> satisfied.
     </p>
      <section id="PermissionFunctions">
         <h2>Permission Functions</h2>
@@ -1417,11 +1417,11 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/licensee">http://www.w3.org/md-odrl-profile/licensee</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">assignee</a></td>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a>Assignee</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">Permission</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">odrl:Permission</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1441,11 +1441,11 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/affilates">http://www.w3.org/md-odrl-profile/affiliates</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">assignee</a></td>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a>Assignee</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">Permission</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">odrl:Permission</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1484,7 +1484,7 @@
                     <tr>
                         <th>Definition:</th><td>To supply an <a>Asset</a> to an <a>External Party</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>The External Party"s use of the Asset can be controlled by using a duty to impose a <a href="http://www.w3.org/TR/odrl-vocab/#term-nextPolicy">Next Policy</a> that specifies the Permissions, Prohibitions, and/or Duties to which the third-party must adhere in their use of the asset.</td>
+                        <th>Note:</th><td>The External Party"s use of the Asset can be controlled by using a duty to impose a <a>Next Policy</a> that specifies the Permissions, Prohibitions, and/or Duties to which the third-party must adhere in their use of the asset.</td>
                     </tr><tr>
                         <th>Label:</th><td>Distribute</td>
                     </tr><tr>
@@ -1670,7 +1670,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the <a>Party</a> that must execute the <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Action</a> specified by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>.</td>
+                        <th>Definition:</th><td>Specifies the <a>Party</a> that must execute the <a>Action</a> specified by a <a>Duty</a>.</td>
                     </tr><tr>
                         <th>Example:</th><td>Where the action is <a>Notify</a>, the subject is the notifying Party.</td>
                     </tr><tr>
@@ -1690,9 +1690,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/subject">http://www.w3.org/md-odrl-profile/subject</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">Duty</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">odrl:Duty</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1702,7 +1702,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the <a>Party</a> that is affected by the <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Action</a> specified by a <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a>.</td>
+                        <th>Definition:</th><td>Specifies the <a>Party</a> that is affected by the <a>Action</a> specified by a <a>Duty</a>.</td>
                     </tr><tr>
                         <th>Example:</th><td>Where the action is <a>Notify</a>, the object is the notified Party.</td>
                     </tr><tr>
@@ -1722,9 +1722,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/object">http://www.w3.org/md-odrl-profile/object</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">Duty</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">odrl:Duty</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1745,9 +1745,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/targets">http://www.w3.org/md-odrl-profile/targets</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">Duty</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#duties">odrl:Duty</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">Party</a>, <a>Asset</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Activities">Activity</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a>, <a>Asset</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Activities">prov:Activity</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -1760,7 +1760,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>A declaration of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>"s ownership of the <a>Asset</a>.</td>
+                        <th>Definition:</th><td>A declaration of the <a>Assigner</a>'s ownership of the <a>Asset</a>.</td>
                     </tr><tr>
                         <th>Note:</th><td>The wording of the declaration will usually be specified by the <a>wording</a>property.</td>
                     </tr><tr>
@@ -1778,7 +1778,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>A clarification of the <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner">Assigner</a>"s relation to the <a>Asset</a>.</td>
+                        <th>Definition:</th><td>A clarification of the <a>Assigner</a>"s relation to the <a>Asset</a>.</td>
                     </tr><tr>
                         <th>Note:</th><td>The wording of the clarification will usually be specified by the <a>wording</a>property.</td>
                     </tr><tr>
@@ -1864,7 +1864,7 @@
                     </tr><tr>
                         <th>Example:</th><td>Where the <a>target</a> is a <a>Controls</a> activity, the <a>subject</a> reports to the <a>object</a> on their implementation of access controls.</td>
                     </tr><tr>
-                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">Unit-of-Count</a> to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
+                        <th>Example:</th><td>Where the <a>target</a> is a <a>Usage</a> activity, the <a>subject</a> reports to the <a>object</a> on their usage of the <a>Asset</a>. The duty should specify the <a>Unit-of-Count</a> to use in the report.  (See <a href="#DeviceUsageReport">Example 2</a>)</td>
                     </tr><tr>
                         <th>Label:</th><td>Report</td>
                     </tr><tr>
@@ -1875,7 +1875,7 @@
                 </tbody>
             </table>
             <p>
-                Reporting usage requires a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit-of-count</a> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
+                Reporting usage requires a <a>unit-of-count</a> such as <code>device</code>, <code>user-account</code>, or <code>location</code> to specify what must be reported. The example below calls for reporting by device (once):
             </p>
             <pre class="example nohighlight turtle" title="Reporting Usage by Device" id="DeviceUsageReport">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
@@ -1966,7 +1966,7 @@
                     <tr>
                         <th>Definition:</th><td>The <a>subject</a> pays the <a>object</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>The compensation action must be decorated with the <a href="https://www.w3.org/TR/odrl-vocab/#term-payAmount">payment amount</a> and the <a href="https://www.w3.org/TR/odrl-vocab/#term-unit">unit</a> (or currency) of payment. It may also specify the <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit-of-count</a> which acts as a multiplier of the payment amount.</td>
+                        <th>Note:</th><td>The compensation action must be decorated with the <a>payment amount</a> and the <a>unit</a> (or currency) of payment. It may also specify the <a>unit-of-count</a> which acts as a multiplier of the payment amount.</td>
                     </tr><tr>
                         <th>Label:</th><td>Compensate</td>
                     </tr><tr>
@@ -2136,7 +2136,7 @@
                     </tr><tr>
                         <th>Editorial Note:</th><td>These intervals are frequently identified as <a>Realtime</a>, <a>Delayed</a>, <a>Embargoed</a>, or <a>Historical</a>.</td>
                     </tr><tr>
-                        <th>Editorial Note:</th><td>Unless explicitly prohibited, <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permissions</a> over shorter intervals carry across to longer intervals (e.g. <a>Realtime</a> data also covers <a>Delayed</a>, <a>Embargoed</a>, and <a>Historical</a> data)</td>
+                        <th>Editorial Note:</th><td>Unless explicitly prohibited, <a>Permissions</a> over shorter intervals carry across to longer intervals (e.g. <a>Realtime</a> data also covers <a>Delayed</a>, <a>Embargoed</a>, and <a>Historical</a> data)</td>
                     </tr><tr>
                         <th>Label:</th><td>timeliness of delivery</td>
                     </tr><tr>
@@ -2156,7 +2156,7 @@
                     <tr>
                         <th>Definition:</th><td>Specifies the method by which updates to the <a>Asset</a> are delivered.</td>
                     </tr><tr>
-                        <th>Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>. (See <a href="#SnapshotCount">Example 10</a>.)</td>
+                        <th>Note:</th><td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified using the <a>count</a> property and a <a>time interval</a>. (See <a href="#SnapshotCount">Example 10</a>.)</td>
                     </tr><tr>
                         <th>Label:</th><td>method of update</td>
                     </tr><tr>
@@ -2252,7 +2252,7 @@
                     <tr>
                         <th>Definition:</th><td>The amount of an <a>Asset</a>.</td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Scope Note:</th><td>If a qualititive measure is needed use the values <a>Insubstantial</a> or <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
+                        <th style="white-space:nowrap;">Scope Note:</th><td>If a qualititive measure is needed use the values <a>Insubstantial</a> or <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a>unit of count</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>amount</td>
                     </tr><tr>
@@ -2312,14 +2312,14 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/controls">http://www.w3.org/md-odrl-profile/controls</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Control</a></td>
                     </tr>
                 </tbody>
             </table>
             <p>
-                In the example below the <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permission</a> is only valid if the <code>controls</code> <a href="https://www.w3.org/TR/odrl-vocab/#term-Constraint">Constraint</a> is satisfied by use of a <code>closed user group</code> to manage access to the <code>Asset</code>.
+                In the example below the <a>Permission</a> is only valid if the <code>controls</code> <a>Constraint</a> is satisfied by use of a <code>closed user group</code> to manage access to the <code>Asset</code>.
             </p>
             <pre class="example nohighlight turtle" title="Requiring a Closed User Group" id="ClosedUserGroupControl">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">            </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
@@ -2331,17 +2331,17 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> who can access the <a>Asset</a> which is the target of the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a> following the exercise of its <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Action</a>.</td>
+                        <th>Definition:</th><td>Specifies the <a>Parties</a> who can access the <a>Asset</a> which is the target of the parent <a>Permission</a> following the exercise of its <a>Action</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>Can be used either to constrain a <a>Distribute</a> action to a specified set of parties or to trigger linked <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duties</a> that control distribution.</td>
+                        <th>Note:</th><td>Can be used either to constrain a <a>Distribute</a> action to a specified set of parties or to trigger linked <a>Duties</a> that control distribution.</td>
                     </tr><tr>
                         <th>Label:</th><td>recipients</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/recipients">http://www.w3.org/md-odrl-profile/recipients</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a>Distribute</a> , <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a></td>
+                        <th>Domain:</th><td><a>Distribute</a> , <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">odrl:Duty</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Party</a></td>
                     </tr>
@@ -2353,15 +2353,15 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> who can exercise the <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                        <th>Definition:</th><td>Specifies the <a>Parties</a> who can exercise the <a>Rule</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>users</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/users">http://www.w3.org/md-odrl-profile/users</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Party</a></td>
                     </tr>
@@ -2373,7 +2373,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the locations where the users of the <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a> must be based.</td>
+                        <th>Definition:</th><td>Specifies the locations where the users of the <a>Rule</a> must be based.</td>
                     </tr><tr>
                         <th>Label:</th><td>locations</td>
                     </tr><tr>
@@ -2381,9 +2381,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/locations">http://www.w3.org/md-odrl-profile/locations</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2393,7 +2393,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the assignee's lines of business who can exercise the <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                        <th>Definition:</th><td>Specifies the assignee's lines of business who can exercise the <a>Rule</a>.</td>
                     </tr><tr>
                         <th>Label:</th><td>lines of business</td>
                     </tr><tr>
@@ -2401,9 +2401,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/linesOfBusiness">http://www.w3.org/md-odrl-profile/linesOfBusiness</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2413,15 +2413,15 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Enumerates the <a href="#service">Services</a> in the delivery of which the <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permissions</a> can be exercised.</td>
+                        <th>Definition:</th><td>Enumerates the <a href="#service">Services</a> in the delivery of which the <a>Permissions</a> can be exercised.</td>
                     </tr><tr>
                         <th>Label:</th><td>services</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/services">http://www.w3.org/md-odrl-profile/services</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Service</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">odrl:Service</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2437,9 +2437,9 @@
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/commingle">http://www.w3.org/md-odrl-profile/commingle</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Quantity</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">odrl:Quantity</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2453,20 +2453,20 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>The <a href="#ActivityTypes">Activities</a> in persuit of which the <a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Action</a> is taken.</td>
+                        <th>Definition:</th><td>The <a href="#ActivityTypes">Activities</a> in persuit of which the <a>Action</a> is taken.</td>
                     </tr><tr>
                         <th>Label:</th><td>purposes</td>
                     </tr><tr>
                         <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/purposes">http://www.w3.org/md-odrl-profile/purposes</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Action">Action</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Action">odrl:Action</a></td>
                     </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a></td>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></td>
                     </tr>
                 </tbody>
             </table>
             <p>
-                Users who want to use this (traditionally fee-waivered) <code>display</code> <a href="https://www.w3.org/TR/odrl-vocab/#term-Permission">Permission</a> can do so only for the <code>purposes</code> of <code>technical support</code>, <code>quality assurance</code>, or <code>product development</code>. They must belong to a <code>closed user group</code> and be directly employed by the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee">Assignee</a> or its affiliated or enumerated organisations.
+                Users who want to use this (traditionally fee-waivered) <code>display</code> <a>Permission</a> can do so only for the <code>purposes</code> of <code>technical support</code>, <code>quality assurance</code>, or <code>product development</code>. They must belong to a <code>closed user group</code> and be directly employed by the <a>Assignee</a> or its affiliated or enumerated organisations.
             </p>
             <pre class="example nohighlight turtle" title="Controls, Recipients, & Purposes" id="ControlsRecipientsPurposes">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
@@ -2558,7 +2558,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “one-shot”.</td>
                         </tr><tr>
-                            <th>Note:</th><td>The number of requests (or snaps) permitted can be specified using the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> property and a <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval">time interval</a>.</td>
+                            <th>Note:</th><td>The number of requests (or snaps) permitted can be specified using the <a>count</a> property and a <a>time interval</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>Snapshot</td>
                         </tr><tr>
@@ -2820,7 +2820,7 @@
                         <tr>
                             <th>Definition:</th><td>A small part of an <a>Asset</a> which by virue of its very smallness may have more permitted uses than the whole.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a>unit of count</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>Insubstantial</td>
                         </tr><tr>
@@ -2838,7 +2838,7 @@
                         <tr>
                             <th>Definition:</th><td>A large part of an <a>Asset</a> which by virue of its very largeness may not have more permitted uses than the whole.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a>.</td>
+                            <th style="white-space:nowrap;">Scope Note:</th><td>This is a qualitative measure. If a quantative measure is needed, constrain the amount by a <a>unit of count</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>Substantial</td>
                         </tr><tr>
