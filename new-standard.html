@@ -2335,7 +2335,7 @@
                     <tr>
                         <th>Definition:</th><td>Specifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> who can access the <a>Asset</a> which is the target of the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a> following the exercise of its <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Action</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>Can be used either to constrain a <a>Distibute</a>action to a specified set of parties or to trigger <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duties</a> that control distribution.</td>
+                        <th>Note:</th><td>Can be used either to constrain a <a>Distribute</a> action to a specified set of parties or to trigger linked <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duties</a> that control distribution.</td>
                     </tr><tr>
                         <th>Label:</th><td>recipients</td>
                     </tr><tr>
@@ -2449,6 +2449,7 @@
     </section>
     <section id="ConstraintsOnActions">
         <h2>Constraints on Actions</h2>
+        <p>Beyond the <a>recipients</a> constraint that can be used to constrain a <a>Distribute</a> actions, there are additional ways to constrain <a>Actions</a>:</p>
         <section data-dfn-for="purposes">
             <h2><dfn>purposes</dfn></h2>
             <table class="def propdef">
