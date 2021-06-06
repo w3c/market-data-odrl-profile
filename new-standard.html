@@ -112,6 +112,33 @@
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
                     </pre>
                 </section>
+                <section data-dfn-for="ipOwners">
+                    <h2><dfn>ipOwners</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th><td>Identifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that owns the intellectual property rights over an <a>Asset</a>.</td>
+                            </tr><tr>
+                                <th>Note:</th><td>Can be used to specifiy the IP owner of any derived works by qualifying the <a>output</a> <code>Asset</code> of a <a>Permission</a> to <a>Derive</a> data.</td>
+                            </tr><tr>
+                                <th>Label:</th><td>IP owners</td>
+                            </tr><tr>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/ipOwners">http://www.w3.org/md-odrl-profile/ipOwners</a></td>
+                            </tr><tr>
+                                <th>Domain:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Asset">Asset</a></td>
+                            </tr><tr>
+                                <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-model/#party">Party</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        In the example below the intellectual property rights over the Asset <code>:A1</code> are owned by the CME:
+                    </p>
+                    <pre class="example nohighlight turtle" title="Specifying the owner of the IP in an Asset" id="IPOwnerSpecification">
+                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">ipOwner</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                    </pre>
+                </section>
                 <section data-dfn-for="refines">
                     <h2><dfn>refines</dfn></h2>
                     <table class="def propdef">
@@ -1425,6 +1452,30 @@
                 </tbody>
             </table>
         </section>
+        <section data-dfn-for="dataHost">
+            <h2><dfn>data host</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a> that physically stores the Asset.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>A vendor-hosted feed (i.e. a hosted request/response API) can be modelled by setting the value to an <a>External Party</a> with the role of <a>Provider</a>.</td>
+                    </tr><tr>
+                        <th>Note:</th><td>A deployed feed can be modelled by setting the value to an <a>Internal Party</a> with the role of <a>Consumer</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>data host</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/dataHost">http://www.w3.org/md-odrl-profile/dataHost</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">odrl:Permission</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </section>
     <section id="Actions">
         <h2>Actions</h2>
@@ -2282,9 +2333,9 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> who can access the <a>Asset</a> which is the target of the <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a>.</td>
+                        <th>Definition:</th><td>Specifies the <a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Parties</a> who can access the <a>Asset</a> which is the target of the parent <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a> following the exercise of its <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Action</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>Usually associated with distribution permissions - perhaps it should be modelled as a constraint on the action ... </td>
+                        <th>Note:</th><td>Can be used either to constrain a <a>Distibute</a>action to a specified set of parties or to trigger <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duties</a> that control distribution.</td>
                     </tr><tr>
                         <th>Label:</th><td>recipients</td>
                     </tr><tr>
@@ -2292,7 +2343,7 @@
                     </tr><tr>
                         <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">function</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></td>
+                        <th>Domain:</th><td><a>Distribute</a> , <a href="https://www.w3.org/TR/odrl-vocab/#term-Duty">Duty</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a></td>
                     </tr>
