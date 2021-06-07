@@ -1,6 +1,6 @@
 # Rights Automation Community Group
 
-## Teleconference 2021-05-26
+## Teleconference 2021-06-09
 
 **We are now in the review phase, please send your feedback to the list.**
 
