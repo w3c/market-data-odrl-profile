@@ -12,7 +12,7 @@
     <p>
         The Market Data Profile for ODRL provides the additional vocabulary and semantics needed to express the rights and obligations controlling the use of market data using ODRL.        
     </p><p>     
-        <a href="https://www.w3.org/TR/odrl-model/">ODRL</a> is a machine-readable <a href="https://en.wikipedia.org/wiki/Rights_Expression_Language">Rights Expression Language</a>. Expressing rules and obligations in ODRL allows for the automated checking of compliance along the data supply chain.
+        <a href="https://www.w3.org/TR/odrl-model/">ODRL</a> is a machine-readable <a href="https://en.wikipedia.org/wiki/Rights_Expression_Language">Rights Expression Language</a>. Capturing the rules and obligations contained in market data licenses in ODRL allows for the automated checking of compliance along the data supply chain.
     </p>
 </section>
 <section id="sotd"></section>
@@ -134,7 +134,7 @@
                     </p>
                     <pre class="example nohighlight turtle" title="Specifying the owner of the IP in an Asset" id="IPOwnerSpecification">
                         <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">ipOwner</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                        <span class="w">        </span><span class="nn">md:</span><span class="nt">ipOwner</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
                     </pre>
                 </section>
                 <section data-dfn-for="refines">
@@ -184,6 +184,9 @@
                     </table>
                 </section>
             </section>
+            <p>
+                The <a href="#EuroDollarIdentifier">example</a> below identifies the Eurodollar Futures Contract traded on Globex.
+            </p>
             <p>
                 The many ways to describe <code>Assets</code> that are of relevance to market data licenses are enumerated in <a href="#ConstraintsOnAssets">Constraints on Assets</a> below.
             </p>
@@ -240,7 +243,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the Exchange using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the operating MIC code.</td>
+                                <th>Definition:</th><td>Identifies the <code>Exchange</code> operating the <code>venue</code> using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the operating MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>operating MIC code</td>
                             </tr><tr>
@@ -258,7 +261,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the Market using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the market MIC code.</td>
+                                <th>Definition:</th><td>Identifies the <a>Venue</a> using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the market MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>MIC code</td>
                             </tr><tr>
@@ -325,7 +328,7 @@
                 This example identifies the Eurodollar Futures Contract traded on Globex:
             </p>
             <pre class="example nohighlight turtle" title="Identifying the Eurodollar Futures Contract" id="EuroDollarIdentifier">
-                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">ComplexID</span><span class="p">;</span>  
+                <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">CompoundID</span><span class="p">;</span>  
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
                 <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
@@ -497,7 +500,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the <a>Assets</a> that are delivered in a <a>Distribution Service</a>.</td>
+                                <th>Definition:</th><td>Identifies the <a>Assets</a> that are delivered in a <code>Distribution Service</code>.</td>
                             </tr><tr>
                                 <th>Label:</th><td>provides</td>
                             </tr><tr>
@@ -524,14 +527,14 @@
             </p><p>
                 Furthermore, the rights and obligations applicable to the <a>licensee</a> can sometimes differ from those offered to their <a>affiliates</a>. So we must express the distinction too.
             </p><p>
-                In distribution use cases, the type of recipient is often significant. We differentiate between <a href="#professional-party">professional</a>, <a href="#non-professional-party">non-professional</a>, and <a href="#educational-party">educational</a> parties, and between <a href="#existing-client-party">existing</a> and <a href="#prospective-client-party">prospective clients</a>.
+                In distribution use cases, the type of recipient is often significant. We differentiate between <code>professional</code>, <code>non-professional</code>, and <code>educational</code> parties, and between <code>existing</code> and <code>prospective clients</code>.
             </p>
             <section data-dfn-for="InternalParty">
                 <h2><dfn>Internal Party</dfn></h2>
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The <a>Licensing Party</a> and its affiliated or enumerated organisations as specified in the governing license.</td>
+                            <th>Definition:</th><td>The <code>Licensing Party</code> and its affiliated or enumerated organisations as specified in the governing license.</td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Scope Note:</th><td>Also covers the members of a banking group that licenses through an umbrella association.</td>
                         </tr><tr>
@@ -571,7 +574,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>The <a>Parties</a> designated as <a>Assignees</a> by virtue of their relationship with the <a>Licensing Party</a> as specified and enumerated in the governing license.</td>
+                            <th>Definition:</th><td>The <a>Parties</a> designated as <a>Assignees</a> by virtue of their relationship with the <code>Licensing Party</code> as specified and enumerated in the governing license.</td>
                         </tr><tr>
                             <th>Label:</th><td>Affiliated Party</td>
                         </tr><tr>
@@ -589,9 +592,9 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>A <a>Party</a> that is neither the <a>Licensing Party</a> nor one of the affiliated or enumerated organisations as specified by the governing license.</td>
+                            <th>Definition:</th><td>A <a>Party</a> that is neither the <code>Licensing Party</code> nor one of the affiliated or enumerated organisations as specified by the governing license.</td>
                         </tr><tr>
-                            <th>Scope Note:</th><td>The opposite (i.e. set complement) of <a>Internal Party</a></td>
+                            <th>Scope Note:</th><td>The opposite (i.e. set complement) of <code>Internal Party</code></td>
                         </tr><tr>
                             <th>Scope Note:</th><td>Captures the concept of third parties.</td>
                         </tr><tr>
@@ -610,7 +613,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>A <a>Party</a> that is neither a <a>Non-Professional Party</a> nor an <a>Educational Party</a>.</td>
+                                <th>Definition:</th><td>A <a>Party</a> that is neither a <code>Non-Professional Party</code> nor an <code>Educational Party</code>.</td>
                             </tr><tr>
                                 <th>Label:</th><td>Professional Party</td>
                             </tr><tr>
@@ -704,15 +707,15 @@
             <p>
                 Party Roles describe the part a <a>Party</a> (or set of Parties) plays as a data <a>Asset</a> moves along the market data supply chain. 
             </p><p>
-                Many Parties play different roles at different times. A large financial institution regularly acts as an <a>Originator</a>, <a>Administrator</a>, <a>Provider</a>, and <a>Consumer</a> of data assets.
+                Many Parties play different roles at different times. A large financial institution regularly acts as an <code>Originator</code>, <code>Administrator</code>, <code>Provider</code>, and <code>Consumer</code> of data assets.
             </p><p>
                 In the example of an <a>Exchange</a> delivering an <a>Asset</a> to a vendor for onward distribution to a bank, the sequence of parties and their roles would look as follows:
             </p><ol><li>
-                The exchange acting as an <a>Originator</a> assigns rights and as a <a>Provider</a> delivers data to the vendor, acting as a <a>Consumer</a>. 
+                The exchange acting as an <code>Originator</code> assigns rights and as a <code>Provider</code> delivers data to the vendor, acting as a <code>Consumer</code>. 
             </li><li>
-                The vendor, then acting as an <a>Administrator</a>, assigns rights, and as a <a>Provider</a>, delivers data to the bank, acting as a Consumer.
+                The vendor, then acting as an <code>Administrator</code>, assigns rights, and as a <code>Provider</code>, delivers data to the bank, acting as a <code>Consumer</code>.
             </li><li>
-                The banks market data function, now acting as an <a>Administrator</a>, then assigns rights and, acting as a <a>Provider</a>, delivers data to its end users, who are Consumers of the data.
+                The banks market data function, now acting as an <code>Administrator</code>, then assigns rights and, acting as a <code>Provider</code>, delivers data to its end users, who are <code>Consumers</code> of the data.
             </li><li>
                 And if those end-users in the bank were then to derive a new creative work from the data, they would be acting as Originators ... and so the supply chain spins on.
             </li></ol>
@@ -739,7 +742,7 @@
                         </tr><tr>
                             <th>Scope Note:</th><td>Applies to all Parties (not just exchanges) deriving or curating a new creative work and acting as the Assigner for this work.</td>
                         </tr><tr>
-                            <th>Note:</th><td>Originators may use an <a>Administrator</a> to manage their rights assignments and a <a>Service Facilitator</a> to destribute the data.</td>
+                            <th>Note:</th><td>Originators may use an <code>Administrator</code> to manage their rights assignments and a <code>Service Facilitator</code> to destribute the data.</td>
                         </tr><tr>
                             <th>Label:</th><td>Originator</td>
                         </tr><tr>
@@ -795,7 +798,7 @@
                         <tr>
                             <th>Definition:</th><td>The role a <a>Party</a> plays in receiving an <a>Asset</a> and acting as the <a>Assignee</a> of the rights and obligations controlling the use of that <a>Asset</a>.</td>
                         </tr><tr>
-                            <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its <a>Providers</a> and the rights and obligations controlling its use from their <code>Adminstrators</code>.</td>
+                            <th>Scope Note:</th><td>Designates the role a vendor or market data function within an organisation plays in receiving data from its <code>Providers</code> and the rights and obligations controlling its use from their <code>Adminstrators</code>.</td>
                         </tr><tr>
                             <th>Scope Note:</th><td>Describes the role the end-user of market data (e.g. trading desk or back office) plays in using the data provided to it.</td>
                         </tr><tr>
@@ -827,7 +830,7 @@
                         </tr><tr>
                             <th>Scope Note:</th><td>Includes the activities of a 'calculating agent'.</td>
                         </tr><tr>
-                            <th>Note:</th><td>When a Service Facilitator is used to create new original works, the Assignee, who owns the IP in the new data product, should be considered the <a>Originator</a> as it is they who can assign rights over it.</td>
+                            <th>Note:</th><td>When a Service Facilitator is used to create new original works, the Assignee, who owns the IP in the new data product, should be considered the <code>Originator</code> as it is they who can assign rights over it.</td>
                         </tr><tr>
                             <th>Label:</th><td>Service Facilitator</td>
                         </tr><tr>
@@ -866,9 +869,9 @@
                 </pre>
                 <div class="note">
                     <p>
-                        When is this duty activated? When the <code>Assigner</code> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <code>recipient</code> of the data <code>Asset</code> - i.e. when the recipient constraint is satisfied.
+                        When is this duty activated? When the <a>Assigner</a> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <a>recipient</a> of the data <a>Asset</a> - i.e. when the recipient constraint is satisfied.
                     </p><p>
-                        To fulfill the <code>Duty</code>, the <code>subject</code> of the Duty (not specified in this example) must take the <code>Action</code> of <code>notifying</code> the <code>object</code> of the <code>target</code> of the Duty: the Service Facilitator. They need only do this once for the duty to be fulfilled.
+                        To fulfill the <a>Duty</a>, the <a>subject</a> of the Duty (not specified in this example) must take the <a>Action</a> of <a>notifying</a> the <a>object</a> of the <a>target</a> of the Duty: the <code>Service Facilitator</code>. They need only do this once for the duty to be fulfilled.
                     </p>
                 </div>
             </section>
@@ -904,7 +907,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Specifies the supply-chain <a>Party Role</a>(s) played by a <a>Party</a> in relation to a data <a>Asset</a>.</td>
+                            <th>Definition:</th><td>Specifies the supply-chain <code>Party Role</code>(s) played by a <a>Party</a> in relation to a data <a>Asset</a>.</td>
                         </tr><tr>
                             <th>Label:</th><td>roles</td>
                         </tr><tr>
