@@ -374,6 +374,18 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>
+                    In the following <a>Duty</a>, usage must be reported by <code>User ID</code>.
+                </p>
+                <pre class="example nohighlight turtle" title="Report Usage by User ID" id="ReportByUserID">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">      </span><span class="nn">md:</span><span class="nt">UserID</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
+                </pre>
                 <section data-dfn-for="PersonID">
                     <h2><dfn>Person ID</dfn></h2>
                     <table class="def propdef">
