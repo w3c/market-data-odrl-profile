@@ -869,7 +869,7 @@
                     <img src="https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/images/ServiceFacilitator.png?raw=true" alt="Service facilitator diagram">
                 </div>
                 <p>
-                    Assignees frequently require <a href="#Notify">notification</a> of (or <a>consent</a> for) the use of a <code>Service Facilitator</code>. We can model this as a notification (or request consent) <a>Duty</a> where the <a>Notify</a> action is taken on a per-service provider basis.
+                    Assignees frequently require <a href="#notify">notification</a> of (or <a>consent</a> for) the use of a <code>Service Facilitator</code>. We can model this as a notification (or request consent) <a>Duty</a> where the <a>Notify</a> action is taken on a per-service provider basis.
                 </p>
                 <pre class="example nohighlight turtle" title="Service Facilitator Notification" id="ServiceFacilitatorNotification">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
@@ -877,9 +877,9 @@
                     <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
                     <span class="w">                       </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w"> </span><span class="p">[</span>
-                    <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                    <span class="w">                                          </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                             </span><span class="kt">a</span><span class="w">            </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     <span class="w">     </span><span class="p">...</span>
                 </pre>
