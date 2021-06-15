@@ -379,12 +379,11 @@
                 </p>
                 <pre class="example nohighlight turtle" title="Report Usage by User ID" id="ReportByUserID">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                      </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">      </span><span class="nn">md:</span><span class="nt">UserID</span>
-                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                   </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                 </pre>
                 <section data-dfn-for="PersonID">
                     <h2><dfn>Person ID</dfn></h2>
@@ -560,6 +559,15 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>
+                    The following <a>Permission</a> can only be executed by <code>Internal Parties</code>.
+                </p>
+                <pre class="example nohighlight turtle" title="Permission for Internal Users" id="InternalUsersPermission">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w">    </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                </pre>
             </section>
             <section data-dfn-for="LicensingParty">
                 <h2><dfn>Licensing Party</dfn></h2>
