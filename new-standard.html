@@ -1075,7 +1075,7 @@
                         <span class="w">     </span><span class="p">...</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
                         <span class="w">                      </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">TradeAutomatically</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="nn">md:</span><span class="nt">TradingAsPrincipal</span><span class="w"> </span><span class="p">]</span>
+                        <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">TradingAsPrincipal</span><span class="w"> </span><span class="p">]</span>
                         <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="p">...</span>
                     </pre>
@@ -1252,6 +1252,18 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>
+                    This <a>Permission</a> allows the user to store and display the data only for the <a>purposes</a> of satisfying a <code>regulatory requirement</code>.
+                </p>
+                <pre class="example nohighlight turtle" title="For Satisfying Regulatory Requirements" id="SatisfyingRegulatoryRequirements">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Store</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">RegulatoryRequirement</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                </pre>
             </section>
         </section>
         <section data-dfn-for="Audit">
@@ -1403,8 +1415,8 @@
                     <span class="w">     </span><span class="p">...</span>
                     <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
                     <span class="w">                      </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">          </span><span class="p">[</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculateIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">          </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculateIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">     </span><span class="p">...</span>
                 </pre>
