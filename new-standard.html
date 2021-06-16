@@ -565,7 +565,7 @@
                     The following <a>Permission</a> can only be executed by <code>Internal Parties</code>.
                 </p>
                 <pre class="example nohighlight turtle" title="Permission for Internal Users" id="InternalUsersPermission">
-                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">        </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">           </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
                     <span class="w">     </span><span class="p">...</span>
                     <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">   </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w">    </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">     </span><span class="p">...</span>
@@ -1259,8 +1259,8 @@
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
                     <span class="w">     </span><span class="p">...</span>
                     <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
-                    <span class="w">                      </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Store</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">RegulatoryRequirement</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Store</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">RegulatoryRequirement</span><span class="w"> </span><span class="p">]</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">     </span><span class="p">...</span>
                 </pre>
@@ -1414,9 +1414,9 @@
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
                     <span class="w">     </span><span class="p">...</span>
                     <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
-                    <span class="w">                      </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">          </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculateIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">          </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculateIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">     </span><span class="p">...</span>
                 </pre>
@@ -1441,6 +1441,22 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>
+                    Vendor terminals can be modelled by specifying the access <a>control</a> system and <a>display</a> systems as being managed by the <a>Provider</a>. If no data is stored locally, the <a>data host</a> constraint should also be set.
+                </p>
+                <pre class="example nohighlight turtle" title="Vendor Terminal" id="VendorTerminal">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">          </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Provider</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">          </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Provider</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                </pre>
             </section>
         </section>
     </section>   
