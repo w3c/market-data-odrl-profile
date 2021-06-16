@@ -379,11 +379,13 @@
                 </p>
                 <pre class="example nohighlight turtle" title="Report Usage by User ID" id="ReportByUserID">
                     <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
                     <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
                     <span class="w">                      </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                      </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">      </span><span class="nn">md:</span><span class="nt">UserID</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    <span class="w">     </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
                 </pre>
                 <section data-dfn-for="PersonID">
                     <h2><dfn>Person ID</dfn></h2>
@@ -883,13 +885,6 @@
                     <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     <span class="w">     </span><span class="p">...</span>
                 </pre>
-                <div class="note">
-                    <p>
-                        When is this duty activated? When the <a>Assigner</a> intends to make an <code>External Party</code> with the role of <code>Service Facilitator</code> a <a>recipient</a> of the data <a>Asset</a> - i.e. when the recipient constraint is satisfied.
-                    </p><p>
-                        To fulfill the <a>Duty</a>, the <a>subject</a> of the Duty (not specified in this example) must take the <a>Action</a> of <a>notifying</a> the <a>object</a> of the <a>target</a> of the Duty: the <code>Service Facilitator</code>. They need only do this once for the duty to be fulfilled.
-                    </p>
-                </div>
             </section>
             <section data-dfn-for="Administrator">
                 <h2><dfn>Administrator</dfn></h2>
@@ -1072,6 +1067,18 @@
                             </tr>
                         </tbody>
                     </table>
+                    <p>
+                        The following <a>Permission</a> allows the user to <a>trade automatically</a> as <code>principal</code>.
+                    </p>
+                    <pre class="example nohighlight turtle" title="Trade Automatically as Principal" id="TradeAutomaticallyPrincipal">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
+                        <span class="w">     </span><span class="p">...</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
+                        <span class="w">                      </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">TradeAutomatically</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">        </span><span class="nn">md:</span><span class="nt">TradingAsPrincipal</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="p">...</span>
+                    </pre>
                 </section>
                 <section data-dfn-for="Brokerage">
                     <h2><dfn>Brokerage</dfn></h2>
@@ -1388,6 +1395,19 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>
+                    The following <a>Permission</a> allows the user to <a>derive</a> indices so long as the derivations are <code>Irreversible</code> and <code>Non-Substitutive</code>.
+                </p>
+                <pre class="example nohighlight turtle" title="Derive Indices" id="DeriveIndices">
+                    <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                      </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">          </span><span class="nn">md:</span><span class="nt">CalculateIndex</span>
+                    <span class="w">                      </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">  </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">     </span><span class="p">...</span>
+                </pre>
             </section>
         </section>
         <section id="ActivityProperties">
