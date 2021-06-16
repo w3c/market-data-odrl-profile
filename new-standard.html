@@ -1517,32 +1517,6 @@
                 </tbody>
             </table>
         </section>
-        <section data-dfn-for="dataHost">
-            <h2><dfn>data host</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Specifies the <a>Party</a> that physically stores the Asset.</td>
-                    </tr><tr>
-                        <th>Note:</th><td>A <em>vendor-hosted feed</em> (i.e. a hosted request/response API) can be modelled by setting the value to an <a>External Party</a> with the role of <a>Provider</a>.</td>
-                    </tr><tr>
-                        <th>Note:</th><td><em>Web hosting</em> can similarly be modelled as a display permission in which the data host is set to an <a>External Party</a> with the role of <a>Provider</a>.</td>
-                    </tr><tr>
-                        <th>Note:</th><td>A <em>deployed feed</em> can be modelled by setting the value to an <a>Internal Party</a> with the role of <a>Consumer</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>data host</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/dataHost">http://www.w3.org/md-odrl-profile/dataHost</a></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
-                    </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">odrl:Permission</a></td>
-                    </tr><tr>
-                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
     </section>
     <section id="Actions">
         <h2>Actions</h2>
@@ -2437,42 +2411,28 @@
                 </tbody>
             </table>
         </section>
-        <section data-dfn-for="locations">
-            <h2><dfn>locations</dfn></h2>
+        <section data-dfn-for="dataHost">
+            <h2><dfn>data host</dfn></h2>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Specifies the locations where the users of the <a>Rule</a> must be based.</td>
+                        <th>Definition:</th><td>Specifies the <a>Party</a> that physically stores the Asset.</td>
                     </tr><tr>
-                        <th>Label:</th><td>locations</td>
+                        <th>Note:</th><td>A <em>vendor-hosted feed</em> (i.e. a hosted request/response API) can be modelled by setting the value to an <a>External Party</a> with the role of <a>Provider</a>.</td>
                     </tr><tr>
-                        <th>Note:</th><td>Locations can range from regions, countries, cities down to individual offices with addresses.</td>
+                        <th>Note:</th><td><em>Web hosting</em> can similarly be modelled as a display permission in which the data host is set to an <a>External Party</a> with the role of <a>Provider</a>.</td>
                     </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/locations">http://www.w3.org/md-odrl-profile/locations</a></td>
+                        <th>Note:</th><td>A <em>deployed feed</em> can be modelled by setting the value to an <a>Internal Party</a> with the role of <a>Consumer</a>.</td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
+                        <th>Label:</th><td>data host</td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section data-dfn-for="linesOfBusiness">
-            <h2><dfn>lines of business</dfn></h2>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Definition:</th><td>Specifies the assignee's lines of business who can exercise the <a>Rule</a>.</td>
-                    </tr><tr>
-                        <th>Label:</th><td>lines of business</td>
-                    </tr><tr>
-                        <th>Note:</th><td>Lines of business can range from activities (like buy-side vs. sell-side), departments, down to individual desks.</td>
-                    </tr><tr>
-                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/linesOfBusiness">http://www.w3.org/md-odrl-profile/linesOfBusiness</a></td>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/dataHost">http://www.w3.org/md-odrl-profile/dataHost</a></td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
                     </tr><tr>
-                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#permissions">odrl:Permission</a></td>
+                    </tr><tr>
+                        <th>Range:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#partyConcepts">odrl:Party</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -2577,6 +2537,49 @@
                         <th>Domain:</th><td><a>Display</a></td>
                     </tr><tr>
                         <th>Range:</th><td><a>Display Type</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section id="ConstraintsOnParties">
+        <h2>Constraints on Parties</h2>
+        <section data-dfn-for="locations">
+            <h2><dfn>locations</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the locations where the users of the <a>Rule</a> must be based.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>locations</td>
+                    </tr><tr>
+                        <th>Note:</th><td>Locations can range from regions, countries, cities down to individual offices with addresses.</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/locations">http://www.w3.org/md-odrl-profile/locations</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-dfn-for="linesOfBusiness">
+            <h2><dfn>lines of business</dfn></h2>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Specifies the assignee's lines of business who can exercise the <a>Rule</a>.</td>
+                    </tr><tr>
+                        <th>Label:</th><td>lines of business</td>
+                    </tr><tr>
+                        <th>Note:</th><td>Lines of business can range from activities (like buy-side vs. sell-side), departments, down to individual desks.</td>
+                    </tr><tr>
+                        <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/linesOfBusiness">http://www.w3.org/md-odrl-profile/linesOfBusiness</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Sub-Property Of:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-function">odrl:function</a></td>
+                    </tr><tr>
+                        <th>Domain:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">odrl:Rule</a></td>
                     </tr>
                 </tbody>
             </table>
