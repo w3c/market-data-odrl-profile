@@ -33,8 +33,8 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 2. Feedback from meeting with exchanges (Ben, MarkB)
 3. Federation of European Stock Exchanges - FESE - ESMA (Ben)
 4. Identifiers (Jo, Ben, Caspar)
-   a. Feedback from GLEIF
-   b. Work from Caspar
+   1. Feedback from GLEIF
+   2. Work from Caspar
 5. [Spec review from 2021-06-16](https://www.w3.org/2021/06/16-md-odrl-profile-minutes.html)
 6. Heads up on [FISD Meeting 2021-06-24](https://www.siia.net/event/rights-automation-taking-digital-rights-management-drm-forward/)
 7. AOB
