@@ -2756,7 +2756,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Market Price includes the content relating to the best bid and best ask/offer in the market.</td>
+                            <th>Definition:</th><td>Market Price includes the content relating to at least the best bid and best ask/offer in the market.</td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “Level 1” data.</td>
                         </tr><tr>
@@ -2827,12 +2827,12 @@
                         </tbody>
                     </table>
             <p>
-                In this example, the <code>Level 2</code> <code>Asset</code> provides a book depth of ten:
+                In this example, the <code>Market Price</code> <code>Asset</code> provides a book depth of ten:
                 </p>
             <pre class="example nohighlight turtle" title="Specifying Market Depth" id="MarketDepthSpecification">
                 <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">depthOfMarket</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                           </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">Level2</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="kt">a</span><span class="w">                        </span><span class="nn">md:</span><span class="nt">MarketPrice</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionFrom</span><span class="w">          </span><span class="s">1</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                           </span><span class="nn">md:</span><span class="nt">positionTo</span><span class="w">            </span><span class="s">10</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
