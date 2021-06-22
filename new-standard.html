@@ -1068,7 +1068,7 @@
                         </tbody>
                     </table>
                     <p>
-                        The following <a>Permission</a> allows the user to <a>trade automatically</a> as <code>principal</code>.
+                        The following <a>Permission</a> allows the user to <a>trade automatically</a> as <code>principal</code> (using a <a>purpose</a> constraint).
                     </p>
                     <pre class="example nohighlight turtle" title="Trade Automatically as Principal" id="TradeAutomaticallyPrincipal">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">              </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p">;</span>
@@ -2751,54 +2751,38 @@
                     </tr>
                 </tbody>
             </table>
-            <section data-dfn-for="Level1">
-                <h2><dfn>Level 1</dfn></h2>
+            <section data-dfn-for="MarketPrice">
+                <h2><dfn>Market Price</dfn></h2>
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Level 1 includes the content relating to the calculated single best bid and best ask/offer in the market.</td>
+                            <th>Definition:</th><td>Market Price includes the content relating to the best bid and best ask/offer in the market.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market price”.</td>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “Level 1” data.</td>
                         </tr><tr>
-                            <th>Label:</th><td>Level 1</td>
+                            <th>Note:</th><td>If more prices beyond the best bid are offered, the book depth can be specified by using the <code>positionTo</code> and <code>positionFrom</code> properties.</td>
                         </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level1">http://www.w3.org/md-odrl-profile/Level1</a></td>
+                            <th>Label:</th><td>Market Price</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/MarketPrice">http://www.w3.org/md-odrl-profile/MarketPrice</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
                         </tr>
                     </tbody>
                 </table>
             </section>
-            <section data-dfn-for="Level2">
-                <h2><dfn>Level 2</dfn></h2>
+            <section data-dfn-for="FullOrderBook">
+                <h2><dfn>Full Order Book</dfn></h2>
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Level 2 includes content relating to the best bids and asks/offers at a number of price points.</td>
+                            <th>Definition:</th><td>The <code>Full Order Book</code> includes content relating to the bids and asks/offers at all price points and from all participants in the market.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as “market by price” or "market depth".</td>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as "market by order", the "detailed order book", or "Level 2"/"Level 3" data.</td>
                         </tr><tr>
-                            <th>Label:</th><td>Level 2</td>
+                            <th>Label:</th><td>Full Order Book</td>
                         </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level2">http://www.w3.org/md-odrl-profile/Level2</a></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="Level3">
-                <h2><dfn>Level 3</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Level 3 includes content relating to the bids and asks/offers at all price points and from all participants in the market.</td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td>Also known as "market by order", the "detailed order book", or the "full order book".</td>
-                        </tr><tr>
-                            <th>Label:</th><td>Level 3</td>
-                        </tr><tr>
-                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/Level3">http://www.w3.org/md-odrl-profile/Level3</a></td>
+                            <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/FullOrderBook">http://www.w3.org/md-odrl-profile/FullOrderBook</a></td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Sub-class Of:</th><td><a>Market Depth</a></td>
                         </tr>
