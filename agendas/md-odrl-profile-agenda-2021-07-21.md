@@ -30,7 +30,7 @@ IRC Channel: md-odrl-profile, irc.w3.org ([Web interface](http://irc.w3.org))
 
 1. Admin
     1. Minutes of [last meeting](https://www.w3.org/2021/07/07-md-odrl-profile-minutes.html)
-2. Testing Apporach (Ben)
+2. Testing Approach (Ben)
    1. Call for open collaborations
 3. Derived products (Mark)
 4. Update on Standard (Ben)
