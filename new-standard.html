@@ -106,8 +106,8 @@
                         In the example below the Asset <code>:A1</code> is provided by the CME:
                     </p>
                     <pre class="example nohighlight turtle" title="Specifying the Provider of an Asset" id="ProviderSpecification">
-                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nn">lei:</span><span class="nt">LCZ7XYGSLJUHFXXNXD88</span><span class="p"> .</span><span class="c">  # CME</span>
                     </pre>
                 </section>
                 <section data-dfn-for="ipOwners">
@@ -133,8 +133,8 @@
                         In the example below the intellectual property rights over the Asset <code>:A1</code> are owned by the CME:
                     </p>
                     <pre class="example nohighlight turtle" title="Specifying the owner of the IP in an Asset" id="IPOwnerSpecification">
-                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                        <span class="w">        </span><span class="nn">md:</span><span class="nt">ipOwner</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
+                        <span class="w">        </span><span class="nn">md:</span><span class="nt">ipOwner</span><span class="w">  </span><span class="nn">lei:</span><span class="nt">LCZ7XYGSLJUHFXXNXD88</span><span class="p"> .</span><span class="c">  # CME</span>
                     </pre>
                 </section>
                 <section data-dfn-for="refines">
@@ -3199,9 +3199,14 @@
                     <td>[[xmlschema11-2]]</td>
                 </tr>
                 <tr>
-                    <td>dcterms</td>
+                    <td>dct</td>
                     <td>http://purl.org/dc/terms/</td>
                     <td>[[dcterms]]</td>
+                </tr>
+                <tr>
+                    <td><dfn>lei</dfn></td>
+                    <td>urn:lei</td>
+                    <td><a href="https://www.gleif.org//en/lei-data/access-and-use-lei-data">Legal Indentify Identifier</a></td>
                 </tr>
             </tbody>
         </table>
@@ -3231,7 +3236,7 @@
                 <tr>
                     <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a></dfn></td>
                     <td><a>odrl</a></td>
-                    <td>Global Legal Entity Identifiers</td>
+                    <td>The use of <a>Global Legal Entity Identifiers</a> to identify parties is recommended</td>
                 </tr>
                 <tr>
                     <td><dfn>Rule</dfn></td>
