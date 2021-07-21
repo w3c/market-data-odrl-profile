@@ -92,7 +92,7 @@
                             <tr>
                                 <th>Definition:</th><td>Identifies the <a>Party</a> playing the role of <a>Provider</a> in relation to an <code>Asset</code>.</td>
                             </tr><tr>
-                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <a>Legal Entity Identifiers</a> where possible.</td>
+                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <code>Legal Entity Identifiers</code> [[iso:17442]] where possible.</td>
                             </tr><tr>
                                 <th>Label:</th><td>providers</td>
                             </tr><tr>
@@ -121,7 +121,7 @@
                             </tr><tr>
                                 <th>Note:</th><td>Can be used to specifiy the IP owner of any derived works by qualifying the <a>output</a> <code>Asset</code> of a <a>Permission</a> to <a>Derive</a> data.</td>
                             </tr><tr>
-                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <a>Legal Entity Identifiers</a> where possible.</td>
+                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <code>Legal Entity Identifiers</code> [[iso:17442]] where possible.</td>
                             </tr><tr>
                                 <th>Label:</th><td>IP owners</td>
                             </tr><tr>
@@ -209,7 +209,7 @@
                         <tr>
                             <th>Definition:</th><td>An organisation that manages one or more <code>Venues</code></td>
                         </tr><tr>
-                            <th>Note:</th><td>To improve interoperability, <code>Exchanges</code> should be identifed by their <code>operating MIC codes</code> [iso:10383].</td>
+                            <th>Note:</th><td>To improve interoperability, <code>Exchanges</code> should be identifed by their <code>operating MIC codes</code> [[iso:10383]].</td>
                         </tr><tr>
                             <th>Label:</th><td>Exchange</td>
                         </tr><tr>
@@ -227,7 +227,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets; Organised Trading Facilities (OTF) and Multilateral Trading Facilities (MTFs) as defined in MiFID II; and Alternative Trading Systems (ATS) as defined by the SEC.</td>
                         </tr><tr>
-                            <th>Note:</th><td><code>MIC codes</code> [iso:10383] should be used to identify a specific <code>Venue</code>.</td>
+                            <th>Note:</th><td><code>MIC codes</code> [[iso:10383]] should be used to identify a specific <code>Venue</code>.</td>
                         </tr><tr>
                             <th>Note:</th><td>When <a>Providing Trading Venues</a>, reporting the number of venues on which an <a>Asset</a> is made available can decide data costs.</td>
                         </tr><tr>
@@ -247,7 +247,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the <code>Exchange</code> operating the <code>venue</code> using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the operating MIC code.</td>
+                                <th>Definition:</th><td>Identifies the <code>Exchange</code> operating the <code>venue</code> using [[iso:10383]] market identifier codes, specifically the operating MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>operating MIC code</td>
                             </tr><tr>
@@ -260,16 +260,16 @@
                         </tbody>
                     </table>
                 </section>
-                <section data-dfn-for="mic">
-                    <h2><dfn>mic</dfn></h2>
+                <section data-dfn-for="micCode">
+                    <h2><dfn>micCode</dfn></h2>
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the <a>Venue</a> using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the market MIC code.</td>
+                                <th>Definition:</th><td>Identifies the <a>Venue</a> using [[iso:10383]] market identifier codes, specifically the market MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>MIC code</td>
                             </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/mic">http://www.w3.org/md-odrl-profile/mic</a></td>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/micCode">http://www.w3.org/md-odrl-profile/micCode</a></td>
                             </tr><tr>
                                 <th>Domain:</th><td><a>Venue</a></td>
                             </tr><tr>
@@ -3213,12 +3213,12 @@
                 <tr>
                     <td><dfn>lei</dfn></td>
                     <td>urn:lei</td>
-                    <td>[[iso:17442]] - Legal Entity Identifiers</td>
+                    <td>[[iso:17442]] Legal Entity Identifiers</td>
                 </tr>
                 <tr>
                     <td><dfn>mic</dfn></td>
                     <td>urn:iso:std:iso:10383:-1:tech</td>
-                    <td>[[iso:10383]] - Market Identifier Codes</td>
+                    <td>[[iso:10383]] Market Identifier Codes</td>
                 </tr>
             </tbody>
         </table>
