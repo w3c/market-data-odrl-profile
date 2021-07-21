@@ -18,7 +18,13 @@
 <section id="sotd"></section>
 <section id="versioning">
     <h2>Versioning</h2>
-    <p>TEST</p>
+    <p>
+        This standard is conceived as a living document that will continue to evolve as the trade in data for financial organisations develops.
+    </p><p>
+        To support the objective of automating compliance along the data supply chain, therefore, the standard, and all its past and future published iterations, must be idenified using a three-part version number. All terms defined in the standard must specify the version in which they were minted. Furthermore, ODRL interpreters must publish the latest version implemented.
+    </p><p>
+        Changes in the first number indicate breaking changes: 
+    </p>
 </section>
 <section id="conformance"></section>
 <section id="SupplyChainMetamodel">
@@ -68,7 +74,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Editorial Note:</th><td><code>Assets</code> are sensitive to their means of delivery and informational completeness. A real-time version of the data may be a different <code>Asset</code> than the delayed version. Book depth too can distinguish between <code>Assets</code>.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td><code>Assets</code> can be transformed through some calculation but still remain the same <code>Asset</code>. It only becomes a new <code>Asset</code> if the transformation is irreversible (i.e. the original data cannot be recovered) and non-substitutive (i.e. the altered data cannot be used in place of the original).</td>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td><code>Assets</code> can be transformed through some calculation but still remain the same <code>Asset</code>. It only becomes a new <code>Asset</code> through calculation if the transformation is irreversible (i.e. the original data cannot be recovered) and non-substitutive (i.e. the altered data cannot be used in place of the original), thus creating a new <code>Source</code> which can then be packaged as new <code>Assets</code>.</td>
                         </tr><tr>
                             <th>Example:</th><td>The operation of currency conversion does not change the identity of an <code>Asset</code>.</td>
                         </tr><tr>
