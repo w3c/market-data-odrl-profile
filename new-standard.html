@@ -92,7 +92,7 @@
                             <tr>
                                 <th>Definition:</th><td>Identifies the <a>Party</a> playing the role of <a>Provider</a> in relation to an <code>Asset</code>.</td>
                             </tr><tr>
-                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <a>Legal Entity identifiers</a></td>
+                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <a>Legal Entity Identifiers</a> where possible.</td>
                             </tr><tr>
                                 <th>Label:</th><td>providers</td>
                             </tr><tr>
@@ -121,7 +121,7 @@
                             </tr><tr>
                                 <th>Note:</th><td>Can be used to specifiy the IP owner of any derived works by qualifying the <a>output</a> <code>Asset</code> of a <a>Permission</a> to <a>Derive</a> data.</td>
                             </tr><tr>
-                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <a>Legal Entity identifiers</a></td>
+                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <a>Legal Entity Identifiers</a> where possible.</td>
                             </tr><tr>
                                 <th>Label:</th><td>IP owners</td>
                             </tr><tr>
@@ -336,8 +336,8 @@
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
                 <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="nn">mic:</span><span class="nt">XCME</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="nn">mic:</span><span class="nt">GLBX</span>
                 <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
             </pre>
@@ -3210,7 +3210,12 @@
                 <tr>
                     <td><dfn>lei</dfn></td>
                     <td>urn:lei</td>
-                    <td><a href="https://www.gleif.org//en/lei-data/access-and-use-lei-data">Legal Indentify Identifier</a></td>
+                    <td>[[Legal Indentify Identifier]]</td>
+                </tr>
+                <tr>
+                    <td><dfn>mic</dfn></td>
+                    <td>urn:iso:std:iso:10383:-1:tech</td>
+                    <td>[[Market identifier codes]]</td>
                 </tr>
             </tbody>
         </table>
