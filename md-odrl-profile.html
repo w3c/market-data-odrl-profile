@@ -16,6 +16,16 @@
     </p>
 </section>
 <section id="sotd"></section>
+<section id="versioning">
+    <h2>Versioning</h2>
+    <p>
+        This standard is conceived as a living document that will continue to evolve as the trade in data for financial organisations develops.
+    </p><p>
+        To support the objective of automating compliance along the data supply chain, therefore, the standard, and all its past and future published iterations, must be idenified using a three-part version number. All terms defined in the standard must specify the version in which they were minted. Furthermore, ODRL interpreters must publish the latest version implemented.
+    </p><p>
+        Changes in the first number indicate breaking changes: 
+    </p>
+</section>
 <section id="conformance"></section>
 <section id="SupplyChainMetamodel">
     <h2>Supply Chain Metamodel</h2>
@@ -64,7 +74,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Editorial Note:</th><td><code>Assets</code> are sensitive to their means of delivery and informational completeness. A real-time version of the data may be a different <code>Asset</code> than the delayed version. Book depth too can distinguish between <code>Assets</code>.</td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th><td><code>Assets</code> can be transformed through some calculation but still remain the same <code>Asset</code>. It only becomes a new <code>Asset</code> if the transformation is irreversible (i.e. the original data cannot be recovered) and non-substitutive (i.e. the altered data cannot be used in place of the original).</td>
+                            <th style="white-space:nowrap;">Editorial Note:</th><td><code>Assets</code> can be transformed through some calculation but still remain the same <code>Asset</code>. It only becomes a new <code>Asset</code> through calculation if the transformation is irreversible (i.e. the original data cannot be recovered) and non-substitutive (i.e. the altered data cannot be used in place of the original), thus creating a new <code>Source</code> which can then be packaged as new <code>Assets</code>.</td>
                         </tr><tr>
                             <th>Example:</th><td>The operation of currency conversion does not change the identity of an <code>Asset</code>.</td>
                         </tr><tr>
@@ -92,6 +102,8 @@
                             <tr>
                                 <th>Definition:</th><td>Identifies the <a>Party</a> playing the role of <a>Provider</a> in relation to an <code>Asset</code>.</td>
                             </tr><tr>
+                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <code>Legal Entity Identifiers</code> [[iso:17442]] where possible.</td>
+                            </tr><tr>
                                 <th>Label:</th><td>providers</td>
                             </tr><tr>
                                 <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/providers">http://www.w3.org/md-odrl-profile/providers</a></td>
@@ -106,8 +118,8 @@
                         In the example below the Asset <code>:A1</code> is provided by the CME:
                     </p>
                     <pre class="example nohighlight turtle" title="Specifying the Provider of an Asset" id="ProviderSpecification">
-                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">providers</span><span class="w">  </span><span class="nn">lei:</span><span class="nt">LCZ7XYGSLJUHFXXNXD88</span><span class="p"> .</span><span class="c">  # CME</span>
                     </pre>
                 </section>
                 <section data-dfn-for="ipOwners">
@@ -118,6 +130,8 @@
                                 <th>Definition:</th><td>Identifies the <a>Party</a> that owns the intellectual property rights over an <code>Asset</code>.</td>
                             </tr><tr>
                                 <th>Note:</th><td>Can be used to specifiy the IP owner of any derived works by qualifying the <a>output</a> <code>Asset</code> of a <a>Permission</a> to <a>Derive</a> data.</td>
+                            </tr><tr>
+                                <th>Note:</th><td>To improve interoperability, the parties should be identified using <code>Legal Entity Identifiers</code> [[iso:17442]] where possible.</td>
                             </tr><tr>
                                 <th>Label:</th><td>IP owners</td>
                             </tr><tr>
@@ -133,8 +147,8 @@
                         In the example below the intellectual property rights over the Asset <code>:A1</code> are owned by the CME:
                     </p>
                     <pre class="example nohighlight turtle" title="Specifying the owner of the IP in an Asset" id="IPOwnerSpecification">
-                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                        <span class="w">        </span><span class="nn">md:</span><span class="nt">ipOwner</span><span class="w">  </span><span class="nv">&lt;https://permid.org/1-4295899615&gt;</span> <span class="p">.</span><span class="c">  # CME</span>
+                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p"> ;</span>
+                        <span class="w">        </span><span class="nn">md:</span><span class="nt">ipOwner</span><span class="w">  </span><span class="nn">lei:</span><span class="nt">LCZ7XYGSLJUHFXXNXD88</span><span class="p"> .</span><span class="c">  # CME</span>
                     </pre>
                 </section>
                 <section data-dfn-for="refines">
@@ -205,7 +219,7 @@
                         <tr>
                             <th>Definition:</th><td>An organisation that manages one or more <code>Venues</code></td>
                         </tr><tr>
-                            <th>Note:</th><td><code>Exchanges</code> can be identifed by their <a href="https://www.iso20022.org/market-identifier-codes">operating MIC codes</a>.</td>
+                            <th>Note:</th><td>To improve interoperability, <code>Exchanges</code> should be identifed by their <code>operating MIC codes</code> [[iso:10383]].</td>
                         </tr><tr>
                             <th>Label:</th><td>Exchange</td>
                         </tr><tr>
@@ -223,7 +237,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Scope Note:</th><td> Includes regulated markets; Organised Trading Facilities (OTF) and Multilateral Trading Facilities (MTFs) as defined in MiFID II; and Alternative Trading Systems (ATS) as defined by the SEC.</td>
                         </tr><tr>
-                            <th>Note:</th><td><a href="https://www.iso20022.org/market-identifier-codes">MIC codes</a> can be used to identify a specific <code>Venue</code>.</td>
+                            <th>Note:</th><td><code>MIC codes</code> [[iso:10383]] should be used to identify a specific <code>Venue</code>.</td>
                         </tr><tr>
                             <th>Note:</th><td>When <a>Providing Trading Venues</a>, reporting the number of venues on which an <a>Asset</a> is made available can decide data costs.</td>
                         </tr><tr>
@@ -243,7 +257,7 @@
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the <code>Exchange</code> operating the <code>venue</code> using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the operating MIC code.</td>
+                                <th>Definition:</th><td>Identifies the <code>Exchange</code> operating the <code>venue</code> using [[iso:10383]] market identifier codes, specifically the operating MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>operating MIC code</td>
                             </tr><tr>
@@ -256,16 +270,16 @@
                         </tbody>
                     </table>
                 </section>
-                <section data-dfn-for="mic">
-                    <h2><dfn>mic</dfn></h2>
+                <section data-dfn-for="micCode">
+                    <h2><dfn>micCode</dfn></h2>
                     <table class="def propdef">
                         <tbody>
                             <tr>
-                                <th>Definition:</th><td>Identifies the <a>Venue</a> using <a href="https://www.iso20022.org/market-identifier-codes">ISO 10383</a> market identifier codes, specifically the market MIC code.</td>
+                                <th>Definition:</th><td>Identifies the <a>Venue</a> using [[iso:10383]] market identifier codes, specifically the market MIC code.</td>
                             </tr><tr>
                                 <th>Label:</th><td>MIC code</td>
                             </tr><tr>
-                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/mic">http://www.w3.org/md-odrl-profile/mic</a></td>
+                                <th>Identifier:</th><td><a href="http://www.w3.org/md-odrl-profile/micCode">http://www.w3.org/md-odrl-profile/micCode</a></td>
                             </tr><tr>
                                 <th>Domain:</th><td><a>Venue</a></td>
                             </tr><tr>
@@ -332,8 +346,8 @@
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">context</span><span class="w">        </span><span class="p">[</span>
                 <span class="w">                           </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Venue</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                           </span><span class="nn">rdfs:</span><span class="nt">label</span><span class="w">        </span><span class="s">"Globex"</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="s">"XCME"</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="s">"GLBX"</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">operatingMic</span><span class="w">   </span><span class="nn">mic:</span><span class="nt">XCME</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                           </span><span class="nn">md:</span><span class="nt">mic</span><span class="w">            </span><span class="nn">mic:</span><span class="nt">GLBX</span>
                 <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">dc:</span><span class="nt">identifier</span><span class="w">.    </span><span class="s">"GE"</span><span class="w"> </span><span class="p">.</span>
             </pre>
@@ -531,6 +545,11 @@
     </section>
     <section id="Parties">
         <h2>Parties</h2>
+        <div class="note">
+            <p>
+                Parties play roles in ensuring the validity of <a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rules</a>. To support the interoperability of Rules, they should be idenified using Legal Entity Identifier codes [[iso:17442]] where possible.
+            </p>
+        </div>
         <section id="PartyTypes">
             <h2>Party Types</h2>
             <p>
@@ -1019,9 +1038,9 @@
                             </tr><tr>
                                 <th>Scope Note:</th><td>Broker crossing networks and dark pools are examples of alternative trading systems (ATS), and are thus trading platforms.</td>
                             </tr><tr>
-                                <th>Scope Note:</th><td>Includes alternative trading systems (ATS) as defined by 300a of the SEC regulation on ATS: any organization, association, person, group of persons, or system that constitutes, maintains, or provides a market place or facilities for bringing together purchasers and sellers of securities or for otherwise performing with respect to securities the functions commonly performed by a stock exchange.</td>
+                                <th>Scope Note:</th><td>Includes alternative trading systems (ATS) as defined by 300a of the SEC regulation on ATS [[17 CFR 242.300 - Definitions]]: any organization, association, person, group of persons, or system that constitutes, maintains, or provides a market place or facilities for bringing together purchasers and sellers of securities or for otherwise performing with respect to securities the functions commonly performed by a stock exchange.</td>
                             </tr><tr>
-                                <th>Scope Note:</th><td>Includes multilateral trading facilities (MTF) as defined in MiFID II: multilateral systems, operated by an investment firm or a market operator, which bring together multiple third-party buying and selling interests in financial instruments (in the system and in accordance with non- discretionary rules) in a way that results in a contract.</td>
+                                <th>Scope Note:</th><td>Includes multilateral trading facilities (MTF) as defined in MiFID II [[MiFID II, TITLE I, Article 4]]: multilateral systems, operated by an investment firm or a market operator, which bring together multiple third-party buying and selling interests in financial instruments (in the system and in accordance with non- discretionary rules) in a way that results in a contract.</td>
                             </tr><tr>
                                 <th>Scope Note:</th><td>Includes organised trading facilities (OTF) as defined in MiFID II: multilateral systems which are not a regulated market or an MTF and in which multiple third-party buying and selling interests in bonds, structured finance products, emission allowances, or derivatives are able to interact in the system in a way that results in a contract.</td>
                             </tr><tr>
@@ -3107,7 +3126,7 @@
             <pre class="example nohighlight turtle" title="Specifying Historical Data" id="HistoricalSpecification">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Historic</span><span class="p"> ;</span>
+                <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Historical</span><span class="p"> ;</span>
                 <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalAfter</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                                         </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
                 <span class="w">                                                         </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
@@ -3184,14 +3203,14 @@
                     <th>Description</th>
                 </tr>
                 <tr>
-                    <td>odrl</td>
+                    <td><dfn>odrl</dfn></td>
                     <td>http://www.w3.org/ns/odrl/2/</td>
-                    <td><a href="https://www.w3.org/TR/odrl-vocab/">ODRL Vocabulary</a></td>
+                    <td>[[odrl-model]], [[odrl-vocab]]</td>
                 </tr>
                 <tr>
                     <td>prov</td>
                     <td>http://www.w3.org/ns/prov#</td>
-                    <td><a href="https://www.w3.org/TR/prov-o/">The PROV Ontology</a></td>
+                    <td>[[PROV-O]]</td>
                 </tr>
                 <tr>
                     <td>xsd</td>
@@ -3199,9 +3218,19 @@
                     <td>[[xmlschema11-2]]</td>
                 </tr>
                 <tr>
-                    <td>dcterms</td>
+                    <td>dct</td>
                     <td>http://purl.org/dc/terms/</td>
                     <td>[[dcterms]]</td>
+                </tr>
+                <tr>
+                    <td><dfn>lei</dfn></td>
+                    <td>urn:lei</td>
+                    <td>[[iso:17442]] Legal Entity Identifiers</td>
+                </tr>
+                <tr>
+                    <td><dfn>mic</dfn></td>
+                    <td>urn:iso:std:iso:10383:-1:tech</td>
+                    <td>[[iso:10383]] Market Identifier Codes</td>
                 </tr>
             </tbody>
         </table>
@@ -3217,85 +3246,102 @@
                     <th>Term</th>
                     <th>Namespace</th>
                     <th>Note</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td><dfn>Entity</dfn></td>
                     <td>prov</td>
+                    <td>Test</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Activity</dfn></td>
                     <td>prov</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td><dfn>Party</dfn></td>
-                    <td>odrl</td>
+                    <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a></dfn></td>
+                    <td><a>odrl</a></td>
+                    <td>The use of <a href="https://www.gleif.org//en/lei-data/access-and-use-lei-data">Global Legal Entity Identifiers</a> to identify parties is recommended</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Rule</dfn></td>
                     <td>odrl</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Permission</dfn></td>
                     <td>odrl</td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Duty</dfn></td>
                     <td>odrl</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Constraint</dfn></td>
                     <td>odrl</td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Action</dfn></td>
                     <td>odrl</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Next Policy</dfn></td>
                     <td>odrl</td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Assigner</dfn></td>
                     <td>odrl</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><dfn>Assignee</dfn></td>
                     <td>odrl</td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><dfn>unit of count</dfn></td>
                     <td>odrl</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><dfn>payment amount</dfn></td>
                     <td>odrl</td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td><dfn>unit</dfn></td>
                     <td>odrl</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><dfn>count</dfn></td>
                     <td>odrl</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><dfn>time interval</dfn></td>
                     <td>odrl</td>
+                    <td></td>
                     <td></td>
                 </tr>
             </tbody>
