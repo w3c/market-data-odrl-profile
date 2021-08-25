@@ -19,11 +19,29 @@
 <section id="versioning">
     <h2>Versioning</h2>
     <p>
-        This standard is conceived as a living document that will continue to evolve as the trade in data for financial organisations develops.
+        This standard is conceived as a living document. The Market Data Profile for ODRL will continue to evolve as the data supply chain develops and the opportunities for automating compliance increase.
     </p><p>
-        To support the objective of automating compliance along the data supply chain, therefore, the standard, and all its past and future published iterations, must be idenified using a three-part version number. All terms defined in the standard must specify the version in which they were minted. Furthermore, ODRL interpreters must publish the latest version implemented.
+        To balance future flexibility with present implementations, all terms defined in the profile are assigned permanent identifiers. Any changes to the definition of a term must be versioned under a new identifier.
     </p><p>
-        Changes in the first number indicate breaking changes: 
+        Similarly, any changes to the ontology itself, including any term-level changes, must be versioned under a new identifier for the ontology.
+    </p><p>
+        Term-level changes should be identified using a two-part version number. Changes in the first part indicate a breaking change: a change in the extension of the term or in its logical relationships that could result in an incorrect decision if the old and new values are treated as equivalent.
+    </p><p>
+        Changes in the second part indicate a safe change: an editorial change that clarifies the concept that the term represents without changing its extension. The old and new values can be treated as equivalent for the purposes of making a compliance decision.
+    </p><p>
+        Terms may be deprecated by using OWL annotations. To ease the weight of legacy terms on implementors, policy writers are discouraged from using deprecated terms.
+    </p><p>
+        Under this scheme, the ontology itself can only be changed by adding, deprecating, or removing terms but not by altering them. To help implementors keep up-to-date, editors of this profile should package and publish sets of changes as a new version of the ontology. Again, a two-part version number is required. 
+    </p><p>
+        Changes to the first part indicate that the new ontology contains new terms or breaking changes in existing terms. Changes to the second part alert both policy writers and processors to editorial changes without logical consequence.
+    </p><p>
+        To allow terms to be removed, policy writers must use the latest version of the ontology. Implementors are encouraged to publish their conformance to it.
+    </p><p>
+        The aim of this versioning strategy is to maximise the opportunities for “practical” compatibility when the implementation (i.e. processing) and instance data (i.e. the ODRL policies) are operating on different versions of the ontology. Failure is scoped to an individual decision at runtime and occurs only when a breaking term is met.
+    </p><p>
+        Once met, processing must stop. No sound decision can be made by an ODRL processor and responsibility for the decision lies beyond the system.
+    </p><p>
+        Intermediate artifacts (e.g. branches or beta releases) should be represented by a suffix consisting of a hyphen and free-form qualifier.
     </p>
 </section>
 <section id="conformance"></section>
