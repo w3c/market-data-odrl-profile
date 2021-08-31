@@ -48,7 +48,7 @@
             purposes of making a compliance decision.
         </p>
         <p>
-            Terms may be deprecated by using OWL annotations. To ease the weight of legacy terms on implementors, policy
+            Terms may be deprecated by using OWL annotations. Term with newer versions should be deprecated. To ease the weight of legacy terms on implementors, policy
             writers are discouraged from using deprecated terms.
         </p>
         <p>
@@ -474,7 +474,7 @@
                                 <th style="white-space:nowrap;">Scope Note:</th>
                                 <td> Includes regulated markets; Organised Trading Facilities (OTF) and Multilateral
                                     Trading Facilities (MTFs) as defined in MiFID II; and Alternative Trading Systems
-                                    (ATS) as defined by the SEC.</td>
+                                    (ATS) as defined by the SEC. [[ATS]] [[EXCHANGE]] [[MiFID]] [[ECN]]     </td>
                             </tr>
                             <tr>
                                 <th>Note:</th>
@@ -4040,7 +4040,7 @@
                 </p>
                 <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
                 <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nv">&lt;https://sec.report/CFI/FCEPSX&gt;</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
+                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nn">cfi:</span><span class="nt">FCEPSX</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
             </pre>
             </section>
             <section data-dfn-for="timelinessOfDelivery" id="timeliness-of-delivery-0-9">
@@ -4363,7 +4363,7 @@
                 <pre class="example nohighlight turtle" title="Specifying Content Type" id="ContentTypeSpecification">
                 <span class="nv">:A3</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
                 <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w"> </span><span class="p">[</span>
-                <span class="w">                           </span><span class="kt">a</span><span class="w">                       </span><span class="nv">&lt;https://sec.report/CFI/TIEXX&gt;</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
+                <span class="w">                           </span><span class="kt">a</span><span class="w">                       </span><span class="nn">cfi:</span><span class="nt">TIEXX</span><span class="w"> </span><span class="p">;</span>  <span class="c"> # Index of equities</span>
                 <span class="w">                           </span><span class="nn">md:</span><span class="nt">contentType</span><span class="w">          </span><span class="p">( </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Value</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Constituents</span><span class="w"> </span><span class="p">]</span><span class="p"> )</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                      </span><span class="p">]</span><span class="w">    </span><span class="p">.</span>
             </pre>
@@ -4837,9 +4837,8 @@
                         </tr>
                         <tr>
                             <th>Note:</th>
-                            <td>It is recommended that the values are selected from <a
-                                    href="https://www.iso.org/standard/73564.html">ISO 10962:2019</a>: Classification of
-                                Financial Instruments (CFI) codes. See also the Wikipedia <a
+                            <td>It is recommended that the values are selected from ISO 10962:2021: Classification of
+                                Financial Instruments (CFI) codes [[[CFI]]]. See also the Wikipedia <a
                                     href="https://en.wikipedia.org/wiki/ISO_10962">entry</a>.</td>
                         </tr>
                         <tr>
@@ -5874,6 +5873,11 @@
                         <td><dfn>mic</dfn></td>
                         <td>urn:iso:std:iso:10383:-1:tech</td>
                         <td>[[[MIC]]]</td>
+                    </tr>
+                    <tr>
+                        <td><dfn>cfi</dfn></td>
+                        <td>urn:iso:std:iso:10962:2021:-1:tech</td>
+                        <td>[[[CFI]]]</td>
                     </tr>
                 </tbody>
             </table>
