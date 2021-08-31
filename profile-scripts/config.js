@@ -19,13 +19,13 @@ var respecConfig = {
       LEI: {
         title: "ISO 17442: Legal Entity Identifiers (LEI)",
         href: "https://www.gleif.org/en/about-lei/iso-17442-the-lei-code-structure/",
-        status: "RSCND",
+        status: "",
         publisher: "ISO",
       },
-      CFI: {
-        title: "ISO 17442: Market Identifier Codes (CFI)",
+      MIC: {
+        title: "ISO 17442: Market Identifier Codes (MIC)",
         href: "https://www.iso20022.org/market-identifier-codes",
-        status: "RSCND",
+        status: "",
         publisher: "ISO",
       },
     },
