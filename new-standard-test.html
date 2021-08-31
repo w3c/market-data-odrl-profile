@@ -3827,7 +3827,7 @@
                 <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Location</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">    </span><span class="s">1150.00</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nv">&lt;https://www.wikidata.org/wiki/Q4917&gt;</span><span class="w"> </span><span class="p">;</span><span class="c">  # USD</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nn">currency:</span><span class="nt">USD</span><span class="w"> </span><span class="p">;</span><span class="c">  # USD</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
                 <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
             </pre>
@@ -3872,7 +3872,7 @@
                 <span class="w">                       </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">  </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Location</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">    </span><span class="s">1150.00</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nv">&lt;https://www.wikidata.org/wiki/Q4917&gt;</span><span class="w"> </span><span class="p">;</span><span class="c">  # USD</span>
+                <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">         </span><span class="nn">currency:</span><span class="nt">USD</span><span class="w"> </span><span class="p">;</span><span class="c">  # USD</span>
                 <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">count</span><span class="w">        </span><span class="s">1</span>
                 <span class="w">                    </span><span class="p">]</span><span class="p"> ;</span>                 
                 <span class="w">     </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:I1</span><span class="p"> .</span>
@@ -5866,21 +5866,29 @@
                     </tr>
                     <tr>
                         <td><dfn>lei</dfn></td>
-                        <td>urn:lei</td>
+                        <td>urn:lei:</td>
                         <td>[[LEI]]</td>
                     </tr>
                     <tr>
                         <td><dfn>mic</dfn></td>
-                        <td>urn:iso:std:iso:10383:-1:tech</td>
-                        <td>[[MIC]]</td>
+                        <td>urn:iso:std:iso:10383:-1:tech:#</td>
+                        <td>[[ISO:10383]]</td>
                     </tr>
                     <tr>
                         <td><dfn>cfi</dfn></td>
-                        <td>urn:iso:std:iso:10962:2021:-1:tech</td>
-                        <td>[[CFI]]</td>
+                        <td>urn:iso:std:iso:10962:-1:tech:#</td>
+                        <td>[[ISO:10962]]</td>
+                    </tr>
+                    <tr>
+                        <td><dfn>currency</dfn></td>
+                        <td>urn:iso:std:iso:4217:-1:tech:#</td>
+                        <td>[[ISO4217]]</td>
                     </tr>
                 </tbody>
             </table>
+            <div class="note">
+                <p>Policy writers should use the latest version of any external standards. Implementors should determine the identity of versioned (and external) terms based on the effective date of the policy in which they are used. </p>
+            </div>
         </section>
         <section id="ExternalTerms">
             <h2>External Terms</h2>
