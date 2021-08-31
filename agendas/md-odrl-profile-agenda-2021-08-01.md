@@ -1,6 +1,6 @@
 # Rights Automation Community Group
 
-## Teleconference 2021-08-01
+## Teleconference 2021-09-01
 
 Please send your regrets in advance.
 
@@ -11,7 +11,7 @@ If you are unfamiliar with the W3C you may want to review the [orientation guide
 Chair: Ben
 
 
-Date: 2021-08-01T1500Z
+Date: 2021-09-01T1500Z
 *  1100-1200 US Eastern
 *  1600-1700 UK/Ireland
 *  1700-1800 CET
