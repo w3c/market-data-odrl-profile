@@ -79,6 +79,9 @@
             Intermediate artifacts (e.g. branches or beta releases) should be represented by a suffix consisting of a
             hyphen and free-form qualifier.
         </p>
+        <div class="note">
+            For the purposes of clarity and simplicity, the version numbers of terms have not been specified in the examples below.
+        </div>
     </section>
     <section id="conformance"></section>
     <section id="SupplyChainMetamodel">
@@ -5977,8 +5980,7 @@
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-Party">Party</a></dfn></td>
                         <td><a>odrl</a></td>
                         <td>An entity or a collection of entities that undertake <a>Roles</a> in a <a>Rule</a>.</td>
-                        <td>The use of <a href="https://www.gleif.org//en/lei-data/access-and-use-lei-data">Global Legal
-                                Entity Identifiers</a> to identify parties is recommended</td>
+                        <td>The use of Global Legal Entity Identifiers to identify parties is recommended. [ISO4217]</td>
                     </tr>
                     <tr>
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-Rule">Rule</a></dfn></td>
@@ -6020,13 +6022,13 @@
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-Assigner">Assigner</a></dfn></td>
                         <td><a>odrl</a></td>
                         <td>The <a>Party</a> is the issuer of the <a>Rule</a>.</td>
-                        <td></td>
+                        <td>The use of Global Legal Entity Identifiers to identify assigners is recommended. [ISO4217]</td>
                     </tr>
                     <tr>
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-Assigner">Assignee</a></dfn></td>
                         <td><a>odrl</a></td>
                         <td>The <a>Party</a> is the recipient of the <a>Rule</a>.</td>
-                        <td></td>
+                        <td>The use of Global Legal Entity Identifiers to identify assignees is recommended. [ISO4217]</td>
                     </tr>
                     <tr>
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-unitOfCount">unit of count</a></dfn></td>
@@ -6038,13 +6040,13 @@
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-payAmount">payment amount</a></dfn></td>
                         <td><a>odrl</a></td>
                         <td>The amount of a financial payment.</td>
-                        <td></td>
+                        <td>The amount must be specified as an xsd:decimal.</td>
                     </tr>
                     <tr>
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-unit">unit</a></dfn></td>
                         <td><a>odrl</a></td>
                         <td>The unit of measurement of the specified value.</td>
-                        <td></td>
+                        <td>Where the unit is specfying a currency, the ISO standard should be used. [[ISO4217]]</td>
                     </tr>
                     <tr>
                         <td><dfn><a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a></dfn></td>
