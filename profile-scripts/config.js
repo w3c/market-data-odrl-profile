@@ -22,7 +22,7 @@ var respecConfig = {
         status: "",
         publisher: "ISO",
       },
-      ISO17442: {
+      ISO10383: {
         title: "ISO 17442: Market Identifier Codes (MIC)",
         href: "https://www.iso20022.org/market-identifier-codes",
         status: "",
