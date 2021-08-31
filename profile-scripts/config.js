@@ -28,13 +28,13 @@ var respecConfig = {
         status: "",
         publisher: "ISO",
       },
-      ATF: {
+      ATS: {
         title: "17 CFR 242.300 - Definitions",
         href: "https://www.govinfo.gov/app/details/CFR-2012-title17-vol3/CFR-2012-title17-vol3-sec242-300",
-        status: "Definition of Alternative Trading System (ATF)",
+        status: "Definition of Alternative Trading System (ATS)",
         publisher: "SEC",
       },
-      MIFID: {
+      MiFID: {
         title: "MIFID II, TITLE I, ARTICLE 4 - DEFINITIONS",
         href: "https://www.esma.europa.eu/databases-library/interactive-single-rulebook/clone-mifid-ii/article-4-0",
         status: "Definitions for multilateral trading facilities (MTF), organised trading facilities (OTF), and systematic internalization (SI)",
@@ -46,7 +46,7 @@ var respecConfig = {
         status: "Definition for exchange",
         publisher: "SEC",
       },
-       ECN: {
+      ECN: {
         title: "17 CFR § 242.600 - NMS security designation and definitions.",
         href: "https://www.govinfo.gov/app/details/CFR-2008-title17-vol3/CFR-2008-title17-vol3-sec242-600",
         status: "Definition for electronic communications network",
