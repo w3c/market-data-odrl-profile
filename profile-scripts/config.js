@@ -22,7 +22,7 @@ var respecConfig = {
         status: "",
         publisher: "ISO",
       },
-      MIC: {
+      ISO:17442: {
         title: "ISO 17442: Market Identifier Codes (MIC)",
         href: "https://www.iso20022.org/market-identifier-codes",
         status: "",
@@ -52,8 +52,8 @@ var respecConfig = {
         status: "Definition for electronic communications network",
         publisher: "SEC",
       },
-      CFI: {
-        title: "ISO 10962:2021 - Classification of financial instruments (CFI) code.",
+      ISO:10962: {
+        title: "ISO 10962 - Classification of financial instruments (CFI) code.",
         href: "https://www.iso.org/standard/81140.html",
         status: "",
         publisher: "ISO",
