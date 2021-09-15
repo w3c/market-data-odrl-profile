@@ -3668,11 +3668,19 @@
                             <tbody>
                                 <tr>
                                     <th>Definition:</th>
-                                    <td>The code by which the permission must be reported.</td>
+                                    <td>A unique identifier that points to the data package or information product that use of a <a>Permission</a> must be reported against.</td>
                                 </tr>
                                 <tr>
                                     <th>Version:</th>
                                     <td>0.9</td>
+                                </tr>
+                                <tr>
+                                    <th>Scope Note:</th>
+                                    <td>Also known as a Product Code.</td>
+                                </tr>
+                                <tr>
+                                    <th>Example:</th>
+                                    <td>The Reporting Code “SMGL2SST” identifies display to a <a>Controlled User Group</a> of the Information Product “Spot Market Germany (Frankfurt/Xetra®) Level 2” without automatic updating.</td>
                                 </tr>
                                 <tr>
                                     <th>Label:</th>
@@ -4077,8 +4085,7 @@
                     <tbody>
                         <tr>
                             <th>Definition:</th>
-                            <td>Specifies the timing of the permitted receipt, use, or onwards delivery of an
-                                <a>Asset</a>.</td>
+                            <td>Specifies the timing of the permitted receipt or onwards delivery of an <a>Asset</a>.</td>
                         </tr>
                         <tr>
                             <th>Version:</th>
@@ -4092,14 +4099,14 @@
                         </tr>
                         <tr>
                             <th>Editorial Note:</th>
-                            <td>These intervals are frequently identified as <a>Realtime</a>, <a>Delayed</a>,
-                                <a>Embargoed</a>, or <a>Historical</a>.</td>
+                            <td>These intervals are frequently identified as <a>Realtime</a>, <a>Delayed</a>, or
+                                <a>Embargoed</a>.</td>
                         </tr>
                         <tr>
                             <th>Editorial Note:</th>
                             <td>Unless explicitly prohibited, <a>Permissions</a> over shorter intervals carry across to
-                                longer intervals (e.g. <a>Realtime</a> data also covers <a>Delayed</a>,
-                                <a>Embargoed</a>, and <a>Historical</a> data)</td>
+                                longer intervals (e.g. <a>Realtime</a> data also covers <a>Delayed</a>, and
+                                <a>Embargoed</a> data)</td>
                         </tr>
                         <tr>
                             <th>Label:</th>
@@ -4309,11 +4316,15 @@
                     <tbody>
                         <tr>
                             <th>Definition:</th>
-                            <td>The time period covered by an <a>Asset</a>.</td>
+                            <td>The temporal coverage offered by an <a>Asset</a>.</td>
                         </tr>
                         <tr>
                             <th>Version:</th>
                             <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <th>Scope Note:</th>
+                            <td>Usually used to specify the date range of <a>Historical</a> data.</td>
                         </tr>
                         <tr>
                             <th>Label:</th>
