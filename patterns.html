@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pattern Book for Modelling Market Data Licenses in ODRLL</title>
+    <link rel="stylesheet" href="profile-scripts/turtle-styles.css">
+    <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" async></script>
+    <script src="profile-scripts/config.js" class="remove"></script>
+</head>
+<body>
+<section id="abstract">
+    <p>
+        The set of patterns provided here show how the terms defined in the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html">Market Data Profile for ODRL</a> should be combined to model the permissions, prohibitions, obligations, and constraints specified in the licences controlling the use of market data as ODRL policies.
+    </p><p>
+        The core intended audience for this document are the authors of ODRL policies and the implementors of systems interpreting them. The objective is to match the former's intentions with the latter's expectations.
+    </p>
+</section>
+<section id="sotd"></section>
+<section id="versioning"></section>
+<section id="conformance"></section>
+<section id="Patterns">
+    <h2>Patterns</h2>
+    <section id="Duties">
+        <h2>Duties</h2>
+        <p>
+            A Duty is defined in ODRL as the obligation to exercise an action.
+        </p><p>
+            The Party exercising the action is the Subject of the Duty. The Party affected is the Object.
+        </p><p>
+            If the specified action must be exercised more than once to fulfill the Duty, then the count property should be used to indicate the number of times the action must be taken. 
+        </p><p>
+            A Duty may also specify a target to indicate the Entity, Activity, or Agent to which the action applies.
+        </p><p> 
+            Duties can be activated by events. If so, the duty must specify its activation condition in the form of a constraint that when satisfied, activates the Duty.   
+        </p><p>
+            Just eight types of Duty capture most of the obligations found in market data licenses: Attachments, Requests and Consents, Notifications, Invoices and Payments, Explicit Agreements, and Reporting.
+        </p>
+        <section id="Attachments">
+            <h2>Pattern 1.1 - Attachments</h2>  
+            <p>
+                Market data licenses can require Attributions, Disclaimers, and Prohibitions to be attached to data that is transferred from one Party to another.
+            </p>
+            <section data-dfn-for="Attribution">
+                <h2><dfn>Attribution</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td> - </td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The Party that attaches the Attribution.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party that receives the Attribution.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>Attach</code></td>
+                        </tr><tr>
+                            <th>Count:</th><td>NA - </td>
+                        </tr><tr>
+                            <th>Target:</th><td><code>Attribution</code></td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                        </tr><tr>
+                            <th>Identifier:</th><td><a href="https://www.w3.org/community/md-odrl-profile#Source/0.9">https://www.w3.org/community/md-odrl-profile#Source/0.9</a></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th><td><a href="http://www.w3.org/ns/prov#Entity">prov:Entity</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </section> 
+</section>    
+</body>
+</html>
