@@ -39,28 +39,47 @@
             <h2>Pattern 1.1 - Attachments</h2>  
             <p>
                 Market data licenses can require Attributions, Disclaimers, and Prohibitions to be attached to data that is transferred from one Party to another.
+            </p><p>
+                The wording of these can be specified in the policy using the <code>md:wording</code> property of the <code>Attribution</code>.
             </p>
-            <section data-dfn-for="Attribution">
-                <h2><dfn>Attribution</dfn></h2>
+            <section data-dfn-for="Attribution Duty">
+                <h2><dfn>Attribution Duty</dfn></h2>
+                <p>
+                    Attribution duties require the Subject to attach a declaration of the <code>Assigner</code>'s ownership of the Asset.
+                </p><p>
+                    The duty is usually activated when the Asset is transferred to a third-party.
+                </p>
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td> - </td>
+                            <th>Definition:</th><td>Requires and specifies an <code>Attribution</code> to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.</td>
                         </tr><tr>
                             <th>Subject:</th><td>The Party that attaches the Attribution.</td>
                         </tr><tr>
                             <th>Object:</th><td>The Party that receives the Attribution.</td>
                         </tr><tr>
-                            <th>Action:</th><td><code>Attach</code></td>
+                            <th>Action:</th><td><code>md:Attach</code></td>
                         </tr><tr>
-                            <th>Count:</th><td>NA - </td>
-                        </tr><tr>
-                            <th>Target:</th><td><code>Attribution</code></td>
+                            <th>Target:</th><td><code>md:Attribution</code></td>
                         </tr><tr>
                             <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
                         </tr>
                     </tbody>
                 </table>
+                <section>
+                    <h2>Code</h2>
+                    <pre class="example nohighlight turtle" title="Attribution" id="Attribution">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attach</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attribution</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">wording</span><span class="w">      </span><span class="s">"The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc."</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
             </section>
         </section>
     </section> 
