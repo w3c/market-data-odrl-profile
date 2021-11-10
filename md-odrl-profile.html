@@ -3339,7 +3339,7 @@
                         </tr>
                         <tr>
                             <th>Example:</th>
-                            <td>Where the action is <a>Attach</a>, the object is the Party that specifies the
+                            <td>Where the action is <a>Attach</a>, the object is the Party that receives the
                                 attachment.</td>
                         </tr>
                         <tr>
@@ -5769,8 +5769,7 @@
                     <tbody>
                         <tr>
                             <th>Definition:</th>
-                            <td>Data received, used, or delivered after a specified interval greater than that for
-                                delayed data.</td>
+                            <td>Stored data that relates to events in the past.</td>
                         </tr>
                         <tr>
                             <th>Version:</th>
@@ -5778,7 +5777,11 @@
                         </tr>
                         <tr>
                             <th style="white-space:nowrap;">Editorial Note:</th>
-                            <td>Often the interval is at least a calendar day (or 24 hours in 24-hour markets).</td>
+                            <td>Usually the events described occured at least a calendar day in the past (or 24 hours in 24-hour markets).</td>
+                        </tr>
+                        <tr>
+                            <th>Note:</th>
+                            <td>Usually held in the form of a time series</td>
                         </tr>
                         <tr>
                             <th>Label:</th>
@@ -5798,17 +5801,21 @@
                     </tbody>
                 </table>
                 <p>
-                    In this example, <code>Historic</code> data is specified as being eight hours from
-                    <code>Issue Time</code>.
+                    In this example, <code>Historic</code> data is specified as being between eight hours of <code>Issue Time</code> and three years.
                 </p>
                 <pre class="example nohighlight turtle" title="Specifying Historical Data" id="HistoricalSpecification">
                 <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                       </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                <span class="w">     </span><span class="nn">md:</span><span class="nt">timelinessOfDelivery</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">     </span><span class="nn">md:</span><span class="nt">temporal</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">Historical</span><span class="p"> ;</span>
                 <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalAfter</span><span class="w"> </span><span class="p">[</span>
                 <span class="w">                                                         </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
                 <span class="w">                                                         </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
-                <span class="w">                                                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span><span class="w"> </span><span class="s">"PT8h"^^xsd:duration</span>
+                <span class="w">                                                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span><span class="w"> </span><span class="s">"PT8H"^^xsd:duration</span>
+                <span class="w">                                                    </span><span class="p">]</span><span class="p"> ;</span>
+                <span class="w">                                </span><span class="nn">time:</span><span class="nt">intervalBefore</span><span class="w"> </span><span class="p">[</span>
+                <span class="w">                                                         </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="p"> ;</span>
+                <span class="w">                                                         </span><span class="nn">md:</span><span class="nt">timeReference</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">time:</span><span class="nt">TimeInstant</span><span class="p"> , </span><span class="nn">md:</span><span class="nt">TimeOfIssue</span><span class="p"> ] ;</span>                                                           md:timeReference     [   a   time:Instant , md:TimeOfIssue ] ;
+                <span class="w">                                                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span><span class="w"> </span><span class="s">"PT3Y"^^xsd:duration</span>
                 <span class="w">                                                    </span><span class="p">]</span><span class="p"> ;</span>
                 <span class="w">                             </span><span class="p">]</span><span class="p"> .</span>    
             </pre>
@@ -6082,5 +6089,4 @@
         </section>
     </section>
 </body>
-
 </html>
