@@ -1,5 +1,5 @@
 var respecConfig = {
-    specStatus: "FPWD",
+    specStatus: "CG-DRAFT",
     publishDate: "2021-11-02",
     group: "md-odrl-profile",
     editors: [{
