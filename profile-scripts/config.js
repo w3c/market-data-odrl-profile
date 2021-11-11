@@ -12,7 +12,7 @@ var respecConfig = {
         companyURL: "https://www.databp.com/",
     }],
     wgPublicList: "https://lists.w3.org/Archives/Public/public-md-odrl-profile",
-    gitHub: "w3c/market-data-odrl-profile",
+    github: "w3c/market-data-odrl-profile",
     shortName: "md-odrl-profile",
     //xref: "odrl",
     localBiblio: {
