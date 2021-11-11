@@ -1,9 +1,11 @@
 var respecConfig = {
-    specStatus: "CG-DRAFT",
+    specStatus: "FPWD",
+    publishDate: "2021-11-02",
+    group: "md-odrl-profile",
     editors: [{
         name: "Benedict Whittam Smith",
-        company: "Refinitiv",
-        companyURL: "https://www.refinitiv.com",
+        company: "Deontic Data",
+        companyURL: "https://www.deonticdata.com",
     }, {
         name: "Mark Bird",
         company: "Data BP",
