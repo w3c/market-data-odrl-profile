@@ -203,9 +203,9 @@ That's a great starting point. Yeah.
 ## TOPIC: Errata
 
 **Ben**
-**RESOLUTION: Accept updates to the Subject definitions as defined in Github Issue 29**
+**RESOLUTION: Accept updates to the Subject definitions as defined in Issue 29(https://github.com/w3c/market-data-odrl-profile/issues/29)**
 
-**RESOLUTION: Accept updates to the Historic data definitions as defined in Github Issue 30**
+**RESOLUTION: Accept updates to the Historic data definitions as defined in Issue 30(https://github.com/w3c/market-data-odrl-profile/issues/30)**
 
 **Nigel**  
 Data sets could have both temporal and timeliness-of-delivery constraints because you could have historical data that was recorded from delayed data. And you could have historical data that's been recorded from real time data, for example. 
