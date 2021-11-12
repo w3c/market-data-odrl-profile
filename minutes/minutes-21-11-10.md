@@ -196,7 +196,7 @@ So you're going to put that elevator pitch out to the public group, Casper, so t
 That's a great starting point. Yeah.
 
 **Michelle**  
-**ACTION: **Caspar** to invite more members of the CG to join the reference architecture discussion.
+**ACTION: Caspar to invite more members of the CG to join the reference architecture discussion.**
 
 ## TOPIC: Errata
 
