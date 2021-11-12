@@ -8,7 +8,7 @@ Any objections to the record of last month's meeting? [No objections]
 Given that this automated transcription will be very verbose, would it be a good idea to have one person note any actions arising? We could bring someone along to the meeting to do this.
 
 **Nigel**  
-I think that is a good idea to write. If we can find someone who has a little bit of context around this and is prepared to sit in on the calls and take notes, because that would help immensely in terms of getting the stuff done and keeping the working group focused on what they're supposed to be focused on.
+I think that is a good idea. If we can find someone who has a little bit of context around this and is prepared to sit in on the calls and take notes, because that would help immensely in terms of getting the stuff done and keeping the working group focused on what they're supposed to be focused on.
 
 **Michelle**  
 Perhaps we could share this task across the firms.
@@ -55,7 +55,6 @@ When I get those examples, should I just share them with everyone or present the
 **Ben**
 Best share them on the public mailing list.
 
-**Michelle**  
 ## TOPIC: Patterns Book. Mark, Ben, do you want to update us on how the pattern book meeting went?
 
 **Mark**  
@@ -68,7 +67,7 @@ We'll continue to meet in the off fortnight for the foreseeable future to build 
 **ACTION: Mark to setup regular monthly pattern-book meeting.**
 
 **Ben**
-[Describes pattern: https://w3c.github.io/market-data-odrl-profile/patterns.html#attribution-duty]
+[Describes pattern](https://w3c.github.io/market-data-odrl-profile/patterns.html#attribution-duty)
 
 **Nigel**  
 There's another validation use case: as a consumer of an ODRL document from a third-party, you might want to check that its a valid document using some some suitable standalone tool.
@@ -76,11 +75,10 @@ There's another validation use case: as a consumer of an ODRL document from a th
 **Laura**  
 Just to clarify: you'd want to validate a third-party ODRL license to make sure that it's following the rules.
 
-**Ben**
 ## TOPIC: Beyond Market Data
 
 **Michelle**  
-**Laura**, ### Marthe, and myself will have a an interim session to discuss this and feed back to the group. But would it be worth taking a few minutes now as it raises quite an interesting question: a lot of relevant licenses are  proprietary.
+Laura, Marthe, and myself will have a an interim session to discuss this and feed back to the group. But would it be worth taking a few minutes now as it raises quite an interesting question: a lot of relevant licenses are  proprietary.
 
 Can we extract from them sentences that describe the same thing? So as an example, for derived data, I can just take public agreements that we can all access, like exchange agreements, and see things like: new original works, second generation products, originally computed figures. There are all sorts of different descriptions of similar things. 
 
@@ -203,9 +201,10 @@ That's a great starting point. Yeah.
 ## TOPIC: Errata
 
 **Ben**
-**RESOLUTION: Accept updates to the Subject definitions as defined in Issue 29(https://github.com/w3c/market-data-odrl-profile/issues/29)**
 
-**RESOLUTION: Accept updates to the Historic data definitions as defined in Issue 30(https://github.com/w3c/market-data-odrl-profile/issues/30)**
+**RESOLUTION: Accept updates to the Subject definitions as defined in** [Issue 29](https://github.com/w3c/market-data-odrl-profile/issues/29)
+
+**RESOLUTION: Accept updates to the Historic data definitions as defined in** [Issue 30](https://github.com/w3c/market-data-odrl-profile/issues/30)
 
 **Nigel**  
 Data sets could have both temporal and timeliness-of-delivery constraints because you could have historical data that was recorded from delayed data. And you could have historical data that's been recorded from real time data, for example. 
