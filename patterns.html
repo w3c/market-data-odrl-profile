@@ -45,7 +45,7 @@
             <section data-dfn-for="Attribution Duty">
                 <h2><dfn>Attribution Duty</dfn></h2>
                 <p>
-                    Attribution duties require the Subject to attach a declaration of the <code>Assigner's</code> ownership of the <code>Asset</code>.
+                    Attribution duties require the Subject to attach a declaration of the <code>Object's</code> ownership of the <code>Asset</code>.
                 </p><p>
                     The duty is usually activated when the Asset is transferred to a third-party, i.e. the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9">recipient</a> constraint is triggered by an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.
                 </p>
@@ -95,9 +95,25 @@
                     <p>
                         Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
                     </p><p>
+                        When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agree</a> pattern below instead of this one.
+                    </p><p>
                         Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
                     </p>
                 </section>
+            </section>
+        </section>
+        <section id="Agreements">
+            <h2>Pattern 1.2 - Agreements</h2>  
+            <p>
+                Market data licenses can require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be legally agreed before an <code>Asset</code> can be transferred.
+            </p><p>
+                The wording of these can be specified in the policy using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">wording</a> property of the <code>Proscription</code>.
+            </p>
+            <section data-dfn-for="Agreement Duty">
+                <h2><dfn>Agreement Duty</dfn></h2>
+                <p>
+                    Agreement duties require the Subject to attach a declaration of the <code>Object's</code> ownership of the <code>Asset</code>.
+                </p>
             </section>
         </section>
     </section> 
