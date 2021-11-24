@@ -161,18 +161,18 @@
                 Sometimes, it's the <code>Consumer</code> that receives the notification. For example, notification of a reasonable suspicion of data misuse can trigger an <code>Audit</code>.
             </p>
             <section data-dfn-for="Usage Notification Duty">
-                <h2><dfn>Notification Duty</dfn></h2>
+                <h2><dfn>Usage Notification Duty</dfn></h2>
                 <p>
                     Usage notification requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code>.
                 </p><p>
-                    The duty is activated when the <code>users</code> constraint is satisfied.
+                    The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
                 </p>
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Requires and specifies an <code>Attribution</code> to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                            <th>Definition:</th><td>Requires a notification be generated when an <code>Internal Party</code> starts to use an <code>Asset</code>.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>The Party that provided the Notification.</td>
+                            <th>Subject:</th><td>The Party that provides the Notification.</td>
                         </tr><tr>
                             <th>Object:</th><td>The Party that receives the Notification.</td>
                         </tr><tr>
@@ -190,7 +190,7 @@
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/y</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -199,23 +199,32 @@
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
-                <section data-dfn-for="Disclaimer Duty">
-                    <h2><dfn>Disclaimer Duty</dfn></h2>
+                <section data-dfn-for="External-Party Notification Duty">
+                    <h2><dfn>External-Party Notification Duty</dfn></h2>
                     <p>
-                        Disclaimers must sometimes be attached to derived data to clarify (usually distance) the relationship between the <code>IP Owner</code> of the source Asset and the derived Asset.
+                        External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an external party (usually a <code>Service Facilitator</code>) has access to the <code>Asset</code> and to identify them.
                     </p><p>
-                        Disclaimer duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimer</a>
+                        The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipients</a> constraint is satisfied.
                     </p>
                 </section>
-                <section data-dfn-for="Proscription Duty">
-                    <h2><dfn>Proscription Duty</dfn></h2>
-                    <p>
-                        Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
-                    </p><p>
-                        When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement Duty</a> pattern below instead of this one.
-                    </p><p>
-                        Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
-                    </p>
+                <section>
+                    <h2>Usage Notification Code</h2>
+                    <pre class="example nohighlight turtle" title="External Party Notification" id="ExternalPartyNotification">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/y</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
                 </section>
             </section>
         </section>
