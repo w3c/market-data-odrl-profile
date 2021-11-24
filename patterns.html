@@ -31,7 +31,9 @@
         </p><p>
             A Duty may also specify a target to indicate the <code>Entity</code>, <code>Activity</code>, or <code>Party</code> to which the action applies.
         </p><p> 
-            Duties can be activated by events. If so, the duty should specify its activation condition in the form of a constraint that when satisfied, activates the Duty.   
+            Some duties can be activated by events. If so, the duty should specify its activation condition in the form of a constraint that when satisfied, activates the Duty.   
+        </p><p> 
+            Some duties may be activated by the passage of time. If so, the duty should specify its activation condition in the form of a time interval constraint (e.g. monthly) that when satisfied, activates the Duty.   
         </p><p>
             Just eight types of Duty capture most of the obligations found in market data licenses: Attachments, Requests and Consents, Notifications, Invoices and Payments, Explicit Agreements, and Reporting.
         </p>
@@ -95,7 +97,7 @@
                     <p>
                         Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
                     </p><p>
-                        When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement</a> pattern below instead of this one.
+                        When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement Duty</a> pattern below instead of this one.
                     </p><p>
                         Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
                     </p>
@@ -105,14 +107,14 @@
         <section id="Agreements">
             <h2>Pattern 1.2 - Agreements</h2>  
             <p>
-                Market data licenses can require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be legally agreed before an <code>Asset</code> can be transferred.
+                Market data licenses can require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be legally binding before an <code>Asset</code> can be transferred.
             </p><p>
                 The wording of these can be specified in the policy using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">wording</a> property of the <code>Proscription</code>.
             </p>
             <section data-dfn-for="Agreement Duty">
                 <h2><dfn>Agreement Duty</dfn></h2>
                 <p>
-                    Agreement duties require the <a>Subject</a> to come to a legally binding agreement with the recipient of the Asset that enforces the <code>Proscription</code>.
+                    Agreement duties require the <code>Subject</code> to come to a legally binding agreement with the recipient of the Asset that enforces the <code>Proscription</code>.
                 </p>
                 <table class="def propdef">
                     <tbody>
