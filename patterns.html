@@ -29,7 +29,7 @@
         </p><p>
             If the specified action must be exercised more than once to fulfill the Duty, then the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> constraint should be used to indicate the number of times the action must be taken. 
         </p><p>
-            A Duty may also specify a target to indicate the <code>Entity</code>, <code>Activity</code>, or Party to which the action applies.
+            A Duty may also specify a target to indicate the <code>Entity</code>, <code>Activity</code>, or <code>Party</code> to which the action applies.
         </p><p> 
             Duties can be activated by events. If so, the duty should specify its activation condition in the form of a constraint that when satisfied, activates the Duty.   
         </p><p>
@@ -45,7 +45,7 @@
             <section data-dfn-for="Attribution Duty">
                 <h2><dfn>Attribution Duty</dfn></h2>
                 <p>
-                    Attribution duties require the Subject to attach a declaration of the <code>Object's</code> ownership of the <code>Asset</code>.
+                    Attribution duties require the Subject to attach a declaration of the <code>IP Owner's</code> title to the <code>Asset</code>.
                 </p><p>
                     The duty is usually activated when the Asset is transferred to a third-party, i.e. the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9">recipient</a> constraint is triggered by an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.
                 </p>
@@ -95,7 +95,7 @@
                     <p>
                         Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
                     </p><p>
-                        When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agree</a> pattern below instead of this one.
+                        When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement</a> pattern below instead of this one.
                     </p><p>
                         Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
                     </p>
@@ -112,8 +112,41 @@
             <section data-dfn-for="Agreement Duty">
                 <h2><dfn>Agreement Duty</dfn></h2>
                 <p>
-                    Agreement duties require the Subject to attach a declaration of the <code>Object's</code> ownership of the <code>Asset</code>.
+                    Agreement duties require the <a>Subject</a> to come to a legally binding agreement with the recipient of the Asset that enforces the <code>Proscription</code>.
                 </p>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies a <code>Proscription</code> to be agreed in a legally binding manner with the <code>recipient</code> whenever the recipient is an <code>External Party</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The Party that seeks the Agreement.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party that accedes to the Agreement.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>md:Agree</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td><code>md:Proscription</code></td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section>
+                    <h2>Agreement Code</h2>
+                    <pre class="example nohighlight turtle" title="Agreement" id="Agreement">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/y</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Agree</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Proscription</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">wording</span><span class="w">      </span><span class="s">"..."</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
             </section>
         </section>
     </section> 
