@@ -84,24 +84,24 @@
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
-                <section data-dfn-for="Disclaimer Duty">
-                    <h2><dfn>Disclaimer Duty</dfn></h2>
-                    <p>
-                        Disclaimers must sometimes be attached to derived data to clarify (usually distance) the relationship between the <code>IP Owner</code> of the source Asset and the derived Asset.
-                    </p><p>
-                        Disclaimer duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimer</a>
-                    </p>
-                </section>
-                <section data-dfn-for="Proscription Duty">
-                    <h2><dfn>Proscription Duty</dfn></h2>
-                    <p>
-                        Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
-                    </p><p>
-                        When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement Duty</a> pattern below instead of this one.
-                    </p><p>
-                        Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
-                    </p>
-                </section>
+            </section>
+            <section data-dfn-for="Disclaimer Duty">
+                <h2><dfn>Disclaimer Duty</dfn></h2>
+                <p>
+                    Disclaimers must sometimes be attached to derived data to clarify (usually distance) the relationship between the <code>IP Owner</code> of the source Asset and the derived Asset.
+                </p><p>
+                    Disclaimer duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimer</a>
+                </p>
+            </section>
+            <section data-dfn-for="Proscription Duty">
+                <h2><dfn>Proscription Duty</dfn></h2>
+                <p>
+                    Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
+                </p><p>
+                    When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement Duty</a> pattern below instead of this one.
+                </p><p>
+                    Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
+                </p>
             </section>
         </section>
         <section id="Agreements">
@@ -199,16 +199,16 @@
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
-                <section data-dfn-for="External-Party Notification Duty">
-                    <h2><dfn>External-Party Notification Duty</dfn></h2>
-                    <p>
-                        External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an external party (usually a <code>Service Facilitator</code>) has access to the <code>Asset</code> and to identify them.
-                    </p><p>
-                        The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipients</a> constraint is satisfied.
-                    </p>
-                </section>
+            </section>
+            <section data-dfn-for="External-Party Notification Duty">
+                <h2><dfn>External-Party Notification Duty</dfn></h2>
+                <p>
+                    External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an external party (usually a <code>Service Facilitator</code>) has access to the <code>Asset</code> and to identify them.
+                </p><p>
+                    The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipients</a> constraint is satisfied.
+                </p>
                 <section>
-                    <h2>Usage Notification Code</h2>
+                    <h2>External-Party Notification Code</h2>
                     <pre class="example nohighlight turtle" title="External Party Notification" id="ExternalPartyNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
