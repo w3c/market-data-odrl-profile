@@ -235,12 +235,12 @@
         <section id="Periodicity">
             <h2>Periodicity</h2>
             <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
-            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using the <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
+            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
             <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeInterval">
                 <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                                </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
-                <span class="w">                            </span><span class="p">]</span><span class="p"> .</span>     
+                <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
+                <span class="w">                        </span><span class="p">]</span><span class="p"> .</span>     
             </pre>
         </section>
         <section id="Deadlines">
