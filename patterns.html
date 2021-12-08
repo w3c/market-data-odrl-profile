@@ -56,9 +56,9 @@
                         <tr>
                             <th>Definition:</th><td>Requires and specifies an <code>Attribution</code> to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>The Party that attaches the Attribution.</td>
+                            <th>Subject:</th><td>The Party that attaches the Attribution - usually the Party making the transfer.</td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party that receives the Attribution.</td>
+                            <th>Object:</th><td>The Party that receives the Attribution - usually the <code>recipient</code> of the transfer.</td>
                         </tr><tr>
                             <th>Action:</th><td><code>md:Attach</code></td>
                         </tr><tr>
@@ -72,8 +72,8 @@
                     <h2>Attribution Code</h2>
                     <pre class="example nohighlight turtle" title="Attribution" id="Attribution">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/y</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/recipient</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attach</span><span class="w"> </span><span class="p">;</span>
@@ -121,9 +121,9 @@
                         <tr>
                             <th>Definition:</th><td>Requires and specifies a <code>Proscription</code> to be agreed in a legally binding manner with the <code>recipient</code> whenever the recipient is an <code>External Party</code>.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>The Party that seeks the Agreement.</td>
+                            <th>Subject:</th><td>The Party that seeks the Agreement - usually the Pary making the tranfer.</td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party that accedes to the Agreement.</td>
+                            <th>Object:</th><td>The Party that accedes to the Agreement - usually the <code>recipient</code> of the transfer.</td>
                         </tr><tr>
                             <th>Action:</th><td><code>md:Agree</code></td>
                         </tr><tr>
@@ -137,8 +137,8 @@
                     <h2>Agreement Code</h2>
                     <pre class="example nohighlight turtle" title="Agreement" id="Agreement">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/y</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/recipient</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Agree</span><span class="w"> </span><span class="p">;</span>
@@ -172,9 +172,9 @@
                         <tr>
                             <th>Definition:</th><td>Requires a notification be generated when an <code>Internal Party</code> starts to use an <code>Asset</code>.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>The Party that provides the Notification.</td>
+                            <th>Subject:</th><td>The Party that provides the Notification - usually the Party playing the role of data <code>Consumer</code>.</td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party that receives the Notification.</td>
+                            <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <code>Provider</code> or <code>Originator</code>.</td>
                         </tr><tr>
                             <th>Action:</th><td><code>md:Notify</code></td>
                         </tr><tr>
@@ -188,8 +188,8 @@
                     <h2>Usage Notification Code</h2>
                     <pre class="example nohighlight turtle" title="Usage Notification" id="UsageNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/y</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
@@ -211,8 +211,8 @@
                     <h2>External-Party Notification Code</h2>
                     <pre class="example nohighlight turtle" title="External Party Notification" id="ExternalPartyNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/x</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/party/y</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -228,7 +228,26 @@
                 </section>
             </section>
         </section>
-    </section> 
+    </section>
+    <section id="Time">
+        <h2>Time</h2>
+        <p>Many activities required by market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly, 30 days in arrears. Payment schedules are often similar.</p>
+        <section id="Periodicity">
+            <h2>Periodicity</h2>
+            <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
+            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using the <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
+            <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeInterval">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                                </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1D"^^xsd:duration</span>
+                <span class="w">                            </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="Deadlines">
+            <h2>Deadlines</h2>
+            <p></p>
+        </section>
+    </section>
 </section>    
 </body>
 </html>
