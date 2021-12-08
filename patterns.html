@@ -237,10 +237,10 @@
             <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
             <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
             <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeInterval">
-                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">  </span><span class="p">[</span>
-                <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
-                <span class="w">                        </span><span class="p">]</span><span class="p"> .</span>     
+                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
             </pre>
         </section>
         <section id="Deadlines">
@@ -248,9 +248,9 @@
             <p>Not all <a>Duties</a> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
             <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDelta">
                 <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
-                <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
-                <span class="w">                        </span><span class="p">]</span><span class="p"> .</span>     
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
             </pre>
         </section>
     </section>
