@@ -11,9 +11,9 @@ Note |
 
 **View** | -    
 ----------------|------------
-Data Type | 
+Data Type | Exchange Data
 Context | 
-Note | 
+Note | Same as `md:Display`
 
 
 **Download** | -    
@@ -86,7 +86,7 @@ Context |
 Note | 
 
 
-**Display publicly ** | -    
+**Display publicly** | -    
 ----------------|------------
 Data Type | 
 Context | 
