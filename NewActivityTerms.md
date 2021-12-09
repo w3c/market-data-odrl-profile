@@ -1,5 +1,5 @@
 # New Activity Terms
-A list of action terms found in market data licenses
+A list of activity terms (actions and purposes) found in market data licenses
 
 
 **Access** | - 
