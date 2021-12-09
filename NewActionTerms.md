@@ -94,11 +94,10 @@ Note | Could be modelled as a `md:Distribute` action with an `md:ExternalParty` 
 ```
 
 **Display publicly** | -    
----------------------|------------
+-----------------------------------------------------|------------
 Data Type | Exchange Data
 Context | 
-Note | We use the `md:displayType` constraint to distiguish between individual display (`md:Device`) and group display (`md:Wallboard`). 
-But this may not capture the public.
+Note | We use the `md:displayType` constraint to distiguish between individual display (`md:Device`) and group display (`md:Wallboard`). But this may not capture the public.
 Note | We also use the `md:controls` constraint to require some level of access control. Does the lack of it give us the public?
 
 
