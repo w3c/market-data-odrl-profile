@@ -83,7 +83,7 @@ Note | Same as `md:Distribute` - can be qualified by a 'md:reciepient` constrain
 ----------------|------------
 Data Type | Exchange Data
 Context | Frequently used to indicate distribution to an external party.
-Note | Could be modelled as:
+Note | Could be modelled as a `md:Distribute` action with an `md:ExternalParty` value for the `md:recipient` constraint.
 ```
 []    md:action   [
                       a               md:Distribute ;
@@ -95,16 +95,17 @@ Note | Could be modelled as:
 
 **Display publicly** | -    
 ----------------|------------
-Data Type | 
+Data Type | Exchange Data
 Context | 
-Note | 
+Note | We use the `md:displayType` constraint to distiguish between individual display (`md:Device`) and group display (`md:Wallboard`). But this may not capture the public.
+Note | We also use the `md:controls` constraint to require some level of access control. Does the lack of it give us the public?
 
 
 **Use the content through the internet** | -    
 ----------------|------------
 Data Type | 
 Context | 
-Note | 
+Note | Is this webhosting?
 
 
 **Performing analytics** | -    
