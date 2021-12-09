@@ -32,9 +32,9 @@ Note |
 
 **Store** | -    
 ----------------|------------
-Data Type | 
+Data Type | Exchange Data
 Context | 
-Note | 
+Note | Captured as `md:Store`
 
 
 **Copy** | -    
@@ -60,9 +60,9 @@ Note |
 
 **Create derivative works** | -    
 ----------------|------------
-Data Type | 
+Data Type | Exchange Data
 Context | 
-Note | 
+Note | Same as `md:Derive`
 
 
 **Install** | -    
@@ -76,15 +76,22 @@ Note |
 ----------------|------------
 Data Type | 
 Context | 
-Note | 
+Note | Same as `md:Distribute` - can be qualified by a 'md:reciepient` constraint.
 
 
 **Redistribute** | -    
 ----------------|------------
-Data Type | 
-Context | 
-Note | 
-
+Data Type | Exchange Data
+Context | Frequently used to indicate distribution to an external party.
+Note | Could be modelled as:
+```
+[]    md:action   [
+                      a               md:Distribute ;
+                      md:recipient    [
+                                          a     md:ExternalParty ;
+                                      ]
+                  ] .
+```
 
 **Display publicly** | -    
 ----------------|------------
