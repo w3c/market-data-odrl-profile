@@ -2,7 +2,7 @@
 A list of action terms found in market data licenses
 
 
-**Access** |      
+**Access** | - 
 ----------------|------------
 Data Type | 
 Context | 
@@ -94,7 +94,7 @@ Note | Could be modelled as a `md:Distribute` action with an `md:ExternalParty` 
 ```
 
 **Display publicly** | -    
-----------------|------------
+---------------------|------------
 Data Type | Exchange Data
 Context | 
 Note | We use the `md:displayType` constraint to distiguish between individual display (`md:Device`) and group display (`md:Wallboard`). But this may not capture the public.
