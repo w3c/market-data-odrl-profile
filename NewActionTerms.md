@@ -1,7 +1,13 @@
 # New Action Terms
 A list of action terms found in market data licenses
 
-### Access
+
+**Access**
+----------------|------------
+Data Type | Points to the Party playing the role of Provider in relation to the Resource.  
+Context | is provided by  
+Note | Resource  
+
 
 ### View
 
