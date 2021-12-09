@@ -2,7 +2,7 @@
 A list of action terms found in market data licenses
 
 
-**Access** | -    
+**Access** |      
 ----------------|------------
 Data Type | 
 Context | 
