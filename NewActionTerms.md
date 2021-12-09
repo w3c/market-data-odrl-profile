@@ -13,7 +13,7 @@ Note |
 ----------------|------------
 Data Type | Exchange Data
 Context | 
-Note | Same as `md:Display`
+Note | Same as `md:Display` action
 
 
 **Download** | -    
@@ -34,7 +34,7 @@ Note |
 ----------------|------------
 Data Type | Exchange Data
 Context | 
-Note | Captured as `md:Store`
+Note | Captured as `md:Store` action
 
 
 **Copy** | -    
@@ -62,7 +62,7 @@ Note |
 ----------------|------------
 Data Type | Exchange Data
 Context | 
-Note | Same as `md:Derive`
+Note | Same as `md:Derive` action
 
 
 **Install** | -    
@@ -76,7 +76,7 @@ Note |
 ----------------|------------
 Data Type | 
 Context | 
-Note | Same as `md:Distribute` - can be qualified by a 'md:reciepient` constraint.
+Note | Same as `md:Distribute` action - can be qualified by a 'md:reciepient` constraint.
 
 
 **Redistribute** | -    
@@ -112,21 +112,21 @@ Note | Is this webhosting?
 ----------------|------------
 Data Type | 
 Context | 
-Note | 
+Note | Covered by the `md:Derive` action?
 
 
 **Creating internal apps** | -    
 ----------------|------------
 Data Type | 
 Context | 
-Note | 
+Note | Covered by the `md:Non-Display` action?
 
 
 **Transfer** | -    
 ----------------|------------
 Data Type | 
 Context | 
-Note | 
+Note | Same as the md:Distribute action?
 
 
 **Reproduce** | -    
@@ -189,14 +189,15 @@ Note |
 ----------------|------------
 Data Type | 
 Context | 
-Note | 
+Note | We treat this not as an action itself, but as the purpose for which an action (e.g. `md:Display` or `md:Distribute`) is taken. 
+Note | Effectively we treat marketing as a 'md:purpose' constraint on an action.
 
 
 **Sell or license** | -    
 ----------------|------------
 Data Type | 
 Context | 
-Note | 
+Note | We presently model the selling of data as a compensation duty on a permission. But I'm unclear how we could prohibit it without its own action.
 
 
 **Disassembled** | -    
