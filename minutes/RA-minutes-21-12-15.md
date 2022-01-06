@@ -4,6 +4,8 @@
 **Ben**  
 I thought I would give an overview of some of the key issues that I see in developing this reference architecture, some of the things that we can do together, and some indication of what the scope might be. And I'm going to take a very ODRL centric view.
 
+I'll talk to this [presentation](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/presentations/RefArch-21-12-15.pdf)
+
 ## TOPIC: Supply Chain Artifacts (Slide 2)
 **Ben**  
 What does a supply chain need to share? And what does a supply chain not need to share? I want to try and draw that distinction so that there's a degree of freedom in implementation, but also constraints because some concepts and data needs to be shared across the supply chain. 
