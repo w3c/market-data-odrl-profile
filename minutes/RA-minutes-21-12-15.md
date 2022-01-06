@@ -62,19 +62,19 @@ So a part of enforcement is actually validating that the terms of the agreement 
 **Ben**  
 Yes, exactly. So there's a lot of complexity hidden behind the enforcement box.
 
-Here it may be that we can only come up with two use cases, which would be great. We can represent them as flows or simple sequences diagrams. 
+Here it may be that we can only come up with two use cases, which would be great. We can represent them in a flow diagram. 
 
-## TOPIC: Supported Flows (Slides 4/5)
+## TOPIC: Supported Flow (Slides 4)
 
-The simplest one:
+I think there is a single high-level flow that captures the compliance issues we're looking to solve:
 1. Data User publishes a Request to a Market Data Manager
 2. Market Data Manager then makes a decision as to whether or not to support the Request.
 3. They then permission the User
-4. The User accesses the data. 
+4. The User accesses the data to either use or distribute it. 
 
-So a fairly fairly simple picture of what we want to support. We  want to guarantee compliance throughout this flow. This particular one is intra-organization.
+So a fairly fairly simple picture of what we want to support. We  want to guarantee compliance throughout this flow.
 
-## TOPIC: Compliance Check (Slide 6)
+## TOPIC: Compliance Check (Slide 5)
 
 To do so, I want to point out that we make two types of check. The first one is the check done in deciding the Request. Here we match the Request against his existing Agreements (or Offers). It's actually a very simple and well known test: a subsumption check. All we're doing is checking that the graph that describes the Request is contained within the graphs provided by our Agreements (or Offers).
 
@@ -93,7 +93,7 @@ So the first check is simply, is this something I can do in theory?
 **Ben**  
 Yes, exactly. To know whether I can do this in practice, I need to make the second test: check the deontic state of the rule. In the presentation, I've provided two state diagrams for discussion covering Permissions and Duties. We'll likely need another one for Prohibitions.
 
-## TOPIC: Validity Check (Slides 7, 8)
+## TOPIC: Validity Check (Slides 6, 7)
 
 **Ben**  
 So we need to be able to get that state. Casper suggested the idea of Agents to manage local state, whether that's a reporting component, a payment system, or a service that attaches attributions or disclaimers. Then a system like the Policy Store (which understands the full policy) orchestrates the Agents to ensure that only compliant activities are allowed.
