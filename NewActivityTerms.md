@@ -79,7 +79,7 @@ Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odr
 ----------------|------------
 Data Set Type | Exchange Data
 Context | 
-Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action
+Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action)
 
 
 **Install** | -    
@@ -124,7 +124,7 @@ Note | The [recipients](https://w3c.github.io/market-data-odrl-profile/md-odrl-p
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Is this webhosting?
+Note | Is this webhosting? Or widgets and mobile phone apps? Intranets?
 
 
 **Performing analytics** | -    
