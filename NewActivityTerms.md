@@ -101,7 +101,7 @@ Note | Same as [md:Distribute](https://w3c.github.io/market-data-odrl-profile/md
 ----------------|------------
 Data Set Type | Exchange Data
 Context | Frequently used to indicate distribution to an external party.
-Note | Could be modelled as a `md:Distribute` action with an `md:ExternalParty` value for the `md:recipient` constraint.
+Note | Could be modelled as a [md:Distribute](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9) action with an [External Party](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9) value for the [md:recipients](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9) constraint.
 ```
 []    md:action   [
                       a               md:Distribute ;
