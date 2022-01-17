@@ -6,76 +6,80 @@ A list of activity terms (actions and purposes) found in market data licenses
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | We always tie access to an Action. Perhaps this is just `md:Use`
+Scope Note | We always tie access to an Action. If there's no further restriction on the Action allowed, perhaps this is just `md:Use`
 
 
 **View** | -    
 ----------------|------------
-Data Set Type | Exchange Data
+Data Set Type | Exchange Data , Research Data
 Context | 
-Note | Same as `md:Display` action
+Scope Note | Same as [md:Display](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display-0-9) action
 
 
 **Download** | -    
 ----------------|------------
-Data Set Type | 
-Context | 
-Note | 
+Data Set Type | Exchange Data, Research Data, Alternative Data
+Context | Download vs. View (on a terminal)
+Scope Note | Both an action and a unit of count
 
 
 **Print** | -    
 ----------------|------------
-Data Set Type | 
+Data Set Type | Research Data
 Context | 
-Note | In the ODRL Common Vocabulary: [Print](https://www.w3.org/TR/odrl-vocab/#term-print)
+Scope Note | Both an action and a unit of count
+Note | Available as an Action in the ODRL Common Vocabulary: [odrl:Print](https://www.w3.org/TR/odrl-vocab/#term-print)
 
 
 **Open and print** | -    
 ----------------|------------
-Data Set Type | 
+Data Set Type | Research Data
 Context | 
-Note | Same as [Print](https://www.w3.org/TR/odrl-vocab/#term-print) above?
+Note | Same as [odrl:Print](https://www.w3.org/TR/odrl-vocab/#term-print) above
 
 
 **Store** | -    
 ----------------|------------
 Data Set Type | Exchange Data
 Context | 
-Note | Captured as `md:Store` action
+Note | Captured as the [md:Store](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#store-0-9) action
 
 
 **Copy** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | In the ODRL Common Vocabulary: [Reproduce](https://www.w3.org/TR/odrl-vocab/#term-reproduce)
+Note | Same as the [odrl:Reproduce](https://www.w3.org/TR/odrl-vocab/#term-reproduce) term in the ODRL Common Vocabulary?
 
 
 **Reproduce** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | In the ODRL Common Vocabulary: [Reproduce](https://www.w3.org/TR/odrl-vocab/#term-reproduce)
+Scope Note | Often qualified by the [md:recipients](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9) contraint (Internal/External party)
+Note | In the ODRL Common Vocabulary: [odrl:Reproduce](https://www.w3.org/TR/odrl-vocab/#term-reproduce)
 
 
 **Reformat** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Same as [Transform](https://www.w3.org/TR/odrl-vocab/#term-transform) in the ODRL Common Vocabulary?
+Scope Note | A change in format, not in informational content
+Note | Same as [odrl:Transform](https://www.w3.org/TR/odrl-vocab/#term-transform) in the ODRL Common Vocabulary?
 
 
 **Modify** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Same as `md:Derive` action?
+Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9) action?
+
 
 **Create derivative works** | -    
 ----------------|------------
 Data Set Type | Exchange Data
 Context | 
-Note | Same as `md:Derive` action
+Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action
 
 
 **Install** | -    
@@ -89,7 +93,8 @@ Note | In the ODRL Common Vocabulary: [Install](https://www.w3.org/TR/odrl-vocab
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Same as `md:Distribute` action - can be qualified by a 'md:reciepient` constraint.
+Scope Note | Can be qualified by the [md:recipients](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9) contraint (Internal/External party)
+Note | Same as [md:Distribute](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9) action?
 
 
 **Redistribute** | -    
@@ -110,8 +115,9 @@ Note | Could be modelled as a `md:Distribute` action with an `md:ExternalParty` 
 -----------------------------------------------------|------------
 Data Set Type | Exchange Data
 Context | 
-Note | We use the `md:displayType` constraint to distiguish between individual display (`md:Device`) and group display (`md:Wallboard`). But this may not capture the public.
-Note | We also use the `md:controls` constraint to require some level of access control. Does the lack of it give us the public?
+Note | We use the [md:displayTypes](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display-types-0-9) constraint to distiguish between individual display - a [md:Device](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#device-0-9) - and group display - [md:Wallboard](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wallboard-0-9). But this does not capture the public.
+Note | We also use the [md:controls](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9) constraint to require some level of access control. Does the lack of access control give us the public? Probably not.
+Note | The [recipients](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9) constraint  feels relevant here, expecially when tied to an [External Party](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9).
 
 
 **Use the content through the internet** | -    
