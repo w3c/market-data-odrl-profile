@@ -124,14 +124,14 @@ Note | The [recipients](https://w3c.github.io/market-data-odrl-profile/md-odrl-p
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Is this webhosting? Or widgets and mobile phone apps? Intranets?
+Note | Is this webhosting? Or widgets and mobile phone apps? Does it cover intranets? Is it where Google, for example, displays delayed equity prices?
 
 
 **Performing analytics** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Covered by the `md:Derive` action?
+Note | Covered by the [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action) action?
 
 
 **Creating internal apps** | -    
@@ -237,7 +237,7 @@ Note | Is the context validating prices? That might be an activity used to speci
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Same as `md:Derive` action?
+Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action) action?
 
 
 
@@ -245,7 +245,7 @@ Note | Same as `md:Derive` action?
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Same as `md:Derive` action?
+Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action) action?
 
 
 **Translate** | -    
