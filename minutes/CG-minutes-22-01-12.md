@@ -29,12 +29,11 @@ Michelle has provided a set of new terms. These don't just come from the license
 ### Access
 
 **Ben**  
-This is a slightly strange becuase we presuppose access before an Action can take place. I guess we need more more information on the context here. If it's access to use the data, we could apply the Use action. If it's to display the data, we could apply the Display actions. But does this "access" mean something else?
+This is a slightly strange because we presuppose access before an Action can take place. I guess we need more more information on the context here. If it's access to use the data, we could apply the Use action. If it's to display the data, we could apply the Display actions. But does this "access" mean something else?
 
 **Nigel**  
 I think you're right on that.
 
-**Ben**  
 ### Download, Print, Open & Print.
 
 **Jaspal**  
@@ -82,49 +81,45 @@ OK - we can provide those qualifications using the recipient constraint with the
 ### Reformat
 
 **Ben**  
-I think this is different from "modify" or "create derivative works". There is a "transform" term in the URL common vocabulary which is targeted at changing the format of an asset, not it's informational content. And I guess that's the concept targetted by this term "reformat". 
+I think this is different from "modify" or "create derivative works". There is a "transform" term in the URL common vocabulary which is targeted at changing the format of an asset, not it's informational content. And I guess that's the concept targeted by this term "reformat". 
 
 **Nigel**  
 Yeah, I think that would be reasonable.
 
 **Ben**  
 I'm going to hold off on modify and create derivative works because there are a whole load of other terms that also seem to be very similar. So perhaps we can take them all at the same time at the end. 
-
-**Ben**  
-Install
+ 
+### Install
 
 **Ben**  
 This is again covered by the ODRL common vocabulary. 
 
-**Ben**  
-Transmit
+### Transmit
 
 **Ben**  
 I have been assuming that this is the same as a Distribute action. Effectively, you're you're transmitting information from one party to another and that that we would describe as distribute. I don't know if it has any further implications.
 
-**Ben**  
+**Nigel**  
 I think we need more context on the use of this term.
+ 
+### Redistribute 
 
 **Ben**  
-Redistribute 
-
-**Ben**  
-I think this is a form of Distribute, where we're saying that the recipient is an external party.
+Again, I think this is a form of Distribute, where we're saying that the recipient is an external party.
 
 **Nigel**  
 Commonly used in that way.
 
-**Nigel**  
+**Mark**  
 Would it be more correct to say in redistribution that the Distributor is not the Originator?
 
 **Ben**  
 I think that's true. But I think that the concern around redistribution is that the data is getting to a third party.
 
-**Nigel**  
+**Mark**  
 I agree that common use often means that.
 
-**Ben**  
-Display Publicly
+### Display Publicly
 
 **Ben**  
 So this is a interesting one. We can constrain Display by Display Type. We have two values. The first is Device, which is a terminal or a mobile phone, that effectively displays to an individual. The second is Wallboard, which is a public display. 
@@ -132,7 +127,7 @@ So this is a interesting one. We can constrain Display by Display Type. We have 
 **Ben**  
 We can also constrain a Display permission by the access controls that are put around the display. I'm wondering whether its enough to capture the notion of public display by specifying no Access Control constraint and setting the Device to Wallboard. Or do we need an explicit concept of the Public - which we don't have now.
 
-**Nigel**  
+**Mark**  
 Many exchanges do draw a distinction between a board on a wall that's inside the licensee's building and the one that's in Times Square. It is it too crazy to say that it's like internal distribution versus external distribution. One's viewed by the licensee's employees and the other by the public.
 
 **Nigel**  
@@ -144,8 +139,7 @@ All we have at the moment are Internal or External Parties. You could say that E
 **Nigel**  
 Maybe you do need to spell it out explicitly. But this does feel related to a Recipient constraint.
 
-**Ben**  
-Use the content through the internet. 
+### Use the content through the internet. 
 
 **Ben**  
 What I'm wondering is whether this is the same as web hosting, which is a construct that we can model
@@ -163,7 +157,7 @@ Or mobile apps.
 Does this also cover intranets?
 
 **Ben**  
-Hopefully, we can make that distinction using the recipient constraint and making a distinction between Internal and External users. Because what we're trying to do is minimize the number of terms but maximize expressivity by combining them together. 
+Hopefully, we can make that distinction using the recipient constraint and making a distinction between Internal and External users. Because what we're trying to do is minimize the number of terms but maximize expressiveness by combining them together. 
 
 **Nigel**  
 I think we need more context around using the content through the internet. Because from one point of view, it's effectively just external distribution. 
@@ -172,10 +166,9 @@ I think we need more context around using the content through the internet. Beca
 Unless there are some specific conditions on what someone can do if they're taking the data over the Internet. If so, we might need to be able to model it separately. But I don't know if we've got any use cases like that. So I don't know whether we need a special term for it. 
 
 **Ben**  
-I think we need more context. I read it as supporting the display stock prices on Google, for example.
-
-**Ben**  
-Performing analytics
+I think we need more context. I read it as supporting the display of delayed stock prices on Google, for example.
+ 
+### Performing analytics
 
 **Ben**  
 This is likely another of those terms that is covered by the derive action. 
@@ -183,17 +176,15 @@ This is likely another of those terms that is covered by the derive action.
 **Nigel**  
 Seems like a derive. 
 
-**Ben**  
-Create Internal Apps
+### Create Internal Apps
 
 **Ben**  
 This is an activity that we've kind of ignored. I think I've ignored it under the assumption that we're working at a level of abstraction where we don't need to identify the fact you're creating an internal app because it is implicit in a Non-Display action. 
 
 **Nigel**  
 Yes, for permission to be granted you'd need to be covered by a Non-Display Permission of some kind.
-
-**Ben**  
-Transfer
+ 
+### Transfer
 
 **Ben**  
 Again, rather like transmit and redistribute, this may be the same as a distribute action. I certainly use the terms interchangeably.
@@ -203,9 +194,8 @@ Could be. Hard to say. I mean, there's this notion that if you transfer somethin
 
 **Ben**  
 That's a good qualification. 
-
-**Ben**  
-Decrypt and Decompile. 
+ 
+### Decrypt and Decompile. 
 
 **Ben**  
 That sounds like software. I'm tempted to just say it's out of scope, because we're looking at data not software. 
@@ -221,33 +211,25 @@ The Irreversible and Non-Substitutative constraints.
 
 **Nigel**  
 This feels more like a shrink wrap license around a piece of software with embedded data content of some kind.
-
-**Ben**  
-Disaggregate and Merge
+ 
+### Disaggregate and Merge
 
 **Ben**  
 Whether you can aggregate or disaggregate information is significant to a data vendor. And the way we modeled this was not as a permission (to aggregate or disaggregate) but as a constraint put against the Asset.
 
-**Ben**  
-So this constraint effectively said this asset can or cannot be commingled with other data assets. 
+This constraint effectively said this asset can or cannot be commingled with other data assets. So that covers the merge case.
 
-**Ben**  
-So that covers the merge case.
-
-**Ben**  
-And could probably cover the disaggregate case simarlarly. But should we use a Constraint on an Asset to model this, or should we be using an Action on a Permission?
-
-**Ben**  
+And we could probably cover the disaggregate case similarly. But should we use a Constraint on an Asset to model this, or should we be using an Action on a Permission?
+  
 So rarely do you get an instruction from a data originator on merging or dissagregating that a constraint was a cheap construct to use. But if it's very common, then we should probably upgrade it to a permission. How often do you see that being explicitly stated in licenses?
 
-**Nigel**  
+**Mark**  
 I don't feel like I see that a lot.
 
 **Nigel**  
 I suspect it would be for very specialized datasets. I lean towards associating it with the Asset
 
-**Ben**  
-Quote or Paraphrase. 
+### Quote or Paraphrase. 
 
 **Ben**  
 I guess we see this in research.
@@ -264,55 +246,48 @@ You could also argue that a paraphrasing is a transform of the information.
 **Ben**  
 Or even a derivation ...
 
-**Ben**  
-Marketing or Promotion
+### Marketing or Promotion
 
 **Ben**  
 That's often a purpose constraint. And we already cover marketing as as an activity and I suspect promotion is the same as marketing for our purposes anyway. 
 
-**Ben**  
-Sell or License
+### Sell or License
 
 **Ben**  
-Until now, we've modelled selling by simply having a compensation duty on a Distribution permission. That's selling a dataset: you're allowed to distribute it and there's a payment duty associated with that. License, I guess, is something different.
-
-**Ben**  
+Until now, we've modeled selling by simply having a compensation duty on a Distribution permission. That's selling a dataset: you're allowed to distribute it and there's a payment duty associated with that. License, I guess, is something different.
+ 
 But if you want to prescribing the selling of data, that's not easy to say. So if we do want to use Sell as a potential prescription, we'll have to turn it into an Activity. 
 
 **Nigel**  
-Yes, you can give it away but you can't sell it perhaps. I can imagine we're gonna have to handle that case.
+Yes, you can give it away but you can't sell it perhaps. I can imagine we're going to have to handle that case.
+
+### Disassemble
 
 **Ben**  
-Disassemble
+I think that relates to an earlier discussion. 
+
+
+### Hyperlink
 
 **Ben**  
- I think that relates to an earlier discussion. 
-
-**Ben**  
-Hyperlink
-
-**Ben**  
-Now that is a strange and obscure one which I'm going to pass over for now. Unless **Jaspal** you say that hyperlink comes up a lot?
+Now that is a strange and obscure one which I'm going to pass over for now. Unless Jaspal you say that hyperlink comes up a lot?
 
 **Jaspal**  
 I think we need to get more context. Could be a hyperlink to the source the data or content.
 
-**Ben**  
-Verify, Validate
+### Verify, Validate
 
 **Ben**  
 I'm not sure whether verify is the same as validate. Without context, my assumption would probably be yes. And I also wonder whether this relates to validating prices. If so, that that would be a purpose. I think we'd need to define an activity which is validating prices. 
 
 **Nigel**  
 There's often prohibitions on that. 
-
-**Ben**  
-Alter, Adapt. 
+ 
+### Alter, Adapt
 
 **Ben**  
 These sound document-centric. So perhaps Derive is not the the answer here.
 
-**Ben**  
 And that's the list done. Thank you for the discussion. I think it was really useful.
 
 **Mark**  
@@ -322,6 +297,4 @@ So what will we do with the synonyms of terms we already have? Is that going to 
 I would like to put the synonyms into the standard itself as examples - perhaps as scope notes.
 
 **Nigel**  
-that makes a lot of sense.
-
-Transcribed by https://otter.ai
+That makes a lot of sense.
