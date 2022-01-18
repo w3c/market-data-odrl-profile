@@ -7,7 +7,7 @@ Michelle has provided a whole lot of terms from licenses that aren't public exch
 I'm assuming John's has a copy.
 
 **Ben**  
-I emailed the link to the mailing list. It's https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewActivityTerms.md
+I emailed the link to the mailing list: https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/NewActivityTerms.md
 
 **Ben**  
 Caspar, you were going to share some examples of compliance use cases.
