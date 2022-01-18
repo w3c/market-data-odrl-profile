@@ -79,7 +79,7 @@ Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odr
 ----------------|------------
 Data Set Type | Exchange Data
 Context | 
-Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action)
+Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9) action
 
 
 **Install** | -    
@@ -131,21 +131,21 @@ Note | Is this webhosting? Or widgets and mobile phone apps? Does it cover intra
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Covered by the [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9 action) action?
+Note | Covered by the [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9) action?
 
 
 **Creating internal apps** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Covered by the `md:Non-Display` action?
+Note | Covered by the [md:Non-Display](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display) action?
 
 
 **Transfer** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Same as the md:Distribute action?
+Note | Is there an implication that the rights are transfered rather than the data (which would be covered by the [md:Distribute](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9) action)?
 
 
 **Decrypt** | -    
@@ -166,21 +166,21 @@ Note |
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Is this an Action or a Constraint on the Asset?
+Note | Is this an Activity or a Constraint on the Asset?
 
 
 **Merge** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Is this an Action or a Constraint on the Asset?
+Note | Is this an Activity or a [Commingle](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#commingle-0-9) Constraint on the Asset - or a Transform?
 
 
 **Quote or paraphrase** | -    
 ----------------|------------
-Data Set Type | 
+Data Set Type | Research
 Context | 
-Note | 
+Note | An [amount](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#amount-0-9) constraint on the Action?
 
 
 **Publish** | -    
@@ -195,14 +195,14 @@ Note |
 Data Set Type | 
 Context | 
 Note | We treat this not as an action itself, but as the purpose for which an action (e.g. `md:Display` or `md:Distribute`) is taken. 
-Note | Effectively we treat marketing as a 'md:purpose' constraint on an action.
+Note | Effectively we treat marketing as a [md:purposes](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9) constraint on an action.
 
 
 **Sell or license** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | We presently model the selling of data as a compensation duty on a permission. But I'm unclear how we could prohibit it without its own action.
+Note | We presently model the selling of data as a compensation duty on a permission. But I'm unclear how we could prohibit it without its own action/activity.
 
 
 **Disassembled** | -    
