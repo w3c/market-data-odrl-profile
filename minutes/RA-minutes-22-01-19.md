@@ -1,9 +1,13 @@
 # CG Reference Architecture
 *15th December, 2021*
 
+
+
 ## TOPIC: Supported Flow: Enforcement (Slide 1)
 
 **Ben WS**  
+I'll talk to this [presentation](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/presentations/RefArch-22-01-19.pdf)
+
 At this meeting, I intend to focus on the far right hand side of the diagram: the enforcement side of this right automation project, which I think is probably the least known and least understood. The actual automated enforcement of **Mark**et data licenses still remains a bit of a mystery.
 
 ## TOPIC: It's Policies All the Way Down (Slide 2)
