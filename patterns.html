@@ -215,18 +215,62 @@
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
             </section>
+        </section>
+        <section id="Requests and Consents">
+            <p>
+                There are several data use cases that require that <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">Consent</a> be given before they can be satisfied. Often consent is required for distribution to a third-party or for derivations. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
+            </p><p>
+                But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required.
+            </p>
+            <h2>Pattern 1.4 - Requesting Consent</h2> 
+            
+            <section data-dfn-for="Consent Duty">
+                <h2><dfn>Consent Duty</dfn></h2>
+                <p>
+                    
+                </p><p>
+
+                </p>
+            </section>
+        </section>
+    </section>
+    <section id="SegmentingAssets">
+        <h2>Segmenting Assets</h2>
+        <p>
+            Many rules provide access to only a part of an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-0-9">Asset</a>. These segmentations can be by the type of the content (e.g. access to just French equities or only the index values, not the constituents and weightings) or by temporal reach (e.g. access to only three years of historical data). The first we call a <code>content segmentation</code> and the second, a <code>temporal segmentation</code>.
+        </p>
+        <section id="TemporalSegmentations">
+            <h2>Temporal Segmentations</h2>
+            <p>The most common temporal segmentations control access to historical data or time series data.</p>
+            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
+            <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeInterval">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="ContentSegmentations">
+            <h2>Content Segmentations</h2>
+            <p>Not all <a>Duties</a> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
+            <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDelta">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
         </section>
     </section>
     <section id="Time">
@@ -250,6 +294,26 @@
                 <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                 <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="TemporalConstraints">
+            <h2>Temporal Constraints</h2>
+            <p>Temporal constaints specify access to historical data using the temporal property. The interval allowing access to the latest three years of historical data would look so:</p>
+            <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDelta">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P3Y"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="SpecifiedIntervals">
+            <h2>Specified Intervals</h2>
+            <p>Sometimes</p>
+            <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDelta">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P3Y"^^xsd:duration</span>
                 <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
             </pre>
         </section>
