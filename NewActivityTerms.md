@@ -21,6 +21,7 @@ Scope Note | Same as [md:Display](https://w3c.github.io/market-data-odrl-profile
 Data Set Type | Exchange Data, Research Data, Alternative Data
 Context | Download vs. View (on a terminal)
 Scope Note | Both an action and a unit of count
+Suggestion | Subclass of View?
 
 
 **Print** | -    
@@ -29,6 +30,7 @@ Data Set Type | Research Data
 Context | 
 Scope Note | Both an action and a unit of count
 Note | Available as an Action in the ODRL Common Vocabulary: [odrl:Print](https://www.w3.org/TR/odrl-vocab/#term-print)
+Suggestion | Subclass of View?
 
 
 **Open and print** | -    
@@ -50,7 +52,7 @@ Note | Captured as the [md:Store](https://w3c.github.io/market-data-odrl-profile
 Data Set Type | 
 Context | 
 Note | Same as the [odrl:Reproduce](https://www.w3.org/TR/odrl-vocab/#term-reproduce) term in the ODRL Common Vocabulary?
-
+Suggestion | New top level term? Limit scope to documents?
 
 **Reproduce** | -    
 ----------------|------------
@@ -66,6 +68,7 @@ Data Set Type |
 Context | 
 Scope Note | A change in format, not in informational content
 Note | Same as [odrl:Transform](https://www.w3.org/TR/odrl-vocab/#term-transform) in the ODRL Common Vocabulary?
+Suggestion | Subclass of Reproduce
 
 
 **Modify** | -    
@@ -79,6 +82,7 @@ Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odr
 ----------------|------------
 Data Set Type | Exchange Data
 Context | 
+Scope Note | Is there an implication that these derived works will be distributed? If so, this is a linked set of permissions.
 Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9) action
 
 
@@ -87,6 +91,7 @@ Note | Same as [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odr
 Data Set Type | 
 Context | 
 Note | In the ODRL Common Vocabulary: [Install](https://www.w3.org/TR/odrl-vocab/#term-install)
+Suggestion | Ignore for now
 
 
 **Transmit** | -    
