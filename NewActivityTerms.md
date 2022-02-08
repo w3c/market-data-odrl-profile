@@ -21,7 +21,7 @@ Scope Note | Same as [md:Display](https://w3c.github.io/market-data-odrl-profile
 Data Set Type | Exchange Data, Research Data, Alternative Data
 Context | Download vs. View (on a terminal)
 Scope Note | Both an action and a unit of count
-Suggestion | Subclass of View?
+Suggestion | Subclass of [md:Display](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display-0-9)?
 
 
 **Print** | -    
