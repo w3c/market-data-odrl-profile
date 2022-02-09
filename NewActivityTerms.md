@@ -71,7 +71,7 @@ Note | Same as [odrl:Transform](https://www.w3.org/TR/odrl-vocab/#term-transform
 Suggestion | Subclass of Reproduce
 
 
-**Modify** | -    
+**_Modify_** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
@@ -94,7 +94,7 @@ Note | In the ODRL Common Vocabulary: [Install](https://www.w3.org/TR/odrl-vocab
 Suggestion | Ignore for now
 
 
-**Transmit** | -    
+**_Transmit_** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
@@ -116,7 +116,7 @@ Note | Could be modelled as a [md:Distribute](https://w3c.github.io/market-data-
                   ] .
 ```
 
-**Display publicly** | -    
+**_Display publicly_** | -    
 -----------------------------------------------------|------------
 Data Set Type | Exchange Data
 Context | 
@@ -139,14 +139,14 @@ Context |
 Note | Covered by the [md:Derive](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9) action?
 
 
-**Creating internal apps** | -    
+**_Creating internal apps_** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
 Note | Covered by the [md:Non-Display](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display) action?
 
 
-**Transfer** | -    
+**_Transfer_** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
@@ -157,21 +157,21 @@ Note | Is there an implication that the rights are transfered rather than the da
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | 
+Note | Ignore?
 
 
 **Decompile** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | 
+Note | Ignore?
 
 
 **Disaggregate** | -    
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | Is this an Activity or a Constraint on the Asset?
+Note | Is this an Activity or a Constraint on the Asset? Is it the opposite of Commingle?
 
 
 **Merge** | -    
@@ -214,7 +214,7 @@ Note | We presently model the selling of data as a compensation duty on a permis
 ----------------|------------
 Data Set Type | 
 Context | 
-Note | 
+Note | Ignore?
 
 
 **Hyperlink** | -    
