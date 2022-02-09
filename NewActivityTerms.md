@@ -30,7 +30,7 @@ Data Set Type | Research Data
 Context | 
 Scope Note | Both an action and a unit of count
 Note | Available as an Action in the ODRL Common Vocabulary: [odrl:Print](https://www.w3.org/TR/odrl-vocab/#term-print)
-Suggestion | Subclass of View?
+Suggestion | Subclass of [md:Display](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display-0-9)?
 
 
 **Open and print** | -    
