@@ -2877,17 +2877,21 @@
                     <tbody>
                         <tr>
                             <th>Definition:</th>
-                            <td>To supply an <a>Asset</a> to an <a>External Party</a>.</td>
+                            <td>To supply an <a>Asset</a> to a <a>Party</a>.</td>
                         </tr>
                         <tr>
                             <th>Version:</th>
                             <td>0.9</td>
                         </tr>
                         <tr>
+                            <th>Scope Note:</th>
+                            <td>Redistribution is the case where the <a>Asset</a> is transferred to a third party. In this case, the <a>rescipients</a> constraint can be set to <a>External Party.</a></td>
+                        </tr>
+                        <tr>
                             <th>Note:</th>
-                            <td>The External Party"s use of the Asset can be controlled by using a duty to impose a
+                            <td>The recipient's use of the Asset can be controlled by using a duty to impose a
                                 <a>Next Policy</a> that specifies the Permissions, Prohibitions, and/or Duties to which
-                                the third-party must adhere in their use of the asset.</td>
+                                the recipient must adhere in their use of the asset.</td>
                         </tr>
                         <tr>
                             <th>Label:</th>
@@ -2906,6 +2910,113 @@
                         </tr>
                     </tbody>
                 </table>
+                <section data-dfn-for="Reproduce" id="reproduce-0-9">
+                    <h2><dfn>Reproduce</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>To copy an <a>Asset</a> and then supply it to a <a>Party</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Scope Note:</th>
+                                <td>Usually applied to documents, parts of documents, charts, or similarly formatted artifacts.</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>Reproduce</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#reproduce-0-9">https://www.w3.org/community/md-odrl-profile#reproduce-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th>
+                                <td><a href="https://www.w3.org/TR/odrl-model/#action">odrl:Distribute</a>, </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <section data-dfn-for="Print" id="print-0-9">
+                        <h2><dfn>Print</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th>
+                                    <td>To create a tangible and permanent rendition of an <a>Asset</a>.</td>
+                                </tr>
+                                <tr>
+                                    <th>Version:</th>
+                                    <td>2.2</td>
+                                </tr>
+                                <tr>
+                                    <th>Conforms To:</th>
+                                    <td><a href="https://www.w3.org/TR/odrl-vocab/#vocab-common">ODRL Common Vocabulary</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Scope Note:</th>
+                                    <td>For example, creating a permanent, fixed (static), and directly perceivable representation of the Asset, such as printing onto paper.</td>
+                                </tr>
+                                <tr>
+                                    <th>Note:</th>
+                                    <td>Exercising this action can be used as a unit-of-count.</td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td>Print</td>
+                                </tr>
+                                <tr>
+                                    <th>Identifier:</th>
+                                    <td><a
+                                            href="https://www.w3.org/TR/odrl-vocab/#term-print">https://www.w3.org/TR/odrl-vocab/#term-print</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th>
+                                    <td><a>Reproduce</a>, <a>Units of Count</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section data-dfn-for="Reformat" id="reformat-0-9">
+                        <h2><dfn>Reformat</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th>
+                                    <td>To convert an <a>Asset</a> into a different format.</td>
+                                </tr>
+                                <tr>
+                                    <th>Version:</th>
+                                    <td>0.9</td>
+                                </tr>
+                                <tr>
+                                    <th>Scope Note:</th>
+                                    <td>Describes converting an <a>Asset</a> into a different format for consumption on/transfer to a third party system.</td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td>Reformat</td>
+                                </tr>
+                                <tr>
+                                    <th>Identifier:</th>
+                                    <td><a
+                                            href="https://www.w3.org/TR/odrl-vocab/#term-print">https://www.w3.org/TR/odrl-vocab/#term-print</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th>
+                                    <td><a>Display</a>, <a>Units of Count</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
             </section>
             <section data-dfn-for="Store" id="store-0-9">
                 <h2><dfn>Store</dfn></h2>
@@ -3043,6 +3154,10 @@
                                     <td>Applicable in the context of terminal use (by a person - not a machine).</td>
                                 </tr>
                                 <tr>
+                                    <th>Note:</th>
+                                    <td>Exercising this action can be used as a unit-of-count.</td>
+                                </tr>
+                                <tr>
                                     <th>Label:</th>
                                     <td>Download</td>
                                 </tr>
@@ -3054,44 +3169,7 @@
                                 </tr>
                                 <tr>
                                     <th style="white-space:nowrap;">Sub-class Of:</th>
-                                    <td><a>Display</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section data-dfn-for="Print" id="print-0-9">
-                        <h2><dfn>Print</dfn></h2>
-                        <table class="def propdef">
-                            <tbody>
-                                <tr>
-                                    <th>Definition:</th>
-                                    <td>To create a tangible and permanent rendition of an <a>Asset</a>.</td>
-                                </tr>
-                                <tr>
-                                    <th>Version:</th>
-                                    <td>2.2</td>
-                                </tr>
-                                <tr>
-                                    <th>Conforms To:</th>
-                                    <td><a href="https://www.w3.org/TR/odrl-vocab/#vocab-common">ODRL Common Vocabulary</a></td>
-                                </tr>
-                                <tr>
-                                    <th>Scope Note:</th>
-                                    <td>For example, creating a permanent, fixed (static), and directly perceivable representation of the Asset, such as printing onto paper.</td>
-                                </tr>
-                                <tr>
-                                    <th>Label:</th>
-                                    <td>Print</td>
-                                </tr>
-                                <tr>
-                                    <th>Identifier:</th>
-                                    <td><a
-                                            href="https://www.w3.org/TR/odrl-vocab/#term-print">https://www.w3.org/TR/odrl-vocab/#term-print</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th>
-                                    <td><a>Display</a></td>
+                                    <td><a>Display, <a>Units of Count</a></a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -3266,10 +3344,18 @@
                                     <td>0.9</td>
                                 </tr>
                                 <tr>
+                                    <th>Scope Note:</th>
+                                    <td>Includes performing analytics.</td>
+                                </tr>
+                                <tr>
                                     <th>Note:</th>
                                     <td>Frequently, it"s important to specify whether the transformation is
                                         <a>Irreversible</a> and <a>Non-Substitutive</a> using the <a>derivation
                                             types</a> constraint.</td>
+                                </tr>
+                                <tr>
+                                    <th>Note:</th>
+                                    <td>Where derivations are used to create new works (a.k.a. Derived Works) that are intended for <a>distribution</a> to third-parties, an additional <a>distribution</a> Permission must be specified.</td>
                                 </tr>
                                 <tr>
                                     <th>Label:</th>
