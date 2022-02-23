@@ -312,10 +312,17 @@
                 <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider"
                 id="RequestConsent">
                     <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>  
+                    <span class="w">      </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                     <span class="w">                        </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceProvider</span><span class="w"> </span><span class="p">] ;</span>
+                    <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>       
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
                     <br/>
                     <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
