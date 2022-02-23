@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Patterns in Modelling Market Data Licenses</title>
+    <link rel="stylesheet" href="profile-scripts/turtle-styles.css">
+    <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" async></script>
+    <script src="profile-scripts/config.js" class="remove"></script>
+</head>
+<body>
+<section id="abstract">
+    <p>
+        The set of patterns provided here show how the terms defined in the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html">Market Data Profile for ODRL</a> should be combined to model the permissions, prohibitions, obligations, and constraints specified in the licences controlling the use of market data as ODRL policies.
+    </p><p>
+        The core intended audience for this document are the authors of ODRL policies and the implementors of systems interpreting them. The objective is to match the former's intentions with the latter's expectations.
+    </p>
+</section>
+<section id="sotd"></section>
+<section id="versioning"></section>
+<section id="conformance"></section>
+<section id="Patterns">
+    <h2>Patterns</h2>
+    <section data-dfn-for="Duties">
+        <h2>Duties</h2>
+        <p>
+            A <code>Duty</code> is defined in <a href="https://www.w3.org/TR/odrl-model/">ODRL</a> as the obligation to exercise an <code>Action</code>.
+        </p><p>
+            The <code>Party</code> exercising the action is the <code>Subject</code> of the Duty. The Party affected is the <code>Object</code>.
+        </p><p>
+            If the specified action must be exercised more than once to fulfill the Duty, then the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> constraint should be used to indicate the number of times the action must be taken. 
+        </p><p>
+            A Duty may also specify a target to indicate the <code>Entity</code>, <code>Activity</code>, or <code>Party</code> to which the action applies.
+        </p><p> 
+            Some duties can be activated by events. If so, the duty should specify its activation condition in the form of a constraint that when satisfied, activates the Duty.   
+        </p><p> 
+            Some duties may be activated by the passage of time. If so, the duty should specify its activation condition in the form of a time interval constraint (e.g. monthly) that when satisfied, activates the Duty.   
+        </p><p>
+            Just eight types of Duty capture most of the obligations found in market data licenses: Attachments, Requests and Consents, Notifications, Invoices and Payments, Explicit Agreements, and Reporting.
+        </p>
+        <section id="Attachments">
+            <h2>Pattern 1.1 - Attachments</h2>  
+            <p>
+                Market data licenses can require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">Attributions</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be attached to data that is transferred from one Party to another.
+            </p><p>
+                The wording of these could be specified in the policy using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">wording</a> property of the <code>Attribution</code>.
+            </p><p>
+                Alternatively, a link to most recent wording may be provided using the <code> url link</code> property. If this is available, it should be used.
+            </p>
+            <section data-dfn-for="Attribution Duty">
+                <h2><dfn>Attribution Duty</dfn></h2>
+                <p>
+                    Attribution duties require the Subject to attach a declaration of the <code>IP Owner's</code> title to the <code>Asset</code>.
+                </p><p>
+                    The duty is usually activated when the Asset is transferred to a third-party, i.e. the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9">recipient</a> constraint is triggered by an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.
+                </p>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies an <code>Attribution</code> to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The Party that attaches the Attribution - usually the Party making the transfer.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party that receives the Attribution - usually the <code>recipient</code> of the transfer.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>md:Attach</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td><code>md:Attribution</code></td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section>
+                    <h2>Attribution Code</h2>
+                    <pre class="example nohighlight turtle" title="Attribution" id="AttributionExample">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/recipient</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attach</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attribution</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">wording</span><span class="w">      </span><span class="s">"The market data is the property of Chicago Mercantile Exchange Inc. or it’s licensors as applicable. All rights reserved, or otherwise licensed by Chicago Mercantile Exchange Inc."</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
+            </section>
+            <section data-dfn-for="Disclaimer Duty">
+                <h2><dfn>Disclaimer Duty</dfn></h2>
+                <p>
+                    Disclaimers must sometimes be attached to derived data to clarify (usually distance) the relationship between the <code>IP Owner</code> of the source Asset and the derived Asset.
+                </p><p>
+                    Disclaimer duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimer</a>
+                </p>
+                <section>
+                    <h2>Disclaimer Code</h2>
+                    <pre class="example nohighlight turtle" title="Disclaimer" id="DisclaimerExample">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/recipient</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Attach</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Disclaimer</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">urlLink</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/disclaimer_wording</span><span class="p">&gt;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
+            </section>
+            <section data-dfn-for="Proscription Duty">
+                <h2><dfn>Proscription Duty</dfn></h2>
+                <p>
+                    Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
+                </p><p>
+                    When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement Duty</a> pattern below instead of this one.
+                </p><p>
+                    Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
+                </p>
+            </section>
+        </section>
+        <section id="Agreements">
+            <h2>Pattern 1.2 - Agreements</h2>  
+            <p>
+                Market data licenses can require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be legally binding before an <code>Asset</code> can be transferred.
+            </p><p>
+                The wording of these can be specified in the policy using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">wording</a> property of the <code>Proscription</code>.
+            </p>
+            <section data-dfn-for="Agreement Duty">
+                <h2><dfn>Agreement Duty</dfn></h2>
+                <p>
+                    Agreement duties require the <code>Subject</code> to come to a legally binding agreement with the recipient of the Asset that enforces the <code>Proscription</code>.
+                </p>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies a <code>Proscription</code> to be agreed in a legally binding manner with the <code>recipient</code> whenever the recipient is an <code>External Party</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The Party that seeks the Agreement - usually the Pary making the tranfer.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party that accedes to the Agreement - usually the <code>recipient</code> of the transfer.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>md:Agree</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td><code>md:Proscription</code></td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section>
+                    <h2>Agreement Code</h2>
+                    <pre class="example nohighlight turtle" title="Agreement" id="Agreement">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/recipient</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Agree</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Proscription</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">wording</span><span class="w">      </span><span class="s">"..."</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
+            </section>
+        </section>
+        <section id="Notifications">
+            <h2>Pattern 1.3 - Notifications</h2>  
+            <p>
+                Data <code>Originators</code> and <code>Providers</code> sometimes require notification of particular events or changes in the state-of-the-world.
+            </p><p>
+                The type of change is specified using the <code>target</code> property. The most common one is when the <code>Asset</code> is accessed by an <code>External Party</code> (e.g. a <code>Service Facilitator</code>). 
+            </p><p>
+                Sometimes, it's the <code>Consumer</code> that receives the notification. For example, notification of a reasonable suspicion of data misuse can trigger an <code>Audit</code>.
+            </p>
+            <section data-dfn-for="Usage Notification Duty">
+                <h2><dfn>Usage Notification Duty</dfn></h2>
+                <p>
+                    Usage notification requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code>.
+                </p><p>
+                    The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
+                </p>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires a notification be generated when an <code>Internal Party</code> starts to use an <code>Asset</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The Party that provides the Notification - usually the Party playing the role of data <code>Consumer</code>.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <code>Provider</code> or <code>Originator</code>.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>md:Notify</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td><code>md:Usage</code></td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When <code>users</code> are associated with the parent Permission.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section>
+                    <h2>Usage Notification Code</h2>
+                    <pre class="example nohighlight turtle" title="Usage Notification" id="UsageNotification">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
+            </section>
+            <section data-dfn-for="External-Party Notification Duty">
+                <h2><dfn>External-Party Notification Duty</dfn></h2>
+                <p>
+                    External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an external party (usually a <code>Service Facilitator</code>) has access to the <code>Asset</code> and to identify them.
+                </p><p>
+                    The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipients</a> constraint is satisfied.
+                </p>
+                <section>
+                    <h2>External-Party Notification Code</h2>
+                    <pre class="example nohighlight turtle" title="External Party Notification" id="ExternalPartyNotification">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
+            </section>
+        </section>
+        <section id="Requests and Consents">
+            <p>
+                There are several data use cases that require that <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">Consent</a> be given before they can be satisfied. Often consent is required for distribution to a third-party or for derivations. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
+            </p><p>
+                But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required.
+            </p>
+            <h2>Pattern 1.4 - Requesting Consent</h2> 
+            
+            <section data-dfn-for="Consent Duty">
+                <h2><dfn>Consent Duty</dfn></h2>
+                <p>
+                    
+                </p><p>
+
+                </p>
+            </section>
+        </section>
+    </section>
+    <section id="SegmentingAssets">
+        <h2>Segmenting Assets</h2>
+        <p>
+            Many rules provide access to only a part of an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-0-9">Asset</a>. These segmentations can be by the type of the content (e.g. access to just French equities or only the index values, not the constituents and weightings) or by temporal reach (e.g. access to only three years of historical data). The first we call a <code>content segmentation</code> and the second, a <code>temporal segmentation</code>.
+        </p>
+        <section id="TemporalSegmentations">
+            <h2>Temporal Segmentations</h2>
+            <p>The most common temporal segmentations control access to historical data or time series data.</p>
+            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
+            <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeInterval">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="ContentSegmentations">
+            <h2>Content Segmentations</h2>
+            <p>Not all <a>Duties</a> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
+            <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDelta">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+    </section>
+    <section id="Time">
+        <h2>Time</h2>
+        <p>Many activities required by <a>Duties</a> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly, 30 days in arrears. Payment schedules are often similar.</p>
+        <section id="Periodicity">
+            <h2>Periodicity</h2>
+            <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
+            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
+            <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeIntervalExample">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="Deadlines">
+            <h2>Deadlines</h2>
+            <p>Not all <a>Duties</a> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
+            <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDeltaExample">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="TemporalConstraints">
+            <h2>Temporal Constraints</h2>
+            <p>Temporal constaints specify access to historical data using the temporal property. The interval allowing access to the latest three years of historical data would look so:</p>
+            <pre class="example nohighlight turtle" title="Specifying A Temporal Constraint" id="TemporalConstraintExample">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">temporal</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P3Y"^^xsd:duration</span>
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+        <section id="SpecifiedIntervals">
+            <h2>Specified Intervals</h2>
+            <p>Sometimes, for example, when an <code>effective interbal</code> is being specified, we need to indicate interval than run from a specified data and/or to one. We rely on some properties from the <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a> to do so.</p>
+            <pre class="example nohighlight turtle" title="Specifying An Interval" id="IntervalSpecificationExample">
+                <span class="p">[]</span><span class="w">   </span><span class="nn">tpl:</span><span class="nt">effectiveInterval</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasBeginning</span><span class="w">  </span><span class="p">[</span>
+                <span class="w">                                    </span><span class="nn">time:</span><span class="nt">time:inXSDDate</span>  <span class="s">"2020-01-01T00:00:00Z"^^xsd:dateTime</span>
+                <span class="w">                                    </span><span class="p">]</span><span class="p"> .</span>  
+                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasEnd</span><span class="w">        </span><span class="p">[</span>
+                <span class="w">                                    </span><span class="nn">time:</span><span class="nt">time:inXSDDate</span>  <span class="s">"2022-01-01T00:00:00Z"^^xsd:dateTime</span>
+                <span class="w">                                    </span><span class="p">]</span><span class="p"> .</span>     
+                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+            </pre>
+        </section>
+    </section>
+</section>    
+</body>
+</html>
