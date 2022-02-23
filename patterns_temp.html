@@ -66,7 +66,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Attribution</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>md:wording</code>, <code>md:urlLink</code></td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>md:wording</code>, <code>schema:url</code></td>
                         </tr><tr>
                             <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
                         </tr>
@@ -108,7 +108,7 @@
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Disclaimer</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">urlLink</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/disclaimer_wording</span><span class="p">&gt;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/disclaimer_wording</span><span class="p">&gt;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
@@ -149,7 +149,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Proscription</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>md:wording</code>, <code>md:urlLink</code></td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>md:wording</code>, <code>schema:url</code></td>
                         </tr><tr>
                             <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
                         </tr>
@@ -187,6 +187,8 @@
                 <p>
                     Usage notification requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code>.
                 </p><p>
+                    A URL to the which the notification could be posted could be provided as a property of the <code>Action</code>.
+                </p><p>
                     The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
                 </p>
                 <table class="def propdef">
@@ -199,6 +201,8 @@
                             <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <code>Provider</code> or <code>Originator</code>.</td>
                         </tr><tr>
                             <th>Action:</th><td><code>md:Notify</code></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Action Properties:</th><td><code>schema:url</code></td>
                         </tr><tr>
                             <th>Target:</th><td><code>md:Usage</code></td>
                         </tr><tr>
@@ -215,7 +219,7 @@
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notify</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/disclaimer_wording</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Usage</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
