@@ -44,7 +44,7 @@
             </p><p>
                 The wording of these could be specified in the policy using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">wording</a> property of the <code>Attribution</code>.
             </p><p>
-                Alternatively, a link to most recent wording may be provided using the <code> url link</code> property. If this is available, it should be used.
+                Alternatively, a link to most recent wording may be provided using the <code>url</code> property. If this is available, it should be used.
             </p>
             <section data-dfn-for="Attribution Duty">
                 <h2><dfn>Attribution Duty</dfn></h2>
@@ -257,17 +257,56 @@
         <section id="Requests and Consents">
             <h2>Pattern 1.4 - Requests and Consents</h2> 
             <p>
-                There are several data use cases that require that <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">Consent</a> be given before they can be satisfied. Often consent is required for distribution to a third-party or for derivations. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
-            </p><p>
-                But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required.
+                Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action must be preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action: consent must be requested.
             </p>
-            <section data-dfn-for="Consent Duty">
-                <h2><dfn>Consent Duty</dfn></h2>
+            <p>
+                Often consent is required for distribution to a third-party or a service provider. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
+            </p><p>
+                But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required (though withholding it would invalidate the parent permission).
+            </p>
+            <section data-dfn-for="RequestConsentToRedistributeToAnExternalPartyDuty">
+                <h2><dfn>Request Consent to Redistribute to an External Party Duty</dfn></h2>
+                <table class="def propdef">
+                    <p>
+                        Often consent is required for distribution to a third-party or a service provider. In these cases, usually the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
+                    </p>
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies that a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> must be <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Requested</a> whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The Party making the transfer - the <a>Assignee</a> of the <a>Permission</a>.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>Usually the <a>Originator</a> of the <a>Asset</a> to be distributed.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>md:Request</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td>Sepcifies the <code>Entity</code> or <code>Event</code> - be it a recipient, asset, or distribution event - that the request covers.</td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <p>
-                    
-                </p><p>
 
                 </p>
+                <h2><dfn>Consent to Redistribute to an External Party Duty</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies that a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> must be given whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>Usually the <a>Originator</a> of the <a>Asset</a> to be distributed.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party making the transfer - the <a>Assignee</a> of the <a>Permission</a>.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>md:Consent</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td>Sepcifies the <code>Entity</code> or <code>Event</code> - be it a recipient, asset, or distribution event - that the consent covers.</td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </section>
     </section>
