@@ -187,7 +187,7 @@
                 <p>
                     Usage notification requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code>.
                 </p><p>
-                    A URL to the which the notification could be posted could be provided as a property of the <code>Action</code>.
+                    A URL to the which the fulfilled notification rule can be posted should be provided as a property of the <code>Action</code>.
                 </p><p>
                     The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
                 </p>
@@ -229,7 +229,7 @@
             <section data-dfn-for="External-Party Notification Duty">
                 <h2><dfn>External-Party Notification Duty</dfn></h2>
                 <p>
-                    External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an external party (usually a <code>Service Facilitator</code>) has access to the <code>Asset</code> and to identify them.
+                    External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an <code>External Party</code> (usually playing the <code>role</code> of a <code>Service Facilitator</code>) has access to the <code>Asset</code> and to identify them.
                 </p><p>
                     The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipients</a> constraint is satisfied.
                 </p>
@@ -239,7 +239,7 @@
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="c">  # Activation condition</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="c">    # Activation condition</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -255,13 +255,12 @@
             </section>
         </section>
         <section id="Requests and Consents">
+            <h2>Pattern 1.4 - Requests and Consents</h2> 
             <p>
                 There are several data use cases that require that <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">Consent</a> be given before they can be satisfied. Often consent is required for distribution to a third-party or for derivations. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
             </p><p>
                 But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required.
             </p>
-            <h2>Pattern 1.4 - Requesting Consent</h2> 
-            
             <section data-dfn-for="Consent Duty">
                 <h2><dfn>Consent Duty</dfn></h2>
                 <p>
