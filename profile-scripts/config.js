@@ -14,6 +14,9 @@ var respecConfig = {
     wgPublicList: "https://lists.w3.org/Archives/Public/public-md-odrl-profile",
     github: "w3c/market-data-odrl-profile",
     shortName: "md-odrl-profile",
+    lint: {
+       "no-unused-dfns": false,
+    },
     //xref: "odrl",
     localBiblio: {
       LEI: {
