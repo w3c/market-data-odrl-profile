@@ -2983,13 +2983,13 @@
                             </tbody>
                         </table>
                     </section>
-                    <section data-dfn-for="Reformat" id="reformat-0-9">
-                        <h2><dfn>Reformat</dfn></h2>
+                    <section data-dfn-for="Format" id="reformat-0-9">
+                        <h2><dfn>Format</dfn></h2>
                         <table class="def propdef">
                             <tbody>
                                 <tr>
                                     <th>Definition:</th>
-                                    <td>To convert an <a>Asset</a> into a different format.</td>
+                                    <td>To format an <a>Asset</a> - usually a document - for presentational purposes.</td>
                                 </tr>
                                 <tr>
                                     <th>Version:</th>
@@ -2997,21 +2997,21 @@
                                 </tr>
                                 <tr>
                                     <th>Scope Note:</th>
-                                    <td>Describes converting an <a>Asset</a> into a different format for consumption on/transfer to a third party system.</td>
+                                    <td>A <code>Prohibition</code> on formatting a document would mean that it must be presented "as is".</td>
                                 </tr>
                                 <tr>
                                     <th>Label:</th>
-                                    <td>Reformat</td>
+                                    <td>Format</td>
                                 </tr>
                                 <tr>
                                     <th>Identifier:</th>
                                     <td><a
-                                            href="https://www.w3.org/community/md-odrl-profile#reformat-0-9">https://www.w3.org/community/md-odrl-profile#reformat-0-9</a>
+                                            href="https://www.w3.org/community/md-odrl-profile#format-0-9">https://www.w3.org/community/md-odrl-profile#format-0-9</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th style="white-space:nowrap;">Sub-class Of:</th>
-                                    <td><a>Display</a>, <a>Units of Count</a></td>
+                                    <td><a>Reproduce</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -3044,6 +3044,76 @@
                             <th style="white-space:nowrap;">Sub-class Of:</th>
                             <td><a href="https://www.w3.org/TR/odrl-model/#action">odrl:Action</a>, <a
                                     href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Download" id="download-0-9">
+                <h2><dfn>Download</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th>
+                            <td>To download an <a>Asset</a> to store and use it with a local application.</td>
+                        </tr>
+                        <tr>
+                            <th>Version:</th>
+                            <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <th>Scope Note:</th>
+                            <td>Applicable in the context of terminal use.</td>
+                        </tr>
+                        <tr>
+                            <th>Note:</th>
+                            <td>Exercising this action can be used as a unit-of-count.</td>
+                        </tr>
+                        <tr>
+                            <th>Label:</th>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <th>Identifier:</th>
+                            <td><a
+                                    href="https://www.w3.org/community/md-odrl-profile#download-0-9">https://www.w3.org/community/md-odrl-profile#download-0-9</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th>
+                            <td><a>Action</a>, <a>Units of Count</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Transform" id="transform-0-9">
+                <h2><dfn>Transform</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th>
+                            <td>To transform an <a>Asset</a> into a different format without changing its informational content.</td>
+                        </tr>
+                        <tr>
+                            <th>Version:</th>
+                            <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <th>Scope Note:</th>
+                            <td>Describes converting an <a>Asset</a> into a different format for consumption by a system.</td>
+                        </tr>
+                        <tr>
+                            <th>Label:</th>
+                            <td>Transform</td>
+                        </tr>
+                        <tr>
+                            <th>Identifier:</th>
+                            <td><a
+                                    href="https://www.w3.org/community/md-odrl-profile#transform-0-9">https://www.w3.org/community/md-odrl-profile#transform-0-9</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th>
+                            <td><a>Action</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -3137,43 +3207,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <section data-dfn-for="Download" id="download-0-9">
-                        <h2><dfn>Download</dfn></h2>
-                        <table class="def propdef">
-                            <tbody>
-                                <tr>
-                                    <th>Definition:</th>
-                                    <td>To download an <a>Asset</a> to store and display it with a local application.</td>
-                                </tr>
-                                <tr>
-                                    <th>Version:</th>
-                                    <td>0.9</td>
-                                </tr>
-                                <tr>
-                                    <th>Scope Note:</th>
-                                    <td>Applicable in the context of terminal use (by a person - not a machine).</td>
-                                </tr>
-                                <tr>
-                                    <th>Note:</th>
-                                    <td>Exercising this action can be used as a unit-of-count.</td>
-                                </tr>
-                                <tr>
-                                    <th>Label:</th>
-                                    <td>Download</td>
-                                </tr>
-                                <tr>
-                                    <th>Identifier:</th>
-                                    <td><a
-                                            href="https://www.w3.org/community/md-odrl-profile#download-0-9">https://www.w3.org/community/md-odrl-profile#download-0-9</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th style="white-space:nowrap;">Sub-class Of:</th>
-                                    <td><a>Display, <a>Units of Count</a></a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
                 </section>
                 <section data-dfn-for="Non-Display">
                     <h2><dfn>Non-Display</dfn></h2>
