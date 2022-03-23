@@ -255,7 +255,7 @@
             <section data-dfn-for="External-Party Notification Duty">
                 <h2><dfn>External-Party Notification Duty</dfn></h2>
                 <p>
-                    External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an <code>External Party</code> (usually playing the <code>role</code> of a <code>Service Facilitator</code>) has access to the <code>Asset</code> and to identify them.
+                    External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an <code>External Party</code> (usually playing the <code>role</code> of a <code>Service Facilitator</code>) is exercising the <code>Permission</code> and to identify them.
                 </p><p>
                     The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
                 </p>
@@ -277,6 +277,15 @@
                         <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
+                    <div class="note">
+                        <p>
+                            This <code>Notification Duty</code> presuposes the <code>Service Facilitator's</code> right to use the <code>Permission</code> following notification.
+                        </p><p>
+                            To make this assumption explicit, the <code>Permission</code> should have a <code>Users</code> constraint that allows <code>Service Facilitators</code> to exercise it (alongside <code>Internal Parties</code>).
+                        </p><p>
+                            Often this assumption is not true - <code>Service Facilitators</code> can not use the <code>Consummer's</code> permission and must license separately. If so, an <code>Agreement Duty</code> could be applied.
+                        </p>
+                    </div>
                 </section>
             </section>
         </section>
