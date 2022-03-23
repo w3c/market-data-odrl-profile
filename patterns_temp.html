@@ -162,13 +162,13 @@
                 <section>
                     <h2>Agreement Code - License</h2>
                     <p>
-                        For when a <code>License</code> must be agreed before an <code>Asset</code> is used:
+                        For when a <code>License</code> must be agreed before an <code>Asset</code> is used. Usually attached to a <code>Permission</code> that allows use of an <code>Asset</code>.
                     </p>
                     <pre class="example nohighlight turtle" title="License Agreement" id="LicenseAgreement">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Agree</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -181,7 +181,7 @@
                 <section>
                     <h2>Agreement Code - Proscription</h2>
                     <p>
-                        For when a <code>Proscription</code> must be agreed before an <code>Asset</code> is transferred:
+                        For when a <code>Proscription</code> must be agreed before an <code>Asset</code> is transferred. Usually attached to a <code>Permission</code> that allows distribution of an <code>Asset</code>.
                     </p>
                     <pre class="example nohighlight turtle" title="Proscription Agreement" id="ProscriptionAgreement">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
