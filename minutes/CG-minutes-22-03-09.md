@@ -2,7 +2,7 @@
 The minutes of the last meeting were agreed.
 
 ## Types of Data
-Michelle presented a taxonomy of data categories. https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/DataCatagories.csv
+Michelle presented a taxonomy of [data categories](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/DataCatagories.csv).
 
 Emily pointed out that the taxonomy had some implicit dimensions that might be useful to make explicit. She suggested a delivery dimension: desktop, pubs & subs, streaming, and non-streaming feeds.
 
