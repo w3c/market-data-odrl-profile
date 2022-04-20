@@ -202,7 +202,7 @@
             <p>
                 Data <code>Originators</code> and <code>Providers</code> sometimes require notification of particular events or changes in the state-of-the-world.
             </p><p>
-                The type of change that triggers the <code>Duty</code> is specified using the an activation condition. Common use cases include when the <code>Asset</code> is accessed by an <code>External Party</code> (e.g. a <code>Service Facilitator</code>) or when an <code>Internal Party</code> first exercises the <code>Permission</code>. 
+                The type of change that triggers the <code>Duty</code> is specified using the an activation condition. Common use cases are when the <code>Asset</code> is accessed by an <code>External Party</code> (e.g. a <code>Service Facilitator</code>) or when an <code>Internal Party</code> first exercises the <code>Permission</code>. 
             </p><p>
                 Frequently, it's the <code>Provider</code> (or <code>Originator</code>) that receives the notification. 
             </p>
@@ -211,7 +211,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Requires a <code>Notification</code> be generated when the activation condition is met.</td>
+                            <th>Definition:</th><td>Requires a <code>Notification</code> be sent when the activation condition is met.</td>
                         </tr><tr>
                             <th>Subject:</th><td>The Party that provides the Notification - usually the Party playing the role of data <code>Consumer</code>.</td>
                         </tr><tr>
@@ -221,7 +221,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Notification</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Notification Properties:</th><td><code>schema:url</code>, pointing to the URL of email that the <code>Notification</code> must be posted; <code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
+                            <th style="white-space:nowrap;">Notification Properties:</th><td><code>schema:url</code>, pointing to the URL of email that the <code>Notification</code> must be posted;</td><td> <code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
                         </tr><tr>
                             <th>Activation:</th><td>When <code>Users</code> - either <code>Internal Parties</code> of <code>External Parties</code> in the role of <code>Service Facilitators</code> - first exercise the parent <code>Permission</code>.</td>
                         </tr>
