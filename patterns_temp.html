@@ -221,7 +221,8 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Notification</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Notification Properties:</th><td><code>schema:url</code>, pointing to the URL of email that the <code>Notification</code> must be posted;</td><td> <code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
+                            <th style="white-space:nowrap;">Notification Properties:</th><td><code>schema:url</code>, pointing to the URL of email that the <code>Notification</code> must be posted;</td>
+                            <th></th><td><code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
                         </tr><tr>
                             <th>Activation:</th><td>When <code>Users</code> - either <code>Internal Parties</code> of <code>External Parties</code> in the role of <code>Service Facilitators</code> - first exercise the parent <code>Permission</code>.</td>
                         </tr>
@@ -255,6 +256,8 @@
                         External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an <code>External Party</code> (usually playing the <code>role</code> of a <code>Service Facilitator</code>) is exercising the <code>Permission</code> and to identify them.
                     </p><p>
                         The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
+                    </p><p>
+                        The targetted <code>Notification</code> indicates that it requires the identifier for the <code>Service Provider</code>.
                     </p>
                     <pre class="example nohighlight turtle" title="External Party Notification" id="ExternalPartyNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
