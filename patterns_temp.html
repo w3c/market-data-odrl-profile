@@ -38,7 +38,7 @@
             Just eight types of Duty capture most of the obligations found in market data licenses: Attachments, Requests and Consents, Notifications, Invoices and Payments, Explicit Agreements, and Reporting.
         </p>
         <section id="Attachments">
-            <h2>Pattern 1.1 - Attachments</h2>  
+            <h2>Attachment Pattern</h2>  
             <p>
                 Market data licenses can require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">Attributions</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be attached to data that is transferred from one Party to another.
             </p><p>
@@ -123,7 +123,7 @@
             </section>
         </section>
         <section id="Agreements">
-            <h2>Pattern 1.2 - Agreements</h2>  
+            <h2>Agreement Pattern</h2>  
             <p>
                 Some licenses require additional legally binding agreements to be in place before a <code>Permission</code> can be exercised. This requirement is captured in an <code>Agreement Duty</code>.
             </p><p>
@@ -198,7 +198,7 @@
             </section>
         </section>
         <section id="Notifications">
-            <h2>Pattern 1.3 - Notifications</h2>  
+            <h2>Notification Pattern</h2>  
             <p>
                 Data <code>Originators</code> and <code>Providers</code> sometimes require notification of particular events or changes in the state-of-the-world.
             </p><p>
@@ -206,15 +206,9 @@
             </p><p>
                 Frequently, it's the <code>Provider</code> (or <code>Originator</code>) that receives the notification. 
             </p>
-            <section data-dfn-for="Usage Notification Duty">
-                <h2><dfn>Usage Notification Duty</dfn></h2>
-                <p>
-                    Usage notification requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code> - i.e. when the parent <code>Permission</code> is first exercised.
-                </p><p>
-                    A URL (or email) to the which the fulfilled notification rule can be posted should be provided as a property of the <code>Notification</code>.
-                </p><p>
-                    The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
-                </p>
+            <section data-dfn-for="Notification Duty">
+                <h2><dfn>Notification Duty</dfn></h2>
+                
                 <table class="def propdef">
                     <tbody>
                         <tr>
@@ -236,6 +230,13 @@
                 </table>
                 <section>
                     <h2>Usage Notification Code</h2>
+                    <p>
+                        Usage notification requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code> - i.e. when the parent <code>Permission</code> is first exercised.
+                    </p><p>
+                        A URL (or email) to the which the fulfilled notification rule can be posted should be provided as a property of the <code>Notification</code>.
+                    </p><p>
+                        The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
+                    </p>
                     <pre class="example nohighlight turtle" title="Usage Notification" id="UsageNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
@@ -249,33 +250,13 @@
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
-            </section>
-            <section data-dfn-for="External-Party Notification Duty">
-                <h2><dfn>External-Party Notification Duty</dfn></h2>
-                <p>
-                    External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an <code>External Party</code> (usually playing the <code>role</code> of a <code>Service Facilitator</code>) is exercising the <code>Permission</code> and to identify them.
-                </p><p>
-                    The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
-                </p>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Requires a notification be generated when an <code>External Party</code> (frequently a <code>Service Provider</code>) starts to exercise a <code>Permission</code>.</td>
-                        </tr><tr>
-                            <th>Subject:</th><td>The Party that provides the Notification - usually the Party playing the role of data <code>Consumer</code>.</td>
-                        </tr><tr>
-                            <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <code>Provider</code> or <code>Originator</code>.</td>
-                        </tr><tr>
-                            <th>Action:</th><td><code>md:Notify</code></td>
-                        </tr><tr>
-                            <th>Target:</th><td><code>md:ExternalParty</code></td>
-                        </tr><tr>
-                            <th>Activation:</th><td>When an <code>External Party</code> becomes a <code>user</code> of the parent Permission.</td>
-                        </tr>
-                    </tbody>
-                </table>
                 <section>
                     <h2>External-Party Notification Code</h2>
+                    <p>
+                        External-Party notification requires the <code>Subject</code> to notify the <code>Object</code> that an <code>External Party</code> (usually playing the <code>role</code> of a <code>Service Facilitator</code>) is exercising the <code>Permission</code> and to identify them.
+                    </p><p>
+                        The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
+                    </p>
                     <pre class="example nohighlight turtle" title="External Party Notification" id="ExternalPartyNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
@@ -295,7 +276,7 @@
                         <p>
                             This <code>Notification Duty</code> presuposes the <code>Service Facilitator's</code> right to use the <code>Permission</code> following notification.
                         </p><p>
-                            To make this assumption explicit, the <code>Permission</code> should have a <code>Users</code> constraint that allows <code>Service Facilitators</code> to exercise it (alongside <code>Internal Parties</code>).
+                            To make this assumption explicit, the <code>Permission</code> should have a <code>users</code> constraint that allows <code>Service Facilitators</code> to exercise it (alongside <code>Internal Parties</code>).
                         </p><p>
                             Often this assumption is not true - <code>Service Facilitators</code> can not use the <code>Consummer's Permission</code> and must license separately. If so, an <a>Agreement Duty</a> should be applied targeting the required license.
                         </p>
@@ -304,7 +285,7 @@
             </section>
         </section>
         <section id="Requests and Consents">
-            <h2>Pattern 1.4 - Requests and Consents</h2> 
+            <h2>Request and Consent Pattern</h2> 
             <p>
                 Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action must be preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent must be requested.
             </p>
