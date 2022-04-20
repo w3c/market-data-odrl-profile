@@ -29,7 +29,7 @@
         </p><p>
             If the specified action must be exercised more than once to fulfill the Duty, then the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> constraint should be used to indicate the number of times the action must be taken. 
         </p><p>
-            A Duty may also specify a target to indicate the <code>Entity</code>, <code>Activity</code>, or <code>Party</code> to which the action applies.
+            A Duty may also specify a target to indicate the <code>Entity</code> to which the action applies.
         </p><p> 
             Some duties can be activated by events. If so, the duty should specify its activation condition in the form of a constraint that when satisfied, activates the Duty.   
         </p><p> 
@@ -221,7 +221,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Notification</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Notification Properties:</th><td><code>schema:url</code>, pointing to the URL of email that the <code>Notification</code> must be posted; <code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code>, pointing to the URL of email that the <code>Notification</code> must be posted; <code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
                         </tr><tr>
                             <th>Activation:</th><td>When <code>Users</code> - either <code>Internal Parties</code> of <code>External Parties</code> in the role of <code>Service Facilitators</code> - first exercise the parent <code>Permission</code>.</td>
                         </tr>
@@ -354,10 +354,13 @@
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                     <span class="w">                        </span><span class="kt">a</span><span class="w">                 </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>       
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Application</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_notifications</span><span class="p">&gt;</span>                        
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
+                    <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>  
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
                     <br/>
                     <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
@@ -368,10 +371,13 @@
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                     <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">targets</span><span class="w">    </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">.</span>       
+                    <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Notification</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_notifications</span><span class="p">&gt;</span>                        
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
+                    <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                 </pre>
             </section>
         </section>
