@@ -52,7 +52,7 @@
                 <p>
                     Attribution duties require the Subject to attach a declaration of the <code>IP Owner's</code> title to the <code>Asset</code>.
                 </p><p>
-                    The duty is usually activated when the Asset is transferred to a third-party, i.e. the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9">recipient</a> constraint is triggered by an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.
+                    The duty is usually activated when the Asset is transferred to a third-party, i.e. the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9">recipient</a> constraint is triggered by any instance of an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.
                 </p>
                 <table class="def propdef">
                     <tbody>
@@ -130,11 +130,13 @@
             <p>
                 Some licenses require additional legally binding agreements to be in place before a <code>Permission</code> can be exercised. This requirement is captured in an <code>Agreement Duty</code>.
             </p><p>
-                For example, a license from a data <code>Provider</code> (a.k.a. vendor) might require a license from the data <code>Originator</code> to be in place before usage can start. The license required may be indicated by the <code>url</code> property.
+                For example, a license from a data <code>Provider</code> (a.k.a. vendor) might require a license from the data <code>Originator</code> to be in place before usage can start. This is common in <code>non-display</code> use cases. The license required may be indicated by the <code>url</code> property.
             </p><p>
                 Market data licenses can also require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be legally binding before an <code>Asset</code> can be transferred.
             </p><p>
                 The wording of these can be specified in the policy using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">wording</a> property of the <code>Proscription</code>.
+            </p><p>
+                These duties are usually activated at the organisational level - when an organisation, not individual users, use or receive the <code>Asset</code>.
             </p>
             <section data-dfn-for="Agreement Duty">
                 <h2><dfn>Agreement Duty</dfn></h2>
@@ -156,7 +158,7 @@
                         </tr><tr>
                             <th style="white-space:nowrap;">Target Properties:</th><td><code>md:wording</code>, <code>schema:url</code></td>
                         </tr><tr>
-                            <th>Activation:</th><td>Either when an <code>External Party</code> receives an Asset controlled by the parent Permission or when an <code>Internal Party</code> starts to use it.</td>
+                            <th>Activation:</th><td>Usually triggered at the <code>Organisation</code> level when either when an <code>External Party</code> receives an Asset controlled by the parent Permission or when an <code>Internal Party</code> starts to use it.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -188,7 +190,7 @@
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/transferer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/recipient</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Agree</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
