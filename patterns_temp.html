@@ -52,8 +52,8 @@
                     Market data licenses are sensitive to two key changes:
                 </p>
                 <ol>
-                    <li>When a third-party becomes the recipient of an <code>Asset</code></li>
-                    <li>When any <code>Party</code> starts to use an <code>Asset</code></li>
+                    <li>When a third-party becomes the recipient of an <code>Asset</code> as a result of a <code>Distribute Permission</code></li>
+                    <li>When any <code>Party</code> starts to use an <code>Asset</code> invoking a <code>Use Permission</code></li>
                 </ol>
                 <p>
                     Both can be modelled using <code>Constraints</code> which, if satisfied, activate their parent <code>Duty</code>.
@@ -61,7 +61,7 @@
                 <section>
                     <h2>Third-party Recipient Code</h2>
                     <p>
-                        The following <code>Constraint</code> triggers whenever new <code>instances</code> of the class <code>External Party</code> (i.e. any individuals) is a <code>recipient</code>  of the <code>Asset</code>.
+                        The following <code>Constraint</code> triggers whenever new <code>instances</code> of the class <code>External Party</code> (i.e. any individuals) become a <code>recipient</code>  of the <code>Asset</code>.
                     </p>
                     <pre class="example nohighlight turtle" title="Third-party Recipient" id="ThirdPartyExample">
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
@@ -71,6 +71,24 @@
                      </p>
                      <pre class="example nohighlight turtle" title="Third-party Recipient Organisation" id="ThirdPartyOrganisationExample">
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                    </pre>
+                </section>
+                <section>
+                    <h2>New Users Code</h2>
+                    <p>
+                        The <code>Constraints</code> triggered by new users operate analogously to the recipient constraints above except the we use the <code>users</code> property. Usually, we're only interested in new <code>Organisations</code>:
+                    </p>
+                    <pre class="example nohighlight turtle" title="New Users - Organisations" id="NewUserOrganisationExample">
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                    </pre>
+                    <p>
+                        We can be more specific about the <code>role</code> of the <code>Organisation</code>. This activation condition is only triggered by <code>Service Facilitators</code>:
+                    </p>
+                    <pre class="example nohighlight turtle" title="New Users - Service Facilitators" id="NewUserServiceFacilitatorExample">
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="c">    # Activation condition</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                 </section>
             </section>
