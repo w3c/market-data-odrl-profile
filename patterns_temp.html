@@ -51,12 +51,21 @@
                     Market data licenses are sensitive to two key changes:
                 </p>
                 <ol>
-                    <li>When a third-party either receives or uses an <code>Asset</code></li>
+                    <li>When a third-party becomes the recipient of an <code>Asset</code></li>
                     <li>When any <code>Party</code> starts to use an <code>Asset</code></li>
-                  </ol>  
+                </ol>
+                <p>
+                    Both can be modelled using <code>Constraints</code> which, if satisfied, activate their parent <code>Duty</code>.
+                </p>
+                <section>
+                    <h2>Third-party Recipient Code</h2>
+                    <pre class="example nohighlight turtle" title="Third-party Recipient" id="ThirdPartyExample">
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                    </pre>
+                </section>
             </section>
             <section data-dfn-for="TimeBasesActivation">
-                <h2>Time-Bases</h2>
+                <h2>Time-Based</h2>
             </section>
         </section>
         <section id="Attachments">
