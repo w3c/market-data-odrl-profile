@@ -39,6 +39,12 @@
         </p>
         <section data-dfn-for="ActivationConditions">
             <h2>Activation Conditions</h2>
+            <p>
+                <a>Duties</a> remain inactive until some condition is met. In most cases, this condition is specified by a <a>Constraint</a> on the Duty known as an <a>Activation Constraint</a>. When the <a>Constraint</a> is satisfied, the <a>Duty</a> is activated and must be fulfilled.
+            </p>
+            <p>
+                There are two types of <a>Activation Constraint</a>: periodic - <a>Constraints</a> that fire on temporal intervals; and 
+            </p>
         </section>
         <section id="Attachments">
             <h2>Attachment Pattern</h2>  
@@ -373,10 +379,6 @@
                     <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                     <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                     <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
@@ -402,9 +404,8 @@
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                     <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
-                    <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">      </span><span class="p">[</span>
+                    <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>  
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
                     <br/>
@@ -417,9 +418,8 @@
                     <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                     <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
+                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">purpose</span><span class="w">      </span><span class="p">[</span>
                     <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                 </pre>
             </section>
