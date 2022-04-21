@@ -41,8 +41,9 @@
             <h2>Activation Conditions</h2>
             <p>
                 <code>Duties</code> remain inactive until some condition is met. In most cases, this condition is specified by a <code>Constraint</code> on the Duty known as an activation condition. When the <code>Constraint</code> is satisfied, the <code>Duty</code> is activated and must be fulfilled.
-            </p>
-            <p>
+            </p><p>
+                <code>Duties</code> without an activation condition are activated when the <code>Subject</code> of the <code>Duty</code> exercised its <code>Action</code>.
+            </p><p>
                 There are two types of activation condition: those fired by the state-of-the world and those triggered by the passage of time.
             </p>
             <section data-dfn-for="StateOfTheWorldActivation">
@@ -59,8 +60,17 @@
                 </p>
                 <section>
                     <h2>Third-party Recipient Code</h2>
+                    <p>
+                        The following <code>Constraint</code> triggers whenever new <code>instances</code> of the class <code>External Party</code> (i.e. any individuals) is a <code>recipient</code>  of the <code>Asset</code>.
+                    </p>
                     <pre class="example nohighlight turtle" title="Third-party Recipient" id="ThirdPartyExample">
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                    </pre>
+                    <p>
+                        If we want an activation condition that triggers only when a new <code>Organisation</code> receives the data (and not for each individual belonging to that organisation), then we can extend the template so:
+                     </p>
+                     <pre class="example nohighlight turtle" title="Third-party Recipient Organisation" id="ThirdPartyOrganisationExample">
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
                     </pre>
                 </section>
             </section>
@@ -199,7 +209,7 @@
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">odrl:</span><span class="nt">Assignee</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">odrl:</span><span class="nt">Assignee</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Agree</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
