@@ -40,11 +40,24 @@
         <section data-dfn-for="ActivationConditions">
             <h2>Activation Conditions</h2>
             <p>
-                <code>Duties</code> remain inactive until some condition is met. In most cases, this condition is specified by a <code>Constraint</code> on the Duty known as an <code>Activation Constraint</code>. When the <code>Constraint</code> is satisfied, the <code>Duty</code> is activated and must be fulfilled.
+                <code>Duties</code> remain inactive until some condition is met. In most cases, this condition is specified by a <code>Constraint</code> on the Duty known as an activation condition. When the <code>Constraint</code> is satisfied, the <code>Duty</code> is activated and must be fulfilled.
             </p>
             <p>
-                There are two types of <code>Activation Constraint</code>: periodic - <code>Constraints</code> that fire on temporal intervals; and 
+                There are two types of activation condition: those fired by the state-of-the world and those triggered by the passage of time.
             </p>
+            <section data-dfn-for="StateOfTheWorldActivation">
+                <h2>State-of-the-World</h2>
+                <p>
+                    Market data licenses are sensitive to two key changes:
+                </p>
+                <ol>
+                    <li>When a third-party either receives or uses an <code>Asset</code></li>
+                    <li>When any <code>Party</code> starts to use an <code>Asset</code></li>
+                  </ol>  
+            </section>
+            <section data-dfn-for="TimeBasesActivation">
+                <h2>Time-Bases</h2>
+            </section>
         </section>
         <section id="Attachments">
             <h2>Attachment Pattern</h2>  
