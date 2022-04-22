@@ -385,7 +385,7 @@
                 But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required (though withholding it would invalidate the parent permission).
             </p>
             <section id="RequestPattern">
-                <h2>Request Pattern</h2> 
+                <h2>Request</h2> 
                 <table class="def propdef">
                     <p>
                         Often consent is required for distribution to a third-party or a service provider. In these cases, usually the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
@@ -408,34 +408,10 @@
                 </table>
             </section>
             <section id="ConsentPattern">
-                <h2>Consent Pattern</h2> 
-                <table class="def propdef">
-                    <p>
-                        Often consent is required for distribution to a third-party or a service provider. In these cases, usually the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
-                    </p>
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Requires and specifies that a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> must be <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Requested</a> whenever the <code>recipient</code> is an <code>External Party</code>.</td>
-                        </tr><tr>
-                            <th>Subject:</th><td>The Party making the transfer - the <code>Assignee</code> of the <a>Permission</a>.</td>
-                        </tr><tr>
-                            <th>Object:</th><td>Usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the <code>Asset</code> to be distributed.</td>
-                        </tr><tr>
-                            <th>Action:</th><td><code>md:Request</code></td>
-                        </tr><tr>
-                            <th>Target:</th><td>Sepcifies the <code>Entity</code> or <code>Event</code> - be it a recipient, asset, or distribution event - that the request covers.</td>
-                        </tr><tr>
-                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="RequestConsentToRedistributeToAnExternalPartyDuty">
-                <h2><dfn>Request Consent to Redistribute to an External Party Duty</dfn></h2>
-                
-            </section>
-            <section>
-                <h2><dfn>Consent to Redistribute to an External Party Duty</dfn></h2>
+                <h2>Consent</h2>
+                <p>
+
+                </p>
                 <table class="def propdef">
                     <tbody>
                         <tr>
@@ -454,78 +430,84 @@
                     </tbody>
                 </table>
             </section>
-            <section>
-                <h2>Request and Consent Code - Service Facilitator</h2>
-                <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider"
-                id="RequestSFConsent">
-                    <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_appeals</span><span class="p">&gt;</span>                        
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
-                    <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>  
-                    <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
-                    <br/>
-                    <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_appeals</span><span class="p">&gt;</span>                        
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
-                    <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
-               
-                </pre>
-            </section>
-            <section>
-                <h2>Request and Consent Code - Audit</h2>
-                <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for an Audit"
-                id="RequestAuditConsent">
-                    <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
-                    <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
-                    <br/>
-                    <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                    <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                    <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>                        
-                    <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
+            <section data-dfn-for="RequestConsentToRedistributeToAnExternalPartyDuties">
+                <h2><dfn>Request Consent to Redistribute to an External Party Duties</dfn></h2>
+                <section>
+                    <h2>Request and Consent Code - Service Facilitator</h2>
+                    <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider"
+                    id="RequestSFConsent">
+                        <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">roles</span><span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_appeals</span><span class="p">&gt;</span>                        
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
+                        <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>  
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
+                        <br/>
+                        <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_appeals</span><span class="p">&gt;</span>                        
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
+                        <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
                 
-                </pre>
-            </section>
+                    </pre>
+                </section>
+            </section> 
+            <section data-dfn-for="RequestConsentToAuditDuties">
+                <h2><dfn>Request Consent to Audit Duties</dfn></h2>               
+                <section>
+                    <h2>Request and Consent Code - Audit</h2>
+                    <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for an Audit"
+                    id="RequestAuditConsent">
+                        <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
+                        <br/>
+                        <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
+                    
+                    </pre>
+                </section>
+            </section>                
         </section>
     </section>
     <section id="Segmenting Assets">
