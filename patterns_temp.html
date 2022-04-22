@@ -301,7 +301,7 @@
                     </tr><tr>
                         <th>Target:</th><td><code>md:Notification</code></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> - pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified ; or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified ; or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
                     </tr><tr>
                         <th>Activation:</th><td><a href="#new-users-code">New User</a> , or <a href="#third-party-recipient-code">Third-party Recipient</a>.</td>
                     </tr>
@@ -399,7 +399,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Appeal</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>md:Appeal</code></td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url pointing to the URL/email that the notification must be posted; and for transfers, the  <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified ; or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>.</code></td>
                         </tr><tr>
                             <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a>; or, if no activation condition is set, at the discretion of the <code>Subject</code>.</td>
                         </tr>
@@ -451,7 +451,7 @@
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_appeals</span><span class="p">&gt;</span>                        
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>  
@@ -467,7 +467,7 @@
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/service_facilitator_appeals</span><span class="p">&gt;</span>                        
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">users</span><span class="w">        </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                                             </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
