@@ -67,7 +67,7 @@
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
-                        This activation condition is frequently used in the <a>Attachment Pattern</a>.
+                        This activation condition is frequently used in the <a href="#attachment-pattern">Attachment Pattern</a>.
                     </p>
                     <p>
                         If we want an activation condition that triggers only when a new <code>Organisation</code> receives the data (and not for each individual belonging to that organisation), then we can extend the template so:
@@ -76,7 +76,7 @@
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
-                        This activation condition is usually used in the <a>Agreement Pattern</a> and <a>Notification Pattern</a>.
+                        This activation condition is usually used in the <a href="#agreement-pattern">Agreement Pattern</a> and <a href="#notification-pattern">Notification Pattern</a>.
                     </p>
                 </section>
                 <section>
@@ -97,7 +97,7 @@
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
-                        These activation conditions are used in the <a>Notification Pattern</a>.
+                        These activation conditions are used in the <a href="#notification-pattern">Notification Pattern</a>.
                     </p>
                 </section>
             </section>
@@ -105,7 +105,7 @@
                 <h2>Time-Based</h2>
             </section>
         </section>
-        <section data-dfn-for="Attachment Pattern">
+        <section id="Attachment Pattern">
             <h2>Attachment Pattern</h2>  
             <p>
                 Market data licenses can require <code>Attributions</code>, <code>Disclaimers</code>, or <code>Proscriptions</code> to be attached to data when it is transferred from one <code>Party</code> to another.
@@ -190,7 +190,7 @@
                 </p>
             </section>
         </section>
-        <section data-dfn-for="Agreement Pattern">
+        <section id="Agreement Pattern">
             <h2>Agreement Pattern</h2>  
             <p>
                 Some licenses require additional legally binding agreements to be in place before a <code>Permission</code> can be exercised. This requirement is captured in an <code>Agreement Duty</code>.
@@ -267,7 +267,7 @@
                 </section>
             </section>
         </section>
-        <section data-dfn-for="Notification Pattern">
+        <section id="Notification Pattern">
             <h2>Notification Pattern</h2>  
             <p>
                 Data <code>Originators</code> and <code>Providers</code> sometimes require notification of particular events or changes in the state-of-the-world.
@@ -359,7 +359,7 @@
                 </section>
             </section>
         </section>
-        <section data-dfn-for="Request and Consent Pattern">
+        <section id="Request and Consent Pattern">
             <h2>Request and Consent Pattern</h2> 
             <p>
                 Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action must be preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent must be requested.
