@@ -16,9 +16,9 @@
         The core intended audience for this document are the authors of ODRL policies and the implementors of systems interpreting them. The objective is to match the former's intentions with the latter's expectations.
     </p>
 </section>
-<section id="sotd"><h2>Test1</h2></section>
-<section id="versioning"><h2>Test2</h2></section>
-<section id="conformance"><h2></h2></section>
+<section id="sotd"><h2>Feedback</h2></section>
+<!--section id="versioning"><h2>Test2</h2></section-->
+<section id="conformance"><h2>Conformance</h2></section>
 <section id="Patterns">
     <h2>Patterns</h2>
     <section data-dfn-for="Duties">
@@ -104,6 +104,17 @@
             </section>
             <section data-dfn-for="TimeBasesActivation">
                 <h2>Time-Based</h2>
+                <section id="Periodicity">
+                    <h2>Periodicity</h2>
+                    <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
+                    <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
+                    <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeIntervalExample">
+                        <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+                    </pre>
+                </section>
             </section>
         </section>
         <section id="AttachmentPattern">
@@ -116,7 +127,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Requires and specifies an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscriptions</a> to be attached to the data whenever the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipient</a> is an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.</td>
+                        <th>Definition:</th><td>Requires and specifies an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimer</a>, or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a> to be attached to the data whenever the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipient</a> is an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.</td>
                     </tr><tr>
                         <th>Subject:</th><td>The Party that attaches the Attribution, Disclaimer, or Proscription - usually the Party making the transfer.</td>
                     </tr><tr>
@@ -124,7 +135,7 @@
                     </tr><tr>
                         <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attach-0-9">md:Attach</a></td>
                     </tr><tr>
-                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscriptions</a></td>
+                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
                     </tr><tr>
@@ -207,19 +218,19 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Requires and specifies a <code>License</code> or <code>Proscription</code> to be agreed in a legally binding manner.</td>
+                        <th>Definition:</th><td>Requires and specifies a <code>License</code> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a> to be agreed in a legally binding manner.</td>
                     </tr><tr>
-                        <th>Subject:</th><td>The Party that seeks the Agreement - usually the Pary using or distributing the data.</td>
+                        <th>Subject:</th><td>The <code>Party</code> that seeks the <code>Agreement</code> - usually the Party using or distributing the data.</td>
                     </tr><tr>
-                        <th>Object:</th><td>The Party that accedes to the Agreement - usually the <code>originator</code> of the data or its <code>recipient</code>.</td>
+                        <th>Object:</th><td>The Party that accedes to the Agreement - usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the data or its <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipient</a>.</td>
                     </tr><tr>
-                        <th>Action:</th><td><code>md:Agree</code></td>
+                        <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#agree-0-9">md:Agree</a></td>
                     </tr><tr>
-                        <th>Target:</th><td><code>md:License</code>, <code>md:Proscription</code></td>
+                        <th>Target:</th><td><code>md:License</code>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><code>md:wording</code>, <code>schema:url</code></td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
                     </tr><tr>
-                        <th>Activation:</th><td>Usually triggered at the <code>Organisation</code> level when either when an <code>External Party</code> receives an Asset controlled by the parent Permission or when an <code>Internal Party</code> starts to use it.</td>
+                        <th>Activation:</th><td><a href="#ThirdPartyOrganisationExample">Third-party Recipient Organisation</a> , <a href="#NewUserOrganisationExample">New Users - Organisations</a> , <a href="#TNewUserServiceFacilitatorExample">New Users - Service Facilitators</a>.</td>
                     </tr>
                 </tbody>
             </table>
@@ -517,17 +528,7 @@
     <section id="Time">
         <h2>Time</h2>
         <p>Many activities required by <code>Duties</code> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly, 30 days in arrears. Payment schedules are often similar.</p>
-        <section id="Periodicity">
-            <h2>Periodicity</h2>
-            <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
-            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
-            <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeIntervalExample">
-                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
-                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
-                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
-            </pre>
-        </section>
+        
         <section id="Deadlines">
             <h2>Deadlines</h2>
             <p>Not all <code>Duties</code> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
