@@ -414,19 +414,19 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Requires and specifies an Appeal to which the Subject can consent.</td>
+                            <th>Definition:</th><td>Requires and specifies an Appeal to which the Subject must consent.</td>
                         </tr><tr>
                             <th>Subject:</th><td>The <code>Party</code> to which the <code>Appeal</code> has been make. For redistribution, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the <code>Asset</code> to be distributed. For audits, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Consumer</a></td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party making the transfer - the <code>Assignee</code> of the <a>Permission</a>.</td>
+                            <th>Object:</th><td>The Party making the request.</td>
                         </tr><tr>
                             <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">md:Consent</a></td>
                         </tr><tr>
                             <th>Target:</th><td><code>md:Appeal</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url</code> pointing to the URL/email to which the appeal must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a> who must be identified.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url</code> pointing to the URL/email to which the consenr must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a> who must be identified.</td>
                         </tr><tr>
-                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                            <th>Activation:</th><td>For transfers, <a href="#third-party-recipient-code">Third-party Recipient</a>. If no activation condition is set (e.g. an audit request), at the discretion of the <code>Subject</code>.</td>
                         </tr>
                     </tbody>
                 </table>
