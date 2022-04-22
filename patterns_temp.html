@@ -86,7 +86,7 @@
                         The <code>Constraints</code> triggered by new users operate analogously to the recipient constraints above except that we use the <code>users</code> property. Usually, we're only interested in new <code>Organisations</code>:
                     </p>
                     <pre class="example nohighlight turtle" title="New Users - Organisations" id="NewUserOrganisationExample">
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
                         We can be more specific about the <code>role</code> of the <code>Organisation</code>. This activation condition is only triggered by <code>Service Facilitators</code>:
@@ -316,7 +316,7 @@
                     </p><p>
                         A URL (or email) to the which the fulfilled notification rule can be posted should be provided as a property of the <code>Notification</code>.
                     </p><p>
-                        The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint is satisfied.
+                        The duty is activated when the <code>users</code> constraint is satisfied.
                     </p>
                     <pre class="example nohighlight turtle" title="Usage Notification" id="UsageNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
