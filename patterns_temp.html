@@ -89,7 +89,7 @@
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
-                        We can be more specific about the <code>role</code> of the <code>Organisation</code>. This activation condition is only triggered by <code>Service Facilitators</code>:
+                        We can be more specific about the <code>role</code> of the <code>Organisation</code>. This activation condition is only triggered by <code>Service Facilitators</code> using a data <code>Consumer's</code> permissions:
                     </p>
                     <pre class="example nohighlight turtle" title="New Users - Service Facilitators" id="NewUserServiceFacilitatorExample">
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span>
@@ -284,31 +284,34 @@
             <p>
                 Data <code>Originators</code> and <code>Providers</code> sometimes require notification of particular events or changes in the state-of-the-world.
             </p><p>
-                The type of change that triggers the <code>Duty</code> is specified using the an activation condition. Common use cases are when the <code>Asset</code> is accessed by an <code>External Party</code> (e.g. a <code>Service Facilitator</code>) or when an <code>Internal Party</code> first exercises the <code>Permission</code>. 
+                The type of change that triggers the <code>Duty</code> is specified using the an activation condition. Common use cases are when an <code>Internal Party</code> first exercises the <code>Permission</code> or when the <code>Asset</code> is accessed by an <code>External Party</code> (e.g. a <code>Service Facilitator</code>). 
             </p><p>
                 Frequently, it's the <code>Provider</code> (or <code>Originator</code>) that receives the notification. 
             </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Requires a <code>Notification</code> be sent when the activation condition is met.</td>
+                    </tr><tr>
+                        <th>Subject:</th><td>The <code>Party</code> that provides the notification - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9"> Data Consmuer</a>.</td>
+                    </tr><tr>
+                        <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a>.</td>
+                    </tr><tr>
+                        <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#notify-0-9">md:Notify</a></td>
+                    </tr><tr>
+                        <th>Target:</th><td><code>md:Notification</code></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> - pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified ; or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
+                    </tr><tr>
+                        <th>Activation:</th><td><a href="#new-users-code">New User</a> , or <a href="#third-party-recipient-code">Third-party Recipient</a>.</td>
+                    </tr>
+                </tbody>
+            </table>
             <section data-dfn-for="Notification Duty">
                 <h2><dfn>Notification Duty</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Requires a <code>Notification</code> be sent when the activation condition is met.</td>
-                        </tr><tr>
-                            <th>Subject:</th><td>The <code>Party</code> that provides the notification - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9"> Data Consmuer</a>.</td>
-                        </tr><tr>
-                            <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a>.</td>
-                        </tr><tr>
-                            <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#notify-0-9">md:Notify</a></td>
-                        </tr><tr>
-                            <th>Target:</th><td><code>md:Notification</code></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> - pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified ; or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
-                        </tr><tr>
-                            <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a> , or <a href="#new-users-code">New User</a>.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>
+                    Notification duties require the <code>Subject</code> to notify the <code>Object</code> of some change in the state-of-the-world.
+                </p>
                 <section>
                     <h2>Usage Notification Code</h2>
                     <p>
