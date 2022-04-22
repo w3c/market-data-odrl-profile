@@ -108,9 +108,9 @@
         <section id="Attachments">
             <h2>Attachment Pattern</h2>  
             <p>
-                Market data licenses can require <code>Attributions</code>, <code>Disclaimers</code>, and <code>Proscriptions</code> to be attached to data that is transferred from one <code>Party</code> to another.
+                Market data licenses can require <code>Attributions</code>, <code>Disclaimers</code>, or <code>Proscriptions</code> to be attached to data when it is transferred from one <code>Party</code> to another.
             </p><p>
-                The wording of these could be specified in the policy using the <code>wording</code> property of the <code>Attribution</code>. Alternatively, a link to most recent wording may be provided using the <code>url</code> property.
+                The wording of these could be specified in the policy using the <code>wording</code> property of the <code>Attribution</code>. Alternatively, a link to most recent wording should be provided using the <code>url</code> property.
             </p>
             <table class="def propdef">
                 <tbody>
@@ -121,13 +121,13 @@
                     </tr><tr>
                         <th>Object:</th><td>The Party that receives the Attribution, Disclaimer, or Proscription - usually the recipient of the transfer.</td>
                     </tr><tr>
-                        <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attach-0-9">md:Attach</a></td>
+                        <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attach-0-9">md:Attach</a></td>
                     </tr><tr>
                         <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attributions</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscriptions</a></td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
                     </tr><tr>
-                        <th>Activation:</th><td>Third-party Recipient.</td>
+                        <th>Activation:</th><td><a href="#ThirdPartyExample">Third-party Recipient</a>.</td>
                     </tr>
                 </tbody>
             </table>
