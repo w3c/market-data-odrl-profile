@@ -17,7 +17,7 @@
 </section>
 <section id="sotd"></section>
 <section id="versioning"></section>
-<section id="conformance"></section>
+<!--section id="conformance"></section-->
 <section id="Patterns">
     <h2>Patterns</h2>
     <section data-dfn-for="Duties">
@@ -67,7 +67,7 @@
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
-                        This activation condition is frequently used in the <a href="#AttachmenPattern">Attachment Pattern</a>.
+                        This activation condition is frequently used in the <a href="#AttachmentPattern">Attachment Pattern</a>.
                     </p>
                     <p>
                         If we want an activation condition that triggers only when a new <code>Organisation</code> receives the data (and not for each individual belonging to that organisation), then we can extend the template so:
@@ -401,7 +401,7 @@
                         </tr><tr>
                             <th>Subject:</th><td>Usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the <code>Asset</code> to be distributed.</td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party making the transfer - the <a>Assignee</a> of the <a>Permission</a>.</td>
+                            <th>Object:</th><td>The Party making the transfer - the <code>Assignee</code> of the <a>Permission</a>.</td>
                         </tr><tr>
                             <th>Action:</th><td><code>md:Consent</code></td>
                         </tr><tr>
@@ -504,7 +504,7 @@
         </section>
         <section id="ContentSegmentations">
             <h2>Content Segmentations</h2>
-            <p>Not all <a>Duties</a> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
+            <p>Not all <code>Duties</code> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
             <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDelta">
                 <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
@@ -515,7 +515,7 @@
     </section>
     <section id="Time">
         <h2>Time</h2>
-        <p>Many activities required by <a>Duties</a> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly, 30 days in arrears. Payment schedules are often similar.</p>
+        <p>Many activities required by <code>Duties</code> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly, 30 days in arrears. Payment schedules are often similar.</p>
         <section id="Periodicity">
             <h2>Periodicity</h2>
             <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
@@ -529,7 +529,7 @@
         </section>
         <section id="Deadlines">
             <h2>Deadlines</h2>
-            <p>Not all <a>Duties</a> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
+            <p>Not all <code>Duties</code> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
             <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDeltaExample">
                 <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
