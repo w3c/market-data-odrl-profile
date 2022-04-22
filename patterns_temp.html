@@ -59,7 +59,7 @@
                 <p>
                     Both can be modelled using <code>Constraints</code> which, if satisfied, activate their parent <code>Duty</code>.
                 </p>
-                <section>
+                <section data-dfn-for="Third-PartyRecipient">
                     <h2>Third-party Recipient Code</h2>
                     <p>
                         The following <code>Constraint</code> triggers whenever new <code>instances</code> of the class <code>External Party</code> (i.e. any individuals) become a <code>recipient</code>  of the <code>Asset</code>.
@@ -80,7 +80,7 @@
                         This activation condition is usually used in the <a href="#AgreementPattern">Agreement Pattern</a> and <a href="#NotificationPattern">Notification Pattern</a>.
                     </p>
                 </section>
-                <section>
+                <section data-dfn-for="NewUser">
                     <h2>New Users Code</h2>
                     <p>
                         The <code>Constraints</code> triggered by new users operate analogously to the recipient constraints above except that we use the <code>users</code> property. Usually, we're only interested in new <code>Organisations</code>:
@@ -102,7 +102,7 @@
                     </p>
                 </section>
             </section>
-            <section data-dfn-for="TimeBasesActivation">
+            <section data-dfn-for="TimeBasedActivation">
                 <h2>Time-Based</h2>
                 <section id="Periodicity">
                     <h2>Periodicity</h2>
@@ -139,7 +139,7 @@
                     </tr><tr>
                         <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
                     </tr><tr>
-                        <th>Activation:</th><td><a href="#ThirdPartyExample">Third-party Recipient</a>.</td>
+                        <th>Activation:</th><td><a href="#Third-PartyRecipient">Third-party Recipient</a>.</td>
                     </tr>
                 </tbody>
             </table>
@@ -230,7 +230,7 @@
                     </tr><tr>
                         <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
                     </tr><tr>
-                        <th>Activation:</th><td><a href="#ThirdPartyOrganisationExample">Third-party Recipient Organisation</a> , <a href="#NewUserOrganisationExample">New Users - Organisations</a> , <a href="#TNewUserServiceFacilitatorExample">New Users - Service Facilitators</a>.</td>
+                        <th>Activation:</th><td><a href="#Third-PartyRecipient">Third-party Recipient</a> , <a href="#NewUser">New User</a>.</td>
                     </tr>
                 </tbody>
             </table>
