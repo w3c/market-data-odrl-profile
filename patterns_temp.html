@@ -18,7 +18,7 @@
 </section>
 <section id="sotd"><h2>Feedback</h2></section>
 <!--section id="versioning"><h2>Test2</h2></section-->
-<section id="conformance"><h2>Conformance</h2></section>
+<section id="conformance"></section>
 <section id="Patterns">
     <h2>Patterns</h2>
     <section data-dfn-for="Duties">
@@ -137,9 +137,9 @@
                     </tr><tr>
                         <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the attribution, disclaimer, or proscription; or <code>schema:url</code> - linking to the required wording.</td>
                     </tr><tr>
-                        <th>Activation:</th><td><a href="#Third-PartyRecipient">Third-party Recipient</a>.</td>
+                        <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a>.</td>
                     </tr>
                 </tbody>
             </table>
@@ -228,9 +228,9 @@
                     </tr><tr>
                         <th>Target:</th><td><code>md:License</code>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the proscription; or <code>schema:url - linking to the wording of the proscription or to the license.</code></td>
                     </tr><tr>
-                        <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a> , <a href="#new-users-code">New User</a>.</td>
+                        <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a> , or <a href="#new-users-code">New User</a>.</td>
                     </tr>
                 </tbody>
             </table>
@@ -295,17 +295,17 @@
                         <tr>
                             <th>Definition:</th><td>Requires a <code>Notification</code> be sent when the activation condition is met.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>The Party that provides the Notification - usually the Party playing the role of data <code>Consumer</code>.</td>
+                            <th>Subject:</th><td>The <code>Party</code> that provides the notification - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9"> Data Consmuer</a>.</td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <code>Provider</code> or <code>Originator</code>.</td>
+                            <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a>.</td>
                         </tr><tr>
-                            <th>Action:</th><td><code>md:Notify</code></td>
+                            <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#notify-0-9">md:Notify</a></td>
                         </tr><tr>
                             <th>Target:</th><td><code>md:Notification</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code>, pointing to the URL of email that the <code>Notification</code> must be posted; <code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> - pointing to the URL of email that the <code>Notification</code> must be posted; <code>md:users</code>, indicating the user of the <code>Permission</code> that must be identified.</td>
                         </tr><tr>
-                            <th>Activation:</th><td>When <code>Users</code> - either <code>Internal Parties</code> of <code>External Parties</code> in the role of <code>Service Facilitators</code> - first exercise the parent <code>Permission</code>.</td>
+                            <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a> , or <a href="#new-users-code">New User</a>.</td>
                         </tr>
                     </tbody>
                 </table>
