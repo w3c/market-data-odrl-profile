@@ -414,15 +414,17 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Requires and specifies that a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> must be given whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                            <th>Definition:</th><td>Requires and specifies an Appeal to which the Subject can consent.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>Usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the <code>Asset</code> to be distributed.</td>
+                            <th>Subject:</th><td>The <code>Party</code> to which the <code>Appeal</code> has been make. For redistribution, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the <code>Asset</code> to be distributed. For audits, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Consumer</a></td>
                         </tr><tr>
                             <th>Object:</th><td>The Party making the transfer - the <code>Assignee</code> of the <a>Permission</a>.</td>
                         </tr><tr>
-                            <th>Action:</th><td><code>md:Consent</code></td>
+                            <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">md:Consent</a></td>
                         </tr><tr>
-                            <th>Target:</th><td>Sepcifies the <code>Entity</code> or <code>Event</code> - be it a recipient, asset, or distribution event - that the consent covers.</td>
+                            <th>Target:</th><td><code>md:Appeal</code></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url</code> pointing to the URL/email to which the appeal must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a> who must be identified.</td>
                         </tr><tr>
                             <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
                         </tr>
