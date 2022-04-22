@@ -93,7 +93,7 @@
                     <pre class="example nohighlight turtle" title="New Users - Service Facilitators" id="NewUserServiceFacilitatorExample">
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
@@ -108,10 +108,29 @@
         <section id="Attachments">
             <h2>Attachment Pattern</h2>  
             <p>
-                Market data licenses can require <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">Attributions</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscriptions</a> to be attached to data that is transferred from one Party to another.
+                Market data licenses can require <code>Attributions</code>, <code>Disclaimers</code>, and <code>Proscriptions</code> to be attached to data that is transferred from one <code>Party</code> to another.
             </p><p>
-                The wording of these could be specified in the policy using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">wording</a> property of the <code>Attribution</code>. Alternatively, a link to most recent wording may be provided using the <code>url</code> property.
+                The wording of these could be specified in the policy using the <code>wording</code> property of the <code>Attribution</code>. Alternatively, a link to most recent wording may be provided using the <code>url</code> property.
             </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Requires and specifies an Attribution, Disclaimer, or Proscription to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                    </tr><tr>
+                        <th>Subject:</th><td>The Party that attaches the Attribution, Disclaimer, or Proscription - usually the Party making the transfer.</td>
+                    </tr><tr>
+                        <th>Object:</th><td>The Party that receives the Attribution, Disclaimer, or Proscription - usually the recipient of the transfer.</td>
+                    </tr><tr>
+                        <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attach-0-9">md:Attach</a></td>
+                    </tr><tr>
+                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attributions</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscriptions</a></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
+                    </tr><tr>
+                        <th>Activation:</th><td>Third-party Recipient.</td>
+                    </tr>
+                </tbody>
+            </table>
             <section data-dfn-for="Attribution Duty">
                 <h2><dfn>Attribution Duty</dfn></h2>
                 <p>
@@ -119,25 +138,6 @@
                 </p><p>
                     The duty is usually activated when the Asset is transferred to a third-party, i.e. the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9">recipient</a> constraint is triggered by any instance of an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.
                 </p>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th><td>Requires and specifies an <code>Attribution</code> to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.</td>
-                        </tr><tr>
-                            <th>Subject:</th><td>The Party that attaches the Attribution - usually the Party making the transfer.</td>
-                        </tr><tr>
-                            <th>Object:</th><td>The Party that receives the Attribution - usually the <code>recipient</code> of the transfer.</td>
-                        </tr><tr>
-                            <th>Action:</th><td><code>md:Attach</code></td>
-                        </tr><tr>
-                            <th>Target:</th><td><code>md:Attribution</code></td>
-                        </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>md:wording</code>, <code>schema:url</code></td>
-                        </tr><tr>
-                            <th>Activation:</th><td>Usually when an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
-                        </tr>
-                    </tbody>
-                </table>
                 <section>
                     <h2>Attribution Code</h2>
                     <pre class="example nohighlight turtle" title="Attribution" id="AttributionExample">
