@@ -105,7 +105,7 @@
                 <h2>Time-Based</h2>
             </section>
         </section>
-        <section id="AttachmentPattern">
+        <section id="Attachment Pattern">
             <h2>Attachment Pattern</h2>  
             <p>
                 Market data licenses can require <code>Attributions</code>, <code>Disclaimers</code>, or <code>Proscriptions</code> to be attached to data when it is transferred from one <code>Party</code> to another.
@@ -115,7 +115,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Definition:</th><td>Requires and specifies an Attribution, Disclaimer, or Proscription to be attached to the data whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                        <th>Definition:</th><td>Requires and specifies an Attribution, Disclaimer, or Proscription to be attached to the data whenever the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">recipient</a> is an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.</td>
                     </tr><tr>
                         <th>Subject:</th><td>The Party that attaches the Attribution, Disclaimer, or Proscription - usually the Party making the transfer.</td>
                     </tr><tr>
@@ -123,7 +123,7 @@
                     </tr><tr>
                         <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attach-0-9">md:Attach</a></td>
                     </tr><tr>
-                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attributions</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimers</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscriptions</a></td>
+                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscriptions</a></td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a>, <code>schema:url</code></td>
                     </tr><tr>
@@ -136,7 +136,7 @@
                 <p>
                     Attribution duties require the Subject to attach a declaration of the <code>IP Owner's</code> title to the <code>Asset</code>.
                 </p><p>
-                    The duty is usually activated when the Asset is transferred to a third-party, i.e. the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9">recipient</a> constraint is triggered by any instance of an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a>.
+                    The duty is usually activated when the Asset is transferred to a third-party, i.e. the <code>recipient</code> constraint is triggered by any instance of an <code>External Party</code>.
                 </p>
                 <section>
                     <h2>Attribution Code</h2>
@@ -160,7 +160,7 @@
                 <p>
                     Disclaimers must sometimes be attached to derived data to clarify (usually distance) the relationship between the <code>IP Owner</code> of the source Asset and the derived Asset.
                 </p><p>
-                    Disclaimer duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">Disclaimer</a>
+                    Disclaimer duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now an <code>Disclaimer</code>
                 </p>
                 <section>
                     <h2>Disclaimer Code</h2>
@@ -184,13 +184,13 @@
                 <p>
                     Proscriptions are written instructions on the use of an Asset that must sometimes be attached the Asset before its distribution.
                 </p><p>
-                    When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement Duty</a> pattern below instead of this one.
+                    When the instructions are legally binding, and must be formally agreed with the <code>recipient</code>, use the <a>Agreement Pattern</a> below instead of this one.
                 </p><p>
-                    Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">Proscription</a>
+                    Proscription duties follow the same pattern as <a>Attribution Duties</a> except the value of the target property is now a <code>Proscription</code>
                 </p>
             </section>
         </section>
-        <section id="Agreements">
+        <section id="Agreement Pattern">
             <h2>Agreement Pattern</h2>  
             <p>
                 Some licenses require additional legally binding agreements to be in place before a <code>Permission</code> can be exercised. This requirement is captured in an <code>Agreement Duty</code>.
@@ -267,7 +267,7 @@
                 </section>
             </section>
         </section>
-        <section id="Notifications">
+        <section id="Notification Pattern">
             <h2>Notification Pattern</h2>  
             <p>
                 Data <code>Originators</code> and <code>Providers</code> sometimes require notification of particular events or changes in the state-of-the-world.
@@ -359,7 +359,7 @@
                 </section>
             </section>
         </section>
-        <section id="Requests and Consents">
+        <section id="Request and Consent Pattern">
             <h2>Request and Consent Pattern</h2> 
             <p>
                 Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action must be preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent must be requested.
@@ -486,7 +486,7 @@
             </section>
         </section>
     </section>
-    <section id="SegmentingAssets">
+    <section id="Segmenting Assets">
         <h2>Segmenting Assets</h2>
         <p>
             Many rules provide access to only a part of an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-0-9">Asset</a>. These segmentations can be by the type of the content (e.g. access to just French equities or only the index values, not the constituents and weightings) or by temporal reach (e.g. access to only three years of historical data). The first we call a <code>content segmentation</code> and the second, a <code>temporal segmentation</code>.
