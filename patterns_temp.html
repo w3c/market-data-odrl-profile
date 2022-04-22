@@ -377,15 +377,15 @@
         <section id="RequestAndConsentPattern">
             <h2>Request and Consent Pattern</h2> 
             <p>
-                Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action must be preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent must be requested.
+                Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action is preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent should be requested.
             </p>
             <p>
                 Often consent is required for distribution to a third-party or use by a service provider. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
             </p><p>
                 But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required (though withholding it would invalidate the parent permission).
             </p>
-            <section data-dfn-for="RequestConsentToRedistributeToAnExternalPartyDuty">
-                <h2><dfn>Request Consent to Redistribute to an External Party Duty</dfn></h2>
+            <section id="RequestPattern">
+                <h2>Request Pattern</h2> 
                 <table class="def propdef">
                     <p>
                         Often consent is required for distribution to a third-party or a service provider. In these cases, usually the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
@@ -406,6 +406,33 @@
                         </tr>
                     </tbody>
                 </table>
+            </section>
+            <section id="ConsentPattern">
+                <h2>Consent Pattern</h2> 
+                <table class="def propdef">
+                    <p>
+                        Often consent is required for distribution to a third-party or a service provider. In these cases, usually the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
+                    </p>
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies that a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> must be <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Requested</a> whenever the <code>recipient</code> is an <code>External Party</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The Party making the transfer - the <code>Assignee</code> of the <a>Permission</a>.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>Usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the <code>Asset</code> to be distributed.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>md:Request</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td>Sepcifies the <code>Entity</code> or <code>Event</code> - be it a recipient, asset, or distribution event - that the request covers.</td>
+                        </tr><tr>
+                            <th>Activation:</th><td>When an external Party becomes a Recipient of the Asset controlled by the parent Permission.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="RequestConsentToRedistributeToAnExternalPartyDuty">
+                <h2><dfn>Request Consent to Redistribute to an External Party Duty</dfn></h2>
+                
             </section>
             <section>
                 <h2><dfn>Consent to Redistribute to an External Party Duty</dfn></h2>
