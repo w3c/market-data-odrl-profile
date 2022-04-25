@@ -125,16 +125,19 @@
             </p><p>
                 A state-modifier provides a grace period in which the duty's <code>Action</code> can be exercised without it falling into the <code>Unfulfilled</code> state. The duty simply remains <code>Active</code> while the modifier holds. Of course, if the action is taken, then it immediately becomes <code>Fulfilled</code>.
             </p><p>
-                Usually a state-modifier specifies an interval. The <code>deadline</code> property allows us to do this:
-            </p><section id="Deadline">
+                Usually a state-modifier specifies an interval. The <code>deadline</code> property allows us to do this.
+            </p><p>
+                The <code>deadline</code> may specify a <code>time reference</code> from which the interval must be counted. Else, the countdown starts on activation.
+            </p>
+            <section id="Deadline">
                 <h2>Deadline Code</h2>
                 <p>In this example, the <code>Subject</code> has 30 days to exercise a duty's <code>Action</code> before it becomes <code>Unfulfilled</code></p>.
                 <p>Like time-based activation constraints, the interval must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>.</p>
                 <pre class="example nohighlight turtle" title="Specifying A Deadline" id="DeadlineExample">
                     <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">     </span><span class="p">[</span>
-                    <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                    <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
-                    <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+                    <span class="w">                         </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                    <span class="w">                     </span><span class="p">]</span><span class="p"> .</span>     
                 </pre>
             </section>
         </section>
@@ -572,19 +575,19 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Requires and specifies an Appeal to which the Subject must consent.</td>
+                            <th>Definition:</th><td>Requires and specifies a <code>Payment</code> which the <code>Subject</code> must make to the <code>Object</code>.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>The <code>Party</code> to which the <code>Appeal</code> has been make. For redistribution, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> of the <code>Asset</code> to be distributed. For audits, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Consumer</a></td>
+                            <th>Subject:</th><td>The <code>Party</code> that must make the payment.</td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party making the request.</td>
+                            <th>Object:</th><td>The Party to which the payment is made.</td>
                         </tr><tr>
-                            <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">md:Consent</a></td>
+                            <th>Action:</th><td><code>odrl:Compensate</code></td>
                         </tr><tr>
-                            <th>Target:</th><td><code>md:Appeal</code></td>
+                            <th>Target:</th><td><code>md:Payment</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url</code> pointing to the URL/email to which the consenr must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a> who must be identified.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>odrl:payAmount</code> specifying the amoun to be paid and <code>odrl:unit</code> indicating the currency of payment.</td>
                         </tr><tr>
-                            <th>Activation:</th><td>For transfers, <a href="#third-party-recipient-code">Third-party Recipient</a>. If no activation condition is set (e.g. an audit request), at the discretion of the <code>Subject</code>.</td>
+                            <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a> with a <a href="#Deadline">deadline</a>.</td>
                         </tr>
                     </tbody>
                 </table>
