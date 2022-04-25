@@ -601,23 +601,21 @@
                     </p>
                     <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider"
                     id="InvoiceAndPayment">
-                        <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w"> </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
-                        <span class="w">                       </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
                         <span class="w">                       </span><span class="p">]</span><span class="p"> .</span>     
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                               </span><span class="kt">a</span><span class="w">               </span><span class="nn">odrl:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                       </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                       </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                       </span><span class="nn">odrla:</span><span class="nt">payAmount</span><span class="w">    </span><span class="s">5350.00</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">odrl:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                       </span><span class="kt">a</span><span class="w">                            </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">    </span><span class="s">5350.00</span>
                         <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">          </span><span class="p">&lt;</span><span class="nv">https://www.wikidata.org/wiki/Q4917</span><span class="p">&gt;</span>     
                         <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="w"> </span><span class="p">.</span>
