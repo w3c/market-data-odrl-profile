@@ -597,7 +597,7 @@
                 <section>
                     <h2>Invoice and Payment Code</h2>
                     <p>
-                        In this example, the <code>Consumer</code> must pay the <code>Provider</code> $5350.00 per month, 30 days in arrears. The provider should invoice for this.
+                        In this example, the <code>Consumer</code> must pay the <code>Provider</code> $5,350.00 per month, 30 days in arrears. The provider should invoice for this.
                     </p>
                     <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider" id="InvoiceAndPayment">
                         <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
@@ -611,7 +611,7 @@
                         <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
                         <span class="w">                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                   </span><span class="nn">odrl:</span><span class="nt">Compensate</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Payment</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">       </span><span class="s">5350.00</span>
@@ -622,7 +622,7 @@
                         <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">odrl:</span><span class="nt">Invoice</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                    </span><span class="nn">odrl:</span><span class="nt">Invoice</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Payment</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">       </span><span class="s">5350.00</span>
