@@ -104,6 +104,7 @@
             </section>
             <section data-dfn-for="TimeBasedActivation">
                 <h2>Time-Based Pattern</h2>
+                <p>Many activities required by <code>Duties</code> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly. Payment schedules are often similar.</p>
                 <section id="Periodicity">
                     <h2>Periodicity Code</h2>
                     <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
@@ -127,7 +128,7 @@
                 Usually a state-modifier specifies an interval. The <code>deadline</code> property allows us to do this:
             </p><section id="Deadline">
                 <h2>Deadline Code</h2>
-                <p>In this example, the <code>Subject</code> has 30 days to take a duty's <a>Action</a> before it becomes <code>Unfulfilled</code></p>.
+                <p>In this example, the <code>Subject</code> has 30 days to exercise a duty's <code>Action</code> before it becomes <code>Unfulfilled</code></p>.
                 <p>Like time-based activation constraints, the interval must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>.</p>
                 <pre class="example nohighlight turtle" title="Specifying A Deadline" id="DeadlineExample">
                     <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">     </span><span class="p">[</span>
@@ -428,9 +429,6 @@
             </section>
             <section id="ConsentPattern">
                 <h2>Consent</h2>
-                <p>
-
-                </p>
                 <table class="def propdef">
                     <tbody>
                         <tr>
@@ -539,34 +537,32 @@
                 </section>
             </section>                
         </section>
-        <section id="InvoiceAndPayPattern">
-            <h2>Invoice and Pay Pattern</h2> 
+        <section id="InvoiceAndCompensatePattern">
+            <h2>Invoice and Compensate Pattern</h2> 
             <p>
-                Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action is preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent should be requested.
+                Like <a>Requests</a> and <a>Consents</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9">Invoice</a> and <code>Compensate</code> duties form a pair. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Compensate</a> action is preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9">Invoice</a> action, i.e. payments should be invoiced.
             </p>
             <p>
-                Often consent is required for distribution to a third-party or use by a service provider. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
-            </p><p>
-                But there are also cases - like an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audit</a> - where the consent of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Data Consumer</a> is required (though withholding it would invalidate the parent permission).
+                Each target a <code>Payment</code> that must specify the amount to be paid and currency. The latter should be specified using instances of the <a href="https://www.wikidata.org/wiki/Q8142">Wikidata Currency Class</a>.
             </p>
             <section id="InvoicePattern">
                 <h2>Invoice</h2> 
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Requires and specifies an <code>Appeal</code> that the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#subject-0-9">Subject</a> must request of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#object-0-9">Object</a>.</td>
+                            <th>Definition:</th><td>Requires and specifies a <code>Payment</code> for which the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#subject-0-9">Subject</a> must ivoice the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#object-0-9">Object</a>.</td>
                         </tr><tr>
-                            <th>Subject:</th><td>The <code>Party</code> making the request - usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Consumer</a>, except in the case of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#audit-0-9">Audits</a>, where the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a> makes the request.</td>
+                            <th>Subject:</th><td>The <code>Party</code> raising the invoice - usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a>.</td>
                         </tr><tr>
-                            <th>Object:</th><td>The Party that must <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consent-0-9">consent</a> to the request.</td>
+                            <th>Object:</th><td>The Party that must make the <code>Payment</code> - usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Consumer</a>.</td>
                         </tr><tr>
-                            <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#request-0-9">md:Request</a></td>
+                            <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#invoice-0-9">md:Invoice</a></td>
                         </tr><tr>
-                            <th>Target:</th><td><code>md:Appeal</code></td>
+                            <th>Target:</th><td><code>md:Payment</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url</code> pointing to the URL/email to which the appeal must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a> who must be identified.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>odrl:payAmount</code> specifying the amoun to be paid and <code>odrl:unit</code> indicating the currency of payment.</td>
                         </tr><tr>
-                            <th>Activation:</th><td>For transfers, <a href="#third-party-recipient-code">Third-party Recipient</a>. If no activation condition is set (e.g. an audit request), at the discretion of the <code>Subject</code>.</td>
+                            <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a>.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -678,7 +674,6 @@
         
         <section id="Deadlines">
             <h2>Deadlines</h2>
-            <p>Not all <code>Duties</code> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
             <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDeltaExample">
                 <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
