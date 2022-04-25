@@ -48,7 +48,7 @@
                 There are two types of activation condition: those fired by the state-of-the world and those triggered by the passage of time.
             </p>
             <section data-dfn-for="StateOfTheWorldActivation">
-                <h2>State-of-the-World</h2>
+                <h2>State-of-the-World Pattern</h2>
                 <p>
                     Market data licenses are sensitive to two key changes:
                 </p>
@@ -103,9 +103,9 @@
                 </section>
             </section>
             <section data-dfn-for="TimeBasedActivation">
-                <h2>Time-Based</h2>
+                <h2>Time-Based Pattern</h2>
                 <section id="Periodicity">
-                    <h2>Periodicity</h2>
+                    <h2>Periodicity Code</h2>
                     <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
                     <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
                     <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeIntervalExample">
@@ -116,6 +116,14 @@
                     </pre>
                 </section>
             </section>
+        </section>
+        <section data-dfn-for="StateModifiers">
+            <h2>State Modifiers</h2>
+            <p>
+                Unless qualified by a state-modifier, <code>Duties</code> must be immediately <a>Fulfilled</a> on beconing <a>Active</a> else they fall into the <a>Unfulfilled</a> state (and so invalidating their parent <code>Permission</code>).
+            </p><p>
+                A state-modifier provides a grace period in which the duty's <code>Action</code> can be exercised without it falling into the <a>Unfulfilled</a> state. The duty simply remains <a>Active</a> while the modifier holds. Of course, if the <a>Action</a> is taken, then it immediately becomes <code>Fulfilled</code>.
+            </p>
         </section>
         <section id="AttachmentPattern">
             <h2>Attachment Pattern</h2>  
@@ -438,6 +446,9 @@
                 </p>
                 <section>
                     <h2>Request and Consent Code - Service Facilitator</h2>
+                    <p>
+                        This example presupposes that the <code>Asset</code> is being transferred to the <code>Service Provider</code> under a <code>Distribution Permission</code> and that the service provider will then use their own permissions to process the <code>Asset</code>. If the service provider were to use the <a href="">Consumer's</a> <code>Use Permissions</code>, no distribution is required, and the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">users</a> constraint should be used in place of the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a> constraint.
+                    </p>
                     <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider"
                     id="RequestSFConsent">
                         <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
