@@ -508,25 +508,14 @@
                     <code>Audit</code> requests require the consent of the data <code>Consumer</code>. Withholding this, however, may invalidate the parent <code>Permission</code>.
                 </p><p>
                     In this example, the <code>deadline</code> modifier gives the <code>Consumer</code> 30 days to consent.
-                </p>              
+                </p><p>
+                    The <code>effectiveInterval</code>
+                </p>        
                 <section>
                     <h2>Request and Consent Code - Audit</h2>
                     <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for an Audit"
                     id="RequestAuditConsent">
                         <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
-                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
-                        <br/>
-                        <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">       </span><span class="p">[</span>
@@ -540,8 +529,25 @@
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
+                        <br/>
+                        <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1Y"^^xsd:duration</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">count</span>           <span class="s">2</span>
+                        <span class="w">                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
                         <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
-                    
                     </pre>
                 </section>
             </section>                
