@@ -148,7 +148,7 @@
                 <p>In this example, the <code>Subject</code> can exercise a duty's <code>Action</code> twice in a year</p>.
                 <pre class="example nohighlight turtle" title="Specifying An Interval Count" id="IntervalCountExample">
                     <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">intervalCount</span><span class="w"> </span><span class="p">[</span>
-                    <span class="w">                         </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">IntervalCount</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                         </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">IntervalCount</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1Y"^^xsd:duration</span>
                     <span class="w">                         </span><span class="nn">odrl:</span><span class="nt">count</span>           <span class="s">2</span>
                     <span class="w">                      </span><span class="p">]</span><span class="p"> .</span>     
@@ -524,6 +524,8 @@
                     In this example, the <code>deadline</code> modifier gives the <code>Consumer</code> 30 days to consent.
                 </p><p>
                     The <code>effective interval</code> modifier limits the <code>Originator</code> to requesting an audit at most twice in a year.
+                </p><p>
+                    If the request is on the basis of reasonable suspicion, then the <code>basis</code> property should be added to the <code>Appeal</code> indicating <code>reasonable suspicion</code>
                 </p>        
                 <section>
                     <h2>Request and Consent Code - Audit</h2>
@@ -550,7 +552,7 @@
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">          </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">intervalCount</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                             </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">IntervalCount</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                             </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1Y"^^xsd:duration</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">count</span>           <span class="s">2</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
@@ -573,6 +575,8 @@
             </p>
             <p>
                 Each target a <code>Payment</code> that must specify the amount to be paid and currency. The latter should be specified using instances of the <a href="https://www.wikidata.org/wiki/Q8142">Wikidata Currency Class</a>.
+            </p><p>
+                The <code>Payment</code> should also indicate the <code>unit of count</code>.
             </p>
             <section id="InvoicePattern">
                 <h2>Invoice</h2> 
