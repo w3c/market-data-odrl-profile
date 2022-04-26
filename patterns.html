@@ -104,6 +104,7 @@
             </section>
             <section data-dfn-for="TimeBasedActivation">
                 <h2>Time-Based Pattern</h2>
+                <p>Many activities required by <code>Duties</code> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly. Payment schedules are often similar.</p>
                 <section id="Periodicity">
                     <h2>Periodicity Code</h2>
                     <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
@@ -119,6 +120,26 @@
         </section>
         <section data-dfn-for="StateModifiers">
             <h2>State Modifiers</h2>
+            <p>
+                Unless qualified by a state-modifier, <code>Duties</code> must be immediately <code>Fulfilled</code> on beconing <code>Active</code> else they fall into the <code>Unfulfilled</code> state (and so invalidating their parent <code>Permission</code>).
+            </p><p>
+                A state-modifier provides a grace period in which the duty's <code>Action</code> can be exercised without it falling into the <code>Unfulfilled</code> state. The duty simply remains <code>Active</code> while the modifier holds. Of course, if the action is taken, then it immediately becomes <code>Fulfilled</code>.
+            </p><p>
+                Usually a state-modifier specifies an interval. The <code>deadline</code> property allows us to do this.
+            </p><p>
+                The <code>deadline</code> may specify a <code>time reference</code> from which the interval must be counted. Else, the countdown starts on activation.
+            </p>
+            <section id="Deadline">
+                <h2>Deadline Code</h2>
+                <p>In this example, the <code>Subject</code> has 30 days to exercise a duty's <code>Action</code> before it becomes <code>Unfulfilled</code></p>.
+                <p>Like time-based activation constraints, the interval must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>.</p>
+                <pre class="example nohighlight turtle" title="Specifying A Deadline" id="DeadlineExample">
+                    <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">     </span><span class="p">[</span>
+                    <span class="w">                         </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                    <span class="w">                     </span><span class="p">]</span><span class="p"> .</span>     
+                </pre>
+            </section>
         </section>
         <section id="AttachmentPattern">
             <h2>Attachment Pattern</h2>  
@@ -411,9 +432,6 @@
             </section>
             <section id="ConsentPattern">
                 <h2>Consent</h2>
-                <p>
-
-                </p>
                 <table class="def propdef">
                     <tbody>
                         <tr>
@@ -488,6 +506,8 @@
                 <h2><dfn>Request Consent to Audit Duties</dfn></h2>
                 <p>
                     <code>Audit</code> requests require the consent of the data <code>Consumer</code>. Withholding this, however, may invalidate the parent <code>Permission</code>.
+                </p><p>
+                    In this example, the <code>deadline</code> modifier gives the <code>Consumer</code> 30 days to consent.
                 </p>              
                 <section>
                     <h2>Request and Consent Code - Audit</h2>
@@ -509,6 +529,10 @@
                         <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                        <span class="w">                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -521,6 +545,98 @@
                     </pre>
                 </section>
             </section>                
+        </section>
+        <section id="InvoiceAndCompensatePattern">
+            <h2>Invoice and Compensate Pattern</h2> 
+            <p>
+                Like <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Requests</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consents</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9">Invoice</a> and <code>Compensate</code> duties form a pair. A <code>Compensate</code> action is preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9">Invoice</a> action, i.e. payments should be invoiced.
+            </p>
+            <p>
+                Each target a <code>Payment</code> that must specify the amount to be paid and currency. The latter should be specified using instances of the <a href="https://www.wikidata.org/wiki/Q8142">Wikidata Currency Class</a>.
+            </p>
+            <section id="InvoicePattern">
+                <h2>Invoice</h2> 
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies a <code>Payment</code> for which the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#subject-0-9">Subject</a> must ivoice the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#object-0-9">Object</a>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The <code>Party</code> raising the invoice - usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a>.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party that must make the <code>Payment</code> - usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9">Consumer</a>.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#invoice-0-9">md:Invoice</a></td>
+                        </tr><tr>
+                            <th>Target:</th><td><code>md:Payment</code></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>odrl:payAmount</code> specifying the amount to be paid and <code>odrl:unit</code> indicating the currency of payment.</td>
+                        </tr><tr>
+                            <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="PayPattern">
+                <h2>Pay</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th><td>Requires and specifies a <code>Payment</code> which the <code>Subject</code> must make to the <code>Object</code>.</td>
+                        </tr><tr>
+                            <th>Subject:</th><td>The <code>Party</code> that must make the payment.</td>
+                        </tr><tr>
+                            <th>Object:</th><td>The Party to which the payment is made.</td>
+                        </tr><tr>
+                            <th>Action:</th><td><code>odrl:Compensate</code></td>
+                        </tr><tr>
+                            <th>Target:</th><td><code>md:Payment</code></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>odrl:payAmount</code> specifying the amount to be paid and <code>odrl:unit</code> indicating the currency of payment.</td>
+                        </tr><tr>
+                            <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a> with a <a href="#Deadline">deadline</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="InvoiceAndPaymentDuties">
+                <h2><dfn>Invoice and Payment Duties</dfn></h2>
+                <section>
+                    <h2>Invoice and Payment Code</h2>
+                    <p>
+                        In this example, the <code>Consumer</code> must pay the <code>Provider</code> $5,350.00 per month, 30 days in arrears. The provider should invoice for this.
+                    </p>
+                    <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider" id="InvoiceAndPayment">
+                        <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                        <span class="w">                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Compensate</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Payment</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">       </span><span class="s">5350.00</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">https://www.wikidata.org/wiki/Q4917</span><span class="p">&gt;</span>     
+                        <span class="w">                        </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nt">:R1</span><span class="w"> </span><span class="p">.</span>
+                        <br/>
+                        <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                    </span><span class="nn">odrl:</span><span class="nt">Invoice</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Payment</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">       </span><span class="s">5350.00</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">https://www.wikidata.org/wiki/Q4917</span><span class="p">&gt;</span>     
+                        <span class="w">                        </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>                
+                    </pre>
+                </section>
+            </section>               
         </section>
     </section>
     <section id="Segmenting Assets">
@@ -556,7 +672,6 @@
         
         <section id="Deadlines">
             <h2>Deadlines</h2>
-            <p>Not all <code>Duties</code> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
             <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDeltaExample">
                 <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
