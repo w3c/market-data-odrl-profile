@@ -451,7 +451,7 @@
                         In this example, reporting by UserID must be done monthly and 30 days in arrears.
                     </p>
                     <pre class="example nohighlight turtle" title="Reporting" id="ReportingExample">
-                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w"> </span><span class="p">[</span>
@@ -462,9 +462,7 @@
                         <span class="w">                           </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                           </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
                         <span class="w">                       </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
-                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
-                        <span class="w">                           </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                       </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                           </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">UsageReport</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                           </span><span class="nn">md:</span><span class="nt">reportingCode</span><span class="w">     </span><span class="s">“SMGL2SST”</span><span class="w"> </span><span class="p">;</span>
