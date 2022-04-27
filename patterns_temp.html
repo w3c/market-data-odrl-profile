@@ -173,9 +173,9 @@
                     </tr><tr>
                         <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attach-0-9">md:Attach</a></td>
                     </tr><tr>
-                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
+                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the attribution, disclaimer, or proscription; or <code>schema:url</code> - linking to the required wording.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the attribution, disclaimer, or proscription; and/or <code>schema:url</code> - linking to the required wording.</td>
                     </tr><tr>
                         <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a>.</td>
                     </tr>
@@ -264,9 +264,9 @@
                     </tr><tr>
                         <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#agree-0-9">md:Agree</a></td>
                     </tr><tr>
-                        <th>Target:</th><td><code>md:License</code>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
+                        <th>Target:</th><td><code>md:License</code> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the proscription; or <code>schema:url</code> - linking to the wording of the proscription or to the license.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the proscription; and/or <code>schema:url</code> - linking to the wording of the proscription or to the license.</td>
                     </tr><tr>
                         <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a> , or <a href="#new-users-code">New User</a>.</td>
                     </tr>
@@ -339,7 +339,7 @@
                     </tr><tr>
                         <th>Target:</th><td><code>md:Notification</code></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified ; or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified, or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
                     </tr><tr>
                         <th>Activation:</th><td><a href="#new-users-code">New User</a> , or <a href="#third-party-recipient-code">Third-party Recipient</a>.</td>
                     </tr>
@@ -409,6 +409,63 @@
                             Often this assumption is not true - <code>Service Facilitators</code> can not use the <code>Consummer's Permission</code> and must license separately. If so, an <a>Agreement Duty</a> should be applied targeting the required license.
                         </p>
                     </div>
+                </section>
+            </section>
+        </section>
+        <section id="ReportingPattern">
+            <h2>Reporting Pattern</h2>  
+            <p>
+                Data <code>Originators</code> and <code>Providers</code> often require reports on the use of their <code>Assets</code>, especially of realtime data.
+            </p><p>
+                The <code>Usage Report</code> should indicate a URL (or email) to the which the report should be posted, and use the <code>unit of count</code> and <code>time interval</code> properties to indicate the type, and period, of usage that must be reported.
+            </p><p>
+                The duty is activated when the <code>users</code> constraint is satisfied.
+            </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Requires a <code>Usage Report</code> be sent when the activation condition is met.</td>
+                    </tr><tr>
+                        <th>Subject:</th><td>The <code>Party</code> providing the usage report - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9"> Data Consmuer</a>.</td>
+                    </tr><tr>
+                        <th>Object:</th><td>The Party receiving the usage report - usually the Party playing the role of data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a>.</td>
+                    </tr><tr>
+                        <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#report-0-9">md:Report</a></td>
+                    </tr><tr>
+                        <th>Target:</th><td><code>md:UsageReport</code></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the report must be posted; <code>odrl:unitOfCount</code> specifying the unit of reporting (e.g. user, or application); <code>odrl:timeInterval</code> specifying the time period covered by the report; and <code>md:reportingCode</code> indentifying the product to be reported against.</td>
+                    </tr><tr>
+                        <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <section data-dfn-for="ReportingDuty">
+                <h2><dfn>Reporting Duty</dfn></h2>
+                <p>
+                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <code>Asset</code> targetted by the parent <code>Permission</code>.
+                </p>
+                <section>
+                    <h2>Reporting Code</h2>
+                    <p>
+                        Reporting requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code> - i.e. when the parent <code>Permission</code> is first exercised.
+                    </p><p>
+                        A URL (or email) to the which the fulfilled notification rule can be posted should be provided as a property of the <code>Notification</code>.
+                    </p><p>
+                        The duty is activated when the <code>periodic</code> constraint is satisfied.
+                    </p>
+                    <pre class="example nohighlight turtle" title="Reporting" id="ReportingExample">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">InternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">UsageReport</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/internal_party_notifications</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
                 </section>
             </section>
         </section>
