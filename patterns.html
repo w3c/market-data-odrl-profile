@@ -21,6 +21,30 @@
 <section id="conformance"></section>
 <section id="Patterns">
     <h2>Patterns</h2>
+    <section data-dfn-for="Permissions">
+        <h2>Permissions</h2>
+        <section data-dfn-for="Distribution">
+            <h2>Distribution</h2>
+        </section>
+        <section data-dfn-for="Non-DisplayUse">
+            <h2>Non-Display Use</h2>
+        </section>
+        <section data-dfn-for="DerivingData">
+            <h2>Deriving Data</h2>
+        </section>
+        <section data-dfn-for="UsingDerivedData">
+            <h2>Using Derived Data</h2>
+        </section>
+        <section data-dfn-for="Controls">
+            <h2>Controls</h2>
+        </section>
+        <section data-dfn-for="WhiteLabelling">
+            <h2>White Labelling</h2>
+        </section>
+        <section data-dfn-for="WebHosting">
+            <h2>Web Hosting</h2>
+        </section>
+    </section>
     <section data-dfn-for="Duties">
         <h2>Duties</h2>
         <p>
@@ -121,23 +145,37 @@
         <section data-dfn-for="StateModifiers">
             <h2>State Modifiers</h2>
             <p>
+                <code>State Modifiers</code> help manage the <code>Deontic State</code> of <code>Duties.</code>
+            </p>
+            <p>
                 Unless qualified by a state-modifier, <code>Duties</code> must be immediately <code>Fulfilled</code> on beconing <code>Active</code> else they fall into the <code>Unfulfilled</code> state (and so invalidating their parent <code>Permission</code>).
             </p><p>
-                A state-modifier provides a grace period in which the duty's <code>Action</code> can be exercised without it falling into the <code>Unfulfilled</code> state. The duty simply remains <code>Active</code> while the modifier holds. Of course, if the action is taken, then it immediately becomes <code>Fulfilled</code>.
+                The <code>deadline</code> property provides a grace period in which the duty's <code>Action</code> can be exercised without it falling into the <code>Unfulfilled</code> state. The duty simply remains <code>Active</code> while the modifier holds. Of course, if the action is taken, then it immediately becomes <code>Fulfilled</code>.
             </p><p>
-                Usually a state-modifier specifies an interval. The <code>deadline</code> property allows us to do this.
+                Usually a state-modifier specifies an interval. The <code>deadline</code> may additionally specify a <code>time reference</code> from which the interval must be counted. Else, the countdown starts on activation.
             </p><p>
-                The <code>deadline</code> may specify a <code>time reference</code> from which the interval must be counted. Else, the countdown starts on activation.
+                When there are no activation conditions, the <code>interval count</code> property controls the number of times a duty's action may be exercised within a given time interval.
             </p>
             <section id="Deadline">
                 <h2>Deadline Code</h2>
-                <p>In this example, the <code>Subject</code> has 30 days to exercise a duty's <code>Action</code> before it becomes <code>Unfulfilled</code></p>.
+                <p>In this example, the <code>Subject</code> has 30 days to exercise a duty's <code>Action</code> before it becomes <code>Unfulfilled</code>.</p>
                 <p>Like time-based activation constraints, the interval must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>.</p>
                 <pre class="example nohighlight turtle" title="Specifying A Deadline" id="DeadlineExample">
                     <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">     </span><span class="p">[</span>
                     <span class="w">                         </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                     <span class="w">                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
                     <span class="w">                     </span><span class="p">]</span><span class="p"> .</span>     
+                </pre>
+            </section>
+            <section id="IntervalCount">
+                <h2>Interval Count Code</h2>
+                <p>In this example, the <code>Subject</code> can exercise a duty's <code>Action</code> twice in a year</p>.
+                <pre class="example nohighlight turtle" title="Specifying An Interval Count" id="IntervalCountExample">
+                    <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">intervalCount</span><span class="w"> </span><span class="p">[</span>
+                    <span class="w">                         </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">IntervalCount</span><span class="w"> </span><span class="p">;</span>
+                    <span class="w">                         </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1Y"^^xsd:duration</span>
+                    <span class="w">                         </span><span class="nn">odrl:</span><span class="nt">count</span>           <span class="s">2</span>
+                    <span class="w">                      </span><span class="p">]</span><span class="p"> .</span>     
                 </pre>
             </section>
         </section>
@@ -159,9 +197,9 @@
                     </tr><tr>
                         <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attach-0-9">md:Attach</a></td>
                     </tr><tr>
-                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
+                        <th>Target:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#attribution-0-9">md:Attribution</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#disclaimer-0-9">md:Disclaimer</a>, or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the attribution, disclaimer, or proscription; or <code>schema:url</code> - linking to the required wording.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the attribution, disclaimer, or proscription; and/or <code>schema:url</code> - linking to the required wording.</td>
                     </tr><tr>
                         <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a>.</td>
                     </tr>
@@ -250,9 +288,9 @@
                     </tr><tr>
                         <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#agree-0-9">md:Agree</a></td>
                     </tr><tr>
-                        <th>Target:</th><td><code>md:License</code>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
+                        <th>Target:</th><td><code>md:License</code> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#proscription-0-9">md:Proscription</a></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the proscription; or <code>schema:url</code> - linking to the wording of the proscription or to the license.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#wording-0-9">md:wording</a> - providing the wording of the proscription; and/or <code>schema:url</code> - linking to the wording of the proscription or to the license.</td>
                     </tr><tr>
                         <th>Activation:</th><td><a href="#third-party-recipient-code">Third-party Recipient</a> , or <a href="#new-users-code">New User</a>.</td>
                     </tr>
@@ -325,7 +363,7 @@
                     </tr><tr>
                         <th>Target:</th><td><code>md:Notification</code></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified ; or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the notification must be posted; <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9">md:users</a>, indicating the users that must be identified, or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9">md:recipients</a>, indicating the recipients.</td>
                     </tr><tr>
                         <th>Activation:</th><td><a href="#new-users-code">New User</a> , or <a href="#third-party-recipient-code">Third-party Recipient</a>.</td>
                     </tr>
@@ -395,6 +433,71 @@
                             Often this assumption is not true - <code>Service Facilitators</code> can not use the <code>Consummer's Permission</code> and must license separately. If so, an <a>Agreement Duty</a> should be applied targeting the required license.
                         </p>
                     </div>
+                </section>
+            </section>
+        </section>
+        <section id="ReportingPattern">
+            <h2>Reporting Pattern</h2>  
+            <p>
+                Data <code>Originators</code> and <code>Providers</code> often require reports on the use of their <code>Assets</code>, especially for realtime data.
+            </p><p>
+                The <code>Usage Report</code> should indicate a URL (or email) to the which the report should be posted, and use the <code>unit of count</code> and <code>time interval</code> properties to indicate the type and period of usage that must be reported.
+            </p><p>
+                The duty is usually activated on a <a href="#Periodicity">periodic</a> constraint.
+            </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Definition:</th><td>Requires a <code>Usage Report</code> be sent when the activation condition is met.</td>
+                    </tr><tr>
+                        <th>Subject:</th><td>The <code>Party</code> providing the usage report - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9"> Data Consmuer</a>.</td>
+                    </tr><tr>
+                        <th>Object:</th><td>The Party receiving the usage report - usually the Party playing the role of data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9">Provider</a>.</td>
+                    </tr><tr>
+                        <th>Action:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#report-0-9">md:Report</a></td>
+                    </tr><tr>
+                        <th>Target:</th><td><code>md:UsageReport</code></td>
+                    </tr><tr>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the report must be posted; <code>odrl:unitOfCount</code> specifying the unit of reporting (e.g. user, or application); <code>odrl:timeInterval</code> specifying the time period covered by the report; and <code>md:reportingCode</code> indentifying the product to be reported against.</td>
+                    </tr><tr>
+                        <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <section data-dfn-for="ReportingDuty">
+                <h2><dfn>Reporting Duty</dfn></h2>
+                <p>
+                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <code>Asset</code> targetted by the parent <code>Permission</code> SMGL2SST.
+                </p>
+                <section>
+                    <h2>Reporting Code</h2>
+                    <p>
+                        In this example, reporting by <code>User ID</code> must be done monthly, 30 days in arrears, under the <code>reporting code</code>
+                    </p>
+                    <pre class="example nohighlight turtle" title="Reporting" id="ReportingExample">
+                        <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/provider</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                           </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                       </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                           </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                        <span class="w">                       </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                           </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">UsageReport</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">md:</span><span class="nt">reportingCode</span><span class="w">     </span><span class="s">“SMGL2SST”</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">UserID</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">    </span><span class="p">[</span>
+                        <span class="w">                                                    </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                                    </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span> <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                                                 </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/reports</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                      </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
                 </section>
             </section>
         </section>
@@ -508,40 +611,48 @@
                     <code>Audit</code> requests require the consent of the data <code>Consumer</code>. Withholding this, however, may invalidate the parent <code>Permission</code>.
                 </p><p>
                     In this example, the <code>deadline</code> modifier gives the <code>Consumer</code> 30 days to consent.
-                </p>              
+                </p><p>
+                    The <code>effective interval</code> modifier limits the <code>Originator</code> to requesting an audit at most twice in a year.
+                </p><p>
+                    If the request is on the basis of reasonable suspicion, then the <code>basis</code> property should be added to the <code>Appeal</code> indicating <code>reasonable suspicion</code>
+                </p>        
                 <section>
                     <h2>Request and Consent Code - Audit</h2>
                     <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for an Audit"
                     id="RequestAuditConsent">
-                        <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
-                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">     </span><span class="nt">:R1</span><span class="p"> .</span>
-                        <br/>
-                        <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">md:</span><span class="nt">deadline</span><span class="w">       </span><span class="p">[</span>
-                        <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                            </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
                         <span class="w">                        </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                    </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
-                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>                        
-                        <span class="w">                    </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
-                    
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">                        </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nt">:R1</span><span class="p"> .</span>
+                        <br/>
+                        <span class="nt">:R1</span><span class="w">   </span><span class="kt">a</span><span class="w">                  </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">object</span><span class="w">          </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">intervalCount</span><span class="w">   </span><span class="p">[</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">IntervalCount</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1Y"^^xsd:duration</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">odrl:</span><span class="nt">count</span>           <span class="s">2</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">        </span><span class="p">[</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Request</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Audit</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">        </span><span class="p">[</span>
+                        <span class="w">                             </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Appeal</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                             </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/audit_appeals</span><span class="p">&gt;</span>                        
+                        <span class="w">                         </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>
                     </pre>
                 </section>
             </section>                
@@ -553,6 +664,8 @@
             </p>
             <p>
                 Each target a <code>Payment</code> that must specify the amount to be paid and currency. The latter should be specified using instances of the <a href="https://www.wikidata.org/wiki/Q8142">Wikidata Currency Class</a>.
+            </p><p>
+                If applicable, the <code>Payment</code> must also indicate the <code>unit of count</code>.
             </p>
             <section id="InvoicePattern">
                 <h2>Invoice</h2> 
@@ -591,7 +704,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Payment</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>odrl:payAmount</code> specifying the amount to be paid and <code>odrl:unit</code> indicating the currency of payment.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>odrl:payAmount</code> specifying the amount to be paid; <code>odrl:unit</code> indicating the currency of payment; <code>odrl:unitOfCount</code> providing the unit of payment (e.g. per user); <code>odrl:timeInterval</code> specifying the time period covered by the payment.</td>
                         </tr><tr>
                             <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a> with a <a href="#Deadline">deadline</a>.</td>
                         </tr>
@@ -603,7 +716,7 @@
                 <section>
                     <h2>Invoice and Payment Code</h2>
                     <p>
-                        In this example, the <code>Consumer</code> must pay the <code>Provider</code> $5,350.00 per month, 30 days in arrears. The provider should invoice for this.
+                        In this example, the <code>Consumer</code> must pay the <code>Provider</code> $5,350.00 per month per consuming application, 30 days in arrears. The provider should invoice for this.
                     </p>
                     <pre class="example nohighlight turtle" title="Paired Request and Consent Duties for a Service Provider" id="InvoiceAndPayment">
                         <span class="p">[]</span><span class="w">    </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p">;</span>
@@ -621,7 +734,12 @@
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Payment</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">       </span><span class="s">5350.00</span>
-                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">https://www.wikidata.org/wiki/Q4917</span><span class="p">&gt;</span>     
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">https://www.wikidata.org/wiki/Q4917</span><span class="p">&gt;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Application</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">    </span><span class="p">[</span>
+                        <span class="w">                                                     </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                                     </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span> <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                                                  </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                        </span><span class="p">]</span><span class="w">  </span><span class="p">;</span>
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nt">:R1</span><span class="w"> </span><span class="p">.</span>
                         <br/>
@@ -632,63 +750,20 @@
                         <span class="w">      </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                            </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Payment</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">payAmount</span><span class="w">       </span><span class="s">5350.00</span>
-                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">https://www.wikidata.org/wiki/Q4917</span><span class="p">&gt;</span>     
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unit</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">https://www.wikidata.org/wiki/Q4917</span><span class="p">&gt;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">     </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Application</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">    </span><span class="p">[</span>
+                        <span class="w">                                                     </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                                     </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span> <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                                                  </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
                         <span class="w">                        </span><span class="p">]</span><span class="w">  </span><span class="p">.</span>                
                     </pre>
                 </section>
             </section>               
         </section>
     </section>
-    <section id="Segmenting Assets">
-        <h2>Segmenting Assets</h2>
-        <p>
-            Many rules provide access to only a part of an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-0-9">Asset</a>. These segmentations can be by the type of the content (e.g. access to just French equities or only the index values, not the constituents and weightings) or by temporal reach (e.g. access to only three years of historical data). The first we call a <code>content segmentation</code> and the second, a <code>temporal segmentation</code>.
-        </p>
-        <section id="TemporalSegmentations">
-            <h2>Temporal Segmentations</h2>
-            <p>The most common temporal segmentations control access to historical data or time series data.</p>
-            <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
-            <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeInterval">
-                <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
-                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P1M"^^xsd:duration</span>
-                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
-            </pre>
-        </section>
-        <section id="ContentSegmentations">
-            <h2>Content Segmentations</h2>
-            <p>Not all <code>Duties</code> need be fulfilled the moment they activate. Often a grace period is provided in which the Duty can be fulfilled. These are specified using the <code>deadline delta</code> property. It defines an interval (frequently 30 days) within which the containing Duty must be fulfilled.</p>
-            <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDelta">
-                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
-                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
-                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
-            </pre>
-        </section>
-    </section>
     <section id="Time">
-        <h2>Time</h2>
-        <p>Many activities required by <code>Duties</code> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly, 30 days in arrears. Payment schedules are often similar.</p>
-        
-        <section id="Deadlines">
-            <h2>Deadlines</h2>
-            <pre class="example nohighlight turtle" title="Specifying A Deadline Delta" id="DeadlineDeltaExample">
-                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">hasDeadlineDelta</span><span class="w">  </span><span class="p">[</span>
-                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P30D"^^xsd:duration</span>
-                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
-            </pre>
-        </section>
-        <section id="TemporalConstraints">
-            <h2>Temporal Constraints</h2>
-            <p>Temporal constaints specify access to historical data using the temporal property. The interval allowing access to the latest three years of historical data would look so:</p>
-            <pre class="example nohighlight turtle" title="Specifying A Temporal Constraint" id="TemporalConstraintExample">
-                <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">temporal</span><span class="w">  </span><span class="p">[</span>
-                <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
-                <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P3Y"^^xsd:duration</span>
-                <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
-            </pre>
-        </section>
+        <h2>Time</h2>        
         <section id="SpecifiedIntervals">
             <h2>Specified Intervals</h2>
             <p>Sometimes, for example, when an <code>effective interbal</code> is being specified, we need to indicate interval than run from a specified data and/or to one. We rely on some properties from the <a href="https://www.w3.org/TR/owl-time/">Time Ontology</a> to do so.</p>
