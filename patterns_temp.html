@@ -21,6 +21,30 @@
 <section id="conformance"></section>
 <section id="Patterns">
     <h2>Patterns</h2>
+    <section data-dfn-for="Permissions">
+        <h2>Permissions</h2>
+        <section data-dfn-for="Distribution">
+            <h2>Distribution</h2>
+        </section>
+        <section data-dfn-for="Non-DisplayUse">
+            <h2>Non-Display Use</h2>
+        </section>
+        <section data-dfn-for="DerivingData">
+            <h2>Deriving Data</h2>
+        </section>
+        <section data-dfn-for="UsingDerivedData">
+            <h2>Using Derived Data</h2>
+        </section>
+        <section data-dfn-for="Controls">
+            <h2>Controls</h2>
+        </section>
+        <section data-dfn-for="WhiteLabelling">
+            <h2>White Labelling</h2>
+        </section>
+        <section data-dfn-for="WebHosting">
+            <h2>Web Hosting</h2>
+        </section>
+    </section>
     <section data-dfn-for="Duties">
         <h2>Duties</h2>
         <p>
@@ -443,12 +467,12 @@
             <section data-dfn-for="ReportingDuty">
                 <h2><dfn>Reporting Duty</dfn></h2>
                 <p>
-                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <code>Asset</code> targetted by the parent <code>Permission</code>.
+                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <code>Asset</code> targetted by the parent <code>Permission</code> SMGL2SST.
                 </p>
                 <section>
                     <h2>Reporting Code</h2>
                     <p>
-                        In this example, reporting by UserID must be done monthly and 30 days in arrears.
+                        In this example, reporting by <code>User ID</code> must be done monthly, 30 days in arrears, under the <code>reporting code</code>
                     </p>
                     <pre class="example nohighlight turtle" title="Reporting" id="ReportingExample">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
@@ -471,7 +495,7 @@
                         <span class="w">                                                    </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                                                    </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span> <span class="s">"P1M"^^xsd:duration</span>
                         <span class="w">                                                 </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                           </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/reports</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/reports</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                      </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
