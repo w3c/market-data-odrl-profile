@@ -415,11 +415,11 @@
         <section id="ReportingPattern">
             <h2>Reporting Pattern</h2>  
             <p>
-                Data <code>Originators</code> and <code>Providers</code> often require reports on the use of their <code>Assets</code>, especially of realtime data.
+                Data <code>Originators</code> and <code>Providers</code> often require reports on the use of their <code>Assets</code>, especially for realtime data.
             </p><p>
-                The <code>Usage Report</code> should indicate a URL (or email) to the which the report should be posted, and use the <code>unit of count</code> and <code>time interval</code> properties to indicate the type, and period, of usage that must be reported.
+                The <code>Usage Report</code> should indicate a URL (or email) to the which the report should be posted, and use the <code>unit of count</code> and <code>time interval</code> properties to indicate the type and period of usage that must be reported.
             </p><p>
-                The duty is activated when the <code>users</code> constraint is satisfied.
+                The duty is usually activated on a <a href="#Periodicity">periodic</a> constraint.
             </p>
             <table class="def propdef">
                 <tbody>
@@ -447,13 +447,6 @@
                 </p>
                 <section>
                     <h2>Reporting Code</h2>
-                    <p>
-                        Reporting requires the <code>Subject</code> to notify the <code>Object</code> that they have started to use the <code>Asset</code> - i.e. when the parent <code>Permission</code> is first exercised.
-                    </p><p>
-                        A URL (or email) to the which the fulfilled notification rule can be posted should be provided as a property of the <code>Notification</code>.
-                    </p><p>
-                        The duty is activated when the <code>periodic</code> constraint is satisfied.
-                    </p>
                     <pre class="example nohighlight turtle" title="Reporting" id="ReportingExample">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
@@ -463,7 +456,13 @@
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">UsageReport</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/internal_party_notifications</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">md:</span><span class="nt">reportingCode</span><span class="w">     </span><span class="s">“SMGL2SST”</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">UserID</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                            </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">    </span><span class="p">[</span>
+                        <span class="w">                                                     </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                                     </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span> <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                                                  </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                        </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">      </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/reports</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                 </section>
