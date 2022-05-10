@@ -445,7 +445,7 @@
                         <span class="w">                                             </span><span class="kt">a</span><span class="w">                  </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                                             </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">   </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">;</span>    
                         <span class="w">                                             </span><span class="nn">md:</span><span class="nt">role</span><span class="w">            </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                                           </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                          </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
                     <div class="note">
@@ -465,7 +465,7 @@
             <p>
                 Data <code>Originators</code> and <code>Providers</code> often require reports on the use of their <code>Assets</code>, especially for realtime data.
             </p><p>
-                The <code>Usage Report</code> should indicate a URL (or email) to the which the report should be posted, and use the <code>unit of count</code> and <code>time interval</code> properties to indicate the type and period of usage that must be reported.
+                The <code>Usage Report</code> should indicate a URL (or email) to the which the report should be posted, and use the <code>unit of count</code> and <code>time interval</code> properties to indicate the type and period of usage that must be reported. Where reporting is multi-dimensional (e.g. reporting <code>User IDs</code> against <code>Locations</code>), the first dimension (e.g. <code>Location</code>) must be specified by the <code>unit of count</code> property while the second dimension (e.g. <code>User ID</code>) must be indicated by the <code> secondary count</code> property.
             </p><p>
                 The duty is usually activated on a <a href="#Periodicity">periodic</a> constraint.
             </p>
@@ -491,7 +491,7 @@
             <section data-dfn-for="ReportingDuty">
                 <h2><dfn>Reporting Duty</dfn></h2>
                 <p>
-                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <code>Asset</code> targetted by the parent <code>Permission</code> SMGL2SST.
+                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <code>Asset</code> targetted by the parent <code>Permission</code>.
                 </p>
                 <section>
                     <h2>Reporting Code</h2>
@@ -514,7 +514,8 @@
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                           </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">UsageReport</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                           </span><span class="nn">md:</span><span class="nt">reportingCode</span><span class="w">     </span><span class="s">“SMGL2SST”</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                           </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">UserID</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Location</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">md:</span><span class="nt">secondaryCount</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">UserID</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                           </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/reports</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                      </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
