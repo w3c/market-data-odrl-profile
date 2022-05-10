@@ -314,13 +314,16 @@
                 <section>
                     <h2>Agreement Code - License</h2>
                     <p>
-                        For when a <code>License</code> must be agreed before an <code>Asset</code> is used. Usually attached to a <code>Permission</code> that allows use of an <code>Asset</code>.
+                        For when a <code>License</code> must be agreed before an <code>Asset</code> is used. Usually attached to a <code>Permission</code> from a <code>Provider</code> that requires direct licensing with the <code>Originator</code>.
                     </p>
                     <pre class="example nohighlight turtle" title="License Agreement" id="LicenseAgreement">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">    </span><span class="p">&lt;</span><span class="nv">http://www.example.org/consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">object</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/originator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">odrl:</span><span class="nt">Assignee</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="c">  # Activation condition</span>
+                        <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span><span class="w">                 </span><span class="c">  # Activation condition</span>
+                        <span class="w">                       </span><span class="kt">a</span><span class="w">                  </span><span class="nn">odrl:</span><span class="nt">Assignee</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">   </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">;</span>    
+                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">   </span><span class="p">[</span>
                         <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Agree</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
