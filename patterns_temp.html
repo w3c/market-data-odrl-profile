@@ -126,9 +126,10 @@
                     </p>
                     <pre class="example nohighlight turtle" title="New Users - Service Facilitators" id="NewUserServiceFacilitatorExample">
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">users</span><span class="w">      </span><span class="p">[</span>
-                        <span class="w">                        </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                       </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                       </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">   </span><span class="nn">org:</span><span class="nt">Organization</span><span class="w"> </span><span class="p">;</span>    
+                        <span class="w">                       </span><span class="nn">md:</span><span class="nt">role</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ServiceFacilitator</span><span class="w"> </span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                    </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                     </pre>
                     <p>
                         These activation conditions are used in the <a href="#NotificationPattern">Notification Pattern</a>.
