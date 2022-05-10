@@ -496,7 +496,7 @@
                 <section>
                     <h2>Reporting Code</h2>
                     <p>
-                        In this example, reporting <code>User ID</code> against <code>Location</code> must be done monthly, 30 days in arrears, under the <code>reporting code</code>
+                        In this example, reporting <code>User ID</code> against <code>Location</code> must be done monthly, 30 days in arrears, under the <code>reporting code</code> SMGL2SSX.
                     </p>
                     <pre class="example nohighlight turtle" title="Reporting" id="ReportingExample">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
@@ -513,9 +513,13 @@
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">Report</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>     
                         <span class="w">     </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                           </span><span class="kt">a</span><span class="w">                    </span><span class="nn">md:</span><span class="nt">UsageReport</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                           </span><span class="nn">md:</span><span class="nt">reportingCode</span><span class="w">     </span><span class="s">“SMGL2SST”</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">md:</span><span class="nt">reportingCode</span><span class="w">     </span><span class="s">“SMGL2SSX”</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                           </span><span class="nn">odrl:</span><span class="nt">unitOfCount</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Location</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                           </span><span class="nn">md:</span><span class="nt">secondaryCount</span><span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">UserID</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">    </span><span class="p">[</span>
+                        <span class="w">                                                    </span><span class="kt">a</span><span class="w">                   </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                                                    </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span> <span class="s">"P1M"^^xsd:duration</span>
+                        <span class="w">                                                 </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                           </span><span class="nn">schema:</span><span class="nt">url</span><span class="w">            </span><span class="p">&lt;</span><span class="nv">http://www.example.org/rules/reports</span><span class="p">&gt;</span>                        <span class="w">                   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                      </span><span class="p">]</span><span class="w"> </span><span class="p">.</span>
                     </pre>
