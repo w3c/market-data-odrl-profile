@@ -28,17 +28,28 @@
         </p><p>
             To be <code>valid</code>, all the Permission's <code>Constraints</code> must be satisfied and <code>Duties</code> fulfilled.
         </p><p>
-            A Permission models a rights assignemnt in a license.
+            A Permission models a rights assignment in a license.
         </p>
-        <section data-dfn-for="Distribution">
-            <h2>Distribution</h2>
+        <section data-dfn-for="DistributionPattern">
+            <h2>Distribution Pattern</h2>
             <p>
                 <code>Distribution</code> occurs when an <code>Internal Party</code> (acting as a <code>Provider</code>) transfers an <code>Asset</code> to an <code>External Party</code>.
             </p><p>
                 It is a moment of great sensitivity to data owners and vendors, which is reflected in their licenses.
             </p><p>
-                To maintain control over the data, a <code>Next Policy Duty</code> should be used to identify a <code>Policy</code> specifying the <code>Permissions</code> (and possibly <code>Prohibitions</code>) tha the third-party can execute over the transferred <code>Asset</code>.
+                To maintain control over the data, a <code>Next Policy Duty</code> should be used to identify a <code>Policy</code> specifying the <code>Permissions</code> (and possibly <code>Prohibitions</code>) that the third-party can execute over the transferred <code>Asset</code>.
             </p>
+            <table class="def propdef">
+                <tbody>
+                    <tr>
+                        <th>Context:</th><td>When an <code>Asset</code> is transferred to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9">External Party</a> using a <code>Distribute</code> action.</td>
+                    </tr><tr>
+                        <th>Definition:</th><td>Uses a <code>Next Policy Duty</code> to require a <code>Policy</code> controlling the third-party's use of the transferred <code>Asset</code></td>
+                    </tr><tr>
+                        <th>Duty:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy"></a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
         <section data-dfn-for="Non-DisplayUse">
             <h2>Non-Display Use</h2>
