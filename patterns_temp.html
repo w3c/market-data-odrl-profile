@@ -53,13 +53,14 @@
             <section data-dfn-for="NextPolicyDuty">
                 <h2><dfn>Next Policy Duty</dfn></h2>
                 <p>
-                    In the following example, Company A can ensure that if Company B <code>distributes</code> the asset <code>A1</code> to an <code>External Party</code>, they can only offer that third-party a <code>Display</code> permission. No other <code>Permission</code> can be granted.
+                    In the following example, Company A can ensure that if Company B <code>distributes</code> the asset <code>A1</code> to an <code>External Party</code>, they can only offer the third-party a <code>Display</code> permission. Company B can grant no other <code>Permission</code>.
                 </p><p>
-                    As the identity of the third-party is not yet known, the <code>Policy</code> required by the duty is an <a href="https://www.w3.org/TR/odrl-model/#policy-offer">Offer</a> policy. Any <a href="https://www.w3.org/TR/odrl-model/#policy-agreement">Agreement</a> reached between Company B and the third-party must be compliant with it.
+                    As the identity of the third-party may not be known at the time companies A and B strike their<a href="https://www.w3.org/TR/odrl-model/#policy-agreement">Agreement</a> , the <code>Policy</code> required by the duty is an <a href="https://www.w3.org/TR/odrl-model/#policy-offer">Offer</a> policy. In turn, any <a href="https://www.w3.org/TR/odrl-model/#policy-agreement">Agreement</a> reached between Company B and the third-party must be compliant with it.
                 </p>
                 <section>
                     <h2>Next Policy Code</h2>
                     <pre class="example nohighlight turtle" title="Next Policy" id="NextPolicyExample">
+                        <span class="c">This distribution permission is granted ...</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
@@ -70,6 +71,7 @@
                         <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
+                        <span class="c">... on the condition that any third-party receiving the asset ...</span>
                         <span class="p">ex:D1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -77,10 +79,12 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">.</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
+                        <span class="c">... is offered only ...</span>
                         <span class="p">ex:O1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Offer</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">permission</span><span class="w">   </span><span class="nn">ex:</span><span class="nt">P1</span><span class="w"> </span><span class="p">.</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
+                        <span class="c">...  a display permission</span>
                         <span class="p">ex:P1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
