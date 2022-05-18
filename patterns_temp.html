@@ -23,8 +23,22 @@
     <h2>Patterns</h2>
     <section data-dfn-for="Permissions">
         <h2>Permissions</h2>
+        <p>
+            A valid <code>Permission</code> is defined in <a href="https://www.w3.org/TR/odrl-model/#permission">ODRL</a> as the right to exercise an <code>Action</code> over an <code>Asset</code>.
+        </p><p>
+            To be <code>valid</code>, all the Permission's <code>Constraints</code> must be satisfied and <code>Duties</code> fulfilled.
+        </p><p>
+            A Permission models a rights assignemnt in a license.
+        </p>
         <section data-dfn-for="Distribution">
             <h2>Distribution</h2>
+            <p>
+                <code>Distribution</code> occurs when an <code>Internal Party</code> (acting as a <code>Provider</code>) transfers an <code>Asset</code> to an <code>External Party</code>.
+            </p><p>
+                It is a moment of great sensitivity to data owners and vendors, which is reflected in their licenses.
+            </p><p>
+                To maintain control over the data, a <code>Next Policy Duty</code> should be used to identify a <code>Policy</code> specifying the <code>Permissions</code> (and possibly <code>Prohibitions</code>) tha the third-party can execute over the transferred <code>Asset</code>.
+            </p>
         </section>
         <section data-dfn-for="Non-DisplayUse">
             <h2>Non-Display Use</h2>
