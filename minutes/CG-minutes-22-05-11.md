@@ -190,5 +190,6 @@ These are the only types of activation condition that I've seen in the nine key 
 
 ## TOPIC: Actions from Today's Meeting
 **Ben** to suggest means of modelling contract scope.
+
 **Michelle/Gavin** to explore WFIC options
 
