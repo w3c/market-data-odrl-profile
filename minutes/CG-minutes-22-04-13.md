@@ -1,4 +1,5 @@
 **Michelle**
+
 Any objections to the minutes of last month's meeting? [No objections]
 
 Agenda items:
@@ -13,6 +14,7 @@ Laura, you are more familier with other types of contracts, how do you see them 
 ## TOPIC: Reference Data Licensing Patterns
 
 **Laura**
+
 People have different definitions of reference data at different firms. I'm thinkin of it as a wide bucket, generally static, not real-time data, a very broad definition.
 
 Things we haven't covered with excchange data?
