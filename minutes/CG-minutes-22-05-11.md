@@ -12,7 +12,7 @@ I think an end-to-end demonstration, running all the way from data originator, t
 **Gavin**  
 I agree. We'll keep you posted on that.
 
-## TOPIC: Actions From Our Lat Meeting
+## TOPIC: Actions From Our Last Meeting
 
 **Michelle**  
 To summarise the actions from our last meeting: Laura and I are looking at reference data contracts. We also highlighted industry classifications to see if there are any unusual or different rights that occur in those types of agreements. We also talked about the use of benchmark data for index creation. Laura was going to look at some use cases for that. But one of the issues that was raised was how we cover off things like affiliate rights and contract scope. For example, some contracts are restricted to the buy-side or sell-side. Do we want to model this?
