@@ -30,6 +30,9 @@
         </p><p>
             A Permission models a rights assignment in a license.
         </p>
+        <section data-dfn-for="Contract Scope">
+            <h2>Prohibitions</h2>
+        </section>
         <section data-dfn-for="DistributionPattern">
             <h2>Distribution Pattern</h2>
             <p>
@@ -154,37 +157,33 @@
                 </section>
             </section>
         </section>
-        <section data-dfn-for="DerivingDataPattern">
-            <h2>Deriving Data Pattern</h2>
+        <section data-dfn-for="DerivedDataPatterns">
+            <h2>Derived Data Patterns</h2>
             <p>
                 Licenses often distinguish between derived data that still carries some informational traces of its source data and that which doesn't. The former is likely to be much more tightly controlled by a license than the latter.
-            </p><p>
-                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">derivation type</a> constraint on a <a href="" target="_blank">Derive</a> action allows us to distinguish between the two cases.
-            </p><p>
-                Its possible values, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">Irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive" target="_blank">Non-Substitutive</a>, together ensure that there is no "informational leakage" from the source data set to the derived data set.
-            </p><p>
-                When these two conditions are met, the IP in the derived data set often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. 
             </p>
-            <table class="def propdef">
-                <tbody>
-                    <tr>
-                        <th>Context:</th><td>.</td>
-                    </tr><tr>
-                        <th>Definition:</th><td>Uses a <code>derivation type constraint</code> on the <code>Action</code> to specify the business activity that a <code>Permission</code> supports.</td>
-                    </tr><tr>
-                        <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">md:purposes</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <section data-dfn-for="PurposeConstraint">
-                <h2>Purposes Constraint</h2>
+            <section data-dfn-for="DerivationTypeConstraint">
+                <h2>Derivation Type Constraint</h2>
                 <p>
-                    The <code>purpose constraint</code> specifies the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Activities" target="_blank">activities</a> in persuit of which the <code>Permission</code> can be exercised. To use the permission in support of any other activity would be non-compliant.
+                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">derivation type</a> constraint on a <a href="" target="_blank">Derive</a> action allows us to distinguish between the two cases.
                 </p><p>
-                    In the following examples, the permission <code>P1</code> can only be used to calculate indices; <code>P2</code> supports the maintenance and testing of a business continuity environment; and <code>P3</code> allows automated trading but only as a broker.
+                    Its possible values, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">Irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive" target="_blank">Non-Substitutive</a>, together ensure that there is no "informational leakage" from the source data set to the derived data set.
+                </p><p>
+                    When these two conditions are met, the IP in the derived data set often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. 
                 </p>
-                <section>
-                    <h2>Purpose Code</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>.</td>
+                        </tr><tr>
+                            <th>Definition:</th><td>Uses a <code>derivation type constraint</code> on the <code>Action</code> to specify the business activity that a <code>Permission</code> supports.</td>
+                        </tr><tr>
+                            <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">md:purposes</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <section data-dfn-for="DerivationTypeCode">
+                    <h2>Derivation Type Code</h2>
                     <pre class="example nohighlight turtle" title="Derivation Type Constraint" id="DerivationTypeConstraint">
                         <span class="c">Non-Display for the purposes of calculating indices</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
@@ -216,10 +215,12 @@
                     </pre>
                 </section>
             </section>
+            <section data-dfn-for="UsingDerivedData">
+                <h2>Using Derived Data</h2>
+            </section>
         </section>
-        <section data-dfn-for="UsingDerivedData">
-            <h2>Using Derived Data</h2>
-        </section>
+       
+        
         <section data-dfn-for="ServiceProviders">
             <h2>Service Providers</h2>
         </section>
