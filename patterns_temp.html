@@ -46,7 +46,7 @@
                     </tr><tr>
                         <th>Definition:</th><td>Uses a <code>next policy</code> duty to require a <code>Policy</code> controlling the third-party's use of the transferred <code>Asset</code></td>
                     </tr><tr>
-                        <th>Duty Action:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy">odrl:NextPolicy</a></td>
+                        <th>Duty Action:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">odrl:NextPolicy</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -126,10 +126,10 @@
                         <span class="c">Non-Display for the purposes of calculating indices</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="p">...</span>
-                        <span class="w">      </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
-                        <span class="w">                             </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                             </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                        </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Consent</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                           </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
                         <span class="c">... on the condition that any third-party receiving the asset ...</span>
@@ -186,7 +186,7 @@
         </p><p>
             The <code>Party</code> exercising the action is the <code>Subject</code> of the Duty. The Party affected is the <code>Object</code>.
         </p><p>
-            If the specified action must be exercised more than once to fulfill the Duty, then the <a href="https://www.w3.org/TR/odrl-vocab/#term-count">count</a> constraint should be used to indicate the number of times the action must be taken. 
+            If the specified action must be exercised more than once to fulfill the Duty, then the <a href="https://www.w3.org/TR/odrl-vocab/#term-count" target="_blank">count</a> constraint should be used to indicate the number of times the action must be taken. 
         </p><p>
             A Duty may also specify a target to indicate the <code>Entity</code> to which the action applies.
         </p><p> 
@@ -272,7 +272,7 @@
                 <p>Many activities required by <code>Duties</code> in market data licenses are activated by the clock or calendar. For example, reporting may need to be done monthly. Payment schedules are often similar.</p>
                 <section id="Periodicity">
                     <h2>Periodicity Code</h2>
-                    <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
+                    <p>If a duty is activated on a recurring interval of time (e.g. monthly or every 14 days), then the <a href="https://www.w3.org/TR/odrl-vocab/#term-timeInterval" target="_blank"> time interval</a> property from the ODRL Common Vocabulary must be used to specify the interval.</p>
                     <p>The interval itself must be defined using the <a href="https://www.w3.org/TR/owl-time/">OWL Time Ontology</a>. Often this is effected using its <a href="https://www.w3.org/TR/owl-time/#time:hasXSDDuration">has XSD Duration</a> property.</p>
                     <pre class="example nohighlight turtle" title="Specifying A Time Interval" id="TimeIntervalExample">
                         <span class="p">[]</span><span class="w">   </span><span class="nn">odrl:</span><span class="nt">timeInterval</span><span class="w">     </span><span class="p">[</span>
