@@ -64,7 +64,6 @@
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Distribute</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A1</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nn">ex:</span><span class="nt">D1</span><span class="w"> </span><span class="p">;</span>
@@ -96,8 +95,21 @@
                 </section>
             </section>
         </section>
-        <section data-dfn-for="Non-DisplayUse">
-            <h2>Non-Display Use</h2>
+        <section data-dfn-for="Non-DisplayPattern">
+            <h2>Non-Display Pattern</h2>
+            <p>
+                <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display">Non-display use</a> is use by machines. It does not cover display to people nor distribution to third-parties. But it does cover everything else.
+            </p><p>
+                Such various uses are frequently segmented by data providers by the purpose (i.e. business activity) that use serves. This is captured using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9">purposes</a> <code>constraint</code>.
+            </p>
+            <section data-dfn-for="Purpose">
+                <p>
+                    The <code>purpose constraint</code> specifies the <a>activities</a> in persuit of which the <code>Permission</code> can be exercised. To use the permission in support of any other activity would be non-compliant.
+                </p>
+                <section>
+                    <h2>Purpose Code</h2>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="DerivingData">
             <h2>Deriving Data</h2>
@@ -116,6 +128,9 @@
         </section>
         <section data-dfn-for="WebHosting">
             <h2>Web Hosting</h2>
+        </section>
+        <section data-dfn-for="Prohibitions">
+            <h2>Prohibitions</h2>
         </section>
     </section>
     <section data-dfn-for="Duties">
