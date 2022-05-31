@@ -38,14 +38,14 @@
             <p>
                 Distribution occurs when an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#internal-party-0-9" target="_blank">Internal Party</a> (acting as a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9" target="_blank">Provider</a>) transfers an asset to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9" target="_blank">External Party</a>.
             </p><p>
-                It is a moment of great sensitivity to data owners and vendors, which is reflected in their licenses with their subscribers.
+                It is a moment of great sensitivity to data owners and vendors, which is reflected in the licenses they agree with their subscribers.
             </p><p>
-                When offering distribution permissions, data owners and vendors should apply a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to identify a <a href="https://www.w3.org/TR/odrl-model/#policy" target="_blank">Policy</a> specifying the <a href="https://www.w3.org/TR/odrl-model/#permission" target="_blank">Permissions</a> (and possibly <a href="https://www.w3.org/TR/odrl-model/#prohibition" target="_blank">Prohibitions</a>) that third-party recipients can execute over the transferred asset.
+                When offering distribution permissions, data owners and vendors should apply a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to identify a <a href="https://www.w3.org/TR/odrl-model/#policy" target="_blank">Policy</a> specifying the <a href="https://www.w3.org/TR/odrl-model/#permission" target="_blank">Permissions</a> that third-party recipients can execute over the transferred asset.
             </p>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Context:</th><td>When parties providing a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> action wish to control a third-party recipient's use of the asset.</td>
+                        <th>Context:</th><td>When <code>Parties</code> providing a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> <code>Action</code> wish to control a third-party recipient's use of their <code>Asset</code>.</td>
                     </tr><tr>
                         <th>Definition:</th><td>Use a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to specify a policy controlling the third-party's use of the transferred asset.</td>
                     </tr><tr>
@@ -61,7 +61,7 @@
                 <section>
                     <h2>Next Policy Code</h2>
                     <pre class="example nohighlight turtle" title="Next Policy" id="NextPolicyExample">
-                        <span class="c">This distribution permission is granted ...</span>
+                        <span class="c">This distribution permission is granted by Company A ...</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
@@ -79,7 +79,7 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">.</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
-                        <span class="c">... is offered only ...</span>
+                        <span class="c">... is offered by Company B only ...</span>
                         <span class="p">ex:O1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Offer</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">permission</span><span class="w">   </span><span class="nn">ex:</span><span class="nt">P1</span><span class="w"> </span><span class="p">.</span>
                         <span class="w">       </span>
@@ -96,7 +96,7 @@
                 </section>
                 <div class="note">
                     <p>
-                        The <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> does not provide any <code>executable</code> permissions. In fact, the identity of any third-party is likely unknown when the license is agreed. 
+                        The <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> does not provide any <code>executable</code> permissions. In fact, the identity of any third-party is likely unknown when the license is agreed between <code>Company A</code> and <code>Comapany B</code>. 
                     </p><p>
                         The offer instead provides a policy specification to which any future <a href="https://www.w3.org/TR/odrl-model/#policy-agreement" target="_blank">Agreement</a> between <code>Company B</code> and third-parties must be compliant.
                     </p>
@@ -106,16 +106,16 @@
         <section data-dfn-for="Non-DisplayPattern">
             <h2>Non-Display Pattern</h2>
             <p>
-                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> <code>Action</code> covers data use by machines (as opposed to people). It does not cover display nor distribution to third-parties. But it does cover everything else, including the <a href="" target="_blank">Derive</a> and <a href="" target="_blank">Automated Trading</a> Actions.
+                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> action covers data use by machines (as opposed to people). It does not cover display nor distribution to third-parties. But it does cover everything else, including the <a href="" target="_blank">Derive</a> and <a href="" target="_blank">Automated Trading</a> Actions.
             </p><p>
                 Such various uses are frequently segmented by data providers by the purpose (i.e. business activity) that the use serves. This is captured using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint on the action.
             </p>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Context:</th><td>When a <code>Permission</code> allows a <code>Non-Display Action</code>.</td>
+                        <th>Context:</th><td>When a permission allows a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> action.</td>
                     </tr><tr>
-                        <th>Definition:</th><td>Uses a <code>purposes constraint</code> on the <code>Action</code> to specify the business activity that a <code>Permission</code> supports.</td>
+                        <th>Definition:</th><td>Uses a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint on the action to specify the business activity that a permission supports.</td>
                     </tr><tr>
                         <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">md:purposes</a></td>
                     </tr>
