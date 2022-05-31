@@ -180,7 +180,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Context:</th>When the type of derivation determines the <code>permissions</code> applicable to the derived dataset.<td>.</td>
+                            <th>Context:</th><td>When the type of derivation determines the <code>permissions</code> applicable to the derived dataset.</td>
                         </tr><tr>
                             <th>Definition:</th><td>Uses a <code>derivation type constraint</code> on the <code>Action</code> to specify the type of derivation performed.</td>
                         </tr><tr>
@@ -188,6 +188,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <p>
+                    The permission in the following example allows the derived dataset <code>O1</code> (identified by the <a href="https://www.w3.org/TR/odrl-vocab/#term-output" target="_blank">output</a> property) to be generated from the dataset <code>A1</code> so long as the derivation is irreversible and non-substitutive.
+                </p>
                 <section data-dfn-for="DerivationTypeCode">
                     <h2>Derivation Type Code</h2>
                     <pre class="example nohighlight turtle" title="Derivation Type Constraint" id="DerivationTypeConstraint">
@@ -199,6 +202,8 @@
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">derivationType</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A1</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">output</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="p">...</span>
                     </pre>
                 </section>
