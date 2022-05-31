@@ -106,7 +106,7 @@
         <section data-dfn-for="Non-DisplayPattern">
             <h2>Non-Display Pattern</h2>
             <p>
-                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> action covers data use by machines (as opposed to people). It does not cover display nor distribution to third-parties. But it does cover everything else, including the <a href="" target="_blank">Derive</a> and <a href="" target="_blank">Automated Trading</a> Actions.
+                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> action covers data use by machines (as opposed to people). It does not cover display nor distribution to third-parties. But it does cover everything else, including the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9" target="_blank">Derive</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#trade-automatically-0-9" target="_blank">Automated Trading</a> Actions.
             </p><p>
                 Such various uses are frequently segmented by data providers by the purpose (i.e. business activity) that the use serves. This is captured using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint on the action.
             </p>
@@ -185,9 +185,9 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Context:</th><td>When the type of derivation determines the <code>permissions</code> applicable to the derived dataset.</td>
+                            <th>Context:</th><td>When the type of derivation determines the permissions applicable to the derived dataset.</td>
                         </tr><tr>
-                            <th>Definition:</th><td>Uses a <code>derivation type</code> constraint on the <code>Action</code> to specify the type of derivation performed.</td>
+                            <th>Definition:</th><td>Uses a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">derivation types</a> constraint on the <code>Action</code> to specify the type of derivation performed.</td>
                         </tr><tr>
                             <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">md:derivationTypes</a></td>
                         </tr>
@@ -215,14 +215,14 @@
             <section data-dfn-for="NextPolicyDuty_DerivedData">
                 <h2>Next Policy Duty - Derived Data</h2>
                 <p>
-                    <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source <code>Asset</code> can control the use of the derived <code>Asset</code> by placing a <code>Next Policy Duty</code> targetting the output of a <code>Derive Permission</code>.
+                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source Asset can control the use of the derived asset by placing a <a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">Next Policy</a> duty targetting the output of a Derive action.
                 </p>
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Context:</th><td>When a new <code>Asset</code> is created through an irreversible and non-substitutive derivation.</td>
+                            <th>Context:</th><td>When a new asset is created through an irreversible and non-substitutive derivation.</td>
                         </tr><tr>
-                            <th>Definition:</th><td>Uses a <code>next policy</code> duty to require a <code>Policy</code> controlling the use of the derived <code>Asset</code></td>
+                            <th>Definition:</th><td>Uses a <a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">Next Policy</a> duty to specify an <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> controlling the use of the derived asset.</td>
                         </tr><tr>
                             <th style="white-space:nowrap;">Duty Action:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">odrl:NextPolicy</a></td>
                         </tr>
