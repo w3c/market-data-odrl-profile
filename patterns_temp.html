@@ -28,7 +28,7 @@
         </p><p>
             To be <code>valid</code>, all the Permission's <a href="https://www.w3.org/TR/odrl-model/#constraint" target="_blank">Constraints</a> must be satisfied and <a href="https://www.w3.org/TR/odrl-model/#duty" target="_blank">Duties</a> fulfilled.
         </p><p>
-            A Permission models a rights assignment in a license.
+            A Permission effectively models a rights assignment in a license.
         </p>
         <section data-dfn-for="ContractScope">
             <h2>Contract Scope</h2>
@@ -45,9 +45,9 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Context:</th><td>When an asset is transferred to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9" target="_blank">External Party</a> using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#internal-party-0-9" target="_blank">Internal Party</a>) transfers an <code>Asset</code> to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> action.</td>
+                        <th>Context:</th><td>When an asset is transferred to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9" target="_blank">External Party</a> using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> action.</td>
                     </tr><tr>
-                        <th>Definition:</th><td>Uses a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty duty to require a policy controlling the third-party's use of the transferred asset.</td>
+                        <th>Definition:</th><td>Use a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to specify a policy controlling the third-party's use of the transferred asset.</td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Duty Action:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">odrl:NextPolicy</a></td>
                     </tr>
@@ -56,9 +56,7 @@
             <section data-dfn-for="NextPolicyDuty_Distribution">
                 <h2><dfn>Next Policy Duty - Distribution</dfn></h2>
                 <p>
-                    In the following example, Company A can ensure that if Company B distributes the asset <code>A1</code> to an external party, they can only offer the third-party a <code>Display</code> permission. Company B can grant no other permission.
-                </p><p>
-                    As the identity of the third-party may not be known at the time companies A and B strike their<a href="https://www.w3.org/TR/odrl-model/#policy-agreement" target="_blank">Agreement</a> , the <code>Policy</code> required by the duty is an <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer</a> policy. In turn, any <a href="https://www.w3.org/TR/odrl-model/#policy-agreement" target="_blank">Agreement</a> reached between Company B and the third-party must be compliant with it.
+                    In the following example, <code>Company A</code> can ensure that if <code>Company B</code> distributes the asset <code>A1</code> to an external party, they can only offer a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display" target="_blank">Display</a> permission to the third-party.
                 </p>
                 <section>
                     <h2>Next Policy Code</h2>
@@ -96,6 +94,9 @@
                         <span class="w">       </span><span class="p">...</span>
                     </pre>
                 </section>
+                <div class="note">
+                    The <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> does not provide any <code>executable</code> permissions. In fact, the identity of any third-party is likely unknown when the license is agreed. The offer provides a policy specification to which any future <a href="https://www.w3.org/TR/odrl-model/#policy-agreement" target="_blank">Agreement</a> between <code>Company B</code> and third-parties must be compliant.
+                </div>
             </section>
         </section>
         <section data-dfn-for="Non-DisplayPattern">
