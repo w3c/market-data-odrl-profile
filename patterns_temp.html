@@ -175,7 +175,7 @@
             </p><p>
                 The use of a new original work, however, can still be constrained by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source data using a <code>next policy</code> duty to apply new, adminstrator-specified, permissions to the derived dataset.
             </p>
-            <section data-dfn-for="DerivationTypeConstraint">
+            <section data-dfn-for="DerivationTypesConstraint">
                 <h2>Derivation Type Constraint</h2>
                 <table class="def propdef">
                     <tbody>
@@ -184,23 +184,22 @@
                         </tr><tr>
                             <th>Definition:</th><td>Uses a <code>derivation type constraint</code> on the <code>Action</code> to specify the type of derivation performed.</td>
                         </tr><tr>
-                            <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">md:derivationType</a></td>
+                            <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">md:derivationTypes</a></td>
                         </tr>
                     </tbody>
                 </table>
                 <p>
                     The permission in the following example allows the derived dataset <code>O1</code> (identified by the <a href="https://www.w3.org/TR/odrl-vocab/#term-output" target="_blank">output</a> property) to be generated from the dataset <code>A1</code> so long as the derivation is irreversible and non-substitutive.
                 </p>
-                <section data-dfn-for="DerivationTypeCode">
+                <section data-dfn-for="DerivationTypesCode">
                     <h2>Derivation Type Code</h2>
-                    <pre class="example nohighlight turtle" title="Derivation Type Constraint" id="DerivationTypeConstraint">
-                        <span class="c">Non-Display for the purposes of calculating indices</span>
+                    <pre class="example nohighlight turtle" title="Derivation Type Constraint" id="DerivationTypesConstraint">
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">derivationType</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A1</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">output</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">;</span>
