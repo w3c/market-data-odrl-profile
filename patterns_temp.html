@@ -53,8 +53,8 @@
                     </tr>
                 </tbody>
             </table>
-            <section data-dfn-for="NextPolicyDuty">
-                <h2><dfn>Next Policy Duty</dfn></h2>
+            <section data-dfn-for="NextPolicyDuty_Distribution">
+                <h2><dfn>Next Policy Duty - Distribution</dfn></h2>
                 <p>
                     In the following example, Company A can ensure that if Company B <code>distributes</code> the asset <code>A1</code> to an <code>External Party</code>, they can only offer the third-party a <code>Display</code> permission. Company B can grant no other <code>Permission</code>.
                 </p><p>
@@ -207,8 +207,65 @@
                     </pre>
                 </section>
             </section>
-            <section data-dfn-for="UsingDerivedData">
-                <h2>Using Derived Data</h2>
+            <section data-dfn-for="NextPolicyDuty_DerivedData">
+                <h2>NextPolicyDuty - Derived Data</h2>
+                <p>
+                    <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source <code>Asset</code> can control the use of the derived <code>Asset</code> by placing a <code>Next Policy Duty</code> targetting the output of a <code>Derive Permission</code>.
+                </p>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>When a new <code>Asset</code> is created through an irreversible and non-substitutive derivation.</td>
+                        </tr><tr>
+                            <th>Definition:</th><td>Uses a <code>next policy</code> duty to require a <code>Policy</code> controlling the use of the derived <code>Asset</code></td>
+                        </tr><tr>
+                            <th style="white-space:nowrap;">Duty Action:</th><td><a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">odrl:NextPolicy</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    The permission from the previous example now has a <code>Nect Policy Duty</code> that allows the distribution of the derived data set <code>O1</code>.
+                </p>
+                <section data-dfn-for="NextPolicy_DerivationCode">
+                    <h2>Derivation Type Code</h2>
+                    <pre class="example nohighlight turtle" title="Next Policy - Derivation" id="NextPolicy_Derivation">
+                        <span class="c">The output of the derivation O1 ...</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A1</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">output</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nn">ex:</span><span class="nt">D1</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... is controlled by the policy O1 ...</span>
+                        <span class="p">ex:D1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">odrl:</span><span class="nt">NextPolicy</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... which allows the derived dataset O1 ...</span>
+                        <span class="p">ex:O1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Offer</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">permission</span><span class="w">   </span><span class="nn">ex:</span><span class="nt">P1</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">...  to be distributed to third-parties</span>
+                        <span class="p">ex:P1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Distribute</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                    </pre>
+                </section>
             </section>
         </section>
        
