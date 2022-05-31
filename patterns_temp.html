@@ -132,7 +132,8 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
+                        <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
                         <span class="c">Non-Display for the purposes of maintaining and testing a business continuity environment.</span>
@@ -141,7 +142,8 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Non-Display</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">BusinessContinuity</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
                         <span class="c">Non-Display for the purposes of automated trading as a broker</span>
@@ -150,7 +152,8 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">AutomatedTrading</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Brokerage</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
                     </pre>
@@ -166,7 +169,7 @@
             </p><p>
                 Its possible values, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">Irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive" target="_blank">Non-Substitutive</a>, together ensure that there is no "informational leakage" from the source data set to the derived data set.
             </p><p>
-                When these two conditions are met, the IP in the derived data set often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. Such derived datasets (sometimes called new original works) and are controlled by new permissions.
+                When these two conditions are met, the IP in the derived data set often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. Such derived datasets (sometimes called new original works) are controlled by new permissions.
             </p><p>
                 Without them being met, the derived data set will likely still be controlled by the source data set's permissions.
             </p><p>
@@ -177,11 +180,11 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Context:</th><td>.</td>
+                            <th>Context:</th>When the type of derivation determines the <code>permissions</code> applicable to the derived dataset.<td>.</td>
                         </tr><tr>
-                            <th>Definition:</th><td>Uses a <code>derivation type constraint</code> on the <code>Action</code> to specify the business activity that a <code>Permission</code> supports.</td>
+                            <th>Definition:</th><td>Uses a <code>derivation type constraint</code> on the <code>Action</code> to specify the type of derivation performed.</td>
                         </tr><tr>
-                            <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">md:purposes</a></td>
+                            <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">md:derivationType</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -194,27 +197,9 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
-                        <span class="w">       </span>
-                        <span class="w">       </span>
-                        <span class="c">Non-Display for the purposes of maintaining and testing a business continuity environment.</span>
-                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">derivationType</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
                         <span class="w">       </span><span class="p">...</span>
-                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
-                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Non-Display</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">BusinessContinuity</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
-                        <span class="w">       </span>
-                        <span class="w">       </span>
-                        <span class="c">Non-Display for the purposes of automated trading as a broker</span>
-                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="p">...</span>
-                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
-                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">AutomatedTrading</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Brokerage</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        <span class="w">       </span><span class="p">...</span>
-                        <span class="w">       </span>
-                        <span class="w">       </span>
                     </pre>
                 </section>
             </section>
