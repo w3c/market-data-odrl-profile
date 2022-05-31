@@ -38,14 +38,14 @@
             <p>
                 Distribution occurs when an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#internal-party-0-9" target="_blank">Internal Party</a> (acting as a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9" target="_blank">Provider</a>) transfers an asset to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9" target="_blank">External Party</a>.
             </p><p>
-                It is a moment of great sensitivity to data owners and vendors, which is reflected in their licenses.
+                It is a moment of great sensitivity to data owners and vendors, which is reflected in their licenses with their subscribers.
             </p><p>
-                To maintain control over the data, a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty should be used to identify a <a href="https://www.w3.org/TR/odrl-model/#policy" target="_blank">Policy</a> specifying the <a href="https://www.w3.org/TR/odrl-model/#permission" target="_blank">Permissions</a> (and possibly <a href="https://www.w3.org/TR/odrl-model/#prohibition" target="_blank">Prohibitions</a>) that the third-party can execute over the transferred asset.
+                When offering distribution permissions, data owners and vendors should apply a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to identify a <a href="https://www.w3.org/TR/odrl-model/#policy" target="_blank">Policy</a> specifying the <a href="https://www.w3.org/TR/odrl-model/#permission" target="_blank">Permissions</a> (and possibly <a href="https://www.w3.org/TR/odrl-model/#prohibition" target="_blank">Prohibitions</a>) that third-party recipients can execute over the transferred asset.
             </p>
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Context:</th><td>When an asset is transferred to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9" target="_blank">External Party</a> using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> action.</td>
+                        <th>Context:</th><td>When parties providing a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> action wish to control a third-party recipient's use of the asset.</td>
                     </tr><tr>
                         <th>Definition:</th><td>Use a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to specify a policy controlling the third-party's use of the transferred asset.</td>
                     </tr><tr>
@@ -54,9 +54,9 @@
                 </tbody>
             </table>
             <section data-dfn-for="NextPolicyDuty_Distribution">
-                <h2><dfn>Next Policy Duty - Distribution</dfn></h2>
+                <h2><dfn>Next Policy Duty (Distribution)</dfn></h2>
                 <p>
-                    In the following example, <code>Company A</code> can ensure that if <code>Company B</code> distributes the asset <code>A1</code> to an external party, they can only offer a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display" target="_blank">Display</a> permission to the third-party.
+                    In the following example, <code>Company A</code> can ensure that if <code>Company B</code> distributes the asset <code>A1</code> to an external party, they can only offer a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display" target="_blank">Display</a> permission to that third-party.
                 </p>
                 <section>
                     <h2>Next Policy Code</h2>
