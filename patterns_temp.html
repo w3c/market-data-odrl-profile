@@ -167,13 +167,13 @@
             </p><p>
                 The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">derivation type</a> constraint on a <a href="" target="_blank">Derive</a> action allows us to distinguish between the two cases.
             </p><p>
-                Its possible values, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">Irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive" target="_blank">Non-Substitutive</a>, together ensure that there is no "informational leakage" from the source data set to the derived data set.
+                Its possible values, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">Irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive" target="_blank">Non-Substitutive</a>, together ensure that there is no "informational leakage" from the source dataset to the derived dataset.
             </p><p>
-                When these two conditions are met, the IP in the derived data set often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. Such derived datasets (sometimes called new original works) are controlled by new permissions.
+                When these two conditions are met, the IP in the derived dataset often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. Such derived datasets (sometimes called new original works) are controlled by new permissions.
             </p><p>
-                Without them being met, the derived data set will likely still be controlled by the source data set's permissions.
+                The use of a new original work may still be constrained by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source data using a <code>next policy</code> duty to apply new, adminstrator-specified, permissions to the derived dataset.
             </p><p>
-                The use of a new original work, however, can still be constrained by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source data using a <code>next policy</code> duty to apply new, adminstrator-specified, permissions to the derived dataset.
+                If both conditions are not met, the derived dataset will likely still be controlled by the source dataset's permissions.
             </p>
             <section data-dfn-for="DerivationTypesConstraint">
                 <h2>Derivation Type Constraint</h2>
@@ -224,7 +224,7 @@
                     </tbody>
                 </table>
                 <p>
-                    The permission from the previous example now has a Next Policy Duty <code>D2</code> that allows the distribution of the derived data set <code>OP1</code> under the permission <code>P2</code>.
+                    The permission from the previous example now has a Next Policy Duty <code>D2</code> that allows the distribution of the derived dataset <code>OP1</code> under the permission <code>P2</code>.
                 </p>
                 <section data-dfn-for="NextPolicy_DerivationCode">
                     <h2>Derivation Type Code</h2>
