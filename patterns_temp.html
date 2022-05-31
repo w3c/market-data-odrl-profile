@@ -161,18 +161,19 @@
             <h2>Derived Data Patterns</h2>
             <p>
                 Licenses often distinguish between derived data that still carries some informational traces of its source data and that which doesn't. The former is likely to be much more tightly controlled by a license than the latter.
+            </p><p>
+                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">derivation type</a> constraint on a <a href="" target="_blank">Derive</a> action allows us to distinguish between the two cases.
+            </p><p>
+                Its possible values, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">Irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive" target="_blank">Non-Substitutive</a>, together ensure that there is no "informational leakage" from the source data set to the derived data set.
+            </p><p>
+                When these two conditions are met, the IP in the derived data set often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. Such derived datasets are sometimes called new original works and are always controlled by new permissions.
+            </p><p>
+                Without them being met, the derived data set will still be controlled by the source data set's permissions.
+            </p><p>
+                The possible uses of a new original work, however, can still be set by the supplier of the source data using a <code>next policy</code> duty to apply new permissions to the derived dataset.
             </p>
             <section data-dfn-for="DerivationTypeConstraint">
                 <h2>Derivation Type Constraint</h2>
-                <p>
-                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-types-0-9" target="_blank">derivation type</a> constraint on a <a href="" target="_blank">Derive</a> action allows us to distinguish between the two cases.
-                </p><p>
-                    Its possible values, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">Irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive" target="_blank">Non-Substitutive</a>, together ensure that there is no "informational leakage" from the source data set to the derived data set.
-                </p><p>
-                    When these two conditions are met, the IP in the derived data set often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. 
-                </p><p>
-                    Without them being met, the derived data set will likely still be controlled by the permissions controlling the source data set(s).
-                </p>
                 <table class="def propdef">
                     <tbody>
                         <tr>
