@@ -229,9 +229,10 @@
                 <section data-dfn-for="NextPolicy_DerivationCode">
                     <h2>Derivation Type Code</h2>
                     <pre class="example nohighlight turtle" title="Next Policy - Derivation" id="NextPolicy_Derivation">
-                        <span class="c">The output of the derivation O1 ...</span>
+                        <span class="c">The output of the derivation OP1 ...</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Source_Data_Company</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Derived_Data_Company</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CalculatingIndex</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -240,13 +241,12 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A2</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">output</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">OP1</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nn">ex:</span><span class="nt">D2</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
                         <span class="c">... is controlled by the policy O2 ...</span>
                         <span class="p">ex:D2</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Derived_Data_Company</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Derived_Data_Company</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">odrl:</span><span class="nt">NextPolicy</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O2</span><span class="w"> </span><span class="p">.</span>
                         <span class="w">       </span>
@@ -258,12 +258,10 @@
                         <span class="w">       </span>
                         <span class="c">...  to be distributed to third-parties</span>
                         <span class="p">ex:P2</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Source_Data_Company</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Derived_Data_Company</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Distribute</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="p">...</span>
                     </pre>
                 </section>
             </section>
