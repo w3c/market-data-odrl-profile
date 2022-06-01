@@ -47,9 +47,9 @@
             </p><p>
                 Some <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a> may be explicitly excluded from the contract. This can be achieved by identifying them with the <code>excludes</code> property.
             </p><p>
-                The parties identified by these properties need not be organisations. They may be departments, business functions, trading desks, or individuals. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> does not seek to standardise the description of these entities and requires only than they be identified by URIs.
+                The parties identified by these properties need not be organisations. They may be departments, business functions, trading desks, or individuals. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides both the <code>market function</code> and <code>geography</code> constraints to reflect the most common distinctions.
             </p><p>
-                However, the implementation of automated access control requires organisations to maintain a mapping between its users and the entities identified as assignees.
+                The profile, however, does not seek to standardise the description of all these entities and requires only than they be identified by URIs.
             </p>
             <table class="def propdef">
                 <tbody>
@@ -246,7 +246,7 @@
                 </section>
             </section>
             <section data-dfn-for="NextPolicyDuty_DerivedData">
-                <h2>Next Policy Duty - Derived Data</h2>
+                <h2>Next Policy Duty (Derived Data)</h2>
                 <p>
                     The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source Asset can control the use of the derived asset by placing a <a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">Next Policy</a> duty targetting the output of a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9" target="_blank">Derive</a> action.
                 </p>
@@ -301,6 +301,11 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Distribute</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">OP1</span><span class="w"> </span><span class="p">;</span>
                     </pre>
+                    <div class="note">
+                        <p>
+                            If the administrator wished to control the third-party's use of the index, then it could apply the <a href="#distribution-pattern">Distribution Pattern</a> described above.
+                        </p>
+                    </div>
                 </section>
             </section>
         </section>
