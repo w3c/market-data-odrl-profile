@@ -30,8 +30,23 @@
         </p><p>
             A Permission effectively models a rights assignment in a license.
         </p>
-        <section data-dfn-for="ContractScope">
-            <h2>Contract Scope</h2>
+        <section data-dfn-for="AssignmentPatterns">
+            <h2>Assignment Patterns</h2>
+            <p>
+                In ODRL, an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner" target="_blank">assigner</a> grants a right and an <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee" target="_blank">assignee</a> receives it. Both are <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a>.
+            </p><p>
+                Deciding which organisations, or who in an organisation, has the right to exercise a permission can be a complex calculation. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides some support to help automate the determination of contract scope.
+            </p><p>
+                At its simplest, the rights transfer is to the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#licensing-party-0-9" target="_blank">Licensing Party</a> and its <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#affiliated-party-0-9" target="_blank">Affiliated Parties</a>. These can be explicitly listed in the contract. 
+            </p><p>
+                We can model that by using the <code>includes</code> property to create an approved list of organisations (identified using a URI and preferably an LEI).
+            </p><p>
+                Sometimes affiliates qualify by meeting some condition (a.k.a. a Party <a href="https://www.w3.org/TR/odrl-model/#constraint" target="_blank">Constraint</a>). Usually, this is an ownership threshold.
+            </p><p>
+                Affiliates can then be dynamically identified by specifying the <code>parent</code> organisation and the <code>minimum holding</code> required to qualify.
+            </p><p>
+                
+            </p>
         </section>
         <section data-dfn-for="DistributionPattern">
             <h2>Distribution Pattern</h2>
@@ -45,7 +60,7 @@
             <table class="def propdef">
                 <tbody>
                     <tr>
-                        <th>Context:</th><td>When <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a> providing a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> <a href="https://www.w3.org/TR/odrl-model/#action" target="_blank">Action</a> wish to control a third-party recipient's use of their <a href="https://www.w3.org/TR/odrl-model/#asset" target="_blank">Asset</a>.</td>
+                        <th>Context:</th><td>When <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a> providing a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">Distribute</a> action wish to control a third-party recipient's use of their <a href="https://www.w3.org/TR/odrl-model/#asset" target="_blank">Asset</a>.</td>
                     </tr><tr>
                         <th>Definition:</th><td>Use a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to specify a policy controlling the third-party's use of the transferred asset.</td>
                     </tr><tr>
@@ -106,7 +121,7 @@
         <section data-dfn-for="Non-DisplayPattern">
             <h2>Non-Display Pattern</h2>
             <p>
-                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> action covers data use by machines (as opposed to people). It does not cover display nor distribution to third-parties. But it does cover everything else, including the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9" target="_blank">Derive</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#trade-automatically-0-9" target="_blank">Automated Trading</a> Actions.
+                The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> action covers data use by machines (as opposed to people). It does not cover display nor distribution to third-parties. But it does cover everything else, including the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9" target="_blank">Derive</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#trade-automatically-0-9" target="_blank">Automated Trading</a> actions.
             </p><p>
                 Such various uses are frequently segmented by data providers by the purpose (i.e. business activity) that the use serves. This is captured using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint on the action.
             </p>
