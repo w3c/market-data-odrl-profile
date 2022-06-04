@@ -37,13 +37,13 @@
             </p><p>
                 Deciding which organisations, or who in an organisation, has the right to exercise a permission can be a complex calculation. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides some support to help automate this determination of contract scope.
             </p><p>
-                At its simplest, the rights transfer is to the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#licensing-party-0-9" target="_blank">Licensing Party</a> and its <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#affiliated-party-0-9" target="_blank">Affiliated Parties</a>. These can be explicitly listed in the contract. 
+                At its simplest, the rights transfer is to the <code>licensee</code> and its affiliated organisations. These can be explicitly listed in the contract. 
             </p><p>
-                We can model that by using the <code>includes</code> property to create an approved list of organisations (each identified using a URI and preferably an LEI).
+                We can model that by using the <code>licensee</code> property to identify the licensee and the <code>includes</code> property to create an approved list of affiliated organisations (each identified using a URI and preferably an LEI).
             </p><p>
                 Sometimes affiliates qualify by meeting some condition. Usually, this is an ownership threshold.
             </p><p>
-                Affiliates can then be dynamically identified by specifying the <code>parent</code> organisation and the <code>minimum holding</code> required to qualify.
+                Affiliates can then be dynamically identified by specifying the <code>minimum holding</code> the licensee requires to qualify an organisation as an affiliate.
             </p><p>
                 Some <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a> may be explicitly excluded from the contract. This can be achieved by identifying them with the <code>excludes</code> property.
             </p><p>
