@@ -33,7 +33,7 @@
         <section data-dfn-for="AssignmentPatterns">
             <h2>Assignment Patterns</h2>
             <p>
-                In ODRL, an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner" target="_blank">assigner</a> grants a right and an <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee" target="_blank">assignee</a> exercises it.
+                In ODRL, an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner" target="_blank">assigner</a> grants a right and the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee" target="_blank">assignee</a> exercises it.
             </p><p>
                 Deciding which organisations, or who in an organisation, has the right to exercise a permission can be a complex calculation. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides some support to help automate this determination of contract scope.
             </p><p>
@@ -43,11 +43,11 @@
             </p><p>
                 Sometimes affiliates qualify by meeting some condition. Usually, this is an ownership threshold.
             </p><p>
-                Affiliates can then be dynamically identified by specifying the <code>minimum holding</code> the licensee requires to qualify an organisation as an affiliate.
+                Affiliates can then be dynamically identified by specifying the <code>minimum holding</code> required to qualify an organisation as an affiliate.
             </p><p>
                 Some <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a> may be explicitly excluded from the contract. This can be achieved by identifying them with the <code>excludes</code> property.
             </p><p>
-                The parties identified by these properties need not be organisations. They may be departments, business functions, trading desks, or individuals. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides both the <code>market function</code> and <code>geography</code> constraints to reflect the most common distinctions.
+                Often only parts of an organisation may exercise a permission. These may be departments, business functions, trading desks, or individuals. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides both the <code>market function</code> and <code>geography</code> constraints to reflect the most common distinctions.
             </p><p>
                 The profile, however, does not seek to standardise the description of all these entities and requires only than they be identified by URIs.
             </p>
@@ -57,17 +57,61 @@
                         <th>Context:</th><td>When deciding which <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a> can exercise a permission.</td>
                     </tr><tr>
                         <th>Definition:</th>
-                        <td>Use  the <code>include</code> and <code>exclude</code> properties to make explicit lists of who is and isn't an <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee" target="_blank">assignee</a>.<br>
-                            Use the <code>parent</code> and <code>minimum holding</code> properties to specify the threshold and dynamically generate the affiliates list.<br>
-                            Use the <code>market function</code> and <code>geography</code> constraints to segment the organisation.
+                        <td>Use the <code>licensee</code> property to identify the licensee. <br>
+                            Use  the <code>includes</code> property to make an explicit list of approved affiliates.<br>
+                            Use the <code>minimum holding</code> property to specify the threshold to dynamically generate the affiliates list.<br>
+                            Use the <code>excludes</code> property to explicitly list proscribed parties.
+                            Use the <code>market function</code> and <code>geography</code> constraints to segment parties.
                         </td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Properties:</th><td><code>md:include</code> , <code>md:exclude</code> , <code>md:parent</code></td>
-                    </tr><tr>
-                        <th style="white-space:nowrap;">Constraints:</th><td><code>md:minimumHolding</code> , <code>md:marketFunction</code> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">md:geography</a></td>
+                        <th style="white-space:nowrap;">Constraints:</th><td><code>md:licensee</code> , <code>md:includes</code> , <code>md:excludes</code> , <code>md:parent</code> , <code>md:minimumHolding</code> , <code>md:marketFunction</code> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">md:geography</a></td>
                     </tr>
                 </tbody>
             </table>
+            <section data-dfn-for="AssignmentConstraint">
+                <h2>Assigment Constraints</h2>
+                <p>
+                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint specifies the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Activities" target="_blank">activities</a> in persuit of which the permission can be exercised. To use the permission in support of any other activity would be non-compliant.
+                </p><p>
+                    In the following examples, the permission <code>P1</code> can only be used to calculate indices; <code>P2</code> supports the maintenance and testing of a business continuity environment; and <code>P3</code> allows automated trading but only as a broker.
+                </p>
+                <section>
+                    <h2>Assignment Code</h2>
+                    <pre class="example nohighlight turtle" title="Assignement Constraints" id="AssignmentConstraintsCode">
+                        <span class="c">Only the licensee</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">licensee</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">The licensee and a list of approved organisations</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">licensee</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">includes</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_C</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">Non-Display for the purposes of automated trading as a broker</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">AutomatedTrading</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Brokerage</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                    </pre>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="DistributionPattern">
             <h2>Distribution Pattern</h2>
@@ -92,15 +136,15 @@
             <section data-dfn-for="NextPolicyDuty_Distribution">
                 <h2><dfn>Next Policy Duty (Distribution)</dfn></h2>
                 <p>
-                    In the following example, <code>Company A</code> can ensure that if <code>Company B</code> distributes the asset <code>A1</code> to an external party, they can only offer a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display" target="_blank">Display</a> permission to that third-party.
+                    In the following example, <code>Organisation A</code> can ensure that if <code>Organisation B</code> distributes the asset <code>A1</code> to an external party, they can only offer a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#display" target="_blank">Display</a> permission to that third-party.
                 </p>
                 <section>
                     <h2>Next Policy Code</h2>
                     <pre class="example nohighlight turtle" title="Next Policy" id="NextPolicyExample">
-                        <span class="c">This distribution permission is granted by Company A ...</span>
+                        <span class="c">This distribution permission is granted by Organisation A ...</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Distribute</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A1</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nn">ex:</span><span class="nt">D1</span><span class="w"> </span><span class="p">;</span>
@@ -109,20 +153,20 @@
                         <span class="w">       </span>
                         <span class="c">... on the condition that any third-party receiving the asset ...</span>
                         <span class="p">ex:D1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">odrl:</span><span class="nt">NextPolicy</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O1</span><span class="w"> </span><span class="p">.</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
-                        <span class="c">... is offered by Company B only ...</span>
+                        <span class="c">... is offered by Organisation B only ...</span>
                         <span class="p">ex:O1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Offer</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">permission</span><span class="w">   </span><span class="nn">ex:</span><span class="nt">P1</span><span class="w"> </span><span class="p">.</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
                         <span class="c">...  a display permission</span>
                         <span class="p">ex:P1</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Company_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">ExternalParty</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">Display</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
@@ -132,9 +176,9 @@
                 </section>
                 <div class="note">
                     <p>
-                        The <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> does not provide any <code>executable</code> permissions. In fact, the identity of any third-party is likely unknown when the license is agreed between <code>Company A</code> and <code>Comapany B</code>. 
+                        The <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> does not provide any <code>executable</code> permissions. In fact, the identity of any third-party is likely unknown when the license is agreed between <code>Organisation A</code> and <code>Comapany B</code>. 
                     </p><p>
-                        The offer instead provides a policy specification to which any future <a href="https://www.w3.org/TR/odrl-model/#policy-agreement" target="_blank">Agreement</a> between <code>Company B</code> and third-parties must be compliant.
+                        The offer instead provides a policy specification to which any future <a href="https://www.w3.org/TR/odrl-model/#policy-agreement" target="_blank">Agreement</a> between <code>Organisation B</code> and third-parties must be compliant.
                     </p>
                 </div>
             </section>
