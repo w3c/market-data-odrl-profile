@@ -80,7 +80,7 @@
                     <pre class="example nohighlight turtle" title="Assignement Constraints" id="AssignmentConstraintsCode">
                         <span class="c">Only the licensee</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">     </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">licensee</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
@@ -89,26 +89,45 @@
                         <span class="w">       </span>
                         <span class="c">The licensee and a list of approved organisations</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">     </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">licensee</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">includes</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_C</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">includes</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_C</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c">Approved list</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
                         <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
-                        <span class="c">Non-Display for the purposes of automated trading as a broker</span>
+                        <span class="c">Only the French-based, buy-side operations of the licensee and its approved organisations </span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="p">...</span>
-                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
-                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">AutomatedTrading</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Brokerage</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">licensee</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">marketFunction</span><span class="w">   </span><span class="nn">md:</span><span class="nt">buySide</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">geography</span><span class="w">   </span><span class="nn">m49:</span><span class="nt">250</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">includes</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_C</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c">Approved list</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">marketFunction</span><span class="w">   </span><span class="nn">md:</span><span class="nt">buySide</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">geography</span><span class="w">   </span><span class="nn">m49:</span><span class="nt">250</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
                         <span class="w">       </span><span class="p">...</span>
                         <span class="w">       </span>
                         <span class="w">       </span>
+                        <span class="c">The licensee and those affiliates in which it is has a holding greater or equal to 50%, except Organisation T</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">licensee</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">minHolding</span><span class="w">           </span><span class="s">2</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">excludes</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_T</span><span class="p">&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_C</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c">Proscribed list</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span><span class="s">2</span>
                     </pre>
                 </section>
             </section>
