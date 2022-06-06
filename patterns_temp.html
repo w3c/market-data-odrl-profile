@@ -47,11 +47,11 @@
             </p><p>
                 Some <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Parties</a> may be explicitly excluded from the contract. This can be achieved by identifying them with the <code>excludes</code> property.
             </p><p>
-                Often only parts of an organisation may exercise a permission. These may be departments, business functions, trading desks, or individuals. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides both the <code>market function</code> and <code>geography</code> constraints to reflect the most common distinctions.
+                Often only parts of an organisation may exercise a permission. These may be locations, departments, business functions, trading desks, or individuals. The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> provides the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#locations-0-9" target="_blank">locations</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#lines-of-business-0-9" target="_blank">lines of business</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">geography</a> constraints to reflect the most common distinctions.
             </p><p>
-                Furthermore, the <a href="https://www.w3.org/TR/vocab-org" target="_blank">Organisation Ontology</a> provides the <a href="https://www.w3.org/TR/vocab-org/#org:hasSubOrganization" target="_blank">sub-organisation</a>, <a href="https://www.w3.org/TR/vocab-org/#org:hasUnit" target="_blank">unit</a>, and <a href="https://www.w3.org/TR/vocab-org/#org:hasMember" target="_blank">member</a> (for people) properties) to further constrain the applicability of a permission.
+                Furthermore, the <a href="https://www.w3.org/TR/vocab-org" target="_blank">Organisation Ontology</a> provides the <a href="https://www.w3.org/TR/vocab-org/#org:hasSubOrganization" target="_blank">sub-organisation</a>, <a href="https://www.w3.org/TR/vocab-org/#org:hasUnit" target="_blank">unit</a>, and <a href="https://www.w3.org/TR/vocab-org/#org:hasMember" target="_blank">member</a> (for people) properties to further constrain the applicability of a permission.
             </p><p>
-                The profile, however, does not seek to standardise the description of all these entities and requires only than they be identified by URIs.
+                The Market Data Profie for ODRL, however, does not seek to standardise the description of all these entities and requires only than they be identified by URIs.
             </p>
             <table class="def propdef">
                 <tbody>
@@ -63,7 +63,7 @@
                             Use  the <code>includes</code> property to make an explicit list of approved affiliates.<br>
                             Use the <code>minimum holding</code> property to specify the threshold to dynamically generate the affiliates list.<br>
                             Use the <code>excludes</code> property to explicitly list proscribed parties.
-                            Use the <code>market function</code> and <code>geography</code> constraints to segment parties.
+                            Use the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#locations-0-9" target="_blank">locations</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#lines-of-business-0-9" target="_blank">lines of business</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">geography</a> constraints to segment parties.
                         </td>
                     </tr><tr>
                         <th style="white-space:nowrap;">Constraints:</th><td><code>md:licensee</code> , <code>md:includes</code> , <code>md:excludes</code> , <code>md:minHolding</code> , <code>md:marketFunction</code> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">md:geography</a></td>
