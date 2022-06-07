@@ -383,17 +383,41 @@
                 </section>
             </section>
         </section>
-       
-        
         <section data-dfn-for="ServiceFacilitators">
             <h2>Service Facilitators</h2>
             <p>
                 A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#service-facilitator-0-9" target="_blank">Service Facilitators's</a> use of an asset is governed by one of two patters. Either they must use their own permissions or they can use the permissions of their client. The data license determines which pattern applies.
             </p><p>
-                The distinction can be modelled with the <a href="" target="_blank">users</a> constraint. If a service facilitator can use their client's permissions, then they must be identified in the user constraint on those permissions.
+                The distinction can be modelled with the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">users</a> constraint. If a service facilitator can use their client's permissions, then they must be identified by the user constraint on those permissions.
             </p><p>
-                Often the consent of the data originator is required before use. The mechanics of this are described in the <a href="#RequestAndConsentPattern">Request and Consent Pattern</a> below.
+                Often the consent of the data originator is required before use by a Service Facilitator. The mechanics of this are described in the <a href="#RequestAndConsentPattern">Request and Consent Pattern</a> below.
             </p>
+            <section data-dfn-for="UsersConstraint">
+                <h2>Users Constraint</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>When a service facilitator can use their client's permissions.</td>
+                        </tr><tr>
+                            <th>Definition:</th><td>Employ a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">users</a> constraint on the client permission that idenitifies the service facilitator.</td>
+                        </tr><tr>
+                            <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">md:users</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    The permission belonging to <code>Organisation A</code> in the following example can be used by <code>Service Facilitator X</code>. 
+                </p>
+                <section data-dfn-for="UsersCode">
+                    <h2>Users Code</h2>
+                    <pre class="example nohighlight turtle" title="Users Constraint" id="UsersConstraint">
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">users</span><span class="w">          </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Service_Facilitator_X</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                    </pre>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="Controls">
             <h2>Controls</h2>
