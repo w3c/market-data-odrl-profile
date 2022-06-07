@@ -406,7 +406,9 @@
                     </tbody>
                 </table>
                 <p>
-                    The permission belonging to <code>Organisation A</code> in the following example can be used by <code>Service Facilitator X</code>. 
+                    The permission belonging to <code>Organisation A</code> in the following example can be used by <code>Service Facilitator X</code>. Such a permission would likely have a duty requiring the consent of the <a href="" target="_blank">Adminstrator</a> before <code>Service Facilitator X</code> could exercise the permission as discussed in the <a href="#RequestAndConsentPattern">Request and Consent Pattern</a>.
+                </p><p>
+                    Without this <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">users</a> constraint, only the assignees of the permission (in this case, <code>Organisation A</code>) could exercise it. <code>Service Facilitator X</code> would need their own permission in which they were the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee" target="_blank">assignee</a>.
                 </p>
                 <section data-dfn-for="UsersCode">
                     <h2>Users Code</h2>
