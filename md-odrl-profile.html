@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>Market Data Profile for ODRL 1.0</title>
+    <h1 id="subtitle">Automating Rights Management for Market Data</h1>
     <link rel="stylesheet" href="profile-scripts/turtle-styles.css">
     <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" async></script>
     <script src="profile-scripts/config.js" class="remove"></script>
 </head>
 
 <body>
-    <h2 id="subtitle">Automating Rights Management for Market Data</h2>
     <section id="abstract">
         <p>
             The Market Data Profile for ODRL provides the additional vocabulary and semantics needed to express the
@@ -2877,17 +2877,21 @@
                     <tbody>
                         <tr>
                             <th>Definition:</th>
-                            <td>To supply an <a>Asset</a> to an <a>External Party</a>.</td>
+                            <td>To supply an <a>Asset</a> to a <a>Party</a>.</td>
                         </tr>
                         <tr>
                             <th>Version:</th>
                             <td>0.9</td>
                         </tr>
                         <tr>
+                            <th>Scope Note:</th>
+                            <td>Redistribution is the case where the <a>Asset</a> is transferred to a third party. In this case, the <a>recipients</a> constraint can be set to <a>External Party</a>.</td>
+                        </tr>
+                        <tr>
                             <th>Note:</th>
-                            <td>The External Party"s use of the Asset can be controlled by using a duty to impose a
+                            <td>The recipient's use of the Asset can be controlled by using a duty to impose a
                                 <a>Next Policy</a> that specifies the Permissions, Prohibitions, and/or Duties to which
-                                the third-party must adhere in their use of the asset.</td>
+                                the recipient must adhere in their use of the asset.</td>
                         </tr>
                         <tr>
                             <th>Label:</th>
@@ -2906,6 +2910,113 @@
                         </tr>
                     </tbody>
                 </table>
+                <section data-dfn-for="Reproduce" id="reproduce-0-9">
+                    <h2><dfn>Reproduce</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>To copy an <a>Asset</a> and then supply it to a <a>Party</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Scope Note:</th>
+                                <td>Usually applied to documents, parts of documents, charts, or similarly formatted artifacts.</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>Reproduce</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#reproduce-0-9">https://www.w3.org/community/md-odrl-profile#reproduce-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="white-space:nowrap;">Sub-class Of:</th>
+                                <td><a href="https://www.w3.org/TR/odrl-model/#action">odrl:Distribute</a>, </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <section data-dfn-for="Print" id="print-0-9">
+                        <h2><dfn>Print</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th>
+                                    <td>To create a tangible and permanent rendition of an <a>Asset</a>.</td>
+                                </tr>
+                                <tr>
+                                    <th>Version:</th>
+                                    <td>2.2</td>
+                                </tr>
+                                <tr>
+                                    <th>Conforms To:</th>
+                                    <td><a href="https://www.w3.org/TR/odrl-vocab/#vocab-common">ODRL Common Vocabulary</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Scope Note:</th>
+                                    <td>For example, creating a permanent, fixed (static), and directly perceivable representation of the Asset, such as printing onto paper.</td>
+                                </tr>
+                                <tr>
+                                    <th>Note:</th>
+                                    <td>Exercising this action can be used as a unit-of-count.</td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td>Print</td>
+                                </tr>
+                                <tr>
+                                    <th>Identifier:</th>
+                                    <td><a
+                                            href="https://www.w3.org/TR/odrl-vocab/#term-print">https://www.w3.org/TR/odrl-vocab/#term-print</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th>
+                                    <td><a>Reproduce</a>, <a>Units of Count</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section data-dfn-for="Format" id="reformat-0-9">
+                        <h2><dfn>Format</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th>
+                                    <td>To format an <a>Asset</a> - usually a document - for presentational purposes.</td>
+                                </tr>
+                                <tr>
+                                    <th>Version:</th>
+                                    <td>0.9</td>
+                                </tr>
+                                <tr>
+                                    <th>Scope Note:</th>
+                                    <td>A <code>Prohibition</code> on formatting a document would mean that it must be presented "as is".</td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td>Format</td>
+                                </tr>
+                                <tr>
+                                    <th>Identifier:</th>
+                                    <td><a
+                                            href="https://www.w3.org/community/md-odrl-profile#format-0-9">https://www.w3.org/community/md-odrl-profile#format-0-9</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th>
+                                    <td><a>Reproduce</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
             </section>
             <section data-dfn-for="Store" id="store-0-9">
                 <h2><dfn>Store</dfn></h2>
@@ -2933,6 +3044,76 @@
                             <th style="white-space:nowrap;">Sub-class Of:</th>
                             <td><a href="https://www.w3.org/TR/odrl-model/#action">odrl:Action</a>, <a
                                     href="https://www.w3.org/TR/prov-o/#Activity">prov:Activity</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Download" id="download-0-9">
+                <h2><dfn>Download</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th>
+                            <td>To download an <a>Asset</a> to store and use it with a local application.</td>
+                        </tr>
+                        <tr>
+                            <th>Version:</th>
+                            <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <th>Scope Note:</th>
+                            <td>Applicable in the context of terminal use.</td>
+                        </tr>
+                        <tr>
+                            <th>Note:</th>
+                            <td>Exercising this action can be used as a unit-of-count.</td>
+                        </tr>
+                        <tr>
+                            <th>Label:</th>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <th>Identifier:</th>
+                            <td><a
+                                    href="https://www.w3.org/community/md-odrl-profile#download-0-9">https://www.w3.org/community/md-odrl-profile#download-0-9</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th>
+                            <td><a>Action</a>, <a>Units of Count</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section data-dfn-for="Transform" id="transform-0-9">
+                <h2><dfn>Transform</dfn></h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Definition:</th>
+                            <td>To transform an <a>Asset</a> into a different format without changing its informational content.</td>
+                        </tr>
+                        <tr>
+                            <th>Version:</th>
+                            <td>0.9</td>
+                        </tr>
+                        <tr>
+                            <th>Scope Note:</th>
+                            <td>Describes converting an <a>Asset</a> into a different format for consumption by a system.</td>
+                        </tr>
+                        <tr>
+                            <th>Label:</th>
+                            <td>Transform</td>
+                        </tr>
+                        <tr>
+                            <th>Identifier:</th>
+                            <td><a
+                                    href="https://www.w3.org/community/md-odrl-profile#transform-0-9">https://www.w3.org/community/md-odrl-profile#transform-0-9</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="white-space:nowrap;">Sub-class Of:</th>
+                            <td><a>Action</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -3005,6 +3186,10 @@
                                 <th>Note:</th>
                                 <td>Can be constrained to individual display by setting <a>display types</a> to
                                     <a>Device</a>, or, for public display, to <a>Wallboard</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Synonyms:</th>
+                                <td>View</td>
                             </tr>
                             <tr>
                                 <th>Label:</th>
@@ -3192,10 +3377,18 @@
                                     <td>0.9</td>
                                 </tr>
                                 <tr>
+                                    <th>Scope Note:</th>
+                                    <td>Includes performing analytics.</td>
+                                </tr>
+                                <tr>
                                     <th>Note:</th>
                                     <td>Frequently, it"s important to specify whether the transformation is
                                         <a>Irreversible</a> and <a>Non-Substitutive</a> using the <a>derivation
                                             types</a> constraint.</td>
+                                </tr>
+                                <tr>
+                                    <th>Note:</th>
+                                    <td>Where derivations are used to create new works (a.k.a. Derived Works) that are intended for <a href="#distribute-0-9">distribution</a> to third-parties, a <a href="https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#derived-data-patterns" target="_blank">Next Policy Duty</a> must be specified.</td>
                                 </tr>
                                 <tr>
                                     <th>Label:</th>
@@ -4037,354 +4230,373 @@
         <h2>Constraints</h2>
         <section id="ConstraintsOnAssets">
             <h2>Constraints on Assets</h2>
-            <section data-dfn-for="assetClasses" id="asset-classes-0-9">
-                <h2><dfn>asset classes</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>Categorises a <a>Asset</a> by the financial asset class(es) it describes.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>asset classes</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#asset-classes-0-9">https://www.w3.org/community/md-odrl-profile#asset-classes-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a
-                                    href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-class">Asset
-                                    Class</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>
-                    In the following example the Asset <code>:A1</code> describes Commodity Futures:
-                </p>
-                <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
-                <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
-                <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nn">cfi:</span><span class="nt">FCEPSX</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
-            </pre>
+            <p>
+                <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-0-9">Assets</a> are segmented primarily for commercial or technical reasons. These segmentations can be by the type of the content (e.g. access to just French equities or only the index values, not the constituents and weightings); by temporal reach (e.g. access to only three years of historical data); or by the mode of delivery. The first we call a <code>content segmentation</code>; the second, a <code>temporal segmentation</code>; and the last, a <code>delivery segmentation</code>.
+            </p>
+            <section id="DeliverySegmentations">
+                <h2>Delivery Segmentations</h2>
+                <section data-dfn-for="timelinessOfDelivery" id="timeliness-of-delivery-0-9">
+                    <h2><dfn>timeliness of delivery</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>Specifies the timing of the permitted receipt or onwards delivery of an <a>Asset</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th style="white-space:nowrap;">Editorial Note:</th>
+                                <td>Usually specified as an interval (or intervals) relative to the data"s <a>Origination
+                                        Time</a>, <a>Publication Time</a>, <a>Issue Time</a>, or <a>Market Close</a> (or
+                                    some other specified moment).</td>
+                            </tr>
+                            <tr>
+                                <th>Editorial Note:</th>
+                                <td>These intervals are frequently identified as <a>Realtime</a>, <a>Delayed</a>, or
+                                    <a>Embargoed</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Editorial Note:</th>
+                                <td>Unless explicitly prohibited, <a>Permissions</a> over shorter intervals carry across to
+                                    longer intervals (e.g. <a>Realtime</a> data also covers <a>Delayed</a>, and
+                                    <a>Embargoed</a> data)</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>timeliness of delivery</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#timeliness-of-deliverys-0-9">https://www.w3.org/community/md-odrl-profile#timeliness-of-delivery-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="methodOfUpdate" id="method-of-update-0-9">
+                    <h2><dfn>method of update</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>Specifies the method by which updates to the <a>Asset</a> are delivered.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Note:</th>
+                                <td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified
+                                    using the <a>count</a> property and a <a>time interval</a>. (See <a
+                                        href="#SnapshotCount">Example 10</a>.)</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>method of update</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#method-of-update-0-9">https://www.w3.org/community/md-odrl-profile#method-of-update-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a>Update Method</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="periodOfUpdate" id="period-of-update-0-9">
+                    <h2><dfn>period of update</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>The period during which the <a>Asset</a> has been, or continues to be, updated.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Note:</th>
+                                <td>If the Asset continues to be updated while a subsciption holds, use the <a>Service
+                                        Period</a> interval.</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>period of update</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#period-of-update-0-9">https://www.w3.org/community/md-odrl-profile#period-of-update-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="frequencyOfUpdate" id="frequency-of-update-0-9">
+                    <h2><dfn>frequency of update</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>Specifies how frequently updates to the <a>Asset</a> are delivered.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>frequency of update</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#frequency-of-update-0-9">https://www.w3.org/community/md-odrl-profile#frequency-of-update-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a>Update Frequency</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
             </section>
-            <section data-dfn-for="timelinessOfDelivery" id="timeliness-of-delivery-0-9">
-                <h2><dfn>timeliness of delivery</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>Specifies the timing of the permitted receipt or onwards delivery of an <a>Asset</a>.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th style="white-space:nowrap;">Editorial Note:</th>
-                            <td>Usually specified as an interval (or intervals) relative to the data"s <a>Origination
-                                    Time</a>, <a>Publication Time</a>, <a>Issue Time</a>, or <a>Market Close</a> (or
-                                some other specified moment).</td>
-                        </tr>
-                        <tr>
-                            <th>Editorial Note:</th>
-                            <td>These intervals are frequently identified as <a>Realtime</a>, <a>Delayed</a>, or
-                                <a>Embargoed</a>.</td>
-                        </tr>
-                        <tr>
-                            <th>Editorial Note:</th>
-                            <td>Unless explicitly prohibited, <a>Permissions</a> over shorter intervals carry across to
-                                longer intervals (e.g. <a>Realtime</a> data also covers <a>Delayed</a>, and
-                                <a>Embargoed</a> data)</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>timeliness of delivery</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#timeliness-of-deliverys-0-9">https://www.w3.org/community/md-odrl-profile#timeliness-of-delivery-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <section id="ContentSegmentations">
+                <h2>Content Segmentations</h2>
+                <section data-dfn-for="assetClasses" id="asset-classes-0-9">
+                    <h2><dfn>asset classes</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>Categorises a <a>Asset</a> by the financial asset class(es) it describes.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>asset classes</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#asset-classes-0-9">https://www.w3.org/community/md-odrl-profile#asset-classes-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a
+                                        href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#asset-class">Asset
+                                        Class</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        In the following example the Asset <code>:A1</code> describes Commodity Futures:
+                    </p>
+                    <pre class="example nohighlight turtle" title="Specifying Asset Class" id="AssetClassSpecification">
+                        <span class="nv">:A1</span><span class="w">   </span><span class="kt">a</span><span class="w">                </span><span class="nn">md:</span><span class="nt">Asset</span><span class="p">;</span>
+                        <span class="w">      </span><span class="nn">md:</span><span class="nt">assetClasses</span><span class="w">  </span><span class="nn">cfi:</span><span class="nt">FCEPSX</span> <span class="p">.</span><span class="c">  # Commodity Futures for Extraction Resources with Physical Delivery</span>
+                    </pre>
+                </section>
+                <section data-dfn-for="depthOfMarket" id="depth-of-market-0-9">
+                    <h2><dfn>depth of market</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>Measures the book depth offered by an <a>Asset</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>depth of market</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#depth-of-market-0-9">https://www.w3.org/community/md-odrl-profile#depth-of-market-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a>Market Depth</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="geography" id="geography-0-9">
+                    <h2><dfn>geography</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>The geographic subject matter and focus of an <a>Asset</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Scope Note:</th>
+                                <td>A characteristic of the <a>Asset</a> rather than its source/origin or any limitations on
+                                    its distribution.</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>geographic coverage</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#geography-0-9">https://www.w3.org/community/md-odrl-profile#geography-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a href="https://unstats.un.org/unsd/methodology/m49/">UN M49 Codes</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section data-dfn-for="amount" id="amount-0-9">
+                    <h2><dfn>amount</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>The amount of an <a>Asset</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th style="white-space:nowrap;">Scope Note:</th>
+                                <td>If a qualititive measure is needed use the values <a>Insubstantial</a> or
+                                    <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a>unit of
+                                        count</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>amount</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#amount-0-9">https://www.w3.org/community/md-odrl-profile#amount-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a>Quantity</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
             </section>
-            <section data-dfn-for="methodOfUpdate" id="method-of-update-0-9">
-                <h2><dfn>method of update</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>Specifies the method by which updates to the <a>Asset</a> are delivered.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th>Note:</th>
-                            <td>If the method is <a>snapshot</a>, then the number of snaps permitted can be specified
-                                using the <a>count</a> property and a <a>time interval</a>. (See <a
-                                    href="#SnapshotCount">Example 10</a>.)</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>method of update</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#method-of-update-0-9">https://www.w3.org/community/md-odrl-profile#method-of-update-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a>Update Method</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="periodOfUpdate" id="period-of-update-0-9">
-                <h2><dfn>period of update</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>The period during which the <a>Asset</a> has been, or continues to be, updated.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th>Note:</th>
-                            <td>If the Asset continues to be updated while a subsciption holds, use the <a>Service
-                                    Period</a> interval.</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>period of update</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#period-of-update-0-9">https://www.w3.org/community/md-odrl-profile#period-of-update-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">Proper Interval</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="frequencyOfUpdate" id="frequency-of-update-0-9">
-                <h2><dfn>frequency of update</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>Specifies how frequently updates to the <a>Asset</a> are delivered.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>frequency of update</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#frequency-of-update-0-9">https://www.w3.org/community/md-odrl-profile#frequency-of-update-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a>Update Frequency</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="depthOfMarket" id="depth-of-market-0-9">
-                <h2><dfn>depth of market</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>Measures the book depth offered by an <a>Asset</a>.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>depth of market</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#depth-of-market-0-9">https://www.w3.org/community/md-odrl-profile#depth-of-market-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a>Market Depth</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="geography" id="geography-0-9">
-                <h2><dfn>geography</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>The geographic subject matter and focus of an <a>Asset</a>.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th>Scope Note:</th>
-                            <td>A characteristic of the <a>Asset</a> rather than its source/origin or any limitations on
-                                its distribution.</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>geographic coverage</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#geography-0-9">https://www.w3.org/community/md-odrl-profile#geography-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a href="https://unstats.un.org/unsd/methodology/m49/">UN M49 Codes</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="temporal" id="temporal-0-9">
-                <h2><dfn>temporal</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>The temporal coverage offered by an <a>Asset</a>.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th>Scope Note:</th>
-                            <td>Usually used to specify the date range of <a>Historical</a> data.</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>temporal coverage</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#temporal-0-9">https://www.w3.org/community/md-odrl-profile#temporal-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">time:ProperInterval</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section data-dfn-for="amount" id="amount-0-9">
-                <h2><dfn>amount</dfn></h2>
-                <table class="def propdef">
-                    <tbody>
-                        <tr>
-                            <th>Definition:</th>
-                            <td>The amount of an <a>Asset</a>.</td>
-                        </tr>
-                        <tr>
-                            <th>Version:</th>
-                            <td>0.9</td>
-                        </tr>
-                        <tr>
-                            <th style="white-space:nowrap;">Scope Note:</th>
-                            <td>If a qualititive measure is needed use the values <a>Insubstantial</a> or
-                                <a>Substantial</a>. Else specify a numeric value (as rdf:value) and a <a>unit of
-                                    count</a>.</td>
-                        </tr>
-                        <tr>
-                            <th>Label:</th>
-                            <td>amount</td>
-                        </tr>
-                        <tr>
-                            <th>Identifier:</th>
-                            <td><a
-                                    href="https://www.w3.org/community/md-odrl-profile#amount-0-9">https://www.w3.org/community/md-odrl-profile#amount-0-9</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Domain:</th>
-                            <td><a>Asset</a></td>
-                        </tr>
-                        <tr>
-                            <th>Range:</th>
-                            <td><a>Quantity</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <section id="TemporalSegmentations">
+                <h2>TemporalSegmentations</h2>
+                <section data-dfn-for="temporal" id="temporal-0-9">
+                    <h2><dfn>temporal</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>The temporal coverage offered by an <a>Asset</a>.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Scope Note:</th>
+                                <td>Usually used to specify the date range of <a>Historical</a> data.</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>temporal coverage</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#temporal-0-9">https://www.w3.org/community/md-odrl-profile#temporal-0-9</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Domain:</th>
+                                <td><a>Asset</a></td>
+                            </tr>
+                            <tr>
+                                <th>Range:</th>
+                                <td><a href="https://www.w3.org/TR/owl-time/#time:ProperInterval">time:ProperInterval</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Temporal constaints specify access to historical data using the temporal property. The interval allowing access to the latest three years of historical data would look so:</p>
+                    <pre class="example nohighlight turtle" title="Specifying A Temporal Constraint" id="TemporalConstraintExample">
+                        <span class="p">[]</span><span class="w">   </span><span class="nn">md:</span><span class="nt">temporal</span><span class="w">  </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">time:</span><span class="nt">hasXSDDuration</span>  <span class="s">"P3Y"^^xsd:duration</span>
+                        <span class="w">                           </span><span class="p">]</span><span class="p"> .</span>     
+                    </pre>
+                </section>
             </section>
         </section>
         <section id="ConstraintsOnAssetClasses">
@@ -4856,7 +5068,7 @@
                     <tbody>
                         <tr>
                             <th>Definition:</th>
-                            <td>Specifies the assignee's lines of business who can exercise the <a>Rule</a>.</td>
+                            <td>Specifies the lines of business belonging to an assignee that can exercise the <a>Rule</a>.</td>
                         </tr>
                         <tr>
                             <th>Version:</th>
@@ -5406,8 +5618,7 @@
                         <tbody>
                             <tr>
                                 <th>Definition:</th>
-                                <td>A small part of an <a>Asset</a> which by virue of its very smallness may have more
-                                    permitted uses than the whole.</td>
+                                <td>A small part of an <a>Asset</a>.</td>
                             </tr>
                             <tr>
                                 <th>Version:</th>
@@ -5415,6 +5626,15 @@
                             </tr>
                             <tr>
                                 <th style="white-space:nowrap;">Scope Note:</th>
+                                <td>By virue of its very smallness, an insubstantial part of an <a>Asset</a> may have more
+                                    permitted uses than the whole.</td>
+                            </tr>
+                            <tr>
+                                <th style="white-space:nowrap;">Scope Note:</th>
+                                <td>Indicates dissaggregation is permitted when used in a <a>Commingle</a> constraint.</td>
+                            </tr>
+                            <tr>
+                                <th>Note:</th>
                                 <td>This is a qualitative measure. If a quantative measure is needed, constrain the
                                     amount by a <a>unit of count</a>.</td>
                             </tr>
@@ -5441,8 +5661,7 @@
                         <tbody>
                             <tr>
                                 <th>Definition:</th>
-                                <td>A large part of an <a>Asset</a> which by virue of its very largeness may not have
-                                    more permitted uses than the whole.</td>
+                                <td>A large part of an <a>Asset</a>, up to and including the whole.</td>
                             </tr>
                             <tr>
                                 <th>Version:</th>
@@ -5450,6 +5669,15 @@
                             </tr>
                             <tr>
                                 <th style="white-space:nowrap;">Scope Note:</th>
+                                <td>By virue of its very largeness, an substantial part of an <a>Asset</a> may not have more
+                                    permitted uses than the whole.</td>
+                            </tr>
+                            <tr>
+                                <th style="white-space:nowrap;">Scope Note:</th>
+                                <td>Indicates aggregation is permitted when used in a <a>Commingle</a> constraint.</td>
+                            </tr>
+                            <tr>
+                                <th>Note:</th>
                                 <td>This is a qualitative measure. If a quantative measure is needed, constrain the
                                     amount by a <a>unit of count</a>.</td>
                             </tr>
@@ -5469,6 +5697,145 @@
                             </tr>
                         </tbody>
                     </table>
+                </section>
+            </section>
+            <section>
+                <h2>Lines of Business</h2>
+                <section data-dfn-for="Enterprise" id="enterprise-0-9">
+                    <h2><dfn>Enterprise</dfn></h2>
+                    <table class="def propdef">
+                        <tbody>
+                            <tr>
+                                <th>Definition:</th>
+                                <td>Covers all the lines-of-business managed by a <a>Party</a> including the <a href="#buy-side">buy-side</a>, <a href="#sell-side">sell-side</a>, and <a href="#treasury">treasury</a> functions.</td>
+                            </tr>
+                            <tr>
+                                <th>Version:</th>
+                                <td>0.9</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td>Enterprise</td>
+                            </tr>
+                            <tr>
+                                <th>Identifier:</th>
+                                <td><a
+                                        href="https://www.w3.org/community/md-odrl-profile#enterprise-0-9">https://www.w3.org/community/md-odrl-profile#enterprise-0-9</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <section data-dfn-for="BuySide" id="buy-side-0-9">
+                        <h2><dfn>Buy-Side</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th>
+                                    <td>A sub-division of a <a>Party</a> that focusses on buying financial instruments for money-management purposes.</td>
+                                </tr>
+                                <tr>
+                                    <th>Version:</th>
+                                    <td>0.9</td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Scope Note:</th>
+                                    <td>Common buy-side activities include asset management.</td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Scope Note:</th>
+                                    <td>Common buy-side institutions include hedge funds, pension funds, and mutual funds.</td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td>Buy-Side</td>
+                                </tr>
+                                <tr>
+                                    <th>Identifier:</th>
+                                    <td><a
+                                            href="https://www.w3.org/community/md-odrl-profile#buy-side-0-9">https://www.w3.org/community/md-odrl-profile#buy-side-0-9</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th>
+                                    <td><a>Enterprise</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section data-dfn-for="SellSide" id="sell-side-0-9">
+                        <h2><dfn>Sell-Side</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th>
+                                    <td>A sub-division of a <a>Party</a> that focusses on supporting the sale of financial instruments to buy-side clients.</td>
+                                </tr>
+                                <tr>
+                                    <th>Version:</th>
+                                    <td>0.9</td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Scope Note:</th>
+                                    <td>Common sell-side activities include underwriting, market making, providing clearing services, and generating research material and analysis.</td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Scope Note:</th>
+                                    <td>Investment banks are sell-side institutions.</td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td>Sell-Side</td>
+                                </tr>
+                                <tr>
+                                    <th>Identifier:</th>
+                                    <td><a
+                                            href="https://www.w3.org/community/md-odrl-profile#sell-side-0-9">https://www.w3.org/community/md-odrl-profile#sell-side-0-9</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th>
+                                    <td><a>Enterprise</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section data-dfn-for="Treasury" id="treasury-0-9">
+                        <h2><dfn>Treasury</dfn></h2>
+                        <table class="def propdef">
+                            <tbody>
+                                <tr>
+                                    <th>Definition:</th>
+                                    <td>The treasury function is responsible for ensuring that a financial organisations's assets match its liabilities.</td>
+                                </tr>
+                                <tr>
+                                    <th>Version:</th>
+                                    <td>0.9</td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Scope Note:</th>
+                                    <td>The treasury function must maintain the capital adequacy ratios and reserve ratios required by regulation.</td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Scope Note:</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td>Treasury</td>
+                                </tr>
+                                <tr>
+                                    <th>Identifier:</th>
+                                    <td><a
+                                            href="https://www.w3.org/community/md-odrl-profile#treasury-0-9">https://www.w3.org/community/md-odrl-profile#treasury-0-9</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="white-space:nowrap;">Sub-class Of:</th>
+                                    <td><a>Enterprise</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
                 </section>
             </section>
         </section>
@@ -6087,6 +6454,26 @@
                 </tbody>
             </table>
         </section>
+    </section>
+    <section id="Synonyms">
+        <h2>Synonyms</h2>
+        <p>
+            Market data licenses can say the same things in many different ways. The following table is intended to help map common license terms to the terms specified in this standard.
+        </p>
+        <table class="def">
+            <tbody>
+                <tr>
+                    <th>License Term</th>
+                    <th>Standard Term</th>
+                    <th>Note</th>
+                </tr>
+                <tr>
+                    <td>View</td>
+                    <td><a>Display</a></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 </body>
 </html>
