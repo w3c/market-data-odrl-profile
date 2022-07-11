@@ -5,6 +5,7 @@ Any objections to the minutes of the last meeting. [No]
 
 ## TOPIC: Actions from Last Week
 
+**Ben WS**
 There were two actions from last month's meeting:
 1. WFIC updates from JP Morgan and TMX.  Both have sent their apologies for today's meeting, so we'll bump that to our next meeting. 
 2. I volunteered do some work on contract scope. I've summarised my understanding of our discussions over the last two meetings as a pattern which I'll present today.
