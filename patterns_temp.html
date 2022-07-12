@@ -11,7 +11,7 @@
 <section id="abstract">
     <h2>Abstract</h2>
     <p>
-        The set of patterns provided here show how the terms defined in the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> should be combined to model the permissions, prohibitions, obligations, and constraints specified in the licences controlling the use of market data.
+        The set of patterns provided here show how the terms defined in the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html" target="_blank">Market Data Profile for ODRL</a> should be combined to model the permissions, prohibitions, obligations, and constraints specified in the licenses controlling the use of market data.
     </p><p>
         The core intended audience for this document are the authors of ODRL policies and the implementors of systems interpreting them. The objective is to match the former's intentions with the latter's expectations.
     </p>
@@ -51,7 +51,7 @@
             </p><p>
                 Furthermore, the <a href="https://www.w3.org/TR/vocab-org" target="_blank">Organisation Ontology</a> provides the <a href="https://www.w3.org/TR/vocab-org/#org:hasSubOrganization" target="_blank">sub-organisation</a>, <a href="https://www.w3.org/TR/vocab-org/#org:hasUnit" target="_blank">unit</a>, and <a href="https://www.w3.org/TR/vocab-org/#org:hasMember" target="_blank">member</a> (for people) properties to further constrain the applicability of a permission.
             </p><p>
-                The Market Data Profie for ODRL, however, does not seek to standardise the description of all these entities and requires only than they be identified by URIs.
+                The Market Data Profile for ODRL, however, does not seek to standardise the description of all these entities and requires only than they be identified by URIs.
             </p>
             <table class="def propdef">
                 <tbody>
@@ -60,26 +60,21 @@
                     </tr><tr>
                         <th>Definition:</th>
                         <td>Use the <code>licensee</code> property to identify the licensee. <br>
-                            Use  the <code>includes</code> property to make an explicit list of approved affiliates.<br>
+                            Use the <code>includes</code> property to make an explicit list of approved affiliates and the <code>excludes</code> property to list proscribed parties.<br>
                             Use the <code>minimum holding</code> property to specify the threshold to dynamically generate the affiliates list.<br>
-                            Use the <code>excludes</code> property to explicitly list proscribed parties.
                             Use the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#locations-0-9" target="_blank">locations</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#lines-of-business-0-9" target="_blank">lines of business</a>, and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">geography</a> constraints to segment parties.
                         </td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Constraints:</th><td><code>md:licensee</code>, <code>md:includes</code>, <code>md:excludes</code>, <code>md:minHolding</code>, <code>md:marketFunction</code>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#locations-0-9" target="_blank">locations</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#lines-of-business-0-9" target="_blank">lines of business</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">geography</a></td>
+                        <th style="white-space:nowrap;">Constraints:</th><td><code>md:licensee</code>, <code>md:includes</code>, <code>md:excludes</code>, <code>md:minHolding</code>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#locations-0-9" target="_blank">locations</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#lines-of-business-0-9" target="_blank">lines of business</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#geography-0-9" target="_blank">geography</a></td>
                     </tr>
                 </tbody>
             </table>
             <section data-dfn-for="AssignmentConstraint">
-                <h2>Assigment Constraints</h2>
-                <p>
-                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint specifies the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Activities" target="_blank">activities</a> in persuit of which the permission can be exercised. To use the permission in support of any other activity would be non-compliant.
-                </p><p>
-                    In the following examples, the permission <code>P1</code> can only be used to calculate indices; <code>P2</code> supports the maintenance and testing of a business continuity environment; and <code>P3</code> allows automated trading but only as a broker.
-                </p>
+                <h2>Assignment Constraints</h2>
+                <p></p>
                 <section>
                     <h2>Assignment Code</h2>
-                    <pre class="example nohighlight turtle" title="Assignement Constraints" id="AssignmentConstraintsCode">
+                    <pre class="example nohighlight turtle" title="Assignment Constraints" id="AssignmentConstraintsCode">
                         <span class="c">Only the licensee</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">     </span><span class="p">[</span>
@@ -106,12 +101,12 @@
                         <span class="w">       </span><span class="nn">odrl:</span><span class="nt">assignee</span><span class="w">     </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">licensee</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">marketFunction</span><span class="w">     </span><span class="nn">md:</span><span class="nt">buySide</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">linesOfBusiness</span><span class="w">    </span><span class="nn">md:</span><span class="nt">buySide</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">geography</span><span class="w">          </span><span class="nn">m49:</span><span class="nt">250</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c"># France</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
                         <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">odrl:</span><span class="nt">Party</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">includes</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_B</span><span class="p">&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_C</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c"># Approved list</span>
-                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">marketFunction</span><span class="w">     </span><span class="nn">md:</span><span class="nt">buySide</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">linesOfBusiness</span><span class="w">    </span><span class="nn">md:</span><span class="nt">buySide</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">                               </span><span class="nn">md:</span><span class="nt">geography</span><span class="w">          </span><span class="nn">m49:</span><span class="nt">250</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c"># France</span>
                         <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
                         <span class="w">       </span><span class="p">...</span>
@@ -204,7 +199,7 @@
                 </section>
                 <div class="note">
                     <p>
-                        The <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> does not provide any <code>executable</code> permissions. In fact, the identity of any third-party is likely unknown when the license is agreed between <code>Organisation A</code> and <code>Comapany B</code>. 
+                        The <a href="https://www.w3.org/TR/odrl-model/#policy-offer" target="_blank">Offer Policy</a> does not provide any <code>executable</code> permissions. In fact, the identity of any third-party is likely unknown when the license is agreed between <code>Organisation A</code> and <code>Company B</code>. 
                     </p><p>
                         The offer instead provides a policy specification to which any future <a href="https://www.w3.org/TR/odrl-model/#policy-agreement" target="_blank">Agreement</a> between <code>Organisation B</code> and third-parties must be compliant.
                     </p>
@@ -232,7 +227,7 @@
             <section data-dfn-for="PurposeConstraint">
                 <h2>Purposes Constraint</h2>
                 <p>
-                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint specifies the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Activities" target="_blank">activities</a> in persuit of which the permission can be exercised. To use the permission in support of any other activity would be non-compliant.
+                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint specifies the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#Activities" target="_blank">activities</a> in pursuit of which the permission can be exercised. To use the permission in support of any other activity would be non-compliant.
                 </p><p>
                     In the following examples, the permission <code>P1</code> can only be used to calculate indices; <code>P2</code> supports the maintenance and testing of a business continuity environment; and <code>P3</code> allows automated trading but only as a broker.
                 </p>
@@ -284,7 +279,7 @@
             </p><p>
                 When these two conditions are met, the IP in the derived dataset often belongs to the owner of the algorithm used to generate it, not to  the owner of the source data. Such derived datasets (sometimes called new original works) are controlled by new permissions.
             </p><p>
-                The use of a new original work may still be constrained by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source data using a <a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">NextPolicy</a> duty to apply new, adminstrator-specified, permissions to the derived dataset.
+                The use of a new original work may still be constrained by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source data using a <a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">NextPolicy</a> duty to apply new, administrator-specified, permissions to the derived dataset.
             </p><p>
                 If both conditions are not met, the derived dataset will likely still be controlled by the source dataset's permissions.
             </p>
@@ -323,7 +318,7 @@
             <section data-dfn-for="NextPolicyDuty_DerivedData">
                 <h2>Next Policy Duty (Derived Data)</h2>
                 <p>
-                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source Asset can control the use of the derived asset by placing a <a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">Next Policy</a> duty targetting the output of a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9" target="_blank">Derive</a> action.
+                    The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#administrator-0-9" target="_blank">Administrator</a> of the source Asset can control the use of the derived asset by placing a <a href="https://www.w3.org/TR/odrl-vocab/#term-nextPolicy" target="_blank">Next Policy</a> duty targeting the output of a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9" target="_blank">Derive</a> action.
                 </p>
                 <table class="def propdef">
                     <tbody>
@@ -384,13 +379,83 @@
                 </section>
             </section>
         </section>
-       
-        
-        <section data-dfn-for="ServiceProviders">
-            <h2>Service Providers</h2>
+        <section data-dfn-for="ServiceFacilitators">
+            <h2>Service Facilitators</h2>
+            <p>
+                A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#service-facilitator-0-9" target="_blank">Service Facilitators's</a> use of an asset is governed by one of two patters. Either they must use their own permissions or they can use the permissions of their client. The data license determines which pattern applies.
+            </p><p>
+                The distinction can be modelled with the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">users</a> constraint. If a service facilitator can use their client's permissions, then they must be identified by the user constraint on those permissions.
+            </p><p>
+                Often the consent of the data originator is required before use by a Service Facilitator. The mechanics of this are described in the <a href="#RequestAndConsentPattern">Request and Consent Pattern</a> below.
+            </p>
+            <section data-dfn-for="UsersConstraint">
+                <h2>Users Constraint</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>When a service facilitator can use their client's permissions.</td>
+                        </tr><tr>
+                            <th>Definition:</th><td>Employ a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">users</a> constraint on the client permission that identifies the service facilitator.</td>
+                        </tr><tr>
+                            <th>Constraint:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">md:users</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    The permission belonging to <code>Organisation A</code> in the following example can be used by <code>Service Facilitator X</code>. Such a permission would likely have a duty requiring the consent of the <a href="" target="_blank">Administrator</a> before <code>Service Facilitator X</code> could exercise the permission as discussed in the <a href="#RequestAndConsentPattern">Request and Consent Pattern</a>.
+                </p><p>
+                    Without this <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">users</a> constraint, only the assignees of the permission (in this case, <code>Organisation A</code>) could exercise it. <code>Service Facilitator X</code> would need their own permission in which they were the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee" target="_blank">assignee</a>.
+                </p>
+                <section data-dfn-for="UsersCode">
+                    <h2>Users Code</h2>
+                    <pre class="example nohighlight turtle" title="Users Constraint" id="UsersConstraint">
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">users</span><span class="w">          </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Service_Facilitator_X</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                    </pre>
+                </section>
+            </section>
         </section>
-        <section data-dfn-for="Controls">
-            <h2>Controls</h2>
+        <section data-dfn-for="ControlsAndSystems">
+            <h2>Controls and Systems</h2>
+            <p>
+               <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#provider-0-9" target="_blank">Providers</a> are sensitive to the systems that control access to their data. Do they authenticate and authorise every user? Or do they at least uniquely identify them. This distinction is made by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#controls-0-9" target="_blank">Controls</a> constraint.
+            </p><p>
+                They're also concerned by "line-of-sight": who is making the decisions about access. We can specify the responsible party by using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">system provider</a> property.
+            </p><p>
+                This question of system responsibility can reach down to the consuming application. For example, vendor-managed terminals can be identified by placing a system provider constraint on a display action.
+            </p>
+            <section data-dfn-for="ControlsAndSystemsConstraints">
+                <h2>Controls and Systems Constraints</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>When a provider wants to ensure that the technical infrastructure exists to protect their data.</td>
+                        </tr><tr>
+                            <th>Definition:</th>
+                            <td>
+                                Employ a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">controls</a> constraint on the client permission to specify the level of access control required.<br/>
+                                Use the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">system provider</a> property to indicate who is responsible for providing and controling the technical infrastucture behind an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#Activities" target="_blank">Activity</a>. 
+                            </td>
+                        </tr><tr>
+                            <th>Constraints:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">md:controls</a> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">md:systemProvider</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    The first permission simply requires all data access to be authenticated and authorised. The second requires the access controls to be managed by the data provider. The third models a vendor-supplied terminal.
+                </p>
+                <section data-dfn-for="ControlsAndSystemsCode">
+                    <h2>Controls And Systems Code</h2>
+                    <pre class="example nohighlight turtle" title="Users Constraint" id="ControlsAndSystemsConstraint">
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">users</span><span class="w">          </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Service_Facilitator_X</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                    </pre>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="WhiteLabelling">
             <h2>White Labelling</h2>
@@ -452,7 +517,7 @@
                         This activation condition is frequently used in the <a href="#AttachmentPattern">Attachment Pattern</a>.
                     </p>
                     <p>
-                        If we want an activation condition that triggers only when a new <code>Organisation</code> receives the data (and not for each individual belonging to that organisation), then we can extend the template by addint a <code>unit of count</code> so:
+                        If we want an activation condition that triggers only when a new <code>Organisation</code> receives the data (and not for each individual belonging to that organisation), then we can extend the template by adding a <code>unit of count</code> so:
                      </p>
                      <pre class="example nohighlight turtle" title="Third-party Recipient Organisation" id="ThirdPartyOrganisationExample">
                         <span class="w">     </span><span class="nn">md:</span><span class="nt">recipients</span><span class="w"> </span><span class="p">[</span>
@@ -512,7 +577,7 @@
                 <code>State Modifiers</code> help manage the <code>Deontic State</code> of <code>Duties.</code>
             </p>
             <p>
-                Unless qualified by a state-modifier, <code>Duties</code> must be immediately <code>Fulfilled</code> on beconing <code>Active</code> else they fall into the <code>Unfulfilled</code> state (and so invalidating their parent <code>Permission</code>).
+                Unless qualified by a state-modifier, <code>Duties</code> must be immediately <code>Fulfilled</code> on becoming <code>Active</code> else they fall into the <code>Unfulfilled</code> state (and so invalidating their parent <code>Permission</code>).
             </p><p>
                 The <code>deadline</code> property provides a grace period in which the duty's <a href="https://www.w3.org/TR/odrl-model/#action" target="_blank">Action</a> can be exercised without it falling into the <code>Unfulfilled</code> state. The duty simply remains <code>Active</code> while the modifier holds. Of course, if the action is taken, then it immediately becomes <code>Fulfilled</code>.
             </p><p>
@@ -725,7 +790,7 @@
                     <tr>
                         <th>Definition:</th><td>Requires a <code>Notification</code> be sent when the activation condition is met.</td>
                     </tr><tr>
-                        <th>Subject:</th><td>The <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Party</a> that provides the notification - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9" target="_blank"> Data Consmuer</a>.</td>
+                        <th>Subject:</th><td>The <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Party</a> that provides the notification - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9" target="_blank"> Data Consumer</a>.</td>
                     </tr><tr>
                         <th>Object:</th><td>The Party that receives the Notification - usually the Party playing the role of data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9" target="_blank">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9" target="_blank">Provider</a>.</td>
                     </tr><tr>
@@ -779,7 +844,7 @@
                     </p><p>
                         The duty is activated when the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#users-0-9" target="_blank">users</a> constraint is satisfied.
                     </p><p>
-                        The targetted <code>Notification</code> indicates that it requires the identifier for the <code>Service Provider</code>.
+                        The targeted <code>Notification</code> indicates that it requires the identifier for the <code>Service Provider</code>.
                     </p>
                     <pre class="example nohighlight turtle" title="External Party Notification" id="ExternalPartyNotification">
                         <span class="p">[]</span><span class="w">   </span><span class="kt">a</span><span class="w">             </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
@@ -804,11 +869,11 @@
                     </pre>
                     <div class="note">
                         <p>
-                            This <code>Notification Duty</code> presuposes the <code>Service Facilitator's</code> right to use the <code>Permission</code> following notification.
+                            This <code>Notification Duty</code> presupposes the <code>Service Facilitator's</code> right to use the <code>Permission</code> following notification.
                         </p><p>
                             To make this assumption explicit, the <code>Permission</code> should have a <code>users</code> constraint that allows <code>Service Facilitators</code> to exercise it (alongside <code>Internal Parties</code>).
                         </p><p>
-                            Often this assumption is not true - <code>Service Facilitators</code> can not use the <code>Consummer's Permission</code> and must license separately. If so, an <a>Agreement Duty</a> should be applied targeting the required license.
+                            Often this assumption is not true - <code>Service Facilitators</code> can not use the <code>Consumer's Permission</code> and must license separately. If so, an <a>Agreement Duty</a> should be applied targeting the required license.
                         </p>
                     </div>
                 </section>
@@ -828,7 +893,7 @@
                     <tr>
                         <th>Definition:</th><td>Requires a <code>Usage Report</code> be sent when the activation condition is met.</td>
                     </tr><tr>
-                        <th>Subject:</th><td>The <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Party</a> providing the usage report - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9" target="_blank"> Data Consmuer</a>.</td>
+                        <th>Subject:</th><td>The <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Party</a> providing the usage report - usually the Party playing the role of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#consumer-0-9" target="_blank"> Data Consumer</a>.</td>
                     </tr><tr>
                         <th>Object:</th><td>The Party receiving the usage report - usually the Party playing the role of data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9" target="_blank">Originator</a> or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9" target="_blank">Provider</a>.</td>
                     </tr><tr>
@@ -836,7 +901,7 @@
                     </tr><tr>
                         <th>Target:</th><td><code>md:UsageReport</code></td>
                     </tr><tr>
-                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the report must be posted; <code>odrl:unitOfCount</code> specifying the unit of reporting (e.g. user, application, or location); <code>md:secondaryCode</code> the second dimension of reporting (if required); <code>odrl:timeInterval</code> specifying the time period covered by the report; and <code>md:reportingCode</code> indentifying the product to be reported against.</td>
+                        <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email that the report must be posted; <code>odrl:unitOfCount</code> specifying the unit of reporting (e.g. user, application, or location); <code>md:secondaryCode</code> the second dimension of reporting (if required); <code>odrl:timeInterval</code> specifying the time period covered by the report; and <code>md:reportingCode</code> identifying the product to be reported against.</td>
                     </tr><tr>
                         <th>Activation:</th><td>Usually <a href="#Periodicity">Periodic</a>.</td>
                     </tr>
@@ -845,7 +910,7 @@
             <section data-dfn-for="ReportingDuty">
                 <h2><dfn>Reporting Duty</dfn></h2>
                 <p>
-                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <a href="https://www.w3.org/TR/odrl-model/#asset" target="_blank">Asset</a> targetted by the parent <code>Permission</code>.
+                    Reporting duties require the <code>Subject</code> to report to the <code>Object</code> their use of the <a href="https://www.w3.org/TR/odrl-model/#asset" target="_blank">Asset</a> targeted by the parent <code>Permission</code>.
                 </p>
                 <section>
                     <h2>Reporting Code</h2>
@@ -883,7 +948,7 @@
         <section id="RequestAndConsentPattern">
             <h2>Request and Consent Pattern</h2> 
             <p>
-                Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action is preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent should be requested.
+                Some duties come in pairs. A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9">Consent</a> action is preceded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9">Request</a> action, i.e. consent should be requested.
             </p>
             <p>
                 Often consent is required for distribution to a third-party or use by a service provider. In these cases, the data <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#originator-0-9">Originator</a> must provide the consent.
@@ -905,7 +970,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Appeal</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url</code> pointing to the URL/email to which the appeal must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9" target="_blank">md:recipients</a> who must be identified.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email to which the appeal must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9" target="_blank">md:recipients</a> who must be identified.</td>
                         </tr><tr>
                             <th>Activation:</th><td>For transfers, <a href="#third-party-recipient-code">Third-party Recipient</a>. If no activation condition is set (e.g. an audit request), at the discretion of the <code>Subject</code>.</td>
                         </tr>
@@ -927,7 +992,7 @@
                         </tr><tr>
                             <th>Target:</th><td><code>md:Appeal</code></td>
                         </tr><tr>
-                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schmea:url</code> pointing to the URL/email to which the consenr must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9" target="_blank">md:recipients</a> who must be identified.</td>
+                            <th style="white-space:nowrap;">Target Properties:</th><td><code>schema:url</code> pointing to the URL/email to which the consent must be posted; and for transfers, the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipients-0-9" target="_blank">md:recipients</a> who must be identified.</td>
                         </tr><tr>
                             <th>Activation:</th><td>For transfers, <a href="#third-party-recipient-code">Third-party Recipient</a>. If no activation condition is set (e.g. an audit request), at the discretion of the <code>Subject</code>.</td>
                         </tr>
@@ -1040,7 +1105,7 @@
         <section id="InvoiceAndCompensatePattern">
             <h2>Invoice and Compensate Pattern</h2> 
             <p>
-                Like <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9" target="_blank">Requests</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9" target="_blank">Consents</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9" target="_blank">Invoice</a> and <code>Compensate</code> duties form a pair. A <code>Compensate</code> action is preceeded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9" target="_blank">Invoice</a> action, i.e. payments should be invoiced.
+                Like <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#request-0-9" target="_blank">Requests</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#consent-0-9" target="_blank">Consents</a>, <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9" target="_blank">Invoice</a> and <code>Compensate</code> duties form a pair. A <code>Compensate</code> action is preceded by a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#invoice-0-9" target="_blank">Invoice</a> action, i.e. payments should be invoiced.
             </p>
             <p>
                 Each target a <code>Payment</code> that must specify the amount to be paid and currency. The latter should be specified using instances of the <a href="https://www.wikidata.org/wiki/Q8142" target="_blank">Wikidata Currency Class</a>.
@@ -1052,7 +1117,7 @@
                 <table class="def propdef">
                     <tbody>
                         <tr>
-                            <th>Definition:</th><td>Requires and specifies a <code>Payment</code> for which the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#subject-0-9" target="_blank">Subject</a> must ivoice the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#object-0-9">Object</a>.</td>
+                            <th>Definition:</th><td>Requires and specifies a <code>Payment</code> for which the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#subject-0-9" target="_blank">Subject</a> must invoice the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#object-0-9">Object</a>.</td>
                         </tr><tr>
                             <th>Subject:</th><td>The <a href="https://www.w3.org/TR/odrl-model/#party" target="_blank">Party</a> raising the invoice - usually the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9" target="_blank">Provider</a>.</td>
                         </tr><tr>
@@ -1146,7 +1211,7 @@
         <h2>Time</h2>        
         <section id="SpecifiedIntervals">
             <h2>Specified Intervals</h2>
-            <p>Sometimes, for example, when an <code>effective interbal</code> is being specified, we need to indicate interval than run from a specified data and/or to one. We rely on some properties from the <a href="https://www.w3.org/TR/owl-time/" target="_blank">Time Ontology</a> to do so.</p>
+            <p>Sometimes, for example, when an <code>effective interval</code> is being specified, we need to indicate interval than run from a specified data and/or to one. We rely on some properties from the <a href="https://www.w3.org/TR/owl-time/" target="_blank">Time Ontology</a> to do so.</p>
             <pre class="example nohighlight turtle" title="Specifying An Interval" id="IntervalSpecificationExample">
                 <span class="p">[]</span><span class="w">   </span><span class="nn">tpl:</span><span class="nt">effectiveInterval</span><span class="w">  </span><span class="p">[</span>
                 <span class="w">                               </span><span class="kt">a</span><span class="w">                    </span><span class="nn">time:</span><span class="nt">ProperInterval</span><span class="w"> </span><span class="p">;</span>
