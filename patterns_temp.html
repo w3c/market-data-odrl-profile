@@ -424,7 +424,7 @@
             </p><p>
                 They're also concerned by "line-of-sight": who is making the decisions about access. We can specify the responsible party by using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">system provider</a> property.
             </p><p>
-                This question of system responsibility can reach down to the consuming application. For example, vendor-managed terminals can be identified by placing a system provider constraint on a display action.
+                This question of system responsibility can reach down to the consuming application. For example, display permissions for vendor-managed terminals can be modelled by setting the vendor as the system provider on both the controls constraint (i.e the vendor manages access control) and the display action (i.e the vendor provides the display terminal).
             </p>
             <section data-dfn-for="ControlsAndSystemsConstraints">
                 <h2>Controls and Systems Constraints</h2>
@@ -449,10 +449,39 @@
                 <section data-dfn-for="ControlsAndSystemsCode">
                     <h2>Controls And Systems Code</h2>
                     <pre class="example nohighlight turtle" title="Users Constraint" id="ControlsAndSystemsConstraint">
+                        <span class="c">Access must be authenticated and authorised:</span>
                         <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Organisation_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
-                        <span class="w">       </span><span class="nn">md:</span><span class="nt">users</span><span class="w">          </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Service_Facilitator_X</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
                         <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">CLosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span> 
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">Access must be authenticated and authorised by the vendor:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">Vendor terminal display:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">           </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
                     </pre>
                 </section>
             </section>
