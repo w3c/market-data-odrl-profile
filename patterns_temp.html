@@ -495,6 +495,70 @@
             </p><p>
                 That provider will likely charge a permium for white label distribution. If the derivations are not <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive-0-9" target="_blank">non-substitutive</a>, they will also seek to protect their IP by applying <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">controls</a> constraints on the third-party.
             </p>
+            <section data-dfn-for="WhiteLabelDistributionPattern">
+                <h2>White Label Distribution Pattern</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>When derived data is distributed to and branded by a third-party.</td>
+                        </tr><tr>
+                            <th>Definition:</th>
+                            <td>
+                                Provide a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html##whitelabel-0-9" target="_blank">White Label</a> distribution permission between the source data provider and derived data provider.<br/>
+                                Combine the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">controls</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">system provider</a> constraints to indicate who is responsible for providing the technical infrastucture controlling the access to and use of the branded data.<br/>
+                                Use the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#data-host-0-9" target="_blank">data host</a> constraint if the derived data provider is offering a white label platform. 
+                            </td>
+                        </tr><tr>
+                            <th>Actions:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html##whitelabel-0-9" target="_blank">md:WhiteLabel</a></td>
+                        </tr><tr>
+                            <th>Constraints:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">md:controls</a> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">md:systemProvider</a> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#data-host-0-9" target="_blank">md:dataHost</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    In the first permission, the provider of the source data allows the calculation agent to white label their derived data so long as the derivation is irreversible and non-substitutive.
+                </p><p>
+                    The second permits the calulation agent to provide a white label platform for their derived data so long as the data is hosted and controlled by them. The derivations do not need to be irreversible and non-substitutive.
+                </p>
+                <section data-dfn-for="WhiteLabelCode">
+                    <h2>White Label Code</h2>
+                    <pre class="example nohighlight turtle" title="Users Constraint" id="WhiteLabelCodePermision">
+                        <span class="c">Access must be authenticated and authorised:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">CLosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span> 
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">Access must be authenticated and authorised by the vendor:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">Vendor terminal display:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                    </pre>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="WebHosting">
             <h2>Web Hosting</h2>
