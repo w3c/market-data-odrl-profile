@@ -1,15 +1,18 @@
-CG-minutes-22-07-13.md
-
+## TOPIC: Minutes from Last Week
 
 **Ben WS**  
 Are there any objections to the minutes of the last meeting? [No]
 
 Does anyone object to the meeting being recorded to help generate the minutes? [No]
 
+## TOPIC: Actions from Last Week
+
 **Ben WS**  
 Moving to the action items. We need to plan for WFIC.
 
 I know GS, AWS, and Refinitiv are looking to demonstrate machine readable rights passing through Amazon Data Exchange (ADX) to then be enforced to control redistribution. 
+
+## TOPIC: WFIC
 
 **Caspar**  
 Yes, this will follow a demonstration of GS's internal pipelining of data received through ADX.
@@ -50,7 +53,7 @@ We've got meeting inflation! Perhaps we should focus our pattern book and refere
 OK, so if there were some specific exchanges that wanted to learn more I could invite them to next week's pattern book meeting.
 
 **Ben WS**  
-**Geoff**, is there anything you want to add from the LSEG perspective?
+Geoff, is there anything you want to add from the LSEG perspective?
 
 **Geoff** 
 If we are looking to get an exchange involved, I think we'd be happy to be considered.
@@ -59,7 +62,7 @@ If we are looking to get an exchange involved, I think we'd be happy to be consi
 That's fantastic.
 
 **Ben WS**  
-**Laura**, will you be going?
+Laura, will you be going?
 
 **Laura**  
 Yes, I will, along with Trisha and Patricia. So the three of us will be there. 
@@ -70,12 +73,14 @@ Fabulous. Is there anything you'd like to speak to at WFIC?
 **Laura**  
 I'd certainly be happy to bring a licensing practitioner point of view to a panel. 
 
-On a side note, Patricia has taken over our exchange data and exchange relationship management piece. So if we were focussing on moving exchange data around, she might also be keen to join.
+On a side note, Patricia has taken over our exchange data and exchange relationship management piece. So if we were focusing on moving exchange data around, she might also be keen to join.
 
 **Ben WS**  
 Right, moving on from with WIFC. I wanted to briefly talk about two things that we've recently covered in the pattern book:
 1. controls and systems
 2. white labeling
+
+## TOPIC: Controls & Systems
 
 **Ben WS**  
 So to controls and systems.
@@ -88,7 +93,7 @@ But line-of-sight also comes into play. This is especially important for vendors
 
 It can also be important to know who is controlling the display device. So we can also add a system provided constraint on the Display action. A vendor terminal can then be modeled simply by saying that the both the access control system and the display device is provided by the vendor. 
 
-There's one final constraint that plays a role here: the data host, i.e. who actually stores the data. This plays a role in both web hosting and white labelling, as we'll discus later.
+There's one final constraint that plays a role here: the data host, i.e. who actually stores the data. This plays a role in both web hosting and white labeling, as we'll discus later.
 
 How does this sit with people. Is there something missing?
 
@@ -106,8 +111,10 @@ If we were to model them as a duties, they would be actions that somebody must t
 **Caspar**  
 So it is simply baked into the licensing world. OK.
 
+## TOPIC: White Labeling
+
 **Ben WS**  
-Moving on to white labelling: so the key definition I've used is that white labeling is a form of third-party distribution, where a provider, or, in this instance, a calculation agent or analytics provider, derives a product from an originators data and then allows it to be branded by an external party as if it were its own. 
+Moving on to white labeling: so the key definition I've used is that white labeling is a form of third-party distribution, where a provider, or, in this instance, a calculation agent or analytics provider, derives a product from an originators data and then allows it to be branded by an external party as if it were its own. 
 
 Does that capture the core idea of white labeling?
 
@@ -148,7 +155,7 @@ This is an example where our calculation agent gets from an exchange the permiss
 
 Then we have a next-policy duty, which then controls what the calculation agent can do with those derivations. The exchange allows them to be white labelled. 
 
-Because the derivations are irreversible and non-substitutive, there are no further restrictions on this white-labelling.
+Because the derivations are irreversible and non-substitutive, there are no further restrictions on this white-labeling.
 
 But it seems to me that quite often with white labeling, the derived data is neither irreversible nor non-substitutive. Here's a question that has been puzzling me: are CFDs irreversible and non-substitutive derivations? I doubt it. I think the same goes for a lot of those leveraged traded products.
 
