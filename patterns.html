@@ -417,11 +417,217 @@
                 </section>
             </section>
         </section>
-        <section data-dfn-for="Controls">
-            <h2>Controls</h2>
+        <section data-dfn-for="ControlsAndSystems">
+            <h2>Controls and Systems</h2>
+            <p>
+               <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#provider-0-9" target="_blank">Providers</a> are sensitive to the systems that control access to their data. Do they authenticate and authorise every user? Or do they at least uniquely identify them. This distinction is made by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#controls-0-9" target="_blank">Controls</a> constraint.
+            </p><p>
+                They're also concerned by "line-of-sight": who is making the decisions about access. We can specify the responsible party by using the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">system provider</a> property.
+            </p><p>
+                This question of system responsibility can reach down to the consuming application. For example, display permissions for vendor-managed terminals can be modelled by setting the vendor as the system provider on both the controls constraint (i.e the vendor manages access control) and the display action (i.e the vendor provides the display terminal).
+            </p>
+            <section data-dfn-for="ControlsAndSystemsConstraints">
+                <h2>Controls and Systems Constraints</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>When a provider wants to ensure that the technical infrastructure exists to protect their data.</td>
+                        </tr><tr>
+                            <th>Definition:</th>
+                            <td>
+                                Employ a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">controls</a> constraint on the client permission to specify the level of access control required.<br/>
+                                Use the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">system provider</a> property to indicate who is responsible for providing and controling the technical infrastucture behind an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#Activities" target="_blank">Activity</a>. 
+                            </td>
+                        </tr><tr>
+                            <th>Constraints:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">md:controls</a> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">md:systemProvider</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    The first permission simply requires all data access to be authenticated and authorised. The second requires the access controls to be managed by the data provider. The third models a vendor-supplied terminal.
+                </p>
+                <section data-dfn-for="ControlsAndSystemsCode">
+                    <h2>Controls And Systems Code</h2>
+                    <pre class="example nohighlight turtle" title="Controls And Systems Code" id="ControlsAndSystemsConstraint">
+                        <span class="c">Access must be authenticated and authorised:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">controls</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">CLosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span> 
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">Access must be authenticated and authorised by the vendor:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">Vendor terminal display:</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Vendor_A</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="p">...</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                    </pre>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="WhiteLabelling">
             <h2>White Labelling</h2>
+            <p>
+                White labelling is a form of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#distribute-0-9" target="_blank">distribution</a> in which the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#recipient-0-9" target="_blank">recipient</a> of <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derivation-0-9" target="_blank">derived</a> data brands it as their own. It extends both the <a href="#distribution-pattern" target="_blank">Distribution</a> and the <a href="#derived-data-patterns" target="_blank">Derived Data</a>  patterns described above.
+            </p><p>
+                The derivations are usually done by a calculation agent or analytics provider who holds the licensing relationship with the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9" target="_blank">Provider</a> of the original data.
+            </p><p>
+                That provider will likely charge a permium for white label distribution. If the derivations are not <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#irreversible-0-9" target="_blank">irreversible</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-substitutive-0-9" target="_blank">non-substitutive</a>, they will also seek to protect their IP by applying <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">controls</a>  or <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#data-host-0-9" target="_blank">data host</a> constraints on the third-party.
+            </p>
+            <section data-dfn-for="WhiteLabelDistributionPattern">
+                <h2>White Label Distribution Pattern</h2>
+                <table class="def propdef">
+                    <tbody>
+                        <tr>
+                            <th>Context:</th><td>When derived data is distributed to and branded by a third-party.</td>
+                        </tr><tr>
+                            <th>Definition:</th>
+                            <td>
+                                Extends both the <a href="#distribution-pattern" target="_blank">Distribution</a> and the <a href="#derived-data-patterns" target="_blank">Derived Data</a>  patterns.<br/>
+                                Provide a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html##whitelabel-0-9" target="_blank">White Label</a> distribution permission between the source data provider and derived data provider.<br/>
+                                Combine the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">controls</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">system provider</a> constraints to indicate who is responsible for providing the technical infrastucture controlling the access to and use of the branded data.<br/>
+                                Use the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#data-host-0-9" target="_blank">data host</a> constraint if the derived data provider is offering a white label platform. 
+                            </td>
+                        </tr><tr>
+                            <th>Actions:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html##whitelabel-0-9" target="_blank">md:WhiteLabel</a></td>
+                        </tr><tr>
+                            <th>Constraints:</th><td><a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#controls-0-9" target="_blank">md:controls</a> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#system-provider-0-9" target="_blank">md:systemProvider</a> , <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#data-host-0-9" target="_blank">md:dataHost</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    In the first code example below, the provider of the source data allows the calculation agent to white label their derived data so long as the derivation is irreversible and non-substitutive.
+                </p><p>
+                    The second permits the calulation agent to provide a white label platform for their derived data so long as the data is hosted and controlled by them. The derivations do not need to be irreversible and non-substitutive.
+                </p>
+                <section data-dfn-for="WhiteLabelCode">
+                    <h2>White Label Code</h2>
+                    <pre class="example nohighlight turtle" title="White Label Code" id="WhiteLabelCodePermision">
+                        <span class="c">The output of the calulation agent's derivation OP2 ...</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Source_Data_Administrator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Calculation_Agent</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CreatingTradedProduct</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A1</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">output</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">OP2</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nn">ex:</span><span class="nt">D3</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... is controlled by the policy O3 ...</span>
+                        <span class="p">ex:D3</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Data_Consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Data_Consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">odrl:</span><span class="nt">NextPolicy</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O3</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... which provides the permission P3 ...</span>
+                        <span class="p">ex:O3</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Offer</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">permission</span><span class="w">   </span><span class="nn">ex:</span><span class="nt">P3</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">...  which allows OP2 to be white labelled to third-parties</span>
+                        <span class="p">ex:P3</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Source_Data_Administrator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Calculation_Agent</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">WhiteLabel</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">OP2</span><span class="w"> </span><span class="p">;</span>
+                    </pre>
+                </section>
+                <section data-dfn-for="WhiteLabelPlatformCode">
+                    <h2>White Label Platform Code</h2>
+                    <pre class="example nohighlight turtle" title="White Label Platform Code" id="WhiteLabelPlaformCodePermision">
+                        <span class="c">The output of the calulation agent's derivation OP3 ...</span>
+                        <span class="p">[]</span><span class="w">     </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Source_Data_Administrator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Calculation_Agent</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Derive</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">purposes</span><span class="w">           </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">CreatingTradedProduct</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">derivationTypes</span><span class="w">     </span><span class="p">[</span><span class="w"> </span><span class="kt">a</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Irreversible</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nn">md:</span><span class="nt">Non-Substitutive</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w">   </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">A1</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">output</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">OP3</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nn">ex:</span><span class="nt">D4</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... is controlled by the policy O4 ...</span>
+                        <span class="p">ex:D4</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Data_Consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Data_Consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">odrl:</span><span class="nt">NextPolicy</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O4</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... which provides the permission P4 ...</span>
+                        <span class="p">ex:O4</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Offer</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">permission</span><span class="w">   </span><span class="nn">ex:</span><span class="nt">P4</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">...  which allows OP3 to be white labelled to third-parties whose use of the asset ... </span>
+                        <span class="p">ex:P4</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Source_Data_Administrator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Calculation_Agent</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">md:</span><span class="nt">WhiteLabel</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">OP3</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">duty</span><span class="w">         </span><span class="nn">ex:</span><span class="nt">D5</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... is controlled by the policy O5 ...</span>
+                        <span class="p">ex:D5</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Duty</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">subject</span><span class="w">        </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Data_Consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">object</span><span class="w">         </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Data_Consumer</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span><span class="w">   </span><span class="kt">a</span><span class="w">               </span><span class="nn">odrl:</span><span class="nt">NextPolicy</span><span class="w">   </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">O5</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">... which provides the permission P5 ...</span>
+                        <span class="p">ex:O5</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Offer</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">permission</span><span class="w">   </span><span class="nn">ex:</span><span class="nt">P5</span><span class="w"> </span><span class="p">.</span>
+                        <span class="w">       </span>
+                        <span class="w">       </span>
+                        <span class="c">...  which allows the white label partner to display the derivations ... </span>
+                        <span class="c">...  so long as the calculation agent hosts the data and controls access to it. </span>
+                        <span class="p">ex:P4</span><span class="w">  </span><span class="kt">a</span><span class="w">                 </span><span class="nn">odrl:</span><span class="nt">Permission</span><span class="p"> ;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assigner</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Source_Data_Administrator</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">md:</span><span class="nt">assignee</span><span class="w">       </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Calculation_Agent</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">controls</span><span class="w">     </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">ClosedUserGroup</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Calculation_Agent</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">action</span><span class="w">       </span><span class="p">[</span>
+                        <span class="w">                               </span><span class="kt">a</span><span class="w">                     </span><span class="nn">md:</span><span class="nt">Display</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                               </span><span class="nn">md:</span><span class="nt">systemProvider</span><span class="w">     </span><span class="p">&lt;</span><span class="nv">http://www.example.org/Calculation_Agent</span><span class="p">&gt;</span><span class="w"> </span><span class="p">;</span>
+                        <span class="w">                         </span><span class="p">]</span><span class="w"> </span><span class="p">;</span>                        
+                        <span class="w">       </span><span class="nn">odrl:</span><span class="nt">target</span><span class="w">       </span><span class="nn">ex:</span><span class="nt">OP3</span><span class="w"> </span><span class="p">.</span>
+                    </pre>
+                </section>
+            </section>
         </section>
         <section data-dfn-for="WebHosting">
             <h2>Web Hosting</h2>
