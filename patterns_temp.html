@@ -45,7 +45,7 @@
             <h2>Assignment Patterns</h2>
             <div class="note">
                 <p>
-                    In licensing terms, this describes who is granting the rights and who is allowed to exercise them. The assignment may be restricted by location or entity, individual, or business function. It may also need to be qualified with who is explicitly excluded from the rights.
+                    In licensing terms, this describes who is granting the rights and who is allowed to exercise them. The assignment may be restricted by location or entity, individual, or business function. It may also need to be qualified by who is excluded from the rights.
                 </p>
             </div>
             <p>
@@ -160,6 +160,11 @@
         </section>
         <section data-dfn-for="DistributionPattern">
             <h2>Distribution Pattern</h2>
+            <div class="note">
+                <p>
+                    This pattern models the case of an internal owner of data to distribute this to an external party. It can be expanded to identify what the recipient of the data is permitted to do with it once it is received.
+                </p>
+            </div>
             <p>
                 Distribution occurs when an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#internal-party-0-9" target="_blank">Internal Party</a> (acting as a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#provider-0-9" target="_blank">Provider</a>) transfers an asset to an <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#external-party-0-9" target="_blank">External Party</a>.
             </p><p>
@@ -167,6 +172,12 @@
             </p><p>
                 When offering distribution permissions, data owners and vendors should apply a <a href="https://www.w3.org/TR/odrl-model/#term-nextPolicy" target="_blank">Next Policy</a> duty to identify a <a href="https://www.w3.org/TR/odrl-model/#policy" target="_blank">Policy</a> specifying the <a href="https://www.w3.org/TR/odrl-model/#permission" target="_blank">Permissions</a> that third-party recipients can execute over the transferred asset.
             </p>
+            <div class="example">
+                <h2>Example: Data Distribution by ABC Bank</h2>
+                 <p>
+                     ABC Bank Ltd is allowed to send data to ZYX Client Ltd but only for internal display.
+                 </p>
+             </div>            
             <table class="def propdef">
                 <tbody>
                     <tr>
@@ -230,11 +241,22 @@
         </section>
         <section data-dfn-for="Non-DisplayPattern">
             <h2>Non-Display Pattern</h2>
+            <div class="note">
+                <p>
+                    This pattern covers the use of data in non-display applications (versus display).  In order to comply with non-display policies, it is necessary to identify the category or business purposes for which the data will be used, as they may incur separate fees for each purpose.
+                </p>
+            </div>
             <p>
                 The <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#non-display" target="_blank">Non-display</a> action covers data use by machines (as opposed to people). It does not cover display nor distribution to third-parties. But it does cover everything else, including the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#derive-0-9" target="_blank">Derive</a> and <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#trade-automatically-0-9" target="_blank">Automated Trading</a> actions.
             </p><p>
                 Such various uses are frequently segmented by data providers by the purpose (i.e. business activity) that the use serves. This is captured using a <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#purposes-0-9" target="_blank">purposes</a> constraint on the action.
             </p>
+            <div class="example">
+                <h2>Example: ABC Bank Non-Display Purposes</h2>
+                 <p>
+                     ABC Bank Ltd is using NDA Application 1 for the purpose of Automated Trading and NDA Application 2 for index creation. Both will need licensing and reporting to Euro Exchange AG.
+                 </p>
+             </div>
             <table class="def propdef">
                 <tbody>
                     <tr>
@@ -403,6 +425,11 @@
         </section>
         <section data-dfn-for="ServiceFacilitators">
             <h2>Service Facilitators</h2>
+            <div class="note">
+                <p>
+                    Any use of a third-party service facilitator will need to be covered either by extending the rights of the sponsor or by the service facilitator itself agreeing to meet the licensing requirement.
+                </p>
+            </div>
             <p>
                 A <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile.html#service-facilitator-0-9" target="_blank">Service Facilitators's</a> use of an asset is governed by one of two patters. Either they must use their own permissions or they can use the permissions of their client. The data license determines which pattern applies.
             </p><p>
@@ -410,6 +437,12 @@
             </p><p>
                 Often the consent of the data originator is required before use by a Service Facilitator. The mechanics of this are described in the <a href="#RequestAndConsentPattern">Request and Consent Pattern</a> below.
             </p>
+            <div class="example">
+                <h2>Example: ABC Bank's Use of a Calculation Agent</h2>
+                 <p>
+                     ABC Bank Ltd is using the services of a calculation agent to calculate indices on their behalf. The calculation agent has licensing agreements in place with the data provider.
+                 </p>
+             </div>
             <section data-dfn-for="UsersConstraint">
                 <h2>Users Constraint</h2>
                 <table class="def propdef">
@@ -441,6 +474,11 @@
         </section>
         <section data-dfn-for="ControlsAndSystems">
             <h2>Controls and Systems</h2>
+            <div class="note">
+                <p>
+                    Data providers may require entitlement controls, whether by individual user ID’s or through an entitlement tool like DACs, to ensure their data is protected and usage can be reported as required.
+                </p>
+            </div>
             <p>
                <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#provider-0-9" target="_blank">Providers</a> are sensitive to the systems that control access to their data. Do they authenticate and authorise every user? Or do they at least uniquely identify them. This distinction is made by the <a href="https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#controls-0-9" target="_blank">Controls</a> constraint.
             </p><p>
@@ -448,6 +486,12 @@
             </p><p>
                 This question of system responsibility can reach down to the consuming application. For example, display permissions for vendor-managed terminals can be modelled by setting the vendor as the system provider on both the controls constraint (i.e the vendor manages access control) and the display action (i.e the vendor provides the display terminal).
             </p>
+            <div class="example">
+                <h2>Example: ABC Bank's Entitlement System'</h2>
+                 <p>
+                     A user at ABC Bank Ltd's request to access Dataset A must be permissioned via their entitlements system to ensure compliance with Euro Exchange AG's reporting requirements.
+                 </p>
+             </div>
             <section data-dfn-for="ControlsAndSystemsConstraints">
                 <h2>Controls and Systems Constraints</h2>
                 <table class="def propdef">
