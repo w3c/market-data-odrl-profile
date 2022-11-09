@@ -23,6 +23,11 @@
     <h2>Patterns</h2>
     <section data-dfn-for="Permissions">
         <h2>Permissions</h2>
+        <div class="note">
+            <p>
+                In order to make sure we are compliant with our licensing, it is important to communicate to a user a clear understanding of their rights.  If any activity to use data is permitted in ODRL, it is necessary to validate that any associated conditions are met and obligations fulfilled.
+            </p>
+        </div>
         <p>
             A valid <a href="https://www.w3.org/TR/odrl-model/#permission" target="_blank">Permission</a> is defined in <a href="https://www.w3.org/TR/odrl-model" target="_blank">ODRL</a> as the right to exercise an <a href="https://www.w3.org/TR/odrl-model/#action" target="_blank">Action</a> over an <a href="https://www.w3.org/TR/odrl-model/#asset" target="_blank">Asset</a>.
         </p><p>
@@ -30,17 +35,19 @@
         </p><p>
             A Permission effectively models a rights assignment in a license.
         </p>
-        <div class="note">
-            <p>
-                In order to make sure we are compliant with our licensing, it is important to communicate to a user a clear understanding of their rights.  If any activity to use data is permitted in ODRL, it is necessary to validate that any associated conditions are met and obligations fulfilled.
-            </p>
-        </div>
         <div class="example">
            <h2>Example: ABC Bank</h2>
-            <p>A user at ABC Bank Ltd has been granted access to use Dataset A in a display application only. Their access must be reported each quarter to Euro Exchange AG.</p>
+            <p>
+                A user at ABC Bank Ltd has been granted access to use Dataset A in a display application only. Their access must be reported each quarter to Euro Exchange AG.
+            </p>
         </div>
         <section data-dfn-for="AssignmentPatterns">
             <h2>Assignment Patterns</h2>
+            <div class="note">
+                <p>
+                    In licensing terms, this describes who is granting the rights and who is allowed to exercise them. The assignment may be restricted by location or entity, individual, or business function. It may also need to be qualified with who is explicitly excluded from the rights.
+                </p>
+            </div>
             <p>
                 In ODRL, an <a href="https://www.w3.org/TR/odrl-vocab/#term-assigner" target="_blank">assigner</a> grants a right and the <a href="https://www.w3.org/TR/odrl-vocab/#term-assignee" target="_blank">assignee</a> exercises it.
             </p><p>
@@ -62,14 +69,11 @@
             </p><p>
                 The Market Data Profile for ODRL, however, does not seek to standardise the description of all these entities and requires only than they be identified by URIs.
             </p>
-            <div class="note">
-                <p>
-                    In licensing terms, this describes who is granting the rights and who is allowed to exercise them. The assignment may be restricted by location or entity, individual, or business function. It may also need to be qualified with who is explicitly excluded from the rights.
-                </p>
-            </div>
             <div class="example">
                <h2>Example: Assignment to ABC Bank</h2>
-                <p>An ESG data supplier is granting rights to ABC Bank Ltd and its majority owned affiliates to access their data in London only.</p>
+                <p>
+                    An ESG data supplier is granting rights to ABC Bank Ltd and its majority owned affiliates to access their data in London only.
+                </p>
             </div>
             <table class="def propdef">
                 <tbody>
