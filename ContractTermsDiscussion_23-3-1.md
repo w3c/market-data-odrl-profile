@@ -12,7 +12,6 @@ Any others stand out? Here's a starting place:
 
 ## Relicensing
 
-**test** | - 
 ----------------|------------
 Actor | Licensor
 Action | Relicense
