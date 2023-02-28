@@ -26,3 +26,16 @@ Similarly, we can use the UN's [Code for Trade and Transport Locations](https://
 
 Should we recommend use of these standards? And are there any other geographic distinctions that we need to capture?
 
+## User Controls
+I know we've been over this a few times - but just to confirm:
+
+Seems we have three types of user controls:
+1. Those which both authenticate and authorise users - a closed user group
+2. Those which just authenticate users - an open user group
+3. Those which neither authenticate nor authorise users but can count them - a public user group.
+
+Does this cover the ground?
+
+
+
+
