@@ -1,8 +1,7 @@
 ## Purposes
 Purposes are ofter used to constrain an action, e.g. for what purpose are you deriving the data?
 
-We have plenty of values for this property (already)[https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#usage-0-9]. But several more have been suggested:
-risk management , profit and loss calculations , valuation, reference pricing.
+We have plenty of values for this property [already](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#usage-0-9). But several more have been suggested: risk management , profit and loss calculations , valuation, reference pricing.
 
 Are these all distinct? Do we have any duplications? And are there any others we should consider?
 
