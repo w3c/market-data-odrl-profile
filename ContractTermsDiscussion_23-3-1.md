@@ -10,14 +10,6 @@ We could model some of the non-assignment elements of a contract as another set 
 
 Any others stand out? Here's a starting place:
 
-
-**Access** | - 
-----------------|------------
-Data Set Type | 
-Context | 
-Scope Note | We always tie access to an Action. If there's no further restriction on the Action allowed, perhaps this is just `md:Use`
-
-
 **Relicensing** | -
 ----------------|------------
 Actor | Licensor |
@@ -26,47 +18,37 @@ Target | The contract
 Duty | Notify the licensee
 Remedy | Licensee can object
 
-## Respecifying
-Actor:      Licensor
+**Respecifying** | -
+----------------|------------
+Actor | Licensor |
+Action | Respecify
+Target | The product
+Duty | Notify the licensee
+Remedy | Licensee can cancel the license
 
-Action:     Respecify
+**Reprice** | -
+----------------|------------
+Actor | Licensor |
+Action | Reprice
+Target | The product
+Duty | Notify the licensee
+Remedy | Licensee can cancel the license
 
-Target:     The product
-
-Duty:       Notify the licensee
-
-Remedy:     Licensee can cancel the license
-
-## Reprice
-Actor:      Licensor
-
-Action:     Reprice
-
-Target:     The product
-
-Duty:       Notify the licensee
-
-Remedy:     Licensee can cancel the license
-
-## Terminate the Contract
-Actor:      Licensor or Licensee
-
-Action:     Terminate
-
-Target:     The contract
-
-Duty:       Notify the licensee/licensor
+**Terminate the Contract** | -
+----------------|------------
+Actor | Licensor or Licensee |
+Action | Terminate
+Target | The contract
+Duty | Notify the licensee/licensor
 
 There will likely also be a basis constraint here - "cause" will likely not allow for notice to be given.
 
-## Terminate an Element of the Product
-Actor:      Licensor
-
-Action:     Terminate
-
-Target:     Element of the product
-
-Duty:       Notify the licensee/licensor
+**Terminate an Element of the Product** | -
+----------------|------------
+Actor | Licensor |
+Action | Terminate
+Target | Element of the product
+Duty | Notify the licensee/licensor
 
 Does it make sense to model these contractual relations as permissions? If so, are we capturing the key ones?
 
