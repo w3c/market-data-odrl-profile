@@ -11,10 +11,17 @@ We could model some of the non-assignment elements of a contract as another set 
 Any others stand out? Here's a starting place:
 
 
-## Relicensing | -
+**Access** | - 
 ----------------|------------
-Actor | Licensor
-Action | Relicense
+Data Set Type | 
+Context | 
+Scope Note | We always tie access to an Action. If there's no further restriction on the Action allowed, perhaps this is just `md:Use`
+
+
+**Relicensing** | -
+----------------|------------
+Actor | Licensor |
+Action | Relicense |
 
 
 
