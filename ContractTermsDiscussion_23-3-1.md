@@ -10,8 +10,8 @@ We could model some of the non-assignment elements of a contract as another set 
 
 Any others stand out? Here's a starting place:
 
-## Relicensing
 
+## Relicensing | -
 ----------------|------------
 Actor | Licensor
 Action | Relicense
