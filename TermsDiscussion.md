@@ -5,5 +5,5 @@ We have plenty of values for this property [already](https://w3c.github.io/marke
 
 Are these all distinct? Do we have any duplications? And are there any others we should consider?
 
-This seems quite common: internal business purposes. Is it simply a shorthand for all the others - or does it have a specific meaning that we need to capture?
+"Internal business purposes" appears quite frequently. Is it simply a shorthand for all the purposes - or does it have a specific meaning that we need to capture?
 
