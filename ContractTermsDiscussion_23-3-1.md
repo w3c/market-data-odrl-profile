@@ -18,7 +18,7 @@ Context |
 Scope Note | We always tie access to an Action. If there's no further restriction on the Action allowed, perhaps this is just `md:Use`
 
 
-**Relicensing** | -
+**Relicensing** |     
 ----------------|------------
 Actor | Licensor |
 Action | Relicense |
