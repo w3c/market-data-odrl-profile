@@ -1,21 +1,21 @@
 # Vocabulary
 
 ## Purposes
-Purposes are ofter used to constrain an action, e.g. for what purpose are you deriving the data?
+Purposes are often used to constrain an action, e.g. for what purpose are you deriving the data?
 
 We have plenty of values for this property [already](https://w3c.github.io/market-data-odrl-profile/md-odrl-profile-draft.html#usage-0-9). But several more have been suggested: risk management , profit and loss calculations , valuation, reference pricing.
 
-Are these all distinct? Do we have any duplications? And are there any others we should consider?
+Are these all distinct? Do we have any duplication? And are there any others we should consider?
 
 "Internal business purposes" appears quite frequently. Is it simply a shorthand for all the purposes - or does it have a specific meaning that we need to capture?
 
 ## Assignees Vs Users
-The Assignee List property was supposed to identify the organisations in a rights assigment. But as we've modelled it [in the pattern book](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#assignment-patterns), we're applying geography and line-of-business constraints to the assignees. Are we confusing the assignees of a permission with its users?
+The Assignee List property was supposed to identify the organisations in a rights assignment. But as we've modeled it [in the pattern book](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#assignment-patterns), we're applying geography and line-of-business constraints to the assignees. Are we confusing the assignees of a permission with its users?
 
-The former is supposed to model the contractual rights assignment between organisations. The latter is supposed to model the individual users of the permission (be they people or machines), Perhaps constraints like geography and line-of-businees belong only on the user, not on the assignee.
+The former is supposed to model the contractual rights assignment between organisations. The latter is supposed to model the individual users of the permission (be they people or machines), Perhaps constraints like geography and line-of-business belong only on the user, not on the assignee.
 
 ## Counts across User Type
-Sometimes the number of users is constrainted, e.g. no more than 100 users.
+Sometimes the number of users is constrained, e.g. no more than 100 users.
 
 Until now, we've used a simple "less than" constraint with an integer value. But there are cases where the limit on numbers carries across user types, e.g. less that 100 users both internally and among your service providers.
 
@@ -53,21 +53,20 @@ We've identified Store as an action. But we've said nothing about what kind of s
 ## Duty Targets
 The target of a duty identifies the entity over which the duty action is taken. Unlike permissions, this is not a dataset. We've never explicitly specified these. So, what exactly are these targets? It depends on the duty:
 
-For [attachment duties], we have Attributions, Disclaimers, or Proscriptions.
+For [attachment duties](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#AttachmentPattern), we have Attributions, Disclaimers, or Proscriptions.
 
-For [agreement duties], we have Licenses and Proscriptions. We may have to add NDAs (for prospective customers).
+For [agreement duties](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#AgreementPattern), we have Licenses and Proscriptions. We may have to add NDAs (for prospective customers).
 
-For [notification duties], we have two types of Notification - notification of the start of use by a new internal user (i.e. a new location) and notification of the start of use by a new external organisation (i.e. a service facilitator).
+For [notification duties](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#NotificationPattern), we have two types of Notification - notification of the start of use by a new internal user (i.e. a new location) and notification of the start of use by a new external organisation (i.e. a service facilitator).
 
-For [reporting duties], we identify two types of Report: usage reports and honesty statements. Is there a difference? Is the first generated from an access control system like DACS and the second not?
+For [reporting duties](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#ReportingPattern), we identify two types of Report: usage reports and honesty statements. Is there a difference? Is the first generated from an access control system like DACS and the second not?
 
-Then we have the [Request and Consent] pattern, in which we make Appeals for an audit, a free trial, a service facilitatot, a new recipient, and, maybe, a format (see above). So four or five types of Appeal.
+Then we have the [Request and Consent](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#RequestAndConsentPattern) pattern, in which we make Appeals for an audit, a free trial, a service facilitator, a new recipient, and, maybe, a format (see above). So four or five types of Appeal.
 
-Finally, we [invoice and compensate] Payments.
+Finally, we [invoice and compensate](https://w3c.github.io/market-data-odrl-profile/patterns_temp.html#InvoiceAndCompensatePattern) Payments.
 
 ## Tiered Payments
 We presently can't support tiered payments - so one price for, say, for the firm and up to five affiliates, and a higher price for the firm and more than five affiliates.
 
 To do so, we could provide a tier constraint which activates the applicable payment duty. So in the affiliates example, we'd provide two payment duties with two different tier constraints. Which ever duty matched the actual number of affiliates would activate. The other would remain dormant.
-
 
