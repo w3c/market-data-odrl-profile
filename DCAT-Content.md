@@ -162,7 +162,7 @@ Geographic coverage
 
 ```dc:spatial```
 
-### 5.	Quantity (better word?)
+## 5.	Quantity (better word?)
 ```dprod:quantity```
 
 **Cardinality**
