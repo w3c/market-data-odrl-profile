@@ -26,6 +26,17 @@ Content type
 
 Indices, trading data, post trade data, fixings, news, economics, people
 
+**Code Example**
+
+*A dataset providing trading data from a venue.*
+```
+[]
+	a			dcat:Dataset ;	
+	dprod:contentType	[
+					a			dprod:TradingData ;
+				] .
+```
+
 ## 2.	Asset Class
 ```dprod:assetClass```
 
@@ -49,6 +60,18 @@ Asset class
 
 ```dprod:AssetClass``` – preferably using CFI codes as instance data
 
+**Code Example**
+
+*A dataset providing trading data for equities from a venue*
+```
+[]
+	a			dcat:Dataset ;	
+	dprod:contentType	[
+					a			dprod:TradingData ;
+					dprod:assetClass	iso10962:EXXXXX ;
+				] .
+```
+
 ## 3.	Market Depth
 ```dprod:marketDepth```
 
@@ -71,6 +94,19 @@ Depth of market
 **Range**
 
 ```dprod:MarketDepth```
+
+**Code Example**
+
+*A dataset providing full-order book trading data for equities from a venue*
+```
+[]
+	a			dcat:Dataset ;	
+	dprod:contentType	[
+					a			dprod:TradingData ;
+					dprod:assetClass	iso10962:EXXXXX ;
+				] ;
+	dprod:marketDepth	md:fullOrderBook .
+```
 
 ### 3.1.	Last Trade Price
 ```dprod:lastTradePrice```
@@ -164,6 +200,20 @@ Geographic coverage
 
 ```dc:spatial```
 
+**Code Example**
+
+*A dataset providing full-order book trading data for German equities*
+```
+[]
+	a			dcat:Dataset ;	
+	dprod:contentType	[
+					a			dprod:TradingData ;
+					dprod:assetClass	iso10962:EXXXXX ;
+				] ;
+	dprod:marketDepth	md:fullOrderBook ;
+	dprod:spatial		iso3166:DE .
+```
+
 ## 5.	Quantity (better word?)
 ```dprod:quantity```
 
@@ -193,4 +243,22 @@ Amount
 
 ```dprod:Quantity```
 
+**Code Example**
+
+*A dataset providing full-order book trading data for three (German) instruments *
+```
+[]
+	a			dcat:Dataset ;	
+	dprod:contentType	[
+					a			dprod:TradingData ;
+					dprod:assetClass	iso10962:EXXXXX ;
+				] ;
+	dprod:marketDepth	md:fullOrderBook ;
+	dprod:spatial		iso3166:DE ;
+	dprod:quantity		[
+					a			dprod:Insubstantial ;
+					odrl:count		3 ;
+					odrl:unitOfCount	md:instrument ;
+				] .
+```
  
