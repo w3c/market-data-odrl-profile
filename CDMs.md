@@ -5,6 +5,7 @@
 A redistribution service to professional parties or both professional and non-profesional parties
 
 **Typical Use Case**
+
 Provision of realtime data via display and/or datafeed products
 
 ## 2. Controlled Display Services
