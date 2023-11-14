@@ -43,7 +43,7 @@ Data received, used, or delivered with minimum latency after its time of origina
 
 **Note**
 
-The latency can be quantified by specifying the beginning of the interval (time:hasBeginning) and its duration (time:hasXSDDuration).
+The latency can be quantified by specifying the beginning of the interval (```time:hasBeginning```) and its duration (```time:hasXSDDuration```).
 
 **Subclass Of**
 
@@ -86,7 +86,7 @@ Delayed
 Data received, used, or delivered at or after a specified time interval following its time of origination, publication, or issue. 
 
 **Note**
-The delay can be quantified applying the time:intervalAfter property to the Realtime interval specification.
+The delay can be quantified applying the ```time:intervalAfter``` property to the Realtime interval specification.
 
 **Subclass Of**
 
@@ -149,7 +149,7 @@ Embargoed
 
 **Definition**
 
-Data received, used, or delivered on or after a specified instant or future event. Can be quantified using the time:intervalAfter property with the embargo time specified using the time:hasBeginning property.
+Data received, used, or delivered on or after a specified instant or future event. Can be quantified using the ```time:intervalAfter``` property with the embargo time specified using the time:hasBeginning property.
 
 **Editorial Note**
 
@@ -291,7 +291,7 @@ An update is provided only in response to a request (like an API call).
 Also known as “one-shot”.
 
 **Note**
-The number of requests (or snaps) permitted can be specified using the count property (odrl:count) and a duration (time:hasXSDDuration).
+The number of requests (or snaps) permitted can be specified using the count property (```odrl:count```) and a duration (```time:hasXSDDuration```).
 
 **Subclass Of**
 ```dprod:UpdateMethod```
@@ -498,7 +498,7 @@ Updates are sampled and/or conflated.
 Only selected updates are delivered at specified intervals or on specific events (e.g. market close or quarterly results).
 
 **Note**
-The sampling frequency of can be specified using the time:hasXSDDuration property.
+A continuous sampling frequency of can be specified using the ```time:hasXSDDuration property```.
 
 **Label**
 ```Sampled```
