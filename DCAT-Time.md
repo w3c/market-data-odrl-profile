@@ -282,18 +282,23 @@ Must have a value of either Snapshot, Streaming, or Time Series
 ```dprod:Snapshot```
 
 **Label**
+
 Snapshot
 
 **Definition**
+
 An update is provided only in response to a request (like an API call). 
 
 **Editorial Note**
+
 Also known as “one-shot”.
 
 **Note**
+
 The number of requests (or snaps) permitted can be specified using the count property (```odrl:count```) and a duration (```time:hasXSDDuration```).
 
 **Subclass Of**
+
 ```dprod:UpdateMethod```
 
 **Code Example**
@@ -312,12 +317,15 @@ The number of requests (or snaps) permitted can be specified using the count pro
 ```dprod:streaming```
 
 **Label**
+
 Streaming
 
 **Definition**
+
 Changes are captured and continuously transmitted either individually or in batches.
 
 **Subclass Of**
+
 ```dprod:UpdateMethod```
 
 **Code Example**
@@ -350,6 +358,7 @@ Time Series
 Multiple updates are delivered together in bulk, often as a file.
 
 **Type**
+
 ```dprod:UpdateMethod```
  
 **Code Example**
