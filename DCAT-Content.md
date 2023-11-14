@@ -83,7 +83,7 @@ The price at which the most recent trade was executed
 
 Last trade price
 
-Subclass Of
+**Subclass Of**
 
 ```dprod:MarketDepth```
 
@@ -107,6 +107,7 @@ If more prices beyond the best bid are offered, the book depth can be specified 
 Market price
 
 **Subclass Of**
+
 ```dprod:MarketDepth```
 
 ### 3.3.	Full Order Book
@@ -129,6 +130,7 @@ If more prices beyond the best bid are offered, the book depth can be specified 
 Full order book
 
 **Subclass Of**
+
 ```dprod:MarketDepth```
 
 ## 4.	Spatial
