@@ -54,10 +54,10 @@ The latency can be quantified by specifying the beginning of the interval (time:
 *A dataset in which data is received, used, or delivered with minimum latency.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	dprod:timeliness	[
-							a			dprod:Realtime ;
-						] .
+					a			dprod:Realtime ;
+				] .
 ```
 
 **Code Example**
@@ -65,14 +65,14 @@ The latency can be quantified by specifying the beginning of the interval (time:
 *A dataset in which data is received, used, or delivered with a latency of less than 15 minutes from time of issue.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drod:timeliness		[
-							a					dprod:Realtime ;
-							dc:title			"Realtime" ;
-							dc:description		"Less than 15 minutes from time of issue" ;
-							time:hasBeginning	dprod:timeOfIssue ;
-							time:hasXSDDuration	"PT15M"^^xsd:duration ;
-						] .
+					a			dprod:Realtime ;
+					dc:title		"Realtime" ;
+					dc:description		"Less than 15 minutes from time of issue" ;
+					time:hasBeginning	dprod:timeOfIssue ;
+					time:hasXSDDuration	"PT15M"^^xsd:duration ;
+				] .
 ```
 
 ### 1.2.	Interval: Delayed
