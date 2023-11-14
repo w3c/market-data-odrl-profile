@@ -245,7 +245,7 @@ Amount
 
 **Code Example**
 
-*A dataset providing full-order book trading data for three (German) instruments *
+*A dataset providing full-order book trading data for three (German) instruments*
 ```
 []
 	a			dcat:Dataset ;	
