@@ -342,9 +342,11 @@ Changes are captured and continuously transmitted either individually or in batc
 ```dprod:timeSeries```
 
 **Label**
+
 Time Series
 
 **Definition**
+
 Multiple updates are delivered together in bulk, often as a file.
 
 **Type**
