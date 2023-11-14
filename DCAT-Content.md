@@ -83,12 +83,12 @@ The price at which the most recent trade was executed
 
 Last trade price
 
-**Subclass Of**
+**Type**
 
 ```dprod:MarketDepth```
 
 ### 3.2.	Market Price
-```dprod:MarketPrice```
+```dprod:marketPrice```
 
 **Definition**
 
@@ -106,12 +106,12 @@ If more prices beyond the best bid are offered, the book depth can be specified 
 
 Market price
 
-**Subclass Of**
+**Type**
 
-```dprod:MarketDepth```
+```dprod:marketDepth```
 
 ### 3.3.	Full Order Book
-```dprod:FullOrderBook```
+```dprod:fullOrderBook```
 
 **Definition**
 
@@ -129,7 +129,7 @@ If more prices beyond the best bid are offered, the book depth can be specified 
 
 Full order book
 
-**Subclass Of**
+**Type**
 
 ```dprod:MarketDepth```
 
