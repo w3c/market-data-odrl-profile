@@ -97,10 +97,10 @@ The delay can be quantified applying the time:intervalAfter property to the Real
 *A dataset in which data is delayed before receipt, use, or delivery.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drop:timeliness		[
-							a			dprod:Delayed ;
-						] .
+					a			dprod:Delayed ;
+				] .
 ```
 
 **Code Example**
@@ -108,17 +108,17 @@ The delay can be quantified applying the time:intervalAfter property to the Real
 *A dataset in which data is delayed by 15 minutes before receipt, use, or delivery.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	dprod:timeliness	[
-							a					dprod:Delayed ; 
-							dc:title			"Delayed" ;
-							dc:description		"More than 15 minutes from time of issue" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:timeOfIssue ;
-													time:hasXSDDuration	"PT15M"^^xsd:duration
-												] ;
-						] .
+					a			dprod:Delayed ; 
+					dc:title		"Delayed" ;
+					dc:description		"More than 15 minutes from time of issue" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT15M"^^xsd:duration
+								] ;
+				] .
 ```
 
 ### 1.3.	Interval: Historical
@@ -164,12 +164,12 @@ Used to describe end-of-day or after-midnight data.
 *An embargoed dataset in which the data is made available at midnight.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	dprod:timeliness	[
-							a					dprod:Embargoed ;
-							dc:title			"After midnight data" ;
-							time:hasBeginning	dprod:midnight ;
-						] .
+					a			dprod:Embargoed ;
+					dc:title		"After midnight data" ;
+					time:hasBeginning	dprod:midnight ;
+				] .
 ```
 
 **Code Example**
@@ -177,16 +177,16 @@ Used to describe end-of-day or after-midnight data.
 *An embargoed dataset in which the data is made available two hours after market close.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	dprod:timeliness	[
-							a					dprod:Embargoed ; 
-							dc:title			"Embargoed until two hours after market close" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:marketCose ;
-													time:hasXSDDuration	"PT2H"^^xsd:duration
-												] ;
-						] .
+					a			dprod:Embargoed ; 
+					dc:title		"Embargoed until two hours after market close" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:marketCose ;
+									time:hasXSDDuration	"PT2H"^^xsd:duration
+								] ;
+				] .
 ```
 
 ### 1.5.	Instant: Origination Time
@@ -300,12 +300,12 @@ The number of requests (or snaps) permitted can be specified using the count pro
 *A dataset for which updates can only be requested twice a day.*
 ```
 []
-	a					dcat:Dataset ;
+	a			dcat:Dataset ;
 	dprod:updateMethod	[
-							a 					dprod:SnapShot ;
-							odrl:count			2 ;
-							time:hasXSDDuration	"PT1D"^^xsd:duration ;
-						] .
+					a 			dprod:SnapShot ;
+					odrl:count		2 ;
+					time:hasXSDDuration	"PT1D"^^xsd:duration ;
+				] .
 ```
 
 ### 2.2.	Streaming
@@ -324,17 +324,17 @@ Changes are captured and continuously transmitted either individually or in batc
 *A 15-minute delayed dataset with streaming updates.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drop:timeliness		[
-							a					dprod:Delayed ;
-							dc:title			"Delayed" ;
-							dc:description		"More than 15 minutes from time of issue" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:timeOfIssue ;
-													time:hasXSDDuration	"PT15M"^^xsd:duration
-												] ;
-						] ;
+					a			dprod:Delayed ;
+					dc:title		"Delayed" ;
+					dc:description		"More than 15 minutes from time of issue" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT15M"^^xsd:duration
+								] ;
+				] ;
 	dprod:updateMethod	dprod:streaming .
 ```
 
@@ -354,17 +354,17 @@ Multiple updates are delivered together in bulk, often as a file.
 *A tick-history dataset updated with 8-hour delayed data delivered as a time series.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drop:timeliness		[
-							a					dprod:Delayed ;
-							dc:title			"Delayed" ;
-							dc:description		"More than 8 hours from time of issue" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:timeOfIssue ;
-													time:hasXSDDuration	"PT8H"^^xsd:duration
-												] ;
-						] ;
+					a			dprod:Delayed ;
+					dc:title		"Delayed" ;
+					dc:description		"More than 8 hours from time of issue" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT8H"^^xsd:duration
+								] ;
+				] ;
 	dprod:updateMethod	dprod:timeSeries .
 ```
 
@@ -412,7 +412,7 @@ Type
 *A dataset for which the vendor will continue to provide updates while the subscription holds.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	dprod:updatePeriod	dprod:servicePeriod .
 ```
 
@@ -421,12 +421,12 @@ Type
 *A dataset for which the vendor will continue to provide updates for a year.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	dprod:updatePeriod	[
-							a					dprod:ServicePeriod ;
-							time:hasXSDDuration	"PT1Y"^^xsd:duration ;
-							# Start the clock ticking with the time:hasBeginning property
-						] .
+					a			dprod:ServicePeriod ;
+					time:hasXSDDuration	"PT1Y"^^xsd:duration ;
+					# Start the clock ticking with the time:hasBeginning property
+				] .
 ```
 
 ## 4.	Sample Frequency
@@ -473,17 +473,17 @@ Any and every change in value is provided in an update.
 *A complete tick-history dataset capturing every price updated with 8-hour delayed data delivered as a time series.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drop:timeliness		[
-							a					dprod:Delayed ;
-							dc:title			"Delayed" ;
-							dc:description		"More than 8 hours from time of issue" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:timeOfIssue ;
-													time:hasXSDDuration	"PT8H"^^xsd:duration ;
-												] ;
-						] ;
+					a			dprod:Delayed ;
+					dc:title		"Delayed" ;
+					dc:description		"More than 8 hours from time of issue" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT8H"^^xsd:duration ;
+								] ;
+				] ;
 	dprod:updateMethod	dprod:timeSeries ;
 	dprod:sampleFrequency dprod:tick-By-Tick .
 ```
@@ -511,22 +511,22 @@ The sampling frequency of can be specified using the time:hasXSDDuration propert
 *A 15-minute tick-history dataset updated with 8-hour delayed data delivered as a time series.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drop:timeliness		[
-							a					dprod:Delayed ;
-							dc:title			"Delayed" ;
-							dc:description		"More than 8 hours from time of issue" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:timeOfIssue ;
-													time:hasXSDDuration	"PT8H"^^xsd:duration
-												] ;
-						] ;
+					a			dprod:Delayed ;
+					dc:title		"Delayed" ;
+					dc:description		"More than 8 hours from time of issue" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT8H"^^xsd:duration
+								] ;
+				] ;
 	dprod:updateMethod	dprod:timeSeries ;
 	dprod:sampleFrequency [
-							a 					dprod:Sampled
-							time:hasXSDDuration	"PT15M"^^xsd:duration
-						] .	
+					a 			dprod:Sampled
+					time:hasXSDDuration	"PT15M"^^xsd:duration
+				] .
 ```
 
 ## 5.	Publication Schedule
@@ -560,28 +560,28 @@ Specifies the periodicity with which updates to a Dataset are published
 *A 15-minute tick-history dataset updated with 8-hour delayed data and delivered as a time series twice per day at 9:30 and 14:30.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drop:timeliness		[
-							a					dprod:Delayed ;
-							dc:title			"Delayed" ;
-							dc:description		"More than 8 hours from time of issue" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:timeOfIssue ;
-													time:hasXSDDuration	"PT8H"^^xsd:duration
-												] ;
-						] ;
+					a			dprod:Delayed ;
+					dc:title		"Delayed" ;
+					dc:description		"More than 8 hours from time of issue" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT8H"^^xsd:duration
+								] ;
+				] ;
 	dprod:updateMethod	dprod:timeSeries ;
-	dprod:sampleFrequency [
-							a 					dprod:Sampled
-							time:hasXSDDuration	"PT15M"^^xsd:duration
-						] ;	
+	dprod:sampleFrequency	[
+					a 			dprod:Sampled
+					time:hasXSDDuration	"PT15M"^^xsd:duration
+				] ;	
 	dprod:publicationSchedule [
-							a 					dprod:PublicationSchedule
-							odrl:count			2 ;
-							time:hasXSDDuration	"PT1D"^^xsd:duration ;
-							schema:availabilityStarts "09:30:10Z"^^xsd:time , "14:30:10Z"^^xsd:time
-						] .
+					a 			dprod:PublicationSchedule
+					odrl:count		2 ;
+					time:hasXSDDuration	"PT1D"^^xsd:duration ;
+					schema:availabilityStarts "09:30:10Z"^^xsd:time , "14:30:10Z"^^xsd:time
+				] .
 ```
 
 ### 6.	Temporal
@@ -624,32 +624,32 @@ Temporal coverage
 *A 15-minute tick-history dataset offering 7 years of history, updated with 8-hour delayed data and delivered as a time series twice per day at 9:30 and 14:30.*
 ```
 []
-	a					dcat:Dataset ;	
+	a			dcat:Dataset ;	
 	drop:timeliness		[
-							a					dprod:Delayed ;
-							dc:title			"Delayed" ;
-							dc:description		"More than 8 hours from time of issue" ;
-							time:intervalAfter	[
-													a					time:ProperInterval ;
-													time:hasBeginning	dprod:timeOfIssue ;
-													time:hasXSDDuration	"PT8H"^^xsd:duration
-												] ;
-						] ;
+					a			dprod:Delayed ;
+					dc:title		"Delayed" ;
+					dc:description		"More than 8 hours from time of issue" ;
+					time:intervalAfter	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT8H"^^xsd:duration
+								] ;
+				] ;
 	dprod:updateMethod	dprod:timeSeries ;
-	dprod:sampleFrequency [
-							a 					dprod:Sampled
-							time:hasXSDDuration	"PT15M"^^xsd:duration
-						] ;	
+	dprod:sampleFrequency	[
+					a 			dprod:Sampled
+					time:hasXSDDuration	"PT15M"^^xsd:duration
+				] ;	
 	dprod:publicationSchedule [
-							a 					dprod:PublicationSchedule
-							odrl:count			2 ;
-							time:hasXSDDuration "PT1D"^^xsd:duration ;
-							schema:availabilityStarts "09:30:10Z"^^xsd:time, "14:30:10Z"^^xsd:time ;
-						] ;
+					a 			dprod:PublicationSchedule
+					odrl:count		2 ;
+					time:hasXSDDuration	"PT1D"^^xsd:duration ;
+					schema:availabilityStarts "09:30:10Z"^^xsd:time, "14:30:10Z"^^xsd:time ;
+				] ;
 	dprod:temporal		[
-							a					time:ProperInterval ;
-							time:hasXSDDuration	"P7Y"^^xsd:duration ;
-						] .
+					a			time:ProperInterval ;
+					time:hasXSDDuration	"P7Y"^^xsd:duration ;
+				] .
 
 ```
 
