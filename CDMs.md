@@ -12,12 +12,14 @@ Provision of realtime data via display and/or datafeed products
 A display service in which the vendor controls access
 
 **Typical Use Case**
+
 Terminal display
 
 ### 2.2. Enterprise Display Service
 A display service in which the client controls access
 
 **Typical Use Case**
+
 Display of datafeed products
 
 ### 2.3. Client Controlled Partner Display Service
@@ -30,6 +32,7 @@ A display service with access control
 A service where the end user actively requests a data point rather than the data being automatically refreshed.
 
 **Typical Use Case**
+
 Websites including customer portals, display terminals, telephone information services, interactive services delivered via television
 
 
@@ -38,6 +41,7 @@ Websites including customer portals, display terminals, telephone information se
 A service for the display of delayed/after-midnight data usually without access control
 
 **Typical Use Case** 
+
 Website distribution including customer portals
 
 
@@ -45,6 +49,7 @@ Website distribution including customer portals
 A service for the display of delayed/after-midnight data usually without access control under a third-party brand
 
 **Typical Use Case** 
+
 Website distribution including third-party portals
 
 
@@ -52,18 +57,21 @@ Website distribution including third-party portals
 A service for the display of a few delayed share prices of companies listed on an exchange
 
 **Typical Use Case** 
+
 Investor relations portals
 
 ### 3.4. Ticker-For-Issuers Open Display Service
 A service for the display of a realtime share price of a company listed on the exchange by that company
 
 **Typical Use Case** 
+
 Investor relations portals
 
 ### 3.5. TV-Ticker Open Display Service
 A service for the display of individual quotes on TV devices
 
 **Typical Use Case** 
+
 TV news services
 
 
@@ -75,30 +83,35 @@ A service for the irreversible and non-substitutive derivation, distribution, an
 A service for the irreversible and non-substitutive derivation, distribution, and use of specified instruments
 
 **Typical Use Case**
+
 The creation and trading of CFDs, spread betting instruments, binary options
 
 ### 4.3. White-Label Derived Data ATP Service
 A service for the irreversible and non-substitutive derivation, distribution, and use of specified instruments provided under a third-party brand
 
 **Typical Use Case**
+
 The creation and trading of CFDs, spread betting instruments, binary options for third-party retail brands
 
 ### 4.4. Raw Data ATP Service
 A service for the derivation, distribution, and use of specified instruments where the instruments substitute for the raw data.
 
 **Typical Use Case**
+
 The creation and trading of CFDs, spread betting instruments, binary options
 
 ### 4.5. White-Label Raw Data ATP Service
 A service for the derivation, distribution, and use of specified instruments provided under a third-party brand where the instruments substitute for the raw data.
 
 **Typical Use Case**
+
 The creation and trading of CFDs, spread betting instruments, binary options for third-party retail brands
 
 ### 4.6. Derived Data Distribution Service
 A service for the derivation, distribution, and use of instruments other than indices/benchmarks or CFDs/spread-betting instruments/binary options.
 
 **Typical Use Cases**
+
 Risk management applications, fundamental and technical analysis, NAVs/iNAVs, the creation of tradeable instruments/products, indicative pricing, VWAPs, portfolio analysis tools.
 
 
