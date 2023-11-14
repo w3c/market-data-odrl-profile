@@ -298,7 +298,6 @@ Also known as “one-shot”.
 The number of requests (or snaps) permitted can be specified using the count property (```odrl:count```) and a duration (```time:hasXSDDuration```).
 
 **Subclass Of**
-
 ```dprod:UpdateMethod```
 
 **Code Example**
