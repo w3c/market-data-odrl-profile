@@ -24,7 +24,7 @@ A display service in which the client controls access
 Display of datafeed products
 
 ### 2.3. Client Controlled Partner Display Service
-A display service in which the client controls access to data displayed on a partner device
+A display service in which the client controls access to data displayed on a partner-provided device
 
 ### 2.4. Controlled Display Service
 A display service with access control
