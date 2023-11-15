@@ -2,7 +2,7 @@
 
 ## 1. Redistribution Services
 ### 1.1. Redistribution Service
-A redistribution service to professional parties or both professional and non-profesional parties
+A redistribution service to professional parties or both professional and non-professional parties
 
 **Typical Use Case**
 
