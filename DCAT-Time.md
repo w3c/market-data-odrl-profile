@@ -1,4 +1,4 @@
-# DCAT Time Dimensions
+# DCAT TIME DIMENSIONS
 ## 1.	Timeliness
 ```dprod:timeliness```
 
