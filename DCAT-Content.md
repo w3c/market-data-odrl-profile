@@ -105,7 +105,7 @@ Depth of market
 					a			dprod:TradingData ;
 					dprod:assetClass	iso10962:EXXXXX ;
 				] ;
-	dprod:marketDepth	md:fullOrderBook .
+	dprod:marketDepth	dprod:fullOrderBook .
 ```
 
 ### 3.1.	Last Trade Price
