@@ -1,4 +1,4 @@
-# DCAT CONTENT DIMENSIONS
+# DATASET CONTENT DIMENSIONS
 ## 1.	Content Type
 ```dprod:contentType```
 
