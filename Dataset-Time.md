@@ -291,7 +291,7 @@ Also known as “one-shot”.
 
 **Note**
 
-The number of requests (or snaps) permitted can be specified using the count property (```odrl:count```) and a duration (```time:hasXSDDuration```).
+The number of requests (or snaps) permitted can be specified using the ```dprod:Frequncy``` class (the count property (```odrl:count```) combined with a duration (```time:hasXSDDuration```).)
 
 **Subclass Of**
 ```dprod:UpdateMethod```
@@ -303,8 +303,12 @@ The number of requests (or snaps) permitted can be specified using the count pro
 	a			dcat:Dataset ;
 	dprod:updateMethod	[
 					a 			dprod:Snapshot ;
-					odrl:count		2 ;
-					time:hasXSDDuration	"PT1D"^^xsd:duration ;
+					dprod:frequency		[
+									a			dprod:Frequency ;
+									dc:description		"Twice daily" ;
+									odrl:count		2 ;
+									time:hasXSDDuration	"PT1D"^^xsd:duration ;
+								] ;
 				] .
 ```
 
@@ -469,7 +473,7 @@ Must have a value of either Tick-By-Tick or Sampled
 Tick-by-tick
 
 **Definition**
-Any and every change in value is provided in an update.
+Each and every change in value is provided in an update.
 
 **Type**
 ```dprod:SampleFrequency```
@@ -504,7 +508,7 @@ Updates are sampled and/or conflated.
 Only selected updates are delivered at specified intervals or on specific events (e.g. market close or quarterly results).
 
 **Note**
-A continuous sampling frequency of can be specified using the ```time:hasXSDDuration property```.
+A continuous sampling frequency of can be specified using the ```dprod:frequency``` property.
 
 **Label**
 ```Sampled```
@@ -531,7 +535,11 @@ A continuous sampling frequency of can be specified using the ```time:hasXSDDura
 	dprod:updateMethod	dprod:timeSeries ;
 	dprod:sampleFrequency [
 					a 			dprod:Sampled
-					time:hasXSDDuration	"PT15M"^^xsd:duration
+					dprod:frequency		[
+									a			dprod:Frequency ;
+									dc:description		"Every 15 minutes" ;
+									time:hasXSDDuration	"PT15M"^^xsd:duration ;
+								] ;
 				] .
 ```
 
@@ -548,10 +556,10 @@ Publication Schedule
 
 **Definition**
 
-Specifies the periodicity with which updates to a Dataset are published
+Specifies the ```dprod:frequency``` with which updates to a Dataset are published
 
 **Note**
-
+The time at which updates are published can be specified using the ```schema:availabilityStarts``` property
 
 **Domain**
 
@@ -584,8 +592,12 @@ Specifies the periodicity with which updates to a Dataset are published
 				] ;	
 	dprod:publicationSchedule [
 					a 			dprod:PublicationSchedule
-					odrl:count		2 ;
-					time:hasXSDDuration	"PT1D"^^xsd:duration ;
+					dprod:frequency		[
+									a			dprod:Frequency ;
+									dc:description		"Twice daily" ;
+									odrl:count		2 ;
+									time:hasXSDDuration	"PT1D"^^xsd:duration ;
+								] ;
 					schema:availabilityStarts "09:30:10Z"^^xsd:time , "14:30:10Z"^^xsd:time
 				] .
 ```
