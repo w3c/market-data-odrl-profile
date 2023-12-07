@@ -55,9 +55,7 @@ The latency can be quantified by specifying the beginning of the interval (```ti
 ```
 []
 	a			dcat:Dataset ;	
-	dprod:timeliness	[
-					a			dprod:Realtime ;
-				] .
+	dprod:timeliness	dprod:realtime .
 ```
 
 **Code Example**
@@ -70,8 +68,11 @@ The latency can be quantified by specifying the beginning of the interval (```ti
 					a			dprod:Realtime ;
 					dc:title		"Realtime" ;
 					dc:description		"Less than 15 minutes from time of issue" ;
-					time:hasBeginning	dprod:timeOfIssue ;
-					time:hasXSDDuration	"PT15M"^^xsd:duration ;
+					time:intervalBefore	[
+									a			time:ProperInterval ;
+									time:hasBeginning	dprod:timeOfIssue ;
+									time:hasXSDDuration	"PT15M"^^xsd:duration ;
+								] ;
 				] .
 ```
 
@@ -98,9 +99,7 @@ The delay can be quantified applying the ```time:intervalAfter``` property to th
 ```
 []
 	a			dcat:Dataset ;	
-	drop:timeliness		[
-					a			dprod:Delayed ;
-				] .
+	drop:timeliness		dprod:delayed .
 ```
 
 **Code Example**
