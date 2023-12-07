@@ -302,7 +302,7 @@ The number of requests (or snaps) permitted can be specified using the count pro
 []
 	a			dcat:Dataset ;
 	dprod:updateMethod	[
-					a 			dprod:SnapShot ;
+					a 			dprod:Snapshot ;
 					odrl:count		2 ;
 					time:hasXSDDuration	"PT1D"^^xsd:duration ;
 				] .
