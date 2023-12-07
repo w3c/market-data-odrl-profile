@@ -68,11 +68,8 @@ The latency can be quantified by specifying the beginning of the interval (```ti
 					a			dprod:Realtime ;
 					dc:title		"Realtime" ;
 					dc:description		"Less than 15 minutes from time of issue" ;
-					time:intervalBefore	[
-									a			time:ProperInterval ;
-									time:hasBeginning	dprod:timeOfIssue ;
-									time:hasXSDDuration	"PT15M"^^xsd:duration ;
-								] ;
+					time:hasBeginning	dprod:timeOfIssue ;
+					time:hasXSDDuration	"PT15M"^^xsd:duration ;
 				] .
 ```
 
