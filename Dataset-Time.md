@@ -23,17 +23,11 @@
 ### 1.1.	Interval: Realtime
 ```dprod:Realtime```
 
-**Label**
+**Label:**		Realtime
 
-Realtime
+**Definition:**		Data received, used, or delivered with minimum latency after its time of origination, publication, or issue. 
 
-**Definition**
-
-Data received, used, or delivered with minimum latency after its time of origination, publication, or issue. 
-
-**Note**
-
-The latency can be quantified by specifying the beginning of the interval (```time:hasBeginning```) and its duration (```time:hasXSDDuration```).
+**Note:**		The latency can be quantified by specifying the beginning of the interval (```time:hasBeginning```) and its duration (```time:hasXSDDuration```).
 
 **Subclass Of**
 
@@ -66,15 +60,11 @@ The latency can be quantified by specifying the beginning of the interval (```ti
 ### 1.2.	Interval: Delayed
 ```dprod:Delayed```
 
-**Label**
+**Label:**		Delayed
 
-Delayed
+**Definition:**		Data received, used, or delivered at or after a specified time interval following its time of origination, publication, or issue. 
 
-**Definition**
-Data received, used, or delivered at or after a specified time interval following its time of origination, publication, or issue. 
-
-**Note**
-The delay can be quantified applying the ```time:intervalAfter``` property to the Realtime interval specification.
+**Note:**		The delay can be quantified applying the ```time:intervalAfter``` property to the Realtime interval specification.
 
 **Subclass Of**
 
@@ -110,17 +100,11 @@ The delay can be quantified applying the ```time:intervalAfter``` property to th
 ### 1.3.	Interval: Historical
 ```dprod:Historical```
 
-**Label**
+**Label:**		Historical
 
-Historical
+**Definition:**		Stored data that relates to events in the past. 
 
-**Definition**
-
-Stored data that relates to events in the past. 
-
-**Note**
-
-Usually held in the form of a time series
+**Note:**		Usually held in the form of a time series
 
 **Subclass Of**
 
@@ -129,17 +113,11 @@ Usually held in the form of a time series
 ### 1.4.	Interval: Embargoed
 ```dprod:Embargoed```
 
-**Label**
+**Label:**		Embargoed
 
-Embargoed
+**Definition:**		Data received, used, or delivered on or after a specified instant or future event. Can be quantified using the ```time:intervalAfter``` property with the embargo time specified using the time:hasBeginning property.
 
-**Definition**
-
-Data received, used, or delivered on or after a specified instant or future event. Can be quantified using the ```time:intervalAfter``` property with the embargo time specified using the time:hasBeginning property.
-
-**Editorial Note**
-
-Used to describe end-of-day or after-midnight data.
+**Editorial Note:**	Used to describe end-of-day or after-midnight data.
 
 **Subclass Of**
 
@@ -178,17 +156,11 @@ Used to describe end-of-day or after-midnight data.
 ### 1.5.	Instant: Origination Time
 ```dprod:originationTime```
 
-**Label**
+**Label:**		Origination time
 
-Origination time
+**Definition:**		The moment information condenses into data.
 
-**Definition**
-
-The moment information condenses into data.
-
-**Example**
-
-The instant a price is struck and recorded.
+**Example:**		The instant a price is struck and recorded.
 
 **Type**
 ```time:Instant```
@@ -196,13 +168,9 @@ The instant a price is struck and recorded.
 ### 1.6.	Instant: Publication Time
 ```dprod:publicationTime```
 
-**Label**
+**Label:**		Publication time
 
-Publication time
-
-**Definition**
-
-The instant data is released by the Originator for distribution
+**Definition:**		The instant data is released by the Originator for distribution
 
 **Type**
 
@@ -211,13 +179,9 @@ The instant data is released by the Originator for distribution
 ### 1.7.	Instant: Issue Time
 ```dprod:issueTime```
 
-**Label**
+**Label:**		Issue time
 
-Issue time
-
-**Definition**
-
-The instant data is distributed from the Originator
+**Definition:**		The instant data is distributed from the Originator
 
 **Type**
 
@@ -226,13 +190,9 @@ The instant data is distributed from the Originator
 ### 1.8.	Instant: Market Close
 ```dprod:marketClose```
 
-**Label**
+**Label:**		Market close
 
-Market close
-
-**Definition**
-
-The time published by the venue specifying when a market closes.
+**Definition:**		The time published by the venue specifying when a market closes.
 
 **Type**
 ```time:Instant ```
@@ -240,21 +200,13 @@ The time published by the venue specifying when a market closes.
 ## 2.	Update Method
 ```dprod:updateMethod```
 
-**Cardinality**
+**Cardinality:**		0 – 1
 
-0 – 1
+**Label:**		Method of update
 
-**Label**
+**Definition:**		Specifies the method by which a Dataset is updated. 
 
-Method of update
-
-**Definition**
-
-Specifies the method by which a Dataset is updated. 
-
-**Note**
-
-Must have a value of either Snapshot, Streaming, or Time Series
+**Note:**		Must have a value of either Snapshot, Streaming, or Time Series
 
 **Domain**
 
@@ -267,21 +219,13 @@ Must have a value of either Snapshot, Streaming, or Time Series
 ### 2.1.	Snapshot
 ```dprod:Snapshot```
 
-**Label**
+**Label:**		Snapshot
 
-Snapshot
+**Definition:**		An update is provided only in response to a request (like an API call). 
 
-**Definition**
+**Editorial Note:**	Also known as “one-shot”.
 
-An update is provided only in response to a request (like an API call). 
-
-**Editorial Note**
-
-Also known as “one-shot”.
-
-**Note**
-
-The number of requests (or snaps) permitted can be specified using the ```dprod:Frequncy``` class (the count property (```odrl:count```) combined with a duration (```time:hasXSDDuration```).)
+**Note:**		The number of requests (or snaps) permitted can be specified using the ```dprod:Frequncy``` class (the count property (```odrl:count```) combined with a duration (```time:hasXSDDuration```).)
 
 **Subclass Of**
 ```dprod:UpdateMethod```
@@ -305,13 +249,9 @@ The number of requests (or snaps) permitted can be specified using the ```dprod:
 ### 2.2.	Streaming
 ```dprod:streaming```
 
-**Label**
+**Label:**		Streaming
 
-Streaming
-
-**Definition**
-
-Changes are captured and continuously transmitted either individually or in batches.
+**Definition:**		Changes are captured and continuously transmitted either individually or in batches.
 
 **Subclass Of**
 
@@ -338,13 +278,9 @@ Changes are captured and continuously transmitted either individually or in batc
 ### 2.3.	Time Series
 ```dprod:timeSeries```
 
-**Label**
+**Label:**		Time Series
 
-Time Series
-
-**Definition**
-
-Multiple updates are delivered together in bulk, often as a file.
+**Definition:**		Multiple updates are delivered together in bulk, often as a file.
 
 **Type**
 
@@ -371,21 +307,13 @@ Multiple updates are delivered together in bulk, often as a file.
 ## 3.	Update Period
 ```dprod:updatePeriod```
 
-**Cardinality**
+**Cardinality:**		0 – 1
 
-0 – 1
+**Label:**		Period of update
 
-**Label**
+**Definition:**		The period during which the Dataset has been, or continues to be, updated.
 
-Period of update
-
-**Definition**
-
-The period during which the Dataset has been, or continues to be, updated.
-
-**Note**
-
-If the Dataset is updated while a subscription holds, use the Service Period interval.
+**Note:**		If the Dataset is updated while a subscription holds, use the Service Period interval.
 
 **Domain**
 
@@ -398,13 +326,11 @@ If the Dataset is updated while a subscription holds, use the Service Period int
 ### 3.1.	Service Period
 ```dprod:servicePeriod```
 
-**Label**
-Service period
+**Label:**		Service period
 
-**Definition**
-The period across which a subscription holds.
+**Definition:**		The period across which a subscription holds.
 
-Type
+**Type**
 ```time:ProperInterval```
 
 **Code Example**
@@ -432,21 +358,13 @@ Type
 ## 4.	Sample Frequency
 ```dprod:sampleFrequency```
 
-**Cardinality**
+**Cardinality:**		0 – 1
 
-0 – 1
+**Label:**		Sample Frequency
 
-**Label**
+**Definition:**		Specifies if and how often a data stream is sampled to provide updates to the Dataset 
 
-Sample Frequency
-
-**Definition**
-
-Specifies if and how often a data stream is sampled to provide updates to the Dataset 
-
-**Note**
-
-Must have a value of either Tick-By-Tick or Sampled
+**Note:**		Must have a value of either Tick-By-Tick or Sampled
 
 **Domain**
 
@@ -459,11 +377,9 @@ Must have a value of either Tick-By-Tick or Sampled
 ### 4.1.	Tick by Tick
 ```dprod:tickByTick```
 
-**Label**
-Tick-by-tick
+**Label:**		Tick-by-tick
 
-**Definition**
-Each and every change in value is provided in an update.
+**Definition:**		Each and every change in value is provided in an update.
 
 **Type**
 ```dprod:SampleFrequency```
@@ -491,17 +407,13 @@ Each and every change in value is provided in an update.
 ### 4.2.	Sampled
 ```dprod:sampled```
 
-**Definition**
-Updates are sampled and/or conflated.
+**Label:**		Sampled
 
-**Note**
-Only selected updates are delivered at specified intervals or on specific events (e.g. market close or quarterly results).
+**Definition:**		Updates are sampled and/or conflated.
 
-**Note**
-A continuous sampling frequency of can be specified using the ```dprod:frequency``` property.
+**Note:**		Only selected updates are delivered at specified intervals or on specific events (e.g. market close or quarterly results).
 
-**Label**
-```Sampled```
+**Note:**		A continuous sampling frequency of can be specified using the ```dprod:frequency``` property.
 
 **Subclass Of**
 ```dprod:SampleFrequency```
@@ -536,20 +448,13 @@ A continuous sampling frequency of can be specified using the ```dprod:frequency
 ## 5.	Publication Schedule
 ```dprod:publicationSchedule```
 
-**Cardinality**
+**Cardinality:**		0 – 1
 
-0 – 1
+**Label:**		Publication Schedule
 
-**Label**
+**Definition:**		Specifies the ```dprod:frequency``` with which updates to a Dataset are published
 
-Publication Schedule
-
-**Definition**
-
-Specifies the ```dprod:frequency``` with which updates to a Dataset are published
-
-**Note**
-The time at which updates are published can be specified using the ```schema:availabilityStarts``` property
+**Note:**		The time at which updates are published can be specified using the ```schema:availabilityStarts``` property
 
 **Domain**
 
@@ -595,25 +500,15 @@ The time at which updates are published can be specified using the ```schema:ava
 ### 6.	Temporal
 ```dprod:temporal```
 
-**Cardinality**
+**Label:**		Temporal coverage
 
-0 – 1
+**Cardinality:**		0 – 1
 
-**Definition**
+**Definition:**		The temporal coverage offered by a dataset.
 
-The temporal coverage offered by a dataset.
+**Scope Note:**		Usually used to specify the date range of historical data.
 
-**Scope Note**
-
-Usually used to specify the date range of historical data.
-
-**Note**
-
-If no end-date is specified for the interval, then it is assumed to be “now”.
-
-**Label**
-
-Temporal coverage
+**Note:**		If no end-date is specified for the interval, then it is assumed to be “now”.
 
 **Domain**
 
