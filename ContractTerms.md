@@ -16,7 +16,7 @@ We'll likely want to know the set of **documents** that make up the contract: ma
 
 Are there other types of things we're interested in?
 
-Well, a contract also gives us (and the licensor) a set of **actions** to manage the contract, like renew it, terminate it, respecify the service, and reprice. These are usually associated with a **notification** obligation.
+Well, a contract also gives us (and the licensor) a set of **actions** to manage the contract, like to renew it, to terminate it, to respecify the services it controls, and to reprice them. These are usually associated with a **notification** obligation.
 
 Do we want to capture anything else?
 
