@@ -25,7 +25,7 @@ So effectively, we have an application where a data item is consumed from bpipe 
 We will use the ...
 
 ## Dataset Series
-First, we can define the Dataset Series which describes the information we're after before it's commercialisation as Datasets. The dataset series describes the information (fixings for spots, forward, and non-deliverable forward FX rates), the originator of the data (Bloomberg Index Services Limited), and the IP owner (the same).
+First, we can define the Dataset Series which describes the information we're after before it's commercialisation as Datasets. The dataset series describes the [content type](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/Dataset-Content.md#1content-type) and the [asset classes](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/Dataset-Content.md#2asset-class) (fixings for spots, forward, and non-deliverable forward FX rates), the originator of the data (Bloomberg Index Services Limited), and the IP owner (the same).
 
 ```
 dre:af85e5b1-26a8-4e9f-a1ad-de5586d5c96e
@@ -44,9 +44,9 @@ dre:af85e5b1-26a8-4e9f-a1ad-de5586d5c96e
 	dprod:ipOwner		lei:254900GIJ499G51QA968 .
 ```
 
-Then we would describe the Datasets created from this Dataset Series. There are two in the example above: one real-time and one delayed. Both datasets share the same Dataset Series and publication schedule (every 30 minutes).
+Then we can describe the Datasets created from this Dataset Series. There are two in the example above: one [real-time](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/Dataset-Time.md#11interval-realtime) and one [delayed](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/Dataset-Time.md#12interval-delayed). Both datasets share the same Dataset Series and [publication schedule](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/Dataset-Time.md#5publication-schedule) (every 30 minutes).
 
-For the real-time dataset, we would specify the time interval in which the data is considered real-time: 15 minutes. We might also specify the update method as streaming updates.
+For the real-time dataset, we would specify the time interval in which the data is considered real-time: 15 minutes. We might also specify the [update method](https://github.com/w3c/market-data-odrl-profile/blob/gh-pages/Dataset-Time.md#2update-method) as streaming updates.
 
 ```
 dre:8752a444-e3e1-4be1-b4ac-01333941b202
