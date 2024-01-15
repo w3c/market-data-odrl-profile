@@ -163,4 +163,4 @@ dre:5c2b155b-b7e2-416a-bd5d-5ed93dd2b61b
 	odrl:target		dre:a6be3f7a-ecb9-4d3f-acaa-01f2c07c3d3c .
 ```
 
-So, to summerise: we have one Dataset Series, that is provided as a real-time Dataset and a delayed Dataset. Each Dataset is then controlled by a different Permission.
+So, to summerise: we have one Dataset Series, that is provided as a real-time Dataset and a delayed Dataset. Each Dataset is then controlled by a different Permission, each specifying a different user type.
