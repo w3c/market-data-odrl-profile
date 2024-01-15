@@ -64,7 +64,6 @@ dre:8752a444-e3e1-4be1-b4ac-01333941b202
 					a 			dprod:PublicationSchedule ;
 					dc:description		"Published every 30 minutes" ;
 					dprod:frequency		[																		a			dprod:Frequency ;
-									dc:description		"Every 30 minutes" ;
 									time:hasXSDDuration	"PT30M"^^xsd:duration ;
 								] ;
 				] ;
@@ -95,7 +94,6 @@ dre:a6be3f7a-ecb9-4d3f-acaa-01f2c07c3d3c
 					dc:description		"Published every 30 minutes" ;
 					dprod:frequency		[
 									a			dprod:Frequency ;
-									dc:description		"Every 30 minutes" ;
 									time:hasXSDDuration	"PT30M"^^xsd:duration ;
 								] ;
 				] ;
