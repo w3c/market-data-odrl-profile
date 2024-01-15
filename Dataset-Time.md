@@ -2,25 +2,15 @@
 ## 1.	Timeliness
 ```dprod:timeliness```
 
-**Cardinality**
+**Cardinality:** 0 – 1
 
-0 – 1
+**Label:** Timeliness of delivery
 
-**Label**
+**Definition:** Specifies the timing of the permitted use or onwards delivery of a Dataset.
 
-Timeliness of delivery
+**Note:** These intervals are frequently identified as Realtime, Delayed, or Embargoed.
 
-**Definition**
-
-Specifies the timing of the permitted use or onwards delivery of a Dataset.
-
-**Note**
-
-These intervals are frequently identified as Realtime, Delayed, or Embargoed.
-
-**Note**
-
-Unless explicitly prohibited, Permissions over shorter intervals carry across to longer intervals (e.g. Realtime data also covers Delayed, and Embargoed data)
+**Note:** Unless explicitly prohibited, Permissions over shorter intervals carry across to longer intervals (e.g. Realtime data also covers Delayed, and Embargoed data)
 
 **Domain**
 
