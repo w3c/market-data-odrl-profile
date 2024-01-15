@@ -63,7 +63,10 @@ dre:8752a444-e3e1-4be1-b4ac-01333941b202
 	dprod:publicationSchedule [
 					a 			dprod:PublicationSchedule ;
 					dc:description		"Published every 30 minutes" ;
-					time:hasXSDDuration	"PT30M"^^xsd:duration ;
+					dprod:frequency		[																		a			dprod:Frequency ;
+									dc:description		"Every 30 minutes" ;
+									time:hasXSDDuration	"PT30M"^^xsd:duration ;
+								] ;
 				] ;
 	dprod:updateMethod	md:streaming ;
 	dcat:distribution	dre:3b601f6d-7ad1-4220-93fc-39284a6248f3 ;
@@ -90,7 +93,11 @@ dre:a6be3f7a-ecb9-4d3f-acaa-01f2c07c3d3c
 	dprod:publicationSchedule [
 					a 			dprod:PublicationSchedule ;
 					dc:description		"Published every 30 minutes" ;
-					time:hasXSDDuration	"PT30M"^^xsd:duration ;
+					dprod:frequency		[
+									a			dprod:Frequency ;
+									dc:description		"Every 30 minutes" ;
+									time:hasXSDDuration	"PT30M"^^xsd:duration ;
+								] ;
 				] ;
 	dprod:updateMethod	md:timeSeries ;
 	dcat:distribution	dre:d067b56c-1f79-48e1-bd6c-0836979d533a ;
