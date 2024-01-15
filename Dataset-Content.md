@@ -2,17 +2,13 @@
 ## 1.	Content Type
 ```dprod:contentType```
 
-**Cardinality**
+**Cardinality:** 0 – n
 
-0 – n
+**Label:** Content type
 
-**Definition**
+**Definition:** Specifies the type of content provided in a Dataset or Dataset Series
 
-Specifies the type of content provided in a Dataset or Dataset Series
-
-**Label**
-
-Content type
+**Examples:** Indices, trading data, post trade data, fixings, news, economics, people
 
 **Domain**
 
@@ -21,10 +17,6 @@ Content type
 **Range**
 
 ```dprod:ContentType```
-
-**Examples**
-
-Indices, trading data, post trade data, fixings, news, economics, people
 
 **Code Example**
 
@@ -40,17 +32,11 @@ Indices, trading data, post trade data, fixings, news, economics, people
 ## 2.	Asset Class
 ```dprod:assetClass```
 
-**Cardinality**
+**Cardinality:** 0 – n
 
-0 – n
+**Label:** Asset class
 
-**Definition**
-
-Qualifies the content type of a Dataset or series by the financial asset class it describes.
-
-**Label**
-
-Asset class
+**Definition:** Qualifies the content type of a Dataset or series by the financial asset class it describes.
 
 **Domain**
 
@@ -75,17 +61,11 @@ Asset class
 ## 3.	Market Depth
 ```dprod:marketDepth```
 
-**Cardinality**
+**Cardinality:** 0 – 1
 
-0 – 1
+**Label:** Depth of market
 
-**Definition**
-
-Measures the book depth offered by a Dataset.
-
-**Label**
-
-Depth of market
+**Definition:** Measures the book depth offered by a Dataset
 
 **Domain**
 
@@ -111,13 +91,9 @@ Depth of market
 ### 3.1.	Last Trade Price
 ```dprod:lastTradePrice```
 
-**Definition**
+**Label:** Last trade price
 
-The price at which the most recent trade was executed
-
-**Label**
-
-Last trade price
+**Definition:** The price at which the most recent trade was executed
 
 **Type**
 
@@ -126,21 +102,13 @@ Last trade price
 ### 3.2.	Market Price
 ```dprod:marketPrice```
 
-**Definition**
+**Label:** Market price
 
-Market Price includes the content relating to at least the best bid and best ask/offer in the market.
+**Definition:** Market Price includes the content relating to at least the best bid and best ask/offer in the market.
 
-**Editorial Note**
+**Editorial Note:** Also known as “Level 1” data.
 
-Also known as “Level 1” data.
-
-**Note**
-
-If more prices beyond the best bid are offered, the book depth can be specified by using the dprod:positionTo and dprod:positionFrom properties.
-
-**Label**
-
-Market price
+**Note:** If more prices beyond the best bid are offered, the book depth can be specified by using the dprod:positionTo and dprod:positionFrom properties.
 
 **Type**
 
@@ -149,21 +117,13 @@ Market price
 ### 3.3.	Full Order Book
 ```dprod:fullOrderBook```
 
-**Definition**
+**Label:** Full order book
 
-The Full Order Book includes content relating to the bids and asks/offers at all price points and from all participants in the market.
+**Definition:** The Full Order Book includes content relating to the bids and asks/offers at all price points and from all participants in the market.
 
-**Editorial Note**
+**Editorial Note:** Also known as "market by order", the "detailed order book", or "Level 2"/"Level 3" data.
 
-Also known as "market by order", the "detailed order book", or "Level 2"/"Level 3" data.
-
-**Note**
-
-If more prices beyond the best bid are offered, the book depth can be specified by using the dprod:positionTo and dprod:positionFrom properties.
-
-**Label**
-
-Full order book
+**Note:** If more prices beyond the best bid are offered, the book depth can be specified by using the dprod:positionTo and dprod:positionFrom properties.
 
 **Type**
 
@@ -172,21 +132,13 @@ Full order book
 ## 4.	Spatial
 ```dprod:spatial```
 
-**Cardinality**
+**Cardinality:** 0 – n
 
-0 – n
+**Label:** Geographic coverage
 
-**Definition**
+**Definition:** The geographic subject matter and focus of a dataset or series.
 
-The geographic subject matter and focus of a dataset or series.
-
-**Scope Note**
-
-A characteristic of the dataset or series rather than its source/origin or any limitations on its distribution.
-
-**Label**
-
-Geographic coverage
+**Scope Note:** A characteristic of the dataset or series rather than its source/origin or any limitations on its distribution.
 
 **Domain**
 
@@ -217,23 +169,13 @@ Geographic coverage
 ## 5.	Quantity (better word?)
 ```dprod:quantity```
 
-**Cardinality**
+**Cardinality:** 0 – 1
 
-0 – 1
+**Label:** Amount
 
-**Definition**
+**Definition:** The amount of a Dataset Series made available in a Dataset
 
-The amount of a Dataset Series made available in a Dataset
-
-**Note**
-
-If a qualitative measure is all that is needed use the values ```dprod:Insubstantial``` or ```dprod:Substantial```. 
-
-Else additionally specify a numeric value (```odrl:count```) and a unit of count (```odrl:unitOfCount```).
-
-**Label**
-
-Amount
+**Note:** If a qualitative measure is all that is needed use the values ```dprod:Insubstantial``` or ```dprod:Substantial```. Else additionally specify a numeric value (```odrl:count```) and a unit of count (```odrl:unitOfCount```).
 
 **Domain**
 
