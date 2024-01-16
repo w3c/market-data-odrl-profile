@@ -12,11 +12,11 @@ What is its **status**: draft, cancelled, review, approved, obsolete (same as ex
 
 What **licensing model** does it implement: vendor-licensed, direct-licensed, or your own paper?
 
-We'll likely want to know the set of **documents** that make up the contract: master agreement, order form, price list, schedule, ammendment, addendum, guidance. Anything else?
+We'll likely want to know the set of **documents** that make up the contract: master agreement, order form, price list, schedule, ammendment, addendum, guidance. Anything else? Do we want to capture a "replace" relationship between, say, schedules?
 
 Are there other types of things we're interested in?
 
-Well, a contract also gives us (and the licensor) a set of **actions** to manage the contract, like to renew it, to terminate it, to respecify the services it controls, and to reprice them. These are usually associated with a **notification** obligation.
+Well, a contract also gives us (and the licensor) a set of **actions** to manage the contract, like to renew it, to terminate it, to respecify the services it controls, and to reprice them. These are usually associated with a notification **obligation**.
 
 Do we want to capture anything else?
 
