@@ -114,8 +114,8 @@ dre:1dab2ac7-ef96-41e3-8b2f-bdd9ead1a983
 	odrl:assigner		lei:549300B56MD0ZC402L06 ;
 	md:assigneeList		[
 					a			md:AssigneeList ;
-					dc:description		"Commerzbank AG";
-					md:licensee		lei:851WYGNLUQLFZBSYGB56 ;
+					dc:description		"Bank ABC";
+					md:licensee		lei:111111111111111 ;
 				] ;
 	rbim:cdm		rbim:enterpriseDisplayService ;
 	md:users		[
@@ -148,8 +148,8 @@ dre:5c2b155b-b7e2-416a-bd5d-5ed93dd2b61b
 	odrl:assigner		lei:549300B56MD0ZC402L06 ;
 	md:assigneeList		[
 					a			md:AssigneeList ;
-					dc:description		"Commerzbank AG and majority owned subsidiaries";
-					md:licensee		lei:851WYGNLUQLFZBSYGB56 ;
+					dc:description		"Bank ABC and majority owned subsidiaries";
+					md:licensee		lei:111111111111111 ;
 					md:minHolding         	"0.5"^^xsd:decimal ;
 				] ;
 	rbim:cdm		rbim:clientOpenDisplayService ;
